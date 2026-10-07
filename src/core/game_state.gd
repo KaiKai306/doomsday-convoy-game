@@ -28,12 +28,14 @@ var day: int = 1
 var phase: Phase = Phase.MORNING
 var resources: Dictionary = DEFAULT_RESOURCES.duplicate()
 var team_trust: int = 50
+var world_facts: Dictionary = {}
 
 func reset(initial_resources: Dictionary = DEFAULT_RESOURCES, initial_trust: int = 50) -> void:
 	day = 1
 	phase = Phase.MORNING
 	resources = initial_resources.duplicate()
 	team_trust = clampi(initial_trust, 0, 100)
+	world_facts.clear()
 
 func adjust_trust(amount: int) -> void:
 	team_trust = clampi(team_trust + amount, 0, 100)

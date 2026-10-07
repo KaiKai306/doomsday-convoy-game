@@ -47,7 +47,7 @@ func _show_phase(next_phase: GameState.Phase) -> void:
 			_add_action("阅读技术手册（知识 +1）", func(): _camp_action("阅读技术手册", 0))
 			_add_action("让成员休息（疲劳 -1）", func(): _camp_action("让成员休息", 0))
 		GameState.Phase.NIGHT_SETTLEMENT:
-			phase_body.text = "夜间结算完成。今天的选择已经写入事件记录，资源会在下一天继续消耗。\n\n%s" % day_loop.event_log_text()
+			phase_body.text = "夜间结算完成。今天的选择已经写入事件记录，资源会在下一天继续消耗。\n\n当天记录：\n%s\n\n下一日因果：\n%s" % [day_loop.event_log_text(), day_loop.next_day_effects_text()]
 			_add_action("返回主菜单", func(): return_to_menu.emit())
 
 func _choose_route(route_name: String) -> void:

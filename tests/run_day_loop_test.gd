@@ -28,6 +28,9 @@ func _init() -> void:
 	_check(state.phase == GameState.Phase.CAMP_ACTION, "对话后进入营地行动")
 	_check(state.resources["parts"] == 8, "对话正确消耗零件")
 	_check(state.team_trust == 51, "接受对话请求提高信任")
+	_check(state.world_facts["repair_priority"] == "accepted", "接受请求写入世界事实")
+	_check(state.world_facts["road_accident_modifier"] == -1, "接受请求降低下一日道路事故风险")
+	_check(loop.next_day_effects_text().contains("下降"), "夜间结算生成下一日因果")
 
 	loop.perform_camp_action("维修车辆", 2)
 	_check(state.phase == GameState.Phase.NIGHT_SETTLEMENT, "营地行动后进入夜间结算")

@@ -8,6 +8,7 @@ var content: DemoContent
 var route_choice: String = "安全路线"
 var event_log: Array[String] = []
 var daily_transactions: Array = []
+var next_day_effects: Array[String] = []
 
 func _init(game_state: GameState, demo_content: DemoContent) -> void:
 	state = game_state
@@ -18,6 +19,7 @@ func start_new_game() -> void:
 	route_choice = "安全路线"
 	event_log.clear()
 	daily_transactions = content.morning_transactions()
+	next_day_effects.clear()
 
 func transaction_summary() -> String:
 	if daily_transactions.is_empty():
@@ -49,8 +51,14 @@ func resolve_travel_event() -> void:
 func resolve_dialogue(result: String, parts_cost: int, trust_change: int) -> void:
 	_consume_resource("parts", parts_cost)
 	state.adjust_trust(trust_change)
+	_apply_dialogue_consequence(result)
 	_add_event("对话结果：%s，信任 %+d" % [result, trust_change])
 	state.set_phase(GameState.Phase.CAMP_ACTION)
+
+func next_day_effects_text() -> String:
+	if next_day_effects.is_empty():
+		return "下一天暂无额外因果。"
+	return "\n".join(next_day_effects)
 
 func perform_camp_action(action_name: String, parts_cost: int) -> void:
 	_consume_resource("parts", parts_cost)
@@ -80,3 +88,18 @@ func _consume_resource(resource_name: String, amount: int) -> void:
 
 func _add_event(message: String) -> void:
 	event_log.append(message)
+
+func _apply_dialogue_consequence(result: String) -> void:
+	match result:
+		"接受请求":
+			state.world_facts["repair_priority"] = "accepted"
+			state.world_facts["road_accident_modifier"] = -1
+			next_day_effects.append("维修员获得优先资源，下一天道路事故风险下降。")
+		"拒绝请求":
+			state.world_facts["repair_priority"] = "refused"
+			state.world_facts["road_accident_modifier"] = 1
+			next_day_effects.append("维修员的不满被记录，下一天道路事故风险上升。")
+		"暂缓处理":
+			state.world_facts["repair_priority"] = "deferred"
+			state.world_facts["road_accident_modifier"] = 0
+			next_day_effects.append("维修请求被延期，下一天仍可能再次出现。")
