@@ -1,5 +1,7 @@
 extends SceneTree
 
+const SaveSystemClass = preload("res://src/core/save_system.gd")
+
 var _failures: int = 0
 
 func _init() -> void:
@@ -42,6 +44,17 @@ func _init() -> void:
 	loop.resolve_travel_event()
 	_check(loop.event_log.back().contains("未发生道路事故"), "接受请求降低下一日道路事故结果")
 
+	var save_system = SaveSystemClass.new()
+	var snapshot := save_system.snapshot(state, loop)
+	var restored_state: GameState = GameState.new()
+	var restored_loop: DayLoop = DayLoop.new(restored_state, DemoContent.new())
+	_check(save_system.restore(snapshot, restored_state, restored_loop), "存档快照可以恢复")
+	_check(restored_state.day == state.day, "恢复天数")
+	_check(restored_state.team_trust == state.team_trust, "恢复信任")
+	_check(restored_state.resources["fuel"] == state.resources["fuel"], "恢复资源")
+	_check(restored_state.world_facts["repair_priority"] == "accepted", "恢复世界事实")
+	_check(restored_loop.daily_transactions.size() == loop.daily_transactions.size(), "恢复当日事务")
+
 	loop.perform_camp_action("维修车辆", 2)
 	_check(state.phase == GameState.Phase.NIGHT_SETTLEMENT, "营地行动后进入夜间结算")
 	_check(state.resources["water"] == 15, "营地行动消耗饮水")
@@ -63,6 +76,8 @@ func _init() -> void:
 		printerr("DAY_LOOP_TEST_FAIL count=%d" % _failures)
 	loop = null
 	state.free()
+	restored_loop = null
+	restored_state.free()
 	quit(_failures)
 
 func _check(condition: bool, message: String) -> void:
