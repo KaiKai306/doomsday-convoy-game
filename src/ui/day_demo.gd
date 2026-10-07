@@ -13,7 +13,7 @@ var day_loop: DayLoop
 
 func setup(state: GameState) -> void:
 	game_state = state
-	day_loop = DayLoop.new(game_state)
+	day_loop = DayLoop.new(game_state, DemoContent.new())
 	day_loop.start_new_game()
 	_show_phase(GameState.Phase.MORNING)
 
@@ -25,13 +25,13 @@ func _show_phase(next_phase: GameState.Phase) -> void:
 
 	match next_phase:
 		GameState.Phase.MORNING:
-			phase_body.text = "昨夜车队在临时营地停下。\n成员：5 人（队长、维修、医疗、侦察、后勤）\n车辆：掠夺者，耐久 80/100\n资源：饮水、食物、燃料、药品、零件\n\nNPC 事务：维修员请求优先分配零件；侦察员报告东侧路线有无线电信号。"
+			phase_body.text = "昨夜车队在临时营地停下。\n成员：%s\n车辆：%s\n资源：饮水、食物、燃料、药品、零件\n\nNPC 事务：维修员请求优先分配零件；侦察员报告东侧路线有无线电信号。" % [day_loop.content.members_summary(), day_loop.content.vehicle_summary()]
 			_add_action("确认早晨准备", func(): _show_phase(GameState.Phase.ROUTE_SELECTION))
 		GameState.Phase.ROUTE_SELECTION:
 			phase_body.text = "选择今天的路线。路线会影响燃料消耗、抵达时间和移动突发概率。\n\n当前选择：%s" % day_loop.route_choice
-			_add_action("安全路线（燃料 -4）", func(): _choose_route("安全路线"))
-			_add_action("资源路线（燃料 -6）", func(): _choose_route("资源路线"))
-			_add_action("未知路线（燃料 -5）", func(): _choose_route("未知路线"))
+			_add_action("安全路线（燃料 -%d）" % day_loop.content.route_fuel_cost("安全路线"), func(): _choose_route("安全路线"))
+			_add_action("资源路线（燃料 -%d）" % day_loop.content.route_fuel_cost("资源路线"), func(): _choose_route("资源路线"))
+			_add_action("未知路线（燃料 -%d）" % day_loop.content.route_fuel_cost("未知路线"), func(): _choose_route("未知路线"))
 			_add_action("确认出发", func(): _start_travel())
 		GameState.Phase.TRAVEL:
 			phase_body.text = "车队正在沿“%s”前进……\n\n移动阶段暂时不打开完整对话菜单，只处理预设行动和即时突发。" % day_loop.route_choice

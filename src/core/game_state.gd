@@ -28,10 +28,10 @@ var day: int = 1
 var phase: Phase = Phase.MORNING
 var resources: Dictionary = DEFAULT_RESOURCES.duplicate()
 
-func reset() -> void:
+func reset(initial_resources: Dictionary = DEFAULT_RESOURCES) -> void:
 	day = 1
 	phase = Phase.MORNING
-	resources = DEFAULT_RESOURCES.duplicate()
+	resources = initial_resources.duplicate()
 
 func set_phase(next_phase: Phase) -> void:
 	if phase == next_phase:

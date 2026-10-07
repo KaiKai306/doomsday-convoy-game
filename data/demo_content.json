@@ -1,0 +1,30 @@
+{
+  "initial_resources": {
+    "water": 20,
+    "food": 20,
+    "fuel": 30,
+    "medicine": 5,
+    "parts": 10
+  },
+  "members": [
+    {"name": "队长", "job": "路线与决策"},
+    {"name": "维修", "job": "车辆维护"},
+    {"name": "医疗", "job": "治疗与药品"},
+    {"name": "侦察", "job": "路线与情报"},
+    {"name": "后勤", "job": "分配与交易"}
+  ],
+  "vehicle": {
+    "name": "掠夺者",
+    "durability": 80,
+    "max_durability": 100
+  },
+  "routes": {
+    "安全路线": {"fuel_cost": 4},
+    "资源路线": {"fuel_cost": 6},
+    "未知路线": {"fuel_cost": 5}
+  },
+  "daily_costs": {
+    "water": 5,
+    "food": 4
+  }
+}

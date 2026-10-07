@@ -4,11 +4,14 @@ var _failures: int = 0
 
 func _init() -> void:
 	var state: GameState = GameState.new()
-	var loop: DayLoop = DayLoop.new(state)
+	var loop: DayLoop = DayLoop.new(state, DemoContent.new())
 	loop.start_new_game()
 	_check(state.day == 1, "新游戏从第 1 天开始")
 	_check(state.phase == GameState.Phase.MORNING, "新游戏从早晨阶段开始")
 	_check(state.resources["fuel"] == 30, "新游戏燃料为 30")
+	_check(loop.content.members().size() == 5, "Demo 数据包含 5 名初始成员")
+	_check(loop.content.vehicle().get("name") == "掠夺者", "Demo 数据包含初始车辆")
+	_check(loop.content.route_fuel_cost("未知路线") == 5, "Demo 数据包含未知路线燃料消耗")
 
 	loop.choose_route("未知路线")
 	loop.start_travel()
