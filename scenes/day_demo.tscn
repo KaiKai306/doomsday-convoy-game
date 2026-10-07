@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://src/ui/day_demo.gd" id="1_day"]
+
+[node name="DayDemo" type="Panel"]
+custom_minimum_size = Vector2(1164, 624)
+script = ExtResource("1_day")
+
+[node name="PhaseTitle" type="Label" parent="."]
+offset_left = 32.0
+offset_top = 24.0
+offset_right = 792.0
+offset_bottom = 68.0
+theme_override_colors/font_color = Color(0.902, 0.702, 0.365, 1)
+theme_override_font_sizes/font_size = 28
+
+[node name="PhaseBody" type="Label" parent="."]
+offset_left = 32.0
+offset_top = 88.0
+offset_right = 772.0
+offset_bottom = 280.0
+theme_override_colors/font_color = Color(0.816, 0.831, 0.8, 1)
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 2
+
+[node name="PhaseHint" type="Label" parent="."]
+offset_left = 32.0
+offset_top = 492.0
+offset_right = 772.0
+offset_bottom = 566.0
+theme_override_colors/font_color = Color(0.612, 0.651, 0.627, 1)
+autowrap_mode = 2
+
+[node name="PhaseActions" type="VBoxContainer" parent="."]
+offset_left = 790.0
+offset_top = 92.0
+offset_right = 1110.0
+offset_bottom = 542.0
+theme_override_constants/separation = 12
+
