@@ -22,6 +22,10 @@ func _show_phase(next_phase: GameState.Phase) -> void:
 	_clear_actions()
 	phase_title.text = "第 %d 天 · %s" % [game_state.day, _phase_name(next_phase)]
 	phase_hint.text = "当前资源：%s\n事件记录：%s" % [day_loop.resources_text(), day_loop.event_log_text()]
+	phase_title.modulate.a = 0.0
+	phase_body.modulate.a = 0.0
+	phase_hint.modulate.a = 0.0
+	phase_actions.modulate.a = 0.0
 
 	match next_phase:
 		GameState.Phase.MORNING:
@@ -50,6 +54,8 @@ func _show_phase(next_phase: GameState.Phase) -> void:
 			phase_body.text = "夜间结算完成。今天的选择已经写入事件记录，资源会在下一天继续消耗。\n\n当天记录：\n%s\n\n下一日因果：\n%s" % [day_loop.event_log_text(), day_loop.next_day_effects_text()]
 			_add_action("进入第 %d 天" % (game_state.day + 1), func(): _advance_day())
 			_add_action("返回主菜单", func(): return_to_menu.emit())
+
+	_animate_phase_content()
 
 func _choose_route(route_name: String) -> void:
 	day_loop.choose_route(route_name)
@@ -86,6 +92,19 @@ func _add_action(label_text: String, callback: Callable) -> void:
 	button.add_theme_font_size_override("font_size", 18)
 	button.pressed.connect(callback)
 	phase_actions.add_child(button)
+	button.modulate.a = 0.0
+	button.scale = Vector2(0.96, 0.96)
+	var delay := maxf(0.0, float(phase_actions.get_child_count() - 1) * 0.045)
+	var tween := create_tween().set_parallel()
+	tween.tween_property(button, "modulate:a", 1.0, 0.22).set_delay(delay)
+	tween.tween_property(button, "scale", Vector2.ONE, 0.26).set_delay(delay)
+
+func _animate_phase_content() -> void:
+	var tween := create_tween().set_parallel()
+	tween.tween_property(phase_title, "modulate:a", 1.0, 0.22)
+	tween.tween_property(phase_body, "modulate:a", 1.0, 0.30).set_delay(0.06)
+	tween.tween_property(phase_hint, "modulate:a", 1.0, 0.24).set_delay(0.12)
+	tween.tween_property(phase_actions, "modulate:a", 1.0, 0.26).set_delay(0.16)
 
 func _phase_name(current_phase: GameState.Phase) -> String:
 	match current_phase:
