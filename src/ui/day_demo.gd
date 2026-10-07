@@ -3,19 +3,71 @@ extends Panel
 
 signal return_to_menu
 
+const SAVE_SYSTEM_SCRIPT = preload("res://src/core/save_system.gd")
+
 @onready var phase_title: Label = $PhaseTitle
 @onready var phase_body: Label = $PhaseBody
 @onready var phase_hint: Label = $PhaseHint
 @onready var phase_actions: VBoxContainer = $PhaseActions
+@onready var pause_button: Button = $PauseButton
+@onready var pause_overlay: ColorRect = $PauseOverlay
+@onready var pause_status: Label = $PauseOverlay/PauseCard/Status
 
 var game_state: GameState
 var day_loop: DayLoop
+var save_system = SAVE_SYSTEM_SCRIPT.new()
+
+func _ready() -> void:
+	pause_button.pressed.connect(_toggle_pause)
+	$PauseOverlay/PauseCard/Actions/Continue.pressed.connect(_continue_game)
+	$PauseOverlay/PauseCard/Actions/Save.pressed.connect(_save_progress)
+	$PauseOverlay/PauseCard/Actions/Load.pressed.connect(_load_progress)
+	$PauseOverlay/PauseCard/Actions/Menu.pressed.connect(_leave_to_menu)
 
 func setup(state: GameState) -> void:
 	game_state = state
 	day_loop = DayLoop.new(game_state, DemoContent.new())
 	day_loop.start_new_game()
 	_show_phase(GameState.Phase.MORNING)
+
+func _toggle_pause() -> void:
+	_set_pause_visible(not pause_overlay.visible)
+
+func _set_pause_visible(visible: bool) -> void:
+	pause_overlay.visible = visible
+	pause_button.disabled = visible
+	if visible:
+		pause_status.text = "游戏已暂停"
+		pause_overlay.modulate.a = 0.0
+		var tween := create_tween()
+		tween.tween_property(pause_overlay, "modulate:a", 1.0, 0.18)
+
+func _continue_game() -> void:
+	_set_pause_visible(false)
+
+func _save_progress() -> void:
+	if day_loop == null:
+		pause_status.text = "当前没有可保存的游戏"
+		return
+	if save_system.save_to_file(game_state, day_loop):
+		pause_status.text = "已保存：第 %d 天 · %s" % [game_state.day, _phase_name(game_state.phase)]
+	else:
+		pause_status.text = "保存失败，请检查存档目录"
+
+func _load_progress() -> void:
+	if day_loop == null:
+		pause_status.text = "当前没有可读取的游戏"
+		return
+	var snapshot: Dictionary = save_system.load_from_file()
+	if snapshot.is_empty() or not save_system.restore(snapshot, game_state, day_loop):
+		pause_status.text = "没有找到可用存档"
+		return
+	_set_pause_visible(false)
+	_show_phase(game_state.phase)
+
+func _leave_to_menu() -> void:
+	_set_pause_visible(false)
+	return_to_menu.emit()
 
 func _show_phase(next_phase: GameState.Phase) -> void:
 	game_state.set_phase(next_phase)
