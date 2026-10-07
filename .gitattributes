@@ -1,0 +1,7 @@
+* text=auto eol=lf
+*.md text working-tree-encoding=UTF-8
+*.gd text working-tree-encoding=UTF-8
+*.tscn text working-tree-encoding=UTF-8
+*.tres text working-tree-encoding=UTF-8
+*.godot text working-tree-encoding=UTF-8
+

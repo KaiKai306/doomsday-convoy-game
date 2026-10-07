@@ -1,0 +1,16 @@
+# Godot 4 generated files
+.godot/
+.import/
+export/
+*.tmp
+*.translation
+
+# Local editor and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Keep the engine binary local; obtain it separately when needed.
+Godot_v*.exe
+
