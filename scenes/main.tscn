@@ -12,59 +12,112 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_menu")
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="Shade" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
-anchor_right = 1.0
+anchor_right = 0.46
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.035, 0.047, 0.055, 1)
+color = Color(0.035, 0.047, 0.055, 0.76)
 mouse_filter = 2
 
-[node name="Content" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -280.0
-offset_top = -130.0
-offset_right = 280.0
-offset_bottom = 130.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 18
-
-[node name="Title" type="Label" parent="Content"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.88, 0.68, 0.35, 1)
-theme_override_font_sizes/font_size = 42
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_left = 78.0
+offset_top = 54.0
+offset_right = 420.0
+offset_bottom = 112.0
+theme_override_colors/font_color = Color(0.9, 0.7, 0.37, 1)
+theme_override_font_sizes/font_size = 44
 text = "末日车队"
-horizontal_alignment = 1
 
-[node name="Subtitle" type="Label" parent="Content"]
-layout_mode = 2
+[node name="Subtitle" type="Label" parent="."]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 116.0
+offset_right = 520.0
+offset_bottom = 148.0
 theme_override_colors/font_color = Color(0.68, 0.72, 0.73, 1)
-theme_override_font_sizes/font_size = 18
-text = "HD-2D 末日生存经营与叙事决策"
-horizontal_alignment = 1
+theme_override_font_sizes/font_size = 16
+text = "2D 末日生存经营与叙事决策"
 
-[node name="StatusLabel" type="Label" parent="Content"]
-unique_name_in_owner = true
+[node name="Menu" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 78.0
+offset_top = 220.0
+offset_right = 370.0
+offset_bottom = 520.0
+theme_override_constants/separation = 12
+
+[node name="NewGame" type="Button" parent="Menu"]
+custom_minimum_size = Vector2(292, 58)
 layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "新游戏"
+
+[node name="Options" type="Button" parent="Menu"]
+custom_minimum_size = Vector2(292, 58)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "选项"
+
+[node name="Exit" type="Button" parent="Menu"]
+custom_minimum_size = Vector2(292, 58)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "退出"
+
+[node name="DemoPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 762.0
+offset_top = 118.0
+offset_right = 1174.0
+offset_bottom = 374.0
+modulate = Color(1, 1, 1, 0.82)
+
+[node name="PanelTitle" type="Label" parent="DemoPanel"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 22.0
+offset_right = 380.0
+offset_bottom = 54.0
+theme_override_colors/font_color = Color(0.9, 0.7, 0.37, 1)
+theme_override_font_sizes/font_size = 20
+text = "DEMO 01 · 主菜单版式"
+
+[node name="StatusLabel" type="Label" parent="DemoPanel"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 24.0
+offset_top = 78.0
+offset_right = 380.0
+offset_bottom = 160.0
 theme_override_colors/font_color = Color(0.77, 0.79, 0.76, 1)
 theme_override_font_sizes/font_size = 18
-text = "开发原型已启动"
-horizontal_alignment = 1
+text = "Demo 版式占位"
 
-[node name="Hint" type="Label" parent="Content"]
-layout_mode = 2
+[node name="PanelHint" type="Label" parent="DemoPanel"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 176.0
+offset_right = 380.0
+offset_bottom = 224.0
 theme_override_colors/font_color = Color(0.48, 0.52, 0.52, 1)
-text = "下一步：实现第一天的状态循环"
-horizontal_alignment = 1
+text = "背景：几何占位元素\n正式背景资源稍后接入"
+
+[node name="Footer" type="Label" parent="."]
+layout_mode = 0
+offset_left = 78.0
+offset_top = 650.0
+offset_right = 680.0
+offset_bottom = 680.0
+theme_override_colors/font_color = Color(0.48, 0.52, 0.52, 1)
+text = "Demo 阶段 · 1280×720 · 安卓横屏布局基线"
 
 [node name="GameState" type="Node" parent="."]
 script = ExtResource("2_state")
 
+[connection signal="pressed" from="Menu/NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="Menu/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Menu/Exit" to="." method="_on_exit_pressed"]
