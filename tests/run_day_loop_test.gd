@@ -32,6 +32,16 @@ func _init() -> void:
 	_check(state.world_facts["road_accident_modifier"] == -1, "接受请求降低下一日道路事故风险")
 	_check(loop.next_day_effects_text().contains("下降"), "夜间结算生成下一日因果")
 
+	loop.advance_to_next_day()
+	_check(state.day == 2, "夜间结算后进入第 2 天")
+	_check(state.phase == GameState.Phase.MORNING, "第 2 天从早晨阶段开始")
+	_check(loop.daily_transactions.size() == 1, "第 2 天生成一条后续事务")
+	_check(loop.daily_transactions[0].get("id") == "repair_follow_up_success", "接受请求生成对应后续事务")
+	loop.choose_route("安全路线")
+	loop.start_travel()
+	loop.resolve_travel_event()
+	_check(loop.event_log.back().contains("未发生道路事故"), "接受请求降低下一日道路事故结果")
+
 	loop.perform_camp_action("维修车辆", 2)
 	_check(state.phase == GameState.Phase.NIGHT_SETTLEMENT, "营地行动后进入夜间结算")
 	_check(state.resources["water"] == 15, "营地行动消耗饮水")
@@ -45,7 +55,7 @@ func _init() -> void:
 	_check(state.resources["water"] == 0, "资源不会扣成负数：饮水")
 	_check(state.resources["food"] == 0, "资源不会扣成负数：食物")
 	_check(state.resources["parts"] == 0, "资源不会扣成负数：零件")
-	_check(loop.event_log.size() == 5, "事件日志记录路线、突发、对话和两次行动")
+	_check(loop.event_log.size() == 7, "事件日志记录两天路线、突发、对话和两次行动")
 
 	if _failures == 0:
 		print("DAY_LOOP_TEST_PASS")

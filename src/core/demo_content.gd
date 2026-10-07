@@ -45,6 +45,15 @@ func vehicle_summary() -> String:
 func morning_transactions() -> Array:
 	return data.get("morning_transactions", []).duplicate(true)
 
+func morning_transactions_for_day(day: int, world_facts: Dictionary) -> Array:
+	if day <= 1:
+		return morning_transactions()
+	var key := str(world_facts.get("repair_priority", "deferred"))
+	var follow_up: Dictionary = data.get("follow_up_transactions", {}).get(key, {})
+	if follow_up.is_empty():
+		return morning_transactions()
+	return [follow_up.duplicate(true)]
+
 func route_fuel_cost(route_name: String) -> int:
 	var route: Dictionary = data.get("routes", {}).get(route_name, {})
 	return int(route.get("fuel_cost", 0))

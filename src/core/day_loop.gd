@@ -18,7 +18,7 @@ func start_new_game() -> void:
 	state.reset(content.initial_resources(), content.initial_trust())
 	route_choice = "安全路线"
 	event_log.clear()
-	daily_transactions = content.morning_transactions()
+	daily_transactions = content.morning_transactions_for_day(state.day, state.world_facts)
 	next_day_effects.clear()
 
 func transaction_summary() -> String:
@@ -45,7 +45,11 @@ func start_travel() -> void:
 	state.set_phase(GameState.Phase.TRAVEL)
 
 func resolve_travel_event() -> void:
-	_add_event("移动途中发现道路事故，车辆暂时减速")
+	var accident_modifier := int(state.world_facts.get("road_accident_modifier", 0))
+	if accident_modifier < 0:
+		_add_event("车辆维护生效，移动途中未发生道路事故")
+	else:
+		_add_event("移动途中发现道路事故，车辆暂时减速")
 	state.set_phase(GameState.Phase.REST_STOP)
 
 func resolve_dialogue(result: String, parts_cost: int, trust_change: int) -> void:
@@ -59,6 +63,12 @@ func next_day_effects_text() -> String:
 	if next_day_effects.is_empty():
 		return "下一天暂无额外因果。"
 	return "\n".join(next_day_effects)
+
+func advance_to_next_day() -> void:
+	state.advance_day()
+	daily_transactions = content.morning_transactions_for_day(state.day, state.world_facts)
+	next_day_effects.clear()
+	state.set_phase(GameState.Phase.MORNING)
 
 func perform_camp_action(action_name: String, parts_cost: int) -> void:
 	_consume_resource("parts", parts_cost)

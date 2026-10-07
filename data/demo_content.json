@@ -39,6 +39,35 @@
       "result": "可能获得资源路线线索"
     }
   ],
+  "follow_up_transactions": {
+    "accepted": {
+      "id": "repair_follow_up_success",
+      "speaker": "维修",
+      "need": "确认车辆状态",
+      "goal": "检查优先维修结果",
+      "urgency": "低",
+      "deadline": "今日夜间",
+      "result": "道路事故风险下降，维修员信任提高"
+    },
+    "refused": {
+      "id": "repair_follow_up_conflict",
+      "speaker": "维修",
+      "need": "解释资源分配",
+      "goal": "要求重新讨论零件分配",
+      "urgency": "高",
+      "deadline": "下一次停歇",
+      "result": "道路事故风险上升，冲突事务持续"
+    },
+    "deferred": {
+      "id": "repair_follow_up_deferred",
+      "speaker": "维修",
+      "need": "等待零件",
+      "goal": "再次提出维修请求",
+      "urgency": "中",
+      "deadline": "今日营地行动前",
+      "result": "维修请求继续保留"
+    }
+  },
   "routes": {
     "安全路线": {"fuel_cost": 4},
     "资源路线": {"fuel_cost": 6},
