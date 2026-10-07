@@ -14,7 +14,7 @@ func _init(game_state: GameState, demo_content: DemoContent) -> void:
 	content = demo_content
 
 func start_new_game() -> void:
-	state.reset(content.initial_resources())
+	state.reset(content.initial_resources(), content.initial_trust())
 	route_choice = "安全路线"
 	event_log.clear()
 	daily_transactions = content.morning_transactions()
@@ -48,6 +48,7 @@ func resolve_travel_event() -> void:
 
 func resolve_dialogue(result: String, parts_cost: int, trust_change: int) -> void:
 	_consume_resource("parts", parts_cost)
+	state.adjust_trust(trust_change)
 	_add_event("对话结果：%s，信任 %+d" % [result, trust_change])
 	state.set_phase(GameState.Phase.CAMP_ACTION)
 
@@ -62,9 +63,9 @@ func route_fuel_cost() -> int:
 	return content.route_fuel_cost(route_choice)
 
 func resources_text() -> String:
-	return "饮水 %d  食物 %d  燃料 %d  药品 %d  零件 %d" % [
+	return "饮水 %d  食物 %d  燃料 %d  药品 %d  零件 %d  信任 %d" % [
 		state.resources["water"], state.resources["food"], state.resources["fuel"],
-		state.resources["medicine"], state.resources["parts"]
+		state.resources["medicine"], state.resources["parts"], state.team_trust
 	]
 
 func event_log_text() -> String:

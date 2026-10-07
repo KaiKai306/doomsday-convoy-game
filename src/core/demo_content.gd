@@ -19,6 +19,9 @@ func _init(content_path: String = CONTENT_PATH) -> void:
 func initial_resources() -> Dictionary:
 	return data.get("initial_resources", {}).duplicate()
 
+func initial_trust() -> int:
+	return int(data.get("initial_trust", 50))
+
 func members() -> Array:
 	return data.get("members", []).duplicate(true)
 

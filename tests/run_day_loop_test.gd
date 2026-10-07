@@ -9,6 +9,7 @@ func _init() -> void:
 	_check(state.day == 1, "新游戏从第 1 天开始")
 	_check(state.phase == GameState.Phase.MORNING, "新游戏从早晨阶段开始")
 	_check(state.resources["fuel"] == 30, "新游戏燃料为 30")
+	_check(state.team_trust == 50, "新游戏信任为 50")
 	_check(loop.content.members().size() == 5, "Demo 数据包含 5 名初始成员")
 	_check(loop.content.vehicle().get("name") == "掠夺者", "Demo 数据包含初始车辆")
 	_check(loop.content.route_fuel_cost("未知路线") == 5, "Demo 数据包含未知路线燃料消耗")
@@ -26,6 +27,7 @@ func _init() -> void:
 	loop.resolve_dialogue("接受请求", 2, 1)
 	_check(state.phase == GameState.Phase.CAMP_ACTION, "对话后进入营地行动")
 	_check(state.resources["parts"] == 8, "对话正确消耗零件")
+	_check(state.team_trust == 51, "接受对话请求提高信任")
 
 	loop.perform_camp_action("维修车辆", 2)
 	_check(state.phase == GameState.Phase.NIGHT_SETTLEMENT, "营地行动后进入夜间结算")

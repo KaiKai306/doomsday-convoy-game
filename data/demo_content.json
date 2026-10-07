@@ -6,6 +6,7 @@
     "medicine": 5,
     "parts": 10
   },
+  "initial_trust": 50,
   "members": [
     {"name": "队长", "job": "路线与决策"},
     {"name": "维修", "job": "车辆维护"},
