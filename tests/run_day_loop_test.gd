@@ -12,6 +12,9 @@ func _init() -> void:
 	_check(loop.content.members().size() == 5, "Demo 数据包含 5 名初始成员")
 	_check(loop.content.vehicle().get("name") == "掠夺者", "Demo 数据包含初始车辆")
 	_check(loop.content.route_fuel_cost("未知路线") == 5, "Demo 数据包含未知路线燃料消耗")
+	_check(loop.daily_transactions.size() == 2, "新游戏生成 2 条 NPC 当日事务")
+	_check(loop.daily_transactions[0].get("urgency") == "高", "第一条事务保留紧急度")
+	_check(loop.transaction_summary().contains("维修"), "事务摘要包含说话人")
 
 	loop.choose_route("未知路线")
 	loop.start_travel()

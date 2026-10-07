@@ -39,6 +39,9 @@ func vehicle_summary() -> String:
 		int(current_vehicle.get("max_durability", 0))
 	]
 
+func morning_transactions() -> Array:
+	return data.get("morning_transactions", []).duplicate(true)
+
 func route_fuel_cost(route_name: String) -> int:
 	var route: Dictionary = data.get("routes", {}).get(route_name, {})
 	return int(route.get("fuel_cost", 0))

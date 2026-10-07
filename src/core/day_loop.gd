@@ -7,6 +7,7 @@ var state: GameState
 var content: DemoContent
 var route_choice: String = "安全路线"
 var event_log: Array[String] = []
+var daily_transactions: Array = []
 
 func _init(game_state: GameState, demo_content: DemoContent) -> void:
 	state = game_state
@@ -16,6 +17,20 @@ func start_new_game() -> void:
 	state.reset(content.initial_resources())
 	route_choice = "安全路线"
 	event_log.clear()
+	daily_transactions = content.morning_transactions()
+
+func transaction_summary() -> String:
+	if daily_transactions.is_empty():
+		return "今日暂无 NPC 事务。"
+	var lines: Array[String] = []
+	for transaction in daily_transactions:
+		lines.append("%s：%s（紧急度%s，截止%s）" % [
+			transaction.get("speaker", "未知"),
+			transaction.get("goal", "暂无目标"),
+			transaction.get("urgency", "未知"),
+			transaction.get("deadline", "未知")
+		])
+	return "\n".join(lines)
 
 func choose_route(route_name: String) -> void:
 	if route_name not in ["安全路线", "资源路线", "未知路线"]:

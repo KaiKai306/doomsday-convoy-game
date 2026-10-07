@@ -18,6 +18,26 @@
     "durability": 80,
     "max_durability": 100
   },
+  "morning_transactions": [
+    {
+      "id": "repair_priority",
+      "speaker": "维修",
+      "need": "零件",
+      "goal": "优先维修车辆",
+      "urgency": "高",
+      "deadline": "今晚",
+      "result": "车辆耐久和移动安全性提高"
+    },
+    {
+      "id": "radio_signal",
+      "speaker": "侦察",
+      "need": "路线信息",
+      "goal": "调查东侧无线电信号",
+      "urgency": "中",
+      "deadline": "出发前",
+      "result": "可能获得资源路线线索"
+    }
+  ],
   "routes": {
     "安全路线": {"fuel_cost": 4},
     "资源路线": {"fuel_cost": 6},
