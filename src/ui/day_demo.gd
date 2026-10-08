@@ -98,7 +98,7 @@ func _show_phase(next_phase: GameState.Phase) -> void:
 			phase_body.text = "昨夜车队在临时营地停下。\n成员：%s\n车辆：%s\n资源：饮水、食物、燃料、药品、零件\n\n今日 NPC 事务：\n%s" % [day_loop.content.members_summary(), day_loop.content.vehicle_summary(), day_loop.transaction_summary()]
 			_add_action("确认早晨准备", func(): _show_phase(GameState.Phase.ROUTE_SELECTION))
 		GameState.Phase.ROUTE_SELECTION:
-			phase_body.text = "选择今天的路线。路线会影响燃料消耗、抵达时间和移动突发概率。\n\n当前选择：%s" % day_loop.route_choice
+			phase_body.text = "选择今天的路线。路线会影响燃料消耗、抵达时间和移动突发概率。\n\n当前选择：%s\n当前道路事故概率：%.0f%%" % [day_loop.route_choice, day_loop.route_accident_chance() * 100.0]
 			_add_action("安全路线（燃料 -%d）" % day_loop.content.route_fuel_cost("安全路线"), func(): _choose_route("安全路线"))
 			_add_action("资源路线（燃料 -%d）" % day_loop.content.route_fuel_cost("资源路线"), func(): _choose_route("资源路线"))
 			_add_action("未知路线（燃料 -%d）" % day_loop.content.route_fuel_cost("未知路线"), func(): _choose_route("未知路线"))

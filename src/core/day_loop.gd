@@ -9,6 +9,7 @@ var route_choice: String = "安全路线"
 var event_log: Array[String] = []
 var daily_transactions: Array = []
 var next_day_effects: Array[String] = []
+var random := RandomNumberGenerator.new()
 
 func _init(game_state: GameState, demo_content: DemoContent) -> void:
 	state = game_state
@@ -44,13 +45,17 @@ func start_travel() -> void:
 	_add_event("选择了%s" % route_choice)
 	state.set_phase(GameState.Phase.TRAVEL)
 
-func resolve_travel_event() -> void:
+func resolve_travel_event(test_roll: float = -1.0) -> bool:
 	var accident_modifier := int(state.world_facts.get("road_accident_modifier", 0))
-	if accident_modifier < 0:
-		_add_event("车辆维护生效，移动途中未发生道路事故")
+	var chance := clampf(content.route_accident_chance(route_choice) + accident_modifier * 0.15, 0.0, 1.0)
+	var roll := random.randf() if test_roll < 0.0 else test_roll
+	var accident := roll < chance
+	if accident:
+		_add_event("移动途中发现道路事故，车辆暂时减速（概率 %.0f%%）" % (chance * 100.0))
 	else:
-		_add_event("移动途中发现道路事故，车辆暂时减速")
+		_add_event("车队避开道路事故（概率 %.0f%%）" % (chance * 100.0))
 	state.set_phase(GameState.Phase.REST_STOP)
+	return accident
 
 func resolve_dialogue(result: String, parts_cost: int, trust_change: int) -> void:
 	_consume_resource("parts", parts_cost)
@@ -79,6 +84,10 @@ func perform_camp_action(action_name: String, parts_cost: int) -> void:
 
 func route_fuel_cost() -> int:
 	return content.route_fuel_cost(route_choice)
+
+func route_accident_chance() -> float:
+	var modifier := int(state.world_facts.get("road_accident_modifier", 0))
+	return clampf(content.route_accident_chance(route_choice) + modifier * 0.15, 0.0, 1.0)
 
 func resources_text() -> String:
 	return "饮水 %d  食物 %d  燃料 %d  药品 %d  零件 %d  信任 %d" % [

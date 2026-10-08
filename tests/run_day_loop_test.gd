@@ -15,6 +15,7 @@ func _init() -> void:
 	_check(loop.content.members().size() == 5, "Demo 数据包含 5 名初始成员")
 	_check(loop.content.vehicle().get("name") == "掠夺者", "Demo 数据包含初始车辆")
 	_check(loop.content.route_fuel_cost("未知路线") == 5, "Demo 数据包含未知路线燃料消耗")
+	_check(is_equal_approx(loop.content.route_accident_chance("未知路线"), 0.65), "Demo 数据包含未知路线事故概率")
 	_check(loop.daily_transactions.size() == 2, "新游戏生成 2 条 NPC 当日事务")
 	_check(loop.daily_transactions[0].get("urgency") == "高", "第一条事务保留紧急度")
 	_check(loop.transaction_summary().contains("维修"), "事务摘要包含说话人")
@@ -24,7 +25,7 @@ func _init() -> void:
 	_check(state.phase == GameState.Phase.TRAVEL, "确认路线后进入移动阶段")
 	_check(state.resources["fuel"] == 25, "未知路线消耗 5 燃料")
 
-	loop.resolve_travel_event()
+	_check(loop.resolve_travel_event(0.5), "高风险未知路线在固定随机值下触发事故")
 	_check(state.phase == GameState.Phase.REST_STOP, "移动突发后抵达停歇点")
 	loop.resolve_dialogue("接受请求", 2, 1)
 	_check(state.phase == GameState.Phase.CAMP_ACTION, "对话后进入营地行动")
@@ -41,8 +42,8 @@ func _init() -> void:
 	_check(loop.daily_transactions[0].get("id") == "repair_follow_up_success", "接受请求生成对应后续事务")
 	loop.choose_route("安全路线")
 	loop.start_travel()
-	loop.resolve_travel_event()
-	_check(loop.event_log.back().contains("未发生道路事故"), "接受请求降低下一日道路事故结果")
+	_check(not loop.resolve_travel_event(0.2), "接受请求降低下一日道路事故结果")
+	_check(loop.event_log.back().contains("避开道路事故"), "低于修正后概率时不会发生事故")
 
 	var save_system = SaveSystemClass.new()
 	var snapshot := save_system.snapshot(state, loop)

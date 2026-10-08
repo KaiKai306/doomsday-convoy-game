@@ -58,5 +58,9 @@ func route_fuel_cost(route_name: String) -> int:
 	var route: Dictionary = data.get("routes", {}).get(route_name, {})
 	return int(route.get("fuel_cost", 0))
 
+func route_accident_chance(route_name: String) -> float:
+	var route: Dictionary = data.get("routes", {}).get(route_name, {})
+	return float(route.get("accident_chance", 0.0))
+
 func daily_cost(resource_name: String) -> int:
 	return int(data.get("daily_costs", {}).get(resource_name, 0))
