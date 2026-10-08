@@ -4,6 +4,8 @@ extends Panel
 signal return_to_menu
 
 const SAVE_SYSTEM_SCRIPT = preload("res://src/core/save_system.gd")
+const DESIGN_SIZE := Vector2(1164.0, 624.0)
+const SAFE_MARGIN := Vector2(16.0, 16.0)
 
 @onready var phase_title: Label = $PhaseTitle
 @onready var phase_body: Label = $PhaseBody
@@ -18,11 +20,23 @@ var day_loop: DayLoop
 var save_system = SAVE_SYSTEM_SCRIPT.new()
 
 func _ready() -> void:
+	get_viewport().size_changed.connect(_fit_to_viewport)
+	_fit_to_viewport()
 	pause_button.pressed.connect(_toggle_pause)
 	$PauseOverlay/PauseCard/Actions/Continue.pressed.connect(_continue_game)
 	$PauseOverlay/PauseCard/Actions/Save.pressed.connect(_save_progress)
 	$PauseOverlay/PauseCard/Actions/Load.pressed.connect(_load_progress)
 	$PauseOverlay/PauseCard/Actions/Menu.pressed.connect(_leave_to_menu)
+
+func _fit_to_viewport() -> void:
+	var viewport_size := get_viewport_rect().size
+	var scale_factor := minf(
+		(viewport_size.x - SAFE_MARGIN.x * 2.0) / DESIGN_SIZE.x,
+		(viewport_size.y - SAFE_MARGIN.y * 2.0) / DESIGN_SIZE.y
+	)
+	scale_factor = minf(scale_factor, 1.0)
+	scale = Vector2.ONE * scale_factor
+	position = (viewport_size - DESIGN_SIZE * scale_factor) * 0.5
 
 func setup(state: GameState) -> void:
 	game_state = state

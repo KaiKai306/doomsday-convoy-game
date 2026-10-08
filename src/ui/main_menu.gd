@@ -17,7 +17,28 @@ var _background_time: float = 0.0
 func _ready() -> void:
 	status_label.text = "Demo 版式占位\nGodot 4.7.2 · 背景美术待替换"
 	_init_background_particles()
+	get_viewport().size_changed.connect(_fit_menu_layout)
+	_fit_menu_layout()
 	_animate_menu_in()
+
+func _fit_menu_layout() -> void:
+	var viewport_size := get_viewport_rect().size
+	var safe_margin := Vector2(24.0, 24.0)
+	var scale_factor := minf(
+		(viewport_size.x - safe_margin.x * 2.0) / 1280.0,
+		(viewport_size.y - safe_margin.y * 2.0) / 720.0
+	)
+	scale_factor = clampf(scale_factor, 0.65, 1.0)
+	var offset := (viewport_size - Vector2(1280.0, 720.0) * scale_factor) * 0.5
+	_set_design_position(title_label, Vector2(78.0, 54.0), scale_factor, offset)
+	_set_design_position(subtitle_label, Vector2(82.0, 116.0), scale_factor, offset)
+	_set_design_position(menu, Vector2(78.0, 220.0), scale_factor, offset)
+	_set_design_position(demo_panel, Vector2(762.0, 118.0), scale_factor, offset)
+	_set_design_position($Footer, Vector2(78.0, 650.0), scale_factor, offset)
+
+func _set_design_position(control: Control, design_position: Vector2, scale_factor: float, offset: Vector2) -> void:
+	control.position = offset + design_position * scale_factor
+	control.scale = Vector2.ONE * scale_factor
 
 func _process(delta: float) -> void:
 	_background_time += delta
