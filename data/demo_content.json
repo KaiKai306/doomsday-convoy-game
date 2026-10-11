@@ -14,35 +14,45 @@
       "job": "路线与决策",
       "health": 100,
       "fatigue": 10,
-      "trust": 50
+      "trust": 50,
+      "maintenance_knowledge": false,
+      "learned_from": ""
     },
     {
       "name": "老赵",
       "job": "车辆维护",
       "health": 100,
       "fatigue": 10,
-      "trust": 50
+      "trust": 50,
+      "maintenance_knowledge": false,
+      "learned_from": ""
     },
     {
       "name": "许宁",
       "job": "医疗",
       "health": 100,
       "fatigue": 10,
-      "trust": 50
+      "trust": 50,
+      "maintenance_knowledge": false,
+      "learned_from": ""
     },
     {
       "name": "阿遥",
       "job": "侦察",
       "health": 100,
       "fatigue": 10,
-      "trust": 50
+      "trust": 50,
+      "maintenance_knowledge": false,
+      "learned_from": ""
     },
     {
       "name": "周禾",
       "job": "后勤",
       "health": 100,
       "fatigue": 10,
-      "trust": 50
+      "trust": 50,
+      "maintenance_knowledge": false,
+      "learned_from": ""
     }
   ],
   "vehicle": {
@@ -360,19 +370,18 @@
         "parts": 2
       },
       "repair": 15,
-      "effect": "零件 -2，耐久 +15（最高 100）"
+      "effect": "零件 -2，所选成员维修耐久 +15；掌握维修知识再 +6（最高 100）"
     },
     "阅读技术手册": {
       "cost": {},
       "knowledge": 1,
-      "effect": "知识 +1；解锁教学与记录"
+      "effect": "知识 +1；所选读者掌握维修知识，可教学或提高营地维修效率"
     },
     "教学与记录": {
       "cost": {},
       "knowledge": 1,
       "trust": 2,
-      "effect": "知识 +1，信任 +2；累计两次形成共同维护习惯",
-      "requires_manual": true
+      "effect": "教师向一位新学员传授维修知识，知识 +1，信任 +2；教学两次且三人掌握后形成共同维护习惯"
     },
     "让成员休息": {
       "cost": {},

@@ -58,6 +58,8 @@ func initialize_members(initial: Array, trust: int = 50, initial_fatigue: int = 
 		member["fatigue"] = int(member.get("fatigue", initial_fatigue))
 		member["trust"] = int(member.get("trust", trust))
 		member["last_memory"] = str(member.get("last_memory", "尚未留下对话记录。"))
+		member["maintenance_knowledge"] = bool(member.get("maintenance_knowledge", false))
+		member["learned_from"] = str(member.get("learned_from", ""))
 
 func member_named(member_name: String) -> Dictionary:
 	for member in members:

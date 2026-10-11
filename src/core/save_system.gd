@@ -31,8 +31,10 @@ func restore(saved: Dictionary, state: GameState, loop: DayLoop) -> bool:
 	state.day = int(saved.day)
 	state.phase = int(saved.phase)
 	state.resources = saved.resources.duplicate()
+	for key in DemoContent.RESOURCE_NAMES: state.resources[key] = int(state.resources[key])
 	state.team_trust = int(saved.team_trust)
 	state.world_facts = saved.world_facts.duplicate(true)
+	if state.world_facts.has("lessons"): state.world_facts.lessons = int(state.world_facts.lessons)
 	state.vehicle_health = int(saved.vehicle_health)
 	state.fatigue = int(saved.fatigue)
 	state.knowledge = int(saved.knowledge)
@@ -40,14 +42,14 @@ func restore(saved: Dictionary, state: GameState, loop: DayLoop) -> bool:
 	state.ending = str(saved.ending)
 	state.camp_position = float(saved.get("camp_position", loop.content.camp_data().get("entry_position", 100.0)))
 	if saved.has("members"):
-		state.members = saved.members.duplicate(true)
-		for member in state.members:
-			for key in ["health", "fatigue", "trust"]: member[key] = int(member[key])
+		state.initialize_members(saved.members, state.team_trust, state.fatigue)
 	else:
 		state.initialize_members(loop.content.members())
 		for member in state.members:
 			member.fatigue = state.fatigue
 			member.trust = state.team_trust
+	if not saved.has("members") or not saved.members[0].has("maintenance_knowledge"):
+		_migrate_knowledge(state, loop.content)
 	loop.route_choice = str(saved.route_choice)
 	loop.travel_style = str(saved.travel_style)
 	loop.event_log.assign(saved.event_log)
@@ -67,6 +69,9 @@ func _valid(saved: Dictionary, content: DemoContent) -> bool:
 	if saved.get("version") != SAVE_VERSION: return false
 	for key in ["resources", "world_facts"]:
 		if not saved.get(key) is Dictionary: return false
+	for key in ["manual_read", "shared_maintenance"]:
+		if saved.world_facts.has(key) and not saved.world_facts[key] is bool: return false
+	if saved.world_facts.has("lessons") and not _number(saved.world_facts.lessons, 0, 100000): return false
 	for key in ["event_log", "daily_transactions", "next_day_effects"]:
 		if not saved.get(key) is Array: return false
 	for key in ["event_log", "next_day_effects"]:
@@ -99,6 +104,15 @@ func _valid(saved: Dictionary, content: DemoContent) -> bool:
 			if not member.get("job") is String or not member.get("last_memory") is String: return false
 			for key in ["health", "fatigue", "trust"]:
 				if not _number(member.get(key), 0, 100): return false
+		if not _valid_member_knowledge(saved.members): return false
+		if saved.members[0].has("maintenance_knowledge") and saved.world_facts.get("shared_maintenance", false):
+			var known_count := 0
+			var taught_count := 0
+			for member in saved.members:
+				if not member.maintenance_knowledge: continue
+				known_count += 1
+				if member.learned_from != "技术手册": taught_count += 1
+			if known_count < 3 or taught_count < 2 or int(saved.world_facts.get("lessons", 0)) < 2: return false
 	if not _number(saved.get("transaction_index"), 0, saved.daily_transactions.size()): return false
 	for transaction in saved.daily_transactions:
 		if not transaction is Dictionary: return false
@@ -130,6 +144,51 @@ func _valid(saved: Dictionary, content: DemoContent) -> bool:
 		var target := content.member_position(str(current.speaker))
 		if target < 0.0 or absf(float(saved.get("camp_position", 100.0)) - target) > float(content.camp_data().get("interaction_range", 72.0)): return false
 	return true
+
+func _valid_member_knowledge(members: Array) -> bool:
+	# A complete absence is a legacy save. Partial fields are corruption, not migration.
+	var has_personal_fields := false
+	for member in members:
+		if member.has("maintenance_knowledge") or member.has("learned_from"): has_personal_fields = true
+	if not has_personal_fields: return true
+	var known: Dictionary = {}
+	for member in members:
+		if not member.get("maintenance_knowledge") is bool or not member.get("learned_from") is String: return false
+		if not member.maintenance_knowledge and not str(member.learned_from).is_empty(): return false
+		if member.maintenance_knowledge and str(member.learned_from).is_empty(): return false
+		known[str(member.name)] = member
+	for member in members:
+		if not member.maintenance_knowledge: continue
+		# Every teacher chain must end at a manual reader; self-teaching and cycles cannot occur in play.
+		var visited: Array[String] = [str(member.name)]
+		var source: String = member.learned_from
+		while source != "技术手册":
+			if visited.has(source) or not known.has(source) or not known[source].maintenance_knowledge: return false
+			visited.append(source)
+			source = str(known[source].learned_from)
+	return true
+
+func _migrate_knowledge(state: GameState, content: DemoContent) -> void:
+	# Old version 2 counted anonymous lessons. Assign a stable, distinct cohort in content order.
+	var lessons := int(state.world_facts.get("lessons", 0))
+	var shared: bool = state.world_facts.get("shared_maintenance", false)
+	if not state.world_facts.get("manual_read", false) and lessons == 0 and not shared: return
+	var reader := state.member_named("老赵")
+	if reader.is_empty(): return
+	reader.maintenance_knowledge = true
+	reader.learned_from = "技术手册"
+	state.world_facts["manual_read"] = true
+	if shared:
+		lessons = maxi(2, lessons)
+		state.world_facts["lessons"] = lessons
+	var remaining := mini(2, lessons)
+	for initial in content.members():
+		if remaining <= 0: break
+		if initial.name == "老赵": continue
+		var learner := state.member_named(str(initial.name))
+		learner.maintenance_knowledge = true
+		learner.learned_from = "老赵"
+		remaining -= 1
 
 func _number(value: Variant, low: float, high: float, integer: bool = true) -> bool:
 	if not (value is int or value is float): return false

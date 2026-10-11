@@ -80,7 +80,7 @@ func _init() -> void:
 		survivor.perform_camp_action("阅读技术手册" if day == 1 else ("教学与记录" if day <= 3 else "让成员休息"))
 		survivor.advance_to_next_day()
 	_check(survivor.state.phase == GameState.Phase.ENDING and survivor.state.ending == "知识的火种", "完整五日知识结局")
-	_check(survivor.state.world_facts.get("shared_maintenance", false), "重复教学形成维护习惯")
+	_check(survivor.state.world_facts.get("shared_maintenance", false), "教给两位新学员形成维护习惯")
 	_check(survivor.state.resources.water == 30 and survivor.state.resources.food == 25, "五日配给和补给总额")
 	var stranded := _new_run()
 	_reach_camp(stranded)
@@ -255,10 +255,164 @@ func _init() -> void:
 	_check(not wrong_site.perform_camp_action("启动柴油抽水机") and saves.snapshot(wrong_site.state, wrong_site) == before, "不能执行其他地点行动")
 	wrong_site.state.resources.parts = 0
 	_check(not wrong_site.perform_camp_action("修复旧油泵"), "旧油泵需要实际零件")
+	_test_personal_knowledge()
 	if failures == 0: print("DAY_LOOP_TEST_PASS checks=%d" % checks)
 	else: printerr("DAY_LOOP_TEST_FAIL failures=%d checks=%d" % [failures, checks])
 	for state in states: state.free()
 	quit(failures)
+
+func _test_personal_knowledge() -> void:
+	var spreading := _new_run()
+	_reach_camp(spreading)
+	_check(spreading.knowledge_candidates("阅读技术手册").size() == 5 and spreading.knowledge_candidates("教学与记录").is_empty(), "新游戏无人掌握维修知识")
+	_check(spreading.perform_camp_action("阅读技术手册", "老赵"), "指定读者阅读技术手册")
+	_check(spreading.state.member_named("老赵").maintenance_knowledge and spreading.state.member_named("老赵").learned_from == "技术手册", "阅读只赋予个人知识并保存来源")
+	_check(not spreading.state.member_named("队长").maintenance_knowledge and spreading.member_summary("老赵").contains("技术手册"), "其他人不会随全局知识自动掌握")
+	spreading.advance_to_next_day()
+	_reach_camp(spreading)
+	var before := saves.snapshot(spreading.state, spreading)
+	_check(not spreading.perform_camp_action("阅读技术手册", "老赵") and saves.snapshot(spreading.state, spreading) == before, "已知读者不可重复刷阅读且不消耗夜晚")
+	_check(not spreading.perform_camp_action("教学与记录", "老赵", "老赵") and saves.snapshot(spreading.state, spreading) == before, "不能自我教学")
+	_check(spreading.knowledge_candidates("教学与记录") == ["老赵"] and spreading.knowledge_candidates("教学与记录", "老赵").has("队长"), "候选教师与新学员来源于个人知识")
+	_check(spreading.perform_camp_action("教学与记录", "队长", "老赵"), "手册读者教给第一位学员")
+	_check(spreading.state.member_named("队长").learned_from == "老赵" and spreading.state.world_facts.lessons == 1 and not spreading.state.world_facts.get("shared_maintenance", false), "第一次教学记录来源但尚未形成习惯")
+	spreading.advance_to_next_day()
+	_reach_camp(spreading)
+	before = saves.snapshot(spreading.state, spreading)
+	_check(not spreading.perform_camp_action("教学与记录", "队长", "老赵") and saves.snapshot(spreading.state, spreading) == before, "重复教给同一学员不计课程且不消耗行动")
+	spreading.state.vehicle_health = 50
+	_check(spreading.perform_camp_action("教学与记录", "许宁", "队长"), "第一位学员继续教给第二位学员")
+	_check(spreading.state.member_named("许宁").learned_from == "队长" and spreading.state.world_facts.lessons == 2, "多代传播保留实际教师来源")
+	_check(spreading.state.world_facts.shared_maintenance and spreading.state.vehicle_health == 53, "两次不同新学员教学且三人掌握形成每晚维护")
+	_check(spreading.knowledge_summary().contains("许宁 ← 队长") and spreading.knowledge_summary().contains("每晚耐久 +3"), "知识总览展示传播链与共同维护")
+	var snapshot := saves.snapshot(spreading.state, spreading)
+	var resumed := _new_run()
+	_check(saves.restore(JSON.parse_string(JSON.stringify(snapshot)), resumed.state, resumed), "个人知识传播 JSON 恢复")
+	_check(resumed.state.member_named("许宁").maintenance_knowledge and resumed.state.member_named("许宁").learned_from == "队长" and resumed.state.world_facts.lessons is int and resumed.state.resources.parts is int, "JSON 恢复来源并规范字段类型")
+	var unchanged := saves.snapshot(resumed.state, resumed)
+	for corruption in ["knowledge_type", "source_type", "unknown_source", "self_source", "missing_pair", "partial_members", "unlearned_source", "cyclic_source", "lesson_type", "manual_type", "shared_type", "shared_few_members", "shared_few_lessons", "shared_readers_only", "shared_one_learner"]:
+		var corrupt := snapshot.duplicate(true)
+		match corruption:
+			"knowledge_type": corrupt.members[0].maintenance_knowledge = 1
+			"source_type": corrupt.members[0].learned_from = 1
+			"unknown_source": corrupt.members[0].learned_from = "陌生人"
+			"self_source": corrupt.members[0].learned_from = "队长"
+			"missing_pair": corrupt.members[0].erase("learned_from")
+			"partial_members":
+				corrupt.members[0].erase("learned_from")
+				corrupt.members[0].erase("maintenance_knowledge")
+			"unlearned_source": corrupt.members[0].learned_from = "阿遥"
+			"cyclic_source": corrupt.members[1].learned_from = "队长"
+			"lesson_type": corrupt.world_facts.lessons = "2"
+			"manual_type": corrupt.world_facts.manual_read = "true"
+			"shared_type": corrupt.world_facts.shared_maintenance = 1
+			"shared_few_members":
+				corrupt.members[2].maintenance_knowledge = false
+				corrupt.members[2].learned_from = ""
+			"shared_few_lessons": corrupt.world_facts.lessons = 1
+			"shared_readers_only":
+				corrupt.members[0].learned_from = "技术手册"
+				corrupt.members[2].learned_from = "技术手册"
+			"shared_one_learner": corrupt.members[2].learned_from = "技术手册"
+		_check(not saves.restore(corrupt, resumed.state, resumed) and saves.snapshot(resumed.state, resumed) == unchanged, "损坏知识存档原子拒绝 " + corruption)
+	# Explicit empty personal fields must never regain knowledge from stale global flags.
+	var phantom := _new_run()
+	_reach_camp(phantom)
+	phantom.state.world_facts = {"manual_read": true}
+	snapshot = saves.snapshot(phantom.state, phantom)
+	_check(saves.restore(JSON.parse_string(JSON.stringify(snapshot)), resumed.state, resumed) and resumed.knowledge_candidates("教学与记录").is_empty(), "显式个人空知识不从全局手册标志补全")
+	before = saves.snapshot(resumed.state, resumed)
+	_check(not resumed.perform_camp_action("教学与记录") and saves.snapshot(resumed.state, resumed) == before, "全局手册标志不能代替真正的教师")
+	# Legacy cohorts use content order even if the saved member order changes.
+	for lessons in range(3):
+		var legacy := snapshot.duplicate(true)
+		for member in legacy.members:
+			member.erase("maintenance_knowledge")
+			member.erase("learned_from")
+		legacy.members.reverse()
+		legacy.world_facts = {"manual_read": true, "lessons": lessons, "shared_maintenance": lessons == 2}
+		_check(saves.restore(JSON.parse_string(JSON.stringify(legacy)), resumed.state, resumed), "旧个人字段迁移课程 %d" % lessons)
+		_check(resumed.state.member_named("老赵").learned_from == "技术手册" and resumed.state.member_named("队长").maintenance_knowledge == (lessons >= 1) and resumed.state.member_named("许宁").maintenance_knowledge == (lessons >= 2), "旧知识按内容顺序分配不同学员 %d" % lessons)
+		_check(not resumed.state.member_named("阿遥").maintenance_knowledge and resumed.state.world_facts.shared_maintenance == (lessons == 2), "旧档维护状态保留且不扩大知识人数 %d" % lessons)
+	var legacy := snapshot.duplicate(true)
+	legacy.erase("members")
+	legacy.world_facts = {"shared_maintenance": true}
+	_check(saves.restore(legacy, resumed.state, resumed) and resumed.state.member_named("老赵").maintenance_knowledge and resumed.state.member_named("队长").maintenance_knowledge and resumed.state.member_named("许宁").maintenance_knowledge and resumed.state.world_facts.lessons == 2, "无成员的旧共同维护档补齐读者与两位学员")
+	resumed.state.day = 5
+	resumed.state.vehicle_health = 50
+	_check(resumed.perform_camp_action("让成员休息") and resumed.state.vehicle_health == 53 and resumed.state.ending == "知识的火种", "旧档共同维护继续提供每晚耐久与知识结局")
+	legacy.world_facts = {}
+	_check(saves.restore(legacy, resumed.state, resumed) and resumed.knowledge_candidates("教学与记录").is_empty(), "无知识的旧档保留无人掌握")
+	var repairing := _new_run()
+	_reach_camp(repairing)
+	repairing.state.vehicle_health = 40
+	_check(repairing.repair_amount("队长") == 15 and repairing.perform_camp_action("维修车辆", "队长") and repairing.state.vehicle_health == 55, "普通成员营地维修保留基础15耐久")
+	var skilled := _new_run()
+	_reach_camp(skilled)
+	skilled.perform_camp_action("阅读技术手册", "老赵")
+	skilled.advance_to_next_day()
+	_reach_camp(skilled)
+	skilled.state.vehicle_health = 40
+	var parts: int = skilled.state.resources.parts
+	_check(skilled.repair_amount("老赵") == 21 and skilled.perform_camp_action("维修车辆", "老赵") and skilled.state.vehicle_health == 61 and skilled.state.resources.parts == parts - 2, "掌握知识营地维修多6耐久且费用不变")
+	var dialogue := _new_run()
+	dialogue.state.member_named("老赵").maintenance_knowledge = true
+	dialogue.state.member_named("老赵").learned_from = "技术手册"
+	dialogue.finish_preparation()
+	dialogue.start_travel()
+	dialogue.resolve_travel_event(0.99)
+	var health_before: int = dialogue.state.vehicle_health
+	_check(_respond(dialogue, "accept") and dialogue.state.vehicle_health == health_before + 10, "知识效率不会改动对话维修奖励")
+	var poor := _new_run()
+	_reach_camp(poor)
+	poor.state.resources.parts = 0
+	before = saves.snapshot(poor.state, poor)
+	_check(not poor.perform_camp_action("维修车辆", "老赵") and saves.snapshot(poor.state, poor) == before, "缺资源维修不改变成员车辆或行动阶段")
+	for issue in ["dead", "tired", "distrust_teacher", "distrust_learner"]:
+		var denied := _new_run()
+		_reach_camp(denied)
+		denied.state.member_named("老赵").maintenance_knowledge = true
+		denied.state.member_named("老赵").learned_from = "技术手册"
+		match issue:
+			"dead": denied.state.member_named("队长").health = 0
+			"tired": denied.state.member_named("队长").fatigue = 70
+			"distrust_teacher": denied.state.member_named("老赵").trust = 30
+			"distrust_learner": denied.state.member_named("队长").trust = 30
+		before = saves.snapshot(denied.state, denied)
+		_check(not denied.perform_camp_action("教学与记录", "队长", "老赵") and saves.snapshot(denied.state, denied) == before, "教学参与资格不符原子拒绝 " + issue)
+		if issue in ["dead", "tired"]:
+			_check(denied.repair_amount("队长") == 0 and not denied.perform_camp_action("维修车辆", "队长") and not denied.perform_camp_action("阅读技术手册", "队长") and saves.snapshot(denied.state, denied) == before, "不合格执行者不可维修或阅读 " + issue)
+	for issue in ["teachers_tired", "teachers_distrust", "teachers_dead", "all_known"]:
+		var denied := _new_run()
+		_reach_camp(denied)
+		for member in denied.state.members:
+			if str(member.name) in ["老赵", "许宁"] or issue == "all_known":
+				member.maintenance_knowledge = true
+				member.learned_from = "技术手册"
+				match issue:
+					"teachers_tired": member.fatigue = 70
+					"teachers_distrust": member.trust = 30
+					"teachers_dead": member.health = 0
+		before = saves.snapshot(denied.state, denied)
+		_check(not denied.perform_camp_action("教学与记录") and saves.snapshot(denied.state, denied) == before, "无合格教师学员配对时自动教学原子拒绝 " + issue)
+	var borderline := _new_run()
+	_reach_camp(borderline)
+	borderline.state.member_named("老赵").maintenance_knowledge = true
+	borderline.state.member_named("老赵").learned_from = "技术手册"
+	for member_name in ["老赵", "队长"]:
+		var member := borderline.state.member_named(member_name)
+		member.fatigue = 69
+		member.trust = 31
+	_check(borderline.perform_camp_action("教学与记录", "队长", "老赵"), "疲劳69与个人信任31仍可合法教学")
+	var exhausted := _new_run()
+	_reach_camp(exhausted)
+	exhausted.state.adjust_all_fatigue(70)
+	before = saves.snapshot(exhausted.state, exhausted)
+	_check(not exhausted.perform_camp_action("阅读技术手册") and not exhausted.perform_camp_action("维修车辆") and not exhausted.perform_camp_action("教学与记录") and saves.snapshot(exhausted.state, exhausted) == before, "无人可参与时自动选择也不消耗行动")
+	var fallback := _new_run()
+	_reach_camp(fallback)
+	fallback.state.member_named("老赵").fatigue = 70
+	_check(fallback.perform_camp_action("阅读技术手册") and fallback.state.member_named("队长").maintenance_knowledge and not fallback.state.member_named("老赵").maintenance_knowledge, "默认读者不可用时自动选择合格成员")
 
 func _new_run() -> DayLoop:
 	var state := GameState.new()

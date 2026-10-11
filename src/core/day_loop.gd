@@ -194,7 +194,7 @@ func respond(response: String) -> bool:
 	if transaction_index >= daily_transactions.size(): state.set_phase(GameState.Phase.CAMP_ACTION)
 	return true
 
-func perform_camp_action(action_name: String, target_name: String = "") -> bool:
+func perform_camp_action(action_name: String, target_name: String = "", teacher_name: String = "") -> bool:
 	if state.phase != GameState.Phase.CAMP_ACTION: return false
 	var action: Dictionary = content.available_camp_actions(state.day).get(action_name, {})
 	if action.is_empty(): return false
@@ -202,11 +202,30 @@ func perform_camp_action(action_name: String, target_name: String = "") -> bool:
 		if state.member_named(target_name).is_empty():
 			last_error = "先选择需要照料的成员。"
 			return false
-	if action.get("requires_manual", false) and not state.world_facts.get("manual_read", false):
-		last_error = "需要先阅读技术手册。"
-		return false
+	# Resolve and validate every participant before spending resources or the evening.
+	if action_name in ["阅读技术手册", "维修车辆"]:
+		var candidates := knowledge_candidates(action_name)
+		if target_name.is_empty():
+			target_name = "老赵" if candidates.has("老赵") else (candidates[0] if not candidates.is_empty() else "")
+		if not candidates.has(target_name):
+			last_error = "选择尚未掌握知识、健康大于0且疲劳低于70的读者。" if action_name == "阅读技术手册" else "选择健康大于0且疲劳低于70的维修者。"
+			return false
+	if action_name == "教学与记录":
+		if teacher_name.is_empty():
+			for candidate in knowledge_candidates(action_name):
+				var candidate_learners := knowledge_candidates(action_name, candidate)
+				if (target_name.is_empty() and not candidate_learners.is_empty()) or candidate_learners.has(target_name):
+					teacher_name = candidate
+					break
+		var learners: Array[String] = []
+		if not teacher_name.is_empty(): learners = knowledge_candidates(action_name, teacher_name)
+		if target_name.is_empty() and not learners.is_empty(): target_name = learners[0]
+		if teacher_name.is_empty() or not learners.has(target_name):
+			last_error = "教师须掌握维修知识，学员尚未掌握；两人须不同、健康大于0、疲劳低于70且个人信任大于30。"
+			return false
 	if not _pay(action.get("cost", {})): return false
-	state.vehicle_health = mini(100, state.vehicle_health + int(action.get("repair", 0)))
+	var repair := repair_amount(target_name) if action_name == "维修车辆" else int(action.get("repair", 0))
+	state.vehicle_health = mini(100, state.vehicle_health + repair)
 	if int(action.get("fatigue", 0)) != 0: state.adjust_all_fatigue(int(action.fatigue))
 	state.knowledge += int(action.get("knowledge", 0))
 	state.adjust_trust(int(action.get("trust", 0)))
@@ -222,13 +241,30 @@ func perform_camp_action(action_name: String, target_name: String = "") -> bool:
 	if not str(action.get("fact", "")).is_empty():
 		state.world_facts[str(action.fact)] = true
 		next_day_effects.append(str(action.get("future", "这个地点的选择已留下记录。")))
-	if action_name == "阅读技术手册": state.world_facts["manual_read"] = true
+	var effect: String = str(action.get("effect", ""))
+	if action_name == "维修车辆":
+		effect = "零件 -2，耐久 +%d（最高 100）" % repair
+		state.member_named(target_name).last_memory = "承担营地维修：耐久 +%d。" % repair
+	if action_name == "阅读技术手册":
+		var reader := state.member_named(target_name)
+		reader.maintenance_knowledge = true
+		reader.learned_from = "技术手册"
+		reader.last_memory = "读懂技术手册，掌握了维修知识。"
+		state.world_facts["manual_read"] = true
+		effect = "知识 +1；%s掌握维修知识" % target_name
 	if action_name == "教学与记录":
+		var learner := state.member_named(target_name)
+		learner.maintenance_knowledge = true
+		learner.learned_from = teacher_name
+		learner.last_memory = "向%s学习，掌握了维修知识。" % teacher_name
+		state.member_named(teacher_name).last_memory = "把维修知识教给了%s。" % target_name
 		state.world_facts["lessons"] = int(state.world_facts.get("lessons", 0)) + 1
-		if int(state.world_facts.lessons) >= 2 and not state.world_facts.get("shared_maintenance", false):
+		effect = "%s教给%s；知识 +1，信任 +2" % [teacher_name, target_name]
+		next_day_effects.append("%s的维修知识来自%s，今后也能维修或继续教学。" % [target_name, teacher_name])
+		if int(state.world_facts.lessons) >= 2 and _knowledge_count() >= 3 and _taught_count() >= 2 and not state.world_facts.get("shared_maintenance", false):
 			state.world_facts["shared_maintenance"] = true
-			_add_event("两次共同教学与记录 → 共同维护习惯形成，今后每天耐久 +3")
-	_add_event("营地 · %s%s → %s" % [action_name, "（%s）" % target_name if not target_name.is_empty() else "", action.get("effect", "")])
+			_add_event("两次传授给不同新学员，三人掌握维修知识 → 共同维护习惯形成，今后每天耐久 +3")
+	_add_event("营地 · %s%s → %s" % [action_name, "（%s）" % target_name if not target_name.is_empty() else "", effect])
 	_settle_night()
 	return true
 
@@ -316,7 +352,54 @@ func medical_target() -> Dictionary:
 func member_summary(member_name: String) -> String:
 	var member := state.member_named(member_name)
 	if member.is_empty(): return ""
-	return "%s · %s\n健康 %d / 疲劳 %d / 个人信任 %d\n记忆：%s" % [member.name, member.job, member.health, member.fatigue, member.trust, member.last_memory]
+	var knowledge_text := "已掌握（来源：%s）" % member.get("learned_from", "") if member.get("maintenance_knowledge", false) else "尚未掌握"
+	return "%s · %s\n健康 %d / 疲劳 %d / 个人信任 %d\n维修知识：%s\n记忆：%s" % [member.name, member.job, member.health, member.fatigue, member.trust, knowledge_text, member.last_memory]
+
+func knowledge_candidates(action_name: String, teacher_name: String = "") -> Array[String]:
+	var candidates: Array[String] = []
+	if action_name == "教学与记录" and not teacher_name.is_empty():
+		var teacher := state.member_named(teacher_name)
+		if not _can_work(teacher) or not teacher.get("maintenance_knowledge", false) or int(teacher.trust) <= 30: return candidates
+	for member in state.members:
+		if not _can_work(member): continue
+		var knows: bool = member.get("maintenance_knowledge", false)
+		match action_name:
+			"阅读技术手册":
+				if not knows: candidates.append(str(member.name))
+			"维修车辆": candidates.append(str(member.name))
+			"教学与记录":
+				if int(member.trust) <= 30: continue
+				if teacher_name.is_empty() and knows: candidates.append(str(member.name))
+				elif not teacher_name.is_empty() and not knows and member.name != teacher_name: candidates.append(str(member.name))
+	return candidates
+
+func repair_amount(member_name: String) -> int:
+	var member := state.member_named(member_name)
+	if not _can_work(member): return 0
+	return int(content.camp_actions().get("维修车辆", {}).get("repair", 15)) + (6 if member.get("maintenance_knowledge", false) else 0)
+
+func knowledge_summary() -> String:
+	var lines: Array[String] = []
+	for member in state.members:
+		if member.get("maintenance_knowledge", false):
+			lines.append("%s ← %s" % [member.name, member.get("learned_from", "")])
+	var progress := "共同维护已形成：每晚耐久 +3" if state.world_facts.get("shared_maintenance", false) else "共同维护进度：新学员教学 %d/2，掌握 %d/3 人" % [mini(2, int(state.world_facts.get("lessons", 0))), mini(3, _knowledge_count())]
+	return "维修知识：%s\n%s" % [" / ".join(lines) if not lines.is_empty() else "尚无人掌握；先安排阅读技术手册", progress]
+
+func _can_work(member: Dictionary) -> bool:
+	return not member.is_empty() and int(member.health) > 0 and int(member.fatigue) < 70
+
+func _knowledge_count() -> int:
+	var count := 0
+	for member in state.members:
+		if member.get("maintenance_knowledge", false): count += 1
+	return count
+
+func _taught_count() -> int:
+	var count := 0
+	for member in state.members:
+		if member.get("maintenance_knowledge", false) and str(member.get("learned_from", "")) not in ["", "技术手册"]: count += 1
+	return count
 
 func _sort_transactions() -> void:
 	# Stable order within each urgency level; conflicts precede low-priority follow-ups.

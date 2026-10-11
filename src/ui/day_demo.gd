@@ -26,6 +26,8 @@ var team_overlay: ColorRect
 var team_cards: VBoxContainer
 var team_open := false
 var camp_view := "site"
+var camp_action_choice := ""
+var knowledge_teacher := ""
 
 func _ready() -> void:
 	theme = ConvoyTheme.create()
@@ -328,12 +330,16 @@ func _close_conversation() -> void:
 	refresh()
 
 func _camp() -> void:
-	_heading("今晚只能做一件事", "探索、维修、阅读、照料或休息共用一次行动，之后结算配给。")
+	if camp_action_choice.is_empty():
+		_heading("今晚只能做一件事", "探索、维修、阅读、照料或休息共用一次行动，之后结算配给。")
 	var tabs := HBoxContainer.new()
 	primary_actions.add_child(tabs)
 	for view in ["site", "daily", "medical"]:
 		var names := {"site": "当地发现", "daily": "常规行动", "medical": "照料成员"}
 		tabs.add_child(ConvoyTheme.button(("● " if camp_view == view else "") + str(names[view]), func(): _switch_camp_view(view), "camp_tab_" + view))
+	if not camp_action_choice.is_empty():
+		_camp_assignment()
+		return
 	if camp_view == "site":
 		var event := day_loop.content.stop_event(game_state.day)
 		_heading(str(event.get("title", "当地发现")), str(event.get("description", "")))
@@ -348,21 +354,79 @@ func _camp() -> void:
 			if int(member.health) < 100 or int(member.fatigue) > 0:
 				_action("照料%s / 健康 %d，疲劳 %d" % [member.name, member.health, member.fatigue], func(): _execute(day_loop.perform_camp_action("照料伤员", str(member.name))), "treat_" + str(member.name), day_loop.can_afford({"medicine": 1}))
 		return
+	_note(day_loop.knowledge_summary())
 	for name_key in day_loop.content.camp_actions():
 		var action: Dictionary = day_loop.content.camp_actions()[name_key]
 		if action.get("target_required", false): continue
+		if name_key in ["阅读技术手册", "教学与记录", "维修车辆"]:
+			var available := not day_loop.knowledge_candidates(name_key).is_empty()
+			if name_key == "教学与记录":
+				available = false
+				for teacher_name in day_loop.knowledge_candidates(name_key):
+					if not day_loop.knowledge_candidates(name_key, teacher_name).is_empty(): available = true
+			_action(name_key + "  /  选择成员", func(): _choose_camp_action(name_key), "camp_" + name_key, available and day_loop.can_afford(action.cost))
+			_note(str(action.effect))
+			if not available: _note("目前没有符合条件的成员。可以先照料或休息，再在下一晚尝试。")
+			continue
 		var unlocked: bool = not action.get("requires_manual", false) or game_state.world_facts.get("manual_read", false)
 		_action(name_key, func(): _execute(day_loop.perform_camp_action(name_key)), "camp_" + name_key, unlocked and day_loop.can_afford(action.cost))
 		_note(str(action.effect) + ("\n需要先阅读技术手册。" if not unlocked else ""))
 
 func _switch_camp_view(view: String) -> void:
 	camp_view = view
+	camp_action_choice = ""
+	knowledge_teacher = ""
 	refresh()
+
+func _choose_camp_action(action_name: String) -> void:
+	camp_action_choice = action_name
+	knowledge_teacher = ""
+	refresh()
+
+func _choose_teacher(member_name: String) -> void:
+	knowledge_teacher = member_name
+	refresh()
+
+func _cancel_camp_assignment() -> void:
+	camp_action_choice = ""
+	knowledge_teacher = ""
+	refresh()
+
+func _camp_assignment() -> void:
+	_heading(camp_action_choice, "选择参与成员后执行，占用今晚唯一行动。返回选择不会消耗物资或行动。")
+	_note("参与者须健康 >0、疲劳 <70；教学双方个人信任须 >30。")
+	if camp_action_choice == "教学与记录":
+		_note("先选教师" if knowledge_teacher.is_empty() else "教师：%s  /  再选一位尚未掌握的学员" % knowledge_teacher)
+	var candidates := day_loop.knowledge_candidates(camp_action_choice, knowledge_teacher)
+	for member in game_state.members:
+		var member_name := str(member.name)
+		var available := member_name in candidates
+		var description := "%s / 健康 %d，疲劳 %d" % [member_name, member.health, member.fatigue]
+		match camp_action_choice:
+			"阅读技术手册":
+				_action("%s阅读 / 知识 +1" % member_name, func(): _execute(day_loop.perform_camp_action(camp_action_choice, member_name)), "read_" + member_name, available)
+			"维修车辆":
+				var repair := mini(100 - game_state.vehicle_health, day_loop.repair_amount(member_name))
+				_action("%s维修 / 零件 -2\n恢复耐久 +%d（最高 100）" % [member_name, repair], func(): _execute(day_loop.perform_camp_action(camp_action_choice, member_name)), "repair_" + member_name, available and day_loop.can_afford({"parts": 2}))
+			"教学与记录":
+				description += "，信任 %d" % int(member.trust)
+				if knowledge_teacher.is_empty():
+					available = available and not day_loop.knowledge_candidates(camp_action_choice, member_name).is_empty()
+					_action("由%s教学" % member_name, func(): _choose_teacher(member_name), "teacher_" + member_name, available)
+				else:
+					_action("教给%s / 知识 +1，信任 +2" % member_name, func(): _execute(day_loop.perform_camp_action(camp_action_choice, member_name, knowledge_teacher)), "teach_" + member_name, available)
+		var learned: bool = member.get("maintenance_knowledge", false)
+		_note(description + (" / 已掌握维修知识" if learned else " / 尚未掌握"))
+	if candidates.is_empty(): _note("没有符合条件的成员；可以返回后选择照料或休息。")
+	if not knowledge_teacher.is_empty():
+		_action("重新选择教师", func(): _choose_teacher(""), "change_teacher")
+	_action("返回常规行动", _cancel_camp_assignment, "cancel_assignment")
 
 func _night() -> void:
 	_heading("今夜，选择留下了什么", "夜间配给已扣除。以下结果已经生效。")
 	_note(day_loop.event_log_text())
 	_note("留给明天\n" + day_loop.next_day_effects_text())
+	_note(day_loop.knowledge_summary())
 	_action("查看旅途结果" if not game_state.ending.is_empty() else "进入第 %d 天  →" % (game_state.day + 1), func(): _execute(day_loop.advance_to_next_day()), "next_day")
 
 func _heading(text: String, description: String) -> void:
@@ -376,7 +440,7 @@ func _action(text: String, callback: Callable, id: String, enabled: bool = true)
 	var button := ConvoyTheme.button(text, callback, id)
 	button.disabled = not enabled
 	button.add_theme_font_size_override("font_size", 17)
-	if id in ["routes", "depart", "next_day", "ending_menu", "stranded", "close_conversation"]:
+	if id in ["routes", "depart", "next_day", "ending_menu", "stranded", "close_conversation", "cancel_assignment", "change_teacher"]:
 		primary_actions.add_child(button)
 	else:
 		actions.add_child(button)
@@ -384,6 +448,8 @@ func _action(text: String, callback: Callable, id: String, enabled: bool = true)
 func _execute(success: bool) -> void:
 	if success:
 		inspected_member = ""
+		camp_action_choice = ""
+		knowledge_teacher = ""
 		if game_state.phase != GameState.Phase.CAMP_ACTION: camp_view = "site"
 		refresh()
 	else: feedback.text = day_loop.last_error if not day_loop.last_error.is_empty() else "这个行动目前无法执行。"
@@ -405,6 +471,8 @@ func _load() -> void:
 		return
 	_toggle_pause()
 	inspected_member = ""
+	camp_action_choice = ""
+	knowledge_teacher = ""
 	refresh()
 
 func _phase_name() -> String:
