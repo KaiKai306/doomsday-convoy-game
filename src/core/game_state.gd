@@ -35,6 +35,7 @@ var knowledge: int = 0
 var tracking: int = 0
 var ending: String = ""
 var camp_position: float = 100.0
+var members: Array = []
 
 func reset(initial_resources: Dictionary = DEFAULT_RESOURCES, initial_trust: int = 50) -> void:
 	day = 1
@@ -48,6 +49,39 @@ func reset(initial_resources: Dictionary = DEFAULT_RESOURCES, initial_trust: int
 	tracking = 0
 	ending = ""
 	camp_position = 100.0
+	members.clear()
+
+func initialize_members(initial: Array, trust: int = 50, initial_fatigue: int = 10) -> void:
+	members = initial.duplicate(true)
+	for member in members:
+		member["health"] = int(member.get("health", 100))
+		member["fatigue"] = int(member.get("fatigue", initial_fatigue))
+		member["trust"] = int(member.get("trust", trust))
+		member["last_memory"] = str(member.get("last_memory", "尚未留下对话记录。"))
+
+func member_named(member_name: String) -> Dictionary:
+	for member in members:
+		if member.name == member_name: return member
+	return {}
+
+func adjust_member(member_name: String, health_change: int = 0, fatigue_change: int = 0, trust_change: int = 0) -> void:
+	var member := member_named(member_name)
+	if member.is_empty(): return
+	member.health = clampi(int(member.health) + health_change, 0, 100)
+	member.fatigue = clampi(int(member.fatigue) + fatigue_change, 0, 100)
+	member.trust = clampi(int(member.trust) + trust_change, 0, 100)
+	if fatigue_change != 0: sync_fatigue()
+
+func adjust_all_fatigue(amount: int) -> void:
+	for member in members:
+		member.fatigue = clampi(int(member.fatigue) + amount, 0, 100)
+	sync_fatigue()
+
+func sync_fatigue() -> void:
+	if members.is_empty(): return
+	var total := 0
+	for member in members: total += int(member.fatigue)
+	fatigue = roundi(float(total) / members.size())
 
 func adjust_trust(amount: int) -> void:
 	team_trust = clampi(team_trust + amount, 0, 100)

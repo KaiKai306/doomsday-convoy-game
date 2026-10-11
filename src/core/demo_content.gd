@@ -75,6 +75,16 @@ func daily_cost(resource_name: String) -> int:
 func camp_actions() -> Dictionary:
 	return data.get("camp_actions", {})
 
+func stop_event(day: int) -> Dictionary:
+	var events: Array = data.get("stop_events", [])
+	return events[clampi(day - 1, 0, events.size() - 1)] if not events.is_empty() else {}
+
+func available_camp_actions(day: int) -> Dictionary:
+	var result := camp_actions().duplicate(true)
+	for action_name in stop_event(day).get("actions", {}):
+		result[action_name] = stop_event(day).actions[action_name].duplicate(true)
+	return result
+
 func demo_days() -> int:
 	return int(data.get("demo_days", 5))
 

@@ -181,6 +181,10 @@ func _draw() -> void:
 		_person(position, Color(member.color), false, false)
 		_text(position + Vector2(-26, -60), str(member.name), 17, ConvoyTheme.GOLD if selected else ConvoyTheme.TEXT)
 		_text(position + Vector2(-32, -80), "优先事务" if selected else ("已回应" if completed else str(member.job)), 13, ConvoyTheme.GOLD if selected else ConvoyTheme.MUTED)
+		var condition := loop.state.member_named(str(member.name))
+		if not condition.is_empty() and int(condition.health) < 100:
+			draw_rect(Rect2(position + Vector2(-18, -55), Vector2(36, 3)), Color("#432a2b"))
+			draw_rect(Rect2(position + Vector2(-18, -55), Vector2(36 * float(condition.health) / 100, 3)), Color("#d9957a"))
 	_person(Vector2(loop.state.camp_position, floor_y), Color("#d7c2a0"), true, walking)
 	_text(Vector2(loop.state.camp_position - 18, floor_y - 60), "队长", 15, ConvoyTheme.TEXT)
 	draw_set_transform(Vector2.ZERO)

@@ -27,10 +27,15 @@ func _run() -> void:
 		quit(1)
 		return
 	var ui: DayDemo = main.day_demo
+	ui.day_loop.random.seed = 20261011
 	if not output_dir.is_empty(): ui.save_system = SaveSystem.new(output_dir + "/save")
 	_check(ui.game_state.phase == GameState.Phase.MORNING, "新游戏按钮")
 	_check(_inside(ui, "routes"), "早晨推进按钮始终在画布内")
 	await _capture("02_morning")
+	_press(ui, "team")
+	_check(ui.team_open and ui.team_cards.get_child_count() == 5, "成员总览显示五个独立状态")
+	await _capture("14_team")
+	_press(ui, "close_team")
 	_press(ui, "prepare_info")
 	_check(ui.game_state.team_trust == 52, "准备按钮真实生效")
 	_press(ui, "routes")
@@ -42,6 +47,11 @@ func _run() -> void:
 	await _capture("03_routes")
 	_press(ui, "depart")
 	_check(ui.game_state.phase == GameState.Phase.TRAVEL, "出发按钮")
+	_press(ui, "team")
+	var before_team := ui.day_loop.travel_progress
+	ui._process(10)
+	_check(ui.day_loop.travel_progress == before_team, "查看成员总览暂停自动行进")
+	_press(ui, "close_team")
 	ui.day_loop.travel_progress = 0.3
 	_press(ui, "pause")
 	ui._process(10)
@@ -82,6 +92,7 @@ func _run() -> void:
 	_press(ui, "respond_accept")
 	_check(ui.game_state.phase == GameState.Phase.CAMP_ACTION, "队列结束进入营地")
 	await _capture("06_camp")
+	_press(ui, "camp_tab_daily")
 	_press(ui, "camp_阅读技术手册")
 	await process_frame
 	_check(ui.game_state.phase == GameState.Phase.NIGHT_SETTLEMENT, "营地按钮到夜间")
@@ -100,6 +111,7 @@ func _run() -> void:
 			if ui.game_state.phase == GameState.Phase.REST_STOP:
 				_approach(ui)
 				_press(ui, "respond_defer")
+		_press(ui, "camp_tab_daily")
 		_press(ui, "camp_教学与记录" if day <= 3 else "camp_让成员休息")
 		_press(ui, "next_day")
 	_check(ui.game_state.phase == GameState.Phase.ENDING and ui.game_state.ending == "知识的火种", "按钮完整五日闭环")
@@ -135,6 +147,14 @@ func _run() -> void:
 		await _mouse_point(ui.exploration, Vector2(250, ui.exploration.size.y * 0.72))
 		ui.exploration._physics_process(2)
 		_check(is_equal_approx(ui.game_state.camp_position, 250), "宽横屏指针坐标正确")
+	if ui != null:
+		_press(ui, "pause")
+		_press(ui, "menu")
+		await process_frame
+	root.content_scale_size = Vector2i(1280, 720)
+	root.size = Vector2i(1280, 720)
+	await process_frame
+	await _test_new_features()
 	main.queue_free()
 	await process_frame
 	print("UI_TEST_%s checks=%d failures=%d" % ["PASS" if failures == 0 else "FAIL", checks, failures])
@@ -245,6 +265,70 @@ func _test_camp_controls(ui: DayDemo) -> void:
 	_check(is_equal_approx(before, ui.game_state.camp_position), "继续后没有残留方向")
 	await _touch(scene, Vector2(-50, -50), 4, false)
 	_check(ui.game_state.resources == resources, "营地移动不额外消耗资源")
+
+func _finish_requests(ui: DayDemo) -> void:
+	for i in range(3):
+		if ui.game_state.phase == GameState.Phase.REST_STOP:
+			_approach(ui)
+			_press(ui, "respond_defer")
+
+func _test_new_features() -> void:
+	var patient_state := GameState.new()
+	var clinic: DayDemo = load("res://scenes/day_demo.tscn").instantiate()
+	root.add_child(clinic)
+	clinic.setup(patient_state)
+	clinic.save_system = SaveSystem.new(output_dir + "/medical_save")
+	_press(clinic, "routes")
+	_press(clinic, "depart")
+	clinic.day_loop.resolve_travel_event(0.0)
+	clinic.refresh()
+	_finish_requests(clinic)
+	_check(clinic.game_state.phase == GameState.Phase.CAMP_ACTION, "定向治疗测试进入营地")
+	_press(clinic, "team")
+	await _capture("17_team_injury")
+	_press(clinic, "close_team")
+	_press(clinic, "camp_tab_medical")
+	await _capture("15_treatment")
+	var other_health: int = clinic.game_state.member_named("许宁").health
+	_press(clinic, "treat_老赵")
+	_check(clinic.game_state.member_named("老赵").health == 100 and clinic.game_state.member_named("许宁").health == other_health, "治疗按钮只作用于所选老赵")
+	_check(clinic.game_state.phase == GameState.Phase.NIGHT_SETTLEMENT and clinic.game_state.resources.medicine == 4, "定向治疗消耗药品与一次行动")
+	_press(clinic, "pause")
+	_press(clinic, "save")
+	clinic.game_state.member_named("老赵").health = 1
+	_press(clinic, "load")
+	_check(clinic.game_state.member_named("老赵").health == 100, "文件读档恢复个人健康")
+	_press(clinic, "team")
+	await _capture("16_team_after_treatment")
+	_press(clinic, "close_team")
+	clinic.queue_free()
+	await process_frame
+	patient_state.free()
+	_press(main, "new_game")
+	await process_frame
+	var ui: DayDemo = main.day_demo
+	var options := ["修复旧油泵", "只取入口物资", "启动柴油抽水机", "围火照看大家", "用备件交换口粮"]
+	ui.day_loop.random.seed = 20261011
+	for day in range(1, 6):
+		_press(ui, "routes")
+		_press(ui, "route_安全路线")
+		_press(ui, "style_低噪音")
+		_press(ui, "depart")
+		ui.day_loop.resolve_travel_event(0.99)
+		ui.refresh()
+		_finish_requests(ui)
+		_check(ui.game_state.phase == GameState.Phase.CAMP_ACTION and ui.camp_view == "site", "每日默认显示当地发现 %d" % day)
+		await _capture("site_%02d" % day)
+		var old_fuel: int = ui.game_state.resources.fuel
+		var old_water: int = ui.game_state.resources.water
+		_press(ui, "site_" + options[day - 1])
+		_check(ui.game_state.phase == GameState.Phase.NIGHT_SETTLEMENT, "地点按钮完成一次行动 %d" % day)
+		if day == 3:
+			_check(ui.game_state.resources.fuel == old_fuel - 2 and ui.game_state.resources.water == old_water + 7 and ui.game_state.tracking == 12, "抽水按钮真实成本收益和追踪")
+		_press(ui, "next_day")
+	_check(ui.game_state.phase == GameState.Phase.ENDING and ui.game_state.ending == "仍在路上", "五日地点事件策略可完成旅程")
+	_press(ui, "ending_menu")
+	await process_frame
 
 func _inside(ui: DayDemo, id: String) -> bool:
 	var button := _find(ui, id)

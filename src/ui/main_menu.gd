@@ -47,7 +47,7 @@ func _ready() -> void:
 	text.add_child(continue_button)
 	text.add_child(ConvoyTheme.button("关于这段旅途", _about, "about"))
 	text.add_child(ConvoyTheme.button("离开游戏", func(): confirmation.popup_centered(Vector2i(420, 180)), "exit"))
-	message = ConvoyTheme.label("五日体验版 0.3\n营地探索 / 成员对话 / 共同记忆", 16, ConvoyTheme.MUTED)
+	message = ConvoyTheme.label("五日体验版 0.4\n成员处境 / 地点取舍 / 共同记忆", 16, ConvoyTheme.MUTED)
 	text.add_child(message)
 	var intro := PanelContainer.new()
 	intro.position = Vector2(790, 75)

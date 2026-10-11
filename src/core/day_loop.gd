@@ -23,6 +23,7 @@ func _init(game_state: GameState, demo_content: DemoContent) -> void:
 
 func start_new_game() -> void:
 	state.reset(content.initial_resources(), content.initial_trust())
+	state.initialize_members(content.members(), content.initial_trust())
 	state.vehicle_health = int(content.vehicle().get("durability", 80))
 	route_choice = "安全路线"
 	travel_style = "低噪音"
@@ -37,11 +38,22 @@ func _begin_morning() -> void:
 	travel_progress = 0.0
 	travel_resolved = false
 	conversation_open = false
-	daily_transactions = content.morning_transactions_for_day(state.day, state.world_facts)
+	var facts := state.world_facts.duplicate(true)
+	if int(state.member_named("老赵").trust) <= 30: facts["repair_priority"] = "refuse"
+	daily_transactions = content.morning_transactions_for_day(state.day, facts)
 	if int(state.resources.water) < content.daily_cost("water") * 2:
 		daily_transactions.push_front(content.transaction("water"))
-	elif state.fatigue >= 35:
-		daily_transactions.push_front(content.transaction("medical"))
+	var patient := medical_target()
+	if not patient.is_empty() and (int(patient.health) <= 75 or int(patient.fatigue) >= 35):
+		var request := content.transaction("medical")
+		request["target_member"] = str(patient.name)
+		request.goal = "照料%s的伤势与疲劳" % patient.name
+		request.body = "“%s的健康只有%d，疲劳已经%d。给我一份药品，我先处理伤势；晚上仍需要考虑让大家休息。”" % [patient.name, patient.health, patient.fatigue]
+		request.responses.accept["health"] = 20
+		request.responses.accept.effect = "药品 -1，%s健康 +20、疲劳 -15，全队信任 +3" % patient.name
+		request.responses.refuse.effect = "全队信任 -4，保留药品；%s伤势未处理" % patient.name
+		daily_transactions.push_front(request)
+	_sort_transactions()
 	daily_transactions = daily_transactions.slice(0, 3)
 	state.set_phase(GameState.Phase.MORNING)
 
@@ -57,7 +69,7 @@ func prepare(action: String) -> bool:
 			_add_event("公开今日路线情报 → 信任 +2")
 		"分配饮水":
 			if not _pay({"water": 2}): return false
-			state.fatigue = maxi(0, state.fatigue - 8)
+			state.adjust_all_fatigue(-8)
 			_add_event("补充饮水 → 饮水 -2，疲劳 -8（下限 0）")
 		_: return false
 	prepared = true
@@ -104,13 +116,20 @@ func resolve_travel_event(test_roll: float = -1.0) -> bool:
 	else:
 		_add_event("避开道路事故 → 正常行驶损耗，耐久 -4")
 	state.vehicle_health = maxi(0, state.vehicle_health - wear)
+	if accident:
+		var injury := 5 if travel_style == "绕行" else 12
+		state.adjust_member("老赵", -injury)
+		_add_event("老赵检查车底时擦伤 → 老赵健康 -%d" % injury)
 	var noise := 12 if travel_style == "快速" else (2 if travel_style == "低噪音" else 5)
 	state.tracking = clampi(state.tracking + noise - 4, 0, 100)
-	state.fatigue = mini(100, state.fatigue + (6 if travel_style == "快速" else 10))
+	state.adjust_all_fatigue(6 if travel_style == "快速" else 10)
+	state.adjust_member("阿遥", 0, 3)
 	if state.tracking >= 25:
 		state.vehicle_health = maxi(0, state.vehicle_health - 8)
 		state.tracking = maxi(0, state.tracking - 10)
 		_add_event("发动机噪音积累 → 异变兽追上车队，耐久 -8，追踪 -10")
+		state.adjust_member("阿遥", -15)
+		_add_event("阿遥掩护撤离时受伤 → 阿遥健康 -15")
 	var gains: Dictionary = content.route_data(route_choice).get("supplies", {})
 	for key in gains: state.resources[key] = int(state.resources.get(key, 0)) + int(gains[key])
 	var route_knowledge := int(content.route_data(route_choice).get("knowledge", 0))
@@ -157,7 +176,12 @@ func respond(response: String) -> bool:
 	state.adjust_trust(int(option.get("trust", 0)))
 	state.vehicle_health = clampi(state.vehicle_health + int(option.get("repair", 0)), 0, 100)
 	state.knowledge += int(option.get("knowledge", 0))
-	state.fatigue = clampi(state.fatigue + int(option.get("fatigue", 0)), 0, 100)
+	var target_name: String = str(transaction.get("target_member", transaction.speaker))
+	state.adjust_member(str(transaction.speaker), 0, 0, int(option.get("trust", 0)))
+	if transaction.id == "water_request": state.adjust_all_fatigue(int(option.get("fatigue", 0)))
+	else: state.adjust_member(target_name, int(option.get("health", 0)), int(option.get("fatigue", 0)))
+	var speaker := state.member_named(str(transaction.speaker))
+	if not speaker.is_empty(): speaker.last_memory = "%s：%s" % [option.get("label", response), option.get("effect", "")]
 	var fact_key: String = transaction.get("fact", "")
 	if not fact_key.is_empty(): state.world_facts[fact_key] = response
 	if fact_key == "repair_priority":
@@ -170,25 +194,41 @@ func respond(response: String) -> bool:
 	if transaction_index >= daily_transactions.size(): state.set_phase(GameState.Phase.CAMP_ACTION)
 	return true
 
-func perform_camp_action(action_name: String) -> bool:
+func perform_camp_action(action_name: String, target_name: String = "") -> bool:
 	if state.phase != GameState.Phase.CAMP_ACTION: return false
-	var action: Dictionary = content.camp_actions().get(action_name, {})
+	var action: Dictionary = content.available_camp_actions(state.day).get(action_name, {})
 	if action.is_empty(): return false
+	if action.get("target_required", false):
+		if state.member_named(target_name).is_empty():
+			last_error = "先选择需要照料的成员。"
+			return false
 	if action.get("requires_manual", false) and not state.world_facts.get("manual_read", false):
 		last_error = "需要先阅读技术手册。"
 		return false
 	if not _pay(action.get("cost", {})): return false
 	state.vehicle_health = mini(100, state.vehicle_health + int(action.get("repair", 0)))
-	state.fatigue = maxi(0, state.fatigue + int(action.get("fatigue", 0)))
+	if int(action.get("fatigue", 0)) != 0: state.adjust_all_fatigue(int(action.fatigue))
 	state.knowledge += int(action.get("knowledge", 0))
 	state.adjust_trust(int(action.get("trust", 0)))
+	for key in action.get("gains", {}): state.resources[key] = int(state.resources[key]) + int(action.gains[key])
+	state.tracking = clampi(state.tracking + int(action.get("tracking", 0)), 0, 100)
+	if action.get("target_required", false):
+		state.adjust_member(target_name, int(action.get("health", 0)), int(action.get("member_fatigue", 0)), int(action.get("member_trust", 0)))
+		state.member_named(target_name).last_memory = "队长在营地安排了照料。"
+	for member_name in action.get("member_effects", {}):
+		var effects: Dictionary = action.member_effects[member_name]
+		state.adjust_member(member_name, int(effects.get("health", 0)), int(effects.get("fatigue", 0)), int(effects.get("trust", 0)))
+		state.member_named(member_name).last_memory = "%s：%s" % [action_name, action.get("effect", "")]
+	if not str(action.get("fact", "")).is_empty():
+		state.world_facts[str(action.fact)] = true
+		next_day_effects.append(str(action.get("future", "这个地点的选择已留下记录。")))
 	if action_name == "阅读技术手册": state.world_facts["manual_read"] = true
 	if action_name == "教学与记录":
 		state.world_facts["lessons"] = int(state.world_facts.get("lessons", 0)) + 1
 		if int(state.world_facts.lessons) >= 2 and not state.world_facts.get("shared_maintenance", false):
 			state.world_facts["shared_maintenance"] = true
 			_add_event("两次共同教学与记录 → 共同维护习惯形成，今后每天耐久 +3")
-	_add_event("营地 · %s → %s" % [action_name, action.get("effect", "")])
+	_add_event("营地 · %s%s → %s" % [action_name, "（%s）" % target_name if not target_name.is_empty() else "", action.get("effect", "")])
 	_settle_night()
 	return true
 
@@ -205,6 +245,13 @@ func _settle_night() -> void:
 	if state.vehicle_health <= 0: state.ending = "车队停摆"
 	if state.team_trust <= 0: state.ending = "车队分裂"
 	if state.fatigue >= 100: state.ending = "疲惫倒下"
+	for member in state.members:
+		if int(member.fatigue) >= 70:
+			state.adjust_member(str(member.name), -5)
+			_add_event("%s的高疲劳未缓解 → 健康 -5" % member.name)
+		if int(member.health) <= 0:
+			state.ending = "关键成员倒下"
+			_add_event("%s的伤势未能挽回 → 基础岗位无法维持" % member.name)
 	if state.ending.is_empty() and state.day >= content.demo_days():
 		state.ending = "知识的火种" if state.world_facts.get("shared_maintenance", false) else "仍在路上"
 	state.set_phase(GameState.Phase.NIGHT_SETTLEMENT)
@@ -255,6 +302,29 @@ func event_log_text() -> String:
 
 func resources_text() -> String:
 	return content.cost_text(state.resources, true)
+
+func medical_target() -> Dictionary:
+	var target: Dictionary = {}
+	var highest := -1
+	for member in state.members:
+		var urgency := (100 - int(member.health)) * 2 + int(member.fatigue)
+		if urgency > highest:
+			highest = urgency
+			target = member
+	return target
+
+func member_summary(member_name: String) -> String:
+	var member := state.member_named(member_name)
+	if member.is_empty(): return ""
+	return "%s · %s\n健康 %d / 疲劳 %d / 个人信任 %d\n记忆：%s" % [member.name, member.job, member.health, member.fatigue, member.trust, member.last_memory]
+
+func _sort_transactions() -> void:
+	# Stable order within each urgency level; conflicts precede low-priority follow-ups.
+	var sorted: Array = []
+	for urgency in ["高", "中", "低"]:
+		for transaction in daily_transactions:
+			if transaction.urgency == urgency: sorted.append(transaction)
+	daily_transactions = sorted
 
 func _pay(cost: Dictionary) -> bool:
 	last_error = ""

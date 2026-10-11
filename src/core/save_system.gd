@@ -22,6 +22,7 @@ func snapshot(state: GameState, loop: DayLoop) -> Dictionary:
 		"travel_progress": loop.travel_progress, "travel_resolved": loop.travel_resolved,
 		"random_state": str(loop.random.state),
 		"camp_position": state.camp_position, "conversation_open": loop.conversation_open,
+		"members": state.members.duplicate(true),
 	}
 
 func restore(saved: Dictionary, state: GameState, loop: DayLoop) -> bool:
@@ -38,6 +39,15 @@ func restore(saved: Dictionary, state: GameState, loop: DayLoop) -> bool:
 	state.tracking = int(saved.tracking)
 	state.ending = str(saved.ending)
 	state.camp_position = float(saved.get("camp_position", loop.content.camp_data().get("entry_position", 100.0)))
+	if saved.has("members"):
+		state.members = saved.members.duplicate(true)
+		for member in state.members:
+			for key in ["health", "fatigue", "trust"]: member[key] = int(member[key])
+	else:
+		state.initialize_members(loop.content.members())
+		for member in state.members:
+			member.fatigue = state.fatigue
+			member.trust = state.team_trust
 	loop.route_choice = str(saved.route_choice)
 	loop.travel_style = str(saved.travel_style)
 	loop.event_log.assign(saved.event_log)
@@ -78,11 +88,29 @@ func _valid(saved: Dictionary, content: DemoContent) -> bool:
 	if not _number(saved.get("travel_progress"), 0, 1, false): return false
 	if not _number(saved.get("camp_position", content.camp_data().get("entry_position", 100.0)), 45.0, float(content.camp_data().get("width", 1440.0)) - 45.0, false): return false
 	if not saved.get("conversation_open", false) is bool: return false
+	if saved.has("members"):
+		if not saved.members is Array or saved.members.size() != content.members().size(): return false
+		var expected: Array[String] = []
+		for initial in content.members(): expected.append(str(initial.name))
+		for member in saved.members:
+			if not member is Dictionary: return false
+			if not member.get("name") is String or str(member.name) not in expected: return false
+			expected.erase(str(member.name))
+			if not member.get("job") is String or not member.get("last_memory") is String: return false
+			for key in ["health", "fatigue", "trust"]:
+				if not _number(member.get(key), 0, 100): return false
 	if not _number(saved.get("transaction_index"), 0, saved.daily_transactions.size()): return false
 	for transaction in saved.daily_transactions:
 		if not transaction is Dictionary: return false
 		for key in ["id", "speaker", "job", "goal", "urgency", "body", "fact"]:
 			if not transaction.get(key) is String: return false
+		if content.member_position(str(transaction.speaker)) < 0.0: return false
+		if transaction.has("target_member"):
+			if not transaction.target_member is String: return false
+			var valid_target := false
+			for member in content.members():
+				if member.name == transaction.target_member: valid_target = true
+			if not valid_target: return false
 		if not transaction.get("responses") is Dictionary: return false
 		for choice in ["accept", "refuse", "defer"]:
 			var option = transaction.responses.get(choice)
@@ -91,6 +119,8 @@ func _valid(saved: Dictionary, content: DemoContent) -> bool:
 				if not option.get(key) is String: return false
 			for key in option.cost:
 				if not DemoContent.RESOURCE_NAMES.has(key) or not _number(option.cost[key], 0, 10000): return false
+			for key in ["trust", "repair", "knowledge", "fatigue", "health"]:
+				if not _number(option.get(key, 0), -100, 100): return false
 	if int(saved.phase) == GameState.Phase.REST_STOP and int(saved.transaction_index) >= saved.daily_transactions.size(): return false
 	if int(saved.phase) == GameState.Phase.TRAVEL and saved.travel_resolved: return false
 	if int(saved.phase) == GameState.Phase.ENDING and str(saved.ending).is_empty(): return false

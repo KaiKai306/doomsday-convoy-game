@@ -43,8 +43,8 @@ func _init() -> void:
 	_check(saves.snapshot(loop.state, loop) == after, "夜间不重复收费")
 	loop.advance_to_next_day()
 	_check(loop.state.day == 2 and loop.event_log.is_empty(), "进入次日并清理当日日志")
-	_check(loop.daily_transactions[0].id == "repair_priority" and loop.daily_transactions[0].goal.contains("检修"), "昨日接受生成后续检修事务")
-	_check(loop.daily_transactions[1].goal.contains("记下来"), "情报结果改变次日侦察请求")
+	_check(loop.daily_transactions.any(func(t): return t.id == "repair_priority" and t.goal.contains("检修")), "昨日接受生成后续检修事务")
+	_check(loop.daily_transactions[0].goal.contains("记下来"), "情报后续事务按紧急度排在低优先检修之前")
 	loop.finish_preparation()
 	loop.choose_route("安全路线")
 	_check(is_equal_approx(loop.route_accident_chance(), 0.05), "维修风险修正生效")
@@ -164,6 +164,97 @@ func _init() -> void:
 	corrupt = before.duplicate(true)
 	corrupt.camp_position = 100
 	_check(not saves.restore(corrupt, camp_restore.state, camp_restore), "拒绝远离成员却打开对话的存档")
+	_check(loop.state.members.size() == 5 and loop.state.member_named("队长").health == 100, "独立成员初始化")
+	_check(loop.state.member_named("老赵").health == 88 and loop.state.member_named("阿遥").health == 100, "事故只伤及实际处理车辆的成员")
+	_check(loop.state.member_named("老赵").trust == 53 and loop.state.member_named("周禾").trust == 50, "接受请求只修改说话者个人信任")
+	_check(loop.state.member_named("阿遥").last_memory.contains("核对"), "个人对话记忆保留")
+	var restored_members := true
+	for member in loop.state.members:
+		var restored_member := resumed.state.member_named(str(member.name))
+		for key in ["health", "fatigue", "trust", "job", "last_memory"]:
+			if restored_member.get(key) != member.get(key): restored_members = false
+	_check(restored_members, "个人状态完整保存恢复")
+	var old_members := saves.snapshot(resumed.state, resumed)
+	old_members.erase("members")
+	old_members.fatigue = 39
+	old_members.team_trust = 61
+	_check(saves.restore(old_members, camp_restore.state, camp_restore) and camp_restore.state.members.size() == 5, "旧版 2 存档补全成员")
+	_check(camp_restore.state.member_named("许宁").fatigue == 39 and camp_restore.state.member_named("许宁").trust == 61, "旧全队疲劳信任迁移到个人状态")
+	corrupt = before.duplicate(true)
+	corrupt.members[0].health = -1
+	_check(not saves.restore(corrupt, camp_restore.state, camp_restore), "拒绝损坏个人健康")
+	corrupt = before.duplicate(true)
+	corrupt.members[1].name = corrupt.members[0].name
+	_check(not saves.restore(corrupt, camp_restore.state, camp_restore), "拒绝重复成员")
+	var treated := _new_run()
+	_reach_camp(treated)
+	treated.state.adjust_member("老赵", -40, 20)
+	var other_fatigue: int = treated.state.member_named("周禾").fatigue
+	var drugs: int = treated.state.resources.medicine
+	_check(treated.perform_camp_action("照料伤员", "老赵"), "营地定向照料")
+	_check(treated.state.member_named("老赵").health == 85 and treated.state.member_named("老赵").fatigue == 30, "照料只恢复目标的健康与疲劳")
+	_check(treated.state.member_named("周禾").fatigue == other_fatigue and treated.state.resources.medicine == drugs - 1, "其他成员不获得免费治疗")
+	_check(not treated.perform_camp_action("修复旧油泵"), "照料后不能再做地点行动")
+	var poor_patient := _new_run()
+	_reach_camp(poor_patient)
+	before = saves.snapshot(poor_patient.state, poor_patient)
+	_check(not poor_patient.perform_camp_action("照料伤员", "不存在") and saves.snapshot(poor_patient.state, poor_patient) == before, "不存在的目标不扣药品")
+	poor_patient.state.resources.medicine = 0
+	_check(not poor_patient.perform_camp_action("照料伤员", "老赵"), "缺药不可治疗")
+	var injured := _new_run()
+	_reach_camp(injured)
+	injured.state.adjust_member("阿遥", -50)
+	injured.perform_camp_action("阅读技术手册")
+	injured.advance_to_next_day()
+	_check(injured.daily_transactions[0].id == "medical_request" and injured.daily_transactions[0].target_member == "阿遥", "个人伤势生成优先医疗事务")
+	injured.finish_preparation()
+	injured.start_travel()
+	injured.resolve_travel_event(0.99)
+	var fatigue_before: int = injured.state.member_named("周禾").fatigue
+	_respond(injured, "accept")
+	_check(injured.state.member_named("阿遥").health == 70 and injured.state.member_named("周禾").health == 100, "医疗请求治疗具体伤员")
+	_check(injured.state.member_named("周禾").fatigue == fatigue_before, "医疗请求不会降低其他成员疲劳")
+	var exhausted := _new_run()
+	_reach_camp(exhausted)
+	exhausted.state.adjust_member("阿遥", 0, 70)
+	exhausted.perform_camp_action("阅读技术手册")
+	_check(exhausted.state.member_named("阿遥").health == 95 and exhausted.state.member_named("周禾").health == 100, "个人高疲劳导致夜间健康损失")
+	var lost_member := _new_run()
+	_reach_camp(lost_member)
+	lost_member.state.adjust_member("老赵", -100)
+	lost_member.perform_camp_action("阅读技术手册")
+	_check(lost_member.state.ending == "关键成员倒下", "基础成员健康归零结束")
+	var resentment := _new_run()
+	_reach_camp(resentment)
+	resentment.state.adjust_member("老赵", 0, 0, -30)
+	resentment.state.world_facts.repair_priority = "accept"
+	resentment.perform_camp_action("让成员休息")
+	resentment.advance_to_next_day()
+	_check(resentment.daily_transactions.any(func(t): return t.goal.contains("分配")), "个人低信任触发分配冲突")
+	for day in range(1, 6):
+		var site: Dictionary = content.stop_event(day)
+		_check(site.actions.size() == 2, "地点两种取舍 %d" % day)
+		for action_name in site.actions:
+			var site_run := _new_run()
+			site_run.state.day = day
+			_reach_camp(site_run)
+			var action: Dictionary = site.actions[action_name]
+			var old_resources := site_run.state.resources.duplicate()
+			_check(site_run.perform_camp_action(action_name), "地点行动可执行 " + action_name)
+			var paid := true
+			for key in old_resources:
+				var expected := int(old_resources[key]) - int(action.cost.get(key, 0)) + int(action.get("gains", {}).get(key, 0)) - content.daily_cost(key)
+				if int(site_run.state.resources[key]) != expected: paid = false
+			_check(paid, "地点资源与夜间配给正确 " + action_name)
+			_check(site_run.state.world_facts.get(action.fact, false), "地点选择记录 " + action_name)
+			before = saves.snapshot(site_run.state, site_run)
+			_check(not site_run.perform_camp_action(action_name) and saves.snapshot(site_run.state, site_run) == before, "地点不可重复领奖 " + action_name)
+	var wrong_site := _new_run()
+	_reach_camp(wrong_site)
+	before = saves.snapshot(wrong_site.state, wrong_site)
+	_check(not wrong_site.perform_camp_action("启动柴油抽水机") and saves.snapshot(wrong_site.state, wrong_site) == before, "不能执行其他地点行动")
+	wrong_site.state.resources.parts = 0
+	_check(not wrong_site.perform_camp_action("修复旧油泵"), "旧油泵需要实际零件")
 	if failures == 0: print("DAY_LOOP_TEST_PASS checks=%d" % checks)
 	else: printerr("DAY_LOOP_TEST_FAIL failures=%d checks=%d" % [failures, checks])
 	for state in states: state.free()
