@@ -15,6 +15,7 @@ var travel_progress := 0.0
 var travel_resolved := false
 var random := RandomNumberGenerator.new()
 var last_error := ""
+var conversation_open := false
 
 func _init(game_state: GameState, demo_content: DemoContent) -> void:
 	state = game_state
@@ -27,6 +28,7 @@ func start_new_game() -> void:
 	travel_style = "低噪音"
 	event_log.clear()
 	next_day_effects.clear()
+	state.camp_position = float(content.camp_data().get("entry_position", 100.0))
 	_begin_morning()
 
 func _begin_morning() -> void:
@@ -34,6 +36,7 @@ func _begin_morning() -> void:
 	transaction_index = 0
 	travel_progress = 0.0
 	travel_resolved = false
+	conversation_open = false
 	daily_transactions = content.morning_transactions_for_day(state.day, state.world_facts)
 	if int(state.resources.water) < content.daily_cost("water") * 2:
 		daily_transactions.push_front(content.transaction("water"))
@@ -114,14 +117,39 @@ func resolve_travel_event(test_roll: float = -1.0) -> bool:
 	state.knowledge += route_knowledge
 	if route_knowledge > 0: _add_event("发现旧路线档案 → 知识 +%d" % route_knowledge)
 	_add_event("抵达%s → 补给 %s" % [content.stop_name(state.day), content.cost_text(gains, true)])
+	state.camp_position = float(content.camp_data().get("entry_position", 100.0))
+	conversation_open = false
 	state.set_phase(GameState.Phase.REST_STOP)
 	return accident
+
+func move_in_camp(direction: float, delta: float) -> bool:
+	if state.phase != GameState.Phase.REST_STOP or conversation_open: return false
+	if not is_finite(direction) or not is_finite(delta) or delta <= 0.0: return false
+	var settings := content.camp_data()
+	state.camp_position = clampf(state.camp_position + clampf(direction, -1.0, 1.0) * delta * float(settings.get("walk_speed", 210.0)), 45.0, float(settings.get("width", 1440.0)) - 45.0)
+	return true
+
+func begin_conversation(speaker: String) -> bool:
+	if state.phase != GameState.Phase.REST_STOP or conversation_open: return false
+	var transaction := current_transaction()
+	if transaction.is_empty() or transaction.speaker != speaker:
+		last_error = "先处理当前的紧急事务，再回应其他请求。"
+		return false
+	var target := content.member_position(speaker)
+	if target < 0.0 or absf(state.camp_position - target) > float(content.camp_data().get("interaction_range", 72.0)):
+		last_error = "靠近这位队员后才能交谈。"
+		return false
+	conversation_open = true
+	return true
+
+func close_conversation() -> void:
+	conversation_open = false
 
 func current_transaction() -> Dictionary:
 	return daily_transactions[transaction_index] if transaction_index < daily_transactions.size() else {}
 
 func respond(response: String) -> bool:
-	if state.phase != GameState.Phase.REST_STOP or response not in ["accept", "refuse", "defer"]: return false
+	if state.phase != GameState.Phase.REST_STOP or not conversation_open or response not in ["accept", "refuse", "defer"]: return false
 	var transaction := current_transaction()
 	if transaction.is_empty(): return false
 	var option: Dictionary = transaction.get("responses", {}).get(response, {})
@@ -138,6 +166,7 @@ func respond(response: String) -> bool:
 	next_day_effects.append(str(option.get("future", "本次回应已记录。")))
 	transaction["resolution"] = response
 	transaction_index += 1
+	conversation_open = false
 	if transaction_index >= daily_transactions.size(): state.set_phase(GameState.Phase.CAMP_ACTION)
 	return true
 

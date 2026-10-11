@@ -8,6 +8,8 @@ var day_loop: DayLoop
 var save_system := SaveSystem.new()
 var canvas: Control
 var world: ConvoyWorld
+var exploration: CampExploration
+var inspected_member: String = ""
 var title: Label
 var resource_labels: Dictionary = {}
 var status: Label
@@ -75,6 +77,10 @@ func _build() -> void:
 	world.custom_minimum_size = Vector2(0, 270)
 	world.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	left.add_child(world)
+	exploration = CampExploration.new()
+	left.add_child(exploration)
+	exploration.hide()
+	exploration.interaction_requested.connect(_interact_with_member)
 	travel_bar = ProgressBar.new()
 	travel_bar.custom_minimum_size.y = 7
 	travel_bar.show_percentage = false
@@ -141,11 +147,16 @@ func setup(state: GameState, saved: Dictionary = {}) -> bool:
 	day_loop = DayLoop.new(state, DemoContent.new())
 	day_loop.start_new_game()
 	if not saved.is_empty() and not save_system.restore(saved, state, day_loop): return false
+	exploration.setup(day_loop)
 	refresh()
 	return true
 
 func _process(delta: float) -> void:
 	if day_loop == null or paused: return
+	if game_state.phase == GameState.Phase.REST_STOP and not day_loop.conversation_open:
+		for child in actions.get_children():
+			if child is Button and child.get_meta("action_id", "") == "inspect_nearby":
+				child.disabled = exploration.nearby_member().is_empty()
 	if game_state.phase == GameState.Phase.TRAVEL:
 		var finished := day_loop.tick_travel(delta)
 		travel_bar.value = day_loop.travel_progress
@@ -164,6 +175,8 @@ func refresh() -> void:
 	world.phase = game_state.phase
 	world.day = game_state.day
 	world.moving = game_state.phase == GameState.Phase.TRAVEL
+	world.visible = game_state.phase != GameState.Phase.REST_STOP
+	exploration.set_active(game_state.phase == GameState.Phase.REST_STOP, paused)
 	world.queue_redraw()
 	title.text = "末日车队  /  第 %02d 天" % game_state.day
 	location.text = "%02d / 05     %s    ·    %s" % [game_state.day, day_loop.content.stop_name(game_state.day), _phase_name()]
@@ -181,7 +194,9 @@ func refresh() -> void:
 		GameState.Phase.TRAVEL:
 			_heading("引擎启动，沿公路前进", "路线和预设已锁定。旅途中不再重新分配物资，约七秒后抵达。")
 			_note("预设：%s\n事故概率：%.0f%%\n快速行驶：疲劳 +6、追踪 +8\n低噪音：疲劳 +10、追踪 -2\n绕行：疲劳 +10、追踪 +1" % [day_loop.travel_style, day_loop.route_accident_chance() * 100])
-		GameState.Phase.REST_STOP: _dialogue()
+		GameState.Phase.REST_STOP:
+			if day_loop.conversation_open: _dialogue()
+			else: _explore()
 		GameState.Phase.CAMP_ACTION: _camp()
 		GameState.Phase.NIGHT_SETTLEMENT: _night()
 		GameState.Phase.ENDING:
@@ -229,6 +244,33 @@ func _dialogue() -> void:
 		var option: Dictionary = transaction.responses[choice]
 		_action(option.label + "\n" + option.effect, func(): _execute(day_loop.respond(choice)), "respond_" + choice, day_loop.can_afford(option.cost))
 		_note("之后：" + str(option.future))
+	_action("先结束交谈，回到营地", _close_conversation, "close_conversation")
+
+func _explore() -> void:
+	var transaction := day_loop.current_transaction()
+	_heading("抵达营地，先找大家聊聊", "点按地面让队长走过去，或按住场景中的左右方向。靠近队员后点按交谈。")
+	_note("先处理：%s · %s\n紧急度%s / 剩余 %d 条事务" % [transaction.speaker, transaction.goal, transaction.urgency, day_loop.daily_transactions.size() - day_loop.transaction_index])
+	_note("回应会影响物资、信任和下一天的请求。现在只是走动与了解情况，不会自动消耗资源。")
+	if not inspected_member.is_empty():
+		for member in day_loop.content.camp_members():
+			if member.name == inspected_member:
+				_note("%s · %s\n%s" % [member.name, member.job, member.idle])
+				if day_loop.current_transaction().speaker != inspected_member:
+					_note("当前优先处理%s的事务，之后再继续回应其他请求。" % transaction.speaker)
+	_action("查看成员情况", exploration.try_interact, "inspect_nearby", not exploration.nearby_member().is_empty())
+	_note(day_loop.content.members_summary())
+
+func _interact_with_member(speaker: String) -> void:
+	if game_state.phase != GameState.Phase.REST_STOP or paused: return
+	inspected_member = speaker
+	if day_loop.current_transaction().speaker == speaker:
+		day_loop.begin_conversation(speaker)
+	refresh()
+
+func _close_conversation() -> void:
+	day_loop.close_conversation()
+	exploration.release_controls()
+	refresh()
 
 func _camp() -> void:
 	_heading("火还亮着，今晚做什么？", "只能执行一次主要营地行动。选择后自动结算夜间配给。")
@@ -255,18 +297,21 @@ func _action(text: String, callback: Callable, id: String, enabled: bool = true)
 	var button := ConvoyTheme.button(text, callback, id)
 	button.disabled = not enabled
 	button.add_theme_font_size_override("font_size", 17)
-	if id in ["routes", "depart", "next_day", "ending_menu", "stranded"]:
+	if id in ["routes", "depart", "next_day", "ending_menu", "stranded", "close_conversation"]:
 		primary_actions.add_child(button)
 	else:
 		actions.add_child(button)
 
 func _execute(success: bool) -> void:
-	if success: refresh()
+	if success:
+		inspected_member = ""
+		refresh()
 	else: feedback.text = day_loop.last_error if not day_loop.last_error.is_empty() else "这个行动目前无法执行。"
 
 func _toggle_pause() -> void:
 	paused = not paused
 	world.paused = paused
+	exploration.set_active(game_state.phase == GameState.Phase.REST_STOP, paused)
 	pause_overlay.visible = paused
 	if paused: pause_status.text = "旅途已经暂停。"
 
@@ -279,6 +324,7 @@ func _load() -> void:
 		pause_status.text = "没有可用的本版本存档。"
 		return
 	_toggle_pause()
+	inspected_member = ""
 	refresh()
 
 func _phase_name() -> String:

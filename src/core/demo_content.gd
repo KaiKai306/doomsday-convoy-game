@@ -23,6 +23,17 @@ func initial_trust() -> int:
 func members() -> Array:
 	return data.get("members", []).duplicate(true)
 
+func camp_data() -> Dictionary:
+	return data.get("camp", {})
+
+func camp_members() -> Array:
+	return camp_data().get("members", [])
+
+func member_position(speaker: String) -> float:
+	for member in camp_members():
+		if member.name == speaker: return float(member.x)
+	return -1.0
+
 func vehicle() -> Dictionary:
 	return data.get("vehicle", {}).duplicate(true)
 

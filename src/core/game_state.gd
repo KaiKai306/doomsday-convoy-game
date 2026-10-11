@@ -34,6 +34,7 @@ var fatigue: int = 10
 var knowledge: int = 0
 var tracking: int = 0
 var ending: String = ""
+var camp_position: float = 100.0
 
 func reset(initial_resources: Dictionary = DEFAULT_RESOURCES, initial_trust: int = 50) -> void:
 	day = 1
@@ -46,6 +47,7 @@ func reset(initial_resources: Dictionary = DEFAULT_RESOURCES, initial_trust: int
 	knowledge = 0
 	tracking = 0
 	ending = ""
+	camp_position = 100.0
 
 func adjust_trust(amount: int) -> void:
 	team_trust = clampi(team_trust + amount, 0, 100)

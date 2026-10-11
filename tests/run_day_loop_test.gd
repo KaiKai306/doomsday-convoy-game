@@ -23,14 +23,16 @@ func _init() -> void:
 	_check(not loop.start_travel(), "出发不可重复收费")
 	_check(loop.resolve_travel_event(0.0), "确定性事故")
 	_check(loop.state.vehicle_health == 70, "事故实际损伤")
+	_check(not loop.begin_conversation("维修") and not loop.respond("accept"), "不能远程打开或回应事务")
+	_check(not loop.begin_conversation("老赵"), "必须先靠近当前说话人")
 	var after := saves.snapshot(loop.state, loop)
 	loop.resolve_travel_event(0.0)
 	_check(saves.snapshot(loop.state, loop) == after, "不可重复领取补给")
-	_check(loop.respond("accept"), "维修事务")
+	_check(_respond(loop, "accept"), "维修事务")
 	_check(loop.state.vehicle_health == 80 and loop.state.resources.parts == 7, "维修请求生效")
 	_check(loop.state.phase == GameState.Phase.REST_STOP and loop.transaction_index == 1, "第二条事务仍需回应")
 	_check(loop.current_transaction().speaker == "阿遥", "独立侦察事务")
-	loop.respond("accept")
+	_respond(loop, "accept")
 	_check(loop.state.knowledge == 3 and loop.state.phase == GameState.Phase.CAMP_ACTION, "档案、侦察成果与队列结束")
 	_check(not loop.perform_camp_action("教学与记录"), "路线知识不能替代手册阅读前置")
 	loop.perform_camp_action("阅读技术手册")
@@ -74,7 +76,7 @@ func _init() -> void:
 		survivor.choose_route("资源路线")
 		survivor.start_travel()
 		survivor.resolve_travel_event(0.99)
-		while survivor.state.phase == GameState.Phase.REST_STOP: survivor.respond("defer")
+		while survivor.state.phase == GameState.Phase.REST_STOP: _respond(survivor, "defer")
 		survivor.perform_camp_action("阅读技术手册" if day == 1 else ("教学与记录" if day <= 3 else "让成员休息"))
 		survivor.advance_to_next_day()
 	_check(survivor.state.phase == GameState.Phase.ENDING and survivor.state.ending == "知识的火种", "完整五日知识结局")
@@ -116,9 +118,11 @@ func _init() -> void:
 	denied.start_travel()
 	denied.resolve_travel_event(0.99)
 	denied.state.resources.parts = 0
+	_approach(denied)
+	denied.begin_conversation("老赵")
 	before = saves.snapshot(denied.state, denied)
-	_check(not denied.respond("accept") and saves.snapshot(denied.state, denied) == before, "缺零件不能接受维修并获得收益")
-	denied.respond("refuse")
+	_check(not _respond(denied, "accept") and saves.snapshot(denied.state, denied) == before, "缺零件不能接受维修并获得收益")
+	_respond(denied, "refuse")
 	_check(denied.state.world_facts.road_accident_modifier == 1, "拒绝增加道路风险")
 	var hunted := _new_run()
 	hunted.finish_preparation()
@@ -133,6 +137,33 @@ func _init() -> void:
 		ordinary.perform_camp_action("让成员休息")
 		ordinary.advance_to_next_day()
 	_check(ordinary.state.ending == "仍在路上", "安全路线也可达普通五日结局")
+	var camp_loop := _new_run()
+	camp_loop.finish_preparation()
+	camp_loop.start_travel()
+	camp_loop.resolve_travel_event(0.99)
+	_check(camp_loop.move_in_camp(-1, 100) and camp_loop.state.camp_position == 45, "左边界限位")
+	_check(camp_loop.move_in_camp(1, 100) and camp_loop.state.camp_position == 1395, "右边界限位")
+	_check(not camp_loop.begin_conversation("周禾"), "非当前成员不能抢答队列")
+	_approach(camp_loop)
+	_check(camp_loop.begin_conversation("老赵"), "靠近当前成员后交谈")
+	before = saves.snapshot(camp_loop.state, camp_loop)
+	_check(not camp_loop.move_in_camp(1, 1), "对话时阻止移动")
+	_check(saves.snapshot(camp_loop.state, camp_loop) == before, "对话阻止移动且状态不变")
+	var camp_restore := _new_run()
+	_check(saves.restore(JSON.parse_string(JSON.stringify(before)), camp_restore.state, camp_restore), "营地对话存档往返")
+	_check(camp_restore.conversation_open and is_equal_approx(camp_restore.state.camp_position, 340), "位置及打开对话恢复")
+	camp_restore.close_conversation()
+	_check(camp_restore.move_in_camp(1, 0.1), "关闭对话后恢复移动")
+	var legacy := before.duplicate(true)
+	legacy.erase("camp_position")
+	legacy.erase("conversation_open")
+	_check(saves.restore(legacy, camp_restore.state, camp_restore) and camp_restore.state.camp_position == 100 and not camp_restore.conversation_open, "兼容早期版本 2 存档")
+	corrupt = before.duplicate(true)
+	corrupt.camp_position = -10
+	_check(not saves.restore(corrupt, camp_restore.state, camp_restore), "拒绝越界营地位置")
+	corrupt = before.duplicate(true)
+	corrupt.camp_position = 100
+	_check(not saves.restore(corrupt, camp_restore.state, camp_restore), "拒绝远离成员却打开对话的存档")
 	if failures == 0: print("DAY_LOOP_TEST_PASS checks=%d" % checks)
 	else: printerr("DAY_LOOP_TEST_FAIL failures=%d checks=%d" % [failures, checks])
 	for state in states: state.free()
@@ -149,10 +180,22 @@ func _reach_camp(loop: DayLoop) -> void:
 	loop.finish_preparation()
 	loop.start_travel()
 	loop.resolve_travel_event(0.99)
-	while loop.state.phase == GameState.Phase.REST_STOP: loop.respond("defer")
+	while loop.state.phase == GameState.Phase.REST_STOP: _respond(loop, "defer")
 
 func _check(condition: bool, description: String) -> void:
 	checks += 1
 	if not condition:
 		failures += 1
 		printerr("FAIL: " + description)
+
+func _approach(loop: DayLoop) -> void:
+	var target := loop.content.member_position(str(loop.current_transaction().speaker))
+	var distance := target - loop.state.camp_position
+	if not is_zero_approx(distance):
+		loop.move_in_camp(signf(distance), absf(distance) / float(loop.content.camp_data().walk_speed))
+
+func _respond(loop: DayLoop, choice: String) -> bool:
+	if not loop.conversation_open:
+		_approach(loop)
+		loop.begin_conversation(str(loop.current_transaction().speaker))
+	return loop.respond(choice)

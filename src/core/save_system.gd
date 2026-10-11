@@ -21,6 +21,7 @@ func snapshot(state: GameState, loop: DayLoop) -> Dictionary:
 		"transaction_index": loop.transaction_index, "prepared": loop.prepared,
 		"travel_progress": loop.travel_progress, "travel_resolved": loop.travel_resolved,
 		"random_state": str(loop.random.state),
+		"camp_position": state.camp_position, "conversation_open": loop.conversation_open,
 	}
 
 func restore(saved: Dictionary, state: GameState, loop: DayLoop) -> bool:
@@ -36,6 +37,7 @@ func restore(saved: Dictionary, state: GameState, loop: DayLoop) -> bool:
 	state.knowledge = int(saved.knowledge)
 	state.tracking = int(saved.tracking)
 	state.ending = str(saved.ending)
+	state.camp_position = float(saved.get("camp_position", loop.content.camp_data().get("entry_position", 100.0)))
 	loop.route_choice = str(saved.route_choice)
 	loop.travel_style = str(saved.travel_style)
 	loop.event_log.assign(saved.event_log)
@@ -46,6 +48,7 @@ func restore(saved: Dictionary, state: GameState, loop: DayLoop) -> bool:
 	loop.travel_progress = float(saved.travel_progress)
 	loop.travel_resolved = bool(saved.travel_resolved)
 	loop.random.state = int(saved.random_state)
+	loop.conversation_open = bool(saved.get("conversation_open", false))
 	state.day_changed.emit(state.day)
 	state.phase_changed.emit(state.phase)
 	return true
@@ -73,6 +76,8 @@ func _valid(saved: Dictionary, content: DemoContent) -> bool:
 	if not _number(saved.get("phase"), 0, GameState.Phase.ENDING): return false
 	if not _number(saved.get("knowledge"), 0, 100000): return false
 	if not _number(saved.get("travel_progress"), 0, 1, false): return false
+	if not _number(saved.get("camp_position", content.camp_data().get("entry_position", 100.0)), 45.0, float(content.camp_data().get("width", 1440.0)) - 45.0, false): return false
+	if not saved.get("conversation_open", false) is bool: return false
 	if not _number(saved.get("transaction_index"), 0, saved.daily_transactions.size()): return false
 	for transaction in saved.daily_transactions:
 		if not transaction is Dictionary: return false
@@ -89,6 +94,11 @@ func _valid(saved: Dictionary, content: DemoContent) -> bool:
 	if int(saved.phase) == GameState.Phase.REST_STOP and int(saved.transaction_index) >= saved.daily_transactions.size(): return false
 	if int(saved.phase) == GameState.Phase.TRAVEL and saved.travel_resolved: return false
 	if int(saved.phase) == GameState.Phase.ENDING and str(saved.ending).is_empty(): return false
+	if saved.get("conversation_open", false):
+		if int(saved.phase) != GameState.Phase.REST_STOP: return false
+		var current: Dictionary = saved.daily_transactions[int(saved.transaction_index)]
+		var target := content.member_position(str(current.speaker))
+		if target < 0.0 or absf(float(saved.get("camp_position", 100.0)) - target) > float(content.camp_data().get("interaction_range", 72.0)): return false
 	return true
 
 func _number(value: Variant, low: float, high: float, integer: bool = true) -> bool:
