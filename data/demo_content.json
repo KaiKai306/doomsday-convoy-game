@@ -1,80 +1,414 @@
 {
-  "initial_resources": {
-    "water": 20,
-    "food": 20,
-    "fuel": 30,
-    "medicine": 5,
-    "parts": 10
-  },
-  "initial_trust": 50,
-  "members": [
-    {"name": "队长", "job": "路线与决策"},
-    {"name": "维修", "job": "车辆维护"},
-    {"name": "医疗", "job": "治疗与药品"},
-    {"name": "侦察", "job": "路线与情报"},
-    {"name": "后勤", "job": "分配与交易"}
-  ],
-  "vehicle": {
-    "name": "掠夺者",
-    "durability": 80,
-    "max_durability": 100
-  },
-  "morning_transactions": [
-    {
-      "id": "repair_priority",
-      "speaker": "维修",
-      "need": "零件",
-      "goal": "优先维修车辆",
-      "urgency": "高",
-      "deadline": "今晚",
-      "result": "车辆耐久和移动安全性提高"
-    },
-    {
-      "id": "radio_signal",
-      "speaker": "侦察",
-      "need": "路线信息",
-      "goal": "调查东侧无线电信号",
-      "urgency": "中",
-      "deadline": "出发前",
-      "result": "可能获得资源路线线索"
-    }
-  ],
-  "follow_up_transactions": {
-    "accepted": {
-      "id": "repair_follow_up_success",
-      "speaker": "维修",
-      "need": "确认车辆状态",
-      "goal": "检查优先维修结果",
-      "urgency": "低",
-      "deadline": "今日夜间",
-      "result": "道路事故风险下降，维修员信任提高"
-    },
-    "refused": {
-      "id": "repair_follow_up_conflict",
-      "speaker": "维修",
-      "need": "解释资源分配",
-      "goal": "要求重新讨论零件分配",
-      "urgency": "高",
-      "deadline": "下一次停歇",
-      "result": "道路事故风险上升，冲突事务持续"
-    },
-    "deferred": {
-      "id": "repair_follow_up_deferred",
-      "speaker": "维修",
-      "need": "等待零件",
-      "goal": "再次提出维修请求",
-      "urgency": "中",
-      "deadline": "今日营地行动前",
-      "result": "维修请求继续保留"
-    }
-  },
-  "routes": {
-    "安全路线": {"fuel_cost": 4, "accident_chance": 0.2},
-    "资源路线": {"fuel_cost": 6, "accident_chance": 0.45},
-    "未知路线": {"fuel_cost": 5, "accident_chance": 0.65}
-  },
-  "daily_costs": {
-    "water": 5,
-    "food": 4
-  }
+    "demo_days":  5,
+    "initial_resources":  {
+                              "water":  20,
+                              "food":  20,
+                              "fuel":  30,
+                              "medicine":  5,
+                              "parts":  10
+                          },
+    "initial_trust":  50,
+    "members":  [
+                    {
+                        "name":  "队长",
+                        "job":  "路线与决策"
+                    },
+                    {
+                        "name":  "老赵",
+                        "job":  "车辆维护"
+                    },
+                    {
+                        "name":  "许宁",
+                        "job":  "医疗"
+                    },
+                    {
+                        "name":  "阿遥",
+                        "job":  "侦察"
+                    },
+                    {
+                        "name":  "周禾",
+                        "job":  "后勤"
+                    }
+                ],
+    "vehicle":  {
+                    "name":  "掠夺者",
+                    "durability":  80,
+                    "max_durability":  100
+                },
+    "stops":  [
+                  "旧加油站",
+                  "隧道口",
+                  "废弃水塔",
+                  "风雪营地",
+                  "山口中转站"
+              ],
+    "routes":  {
+                   "安全路线":  {
+                                "fuel_cost":  4,
+                                "accident_chance":  0.2,
+                                "description":  "沿旧公路绕过废墟。少量饮水，容易通行。",
+                                "supplies":  {
+                                                 "water":  2,
+                                                 "food":  1
+                                             }
+                            },
+                   "资源路线":  {
+                                "fuel_cost":  6,
+                                "accident_chance":  0.45,
+                                "description":  "穿过仓储区。补给充足，路面破损严重。",
+                                "supplies":  {
+                                                 "water":  7,
+                                                 "food":  5,
+                                                 "fuel":  1,
+                                                 "parts":  1
+                                             }
+                            },
+                   "未知路线":  {
+                                "fuel_cost":  5,
+                                "accident_chance":  0.65,
+                                "description":  "沿无线电方向前进。可找到旧路线档案（知识 +2）与应急物资。",
+                                "supplies":  {
+                                                 "water":  4,
+                                                 "food":  3,
+                                                 "medicine":  1
+                                             },
+                                "knowledge":  2
+                            }
+               },
+    "daily_costs":  {
+                        "water":  5,
+                        "food":  4
+                    },
+    "transactions":  {
+                         "repair":  {
+                                        "id":  "repair_priority",
+                                        "speaker":  "老赵",
+                                        "job":  "维修组",
+                                        "need":  "修复松动的传动轴",
+                                        "goal":  "修复松动的传动轴",
+                                        "urgency":  "高",
+                                        "deadline":  "今晚停歇时",
+                                        "body":  "“再开下去，轴承迟早会断。给我两份零件，今晚就能修好。但这样明天能用的备件就少了。”",
+                                        "fact":  "repair_priority",
+                                        "responses":  {
+                                                          "accept":  {
+                                                                         "label":  "交给老赵修理",
+                                                                         "cost":  {
+                                                                                      "parts":  2
+                                                                                  },
+                                                                         "trust":  3,
+                                                                         "effect":  "零件 -2，耐久 +10，信任 +3",
+                                                                         "future":  "完成维护 → 明日道路事故风险 -15%。",
+                                                                         "repair":  10
+                                                                     },
+                                                          "refuse":  {
+                                                                         "label":  "留着零件应急",
+                                                                         "cost":  {
+
+                                                                                  },
+                                                                         "trust":  -5,
+                                                                         "effect":  "信任 -5，保留零件",
+                                                                         "future":  "维修被拒 → 明日冲突事务，事故风险 +15%。"
+                                                                     },
+                                                          "defer":  {
+                                                                        "label":  "明天再讨论",
+                                                                        "cost":  {
+
+                                                                                 },
+                                                                        "trust":  -1,
+                                                                        "effect":  "信任 -1，今天不维修",
+                                                                        "future":  "维修延期 → 明日再次提出请求。"
+                                                                    }
+                                                      }
+                                    },
+                         "scout":  {
+                                       "id":  "route_intel",
+                                       "speaker":  "阿遥",
+                                       "job":  "侦察组",
+                                       "need":  "核对东侧无线电坐标",
+                                       "goal":  "核对东侧无线电坐标",
+                                       "urgency":  "中",
+                                       "deadline":  "今晚停歇时",
+                                       "body":  "“东边还有人在广播。信号从旧加油站传来。我想带口粮去查坐标，至少让我们知道下一段路有没有出口。”",
+                                       "fact":  "route_intel",
+                                       "responses":  {
+                                                         "accept":  {
+                                                                        "label":  "分出口粮核对",
+                                                                        "cost":  {
+                                                                                     "food":  2
+                                                                                 },
+                                                                        "trust":  3,
+                                                                        "effect":  "食物 -2，知识 +1，信任 +3",
+                                                                        "future":  "坐标核实 → 明日阿遥提出记录路线。",
+                                                                        "knowledge":  1
+                                                                    },
+                                                         "refuse":  {
+                                                                        "label":  "不冒这个风险",
+                                                                        "cost":  {
+
+                                                                                 },
+                                                                        "trust":  -3,
+                                                                        "effect":  "信任 -3，保留口粮",
+                                                                        "future":  "坐标未核实 → 明日无线电请求仍在。"
+                                                                    },
+                                                         "defer":  {
+                                                                       "label":  "等下一处营地",
+                                                                       "cost":  {
+
+                                                                                },
+                                                                       "trust":  0,
+                                                                       "effect":  "保留口粮，调查延期",
+                                                                       "future":  "信号被搁置 → 明日继续请求。"
+                                                                   }
+                                                     }
+                                   },
+                         "map":  {
+                                     "id":  "route_intel",
+                                     "speaker":  "阿遥",
+                                     "job":  "侦察组",
+                                     "need":  "把验证过的路线记下来",
+                                     "goal":  "把验证过的路线记下来",
+                                     "urgency":  "中",
+                                     "deadline":  "今晚停歇时",
+                                     "body":  "“信号确实来自旧站。我们走过的裂缝和水源也该写进地图；如果我出事，其他人还能找得到路。”",
+                                     "fact":  "route_intel",
+                                     "responses":  {
+                                                       "accept":  {
+                                                                      "label":  "一起整理地图",
+                                                                      "cost":  {
+
+                                                                               },
+                                                                      "trust":  2,
+                                                                      "effect":  "知识 +1，信任 +2",
+                                                                      "future":  "路线记录保留 → 下一天仍可完善记录。",
+                                                                      "knowledge":  1
+                                                                  },
+                                                       "refuse":  {
+                                                                      "label":  "没有时间抄写",
+                                                                      "cost":  {
+
+                                                                               },
+                                                                      "trust":  -2,
+                                                                      "effect":  "信任 -2",
+                                                                      "future":  "记录被拒 → 路线信息仍由个人保管。"
+                                                                  },
+                                                       "defer":  {
+                                                                     "label":  "先留在记忆里",
+                                                                     "cost":  {
+
+                                                                              },
+                                                                     "trust":  0,
+                                                                     "effect":  "地图整理延期",
+                                                                     "future":  "地图未完成 → 明日继续讨论。"
+                                                                 }
+                                                   }
+                                 },
+                         "conflict":  {
+                                          "id":  "repair_priority",
+                                          "speaker":  "老赵",
+                                          "job":  "维修组",
+                                          "need":  "解释昨天的零件分配",
+                                          "goal":  "解释昨天的零件分配",
+                                          "urgency":  "高",
+                                          "deadline":  "今晚停歇时",
+                                          "body":  "“昨天你说要留着零件。今天车又响了。不是我要特殊待遇，是大家都得坐在这辆车里。”",
+                                          "fact":  "repair_priority",
+                                          "responses":  {
+                                                            "accept":  {
+                                                                           "label":  "现在安排修理",
+                                                                           "cost":  {
+                                                                                        "parts":  2
+                                                                                    },
+                                                                           "trust":  4,
+                                                                           "effect":  "零件 -2，耐久 +10，信任 +4",
+                                                                           "future":  "重新合作 → 明日事故风险 -15%。",
+                                                                           "repair":  10
+                                                                       },
+                                                            "refuse":  {
+                                                                           "label":  "坚持原来的决定",
+                                                                           "cost":  {
+
+                                                                                    },
+                                                                           "trust":  -7,
+                                                                           "effect":  "信任 -7，保留零件",
+                                                                           "future":  "继续拒绝 → 冲突延续，事故风险 +15%。"
+                                                                       },
+                                                            "defer":  {
+                                                                          "label":  "再等一天",
+                                                                          "cost":  {
+
+                                                                                   },
+                                                                          "trust":  -2,
+                                                                          "effect":  "信任 -2",
+                                                                          "future":  "承诺推迟 → 明日再次要求解释。"
+                                                                      }
+                                                        }
+                                      },
+                         "follow":  {
+                                        "id":  "repair_priority",
+                                        "speaker":  "老赵",
+                                        "job":  "维修组",
+                                        "need":  "教大家做一次日常检修",
+                                        "goal":  "教大家做一次日常检修",
+                                        "urgency":  "低",
+                                        "deadline":  "今晚停歇时",
+                                        "body":  "“昨天那次维修管用了。把怎么判断异响教给大家，下次就不用等我一个人。”",
+                                        "fact":  "repair_priority",
+                                        "responses":  {
+                                                          "accept":  {
+                                                                         "label":  "给大家演示",
+                                                                         "cost":  {
+                                                                                      "parts":  1
+                                                                                  },
+                                                                         "trust":  2,
+                                                                         "effect":  "零件 -1，耐久 +5，知识 +1，信任 +2",
+                                                                         "future":  "检修分享 → 明日事故风险继续降低。",
+                                                                         "repair":  5,
+                                                                         "knowledge":  1
+                                                                     },
+                                                          "refuse":  {
+                                                                         "label":  "先由你独自负责",
+                                                                         "cost":  {
+
+                                                                                  },
+                                                                         "trust":  -2,
+                                                                         "effect":  "信任 -2",
+                                                                         "future":  "知识未共享 → 老赵继续独自承担维护。"
+                                                                     },
+                                                          "defer":  {
+                                                                        "label":  "下次营地再教",
+                                                                        "cost":  {
+
+                                                                                 },
+                                                                        "trust":  0,
+                                                                        "effect":  "教学延期",
+                                                                        "future":  "检修仍需老赵，明日再次提出。"
+                                                                    }
+                                                      }
+                                    },
+                         "water":  {
+                                       "id":  "water_request",
+                                       "speaker":  "周禾",
+                                       "job":  "后勤组",
+                                       "need":  "额外分水给疲惫的成员",
+                                       "goal":  "额外分水给疲惫的成员",
+                                       "urgency":  "高",
+                                       "deadline":  "今晚停歇时",
+                                       "body":  "“水桶已经见底，大家不敢多喝。分两份水能缓解疲劳，可今晚每个人仍然需要配给。”",
+                                       "fact":  "water_request",
+                                       "responses":  {
+                                                         "accept":  {
+                                                                        "label":  "额外分两份水",
+                                                                        "cost":  {
+                                                                                     "water":  2
+                                                                                 },
+                                                                        "trust":  4,
+                                                                        "effect":  "饮水 -2，疲劳 -12，信任 +4",
+                                                                        "future":  "额外分水被记住；明日按库存重新评估。",
+                                                                        "fatigue":  -12
+                                                                    },
+                                                         "refuse":  {
+                                                                        "label":  "只保留基本配给",
+                                                                        "cost":  {
+
+                                                                                 },
+                                                                        "trust":  -4,
+                                                                        "effect":  "信任 -4，保留饮水",
+                                                                        "future":  "缺水仍在 → 明日库存低时再次请求。"
+                                                                    },
+                                                         "defer":  {
+                                                                       "label":  "等找到下一处水源",
+                                                                       "cost":  {
+
+                                                                                },
+                                                                       "trust":  -1,
+                                                                       "effect":  "信任 -1",
+                                                                       "future":  "分水延期 → 明日低库存时优先处理。"
+                                                                   }
+                                                     }
+                                   },
+                         "medical":  {
+                                         "id":  "medical_request",
+                                         "speaker":  "许宁",
+                                         "job":  "医疗组",
+                                         "need":  "处理成员的疲劳与擦伤",
+                                         "goal":  "处理成员的疲劳与擦伤",
+                                         "urgency":  "高",
+                                         "deadline":  "今晚停歇时",
+                                         "body":  "“路上大家都没睡好。给我一份药品，至少能处理擦伤。晚上如果能休息，我们才撑得住。”",
+                                         "fact":  "medical_request",
+                                         "responses":  {
+                                                           "accept":  {
+                                                                          "label":  "使用一份药品",
+                                                                          "cost":  {
+                                                                                       "medicine":  1
+                                                                                   },
+                                                                          "trust":  3,
+                                                                          "effect":  "药品 -1，疲劳 -15，信任 +3",
+                                                                          "future":  "伤势缓解 → 明日按疲劳重新评估。",
+                                                                          "fatigue":  -15
+                                                                      },
+                                                           "refuse":  {
+                                                                          "label":  "把药留给重伤",
+                                                                          "cost":  {
+
+                                                                                   },
+                                                                          "trust":  -4,
+                                                                          "effect":  "信任 -4，保留药品",
+                                                                          "future":  "伤势未处理 → 疲劳继续积累。"
+                                                                      },
+                                                           "defer":  {
+                                                                         "label":  "今晚安排休息",
+                                                                         "cost":  {
+
+                                                                                  },
+                                                                         "trust":  0,
+                                                                         "effect":  "药品保留；需自行选择营地休息",
+                                                                         "future":  "休息承诺记录；执行休息才能恢复疲劳。"
+                                                                     }
+                                                       }
+                                     }
+                     },
+    "camp_actions":  {
+                         "维修车辆":  {
+                                      "cost":  {
+                                                   "parts":  2
+                                               },
+                                      "repair":  15,
+                                      "effect":  "零件 -2，耐久 +15（最高 100）"
+                                  },
+                         "阅读技术手册":  {
+                                        "cost":  {
+
+                                                 },
+                                        "knowledge":  1,
+                                        "effect":  "知识 +1；解锁教学与记录"
+                                    },
+                         "教学与记录":  {
+                                       "cost":  {
+
+                                                },
+                                       "knowledge":  1,
+                                       "trust":  2,
+                                       "effect":  "知识 +1，信任 +2；累计两次形成共同维护习惯",
+                                       "requires_manual":  true
+                                   },
+                         "让成员休息":  {
+                                       "cost":  {
+
+                                                },
+                                       "fatigue":  -20,
+                                       "trust":  1,
+                                       "effect":  "疲劳 -20（最低 0），信任 +1"
+                                   }
+                     },
+    "endings":  {
+                    "仍在路上":  "五个停歇点留在身后。车队还在前进，你们学会了活过今天，却还没有把生存经验变成共同的记忆。",
+                    "知识的火种":  "手册被读懂，又被写入营地笔记。现在不止老赵一个人能照顾这辆车；未来终于有了可以传递的形状。",
+                    "饮水耗尽":  "补给无法满足今晚的配给。车队停在水源之间，没能撑到下一处营地。",
+                    "粮食耗尽":  "最后的口粮不足以分给所有人。你们的旅途在这里停下。",
+                    "车队停摆":  "车辆已经无法继续行驶。这段体验中的维修与补给没能维持车队。",
+                    "车队分裂":  "一次次拒绝和失约消耗了最后的信任。天亮时，已经没人愿意跟随。",
+                    "疲惫倒下":  "连日赶路耗尽了成员的体力。车队需要的休息来得太晚。"
+                }
 }

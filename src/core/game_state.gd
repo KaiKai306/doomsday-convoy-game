@@ -29,6 +29,11 @@ var phase: Phase = Phase.MORNING
 var resources: Dictionary = DEFAULT_RESOURCES.duplicate()
 var team_trust: int = 50
 var world_facts: Dictionary = {}
+var vehicle_health: int = 80
+var fatigue: int = 10
+var knowledge: int = 0
+var tracking: int = 0
+var ending: String = ""
 
 func reset(initial_resources: Dictionary = DEFAULT_RESOURCES, initial_trust: int = 50) -> void:
 	day = 1
@@ -36,6 +41,11 @@ func reset(initial_resources: Dictionary = DEFAULT_RESOURCES, initial_trust: int
 	resources = initial_resources.duplicate()
 	team_trust = clampi(initial_trust, 0, 100)
 	world_facts.clear()
+	vehicle_health = 80
+	fatigue = 10
+	knowledge = 0
+	tracking = 0
+	ending = ""
 
 func adjust_trust(amount: int) -> void:
 	team_trust = clampi(team_trust + amount, 0, 100)

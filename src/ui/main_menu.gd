@@ -1,135 +1,105 @@
 extends Control
 
-const DAY_DEMO_SCENE := preload("res://scenes/day_demo.tscn")
-
-@onready var status_label: Label = %StatusLabel
-@onready var menu: VBoxContainer = $Menu
-@onready var title_label: Label = $Title
-@onready var subtitle_label: Label = $Subtitle
-@onready var shade: ColorRect = $Shade
-@onready var demo_panel: Panel = $DemoPanel
-@onready var game_state: GameState = $GameState
-
-var _day_demo: DayDemo
-var _background_particles: Array[Dictionary] = []
-var _background_time: float = 0.0
+const DAY_SCENE := preload("res://scenes/day_demo.tscn")
+var frame: Control
+var menu: Control
+var world: ConvoyWorld
+var game_state: GameState
+var day_demo: DayDemo
+var save_system := SaveSystem.new()
+var message: Label
+var continue_button: Button
+var confirmation: ConfirmationDialog
 
 func _ready() -> void:
-	status_label.text = "Demo 版式占位\nGodot 4.7.2 · 背景美术待替换"
-	_init_background_particles()
-	get_viewport().size_changed.connect(_fit_menu_layout)
-	_fit_menu_layout()
-	_animate_menu_in()
+	theme = ConvoyTheme.create()
+	game_state = GameState.new()
+	add_child(game_state)
+	frame = Control.new()
+	frame.size = Vector2(1280, 720)
+	add_child(frame)
+	get_viewport().size_changed.connect(_fit)
+	_fit()
+	world = ConvoyWorld.new()
+	world.phase = -1
+	world.size = Vector2(1280, 720)
+	frame.add_child(world)
+	menu = Control.new()
+	menu.size = Vector2(1280, 720)
+	frame.add_child(menu)
+	var shade := ColorRect.new()
+	shade.color = Color(0.025, 0.055, 0.09, 0.91)
+	shade.size = Vector2(510, 720)
+	menu.add_child(shade)
+	var text := VBoxContainer.new()
+	text.position = Vector2(58, 65)
+	text.size = Vector2(390, 580)
+	menu.add_child(text)
+	text.add_child(ConvoyTheme.label("DOOMSDAY  /  CONVOY", 16, ConvoyTheme.GOLD))
+	text.add_child(ConvoyTheme.label("末日车队", 60))
+	text.add_child(ConvoyTheme.label("把今天熬过去。\n把明天留给彼此。", 23, ConvoyTheme.MUTED))
+	var spacer := Control.new()
+	spacer.custom_minimum_size.y = 25
+	text.add_child(spacer)
+	text.add_child(ConvoyTheme.button("开始新的旅程  →", _start_game, "new_game"))
+	continue_button = ConvoyTheme.button("继续旅程", _continue, "continue_game")
+	continue_button.disabled = save_system.load_from_file().is_empty()
+	text.add_child(continue_button)
+	text.add_child(ConvoyTheme.button("关于这段旅途", _about, "about"))
+	text.add_child(ConvoyTheme.button("离开游戏", func(): confirmation.popup_centered(Vector2i(420, 180)), "exit"))
+	message = ConvoyTheme.label("五日体验版 0.2\n生存经营 / 成员对话 / 共同记忆", 16, ConvoyTheme.MUTED)
+	text.add_child(message)
+	var intro := PanelContainer.new()
+	intro.position = Vector2(790, 75)
+	intro.size = Vector2(430, 150)
+	menu.add_child(intro)
+	intro.add_child(ConvoyTheme.label("01   向山口出发\n\n五个人，一辆旧车。\n每一次分配，都在决定车队的未来。", 20))
+	var footer := ConvoyTheme.label("Game Jam 体验版 · 场景为程序绘制占位", 13, ConvoyTheme.MUTED)
+	footer.position = Vector2(790, 676)
+	footer.size.x = 450
+	menu.add_child(footer)
+	confirmation = ConfirmationDialog.new()
+	confirmation.title = "离开游戏"
+	confirmation.dialog_text = "确认离开这段旅途？"
+	confirmation.ok_button_text = "离开"
+	confirmation.cancel_button_text = "留下"
+	confirmation.confirmed.connect(func(): get_tree().quit())
+	add_child(confirmation)
 
-func _fit_menu_layout() -> void:
+func _fit() -> void:
 	var viewport_size := get_viewport_rect().size
-	var safe_margin := Vector2(24.0, 24.0)
-	var scale_factor := minf(
-		(viewport_size.x - safe_margin.x * 2.0) / 1280.0,
-		(viewport_size.y - safe_margin.y * 2.0) / 720.0
-	)
-	scale_factor = clampf(scale_factor, 0.65, 1.0)
-	var offset := (viewport_size - Vector2(1280.0, 720.0) * scale_factor) * 0.5
-	_set_design_position(title_label, Vector2(78.0, 54.0), scale_factor, offset)
-	_set_design_position(subtitle_label, Vector2(82.0, 116.0), scale_factor, offset)
-	_set_design_position(menu, Vector2(78.0, 220.0), scale_factor, offset)
-	_set_design_position(demo_panel, Vector2(762.0, 118.0), scale_factor, offset)
-	_set_design_position($Footer, Vector2(78.0, 650.0), scale_factor, offset)
+	var factor := minf(viewport_size.x / 1280.0, viewport_size.y / 720.0)
+	frame.scale = Vector2.ONE * factor
+	frame.position = (viewport_size - Vector2(1280, 720) * factor) / 2
 
-func _set_design_position(control: Control, design_position: Vector2, scale_factor: float, offset: Vector2) -> void:
-	control.position = offset + design_position * scale_factor
-	control.scale = Vector2.ONE * scale_factor
+func _start_game(saved: Dictionary = {}) -> void:
+	if is_instance_valid(day_demo): return
+	day_demo = DAY_SCENE.instantiate()
+	add_child(day_demo)
+	if not day_demo.setup(game_state, saved):
+		day_demo.queue_free()
+		day_demo = null
+		message.text = "存档不兼容或已损坏。可以开始新的旅程。"
+		return
+	frame.hide()
+	world.set_process(false)
+	day_demo.return_to_menu.connect(_return_to_menu)
 
-func _process(delta: float) -> void:
-	_background_time += delta
-	for particle in _background_particles:
-		var position: Vector2 = particle["position"]
-		position.x -= float(particle["speed"]) * delta
-		position.y -= float(particle["drift"]) * delta
-		if position.x < -12.0:
-			position.x = size.x + 12.0
-		if position.y < size.y * 0.28:
-			position.y = size.y * 0.82
-		particle["position"] = position
-	queue_redraw()
-
-func _init_background_particles() -> void:
-	var random := RandomNumberGenerator.new()
-	random.seed = 20261007
-	for index in range(34):
-		_background_particles.append({
-			"position": Vector2(
-				random.randf_range(0.0, 1280.0),
-				random.randf_range(360.0, 690.0)
-			),
-			"speed": random.randf_range(6.0, 18.0),
-			"drift": random.randf_range(1.0, 5.0),
-			"size": random.randf_range(1.0, 2.8),
-			"alpha": random.randf_range(0.16, 0.46),
-		})
-
-func _animate_menu_in() -> void:
-	title_label.modulate.a = 0.0
-	subtitle_label.modulate.a = 0.0
-	menu.modulate.a = 0.0
-	demo_panel.modulate.a = 0.0
-	var tween := create_tween().set_parallel()
-	tween.tween_property(title_label, "modulate:a", 1.0, 0.65)
-	tween.tween_property(subtitle_label, "modulate:a", 1.0, 0.55).set_delay(0.12)
-	tween.tween_property(menu, "modulate:a", 1.0, 0.55).set_delay(0.25)
-	tween.tween_property(demo_panel, "modulate:a", 0.82, 0.55).set_delay(0.36)
-
-func _on_new_game_pressed() -> void:
-	menu.hide()
-	title_label.hide()
-	subtitle_label.hide()
-	shade.hide()
-	demo_panel.hide()
-	_day_demo = DAY_DEMO_SCENE.instantiate()
-	_day_demo.position = Vector2(58, 48)
-	_day_demo.modulate.a = 0.0
-	add_child(_day_demo)
-	_day_demo.return_to_menu.connect(_return_to_menu)
-	_day_demo.setup(game_state)
-	var tween := create_tween()
-	tween.tween_property(_day_demo, "modulate:a", 1.0, 0.35)
-
-func _on_options_pressed() -> void:
-	status_label.text = "选项入口已预留\n下一步：接入画面、音频和触控设置"
-
-func _on_exit_pressed() -> void:
-	status_label.text = "退出按钮已触发\nDemo 阶段暂不关闭应用"
+func _continue() -> void:
+	var saved := save_system.load_from_file()
+	if saved.is_empty():
+		message.text = "还没有保存过旅途。请先开始新游戏。"
+		return
+	_start_game(saved)
 
 func _return_to_menu() -> void:
-	if is_instance_valid(_day_demo):
-		_day_demo.queue_free()
-		_day_demo = null
-	menu.show()
-	title_label.show()
-	subtitle_label.show()
-	shade.show()
-	demo_panel.show()
-	status_label.text = "Demo 已完成第 1 天\n可以再次开始测试"
-	_animate_menu_in()
+	if is_instance_valid(day_demo):
+		day_demo.queue_free()
+		day_demo = null
+	frame.show()
+	world.set_process(true)
+	continue_button.disabled = save_system.load_from_file().is_empty()
+	message.text = "篝火还在。准备好后，再次上路。"
 
-func _draw() -> void:
-	# 临时背景只使用几何图形，正式背景资源稍后替换。
-	draw_rect(Rect2(Vector2.ZERO, size), Color("111820"))
-	draw_circle(Vector2(size.x * 0.78, size.y * 0.24), 92.0, Color("8d8063"))
-	var moon_color := Color("b2a27a")
-	moon_color.a = 0.88 + sin(_background_time * 0.8) * 0.06
-	draw_circle(Vector2(size.x * 0.78, size.y * 0.24), 78.0, moon_color)
-	draw_colored_polygon(PackedVector2Array([
-		Vector2(0, size.y * 0.70),
-		Vector2(size.x * 0.26, size.y * 0.53),
-		Vector2(size.x * 0.48, size.y * 0.69),
-		Vector2(size.x * 0.67, size.y * 0.56),
-		Vector2(size.x, size.y * 0.70),
-		Vector2(size.x, size.y),
-		Vector2(0, size.y),
-	]), Color("1f2b2d"))
-	draw_line(Vector2(0, size.y * 0.70), Vector2(size.x, size.y * 0.70), Color("92764d"), 3.0)
-	for particle in _background_particles:
-		var particle_color := Color("e7b866")
-		particle_color.a = float(particle["alpha"]) * (0.75 + sin(_background_time * 2.0 + float(particle["size"])) * 0.25)
-		draw_circle(particle["position"], float(particle["size"]), particle_color)
+func _about() -> void:
+	message.text = "每天：准备 → 选路 → 行进 → 对话 → 营地 → 夜晚\n试着让生存经验成为大家共享的知识。\n暂停菜单可以随时保存。"
