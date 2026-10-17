@@ -1,0 +1,69 @@
+{
+  "reviewer": "assistant",
+  "method": "whole-body and hand/prop contact sheets at 0.00, 0.71, 1.46, 2.17, 2.92, 3.62, 4.38 and 5.08 seconds; loop closure separately measured by sprite-gen; corrected Lu Zhi/Bai La: all 123 head frames plus eight full-body and hand/prop samples, new local ComfyUI clips",
+  "user_acceptance": "not claimed",
+  "characters": {
+    "chen_chuan": {
+      "status": "passed",
+      "observed": "turns and repositions a screwdriver against a held motor; same prop, full head and shoes, no chair or scene; sampled hand details coherent"
+    },
+    "du_heng": {
+      "status": "passed",
+      "observed": "traces the same map and changes gaze; map remains open, whole body intact, sampled hands and map coherent"
+    },
+    "lin_yue": {
+      "status": "passed",
+      "observed": "checks three rolled straps with fingertip movements; exactly three rolls persist in sampled hand-detail frames, whole body intact"
+    },
+    "cen_bai": {
+      "status": "passed",
+      "observed": "carefully manipulates and checks a cord loop, pauses and returns; sampled hands and cord are coherent, full head and both shoes present"
+    },
+    "xu_wei": {
+      "status": "passed",
+      "observed": "gently smooths and pats the same folded blanket, then returns to the starting hand position; no child or other person, full head and shoes intact"
+    },
+    "lu_zhi": {
+      "status": "passed",
+      "observed": "All 123 frames retain bowed head and lowered eyes toward the left wrist and working right hand; no upward or camera glance. Right hand draws and smooths the existing short cloth end, left hand briefly flexes, and hands return. Eight full-body and hand-detail samples retain the same wrap, wrench, complete shoes and stable seated placement. No chair or background scene. Three strong-green foreground edge pixels at most; no visible green fringe at delivered scale.",
+      "all_head_frames": 123,
+      "detail_sample_frames": [
+        0,
+        17,
+        35,
+        52,
+        70,
+        87,
+        105,
+        122
+      ],
+      "evidence": [
+        "lu_zhi/all_123_head_frames_green.png",
+        "lu_zhi/head_detail_green.png",
+        "lu_zhi/hands_detail_green.png",
+        "staged/assets/characters/lu_zhi/animations/seated_activity/preview_green.png"
+      ]
+    },
+    "bai_la": {
+      "status": "passed",
+      "observed": "All 123 frames show bowed head and downward eyes directed toward the washer and pouch. No upward glance. Slow washer rotation and return are visible, hole remains readable except when naturally edge-on, pouch and other washers stay present. Eight whole-body samples retain complete head, both shoes and fixed seat; no chair, no scene. Export has zero strong green foreground pixels.",
+      "all_head_frames": 123,
+      "detail_sample_frames": [
+        0,
+        17,
+        35,
+        52,
+        70,
+        87,
+        105,
+        122
+      ],
+      "evidence": [
+        "bai_la/all_123_head_frames_green.png",
+        "bai_la/head_detail_green.png",
+        "bai_la/hands_detail_green.png",
+        "staged/assets/characters/bai_la/animations/seated_activity/preview_green.png"
+      ]
+    }
+  }
+}

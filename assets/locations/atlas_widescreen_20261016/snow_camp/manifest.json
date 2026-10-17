@@ -1,0 +1,90 @@
+{
+  "title": "北部雪地营地",
+  "view": "side",
+  "camera_limit_source_canvas_pixels": 25,
+  "walk_path": [
+    [
+      140,
+      1035
+    ],
+    [
+      1050,
+      1048
+    ],
+    [
+      1580,
+      1048
+    ],
+    [
+      2540,
+      1035
+    ]
+  ],
+  "spawn_x": 740,
+  "npc_x": [
+    800,
+    1010,
+    1210,
+    1480,
+    1700,
+    1890,
+    2100
+  ],
+  "blockers": [
+    [
+      1130,
+      760,
+      350,
+      235
+    ],
+    [
+      750,
+      620,
+      340,
+      340
+    ],
+    [
+      1490,
+      600,
+      480,
+      360
+    ]
+  ],
+  "parking_areas_canvas_pixels": [
+    [
+      76,
+      565,
+      579,
+      408
+    ],
+    [
+      2062,
+      565,
+      579,
+      408
+    ]
+  ],
+  "art_root": "res://assets/locations/atlas_widescreen_20261016/snow_camp/",
+  "plate_files": [
+    "01_far.png",
+    "02_mid.png",
+    "03_near.png"
+  ],
+  "original_size": [
+    2688,
+    1152
+  ],
+  "plane_padding": 32,
+  "warm_x": 1250,
+  "outpainting_method": "Existing native 21:9 plates preserved; no new image generation required.",
+  "preserved_center": [
+    0,
+    0,
+    2688,
+    1152
+  ],
+  "center_plate_pixels_unchanged": true,
+  "image_record": null,
+  "raw_sha256": null,
+  "far_repair": "Original bounded texture repair retained; wing occlusion uses local reflected texture. Camera limited to +/-24 source pixels. Not an independently painted hidden world."
+}

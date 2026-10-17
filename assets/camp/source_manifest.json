@@ -1,0 +1,10 @@
+{
+  "layers_source": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\02_新项目_末日车队\\视差背景",
+  "reference_source": "C:\\Users\\t6275\\AppData\\Local\\Temp\\codex-clipboard-4af602e9-0339-4f1f-9a6a-2210ddd9e7fc.png",
+  "background_scroll": {
+    "sky": 0.05,
+    "ridges": 0.45,
+    "ground": 1.0
+  },
+  "art_status": "First playable art pass. Reference character/truck cutouts are provisional; no full walk sprite sheet."
+}

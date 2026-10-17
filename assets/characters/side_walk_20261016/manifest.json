@@ -1,0 +1,89 @@
+{
+  "model": "gpt-image-2.5-sunburst",
+  "characters": {
+    "ajie": {
+      "id": "ajie",
+      "name": "阿杰",
+      "source_sha256": "9f7d26393986f9ee2f455a3ebf10b1a04012456e6894bf751fcec0b47900260e",
+      "source_size": [
+        2048,
+        1152
+      ],
+      "crop_box": [
+        9,
+        4,
+        2039,
+        1143
+      ],
+      "size": [
+        2030,
+        1139
+      ],
+      "file": "ajie.png",
+      "key": "painted checkerboard removal (not native alpha), alpha reconstruction with edge decontamination"
+    },
+    "sofia": {
+      "id": "sofia",
+      "name": "索菲亚",
+      "source_sha256": "9df20f856adfa741c07c77cf384958d39f3fc6c120acee0df362412c143d714e",
+      "source_size": [
+        2048,
+        1152
+      ],
+      "crop_box": [
+        858,
+        21,
+        1205,
+        1135
+      ],
+      "size": [
+        347,
+        1114
+      ],
+      "file": "sofia.png",
+      "key": "painted checkerboard removal (not native alpha), alpha reconstruction with edge decontamination"
+    },
+    "zhang": {
+      "id": "zhang",
+      "name": "老张",
+      "source_sha256": "5d48c0ce5e297f5cc6edb7cd3de8688e36f4f5697c38d2e8a3c862276542f517",
+      "source_size": [
+        2048,
+        1152
+      ],
+      "crop_box": [
+        856,
+        28,
+        1157,
+        1131
+      ],
+      "size": [
+        301,
+        1103
+      ],
+      "file": "zhang.png",
+      "key": "painted checkerboard removal with connected silhouette (not native alpha), alpha reconstruction with edge decontamination"
+    },
+    "elin": {
+      "id": "elin",
+      "name": "艾琳",
+      "source_sha256": "55bd701862e48b2fc833760e0003d1f161bc3a2000ab84ecdfe3aa1dafae63bb",
+      "source_size": [
+        2048,
+        1152
+      ],
+      "crop_box": [
+        890,
+        19,
+        1158,
+        1132
+      ],
+      "size": [
+        268,
+        1113
+      ],
+      "file": "elin.png",
+      "key": "painted checkerboard removal with connected silhouette (not native alpha), alpha reconstruction with edge decontamination"
+    }
+  }
+}

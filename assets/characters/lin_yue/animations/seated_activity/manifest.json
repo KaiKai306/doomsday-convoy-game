@@ -1,0 +1,106 @@
+{
+  "id": "lin_yue",
+  "character": "林悦",
+  "action": "右手把最外侧的一卷绑带轻轻挪到整齐的位置，依次按一下三卷绑带，检查布边后再将那一卷缓缓挪回最初位置，双手回到起点；动作有条理，表现习惯清点和收纳。",
+  "source_fact": "第7天水塔后勤专家，正文中把桶盖按同一方向归位，后勤65。",
+  "new_art_design": "30岁女性，中等身高、匀称体型，椭圆脸、清晰温和的眉眼，黑发扎利落低马尾。穿暗砖红色无袖耐磨背心、米白长袖衬衣、深棕直筒裤和旧咖啡色短靴；腰侧一个小分格帆布物资包，衣服朴素整洁。",
+  "video_generation": {
+    "character": "林悦",
+    "provider": "local ComfyUI",
+    "endpoint": "http://127.0.0.1:8190",
+    "model": "minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+    "turbo_8step_lora": true,
+    "steps": 8,
+    "seed": 26101623,
+    "fps": 24,
+    "frames_requested": 124,
+    "size_requested": [
+      512,
+      768
+    ],
+    "first_and_last_frame": "C:\\Users\\t6275\\AppData\\Local\\Comfy-Desktop\\ComfyUI-Shared\\input\\convoy_characters_20261016\\lin_yue.png",
+    "prompt": "A locked-off full-body shot of the SAME seated character from the input image. Preserve the exact face, hair, clothes, body proportions, viewing angle and all props. One complete slow, careful action over about five seconds, ending in the exact starting pose. The hips, seated contact height, knees and planted shoes stay in their original screen positions. Only the hands, forearms, a little head movement, natural blinking and subtle breathing move. Stable character scale, no panning, zooming or turning. Keep the entire head, both hands and both shoes within the frame. The background remains a perfectly uniform chroma green RGB(0,255,0), including the space beneath the hips and between the legs. No chair, stool, table, scenery, floor, cast shadow, other person, text, UI or watermark. No object duplication, no disappearing props, no extra fingers or limbs. Silent video.\nAction: With the cloth and three small rolled straps held on her lap, she gently moves the outermost roll into line, checks the three rolls with small fingertip taps, then slides that same roll back to the starting position and returns her hands. Exactly three rolls remain visible throughout. Methodical, organized quartermaster behavior.",
+    "prompt_id": "389be3bb-3abd-49dc-81c1-30ef43396bc6",
+    "output": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\其余七人坐姿动画_20261016\\lin_yue\\source.mp4",
+    "sha256": "9716e1de07970a878384ed56e8fa980df5ea9ffa0c7ad0721b13d9bfd9f3de95",
+    "elapsed_seconds": 230.5
+  },
+  "frames": 123,
+  "fps": 24,
+  "duration_seconds": 5.125,
+  "canvas": [
+    332,
+    607
+  ],
+  "loop": true,
+  "cycle": {
+    "kind": "pinned",
+    "start": 0,
+    "length": 123,
+    "seam": 0.001539892517030239,
+    "inner_mean_adjacent": 0.0008256118162535131,
+    "ratio": 1.8651531951395888,
+    "pin_error": 0.00153292843606323,
+    "pin_tolerance": 0.005,
+    "period_global": null,
+    "periodicity": null
+  },
+  "green_rgb": [
+    0,
+    255,
+    0
+  ],
+  "source_crop_box": [
+    51,
+    6,
+    463,
+    759
+  ],
+  "scale": 0.8067226890756303,
+  "seat_anchor": {
+    "in_source_still": [
+      365,
+      875
+    ],
+    "in_video": [
+      182.5,
+      437.5
+    ],
+    "in_exported_png": [
+      105.96601941747574,
+      347.83598937583
+    ],
+    "prefab_origin": [
+      0,
+      0
+    ],
+    "nearest_sole_y_from_prefab_origin": 240,
+    "method": "manual anatomical seat annotation on source, one fixed crop/scale for complete cycle; no individual-frame centering"
+  },
+  "validation": {
+    "same_canvas": true,
+    "transparent_borders": true,
+    "gif_infinite_loop": true,
+    "gif_frames": 123,
+    "gif_ms": 5120,
+    "strong_green_pixels_max": 2,
+    "godot": {
+      "version": "4.7.2",
+      "status": "passed",
+      "checks": [
+        "SpriteFrames load",
+        "123 matching texture sizes",
+        "24 FPS",
+        "infinite loop",
+        "seat-origin prefab instantiate",
+        "AnimatedSprite2D play"
+      ]
+    }
+  },
+  "manual_adapter_stages": [
+    "green GIF compositing/encoding",
+    "shared crop and seat-height scaling",
+    "SpriteFrames and seat-origin prefab"
+  ],
+  "native_frames_archive": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\其余七人坐姿动画_20261016\\lin_yue\\loop\\cycle"
+}

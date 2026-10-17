@@ -1,0 +1,41 @@
+{
+  "title": "图书馆物流档案室",
+  "art_root": "res://assets/locations/biomes_20261016/library_archive/",
+  "walk_path": [
+    [
+      155,
+      806
+    ],
+    [
+      1893,
+      806
+    ]
+  ],
+  "spawn_x": 610,
+  "npc_x": [
+    350,
+    1010,
+    1350,
+    1690
+  ],
+  "camera_limit_source_canvas_pixels": 24,
+  "warm_x": 1100,
+  "warm_radius": 700,
+  "warm_strength": 0.35,
+  "interior": true,
+  "biome": "interior",
+  "original_size": [
+    2048,
+    1152
+  ],
+  "layout_ground_y": 806,
+  "original_ground_y": 770,
+  "source_path": ".docs\\美术\\地貌与地点补齐_20261016\\source\\raw\\library_archive.png",
+  "source_sha256": "5e4a2d2138f655e87dd1e6b69228564b9a44473e412ddc69d45b2cf3bb7d032d",
+  "planes": [
+    "far.png",
+    "mid.png",
+    "near.png"
+  ],
+  "far_repair": "Local reflected textures below manually marked boundary; bounded +/-24 source-pixel parallax only, not an independently painted hidden world."
+}

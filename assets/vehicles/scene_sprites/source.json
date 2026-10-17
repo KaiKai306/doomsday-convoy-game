@@ -1,0 +1,8 @@
+{
+  "purpose": "Existing vehicle sprites cropped for parking fit preview only",
+  "sources": {
+    "side_pickup": "车辆2D侧面/右侧/V01_旧皮卡_右侧.png",
+    "side_suv": "车辆2D侧面/左侧/V05_深灰越野车_左侧.png",
+    "oblique_suv": "车辆2D/V05_深灰越野车_透明.png"
+  }
+}

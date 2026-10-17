@@ -1,5 +1,5 @@
 {
-  "demo_days": 5,
+  "demo_days": 10,
   "initial_resources": {
     "water": 20,
     "food": 20,
@@ -10,94 +10,90 @@
   "initial_trust": 50,
   "members": [
     {
-      "name": "队长",
+      "name": "主角",
       "job": "路线与决策",
       "health": 100,
       "fatigue": 10,
-      "trust": 50,
-      "maintenance_knowledge": false,
-      "learned_from": ""
+      "trust": 50
     },
     {
-      "name": "老赵",
+      "name": "老张",
       "job": "车辆维护",
       "health": 100,
       "fatigue": 10,
-      "trust": 50,
-      "maintenance_knowledge": false,
-      "learned_from": ""
+      "trust": 50
     },
     {
-      "name": "许宁",
+      "name": "艾琳",
       "job": "医疗",
       "health": 100,
       "fatigue": 10,
-      "trust": 50,
-      "maintenance_knowledge": false,
-      "learned_from": ""
+      "trust": 50
     },
     {
-      "name": "阿遥",
+      "name": "阿杰",
       "job": "侦察",
       "health": 100,
       "fatigue": 10,
-      "trust": 50,
-      "maintenance_knowledge": false,
-      "learned_from": ""
+      "trust": 50
     },
     {
-      "name": "周禾",
+      "name": "索菲亚",
       "job": "后勤",
       "health": 100,
       "fatigue": 10,
-      "trust": 50,
-      "maintenance_knowledge": false,
-      "learned_from": ""
+      "trust": 50
     }
   ],
   "vehicle": {
-    "name": "掠夺者",
+    "name": "老伙计",
     "durability": 80,
     "max_durability": 100
   },
   "stops": [
-    "旧加油站",
-    "隧道口",
+    "旧公路交叉口",
+    "区域入口营地",
     "废弃水塔",
-    "风雪营地",
-    "山口中转站"
+    "临时避风处",
+    "区域中转站",
+    "道路维修点",
+    "旧仓库外围",
+    "区域边界营地",
+    "终点前哨",
+    "阶段目的地"
   ],
   "routes": {
     "安全路线": {
       "fuel_cost": 4,
       "accident_chance": 0.2,
-      "description": "沿旧公路绕过废墟。少量饮水，容易通行。",
+      "description": "绕开破损路段。补给较少，事故风险较低。",
       "supplies": {
-        "water": 2,
-        "food": 1
+        "water": 5,
+        "food": 4,
+        "fuel": 2
       }
     },
     "资源路线": {
       "fuel_cost": 6,
       "accident_chance": 0.45,
-      "description": "穿过仓储区。补给充足，路面破损严重。",
+      "description": "经过仓储支路。补给较多，但耗油和事故风险较高。",
       "supplies": {
         "water": 7,
         "food": 5,
-        "fuel": 1,
+        "fuel": 5,
         "parts": 1
       }
     },
     "未知路线": {
       "fuel_cost": 5,
       "accident_chance": 0.65,
-      "description": "沿无线电方向前进。可找到旧路线档案（知识 +2）与应急物资。",
+      "description": "经过尚未确认的支路。获得备用物资，事故风险最高；不改变剧情方向。",
       "supplies": {
-        "water": 4,
-        "food": 3,
+        "water": 5,
+        "food": 4,
+        "fuel": 3,
         "medicine": 1
-      },
-      "knowledge": 2
+      }
     }
   },
   "daily_costs": {
@@ -107,23 +103,23 @@
   "transactions": {
     "repair": {
       "id": "repair_priority",
-      "speaker": "老赵",
+      "speaker": "老张",
       "job": "维修组",
-      "need": "修复松动的传动轴",
-      "goal": "修复松动的传动轴",
+      "need": "维修右前轮",
+      "goal": "维修右前轮",
       "urgency": "高",
-      "deadline": "今晚停歇时",
-      "body": "“再开下去，轴承迟早会断。给我两份零件，今晚就能修好。但这样明天能用的备件就少了。”",
+      "deadline": "出发前",
+      "body": "“右前轮附近有裂痕。给我两份零件，我在出发前修好；如果留着零件，就要承担途中损坏的风险。”",
       "fact": "repair_priority",
       "responses": {
         "accept": {
-          "label": "交给老赵修理",
+          "label": "交给老张修理",
           "cost": {
             "parts": 2
           },
           "trust": 3,
           "effect": "零件 -2，耐久 +10，信任 +3",
-          "future": "完成维护 → 明日道路事故风险 -15%。",
+          "future": "维修立即生效 → 今天道路事故风险降低，明日出现检修跟进。",
           "repair": 10
         },
         "refuse": {
@@ -144,13 +140,13 @@
     },
     "scout": {
       "id": "route_intel",
-      "speaker": "阿遥",
+      "speaker": "阿杰",
       "job": "侦察组",
       "need": "核对东侧无线电坐标",
-      "goal": "核对东侧无线电坐标",
+      "goal": "确认今日道路",
       "urgency": "中",
-      "deadline": "今晚停歇时",
-      "body": "“东边还有人在广播。信号从旧加油站传来。我想带口粮去查坐标，至少让我们知道下一段路有没有出口。”",
+      "deadline": "出发前",
+      "body": "“我先确认附近哪些路还能走。可以带两份口粮去仔细侦察，也可以先保留口粮。”",
       "fact": "route_intel",
       "responses": {
         "accept": {
@@ -160,7 +156,7 @@
           },
           "trust": 3,
           "effect": "食物 -2，知识 +1，信任 +3",
-          "future": "坐标核实 → 明日阿遥提出记录路线。",
+          "future": "侦察知识已记录；剧情方向仍由大路线选择决定。",
           "knowledge": 1
         },
         "refuse": {
@@ -181,12 +177,12 @@
     },
     "map": {
       "id": "route_intel",
-      "speaker": "阿遥",
+      "speaker": "阿杰",
       "job": "侦察组",
       "need": "把验证过的路线记下来",
       "goal": "把验证过的路线记下来",
       "urgency": "中",
-      "deadline": "今晚停歇时",
+      "deadline": "出发前",
       "body": "“信号确实来自旧站。我们走过的裂缝和水源也该写进地图；如果我出事，其他人还能找得到路。”",
       "fact": "route_intel",
       "responses": {
@@ -216,12 +212,12 @@
     },
     "conflict": {
       "id": "repair_priority",
-      "speaker": "老赵",
+      "speaker": "老张",
       "job": "维修组",
       "need": "解释昨天的零件分配",
       "goal": "解释昨天的零件分配",
       "urgency": "高",
-      "deadline": "今晚停歇时",
+      "deadline": "出发前",
       "body": "“昨天你说要留着零件。今天车又响了。不是我要特殊待遇，是大家都得坐在这辆车里。”",
       "fact": "repair_priority",
       "responses": {
@@ -253,12 +249,12 @@
     },
     "follow": {
       "id": "repair_priority",
-      "speaker": "老赵",
+      "speaker": "老张",
       "job": "维修组",
       "need": "教大家做一次日常检修",
       "goal": "教大家做一次日常检修",
       "urgency": "低",
-      "deadline": "今晚停歇时",
+      "deadline": "出发前",
       "body": "“昨天那次维修管用了。把怎么判断异响教给大家，下次就不用等我一个人。”",
       "fact": "repair_priority",
       "responses": {
@@ -278,25 +274,25 @@
           "cost": {},
           "trust": -2,
           "effect": "信任 -2",
-          "future": "知识未共享 → 老赵继续独自承担维护。"
+          "future": "知识未共享 → 老张继续独自承担维护。"
         },
         "defer": {
           "label": "下次营地再教",
           "cost": {},
           "trust": 0,
           "effect": "教学延期",
-          "future": "检修仍需老赵，明日再次提出。"
+          "future": "检修仍需老张，明日再次提出。"
         }
       }
     },
     "water": {
       "id": "water_request",
-      "speaker": "周禾",
+      "speaker": "索菲亚",
       "job": "后勤组",
       "need": "额外分水给疲惫的成员",
       "goal": "额外分水给疲惫的成员",
       "urgency": "高",
-      "deadline": "今晚停歇时",
+      "deadline": "出发前",
       "body": "“水桶已经见底，大家不敢多喝。分两份水能缓解疲劳，可今晚每个人仍然需要配给。”",
       "fact": "water_request",
       "responses": {
@@ -328,24 +324,22 @@
     },
     "medical": {
       "id": "medical_request",
-      "speaker": "许宁",
+      "speaker": "艾琳",
       "job": "医疗组",
       "need": "处理成员的疲劳与擦伤",
-      "goal": "处理成员的疲劳与擦伤",
+      "goal": "检查药箱与成员状态",
       "urgency": "高",
-      "deadline": "今晚停歇时",
-      "body": "“路上大家都没睡好。给我一份药品，至少能处理擦伤。晚上如果能休息，我们才撑得住。”",
+      "deadline": "出发前",
+      "body": "“我先检查剩余的药品。整理药箱不需要消耗药；如果有人受伤，再决定是否使用。”",
       "fact": "medical_request",
       "responses": {
         "accept": {
-          "label": "使用一份药品",
-          "cost": {
-            "medicine": 1
-          },
-          "trust": 3,
-          "effect": "药品 -1，疲劳 -15，信任 +3",
-          "future": "伤势缓解 → 明日按疲劳重新评估。",
-          "fatigue": -15
+          "label": "检查并整理药箱",
+          "cost": {},
+          "trust": 1,
+          "effect": "不消耗药品，艾琳信任 +1",
+          "future": "药箱已检查；途中受伤后可在停歇点治疗。",
+          "fatigue": 0
         },
         "refuse": {
           "label": "把药留给重伤",
@@ -362,6 +356,74 @@
           "future": "休息承诺记录；执行休息才能恢复疲劳。"
         }
       }
+    },
+    "captain": {
+      "id": "captain_plan",
+      "speaker": "主角",
+      "job": "路线与决策",
+      "need": "确认今日出发计划",
+      "goal": "决定是否向大家说明计划",
+      "urgency": "低",
+      "deadline": "出发前",
+      "body": "今天先让五个人平安到达临时停歇点。需要决定是否向大家公开当前计划。",
+      "fact": "captain_plan",
+      "responses": {
+        "accept": {
+          "label": "公开当前计划",
+          "cost": {},
+          "trust": 1,
+          "effect": "全队信任 +1",
+          "future": "成员知道当前计划；不替代第2天的大路线选择。"
+        },
+        "refuse": {
+          "label": "暂时保留计划",
+          "cost": {},
+          "trust": -1,
+          "effect": "全队信任 -1",
+          "future": "成员记下了信息保留的决定。"
+        },
+        "defer": {
+          "label": "到停歇点再说明",
+          "cost": {},
+          "trust": 0,
+          "effect": "计划说明延后",
+          "future": "在停歇点可继续说明计划。"
+        }
+      }
+    },
+    "arrival": {
+      "id": "arrival_debrief",
+      "speaker": "索菲亚",
+      "job": "后勤",
+      "need": "复盘当天收获",
+      "goal": "核对补给与下一日配给",
+      "urgency": "低",
+      "deadline": "夜间结算前",
+      "body": "“今天拿到的补给已经登记。我们要核对剩余物资，再为下一天做打算。”",
+      "fact": "arrival_debrief",
+      "responses": {
+        "accept": {
+          "label": "一起核对记录",
+          "cost": {},
+          "trust": 0,
+          "effect": "记录本次回应，无额外资源变化",
+          "future": "按实际库存进行夜间配给。"
+        },
+        "refuse": {
+          "label": "交给你核对",
+          "cost": {},
+          "trust": 0,
+          "effect": "记录本次回应，无额外资源变化",
+          "future": "按实际库存进行夜间配给。"
+        },
+        "defer": {
+          "label": "夜间统一查看",
+          "cost": {},
+          "trust": 0,
+          "effect": "记录本次回应，无额外资源变化",
+          "future": "按实际库存进行夜间配给。"
+        }
+      }
     }
   },
   "camp_actions": {
@@ -370,18 +432,19 @@
         "parts": 2
       },
       "repair": 15,
-      "effect": "零件 -2，所选成员维修耐久 +15；掌握维修知识再 +6（最高 100）"
+      "effect": "零件 -2，耐久 +15（最高 100）"
     },
     "阅读技术手册": {
       "cost": {},
       "knowledge": 1,
-      "effect": "知识 +1；所选读者掌握维修知识，可教学或提高营地维修效率"
+      "effect": "知识 +1；解锁教学与记录"
     },
     "教学与记录": {
       "cost": {},
       "knowledge": 1,
       "trust": 2,
-      "effect": "教师向一位新学员传授维修知识，知识 +1，信任 +2；教学两次且三人掌握后形成共同维护习惯"
+      "effect": "知识 +1，信任 +2；累计两次形成共同维护习惯",
+      "requires_manual": true
     },
     "让成员休息": {
       "cost": {},
@@ -401,8 +464,8 @@
     }
   },
   "endings": {
-    "仍在路上": "五个停歇点留在身后。车队还在前进，你们学会了活过今天，却还没有把生存经验变成共同的记忆。",
-    "知识的火种": "手册被读懂，又被写入营地笔记。现在不止老赵一个人能照顾这辆车；未来终于有了可以传递的形状。",
+    "仍在路上": "十天旅程的框架体验结束。车队保住了成员与基本物资，当前大路线已记录。",
+    "知识的火种": "十天旅程中，车队形成了共同维护习惯，并带着知识抵达当前方向的阶段目的地。",
     "饮水耗尽": "补给无法满足今晚的配给。车队停在水源之间，没能撑到下一处营地。",
     "粮食耗尽": "最后的口粮不足以分给所有人。你们的旅途在这里停下。",
     "车队停摆": "车辆已经无法继续行驶。这段体验中的维修与补给没能维持车队。",
@@ -417,28 +480,28 @@
     "interaction_range": 72,
     "members": [
       {
-        "name": "老赵",
+        "name": "老张",
         "job": "车辆维护",
         "x": 340,
         "color": "9ea890",
         "idle": "正蹲在车旁听传动轴的异响。昨天的分配还记在心里。"
       },
       {
-        "name": "阿遥",
+        "name": "阿杰",
         "job": "侦察",
         "x": 720,
         "color": "85a7b5",
         "idle": "把沿途的路标画在旧纸上，还在留意东侧的广播。"
       },
       {
-        "name": "许宁",
+        "name": "艾琳",
         "job": "医疗",
         "x": 1040,
         "color": "c2aa92",
         "idle": "正在清点剩下的药品，准备为疲惫的成员处理伤势。"
       },
       {
-        "name": "周禾",
+        "name": "索菲亚",
         "job": "后勤",
         "x": 1260,
         "color": "a3a0bd",
@@ -449,18 +512,18 @@
   "stop_events": [
     {
       "title": "旧油泵还能启动",
-      "description": "阿遥发现地窖里有残余燃油。老赵能修油泵，但今晚就无法同时维修车辆、阅读或休息。",
+      "description": "阿杰发现地窖里有残余燃油。老张能修油泵，但今晚就无法同时维修车辆、阅读或休息。",
       "actions": {
         "修复旧油泵": {
           "cost": {
             "parts": 2
           },
-          "effect": "零件 -2，燃料 +7，老赵疲劳 +8",
+          "effect": "零件 -2，燃料 +7，老张疲劳 +8",
           "gains": {
             "fuel": 7
           },
           "member_effects": {
-            "老赵": {
+            "老张": {
               "fatigue": 8
             }
           },
@@ -469,12 +532,12 @@
         },
         "拆掉旧泵留备件": {
           "cost": {},
-          "effect": "零件 +3，阿遥疲劳 +8；放弃该油泵的燃油",
+          "effect": "零件 +3，阿杰疲劳 +8；放弃该油泵的燃油",
           "gains": {
             "parts": 3
           },
           "member_effects": {
-            "阿遥": {
+            "阿杰": {
               "fatigue": 8
             }
           },
@@ -485,16 +548,16 @@
     },
     {
       "title": "隧道深处的废弃救护车",
-      "description": "许宁看到了救护车标志。深入搜索可以找药，但没人确认通道是否安全；也可以只搬走入口的罐头。",
+      "description": "艾琳看到了救护车标志。深入搜索可以找药，但没人确认通道是否安全；也可以只搬走入口的罐头。",
       "actions": {
         "搜索救护车": {
           "cost": {},
-          "effect": "药品 +3，许宁健康 -8、疲劳 +10，追踪 +6",
+          "effect": "药品 +3，艾琳健康 -8、疲劳 +10，追踪 +6",
           "gains": {
             "medicine": 3
           },
           "member_effects": {
-            "许宁": {
+            "艾琳": {
               "health": -8,
               "fatigue": 10
             }
@@ -505,12 +568,12 @@
         },
         "只取入口物资": {
           "cost": {},
-          "effect": "食物 +4，周禾疲劳 +5",
+          "effect": "食物 +4，索菲亚疲劳 +5",
           "gains": {
             "food": 4
           },
           "member_effects": {
-            "周禾": {
+            "索菲亚": {
               "fatigue": 5
             }
           },
@@ -521,7 +584,7 @@
     },
     {
       "title": "水塔的柴油抽水机",
-      "description": "储水箱还有干净水。抽水需要燃料，轰鸣会吸引追踪者；手工搬运更安静，但阿遥要承担更多疲劳。",
+      "description": "储水箱还有干净水。抽水需要燃料，轰鸣会吸引追踪者；手工搬运更安静，但阿杰要承担更多疲劳。",
       "actions": {
         "启动柴油抽水机": {
           "cost": {
@@ -537,12 +600,12 @@
         },
         "安静搬运水桶": {
           "cost": {},
-          "effect": "饮水 +6，阿遥疲劳 +14",
+          "effect": "饮水 +6，阿杰疲劳 +14",
           "gains": {
             "water": 6
           },
           "member_effects": {
-            "阿遥": {
+            "阿杰": {
               "fatigue": 14
             }
           },
@@ -557,19 +620,19 @@
       "actions": {
         "冒雪搬回补给箱": {
           "cost": {},
-          "effect": "食物 +5，零件 +2，阿遥健康 -12、疲劳 +10",
+          "effect": "食物 +5，零件 +2，阿杰健康 -12、疲劳 +10",
           "gains": {
             "food": 5,
             "parts": 2
           },
           "member_effects": {
-            "阿遥": {
+            "阿杰": {
               "health": -12,
               "fatigue": 10
             }
           },
           "fact": "snow_supplies",
-          "future": "阿遥的雪地伤势会保留到次日。"
+          "future": "阿杰的雪地伤势会保留到次日。"
         },
         "围火照看大家": {
           "cost": {
@@ -578,19 +641,19 @@
           "effect": "燃料 -1，全员疲劳 -18，全员健康 +5",
           "fatigue": -18,
           "member_effects": {
-            "队长": {
+            "主角": {
               "health": 5
             },
-            "老赵": {
+            "老张": {
               "health": 5
             },
-            "许宁": {
+            "艾琳": {
               "health": 5
             },
-            "阿遥": {
+            "阿杰": {
               "health": 5
             },
-            "周禾": {
+            "索菲亚": {
               "health": 5
             }
           },
@@ -625,6 +688,194 @@
           "future": "山口的测绘档案被带入旅途结果。"
         }
       }
+    },
+    {
+      "title": "停歇点补给与整备",
+      "description": "在有限时间内选择一种补给或整备方式。具体地点剧情后续补充。",
+      "actions": {
+        "清点饮水与口粮": {
+          "cost": {},
+          "gains": {
+            "water": 4,
+            "food": 3
+          },
+          "effect": "饮水 +4，食物 +3",
+          "fact": "supplies_day_6",
+          "future": "补给记入当天记录。"
+        },
+        "检查备用油桶": {
+          "cost": {},
+          "gains": {
+            "fuel": 4
+          },
+          "effect": "燃料 +4",
+          "fact": "fuel_day_6",
+          "future": "燃料记入当天记录。"
+        }
+      }
+    },
+    {
+      "title": "停歇点补给与整备",
+      "description": "在有限时间内选择一种补给或整备方式。具体地点剧情后续补充。",
+      "actions": {
+        "清点饮水与口粮": {
+          "cost": {},
+          "gains": {
+            "water": 4,
+            "food": 3
+          },
+          "effect": "饮水 +4，食物 +3",
+          "fact": "supplies_day_7",
+          "future": "补给记入当天记录。"
+        },
+        "检查备用油桶": {
+          "cost": {},
+          "gains": {
+            "fuel": 4
+          },
+          "effect": "燃料 +4",
+          "fact": "fuel_day_7",
+          "future": "燃料记入当天记录。"
+        }
+      }
+    },
+    {
+      "title": "停歇点补给与整备",
+      "description": "在有限时间内选择一种补给或整备方式。具体地点剧情后续补充。",
+      "actions": {
+        "清点饮水与口粮": {
+          "cost": {},
+          "gains": {
+            "water": 4,
+            "food": 3
+          },
+          "effect": "饮水 +4，食物 +3",
+          "fact": "supplies_day_8",
+          "future": "补给记入当天记录。"
+        },
+        "检查备用油桶": {
+          "cost": {},
+          "gains": {
+            "fuel": 4
+          },
+          "effect": "燃料 +4",
+          "fact": "fuel_day_8",
+          "future": "燃料记入当天记录。"
+        }
+      }
+    },
+    {
+      "title": "停歇点补给与整备",
+      "description": "在有限时间内选择一种补给或整备方式。具体地点剧情后续补充。",
+      "actions": {
+        "清点饮水与口粮": {
+          "cost": {},
+          "gains": {
+            "water": 4,
+            "food": 3
+          },
+          "effect": "饮水 +4，食物 +3",
+          "fact": "supplies_day_9",
+          "future": "补给记入当天记录。"
+        },
+        "检查备用油桶": {
+          "cost": {},
+          "gains": {
+            "fuel": 4
+          },
+          "effect": "燃料 +4",
+          "fact": "fuel_day_9",
+          "future": "燃料记入当天记录。"
+        }
+      }
+    },
+    {
+      "title": "停歇点补给与整备",
+      "description": "在有限时间内选择一种补给或整备方式。具体地点剧情后续补充。",
+      "actions": {
+        "清点饮水与口粮": {
+          "cost": {},
+          "gains": {
+            "water": 4,
+            "food": 3
+          },
+          "effect": "饮水 +4，食物 +3",
+          "fact": "supplies_day_10",
+          "future": "补给记入当天记录。"
+        },
+        "检查备用油桶": {
+          "cost": {},
+          "gains": {
+            "fuel": 4
+          },
+          "effect": "燃料 +4",
+          "fact": "fuel_day_10",
+          "future": "燃料记入当天记录。"
+        }
+      }
     }
-  ]
+  ],
+  "opening_scene": "夜里，车队在废弃加油站顶棚下休息。\n清晨，天刚亮，远处仍有怪物的声音。加油站的油泵已经锈死，便利店里找不到完整食物。五个人围着车队清点物资。\n主角查看“老伙计”的车身，发现右前轮附近有裂痕。老张正在拆卸损坏的护板，艾琳检查剩余的药品，阿杰爬上顶棚观察道路，索菲亚把剩余物资重新登记",
+  "major_routes": {
+    "北部污染区": {
+      "description": "向北寻找医疗与妹妹线索。以药品补给为主。",
+      "fuel_cost": 4,
+      "accident_chance": 0.3,
+      "supplies": {
+        "water": 5,
+        "food": 4,
+        "fuel": 3,
+        "medicine": 1
+      },
+      "daily_bonus": {
+        "medicine": 1
+      },
+      "checkpoints": [
+        "北部医疗线索",
+        "北部医疗区域",
+        "北部转运方向",
+        "北部阶段目的地"
+      ]
+    },
+    "南部断路": {
+      "description": "向南寻找通路与维修条件。以燃料、零件补给为主。",
+      "fuel_cost": 4,
+      "accident_chance": 0.2,
+      "supplies": {
+        "water": 5,
+        "food": 4,
+        "fuel": 5,
+        "parts": 2
+      },
+      "daily_bonus": {
+        "parts": 1
+      },
+      "checkpoints": [
+        "南部道路线索",
+        "南部维修区域",
+        "南部通路方向",
+        "南部阶段目的地"
+      ]
+    },
+    "东部聚落": {
+      "description": "向东接触幸存者与聚落。以饮水、食物补给为主。",
+      "fuel_cost": 4,
+      "accident_chance": 0.25,
+      "supplies": {
+        "water": 8,
+        "food": 6,
+        "fuel": 3
+      },
+      "daily_bonus": {
+        "water": 2,
+        "food": 1
+      },
+      "checkpoints": [
+        "东部聚落线索",
+        "东部交易区域",
+        "东部聚落方向",
+        "东部阶段目的地"
+      ]
+    }
+  }
 }

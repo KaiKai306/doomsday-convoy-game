@@ -14,3 +14,20 @@ Thumbs.db
 # Keep the engine binary local; obtain it separately when needed.
 Godot_v*.exe
 
+
+# Development-only output; keep it out of commits and release archives.
+*.log
+*.err
+*.apk
+*.aab
+*.pck
+/export_presets.cfg.tmp
+.godot/
+
+# Python tool caches and local signing material.
+__pycache__/
+*.pyc
+*.keystore
+*.jks
+.env
+.env.*

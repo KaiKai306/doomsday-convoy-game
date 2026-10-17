@@ -1,0 +1,2836 @@
+{
+  "revision": "atlas_widescreen_20261016",
+  "locations": {
+    "camp": {
+      "title": "荒原营地",
+      "walk_path": [
+        [
+          475,
+          806
+        ],
+        [
+          2213,
+          806
+        ]
+      ],
+      "spawn_x": 930,
+      "npc_x": [
+        670,
+        1330,
+        1670,
+        2010
+      ],
+      "camera_limit_source_canvas_pixels": 24,
+      "warm_x": 1525,
+      "warm_radius": 650,
+      "warm_strength": 0.4,
+      "interior": false,
+      "original_size": [
+        2688,
+        1152
+      ],
+      "original_ground_y": 852,
+      "layout_ground_y": 806,
+      "source_sha256": "f8f54422f09b6fd98cbf495659f5fdb9201bec4bb2aefaa175d7e2fe97e66baa",
+      "planes": [
+        "far.png",
+        "mid.png",
+        "near.png"
+      ],
+      "far_repair": "Original bounded texture repair retained; wing occlusion uses local reflected texture. Camera limited to +/-24 source pixels. Not an independently painted hidden world.",
+      "art_root": "res://assets/locations/atlas_widescreen_20261016/camp/",
+      "plane_padding": 32,
+      "outpainting_method": "DeepSeek GPT 2.5 painted both sides; original three plates restored pixel-for-pixel in center; wing-only edge color correction.",
+      "preserved_center": [
+        320,
+        0,
+        2048,
+        1152
+      ],
+      "center_plate_pixels_unchanged": true,
+      "image_record": ".docs\\美术\\示例图横版复刻_20261016\\widescreen\\records\\camp.json",
+      "raw_sha256": "53d11997d3e451bd318413ebbc90dabf8b92e6f54af25887c3c6be666826b836"
+    },
+    "abandoned_clinic": {
+      "title": "废弃诊所",
+      "walk_path": [
+        [
+          475,
+          806
+        ],
+        [
+          2213,
+          806
+        ]
+      ],
+      "spawn_x": 930,
+      "npc_x": [
+        670,
+        1330,
+        1670,
+        2010
+      ],
+      "camera_limit_source_canvas_pixels": 24,
+      "warm_x": 1390,
+      "warm_radius": 620,
+      "warm_strength": 0.32,
+      "interior": false,
+      "original_size": [
+        2688,
+        1152
+      ],
+      "original_ground_y": 878,
+      "layout_ground_y": 806,
+      "source_sha256": "991d5a5919b7d4a715f2073bdb10b7ff618ef7a8d5bf0cc3b6738baf57e785e3",
+      "planes": [
+        "far.png",
+        "mid.png",
+        "near.png"
+      ],
+      "far_repair": "Original bounded texture repair retained; wing occlusion uses local reflected texture. Camera limited to +/-24 source pixels. Not an independently painted hidden world.",
+      "art_root": "res://assets/locations/atlas_widescreen_20261016/abandoned_clinic/",
+      "plane_padding": 32,
+      "outpainting_method": "DeepSeek GPT 2.5 painted both sides; original three plates restored pixel-for-pixel in center; wing-only edge color correction.",
+      "preserved_center": [
+        320,
+        0,
+        2048,
+        1152
+      ],
+      "center_plate_pixels_unchanged": true,
+      "image_record": ".docs\\美术\\示例图横版复刻_20261016\\widescreen\\records\\abandoned_clinic.json",
+      "raw_sha256": "54f94fd78a8ea5942b954ee3b072d8895bfb0b3a990c05b5965b96955798e2e0"
+    },
+    "neutral_market": {
+      "title": "中立集市",
+      "walk_path": [
+        [
+          475,
+          806
+        ],
+        [
+          2213,
+          806
+        ]
+      ],
+      "spawn_x": 930,
+      "npc_x": [
+        670,
+        1330,
+        1670,
+        2010
+      ],
+      "camera_limit_source_canvas_pixels": 24,
+      "warm_x": 1320,
+      "warm_radius": 1500,
+      "warm_strength": 0.35,
+      "interior": false,
+      "original_size": [
+        2688,
+        1152
+      ],
+      "original_ground_y": 854,
+      "layout_ground_y": 806,
+      "source_sha256": "125919a4275279820475d77ca367d9434b4dcbd5b3c87cbb95c1d475eeab4a97",
+      "planes": [
+        "far.png",
+        "mid.png",
+        "near.png"
+      ],
+      "far_repair": "Original bounded texture repair retained; wing occlusion uses local reflected texture. Camera limited to +/-24 source pixels. Not an independently painted hidden world.",
+      "art_root": "res://assets/locations/atlas_widescreen_20261016/neutral_market/",
+      "plane_padding": 32,
+      "outpainting_method": "DeepSeek GPT 2.5 painted both sides; original three plates restored pixel-for-pixel in center; wing-only edge color correction.",
+      "preserved_center": [
+        320,
+        0,
+        2048,
+        1152
+      ],
+      "center_plate_pixels_unchanged": true,
+      "image_record": ".docs\\美术\\示例图横版复刻_20261016\\widescreen\\records\\neutral_market.json",
+      "raw_sha256": "057c0c049332bcbc554d697261d9e9397201b222ffd0c1658c8e73b4d98a119a"
+    },
+    "camp_interior": {
+      "title": "帐篷内部",
+      "walk_path": [
+        [
+          475,
+          806
+        ],
+        [
+          2213,
+          806
+        ]
+      ],
+      "spawn_x": 930,
+      "npc_x": [
+        670,
+        1330,
+        1670,
+        2010
+      ],
+      "camera_limit_source_canvas_pixels": 0,
+      "warm_x": 1410,
+      "warm_radius": 1700,
+      "warm_strength": 0.4,
+      "interior": true,
+      "original_size": [
+        2688,
+        1152
+      ],
+      "original_ground_y": 856,
+      "layout_ground_y": 806,
+      "source_sha256": "6e298147106c4dcce54a3dea45b06e8a53865bd923734eec9bb8228a9bd2a0c7",
+      "planes": [
+        "far.png",
+        "mid.png",
+        "near.png"
+      ],
+      "far_repair": "Original bounded texture repair retained; wing occlusion uses local reflected texture. Camera limited to +/-24 source pixels. Not an independently painted hidden world.",
+      "art_root": "res://assets/locations/atlas_widescreen_20261016/camp_interior/",
+      "plane_padding": 32,
+      "outpainting_method": "DeepSeek GPT 2.5 painted both sides; original three plates restored pixel-for-pixel in center; wing-only edge color correction.",
+      "preserved_center": [
+        320,
+        0,
+        2048,
+        1152
+      ],
+      "center_plate_pixels_unchanged": true,
+      "image_record": ".docs\\美术\\示例图横版复刻_20261016\\widescreen\\records\\camp_interior.json",
+      "raw_sha256": "29fe2abbfa63da8a9db274f185e932e00bbf031889a2d0ae2834f4c8420ffd86"
+    },
+    "gas_station_interior": {
+      "title": "废弃加油站内屋",
+      "art_root": "res://assets/locations/atlas_widescreen_20261016/gas_station_interior/",
+      "walk_path": [
+        [
+          475,
+          806
+        ],
+        [
+          2213,
+          806
+        ]
+      ],
+      "spawn_x": 930,
+      "npc_x": [
+        670,
+        1330,
+        1670,
+        2010
+      ],
+      "camera_limit_source_canvas_pixels": 0,
+      "warm_x": 1600,
+      "warm_radius": 700,
+      "warm_strength": 0.35,
+      "interior": true,
+      "biome": "interior",
+      "original_size": [
+        2688,
+        1152
+      ],
+      "layout_ground_y": 806,
+      "original_ground_y": 667,
+      "source_path": ".docs\\美术\\地貌与地点补齐_20261016\\variants\\raw\\gas_station_interior_reviewed.png",
+      "source_sha256": "701d8ec2ad8d1cb67b34deedda34b87cc717bf8d439ff1f741568fd115d71f4a",
+      "planes": [
+        "far.png",
+        "mid.png",
+        "near.png"
+      ],
+      "far_repair": "Original bounded texture repair retained; wing occlusion uses local reflected texture. Camera limited to +/-24 source pixels. Not an independently painted hidden world.",
+      "plane_padding": 32,
+      "outpainting_method": "DeepSeek GPT 2.5 painted both sides; original three plates restored pixel-for-pixel in center; wing-only edge color correction.",
+      "preserved_center": [
+        320,
+        0,
+        2048,
+        1152
+      ],
+      "center_plate_pixels_unchanged": true,
+      "image_record": ".docs\\美术\\示例图横版复刻_20261016\\widescreen\\records\\gas_station_interior.json",
+      "raw_sha256": "94df15a05107c3990e2af40acb14c224b5514f5f140aa06c98927453368bf961"
+    },
+    "forest_camp": {
+      "title": "低地林间营地",
+      "art_root": "res://assets/locations/atlas_widescreen_20261016/forest_camp/",
+      "walk_path": [
+        [
+          475,
+          806
+        ],
+        [
+          2213,
+          806
+        ]
+      ],
+      "spawn_x": 930,
+      "npc_x": [
+        670,
+        1330,
+        1670,
+        2010
+      ],
+      "camera_limit_source_canvas_pixels": 24,
+      "warm_x": 1820,
+      "warm_radius": 700,
+      "warm_strength": 0.35,
+      "interior": false,
+      "biome": "forest",
+      "original_size": [
+        2688,
+        1152
+      ],
+      "layout_ground_y": 806,
+      "original_ground_y": 772,
+      "source_path": ".docs\\美术\\地貌与地点补齐_20261016\\source\\raw\\forest_camp.png",
+      "source_sha256": "c60bb49fbf7af487e9c22b0a40b3b4e64d29449b127517c0a933b5a7b882a0b2",
+      "planes": [
+        "far.png",
+        "mid.png",
+        "near.png"
+      ],
+      "far_repair": "Original bounded texture repair retained; wing occlusion uses local reflected texture. Camera limited to +/-24 source pixels. Not an independently painted hidden world.",
+      "plane_padding": 32,
+      "outpainting_method": "DeepSeek GPT 2.5 painted both sides; original three plates restored pixel-for-pixel in center; wing-only edge color correction.",
+      "preserved_center": [
+        320,
+        0,
+        2048,
+        1152
+      ],
+      "center_plate_pixels_unchanged": true,
+      "image_record": ".docs\\美术\\示例图横版复刻_20261016\\widescreen\\records\\forest_camp.json",
+      "raw_sha256": "9fa0cdfa2a710f34187458dc1ff6099f05666d68b2afb7250fccc7f3bd80fa2e"
+    },
+    "desert_road": {
+      "title": "荒漠公路",
+      "art_root": "res://assets/locations/atlas_widescreen_20261016/desert_road/",
+      "walk_path": [
+        [
+          475,
+          806
+        ],
+        [
+          2213,
+          806
+        ]
+      ],
+      "spawn_x": 930,
+      "npc_x": [
+        670,
+        1330,
+        1670,
+        2010
+      ],
+      "camera_limit_source_canvas_pixels": 24,
+      "warm_x": 1570,
+      "warm_radius": 700,
+      "warm_strength": 0.04,
+      "interior": false,
+      "biome": "desert",
+      "original_size": [
+        2688,
+        1152
+      ],
+      "layout_ground_y": 806,
+      "original_ground_y": 772,
+      "source_path": ".docs\\美术\\地貌与地点补齐_20261016\\source\\raw\\desert_road.png",
+      "source_sha256": "4943b369a06ec2b4b4a991372c6a9104606d4e8653fe3fb2a853e59692301de8",
+      "planes": [
+        "far.png",
+        "mid.png",
+        "near.png"
+      ],
+      "far_repair": "Original bounded texture repair retained; wing occlusion uses local reflected texture. Camera limited to +/-24 source pixels. Not an independently painted hidden world.",
+      "plane_padding": 32,
+      "outpainting_method": "DeepSeek GPT 2.5 painted both sides; original three plates restored pixel-for-pixel in center; wing-only edge color correction.",
+      "preserved_center": [
+        320,
+        0,
+        2048,
+        1152
+      ],
+      "center_plate_pixels_unchanged": true,
+      "image_record": ".docs\\美术\\示例图横版复刻_20261016\\widescreen\\records\\desert_road.json",
+      "raw_sha256": "819ed959750dd2230b428f14c5af0a3a0cf1ace3d89b9e8455314b5328ecddf9"
+    },
+    "desert_camp": {
+      "title": "荒漠营地",
+      "art_root": "res://assets/locations/atlas_widescreen_20261016/desert_camp/",
+      "walk_path": [
+        [
+          475,
+          806
+        ],
+        [
+          2213,
+          806
+        ]
+      ],
+      "spawn_x": 930,
+      "npc_x": [
+        670,
+        1330,
+        1670,
+        2010
+      ],
+      "camera_limit_source_canvas_pixels": 24,
+      "warm_x": 1720,
+      "warm_radius": 700,
+      "warm_strength": 0.35,
+      "interior": false,
+      "biome": "desert",
+      "original_size": [
+        2688,
+        1152
+      ],
+      "layout_ground_y": 806,
+      "original_ground_y": 780,
+      "source_path": ".docs\\美术\\地貌与地点补齐_20261016\\source\\raw\\desert_camp.png",
+      "source_sha256": "f014960abdd6691595eff5624f57c11e3fda08e087abbbb3d9ecaaca619aa10a",
+      "planes": [
+        "far.png",
+        "mid.png",
+        "near.png"
+      ],
+      "far_repair": "Original bounded texture repair retained; wing occlusion uses local reflected texture. Camera limited to +/-24 source pixels. Not an independently painted hidden world.",
+      "plane_padding": 32,
+      "outpainting_method": "DeepSeek GPT 2.5 painted both sides; original three plates restored pixel-for-pixel in center; wing-only edge color correction.",
+      "preserved_center": [
+        320,
+        0,
+        2048,
+        1152
+      ],
+      "center_plate_pixels_unchanged": true,
+      "image_record": ".docs\\美术\\示例图横版复刻_20261016\\widescreen\\records\\desert_camp.json",
+      "raw_sha256": "431a126db22f24074038aafee5afa7ac0a6b743e75f90d57c04480056794e91a"
+    },
+    "pine_camp": {
+      "title": "山地林间营地",
+      "art_root": "res://assets/locations/atlas_widescreen_20261016/pine_camp/",
+      "walk_path": [
+        [
+          475,
+          806
+        ],
+        [
+          2213,
+          806
+        ]
+      ],
+      "spawn_x": 930,
+      "npc_x": [
+        670,
+        1330,
+        1670,
+        2010
+      ],
+      "camera_limit_source_canvas_pixels": 24,
+      "warm_x": 1820,
+      "warm_radius": 700,
+      "warm_strength": 0.35,
+      "interior": false,
+      "biome": "pine",
+      "original_size": [
+        2688,
+        1152
+      ],
+      "layout_ground_y": 806,
+      "original_ground_y": 778,
+      "source_path": ".docs\\美术\\地貌与地点补齐_20261016\\source\\raw\\pine_camp.png",
+      "source_sha256": "e4f35a686b648e2ae2ebff94658915bde25fceb7c85b4ba519dae568811f0d56",
+      "planes": [
+        "far.png",
+        "mid.png",
+        "near.png"
+      ],
+      "far_repair": "Original bounded texture repair retained; wing occlusion uses local reflected texture. Camera limited to +/-24 source pixels. Not an independently painted hidden world.",
+      "plane_padding": 32,
+      "outpainting_method": "DeepSeek GPT 2.5 painted both sides; original three plates restored pixel-for-pixel in center; wing-only edge color correction.",
+      "preserved_center": [
+        320,
+        0,
+        2048,
+        1152
+      ],
+      "center_plate_pixels_unchanged": true,
+      "image_record": ".docs\\美术\\示例图横版复刻_20261016\\widescreen\\records\\pine_camp.json",
+      "raw_sha256": "051e431d94f0ddf026861269f8bdbe0345bd8e119a8f4c19f8ca8bb7500d50fe"
+    },
+    "abandoned_school": {
+      "title": "废弃学校教室",
+      "art_root": "res://assets/locations/atlas_widescreen_20261016/abandoned_school/",
+      "walk_path": [
+        [
+          475,
+          806
+        ],
+        [
+          2213,
+          806
+        ]
+      ],
+      "spawn_x": 930,
+      "npc_x": [
+        670,
+        1330,
+        1670,
+        2010
+      ],
+      "camera_limit_source_canvas_pixels": 0,
+      "warm_x": 1920,
+      "warm_radius": 700,
+      "warm_strength": 0.35,
+      "interior": true,
+      "biome": "interior",
+      "original_size": [
+        2688,
+        1152
+      ],
+      "layout_ground_y": 806,
+      "original_ground_y": 757,
+      "source_path": ".docs\\美术\\地貌与地点补齐_20261016\\source\\raw\\abandoned_school.png",
+      "source_sha256": "ffaa2735b9c118210c4cff7185c8c4386b93ad47cde1574eb5f33dc88d4f33cd",
+      "planes": [
+        "far.png",
+        "mid.png",
+        "near.png"
+      ],
+      "far_repair": "Original bounded texture repair retained; wing occlusion uses local reflected texture. Camera limited to +/-24 source pixels. Not an independently painted hidden world.",
+      "plane_padding": 32,
+      "outpainting_method": "DeepSeek GPT 2.5 painted both sides; original three plates restored pixel-for-pixel in center; wing-only edge color correction.",
+      "preserved_center": [
+        320,
+        0,
+        2048,
+        1152
+      ],
+      "center_plate_pixels_unchanged": true,
+      "image_record": ".docs\\美术\\示例图横版复刻_20261016\\widescreen\\records\\abandoned_school.json",
+      "raw_sha256": "7dbfc6c6d6720f6b72362859c49276888112f4aff55a790f662be2b706f46ed2"
+    },
+    "checkpoint": {
+      "title": "公路哨卡与防御工事",
+      "art_root": "res://assets/locations/atlas_widescreen_20261016/checkpoint/",
+      "walk_path": [
+        [
+          475,
+          806
+        ],
+        [
+          2213,
+          806
+        ]
+      ],
+      "spawn_x": 930,
+      "npc_x": [
+        670,
+        1330,
+        1670,
+        2010
+      ],
+      "camera_limit_source_canvas_pixels": 24,
+      "warm_x": 1200,
+      "warm_radius": 700,
+      "warm_strength": 0.35,
+      "interior": false,
+      "biome": "forest",
+      "original_size": [
+        2688,
+        1152
+      ],
+      "layout_ground_y": 806,
+      "original_ground_y": 773,
+      "source_path": ".docs\\美术\\地貌与地点补齐_20261016\\source\\raw\\checkpoint.png",
+      "source_sha256": "c8eb47f5ff0bc93a00c994b16e0b8ee5aabdf0554d99010a360263d82e539da0",
+      "planes": [
+        "far.png",
+        "mid.png",
+        "near.png"
+      ],
+      "far_repair": "Original bounded texture repair retained; wing occlusion uses local reflected texture. Camera limited to +/-24 source pixels. Not an independently painted hidden world.",
+      "plane_padding": 32,
+      "outpainting_method": "DeepSeek GPT 2.5 painted both sides; original three plates restored pixel-for-pixel in center; wing-only edge color correction.",
+      "preserved_center": [
+        320,
+        0,
+        2048,
+        1152
+      ],
+      "center_plate_pixels_unchanged": true,
+      "image_record": ".docs\\美术\\示例图横版复刻_20261016\\widescreen\\records\\checkpoint.json",
+      "raw_sha256": "d888162726b9191533619a4dd0fd3299996098c7b5af85c33dcb55b446870963"
+    },
+    "communications_station": {
+      "title": "山林通讯维护站",
+      "art_root": "res://assets/locations/atlas_widescreen_20261016/communications_station/",
+      "walk_path": [
+        [
+          475,
+          806
+        ],
+        [
+          2213,
+          806
+        ]
+      ],
+      "spawn_x": 930,
+      "npc_x": [
+        670,
+        1330,
+        1670,
+        2010
+      ],
+      "camera_limit_source_canvas_pixels": 24,
+      "warm_x": 1840,
+      "warm_radius": 700,
+      "warm_strength": 0.35,
+      "interior": false,
+      "biome": "pine",
+      "original_size": [
+        2688,
+        1152
+      ],
+      "layout_ground_y": 806,
+      "original_ground_y": 780,
+      "source_path": ".docs\\美术\\地貌与地点补齐_20261016\\source\\raw\\communications_station.png",
+      "source_sha256": "2cbea295fa86749500c72d89e4f8528c97dfdf26ceb11584f209afd236a68095",
+      "planes": [
+        "far.png",
+        "mid.png",
+        "near.png"
+      ],
+      "far_repair": "Original bounded texture repair retained; wing occlusion uses local reflected texture. Camera limited to +/-24 source pixels. Not an independently painted hidden world.",
+      "plane_padding": 32,
+      "outpainting_method": "DeepSeek GPT 2.5 painted both sides; original three plates restored pixel-for-pixel in center; wing-only edge color correction.",
+      "preserved_center": [
+        320,
+        0,
+        2048,
+        1152
+      ],
+      "center_plate_pixels_unchanged": true,
+      "image_record": ".docs\\美术\\示例图横版复刻_20261016\\widescreen\\records\\communications_station.json",
+      "raw_sha256": "c8d20bc4944fba56e67bf78e429d0a38ba5b3282fd7f907354d5b7461ef8b740"
+    },
+    "forest_gas_station": {
+      "title": "林缘废弃加油站",
+      "art_root": "res://assets/locations/atlas_widescreen_20261016/forest_gas_station/",
+      "walk_path": [
+        [
+          475,
+          806
+        ],
+        [
+          2213,
+          806
+        ]
+      ],
+      "spawn_x": 930,
+      "npc_x": [
+        670,
+        1330,
+        1670,
+        2010
+      ],
+      "camera_limit_source_canvas_pixels": 24,
+      "warm_x": 1770,
+      "warm_radius": 700,
+      "warm_strength": 0.35,
+      "interior": false,
+      "biome": "forest",
+      "original_size": [
+        2688,
+        1152
+      ],
+      "layout_ground_y": 806,
+      "original_ground_y": 775,
+      "source_path": ".docs\\美术\\地貌与地点补齐_20261016\\source\\raw\\forest_gas_station.png",
+      "source_sha256": "1480c9a810008cd3ba26fd56ff696a156a7aa808ad01b18076d81d77f6c7df84",
+      "planes": [
+        "far.png",
+        "mid.png",
+        "near.png"
+      ],
+      "far_repair": "Original bounded texture repair retained; wing occlusion uses local reflected texture. Camera limited to +/-24 source pixels. Not an independently painted hidden world.",
+      "plane_padding": 32,
+      "outpainting_method": "DeepSeek GPT 2.5 painted both sides; original three plates restored pixel-for-pixel in center; wing-only edge color correction.",
+      "preserved_center": [
+        320,
+        0,
+        2048,
+        1152
+      ],
+      "center_plate_pixels_unchanged": true,
+      "image_record": ".docs\\美术\\示例图横版复刻_20261016\\widescreen\\records\\forest_gas_station.json",
+      "raw_sha256": "64e373e55a6346e229f8d3112c63df204affb34cf8cf5cb83d2467aef8823818"
+    },
+    "desert_checkpoint": {
+      "title": "荒漠公路哨卡与防御工事",
+      "art_root": "res://assets/locations/atlas_widescreen_20261016/desert_checkpoint/",
+      "walk_path": [
+        [
+          475,
+          806
+        ],
+        [
+          2213,
+          806
+        ]
+      ],
+      "spawn_x": 930,
+      "npc_x": [
+        670,
+        1330,
+        1670,
+        2010
+      ],
+      "camera_limit_source_canvas_pixels": 24,
+      "warm_x": 1200,
+      "warm_radius": 700,
+      "warm_strength": 0.35,
+      "interior": false,
+      "biome": "desert",
+      "original_size": [
+        2688,
+        1152
+      ],
+      "layout_ground_y": 806,
+      "original_ground_y": 774,
+      "source_path": ".docs\\美术\\地貌与地点补齐_20261016\\variants\\raw\\desert_checkpoint.png",
+      "source_sha256": "b99cf6ef1af27f09435e44ac2481f8677d8ae1e85103008ad20bcd3904b0b174",
+      "planes": [
+        "far.png",
+        "mid.png",
+        "near.png"
+      ],
+      "far_repair": "Original bounded texture repair retained; wing occlusion uses local reflected texture. Camera limited to +/-24 source pixels. Not an independently painted hidden world.",
+      "plane_padding": 32,
+      "outpainting_method": "DeepSeek GPT 2.5 painted both sides; original three plates restored pixel-for-pixel in center; wing-only edge color correction.",
+      "preserved_center": [
+        320,
+        0,
+        2048,
+        1152
+      ],
+      "center_plate_pixels_unchanged": true,
+      "image_record": ".docs\\美术\\示例图横版复刻_20261016\\widescreen\\records\\desert_checkpoint.json",
+      "raw_sha256": "43cbf843cb3ab6d873c589f732a7acc562649b5d62f829ea316affdf76e319b0"
+    },
+    "desert_communications_station": {
+      "title": "荒漠山林通讯维护站",
+      "art_root": "res://assets/locations/atlas_widescreen_20261016/desert_communications_station/",
+      "walk_path": [
+        [
+          475,
+          806
+        ],
+        [
+          2213,
+          806
+        ]
+      ],
+      "spawn_x": 930,
+      "npc_x": [
+        670,
+        1330,
+        1670,
+        2010
+      ],
+      "camera_limit_source_canvas_pixels": 24,
+      "warm_x": 1840,
+      "warm_radius": 700,
+      "warm_strength": 0.35,
+      "interior": false,
+      "biome": "desert",
+      "original_size": [
+        2688,
+        1152
+      ],
+      "layout_ground_y": 806,
+      "original_ground_y": 779,
+      "source_path": ".docs\\美术\\地貌与地点补齐_20261016\\variants\\raw\\desert_communications_station.png",
+      "source_sha256": "561eb092955257830a0c9aa7f77e5e0e2a770bbca8516ca6e1b1dfedfe35bb54",
+      "planes": [
+        "far.png",
+        "mid.png",
+        "near.png"
+      ],
+      "far_repair": "Original bounded texture repair retained; wing occlusion uses local reflected texture. Camera limited to +/-24 source pixels. Not an independently painted hidden world.",
+      "plane_padding": 32,
+      "outpainting_method": "DeepSeek GPT 2.5 painted both sides; original three plates restored pixel-for-pixel in center; wing-only edge color correction.",
+      "preserved_center": [
+        320,
+        0,
+        2048,
+        1152
+      ],
+      "center_plate_pixels_unchanged": true,
+      "image_record": ".docs\\美术\\示例图横版复刻_20261016\\widescreen\\records\\desert_communications_station.json",
+      "raw_sha256": "9c1f11396f8c166c07ab01edfe4b0cc3a14c0392ca8ab6600496636835e2f94b"
+    },
+    "gas_station": {
+      "title": "废弃加油站",
+      "view": "side",
+      "camera_limit_source_canvas_pixels": 25,
+      "walk_path": [
+        [
+          200,
+          1030
+        ],
+        [
+          1000,
+          1030
+        ],
+        [
+          1600,
+          1010
+        ],
+        [
+          2510,
+          1020
+        ]
+      ],
+      "spawn_x": 1150,
+      "npc_x": [
+        680,
+        930,
+        1250,
+        1480,
+        1690,
+        1960,
+        2230
+      ],
+      "blockers": [
+        [
+          0,
+          310,
+          900,
+          650
+        ]
+      ],
+      "parking_areas_canvas_pixels": [
+        [
+          1010,
+          600,
+          640,
+          355
+        ],
+        [
+          1790,
+          600,
+          640,
+          355
+        ]
+      ],
+      "art_root": "res://assets/locations/atlas_widescreen_20261016/gas_station/",
+      "plate_files": [
+        "01_far.png",
+        "02_mid.png",
+        "03_near.png"
+      ],
+      "original_size": [
+        2688,
+        1152
+      ],
+      "plane_padding": 32,
+      "warm_x": 1250,
+      "outpainting_method": "Existing native 21:9 plates preserved; no new image generation required.",
+      "preserved_center": [
+        0,
+        0,
+        2688,
+        1152
+      ],
+      "center_plate_pixels_unchanged": true,
+      "image_record": null,
+      "raw_sha256": null,
+      "far_repair": "Original bounded texture repair retained; wing occlusion uses local reflected texture. Camera limited to +/-24 source pixels. Not an independently painted hidden world."
+    },
+    "tunnel_entrance": {
+      "title": "封堵隧道口",
+      "view": "side",
+      "camera_limit_source_canvas_pixels": 25,
+      "walk_path": [
+        [
+          200,
+          1040
+        ],
+        [
+          1300,
+          1040
+        ],
+        [
+          2260,
+          1040
+        ]
+      ],
+      "spawn_x": 1280,
+      "npc_x": [
+        500,
+        740,
+        1000,
+        1510,
+        1750,
+        1980,
+        2180
+      ],
+      "blockers": [
+        [
+          2320,
+          650,
+          368,
+          370
+        ]
+      ],
+      "parking_areas_canvas_pixels": [
+        [
+          537,
+          565,
+          644,
+          421
+        ],
+        [
+          1589,
+          565,
+          644,
+          421
+        ]
+      ],
+      "art_root": "res://assets/locations/atlas_widescreen_20261016/tunnel_entrance/",
+      "plate_files": [
+        "01_far.png",
+        "02_mid.png",
+        "03_near.png"
+      ],
+      "original_size": [
+        2688,
+        1152
+      ],
+      "plane_padding": 32,
+      "warm_x": 1250,
+      "outpainting_method": "Existing native 21:9 plates preserved; no new image generation required.",
+      "preserved_center": [
+        0,
+        0,
+        2688,
+        1152
+      ],
+      "center_plate_pixels_unchanged": true,
+      "image_record": null,
+      "raw_sha256": null,
+      "far_repair": "Original bounded texture repair retained; wing occlusion uses local reflected texture. Camera limited to +/-24 source pixels. Not an independently painted hidden world."
+    },
+    "snow_camp": {
+      "title": "北部雪地营地",
+      "view": "side",
+      "camera_limit_source_canvas_pixels": 25,
+      "walk_path": [
+        [
+          140,
+          1035
+        ],
+        [
+          1050,
+          1048
+        ],
+        [
+          1580,
+          1048
+        ],
+        [
+          2540,
+          1035
+        ]
+      ],
+      "spawn_x": 740,
+      "npc_x": [
+        800,
+        1010,
+        1210,
+        1480,
+        1700,
+        1890,
+        2100
+      ],
+      "blockers": [
+        [
+          1130,
+          760,
+          350,
+          235
+        ],
+        [
+          750,
+          620,
+          340,
+          340
+        ],
+        [
+          1490,
+          600,
+          480,
+          360
+        ]
+      ],
+      "parking_areas_canvas_pixels": [
+        [
+          76,
+          565,
+          579,
+          408
+        ],
+        [
+          2062,
+          565,
+          579,
+          408
+        ]
+      ],
+      "art_root": "res://assets/locations/atlas_widescreen_20261016/snow_camp/",
+      "plate_files": [
+        "01_far.png",
+        "02_mid.png",
+        "03_near.png"
+      ],
+      "original_size": [
+        2688,
+        1152
+      ],
+      "plane_padding": 32,
+      "warm_x": 1250,
+      "outpainting_method": "Existing native 21:9 plates preserved; no new image generation required.",
+      "preserved_center": [
+        0,
+        0,
+        2688,
+        1152
+      ],
+      "center_plate_pixels_unchanged": true,
+      "image_record": null,
+      "raw_sha256": null,
+      "far_repair": "Original bounded texture repair retained; wing occlusion uses local reflected texture. Camera limited to +/-24 source pixels. Not an independently painted hidden world."
+    },
+    "forest_road": {
+      "title": "低地阔叶林公路",
+      "art_root": "res://assets/locations/atlas_widescreen_20261016/forest_road/",
+      "walk_path": [
+        [
+          475,
+          806
+        ],
+        [
+          2213,
+          806
+        ]
+      ],
+      "spawn_x": 930,
+      "npc_x": [
+        670,
+        1330,
+        1670,
+        2010
+      ],
+      "camera_limit_source_canvas_pixels": 24,
+      "warm_x": 1570,
+      "warm_radius": 700,
+      "warm_strength": 0.05,
+      "interior": false,
+      "biome": "forest",
+      "original_size": [
+        2688,
+        1152
+      ],
+      "layout_ground_y": 806,
+      "original_ground_y": 762,
+      "source_path": ".docs\\美术\\地貌与地点补齐_20261016\\source\\raw\\forest_road.png",
+      "source_sha256": "40d03d11f58e074025ba09d56cfc15ddac6774081ad4feefaeb3451f122ea7a4",
+      "planes": [
+        "far.png",
+        "mid.png",
+        "near.png"
+      ],
+      "far_repair": "Original bounded texture repair retained; wing occlusion uses local reflected texture. Camera limited to +/-24 source pixels. Not an independently painted hidden world.",
+      "plane_padding": 32,
+      "outpainting_method": "DeepSeek GPT 2.5 painted both sides; original three plates restored pixel-for-pixel in center; wing-only edge color correction.",
+      "preserved_center": [
+        320,
+        0,
+        2048,
+        1152
+      ],
+      "center_plate_pixels_unchanged": true,
+      "image_record": ".docs\\美术\\示例图横版复刻_20261016\\widescreen\\records\\forest_road.json",
+      "raw_sha256": "756eb516e1126dbe652a8540d22c54e30841ceceabde3e137c4dfd1b840696cb"
+    },
+    "fuel_depot": {
+      "title": "旧油库",
+      "art_root": "res://assets/locations/atlas_widescreen_20261016/fuel_depot/",
+      "walk_path": [
+        [
+          475,
+          806
+        ],
+        [
+          2213,
+          806
+        ]
+      ],
+      "spawn_x": 930,
+      "npc_x": [
+        670,
+        1330,
+        1670,
+        2010
+      ],
+      "camera_limit_source_canvas_pixels": 24,
+      "warm_x": 1710,
+      "warm_radius": 700,
+      "warm_strength": 0.35,
+      "interior": false,
+      "biome": "desert",
+      "original_size": [
+        2688,
+        1152
+      ],
+      "layout_ground_y": 806,
+      "original_ground_y": 787,
+      "source_path": ".docs\\美术\\地貌与地点补齐_20261016\\source\\raw\\fuel_depot.png",
+      "source_sha256": "6d270e16bd98ccd40bd3f77f8c721ff12db487c12af85d09298396a23abf5e1a",
+      "planes": [
+        "far.png",
+        "mid.png",
+        "near.png"
+      ],
+      "far_repair": "Original bounded texture repair retained; wing occlusion uses local reflected texture. Camera limited to +/-24 source pixels. Not an independently painted hidden world.",
+      "plane_padding": 32,
+      "outpainting_method": "DeepSeek GPT 2.5 painted both sides; original three plates restored pixel-for-pixel in center; wing-only edge color correction.",
+      "preserved_center": [
+        320,
+        0,
+        2048,
+        1152
+      ],
+      "center_plate_pixels_unchanged": true,
+      "image_record": ".docs\\美术\\示例图横版复刻_20261016\\widescreen\\records\\fuel_depot.json",
+      "raw_sha256": "c6e65f908e11e018e50ec784df34b7d51b6fb475d8772caf7ec0126bffb46936"
+    },
+    "forest_clinic": {
+      "title": "林区废弃医疗站",
+      "art_root": "res://assets/locations/atlas_widescreen_20261016/forest_clinic/",
+      "walk_path": [
+        [
+          475,
+          806
+        ],
+        [
+          2213,
+          806
+        ]
+      ],
+      "spawn_x": 930,
+      "npc_x": [
+        670,
+        1330,
+        1670,
+        2010
+      ],
+      "camera_limit_source_canvas_pixels": 24,
+      "warm_x": 1700,
+      "warm_radius": 700,
+      "warm_strength": 0.35,
+      "interior": false,
+      "biome": "forest",
+      "original_size": [
+        2688,
+        1152
+      ],
+      "layout_ground_y": 806,
+      "original_ground_y": 775,
+      "source_path": ".docs\\美术\\地貌与地点补齐_20261016\\source\\raw\\forest_clinic.png",
+      "source_sha256": "268187e33c86b7014a362afb029ddf9ca8d06567f9f5d455c2a1c3831b3affeb",
+      "planes": [
+        "far.png",
+        "mid.png",
+        "near.png"
+      ],
+      "far_repair": "Original bounded texture repair retained; wing occlusion uses local reflected texture. Camera limited to +/-24 source pixels. Not an independently painted hidden world.",
+      "plane_padding": 32,
+      "outpainting_method": "DeepSeek GPT 2.5 painted both sides; original three plates restored pixel-for-pixel in center; wing-only edge color correction.",
+      "preserved_center": [
+        320,
+        0,
+        2048,
+        1152
+      ],
+      "center_plate_pixels_unchanged": true,
+      "image_record": ".docs\\美术\\示例图横版复刻_20261016\\widescreen\\records\\forest_clinic.json",
+      "raw_sha256": "e21abd66a6a9e52079d9b0ffd85a0574a331bf22edb27b8fec0d8d42ddd7ead0"
+    },
+    "forest_fuel_depot": {
+      "title": "低地森林旧油库",
+      "art_root": "res://assets/locations/atlas_widescreen_20261016/forest_fuel_depot/",
+      "walk_path": [
+        [
+          475,
+          806
+        ],
+        [
+          2213,
+          806
+        ]
+      ],
+      "spawn_x": 930,
+      "npc_x": [
+        670,
+        1330,
+        1670,
+        2010
+      ],
+      "camera_limit_source_canvas_pixels": 24,
+      "warm_x": 1710,
+      "warm_radius": 700,
+      "warm_strength": 0.35,
+      "interior": false,
+      "biome": "forest",
+      "original_size": [
+        2688,
+        1152
+      ],
+      "layout_ground_y": 806,
+      "original_ground_y": 779,
+      "source_path": ".docs\\美术\\地貌与地点补齐_20261016\\variants\\raw\\forest_fuel_depot.png",
+      "source_sha256": "2b5840f7ccad79cf5630c14ca0bfba883b0a34a5c45542e9aadd5d08cd6ff75d",
+      "planes": [
+        "far.png",
+        "mid.png",
+        "near.png"
+      ],
+      "far_repair": "Original bounded texture repair retained; wing occlusion uses local reflected texture. Camera limited to +/-24 source pixels. Not an independently painted hidden world.",
+      "plane_padding": 32,
+      "outpainting_method": "DeepSeek GPT 2.5 painted both sides; original three plates restored pixel-for-pixel in center; wing-only edge color correction.",
+      "preserved_center": [
+        320,
+        0,
+        2048,
+        1152
+      ],
+      "center_plate_pixels_unchanged": true,
+      "image_record": ".docs\\美术\\示例图横版复刻_20261016\\widescreen\\records\\forest_fuel_depot.json",
+      "raw_sha256": "7bb796d768649691992d316316a2672d385d53057684f0b1aae8a76ecbe50661"
+    },
+    "desert_scrapyard": {
+      "title": "荒漠废旧机械拆解场",
+      "art_root": "res://assets/locations/atlas_widescreen_20261016/desert_scrapyard/",
+      "walk_path": [
+        [
+          475,
+          806
+        ],
+        [
+          2213,
+          806
+        ]
+      ],
+      "spawn_x": 930,
+      "npc_x": [
+        670,
+        1330,
+        1670,
+        2010
+      ],
+      "camera_limit_source_canvas_pixels": 24,
+      "warm_x": 870,
+      "warm_radius": 700,
+      "warm_strength": 0.35,
+      "interior": false,
+      "biome": "desert",
+      "original_size": [
+        2688,
+        1152
+      ],
+      "layout_ground_y": 806,
+      "original_ground_y": 774,
+      "source_path": ".docs\\美术\\地貌与地点补齐_20261016\\variants\\raw\\desert_scrapyard.png",
+      "source_sha256": "dfb8c145e22846a1c97a033fb56f5551b1715b8aa99d75d4d9bbef88adb13487",
+      "planes": [
+        "far.png",
+        "mid.png",
+        "near.png"
+      ],
+      "far_repair": "Original bounded texture repair retained; wing occlusion uses local reflected texture. Camera limited to +/-24 source pixels. Not an independently painted hidden world.",
+      "plane_padding": 32,
+      "outpainting_method": "DeepSeek GPT 2.5 painted both sides; original three plates restored pixel-for-pixel in center; wing-only edge color correction.",
+      "preserved_center": [
+        320,
+        0,
+        2048,
+        1152
+      ],
+      "center_plate_pixels_unchanged": true,
+      "image_record": ".docs\\美术\\示例图横版复刻_20261016\\widescreen\\records\\desert_scrapyard.json",
+      "raw_sha256": "926514ee7cec693e7ba57defc6c8ea83f0eb5de506e5f5a39ee511267e3acb32"
+    },
+    "forest_communications_station": {
+      "title": "低地森林山林通讯维护站",
+      "art_root": "res://assets/locations/atlas_widescreen_20261016/forest_communications_station/",
+      "walk_path": [
+        [
+          475,
+          806
+        ],
+        [
+          2213,
+          806
+        ]
+      ],
+      "spawn_x": 930,
+      "npc_x": [
+        670,
+        1330,
+        1670,
+        2010
+      ],
+      "camera_limit_source_canvas_pixels": 24,
+      "warm_x": 1840,
+      "warm_radius": 700,
+      "warm_strength": 0.35,
+      "interior": false,
+      "biome": "forest",
+      "original_size": [
+        2688,
+        1152
+      ],
+      "layout_ground_y": 806,
+      "original_ground_y": 779,
+      "source_path": ".docs\\美术\\地貌与地点补齐_20261016\\variants\\raw\\forest_communications_station.png",
+      "source_sha256": "d933c1ed3cdd1a17728f93f4ba0aa661b5958c4816de767897003598eab6baa6",
+      "planes": [
+        "far.png",
+        "mid.png",
+        "near.png"
+      ],
+      "far_repair": "Original bounded texture repair retained; wing occlusion uses local reflected texture. Camera limited to +/-24 source pixels. Not an independently painted hidden world.",
+      "plane_padding": 32,
+      "outpainting_method": "DeepSeek GPT 2.5 painted both sides; original three plates restored pixel-for-pixel in center; wing-only edge color correction.",
+      "preserved_center": [
+        320,
+        0,
+        2048,
+        1152
+      ],
+      "center_plate_pixels_unchanged": true,
+      "image_record": ".docs\\美术\\示例图横版复刻_20261016\\widescreen\\records\\forest_communications_station.json",
+      "raw_sha256": "11315eed9ea01dc470f48e5327bb90c13a015b8c9f2dd7ad7da261a57fa3ef7d"
+    },
+    "forest_waterworks": {
+      "title": "低地森林乡镇水务维护站",
+      "art_root": "res://assets/locations/atlas_widescreen_20261016/forest_waterworks/",
+      "walk_path": [
+        [
+          475,
+          806
+        ],
+        [
+          2213,
+          806
+        ]
+      ],
+      "spawn_x": 930,
+      "npc_x": [
+        670,
+        1330,
+        1670,
+        2010
+      ],
+      "camera_limit_source_canvas_pixels": 24,
+      "warm_x": 2020,
+      "warm_radius": 700,
+      "warm_strength": 0.35,
+      "interior": false,
+      "biome": "forest",
+      "original_size": [
+        2688,
+        1152
+      ],
+      "layout_ground_y": 806,
+      "original_ground_y": 783,
+      "source_path": ".docs\\美术\\地貌与地点补齐_20261016\\variants\\raw\\forest_waterworks.png",
+      "source_sha256": "7446eb85cde2c23432954ed9ce578fb2feaf944bc523d4d7db01ba9ce2fd4211",
+      "planes": [
+        "far.png",
+        "mid.png",
+        "near.png"
+      ],
+      "far_repair": "Original bounded texture repair retained; wing occlusion uses local reflected texture. Camera limited to +/-24 source pixels. Not an independently painted hidden world.",
+      "plane_padding": 32,
+      "outpainting_method": "DeepSeek GPT 2.5 painted both sides; original three plates restored pixel-for-pixel in center; wing-only edge color correction.",
+      "preserved_center": [
+        320,
+        0,
+        2048,
+        1152
+      ],
+      "center_plate_pixels_unchanged": true,
+      "image_record": ".docs\\美术\\示例图横版复刻_20261016\\widescreen\\records\\forest_waterworks.json",
+      "raw_sha256": "28dcdc94b33ab3c7e7ab6e5887503afe1437ffb855d47de452aa00675828f5b9"
+    },
+    "desert_waterworks": {
+      "title": "荒漠乡镇水务维护站",
+      "art_root": "res://assets/locations/atlas_widescreen_20261016/desert_waterworks/",
+      "walk_path": [
+        [
+          475,
+          806
+        ],
+        [
+          2213,
+          806
+        ]
+      ],
+      "spawn_x": 930,
+      "npc_x": [
+        670,
+        1330,
+        1670,
+        2010
+      ],
+      "camera_limit_source_canvas_pixels": 24,
+      "warm_x": 2020,
+      "warm_radius": 700,
+      "warm_strength": 0.35,
+      "interior": false,
+      "biome": "desert",
+      "original_size": [
+        2688,
+        1152
+      ],
+      "layout_ground_y": 806,
+      "original_ground_y": 783,
+      "source_path": ".docs\\美术\\地貌与地点补齐_20261016\\variants\\raw\\desert_waterworks.png",
+      "source_sha256": "67684c91b4d8eb770e21fb696be6acf93b57380536f6694b411947116c793605",
+      "planes": [
+        "far.png",
+        "mid.png",
+        "near.png"
+      ],
+      "far_repair": "Original bounded texture repair retained; wing occlusion uses local reflected texture. Camera limited to +/-24 source pixels. Not an independently painted hidden world.",
+      "plane_padding": 32,
+      "outpainting_method": "DeepSeek GPT 2.5 painted both sides; original three plates restored pixel-for-pixel in center; wing-only edge color correction.",
+      "preserved_center": [
+        320,
+        0,
+        2048,
+        1152
+      ],
+      "center_plate_pixels_unchanged": true,
+      "image_record": ".docs\\美术\\示例图横版复刻_20261016\\widescreen\\records\\desert_waterworks.json",
+      "raw_sha256": "e315c607df8eb226c34f3e0689b80ecf21380e0a55d8e4f01da77f5392ebf7b7"
+    },
+    "journey_road": {
+      "title": "旅途公路",
+      "walk_path": [
+        [
+          475,
+          806
+        ],
+        [
+          2213,
+          806
+        ]
+      ],
+      "spawn_x": 930,
+      "npc_x": [
+        670,
+        1330,
+        1670,
+        2010
+      ],
+      "camera_limit_source_canvas_pixels": 24,
+      "warm_x": 1570,
+      "warm_radius": 620,
+      "warm_strength": 0,
+      "interior": false,
+      "original_size": [
+        2688,
+        1152
+      ],
+      "original_ground_y": 752,
+      "layout_ground_y": 806,
+      "source_sha256": "c451b0ecaee45879e621fa9164601cbc94646841d0ca2c2acfc73fbb7a946ad1",
+      "planes": [
+        "far.png",
+        "mid.png",
+        "near.png"
+      ],
+      "far_repair": "Original bounded texture repair retained; wing occlusion uses local reflected texture. Camera limited to +/-24 source pixels. Not an independently painted hidden world.",
+      "art_root": "res://assets/locations/atlas_widescreen_20261016/journey_road/",
+      "plane_padding": 32,
+      "outpainting_method": "DeepSeek GPT 2.5 painted both sides; original three plates restored pixel-for-pixel in center; wing-only edge color correction.",
+      "preserved_center": [
+        320,
+        0,
+        2048,
+        1152
+      ],
+      "center_plate_pixels_unchanged": true,
+      "image_record": ".docs\\美术\\示例图横版复刻_20261016\\widescreen\\records\\journey_road.json",
+      "raw_sha256": "5ba0361f31fe80c2b8a2197d26a3133a92d1d5ab8ce18d2e09e205f3b4021b34"
+    },
+    "old_water_tower": {
+      "title": "旧水塔",
+      "walk_path": [
+        [
+          475,
+          806
+        ],
+        [
+          2213,
+          806
+        ]
+      ],
+      "spawn_x": 930,
+      "npc_x": [
+        670,
+        1330,
+        1670,
+        2010
+      ],
+      "camera_limit_source_canvas_pixels": 24,
+      "warm_x": 1700,
+      "warm_radius": 620,
+      "warm_strength": 0.28,
+      "interior": false,
+      "original_size": [
+        2688,
+        1152
+      ],
+      "original_ground_y": 856,
+      "layout_ground_y": 806,
+      "source_sha256": "5009fd6238bf1b8946d34bf7da46a0f2df6c839b10cd4f73b1b04af42bd251af",
+      "planes": [
+        "far.png",
+        "mid.png",
+        "near.png"
+      ],
+      "far_repair": "Original bounded texture repair retained; wing occlusion uses local reflected texture. Camera limited to +/-24 source pixels. Not an independently painted hidden world.",
+      "art_root": "res://assets/locations/atlas_widescreen_20261016/old_water_tower/",
+      "plane_padding": 32,
+      "outpainting_method": "DeepSeek GPT 2.5 painted both sides; original three plates restored pixel-for-pixel in center; wing-only edge color correction.",
+      "preserved_center": [
+        320,
+        0,
+        2048,
+        1152
+      ],
+      "center_plate_pixels_unchanged": true,
+      "image_record": ".docs\\美术\\示例图横版复刻_20261016\\widescreen\\records\\old_water_tower.json",
+      "raw_sha256": "f3cf0a058b79a6f655e1bb16ea79364a147f645d7cf3d3101a468d94bf43040c"
+    },
+    "rescue_station_exterior": {
+      "title": "救援站外部",
+      "walk_path": [
+        [
+          475,
+          806
+        ],
+        [
+          2213,
+          806
+        ]
+      ],
+      "spawn_x": 930,
+      "npc_x": [
+        670,
+        1330,
+        1670,
+        2010
+      ],
+      "camera_limit_source_canvas_pixels": 24,
+      "warm_x": 1510,
+      "warm_radius": 620,
+      "warm_strength": 0.26,
+      "interior": false,
+      "original_size": [
+        2688,
+        1152
+      ],
+      "original_ground_y": 895,
+      "layout_ground_y": 806,
+      "source_sha256": "8e7c36fff336e971373f67c6f1a70b771d0020dfe96776ba82b25415031994f7",
+      "planes": [
+        "far.png",
+        "mid.png",
+        "near.png"
+      ],
+      "far_repair": "Original bounded texture repair retained; wing occlusion uses local reflected texture. Camera limited to +/-24 source pixels. Not an independently painted hidden world.",
+      "art_root": "res://assets/locations/atlas_widescreen_20261016/rescue_station_exterior/",
+      "plane_padding": 32,
+      "outpainting_method": "DeepSeek GPT 2.5 painted both sides; original three plates restored pixel-for-pixel in center; wing-only edge color correction.",
+      "preserved_center": [
+        320,
+        0,
+        2048,
+        1152
+      ],
+      "center_plate_pixels_unchanged": true,
+      "image_record": ".docs\\美术\\示例图横版复刻_20261016\\widescreen\\records\\rescue_station_exterior.json",
+      "raw_sha256": "a2b485066148962b0b528c2ed8780e2b05d861a54a7d6e2da351ae8cee386742"
+    },
+    "pine_road": {
+      "title": "山地针叶林公路",
+      "art_root": "res://assets/locations/atlas_widescreen_20261016/pine_road/",
+      "walk_path": [
+        [
+          475,
+          806
+        ],
+        [
+          2213,
+          806
+        ]
+      ],
+      "spawn_x": 930,
+      "npc_x": [
+        670,
+        1330,
+        1670,
+        2010
+      ],
+      "camera_limit_source_canvas_pixels": 24,
+      "warm_x": 1570,
+      "warm_radius": 700,
+      "warm_strength": 0.04,
+      "interior": false,
+      "biome": "pine",
+      "original_size": [
+        2688,
+        1152
+      ],
+      "layout_ground_y": 806,
+      "original_ground_y": 844,
+      "source_path": ".docs\\美术\\地貌与地点补齐_20261016\\variants\\raw\\pine_road_reviewed.png",
+      "source_sha256": "7640f7d4bd996ede261d359460e6f2103afdea661b9ef878b62912097d341e47",
+      "planes": [
+        "far.png",
+        "mid.png",
+        "near.png"
+      ],
+      "far_repair": "Original bounded texture repair retained; wing occlusion uses local reflected texture. Camera limited to +/-24 source pixels. Not an independently painted hidden world.",
+      "plane_padding": 32,
+      "outpainting_method": "DeepSeek GPT 2.5 painted both sides; original three plates restored pixel-for-pixel in center; wing-only edge color correction.",
+      "preserved_center": [
+        320,
+        0,
+        2048,
+        1152
+      ],
+      "center_plate_pixels_unchanged": true,
+      "image_record": ".docs\\美术\\示例图横版复刻_20261016\\widescreen\\records\\pine_road.json",
+      "raw_sha256": "51bee57ab38d2af1498321841c812881a6c53223679c2d903da274669c947e39"
+    },
+    "repair_workshop": {
+      "title": "车辆维修与道路养护工坊",
+      "art_root": "res://assets/locations/atlas_widescreen_20261016/repair_workshop/",
+      "walk_path": [
+        [
+          475,
+          806
+        ],
+        [
+          2213,
+          806
+        ]
+      ],
+      "spawn_x": 930,
+      "npc_x": [
+        670,
+        1330,
+        1670,
+        2010
+      ],
+      "camera_limit_source_canvas_pixels": 0,
+      "warm_x": 1750,
+      "warm_radius": 700,
+      "warm_strength": 0.35,
+      "interior": true,
+      "biome": "interior",
+      "original_size": [
+        2688,
+        1152
+      ],
+      "layout_ground_y": 806,
+      "original_ground_y": 770,
+      "source_path": ".docs\\美术\\地貌与地点补齐_20261016\\source\\raw\\repair_workshop.png",
+      "source_sha256": "f58b17a1b8f06fba881c0dc4d4e364d91e8ba19807dfcde55105867119e59010",
+      "planes": [
+        "far.png",
+        "mid.png",
+        "near.png"
+      ],
+      "far_repair": "Original bounded texture repair retained; wing occlusion uses local reflected texture. Camera limited to +/-24 source pixels. Not an independently painted hidden world.",
+      "plane_padding": 32,
+      "outpainting_method": "DeepSeek GPT 2.5 painted both sides; original three plates restored pixel-for-pixel in center; wing-only edge color correction.",
+      "preserved_center": [
+        320,
+        0,
+        2048,
+        1152
+      ],
+      "center_plate_pixels_unchanged": true,
+      "image_record": ".docs\\美术\\示例图横版复刻_20261016\\widescreen\\records\\repair_workshop.json",
+      "raw_sha256": "e4c03c02a510946e776c7e258c0ece5d3a3754525fd1c8a2b402d5c42765cc34"
+    },
+    "rail_supply_station": {
+      "title": "铁路综合物资站",
+      "art_root": "res://assets/locations/atlas_widescreen_20261016/rail_supply_station/",
+      "walk_path": [
+        [
+          475,
+          806
+        ],
+        [
+          2213,
+          806
+        ]
+      ],
+      "spawn_x": 930,
+      "npc_x": [
+        670,
+        1330,
+        1670,
+        2010
+      ],
+      "camera_limit_source_canvas_pixels": 24,
+      "warm_x": 1890,
+      "warm_radius": 700,
+      "warm_strength": 0.35,
+      "interior": false,
+      "biome": "forest",
+      "original_size": [
+        2688,
+        1152
+      ],
+      "layout_ground_y": 806,
+      "original_ground_y": 775,
+      "source_path": ".docs\\美术\\地貌与地点补齐_20261016\\source\\raw\\rail_supply_station.png",
+      "source_sha256": "bc7c091d246012612ef4fc7d335216b4854d75e97ccf5d8fd4df96026d77f592",
+      "planes": [
+        "far.png",
+        "mid.png",
+        "near.png"
+      ],
+      "far_repair": "Original bounded texture repair retained; wing occlusion uses local reflected texture. Camera limited to +/-24 source pixels. Not an independently painted hidden world.",
+      "plane_padding": 32,
+      "outpainting_method": "DeepSeek GPT 2.5 painted both sides; original three plates restored pixel-for-pixel in center; wing-only edge color correction.",
+      "preserved_center": [
+        320,
+        0,
+        2048,
+        1152
+      ],
+      "center_plate_pixels_unchanged": true,
+      "image_record": ".docs\\美术\\示例图横版复刻_20261016\\widescreen\\records\\rail_supply_station.json",
+      "raw_sha256": "4d5acb2868e0adbc12b6f9cebe7fe304060a0294081043877cc98bdf388123ae"
+    },
+    "library_archive": {
+      "title": "图书馆物流档案室",
+      "art_root": "res://assets/locations/atlas_widescreen_20261016/library_archive/",
+      "walk_path": [
+        [
+          475,
+          806
+        ],
+        [
+          2213,
+          806
+        ]
+      ],
+      "spawn_x": 930,
+      "npc_x": [
+        670,
+        1330,
+        1670,
+        2010
+      ],
+      "camera_limit_source_canvas_pixels": 0,
+      "warm_x": 1420,
+      "warm_radius": 700,
+      "warm_strength": 0.35,
+      "interior": true,
+      "biome": "interior",
+      "original_size": [
+        2688,
+        1152
+      ],
+      "layout_ground_y": 806,
+      "original_ground_y": 770,
+      "source_path": ".docs\\美术\\地貌与地点补齐_20261016\\source\\raw\\library_archive.png",
+      "source_sha256": "5e4a2d2138f655e87dd1e6b69228564b9a44473e412ddc69d45b2cf3bb7d032d",
+      "planes": [
+        "far.png",
+        "mid.png",
+        "near.png"
+      ],
+      "far_repair": "Original bounded texture repair retained; wing occlusion uses local reflected texture. Camera limited to +/-24 source pixels. Not an independently painted hidden world.",
+      "plane_padding": 32,
+      "outpainting_method": "DeepSeek GPT 2.5 painted both sides; original three plates restored pixel-for-pixel in center; wing-only edge color correction.",
+      "preserved_center": [
+        320,
+        0,
+        2048,
+        1152
+      ],
+      "center_plate_pixels_unchanged": true,
+      "image_record": ".docs\\美术\\示例图横版复刻_20261016\\widescreen\\records\\library_archive.json",
+      "raw_sha256": "1eab91b2d6206c3f3a79dfe2b2a673c2aabbe837fdeec2a9a87cc1fd0abf3281"
+    },
+    "habitable_ruins": {
+      "title": "山林可居住旧屋",
+      "art_root": "res://assets/locations/atlas_widescreen_20261016/habitable_ruins/",
+      "walk_path": [
+        [
+          475,
+          806
+        ],
+        [
+          2213,
+          806
+        ]
+      ],
+      "spawn_x": 930,
+      "npc_x": [
+        670,
+        1330,
+        1670,
+        2010
+      ],
+      "camera_limit_source_canvas_pixels": 24,
+      "warm_x": 1830,
+      "warm_radius": 700,
+      "warm_strength": 0.35,
+      "interior": false,
+      "biome": "pine",
+      "original_size": [
+        2688,
+        1152
+      ],
+      "layout_ground_y": 806,
+      "original_ground_y": 782,
+      "source_path": ".docs\\美术\\地貌与地点补齐_20261016\\source\\raw\\habitable_ruins.png",
+      "source_sha256": "d13e85113d81fa849fc3fdaf97c21f5840eb89265bb983f300c38c969dffdd75",
+      "planes": [
+        "far.png",
+        "mid.png",
+        "near.png"
+      ],
+      "far_repair": "Original bounded texture repair retained; wing occlusion uses local reflected texture. Camera limited to +/-24 source pixels. Not an independently painted hidden world.",
+      "plane_padding": 32,
+      "outpainting_method": "DeepSeek GPT 2.5 painted both sides; original three plates restored pixel-for-pixel in center; wing-only edge color correction.",
+      "preserved_center": [
+        320,
+        0,
+        2048,
+        1152
+      ],
+      "center_plate_pixels_unchanged": true,
+      "image_record": ".docs\\美术\\示例图横版复刻_20261016\\widescreen\\records\\habitable_ruins.json",
+      "raw_sha256": "bee3abeae6d5df232f62341c322ea3835db60700dc7483aa21b956d4503f1c54"
+    },
+    "pine_fuel_depot": {
+      "title": "山林旧油库",
+      "art_root": "res://assets/locations/atlas_widescreen_20261016/pine_fuel_depot/",
+      "walk_path": [
+        [
+          475,
+          806
+        ],
+        [
+          2213,
+          806
+        ]
+      ],
+      "spawn_x": 930,
+      "npc_x": [
+        670,
+        1330,
+        1670,
+        2010
+      ],
+      "camera_limit_source_canvas_pixels": 24,
+      "warm_x": 1710,
+      "warm_radius": 700,
+      "warm_strength": 0.35,
+      "interior": false,
+      "biome": "pine",
+      "original_size": [
+        2688,
+        1152
+      ],
+      "layout_ground_y": 806,
+      "original_ground_y": 779,
+      "source_path": ".docs\\美术\\地貌与地点补齐_20261016\\variants\\raw\\pine_fuel_depot.png",
+      "source_sha256": "5207d03e5081fd2f477a4f425b689ffb2a91b5cdc0b9685f51353d251dabdd1a",
+      "planes": [
+        "far.png",
+        "mid.png",
+        "near.png"
+      ],
+      "far_repair": "Original bounded texture repair retained; wing occlusion uses local reflected texture. Camera limited to +/-24 source pixels. Not an independently painted hidden world.",
+      "plane_padding": 32,
+      "outpainting_method": "DeepSeek GPT 2.5 painted both sides; original three plates restored pixel-for-pixel in center; wing-only edge color correction.",
+      "preserved_center": [
+        320,
+        0,
+        2048,
+        1152
+      ],
+      "center_plate_pixels_unchanged": true,
+      "image_record": ".docs\\美术\\示例图横版复刻_20261016\\widescreen\\records\\pine_fuel_depot.json",
+      "raw_sha256": "5787154c1ab0b0f35e4d541ce61d552a6eae5e43e959c57c9f4f56c0c6969b45"
+    },
+    "pine_checkpoint": {
+      "title": "山林公路哨卡与防御工事",
+      "art_root": "res://assets/locations/atlas_widescreen_20261016/pine_checkpoint/",
+      "walk_path": [
+        [
+          475,
+          806
+        ],
+        [
+          2213,
+          806
+        ]
+      ],
+      "spawn_x": 930,
+      "npc_x": [
+        670,
+        1330,
+        1670,
+        2010
+      ],
+      "camera_limit_source_canvas_pixels": 24,
+      "warm_x": 1200,
+      "warm_radius": 700,
+      "warm_strength": 0.35,
+      "interior": false,
+      "biome": "pine",
+      "original_size": [
+        2688,
+        1152
+      ],
+      "layout_ground_y": 806,
+      "original_ground_y": 774,
+      "source_path": ".docs\\美术\\地貌与地点补齐_20261016\\variants\\raw\\pine_checkpoint.png",
+      "source_sha256": "6a8a15edb5c2d5ae82b5e3a16a945456abe01720de979ae7888837b697e9bbe0",
+      "planes": [
+        "far.png",
+        "mid.png",
+        "near.png"
+      ],
+      "far_repair": "Original bounded texture repair retained; wing occlusion uses local reflected texture. Camera limited to +/-24 source pixels. Not an independently painted hidden world.",
+      "plane_padding": 32,
+      "outpainting_method": "DeepSeek GPT 2.5 painted both sides; original three plates restored pixel-for-pixel in center; wing-only edge color correction.",
+      "preserved_center": [
+        320,
+        0,
+        2048,
+        1152
+      ],
+      "center_plate_pixels_unchanged": true,
+      "image_record": ".docs\\美术\\示例图横版复刻_20261016\\widescreen\\records\\pine_checkpoint.json",
+      "raw_sha256": "982fe72228c5fa1996dbcc4530ee008f8f87aab8e65a9ffb51a1ef1cccb2ae03"
+    },
+    "pine_scrapyard": {
+      "title": "山林废旧机械拆解场",
+      "art_root": "res://assets/locations/atlas_widescreen_20261016/pine_scrapyard/",
+      "walk_path": [
+        [
+          475,
+          806
+        ],
+        [
+          2213,
+          806
+        ]
+      ],
+      "spawn_x": 930,
+      "npc_x": [
+        670,
+        1330,
+        1670,
+        2010
+      ],
+      "camera_limit_source_canvas_pixels": 24,
+      "warm_x": 870,
+      "warm_radius": 700,
+      "warm_strength": 0.35,
+      "interior": false,
+      "biome": "pine",
+      "original_size": [
+        2688,
+        1152
+      ],
+      "layout_ground_y": 806,
+      "original_ground_y": 776,
+      "source_path": ".docs\\美术\\地貌与地点补齐_20261016\\variants\\raw\\pine_scrapyard.png",
+      "source_sha256": "4a8cc4aa05644a23d03876d0c0dca9d2f6844dff700b7d234182dc2b2f9684d1",
+      "planes": [
+        "far.png",
+        "mid.png",
+        "near.png"
+      ],
+      "far_repair": "Original bounded texture repair retained; wing occlusion uses local reflected texture. Camera limited to +/-24 source pixels. Not an independently painted hidden world.",
+      "plane_padding": 32,
+      "outpainting_method": "DeepSeek GPT 2.5 painted both sides; original three plates restored pixel-for-pixel in center; wing-only edge color correction.",
+      "preserved_center": [
+        320,
+        0,
+        2048,
+        1152
+      ],
+      "center_plate_pixels_unchanged": true,
+      "image_record": ".docs\\美术\\示例图横版复刻_20261016\\widescreen\\records\\pine_scrapyard.json",
+      "raw_sha256": "452a9aee95a3718f5d16b3534dbc169bb44add2c10cbaaf76c9f739c228f6124"
+    },
+    "pine_gas_station": {
+      "title": "山林废弃加油站",
+      "art_root": "res://assets/locations/atlas_widescreen_20261016/pine_gas_station/",
+      "walk_path": [
+        [
+          475,
+          806
+        ],
+        [
+          2213,
+          806
+        ]
+      ],
+      "spawn_x": 930,
+      "npc_x": [
+        670,
+        1330,
+        1670,
+        2010
+      ],
+      "camera_limit_source_canvas_pixels": 24,
+      "warm_x": 1770,
+      "warm_radius": 700,
+      "warm_strength": 0.35,
+      "interior": false,
+      "biome": "pine",
+      "original_size": [
+        2688,
+        1152
+      ],
+      "layout_ground_y": 806,
+      "original_ground_y": 780,
+      "source_path": ".docs\\美术\\地貌与地点补齐_20261016\\variants\\raw\\pine_gas_station.png",
+      "source_sha256": "44f952b3a06a972c39949f6e6fd5076bc00fe50039e9bb467b541a8f117cd203",
+      "planes": [
+        "far.png",
+        "mid.png",
+        "near.png"
+      ],
+      "far_repair": "Original bounded texture repair retained; wing occlusion uses local reflected texture. Camera limited to +/-24 source pixels. Not an independently painted hidden world.",
+      "plane_padding": 32,
+      "outpainting_method": "DeepSeek GPT 2.5 painted both sides; original three plates restored pixel-for-pixel in center; wing-only edge color correction.",
+      "preserved_center": [
+        320,
+        0,
+        2048,
+        1152
+      ],
+      "center_plate_pixels_unchanged": true,
+      "image_record": ".docs\\美术\\示例图横版复刻_20261016\\widescreen\\records\\pine_gas_station.json",
+      "raw_sha256": "372a6d829368da8ef22b76ba470a7e5bf1df01d7fbae09ed81ffa538d3071778"
+    },
+    "pine_clinic": {
+      "title": "山林废弃医疗站",
+      "art_root": "res://assets/locations/atlas_widescreen_20261016/pine_clinic/",
+      "walk_path": [
+        [
+          475,
+          806
+        ],
+        [
+          2213,
+          806
+        ]
+      ],
+      "spawn_x": 930,
+      "npc_x": [
+        670,
+        1330,
+        1670,
+        2010
+      ],
+      "camera_limit_source_canvas_pixels": 24,
+      "warm_x": 1700,
+      "warm_radius": 700,
+      "warm_strength": 0.35,
+      "interior": false,
+      "biome": "pine",
+      "original_size": [
+        2688,
+        1152
+      ],
+      "layout_ground_y": 806,
+      "original_ground_y": 780,
+      "source_path": ".docs\\美术\\地貌与地点补齐_20261016\\variants\\raw\\pine_clinic.png",
+      "source_sha256": "4da92b287c4fbc01abcc3757d633294e006f8045b8c53dbfbcee5a1a34ce1fb7",
+      "planes": [
+        "far.png",
+        "mid.png",
+        "near.png"
+      ],
+      "far_repair": "Original bounded texture repair retained; wing occlusion uses local reflected texture. Camera limited to +/-24 source pixels. Not an independently painted hidden world.",
+      "plane_padding": 32,
+      "outpainting_method": "DeepSeek GPT 2.5 painted both sides; original three plates restored pixel-for-pixel in center; wing-only edge color correction.",
+      "preserved_center": [
+        320,
+        0,
+        2048,
+        1152
+      ],
+      "center_plate_pixels_unchanged": true,
+      "image_record": ".docs\\美术\\示例图横版复刻_20261016\\widescreen\\records\\pine_clinic.json",
+      "raw_sha256": "6c012ff6346636d770456ac2cff8bb2f6792e1cd9dc6583c414c95ef256c2e20"
+    },
+    "settlement_reception": {
+      "title": "定居区接待处",
+      "walk_path": [
+        [
+          475,
+          806
+        ],
+        [
+          2213,
+          806
+        ]
+      ],
+      "spawn_x": 930,
+      "npc_x": [
+        670,
+        1330,
+        1670,
+        2010
+      ],
+      "camera_limit_source_canvas_pixels": 24,
+      "warm_x": 1390,
+      "warm_radius": 950,
+      "warm_strength": 0.26,
+      "interior": false,
+      "original_size": [
+        2688,
+        1152
+      ],
+      "original_ground_y": 895,
+      "layout_ground_y": 806,
+      "source_sha256": "72fb7190a4d605004a305b17b8e5a9fa0f6802071161dbd142b24e123cdc21c9",
+      "planes": [
+        "far.png",
+        "mid.png",
+        "near.png"
+      ],
+      "far_repair": "Original bounded texture repair retained; wing occlusion uses local reflected texture. Camera limited to +/-24 source pixels. Not an independently painted hidden world.",
+      "art_root": "res://assets/locations/atlas_widescreen_20261016/settlement_reception/",
+      "plane_padding": 32,
+      "outpainting_method": "DeepSeek GPT 2.5 painted both sides; original three plates restored pixel-for-pixel in center; wing-only edge color correction.",
+      "preserved_center": [
+        320,
+        0,
+        2048,
+        1152
+      ],
+      "center_plate_pixels_unchanged": true,
+      "image_record": ".docs\\美术\\示例图横版复刻_20261016\\widescreen\\records\\settlement_reception.json",
+      "raw_sha256": "46ea9a98839310b9ffc86aef8a61d239752e671a0c40282b0d5a6967bdc30496"
+    },
+    "rescue_station_interior": {
+      "title": "救援站内部",
+      "walk_path": [
+        [
+          475,
+          806
+        ],
+        [
+          2213,
+          806
+        ]
+      ],
+      "spawn_x": 930,
+      "npc_x": [
+        670,
+        1330,
+        1670,
+        2010
+      ],
+      "camera_limit_source_canvas_pixels": 0,
+      "warm_x": 1370,
+      "warm_radius": 1250,
+      "warm_strength": 0.3,
+      "interior": true,
+      "original_size": [
+        2688,
+        1152
+      ],
+      "original_ground_y": 890,
+      "layout_ground_y": 806,
+      "source_sha256": "8035f48a1b45fa7dcc3c39f9206a483413347667888dc247c67eb98b1149fa72",
+      "planes": [
+        "far.png",
+        "mid.png",
+        "near.png"
+      ],
+      "far_repair": "Original bounded texture repair retained; wing occlusion uses local reflected texture. Camera limited to +/-24 source pixels. Not an independently painted hidden world.",
+      "art_root": "res://assets/locations/atlas_widescreen_20261016/rescue_station_interior/",
+      "plane_padding": 32,
+      "outpainting_method": "DeepSeek GPT 2.5 painted both sides; original three plates restored pixel-for-pixel in center; wing-only edge color correction.",
+      "preserved_center": [
+        320,
+        0,
+        2048,
+        1152
+      ],
+      "center_plate_pixels_unchanged": true,
+      "image_record": ".docs\\美术\\示例图横版复刻_20261016\\widescreen\\records\\rescue_station_interior.json",
+      "raw_sha256": "915ff62582582897d4c7c9fbc2a1bfbdfedde3193957d76547d1d51e889d9407"
+    },
+    "snow_road": {
+      "title": "雪地公路",
+      "art_root": "res://assets/locations/atlas_widescreen_20261016/snow_road/",
+      "walk_path": [
+        [
+          475,
+          806
+        ],
+        [
+          2213,
+          806
+        ]
+      ],
+      "spawn_x": 930,
+      "npc_x": [
+        670,
+        1330,
+        1670,
+        2010
+      ],
+      "camera_limit_source_canvas_pixels": 24,
+      "warm_x": 1570,
+      "warm_radius": 700,
+      "warm_strength": 0.03,
+      "interior": false,
+      "biome": "snow",
+      "original_size": [
+        2688,
+        1152
+      ],
+      "layout_ground_y": 806,
+      "original_ground_y": 780,
+      "source_path": ".docs\\美术\\地貌与地点补齐_20261016\\source\\raw\\snow_road.png",
+      "source_sha256": "4e70bb08dfbe38cc9abb8409c433bb5710e6a2fdd90696924fec085ecc5afd0f",
+      "planes": [
+        "far.png",
+        "mid.png",
+        "near.png"
+      ],
+      "far_repair": "Original bounded texture repair retained; wing occlusion uses local reflected texture. Camera limited to +/-24 source pixels. Not an independently painted hidden world.",
+      "plane_padding": 32,
+      "outpainting_method": "DeepSeek GPT 2.5 painted both sides; original three plates restored pixel-for-pixel in center; wing-only edge color correction.",
+      "preserved_center": [
+        320,
+        0,
+        2048,
+        1152
+      ],
+      "center_plate_pixels_unchanged": true,
+      "image_record": ".docs\\美术\\示例图横版复刻_20261016\\widescreen\\records\\snow_road.json",
+      "raw_sha256": "7f9647e75a6b907e28554c1ff5676aeeef5d9a3dde1b28f35d5c440dc4f713cd"
+    },
+    "supply_warehouse": {
+      "title": "旧物资仓库",
+      "art_root": "res://assets/locations/atlas_widescreen_20261016/supply_warehouse/",
+      "walk_path": [
+        [
+          475,
+          806
+        ],
+        [
+          2213,
+          806
+        ]
+      ],
+      "spawn_x": 930,
+      "npc_x": [
+        670,
+        1330,
+        1670,
+        2010
+      ],
+      "camera_limit_source_canvas_pixels": 0,
+      "warm_x": 2080,
+      "warm_radius": 700,
+      "warm_strength": 0.35,
+      "interior": true,
+      "biome": "interior",
+      "original_size": [
+        2688,
+        1152
+      ],
+      "layout_ground_y": 806,
+      "original_ground_y": 765,
+      "source_path": ".docs\\美术\\地貌与地点补齐_20261016\\source\\raw\\supply_warehouse.png",
+      "source_sha256": "efeb086b3ad03e9875a1442be40cb10a61284480b7e4946f591b6b6647d2dad2",
+      "planes": [
+        "far.png",
+        "mid.png",
+        "near.png"
+      ],
+      "far_repair": "Original bounded texture repair retained; wing occlusion uses local reflected texture. Camera limited to +/-24 source pixels. Not an independently painted hidden world.",
+      "plane_padding": 32,
+      "outpainting_method": "DeepSeek GPT 2.5 painted both sides; original three plates restored pixel-for-pixel in center; wing-only edge color correction.",
+      "preserved_center": [
+        320,
+        0,
+        2048,
+        1152
+      ],
+      "center_plate_pixels_unchanged": true,
+      "image_record": ".docs\\美术\\示例图横版复刻_20261016\\widescreen\\records\\supply_warehouse.json",
+      "raw_sha256": "425bf88a7b5ebc438dd16381e5a78da28803cb55a5b53f4cacc9397de292959e"
+    },
+    "scrapyard": {
+      "title": "废旧机械拆解场",
+      "art_root": "res://assets/locations/atlas_widescreen_20261016/scrapyard/",
+      "walk_path": [
+        [
+          475,
+          806
+        ],
+        [
+          2213,
+          806
+        ]
+      ],
+      "spawn_x": 930,
+      "npc_x": [
+        670,
+        1330,
+        1670,
+        2010
+      ],
+      "camera_limit_source_canvas_pixels": 24,
+      "warm_x": 870,
+      "warm_radius": 700,
+      "warm_strength": 0.35,
+      "interior": false,
+      "biome": "forest",
+      "original_size": [
+        2688,
+        1152
+      ],
+      "layout_ground_y": 806,
+      "original_ground_y": 780,
+      "source_path": ".docs\\美术\\地貌与地点补齐_20261016\\source\\raw\\scrapyard.png",
+      "source_sha256": "ef836a5b320939f6decb15dc1847c3194d04ddb8923b4122b8b9998ae1d2d752",
+      "planes": [
+        "far.png",
+        "mid.png",
+        "near.png"
+      ],
+      "far_repair": "Original bounded texture repair retained; wing occlusion uses local reflected texture. Camera limited to +/-24 source pixels. Not an independently painted hidden world.",
+      "plane_padding": 32,
+      "outpainting_method": "DeepSeek GPT 2.5 painted both sides; original three plates restored pixel-for-pixel in center; wing-only edge color correction.",
+      "preserved_center": [
+        320,
+        0,
+        2048,
+        1152
+      ],
+      "center_plate_pixels_unchanged": true,
+      "image_record": ".docs\\美术\\示例图横版复刻_20261016\\widescreen\\records\\scrapyard.json",
+      "raw_sha256": "ecb80ed86986bf31799256d7041225de9b3ba306ef6eb3b0a3f95a68715c3436"
+    },
+    "research_relay": {
+      "title": "雪地科研中继站",
+      "art_root": "res://assets/locations/atlas_widescreen_20261016/research_relay/",
+      "walk_path": [
+        [
+          475,
+          806
+        ],
+        [
+          2213,
+          806
+        ]
+      ],
+      "spawn_x": 930,
+      "npc_x": [
+        670,
+        1330,
+        1670,
+        2010
+      ],
+      "camera_limit_source_canvas_pixels": 24,
+      "warm_x": 1350,
+      "warm_radius": 700,
+      "warm_strength": 0.35,
+      "interior": false,
+      "biome": "snow",
+      "original_size": [
+        2688,
+        1152
+      ],
+      "layout_ground_y": 806,
+      "original_ground_y": 780,
+      "source_path": ".docs\\美术\\地貌与地点补齐_20261016\\source\\raw\\research_relay.png",
+      "source_sha256": "6ca8e1a89be559ca32912593775b59d4cc9570e700f1ee9b766bff585d48035b",
+      "planes": [
+        "far.png",
+        "mid.png",
+        "near.png"
+      ],
+      "far_repair": "Original bounded texture repair retained; wing occlusion uses local reflected texture. Camera limited to +/-24 source pixels. Not an independently painted hidden world.",
+      "plane_padding": 32,
+      "outpainting_method": "DeepSeek GPT 2.5 painted both sides; original three plates restored pixel-for-pixel in center; wing-only edge color correction.",
+      "preserved_center": [
+        320,
+        0,
+        2048,
+        1152
+      ],
+      "center_plate_pixels_unchanged": true,
+      "image_record": ".docs\\美术\\示例图横版复刻_20261016\\widescreen\\records\\research_relay.json",
+      "raw_sha256": "262491d83c5a63896de27210c8434fe7e6034398e55d81610f589f64f12578e8"
+    },
+    "waterworks": {
+      "title": "乡镇水务维护站",
+      "art_root": "res://assets/locations/atlas_widescreen_20261016/waterworks/",
+      "walk_path": [
+        [
+          475,
+          806
+        ],
+        [
+          2213,
+          806
+        ]
+      ],
+      "spawn_x": 930,
+      "npc_x": [
+        670,
+        1330,
+        1670,
+        2010
+      ],
+      "camera_limit_source_canvas_pixels": 24,
+      "warm_x": 2020,
+      "warm_radius": 700,
+      "warm_strength": 0.35,
+      "interior": false,
+      "biome": "pine",
+      "original_size": [
+        2688,
+        1152
+      ],
+      "layout_ground_y": 806,
+      "original_ground_y": 790,
+      "source_path": ".docs\\美术\\地貌与地点补齐_20261016\\source\\raw\\waterworks.png",
+      "source_sha256": "0a96186c074d723372079e34910b2774d814e2ae2d3aa124b10c7d9894a1eddd",
+      "planes": [
+        "far.png",
+        "mid.png",
+        "near.png"
+      ],
+      "far_repair": "Original bounded texture repair retained; wing occlusion uses local reflected texture. Camera limited to +/-24 source pixels. Not an independently painted hidden world.",
+      "plane_padding": 32,
+      "outpainting_method": "DeepSeek GPT 2.5 painted both sides; original three plates restored pixel-for-pixel in center; wing-only edge color correction.",
+      "preserved_center": [
+        320,
+        0,
+        2048,
+        1152
+      ],
+      "center_plate_pixels_unchanged": true,
+      "image_record": ".docs\\美术\\示例图横版复刻_20261016\\widescreen\\records\\waterworks.json",
+      "raw_sha256": "ae9b754746939d3cc77775df8270547038996acf2436823fd126a5237526bb40"
+    },
+    "snow_habitable_ruins": {
+      "title": "雪地可居住旧屋",
+      "art_root": "res://assets/locations/atlas_widescreen_20261016/snow_habitable_ruins/",
+      "walk_path": [
+        [
+          475,
+          806
+        ],
+        [
+          2213,
+          806
+        ]
+      ],
+      "spawn_x": 930,
+      "npc_x": [
+        670,
+        1330,
+        1670,
+        2010
+      ],
+      "camera_limit_source_canvas_pixels": 24,
+      "warm_x": 1640,
+      "warm_radius": 700,
+      "warm_strength": 0.35,
+      "interior": false,
+      "biome": "snow",
+      "original_size": [
+        2688,
+        1152
+      ],
+      "layout_ground_y": 806,
+      "original_ground_y": 780,
+      "source_path": ".docs\\美术\\地貌与地点补齐_20261016\\source\\raw\\snow_habitable_ruins.png",
+      "source_sha256": "9161a6661b7a9c7004b2c735b0c5fea2ed6fc478ae66f328afacaea6cf456c28",
+      "planes": [
+        "far.png",
+        "mid.png",
+        "near.png"
+      ],
+      "far_repair": "Original bounded texture repair retained; wing occlusion uses local reflected texture. Camera limited to +/-24 source pixels. Not an independently painted hidden world.",
+      "plane_padding": 32,
+      "outpainting_method": "DeepSeek GPT 2.5 painted both sides; original three plates restored pixel-for-pixel in center; wing-only edge color correction.",
+      "preserved_center": [
+        320,
+        0,
+        2048,
+        1152
+      ],
+      "center_plate_pixels_unchanged": true,
+      "image_record": ".docs\\美术\\示例图横版复刻_20261016\\widescreen\\records\\snow_habitable_ruins.json",
+      "raw_sha256": "16f809927f5264cc18c82ac1def3e0fa802550e93389dc23676eaa5db250d86b"
+    },
+    "snow_fuel_depot": {
+      "title": "雪地旧油库",
+      "art_root": "res://assets/locations/atlas_widescreen_20261016/snow_fuel_depot/",
+      "walk_path": [
+        [
+          475,
+          806
+        ],
+        [
+          2213,
+          806
+        ]
+      ],
+      "spawn_x": 930,
+      "npc_x": [
+        670,
+        1330,
+        1670,
+        2010
+      ],
+      "camera_limit_source_canvas_pixels": 24,
+      "warm_x": 1710,
+      "warm_radius": 700,
+      "warm_strength": 0.35,
+      "interior": false,
+      "biome": "snow",
+      "original_size": [
+        2688,
+        1152
+      ],
+      "layout_ground_y": 806,
+      "original_ground_y": 787,
+      "source_path": ".docs\\美术\\地貌与地点补齐_20261016\\variants\\raw\\snow_fuel_depot.png",
+      "source_sha256": "18a68619bf49c86cd47b7752a54425888f9f0c0e6e7b0922d4c7b5c701f3b7c1",
+      "planes": [
+        "far.png",
+        "mid.png",
+        "near.png"
+      ],
+      "far_repair": "Original bounded texture repair retained; wing occlusion uses local reflected texture. Camera limited to +/-24 source pixels. Not an independently painted hidden world.",
+      "plane_padding": 32,
+      "outpainting_method": "DeepSeek GPT 2.5 painted both sides; original three plates restored pixel-for-pixel in center; wing-only edge color correction.",
+      "preserved_center": [
+        320,
+        0,
+        2048,
+        1152
+      ],
+      "center_plate_pixels_unchanged": true,
+      "image_record": ".docs\\美术\\示例图横版复刻_20261016\\widescreen\\records\\snow_fuel_depot.json",
+      "raw_sha256": "64abc86694009fc55ada8a477f67bf5d1c68bc3a760b87d5a46c77fc65752b0c"
+    },
+    "snow_checkpoint": {
+      "title": "雪地公路哨卡与防御工事",
+      "art_root": "res://assets/locations/atlas_widescreen_20261016/snow_checkpoint/",
+      "walk_path": [
+        [
+          475,
+          806
+        ],
+        [
+          2213,
+          806
+        ]
+      ],
+      "spawn_x": 930,
+      "npc_x": [
+        670,
+        1330,
+        1670,
+        2010
+      ],
+      "camera_limit_source_canvas_pixels": 24,
+      "warm_x": 1200,
+      "warm_radius": 700,
+      "warm_strength": 0.35,
+      "interior": false,
+      "biome": "snow",
+      "original_size": [
+        2688,
+        1152
+      ],
+      "layout_ground_y": 806,
+      "original_ground_y": 785,
+      "source_path": ".docs\\美术\\地貌与地点补齐_20261016\\variants\\raw\\snow_checkpoint.png",
+      "source_sha256": "a23e61d33c923dfe85eca807c7390d1e824a7c04c27db377bf6620e303ec1aa8",
+      "planes": [
+        "far.png",
+        "mid.png",
+        "near.png"
+      ],
+      "far_repair": "Original bounded texture repair retained; wing occlusion uses local reflected texture. Camera limited to +/-24 source pixels. Not an independently painted hidden world.",
+      "plane_padding": 32,
+      "outpainting_method": "DeepSeek GPT 2.5 painted both sides; original three plates restored pixel-for-pixel in center; wing-only edge color correction.",
+      "preserved_center": [
+        320,
+        0,
+        2048,
+        1152
+      ],
+      "center_plate_pixels_unchanged": true,
+      "image_record": ".docs\\美术\\示例图横版复刻_20261016\\widescreen\\records\\snow_checkpoint.json",
+      "raw_sha256": "e3f87909a2aaa98ff7b2f28edef91ce514aa68d5a9f56153876323cea1ab7456"
+    },
+    "snow_scrapyard": {
+      "title": "雪地废旧机械拆解场",
+      "art_root": "res://assets/locations/atlas_widescreen_20261016/snow_scrapyard/",
+      "walk_path": [
+        [
+          475,
+          806
+        ],
+        [
+          2213,
+          806
+        ]
+      ],
+      "spawn_x": 930,
+      "npc_x": [
+        670,
+        1330,
+        1670,
+        2010
+      ],
+      "camera_limit_source_canvas_pixels": 24,
+      "warm_x": 870,
+      "warm_radius": 700,
+      "warm_strength": 0.35,
+      "interior": false,
+      "biome": "snow",
+      "original_size": [
+        2688,
+        1152
+      ],
+      "layout_ground_y": 806,
+      "original_ground_y": 784,
+      "source_path": ".docs\\美术\\地貌与地点补齐_20261016\\variants\\raw\\snow_scrapyard.png",
+      "source_sha256": "e84db23351271aadfbc8c661a41103ee70a8ad6c1d6d5ffc47393df1fc336401",
+      "planes": [
+        "far.png",
+        "mid.png",
+        "near.png"
+      ],
+      "far_repair": "Original bounded texture repair retained; wing occlusion uses local reflected texture. Camera limited to +/-24 source pixels. Not an independently painted hidden world.",
+      "plane_padding": 32,
+      "outpainting_method": "DeepSeek GPT 2.5 painted both sides; original three plates restored pixel-for-pixel in center; wing-only edge color correction.",
+      "preserved_center": [
+        320,
+        0,
+        2048,
+        1152
+      ],
+      "center_plate_pixels_unchanged": true,
+      "image_record": ".docs\\美术\\示例图横版复刻_20261016\\widescreen\\records\\snow_scrapyard.json",
+      "raw_sha256": "c2d6b569ddee298131ffb92ca983ccd75cb42873b5e196c0a1295c42c63cfb4f"
+    },
+    "snow_waterworks": {
+      "title": "雪地乡镇水务维护站",
+      "art_root": "res://assets/locations/atlas_widescreen_20261016/snow_waterworks/",
+      "walk_path": [
+        [
+          475,
+          806
+        ],
+        [
+          2213,
+          806
+        ]
+      ],
+      "spawn_x": 930,
+      "npc_x": [
+        670,
+        1330,
+        1670,
+        2010
+      ],
+      "camera_limit_source_canvas_pixels": 24,
+      "warm_x": 2020,
+      "warm_radius": 700,
+      "warm_strength": 0.35,
+      "interior": false,
+      "biome": "snow",
+      "original_size": [
+        2688,
+        1152
+      ],
+      "layout_ground_y": 806,
+      "original_ground_y": 789,
+      "source_path": ".docs\\美术\\地貌与地点补齐_20261016\\variants\\raw\\snow_waterworks.png",
+      "source_sha256": "02f8ef12c1bb53f912e353f828b756574407d39a609f8c164ba62923a9c7d986",
+      "planes": [
+        "far.png",
+        "mid.png",
+        "near.png"
+      ],
+      "far_repair": "Original bounded texture repair retained; wing occlusion uses local reflected texture. Camera limited to +/-24 source pixels. Not an independently painted hidden world.",
+      "plane_padding": 32,
+      "outpainting_method": "DeepSeek GPT 2.5 painted both sides; original three plates restored pixel-for-pixel in center; wing-only edge color correction.",
+      "preserved_center": [
+        320,
+        0,
+        2048,
+        1152
+      ],
+      "center_plate_pixels_unchanged": true,
+      "image_record": ".docs\\美术\\示例图横版复刻_20261016\\widescreen\\records\\snow_waterworks.json",
+      "raw_sha256": "99879c31e3e95a706a778070ea08912ed92caf91f9c3b3e4a32b67e9bb92bf78"
+    },
+    "snow_gas_station": {
+      "title": "雪地废弃加油站",
+      "art_root": "res://assets/locations/atlas_widescreen_20261016/snow_gas_station/",
+      "walk_path": [
+        [
+          475,
+          806
+        ],
+        [
+          2213,
+          806
+        ]
+      ],
+      "spawn_x": 930,
+      "npc_x": [
+        670,
+        1330,
+        1670,
+        2010
+      ],
+      "camera_limit_source_canvas_pixels": 24,
+      "warm_x": 1770,
+      "warm_radius": 700,
+      "warm_strength": 0.35,
+      "interior": false,
+      "biome": "snow",
+      "original_size": [
+        2688,
+        1152
+      ],
+      "layout_ground_y": 806,
+      "original_ground_y": 790,
+      "source_path": ".docs\\美术\\地貌与地点补齐_20261016\\variants\\raw\\snow_gas_station.png",
+      "source_sha256": "a8d9c194618d7a92621b357c11fb605141a31cc1c24849666cc91f2d612fc1fe",
+      "planes": [
+        "far.png",
+        "mid.png",
+        "near.png"
+      ],
+      "far_repair": "Original bounded texture repair retained; wing occlusion uses local reflected texture. Camera limited to +/-24 source pixels. Not an independently painted hidden world.",
+      "plane_padding": 32,
+      "outpainting_method": "DeepSeek GPT 2.5 painted both sides; original three plates restored pixel-for-pixel in center; wing-only edge color correction.",
+      "preserved_center": [
+        320,
+        0,
+        2048,
+        1152
+      ],
+      "center_plate_pixels_unchanged": true,
+      "image_record": ".docs\\美术\\示例图横版复刻_20261016\\widescreen\\records\\snow_gas_station.json",
+      "raw_sha256": "d2fc39c53dd1dc36cb0489c17e4b5af233345011556bdc09d3571dc46049a5ba"
+    },
+    "snow_clinic": {
+      "title": "雪地废弃医疗站",
+      "art_root": "res://assets/locations/atlas_widescreen_20261016/snow_clinic/",
+      "walk_path": [
+        [
+          475,
+          806
+        ],
+        [
+          2213,
+          806
+        ]
+      ],
+      "spawn_x": 930,
+      "npc_x": [
+        670,
+        1330,
+        1670,
+        2010
+      ],
+      "camera_limit_source_canvas_pixels": 24,
+      "warm_x": 1700,
+      "warm_radius": 700,
+      "warm_strength": 0.35,
+      "interior": false,
+      "biome": "snow",
+      "original_size": [
+        2688,
+        1152
+      ],
+      "layout_ground_y": 806,
+      "original_ground_y": 790,
+      "source_path": ".docs\\美术\\地貌与地点补齐_20261016\\variants\\raw\\snow_clinic.png",
+      "source_sha256": "14653e1be2dc6c7277315846c8d24a1309b9b3e79e8d6325fba307370dbba3b5",
+      "planes": [
+        "far.png",
+        "mid.png",
+        "near.png"
+      ],
+      "far_repair": "Original bounded texture repair retained; wing occlusion uses local reflected texture. Camera limited to +/-24 source pixels. Not an independently painted hidden world.",
+      "plane_padding": 32,
+      "outpainting_method": "DeepSeek GPT 2.5 painted both sides; original three plates restored pixel-for-pixel in center; wing-only edge color correction.",
+      "preserved_center": [
+        320,
+        0,
+        2048,
+        1152
+      ],
+      "center_plate_pixels_unchanged": true,
+      "image_record": ".docs\\美术\\示例图横版复刻_20261016\\widescreen\\records\\snow_clinic.json",
+      "raw_sha256": "224740b2398d38a63d6102383114c779b39ad5cc388fea884906f7f5d118417f"
+    }
+  },
+  "source_size": [
+    2688,
+    1152
+  ],
+  "plane_padding": 32,
+  "center_preservation": "All 3 source plates pixel-for-pixel",
+  "bounded_camera": 24
+}

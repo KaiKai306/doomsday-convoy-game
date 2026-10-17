@@ -1,0 +1,106 @@
+{
+  "id": "cen_bai",
+  "character": "岑柏",
+  "action": "谨慎地把绳头穿过小绳圈，停一下确认，再沿原路慢慢退回；双手回到初始位置，绳索全程同一根，动作比熟手稍犹豫，表现认真学习而非害怕发抖。",
+  "source_fact": "第9天综合见习成员，四项能力45，掌心有旧伤，愿意学而不装熟练。",
+  "new_art_design": "23岁年轻男性，偏瘦、还带少年感的圆方脸，黑色短碎发，干净下巴，认真略拘谨的眼神。穿沙褐色旧夹克、灰米色T恤、深灰长裤和穿旧棕帆布鞋；衣袖略短，掌心一道淡淡旧伤，不出现鲜血。",
+  "video_generation": {
+    "character": "岑柏",
+    "provider": "local ComfyUI",
+    "endpoint": "http://127.0.0.1:8190",
+    "model": "minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+    "turbo_8step_lora": true,
+    "steps": 8,
+    "seed": 26101624,
+    "fps": 24,
+    "frames_requested": 124,
+    "size_requested": [
+      512,
+      768
+    ],
+    "first_and_last_frame": "C:\\Users\\t6275\\AppData\\Local\\Comfy-Desktop\\ComfyUI-Shared\\input\\convoy_characters_20261016\\cen_bai.png",
+    "prompt": "A locked-off full-body shot of the SAME seated character from the input image. Preserve the exact face, hair, clothes, body proportions, viewing angle and all props. One complete slow, careful action over about five seconds, ending in the exact starting pose. The hips, seated contact height, knees and planted shoes stay in their original screen positions. Only the hands, forearms, a little head movement, natural blinking and subtle breathing move. Stable character scale, no panning, zooming or turning. Keep the entire head, both hands and both shoes within the frame. The background remains a perfectly uniform chroma green RGB(0,255,0), including the space beneath the hips and between the legs. No chair, stool, table, scenery, floor, cast shadow, other person, text, UI or watermark. No object duplication, no disappearing props, no extra fingers or limbs. Silent video.\nAction: He carefully passes the end of the short brown cord through a small loop, pauses to check it, and slowly withdraws it along the same path, returning both hands and the same cord to their starting positions. A slight thoughtful hesitation, with no trembling or panic, conveys an earnest novice learning a practical skill.",
+    "prompt_id": "b7f74134-2705-4908-b0ec-306c1f4405a3",
+    "output": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\其余七人坐姿动画_20261016\\cen_bai\\source.mp4",
+    "sha256": "530047cfb6013312e301f4b4558c2b27053de53c8a53ced88cb2daf50a559dab",
+    "elapsed_seconds": 230.5
+  },
+  "frames": 123,
+  "fps": 24,
+  "duration_seconds": 5.125,
+  "canvas": [
+    343,
+    617
+  ],
+  "loop": true,
+  "cycle": {
+    "kind": "pinned",
+    "start": 0,
+    "length": 123,
+    "seam": 0.0021001624409109354,
+    "inner_mean_adjacent": 0.0008955227676779032,
+    "ratio": 2.3451803982121766,
+    "pin_error": 0.0019323304295539856,
+    "pin_tolerance": 0.005,
+    "period_global": null,
+    "periodicity": null
+  },
+  "green_rgb": [
+    0,
+    255,
+    0
+  ],
+  "source_crop_box": [
+    46,
+    2,
+    468,
+    762
+  ],
+  "scale": 0.8121827411167513,
+  "seat_anchor": {
+    "in_source_still": [
+      355,
+      885
+    ],
+    "in_video": [
+      177.5,
+      442.5
+    ],
+    "in_exported_png": [
+      106.88270142180095,
+      357.61644736842106
+    ],
+    "prefab_origin": [
+      0,
+      0
+    ],
+    "nearest_sole_y_from_prefab_origin": 240,
+    "method": "manual anatomical seat annotation on source, one fixed crop/scale for complete cycle; no individual-frame centering"
+  },
+  "validation": {
+    "same_canvas": true,
+    "transparent_borders": true,
+    "gif_infinite_loop": true,
+    "gif_frames": 123,
+    "gif_ms": 5120,
+    "strong_green_pixels_max": 0,
+    "godot": {
+      "version": "4.7.2",
+      "status": "passed",
+      "checks": [
+        "SpriteFrames load",
+        "123 matching texture sizes",
+        "24 FPS",
+        "infinite loop",
+        "seat-origin prefab instantiate",
+        "AnimatedSprite2D play"
+      ]
+    }
+  },
+  "manual_adapter_stages": [
+    "green GIF compositing/encoding",
+    "shared crop and seat-height scaling",
+    "SpriteFrames and seat-origin prefab"
+  ],
+  "native_frames_archive": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\其余七人坐姿动画_20261016\\cen_bai\\loop\\cycle"
+}

@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://src/ui/location_three_parallax.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/locations/snow_camp/01_far.png" id="2"]
+[ext_resource type="Texture2D" path="res://assets/locations/snow_camp/02_mid.png" id="3"]
+[ext_resource type="Texture2D" path="res://assets/locations/snow_camp/03_near.png" id="4"]
+[ext_resource type="Script" path="res://src/ui/campfire_effects.gd" id="5"]
+
+[node name="SnowCampParallax" type="Node2D"]
+script = ExtResource("1")
+parking_area = Rect2(76, 565, 579, 408)
+additional_parking_areas = Array[Rect2]([Rect2(2062, 565, 579, 408)])
+
+[node name="World" type="Node2D" parent="."]
+
+[node name="Far" type="Parallax2D" parent="World"]
+scroll_scale = Vector2(0.12, 0)
+ignore_camera_scroll = true
+follow_viewport = false
+
+[node name="Art" type="Sprite2D" parent="World/Far"]
+texture = ExtResource("2")
+centered = false
+
+[node name="Mid" type="Parallax2D" parent="World"]
+scroll_scale = Vector2(0.5, 0)
+ignore_camera_scroll = true
+follow_viewport = false
+
+[node name="Art" type="Sprite2D" parent="World/Mid"]
+texture = ExtResource("3")
+centered = false
+
+[node name="CampfireEffects" type="Node2D" parent="World/Mid"]
+position = Vector2(1312, 947)
+script = ExtResource("5")
+
+[node name="VehicleMount" type="Marker2D" parent="World/Mid"]
+position = Vector2(365, 973)
+metadata/description = "Original reference vehicle position; origin at wheel baseline."
+
+[node name="VehicleMountRight" type="Marker2D" parent="World/Mid"]
+position = Vector2(2351, 973)
+metadata/description = "Original reference vehicle position; origin at wheel baseline."
+
+[node name="Near" type="Parallax2D" parent="World"]
+scroll_scale = Vector2(1.0, 0)
+ignore_camera_scroll = true
+follow_viewport = false
+
+[node name="Art" type="Sprite2D" parent="World/Near"]
+texture = ExtResource("4")
+centered = false

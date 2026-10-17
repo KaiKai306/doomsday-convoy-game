@@ -1,0 +1,5112 @@
+[
+  {
+    "path": "assets/camp/parallax/ground.png.import",
+    "quality": 0.4,
+    "before_sha256": "f0f916ac65ede504b4d5896dd3de16508a91c8cbe72c77de7e89a25e652de2e1",
+    "after_sha256": "4208b4bc02cd819644821262606b3545894806c228db2ec5a098a25f106f986c",
+    "dimensions": [
+      2048,
+      390
+    ]
+  },
+  {
+    "path": "assets/camp/parallax/ridges.png.import",
+    "quality": 0.4,
+    "before_sha256": "3f55de9e7e02564b1cdf0c68ce7594590385424dcc5aa2587899aa9fdd4f0024",
+    "after_sha256": "2ae23959208d5b9d003f906dcc406f7401d39472fb96b31a6a9f9894877fe9b4",
+    "dimensions": [
+      2784,
+      1117
+    ]
+  },
+  {
+    "path": "assets/camp/parallax/sky.png.import",
+    "quality": 0.4,
+    "before_sha256": "236e8270f535c39f844e3793ca15a17bc8f5be0dc3c159c574a4307183f9cf72",
+    "after_sha256": "66d0a6d5e8cb0cf4574058e0063c914864b6badafe7452e6ae074a91af0d3424",
+    "dimensions": [
+      2112,
+      1080
+    ]
+  },
+  {
+    "path": "assets/camp/parallax_three/01_far_sky_mountains.png.import",
+    "quality": 0.4,
+    "before_sha256": "6b296726edf8b8c62889ad3092c5e5c79715860ab8d907116c8ec8db53d646af",
+    "after_sha256": "1c9db83fb15738cdbef39928c69f1751854eb04086604409a8aba57713241f4c",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/camp/parallax_three/02_mid_camp.png.import",
+    "quality": 0.4,
+    "before_sha256": "f7a2ec54fe1d874d1e3ffb152f8a0b5045ca0bb8717240c80ad1b5445696d498",
+    "after_sha256": "bfcd25bba0ac4a76b2d460425f1819ed1fe9c3d23b18e56d61f744850d7578ca",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/camp/parallax_three/03_near_ground.png.import",
+    "quality": 0.4,
+    "before_sha256": "92582db86f8dc12bf483f56ac4ac5b4f330987ef2dd46f2220bf356f799ff548",
+    "after_sha256": "5d5d978e57ed4131e4d9e70bcccbcbac8bc34d10689f13761d2baac8cf8c79fb",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/camp/props/convoy_truck.png.import",
+    "quality": 0.4,
+    "before_sha256": "25c0189cb9f649bb80ced816173ff703213a08710f05d54c89a8dd0a96030731",
+    "after_sha256": "8d248b56df84336b58053a0a206ff6c3a9c84bf15ea3b2ba13ee03ad1cc6d28a",
+    "dimensions": [
+      318,
+      288
+    ]
+  },
+  {
+    "path": "assets/camp/props/tent_large.png.import",
+    "quality": 0.4,
+    "before_sha256": "974ea959920b1adc842f8769b8ac8ec7f1230460e75372da57d22010bd692834",
+    "after_sha256": "82c9f038a92a0afce24e81da232ad9a1855c2278b60c6d240cc985cc27f35117",
+    "dimensions": [
+      436,
+      264
+    ]
+  },
+  {
+    "path": "assets/camp/props/tent_supplies.png.import",
+    "quality": 0.4,
+    "before_sha256": "537cb7e424332dc980c01244578ec29d473afbfbb174da80f90409350a3dd8e2",
+    "after_sha256": "78267b916b49194b0cd707f42fb9952952acc5ea1bade30c53abdc8b888afa92",
+    "dimensions": [
+      341,
+      157
+    ]
+  },
+  {
+    "path": "assets/camp/scene_keyed/01_bg_sky.png.import",
+    "quality": 0.4,
+    "before_sha256": "262b4fc5ff7903e710da17fdde3da6532f499fa8bb5c3e0dc992434aa6e2cdcd",
+    "after_sha256": "e12e7530261325e5c9e7de9f935ffd13e7a67ce97047e66db9a759d214888616",
+    "dimensions": [
+      2112,
+      1080
+    ]
+  },
+  {
+    "path": "assets/camp/scene_keyed/91_L2_mountain.png.import",
+    "quality": 0.4,
+    "before_sha256": "2cfb9821801e71201f82efc0e2f77031f1f23fa80456da5e362c0beb643b9d9e",
+    "after_sha256": "575a0fd3b042c088ad17a2ac7f5667dd044424c8ba5e71ffcc6e8e066f8b4215",
+    "dimensions": [
+      3168,
+      1344
+    ]
+  },
+  {
+    "path": "assets/camp/scene_keyed/93_L4_fore.png.import",
+    "quality": 0.4,
+    "before_sha256": "fd72b45269a6582d864604e3c98859eff1fbe2df4957afc39e5a95ff568cd6d3",
+    "after_sha256": "b5e8d922e1f21342a4f3ce0180c4c400a70fb82587a209bd9722a37cd047f933",
+    "dimensions": [
+      3168,
+      1344
+    ]
+  },
+  {
+    "path": "assets/camp/scene_keyed/95_L3_camp_flat.png.import",
+    "quality": 0.4,
+    "before_sha256": "1c9d48c52dca552fe92207742d46f438b86932fe392a0b6557f24f72ee26de77",
+    "after_sha256": "0d6de047bef8fb9759387a1ad88483553b88163b2ffc9130e9fbcd5b61d4463a",
+    "dimensions": [
+      3168,
+      1344
+    ]
+  },
+  {
+    "path": "assets/camp/scene_keyed/vehicle_body_atlas.png.import",
+    "quality": 0.4,
+    "before_sha256": "4c2fab5883d6596a23becb66229d9203a8e19d6b7663f21a7b2446be121c3ad9",
+    "after_sha256": "1418e8d413d1e800094877455a40bfb08125bb95096f9223297c84f151faedfd",
+    "dimensions": [
+      2048,
+      2048
+    ]
+  },
+  {
+    "path": "assets/camp/scene_keyed/vehicle_truck.png.import",
+    "quality": 0.4,
+    "before_sha256": "aef38410b7ea9bfbff003f7269045525aaf24c9e86a50df43537900d49187a51",
+    "after_sha256": "d64ef03904905dcb009e19c864d9764463725d3fb4e4cd48d61d507f5d6e34d3",
+    "dimensions": [
+      993,
+      614
+    ]
+  },
+  {
+    "path": "assets/characters/captain/idle_left.png.import",
+    "quality": 0.8,
+    "before_sha256": "85f926d3970b6be87866e8373a55d7cc32e64793037e79bc4579ab9fcaed142b",
+    "after_sha256": "2a5acbb465b891d13587eaec9db208ef1f0b7d97b6c1cc8533c0eedd4d83c9ab",
+    "dimensions": [
+      298,
+      483
+    ]
+  },
+  {
+    "path": "assets/characters/captain/idle_right.png.import",
+    "quality": 0.8,
+    "before_sha256": "7717bf391d2d6ea5f4df46751b2ecfcba359326956382c01cb8c928afee2c99f",
+    "after_sha256": "46f95e32b6785f189d8315ba8302a0ec0981c3f54a903092d20f188fed2de2ac",
+    "dimensions": [
+      298,
+      483
+    ]
+  },
+  {
+    "path": "assets/characters/captain/walk_right.atlas.png.import",
+    "quality": 0.8,
+    "before_sha256": "f4840614b9fe06ca079212e4c6a3533cdcd527c978db973aa7a4374b4a0d2b60",
+    "after_sha256": "9a65f1d080365925c30a1c698d55526c23c3afafc1febf4757cb02a03b8729d7",
+    "dimensions": [
+      2086,
+      2898
+    ]
+  },
+  {
+    "path": "assets/characters/side_walk_20261016/ajie.png.import",
+    "quality": 0.8,
+    "before_sha256": "ae7c05dd97e492ef51ae8fbcad708af743e02e0130cdc7fd94881dd411d310e0",
+    "after_sha256": "b36f252f29837deb520589e5d4eef374cfde78f24b7eb26b3bfde62c3fc9ccbd",
+    "dimensions": [
+      2030,
+      1139
+    ]
+  },
+  {
+    "path": "assets/characters/side_walk_20261016/elin.png.import",
+    "quality": 0.8,
+    "before_sha256": "963d6d16245aa7b9b6541dc9a62d95d6c9c7a6e440153b028aa2a484fd7c6391",
+    "after_sha256": "d6e4a27e43fc2576dd11803683f5c7e283d9eed01d3994d78ceecd47f0e3a861",
+    "dimensions": [
+      268,
+      1113
+    ]
+  },
+  {
+    "path": "assets/characters/side_walk_20261016/sofia.png.import",
+    "quality": 0.8,
+    "before_sha256": "c8e401b9f9bfdb4fef056f9d188610df34c93e72690791090a956e80b74fa00f",
+    "after_sha256": "f60ff967a4ed829c10c40026c66b3a29887c26a092113b058d03b8ef832ed642",
+    "dimensions": [
+      347,
+      1114
+    ]
+  },
+  {
+    "path": "assets/characters/side_walk_20261016/zhang.png.import",
+    "quality": 0.8,
+    "before_sha256": "6a3c854772ad15198abb4508d5106af1df9e04c613edf8d8243efc178cffd7c6",
+    "after_sha256": "114158cd4b5aa3c31da73080a8c587a656a60cdddc5e86824c8a2e4525ee1f0f",
+    "dimensions": [
+      301,
+      1103
+    ]
+  },
+  {
+    "path": "assets/locations/abandoned_clinic/01_far.png.import",
+    "quality": 0.4,
+    "before_sha256": "9e6d163b663b9a6f9d566c0a217af7f397ee5ad66647b05591e89237038760ad",
+    "after_sha256": "ebb832450c6a325e194a8fb5640b6990c203c3d84e3dae79155a4bc4bd9d2630",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/abandoned_clinic/02_mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "ac401f8bbb436f761319aea6deed44775a637cf04777f484c009300dc8918aef",
+    "after_sha256": "73f878e4a096901c9cdf0577bd31cc8f1c7e40d1086ac977783f57415e80327b",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/abandoned_clinic/03_near.png.import",
+    "quality": 0.4,
+    "before_sha256": "8e029374b8a0c4b807424de05b985fba7300e75baea6f12a015414d074252b29",
+    "after_sha256": "df52a776734f443c2d8d7ae6e0ce02a22e42351ba0cbed990dc1ea06ff528c59",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/abandoned_clinic/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "8dda775d64d2428191e3ea4108acacc9868570582db9dde8fbde2ac276c0679b",
+    "after_sha256": "f5c2561cfd015c62f35c5c3c6ab140d0ea3f4865bfbeaaa828b5c89f40882316",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/abandoned_clinic/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "25106b217a7d3349f68ad0c8f0cbd8f10a14e1529468a86d17202139d76c5976",
+    "after_sha256": "61e63ac2a133b8d0266c7e74e4f6593ed34a6c959f03a91eddf9f29cedb203a3",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/abandoned_clinic/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "32f4d57bc33975cb56d48f069bda45e20ed7c57482393998e3d241c8c2585a04",
+    "after_sha256": "9e8fe806791c417a85096c890a1a0b8726d6cff7f0d37e1d8b17556109365c06",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/abandoned_clinic/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "ba2e3ff8f2305fb7b32ac672d065f499ae51f2fac68f8c2304bb961778e164d4",
+    "after_sha256": "9f8ace20503164ca63c4d7086cb8ee1fc74cc1885940c4db05a3283cf3459592",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/abandoned_school/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "b74064750fddb6566219f6a8df4fba646f475c7becaf495526f13bf75288e2c2",
+    "after_sha256": "d7e41b385f0c96d71baa02696797cb2d5ed46b8d50f6858deefc4aa305b5923d",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/abandoned_school/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "bcc6fa4a4f249529f6c31852b39d5a4fc151ac993548b9856eb0f39664a1fe90",
+    "after_sha256": "25898d30601096e8eda184774830eb4eb07a971022af563e3a8bf9d57bb1367f",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/abandoned_school/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "3d34b1c8eb0122a504f393a8a7133c7a51f1c483667fa16c2834217f2310bef6",
+    "after_sha256": "a53ccdcc8962c1a5f3c69b0faaea31b18eddf7ba86fceeae3ec27efe7c7d8d6a",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/abandoned_school/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "7ed6c6ccd145c424eaf168b1fa7924ddc2cacf5dc1819520657435483de6526a",
+    "after_sha256": "e0f79df6d1b74a5eb4073b2aca40ce86386010521fe2ebca9889e259bfd7c70e",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/camp/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "d771c98656cbd959e3b730e959693d2b8b715361b304be58cf125c68b8671c15",
+    "after_sha256": "2c92a99c886f456d1610d41460c8a2a4833e83c6ddf6649da7c6000431b5570e",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/camp/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "718475f41377e0223117452def626a0e58917a048785dc2a723aaeec56337052",
+    "after_sha256": "995fd713b6af9028331a4325ebd35665c7973ddffc77e3b4b1d91e7052cc1565",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/camp/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "cced26f0637f44e69a861e77ce21eb29ceec4c1335ea15afe3425aa10e4ad5f1",
+    "after_sha256": "1d79930980343611f3931717069927855b4aa77eff805d65dfa3cad83185bbe9",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/camp/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "70d163199ccef01cbce73542c8b5558debeccbcd0d2706c157d7af201a4fa516",
+    "after_sha256": "8b28508d2eabab961e9aa39844cb30ee5305df61bb18cd8237c81f7bcf6d67c4",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/camp_interior/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "7c5774da65b1bae9e3885066a7544a5f78482cbdc0833161760fe98f76a9d10e",
+    "after_sha256": "0e72fc139cf7f7fb3fc9d01db695097887aa976ac360f4e44ccb2d03c3d2c56c",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/camp_interior/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "8eab4fc496bf1db975a64d64ade37bb0848aad1f687332b02a8cfa563f3fab92",
+    "after_sha256": "33324a34e28dbaee4ed1fa4fc869e1ca3f3990357ab75c95dace447c8f79741f",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/camp_interior/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "bbc47b187e231a5a706c8b97fd134eef2f344f3728a3f8b741613342cad2dfe5",
+    "after_sha256": "a3cadfb1795ebe9a7fff756fa409479830a88439e5de73f8416cf9a34a669a6e",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/camp_interior/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "bf9a4d2c52e1cb1205475000bf2922335b7e190b05d2931441d0965fb525081a",
+    "after_sha256": "6dd1e730ee4a2da6d844b69c3a85a4cfa1891974718c24dd6401cbf7d5ac585f",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/checkpoint/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "a90bdf86d3768bacf55683aa572bbc9444e7b1bd6114fe1d335cb23a9f17c0fc",
+    "after_sha256": "6d0393b527d3df7e2219fbde58eea55583d92318d46e0ca973ef884363783a22",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/checkpoint/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "112d121d5c9ad341b2a47991bc7ac037d1e528c59b152a6a5f66f28d28152288",
+    "after_sha256": "50f281650f4cb199e8b7332fb210c3fcd7955d0711c1612d6693992ae268470a",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/checkpoint/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "32069c0f05593c2004b7d9c3f4c14299af3623f7f9acd73c560479a8098ba988",
+    "after_sha256": "c782d72e659ce54d84fdb460dd5b31c32b45d6ea1ae055a82ddc8e5204ed0218",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/checkpoint/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "3b6176caee65a4fd6c10e258472eb6947ca4fe074d8bce901c6ec6d2eba87dc9",
+    "after_sha256": "e9ade65b876fb5126e8989151c8b32144cc0a65128d64da7c9e066b2e62fa7c6",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/communications_station/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "5b23c1f9b664c9130a8f1073ddae006498de893c9d0daaf7a1f8fd8b5024affa",
+    "after_sha256": "176c9b1f95429947a5f5986ee1793913e1766b47bbec02091eb8ad883641a663",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/communications_station/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "b4f6a77411b6500534d8f1f772cc00816033bc69daafd71c0597ffe9642514fd",
+    "after_sha256": "352783542a770bf8fb165f259e60180b211ab925b37e194d3ad9d6555aee30aa",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/communications_station/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "9e6e316caae65a5df2881cfd04493b24e537f34c60ac69d73f7f72f00b84786d",
+    "after_sha256": "da471ae168b2ec721764b1fe044b69867a27b6b96055836cbdbbe45e97072ed5",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/communications_station/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "cef3182186b18e914c73c79036fc8f6dde01db26a3d9829dfae77b611bba9440",
+    "after_sha256": "13e51efe11c2160108fa9efda27edac0bb4dc912579d0d20f7080988e6e30bb3",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/desert_camp/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "f462ae4baeac860bec14dd36859039f69d151e8df03b9cba0f76253c8b63e76c",
+    "after_sha256": "fb76c09ccaa1253b6478462232608cc8b2d2bd47c4db11611b8723866e3af5da",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/desert_camp/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "fabd56628f5b952ca17fcc9a77473e7ccfc3168b3de547959efb8d30cbd14e2d",
+    "after_sha256": "da59119cd92cd8b755ea17fee8b1a78c3e9948a2a8b6276c772bccb48654e621",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/desert_camp/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "bd9f86993d37e30ea72e58f302232ad89f0b1042335c890efc6211d6fb19af5a",
+    "after_sha256": "437273948894a298b9898585ee1a6b506324a85be28ea5193902b4c50e2f9edd",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/desert_camp/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "9e0c245bc9042f1277102330dce8bdb505841dc65b21ecb88cb42ab6dd53f8be",
+    "after_sha256": "094f21a2c021e022b4e8d73764857ef2fefd7b26b934fa4cd7d91b581bbc3494",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/desert_checkpoint/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "6a5169820eec0cfcd09a50d8caa2f73b14ef03f9d1fb7ff32f340f368fcad235",
+    "after_sha256": "6753f67402b7ca23ad74a25f270033d8e7835d1e35d9ab0c8d9782a623463872",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/desert_checkpoint/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "e6c2c3dab912cc9b943e9bd5c31c70957c93cb4fd0887fe280f30231299b3246",
+    "after_sha256": "a47a51affcfd087bbd08d4ab3fb42b1923f78318e7ff7adc07dfce87198634b0",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/desert_checkpoint/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "fc5d13a47c3962eb792ba262fe9d8d1a48675789df1911592c308294c40d056e",
+    "after_sha256": "f14fb667f64a0e677f520273a300f24bd68ebb8c6def85336dfb1c66dbd59677",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/desert_checkpoint/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "c8b5819d1d8efa40dfb1737575c78e549ec42ee3b47155c6c8360e446c82ff2c",
+    "after_sha256": "c79829c2019d9111450d391ed8c228adfa210b35e1ff4c27f47f3f2edabd9b4b",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/desert_communications_station/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "12ee941ca904fdd64d561b628e15b3e607dded85247188dde5710251747b2014",
+    "after_sha256": "c1e1931507af0f05b839881fe570ef336325255ff09dff16250253e9285997b6",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/desert_communications_station/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "654b5c528e9288b62c82bf31934077add75acf5a6db6bf29578fcdc0cce68f79",
+    "after_sha256": "e8570f96b27e2bded92b10cdfbaea1fe995ed66bd4754cc1c4fbacf0dd603362",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/desert_communications_station/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "73775071139257f3eb9f1c4dd357a95089e37729a7faceeee2047c8f4f67d678",
+    "after_sha256": "d8b005489977a10e62b273ebfd8d8dda943fd88621897e37081a4670ce17d488",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/desert_communications_station/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "c73efdf14aa382021343b3c6c244de940f43b94e0a505ca42e5e3a861e33384e",
+    "after_sha256": "78bd493c1e523344ffe5f2d7497f454e0be5bddbbf4e34a2f83223f1219b8951",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/desert_road/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "9fd6e334e9ea57bad51efa74d8012a82067b6b47ad100ed45569f2a7de14e36a",
+    "after_sha256": "6f620f337f2986df422a0538ab6aa802324c048757c8dcaab75fe4d38b2f749b",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/desert_road/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "38a933dfc49b1b3ab73a6b489d3a4fa9ab8109e351e151aa4cf6225383a7abd2",
+    "after_sha256": "9457781ef16deec9bc03e48366c617a68ef21707f0a3449e34b9091464c64762",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/desert_road/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "3304a63196b094e06dd0f62a188a1aa6a699efd87867e3857cea9aed5da519e8",
+    "after_sha256": "227c45446f12b4dfb08bdde31b17b1de0614fa0d5ec0b4f5c26539d4a90aa10f",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/desert_road/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "3c4d50b158446b88f7d9554c85b2da74f7d6420ee4947332cb57fc78c64f25a9",
+    "after_sha256": "75282719124ef8dc1f1bd64af83608f2957a07e682c5482cdf532832545c0be2",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/desert_scrapyard/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "df869f1548d22bae5a09970a1973415a1e8ccd540f89a92bdce57c8119c09189",
+    "after_sha256": "754652033e6e07ea14a915b9b5dcbc248b2fc7720ab8881090f4a93706cc6039",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/desert_scrapyard/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "bb6db49a4faf90379cd3a1d1cda2d00d53b624d39ed174e6959f395cfb9750fb",
+    "after_sha256": "f0dc667aa2d3372b06103ce603a1e11e8a45a388be74a55ade787ce7b5a55dbf",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/desert_scrapyard/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "029eae4fd1d4827de9845d99e9118a7582467c6095e2c05984b415109cc0d964",
+    "after_sha256": "f14886361c5ae055218f1be96f9a98e3b5a1b9d50b5bce44edad444544e34ead",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/desert_scrapyard/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "9bbc502b1fc54998fdf4942350871701a62b5faaa287ac6e09d72b06dc7d26a4",
+    "after_sha256": "81b4baabd80bd1bc82fed66a7cca979f7f118872e874779626ddabc62db94a7f",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/desert_waterworks/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "fd70b561daafd60686f7f90e4cab5a15292333b507f21f762b66cc1c1d6baf87",
+    "after_sha256": "a853a9a2b84806d9c2506cb3294db420d7fedd100c970244dd67d98ffd2aff13",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/desert_waterworks/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "469b78815a961605572db6f5a6687d84ccfdec8d2f5514611e55bfea7f558f8c",
+    "after_sha256": "67c0bcd008b6249f716b6a8440b7d6d1a7b9d4bd07357777f98897fdb7584c06",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/desert_waterworks/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "759bfa2c3225ab51e39c4f367766a84ae9633135ce9d5d815d0caecb74e321fa",
+    "after_sha256": "631ccb2a9040d93811610e3b4c081e5ef5ecfc42730fd0d601e62bed588b615e",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/desert_waterworks/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "ea905ccb376148976a660d54e7aa91ecac5ac8ac389831b9ac26784307e80b81",
+    "after_sha256": "ad181fa219d9a8cc6aaf2289aa785a1eb989b2eb5ccb18ec913fbdab7af7da85",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/forest_camp/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "5efdaeadc895807ccb4cfb768a855534d0ae3d64a276107f3116b48ba7968d7c",
+    "after_sha256": "2f210b6ac3437599bc6c9c69f231fdc65be933d091d4658432a17479be0d2cb9",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/forest_camp/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "a4637b709f39042332a7e48bace5637ea3656e0f75153fd7816720a9f567aab1",
+    "after_sha256": "2965a497537812721bab2006b97e32c3fbaacf319e3b779aacd45116c8aa05a1",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/forest_camp/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "4d5134984f0983d87580e81ad169630350a3afa7e0a2fc39e24cc0353f01c4ac",
+    "after_sha256": "b5d95217ce4b49dd62083037f6e6c18a76be41280b31e90339ea808ce98665f7",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/forest_camp/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "08d377366cee82523f8d0747eac15491ca2ab7a17130a416dae3d6bf26da880b",
+    "after_sha256": "a689c7bfccdecba3e97734c9bfb63d87a0fac9b1d7a143b31c1639da2db92ad3",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/forest_clinic/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "ce6b58422d2c3e2e16282e50caf41f1732121d4ef7ab8f08a5bf6cabdb8bcf16",
+    "after_sha256": "7fcf33482f9ac73eafcb64cbcd1b32f8c5ce84a4b7c2cc1178400d627b2f83ce",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/forest_clinic/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "28ee348a8000931b497562b57754905c3f86ba3656585ee67f35157f614330dd",
+    "after_sha256": "578ee5a1da68e9f496a955a29df3eb67fbf91c97d5d7abf2b1e3528a5da59acb",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/forest_clinic/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "2c0870b3e344dd78dba3c6563122b0fee1662fd43bdea0a65a954bb5a87469db",
+    "after_sha256": "f867e74f4ef746e24f022c5ac3b95410ba9a319260b08fa9dab56a5cf0f97868",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/forest_clinic/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "4bf7b517da041f27347721e80241e2945b940e059d0d42aa4c34eb52203f8aaa",
+    "after_sha256": "1dca2c5afc305adea01959f71191488d7aad21e1841c50be2a4d5be21acfb261",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/forest_communications_station/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "1c7624184cbde452a2d1f88514a392fb9d5f045a0729c8cfb344db8538fc9e0f",
+    "after_sha256": "0717b31f61dd1f06512907314496d27103560e99b44b44f2428cdc21d57117a5",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/forest_communications_station/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "db46bfcf6759cff03614686ebaf8d190805682d93d553b99e8b33dc4f063ba2e",
+    "after_sha256": "5a1d4054a5898f35da9a3e158765460033ae2924dda37eda7e89d6b109de3541",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/forest_communications_station/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "2d68f2bb992378d7c574ed8df427540e7c77c25ba374e9351e9b2d9a6f629031",
+    "after_sha256": "7b9f0f7ae3d7fc008ac75457b836cb784777d630d4b628ff141232418d941718",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/forest_communications_station/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "3888fa556c2abb2239c3dd460268d6f2ac0151b971d5ad4a26f506e9de6b0546",
+    "after_sha256": "87ae2092ce7b9a3a4ac564887480f5b0452558a17d4a4da341d4c2a0afc49962",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/forest_fuel_depot/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "e56e0958ae38b462c5b5239ebe0e50d381dc443fae0d8e4a8db89638d45e9bbb",
+    "after_sha256": "758288f18985b0e5a39a761563ada417ab02037af505c93525e21dd523f573dd",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/forest_fuel_depot/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "dea2a08bfc9dd95d8df1e2ba1780ae5a56f6e24114d30bf791e6a2ba360252f9",
+    "after_sha256": "ffff64d57fc836a82a2a191ff793001b98ad813a1d7dba9b56a9403301539144",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/forest_fuel_depot/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "229cde4ad80403c3da01352603358ccf1e2e3ee3581381b910b9b1e460c898c9",
+    "after_sha256": "7f17a5464f1a158a5c3b12c99e1790ff5910029132064098755952c56b162b2a",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/forest_fuel_depot/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "9f239975e83bfc2463c0da45f2ec5596f2f3031be19b79fe76ac41ab31467f3d",
+    "after_sha256": "e1e3b94e472bafa95f970c0b417de03615fe108c3ffee0947eda7d91af7fff96",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/forest_gas_station/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "ecb081623850d9957899c04e2221e0d24819da85449b261f8f9197769d3909d3",
+    "after_sha256": "2429a239f905131f469c940c494cddcec9438b1ee6df3a891792c0d477e85c47",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/forest_gas_station/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "a4b0ea1c979913d25a8e368e03764166c4a5e05b4ad80dc55fe53695dc2fd0f7",
+    "after_sha256": "1ab685e79111b92c3f42573ddc751adc125a36ff10e3bdb31b47d4d2a923248c",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/forest_gas_station/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "8ed07c8a5e405b235444d159437e34841d17c8c7458efd44e2190da34b2f09aa",
+    "after_sha256": "8b33178323e47b8ba95bdd1e6499d5f566387781654f2a608477b513ad46f685",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/forest_gas_station/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "b5e814b0fb9863669cc2b88bef59cc990f9cf0fa738a162e3a840c7029b5685d",
+    "after_sha256": "973ebbe0e7ff8b0521313e34141e2432c3f357fc0754b3c75eb2c67d6d57eefd",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/forest_road/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "58a76de255b02c4487e62ed86adbe98a38a11d71499a5257da62e75e5e386350",
+    "after_sha256": "2084fce681fdf27fff7556edb63bf102f7553eac7142ed371ef09b023e943a9a",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/forest_road/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "e3a665c6aabb5ab3b369a24aed774a6f34e3d15fea97c9d0856a0bf009858888",
+    "after_sha256": "9fd1d9e8ff63a581c7ff5c73a1040af4a1331d63caf69f98d546b17668e5c200",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/forest_road/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "c2a1b7029798b27e66da159e868d5be070118ab19f925cd2fa5747644cb8bd8a",
+    "after_sha256": "ac19790fc127f30dc29ab9784f452d08613b54f900af5269157a7799fe545279",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/forest_road/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "3d3c549432e99bfe42b2e05bbedee930a62f4faf9fd84c245c6c711df69a8579",
+    "after_sha256": "b5339adee21e314ec4835e41cdc1d86c02a4f9de8700bdaaaaab2376dcca3c2f",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/forest_waterworks/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "41fc6282d2de1a8a25d30c1e01cdf51cabae330950cb37bdb45f890063e439c4",
+    "after_sha256": "9ae984834c8bc389dc1fce950c94d3f435013f3ddc865e1cb1c950df16f2cc6a",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/forest_waterworks/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "0ac895b590dfe92dc8ca4f9c70eb5904052443d4974f1c3753058ab5f54092d7",
+    "after_sha256": "d611928c5326201611b108a2e82a6f76dddbe40f218c1a3a51f31c5b5fb6f80a",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/forest_waterworks/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "3781d10553f1e231375985ab622f28d4ead0c97989850b38f39ce16bb7ec6ee3",
+    "after_sha256": "6957ce08fc3166da6b6259ef2c35ef7a53c0786928f071a8c7e8dcc5973804c1",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/forest_waterworks/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "2e70e913a1ad03c6ea1eb154123001cd66a9ef5c023dfa4c998395ebc8053c61",
+    "after_sha256": "dd823f92950c7dea128c333b000e3679422025b582195678c5a31a7566c8ce8b",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/fuel_depot/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "9838d643b182056e3aadbba2dac368042950481dd2d044d99b0f9f4e07d8ebc3",
+    "after_sha256": "d1e13597f048b3e6f465f23a6f0166f60b66985450381947f3ad3e59dbd8553d",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/fuel_depot/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "1aba7079e5d47d60f835890bfbddb733e36b52c79e2daa3853014a2579318386",
+    "after_sha256": "08f01bf7a8d51fdd5e7410e1022e09c3188234169a27efbd23b3274f41966f4e",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/fuel_depot/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "7ffd910d9e8b5398463c501a1319b9eb01236cc40abe9ac9c03d49ef638a7cea",
+    "after_sha256": "ff0f1f1b9c388a51fdc3ddbfd5640f62cfe39fa6a6ed51e77b9d8db2ffc3ea79",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/fuel_depot/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "91b04b1ebd9cd263a90d98f1c230cee2c9866f02caf1448cbffd8edddb0b0c03",
+    "after_sha256": "edc5bb673d221866579f536c3b8f7c063013a27a387f550aefa0098ea07f969e",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/gas_station/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "705a4973ea7ebffc566db599801415f28d28e1423eb691796c3c49cb45736500",
+    "after_sha256": "7d2b716f173249c12b54f8677d3bf5d229a8ea45b37cae1f87eafdf98976ab1e",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/gas_station/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "7bb6bf431245578c8899826b49b6678c46d330f1cbf8b04ee3f6bf19827c5f45",
+    "after_sha256": "f87cdc6deef5aea7dce30d827c6d6ab9e3dbb60b042ddbc29fafb58fddff238a",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/gas_station/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "33d055aada2323bd28136068c7d277253788ecb3730cdfe5824f5ebf2d630e81",
+    "after_sha256": "b25282d23698d7a27fe696ca1c8ec4698af3732ffdebb8f8436d0b138b793dd3",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/gas_station/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "4a7dbdbd896b80b8561c3e63553000cc0c46be1df7763e4f7d465b515052c2bf",
+    "after_sha256": "3f0c868aee023fdac99e05c5b5a7e18d9f7588e6d0775fa625545f202e73aff0",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/gas_station_interior/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "e0c4306250dcefc6d9ec3a8d6b1294672c2cc24aa421ec86609d90c0508167c5",
+    "after_sha256": "80de49af40bcb51dce8e4c6da5dec10b3feaad7efdb552d03784120e8cdcfa8a",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/gas_station_interior/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "77659fccd501e8240d3fd68bdc9ee46554004894c14e3481803bc62a131e3890",
+    "after_sha256": "a9cecaa0d9d6a49298537ceb3835a4c0890b4ddace9a0a7c1111e1f9511ae934",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/gas_station_interior/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "16b252ec913b39e04a9b75ac4becb0120908fd8ab0422aedfafa036e2a436df1",
+    "after_sha256": "4f942e03a2bb7c236396119082766555ec48ffeea1ad15b4af8d50633e276aee",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/gas_station_interior/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "1a3f51f2c4f5e5e2d7e6bfbb18ce854a60160a0391e3829667e82608cb7e2480",
+    "after_sha256": "9e14e91e4688de47f0d09550fabbfea3f995daa6d8bf0773747b43b1b72929c7",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/habitable_ruins/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "5802e516615423bc91e570b655dc7846c58b56b7e30e9eb7f0b3a9b4a5931933",
+    "after_sha256": "2d05c7a36953803aa1c200ed0e9efe3957710aa414ca1d18da3117893178dda4",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/habitable_ruins/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "c66a73aa1c2ebe9a97bcf8cf1cb353b2fde12cdfc2b04db4fc1910273f7e82d5",
+    "after_sha256": "45e35b9bf974191217e966194aea508fa292db112f4344b87470eb4b8e9087f3",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/habitable_ruins/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "7a477d6c3a055b9de9db7fe4b713fbd29d449c73683dad9cf795cc968a30e783",
+    "after_sha256": "81c1224690555f6c08f27952c947ee8858e11f56bea52a98068a252be86c5077",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/habitable_ruins/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "dc2de08cb7d53909242445e31a1288e5c2ecf5de28a8578b920c642c3e3d3f2e",
+    "after_sha256": "6b6491cd43b4a98a8dab8b595a7eddd911f955e1cf4a8451cea9c5805caf77de",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/journey_road/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "8bb932ae838c562699119cec302cfd8f220dcec1c19fd580fac21e9fab1e3279",
+    "after_sha256": "0dc3b81ad03ded0ff7d8b2cbced3e62c3db0e9d4b7299c257f33ed047d1f5a93",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/journey_road/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "bfcac919f95ad889ec574acbe793d648f478a25fe96d780b60971e4688170877",
+    "after_sha256": "f24aa14f64d0470a4dd1f176173ea84eb718c198d9f9db7bbed1d8c78ceda6e9",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/journey_road/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "d58bafbb841eea520a724e43afd9adacfa0350f47923a6eb33a4973d6e677891",
+    "after_sha256": "b867ab9963ea9e3a0717e4937dbd54e5a8c463b5734bb3189647ed546daf8cf7",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/journey_road/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "6ba87d079f49a3c5b1e0356e191f5613516ebc05dcd6c21a6f1f58e475ddfaeb",
+    "after_sha256": "d5771fc96bede15a19af1cd9b2859dd56607269af7effcf36755a932e5fb59e2",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/library_archive/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "8865af3661a96da81c27bfc3004110f85d89e7fee4d65977df7aef1d87c06414",
+    "after_sha256": "a208a3728caac94ee48f75dc1a137a89d6ebc593c85f589419ae2231a8ac3309",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/library_archive/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "bf3514ab889649d8358a71bff2e84908d7b9c9db545686a23dbbe2baa0c8380f",
+    "after_sha256": "9357e1fa91c47154600e85def91530b9078e804b4733a25dc3badd2fdb9c074d",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/library_archive/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "4a2251a84b63ac197974e4cec523113df302db1a2aa73f81f7dedfa303caa9e6",
+    "after_sha256": "c9b81b63a58c2f60ebfc2d3115144afc14686a6962c80c67216ba7b216fcbb31",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/library_archive/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "5fdf57617343f6dc321b804a00dff0e9e0c6c41b135f054cfec051400e1ab728",
+    "after_sha256": "a7358f3b6c6da8af99a01cf408c3e43525af97a02676bf7a6f83cd8eb8c4eb0b",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/neutral_market/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "74f83e43c45017db7683fafd41f6ca7a6cf339c357ee1966d7466ec1e889851a",
+    "after_sha256": "99602b58c1e918e569cdc670429da1e669d656db64028b86ef99858b9114c372",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/neutral_market/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "8ee913336e3f62058ee2134bb6590b0d1848d605bc66808f9b17d106f4d77ed9",
+    "after_sha256": "6b30713d64879638abceb94ac0ec42d1bf1fa210b2fb64886c94f85e7b0ab6b5",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/neutral_market/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "3ce99a2e8621c98f07eb9afc7c4b0eb328e5b2e16d08059e3f1c5639e9daf6a8",
+    "after_sha256": "3d60a406f9b1795ec1efe34f09bd37794451eaad8899d6e9a1560e691af144ad",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/neutral_market/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "7e6d2723a97f7125d73078c1a8b18f6e90389377681d2f8660590a3b7c4c5def",
+    "after_sha256": "bf5a101372da6436872859dd3e89d5f080125a8d0888bc6eec842f62a51ad8dc",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/old_water_tower/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "83d1e1149710d9c9fceb961a6b644edac6d747036f0a72608d540bb887ef4df8",
+    "after_sha256": "af11dc4eefd32c0f2ab8bf70f318a1fea7c14a68e4bfee34f7778def7c109eb1",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/old_water_tower/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "113f0da4ded2981b595a1591efd79965616fdac5738a3d01d1c6f53abd404f6a",
+    "after_sha256": "739080ec2c2e097a46b6cb405731cf1bf58dde09238490f5b8ba8c4e559c9b42",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/old_water_tower/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "9482d60bfe06a0240ba455da7dd8934afc0f2c999b40a54f86c5f84ae487cece",
+    "after_sha256": "817da7b12ea254f84bf6a87b6996aba28d39fdd0f8608f4faa89e3cefdd9efc4",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/old_water_tower/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "bb1b9f41fed179249b9918b1856ba522f76aeff999e01bb48344489747d9d180",
+    "after_sha256": "7658138de5c308528572fc22c50ee5f268b6b35692b0b9655d23d8abe2bd55f3",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/pine_camp/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "ae2499183e11205c4d9e52a8170521ac0995025854d9c72e418177d708a90923",
+    "after_sha256": "7c5bb0f3c16689b795949231b62c210a0a6ef6afb4e6fb1ca4fc990270ae29f6",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/pine_camp/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "db67680ffe3944b3d0a9da79fe150bada00a02be240a48494fc8692518015cf1",
+    "after_sha256": "558ac1e24c1b2891ef2ae2c3576dba3e9b5aa827b76d36879715dcf9f890307f",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/pine_camp/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "84e8d93a691ec2f7a534fd7795784f74d7dd8ba169b946a689c1c97384d3949a",
+    "after_sha256": "8dd1d0e74bc14434d4776522164c8050a56b06770fc8261f488f5406ac3c40e0",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/pine_camp/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "c44d9b0b5a07d269e101e4bd2a07d50e69c23d01dbfb69df73262731370c1e45",
+    "after_sha256": "a8bfc8be4146a4f074937ba60edf079189b03e5990acecea17b2db32b73bf877",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/pine_checkpoint/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "37100251dba77a4f86c097a90ff3941bc0573db852b0818e1f333cf48abc70cd",
+    "after_sha256": "4eb8d67b0f609e029f8bf07c7ac51b8621eb3b161e7e2aca7b9b06912bee59c2",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/pine_checkpoint/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "63d62d1a997fe27b84755a54275e4f77d763c97dda8ae0277ab22090d98e1019",
+    "after_sha256": "65691ff392342b72cc4d04b896d07ad335dbc3798d5a9c017138619888f5755a",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/pine_checkpoint/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "6395a52e68601dd539c5cb57657afb11537b106af0a3e146a8bba5c9e805f69f",
+    "after_sha256": "14a8d1a9033e269702a06ff7143f454adba3b21d565ad49c47a6363b718af433",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/pine_checkpoint/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "820e81848b0f70828a3a6c036a8ceb32932372be4a24a3e3922a50fdc161e731",
+    "after_sha256": "a41ed115417952ea48c766d2bf61be6350367de797ace1e1239b211082a513c0",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/pine_clinic/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "a5cd346f30c93897e8beb10eef6415d9d563ecaa8bbff7554d8f292768ce1261",
+    "after_sha256": "698000161b18fa2056cde20c05ddeb033b27f29b8622aa949feca919f129278b",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/pine_clinic/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "b785774e27bc6ac75cfa1ab03793d7829e2087b30d9066fe331bb63600817afa",
+    "after_sha256": "0724923591511f7314b6ea08aa652d48bdc6a57c25988e4de307de8fa035e43c",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/pine_clinic/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "0bb8b6691e2bd31d250e29d0b992351a3e1d0c74f60249e24e6f6e49b6f754ca",
+    "after_sha256": "5e035b7a9c789e92a65673a97ff38e39f41222c56e18d5f51c5a05a6da70f3ce",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/pine_clinic/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "6fa1b94f830a8108cac4c69306bf4888bdc707c0665331b7bd0e91e83bb90b9c",
+    "after_sha256": "fcaa876068313fce537735078e51d1739c7fd5dcf887b62b46e0d2d4c6ef4cbf",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/pine_fuel_depot/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "1c154be68817b320efed2c96f84e0e2603e02d00fa635e365036d29901889b7b",
+    "after_sha256": "7a57f91f07f2a51e31da4bb239842a14dfd654d87a692824841a85dc5f809ebd",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/pine_fuel_depot/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "4ed713ebde9e6f09f4ff53dccb38c69cc3693cbb055fbdfc732131ad64db1584",
+    "after_sha256": "8167907834f7047884d6eba0d94bb96011745e61d6c054ece8962b387fa5b976",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/pine_fuel_depot/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "641b57f24db29e7ce85e23fcca0e43d28d2e699130994701dbf3f3d63e88f518",
+    "after_sha256": "537d7503f6773a61ed015e2f10df3cb79c1eac8c834469e1aa1247b1b2c1a63c",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/pine_fuel_depot/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "6a13beb1e3cfa01e8b99a942d48aada1ba422d38efdccce984a2bd293bc34bba",
+    "after_sha256": "96c48b7f39c4b552f2d1f2953bb9b14e54c24405657634a3c3b7b784f52ef7a9",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/pine_gas_station/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "f6521dc7cc5b6e49b67e6bec005fc67ab43f1d2737ecbaf21182e41c9e9068d7",
+    "after_sha256": "b5f15df1b149d329ed4c28790015c1e40438abcee7eab193b58bdb7a998a0795",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/pine_gas_station/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "2ab77981d1e5989f7666cc0b43262e1947d44af6549a59926b5b87fd03dbf1fc",
+    "after_sha256": "f3ef72f1f6b90ffab5b802bd775a2054296a912fb5562c76e759e11c5b9d25b2",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/pine_gas_station/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "274f49e850b6946a35ce2be5a94177025995633a12266cc63682994866afdd26",
+    "after_sha256": "268f289966d6b3228b5ba5fabfed08f14917aabd0872ccff22ff8d2557134870",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/pine_gas_station/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "a7bc8ffbd4b7a3da449baa8f28df121c44d611799c305de858e87fd203c4a2d4",
+    "after_sha256": "c023bb8be2735849e13fac882dbea7e64db0c6f9503e61a1666fda391f66db30",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/pine_road/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "a1f5ddaae245b69a6acdea6142e93482260c87fd4e61a6eb21168424645b4fae",
+    "after_sha256": "6e519603702b8599dda4306d851f1a2096b3e36da186c041efc8264f3bec0bd6",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/pine_road/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "d33c62b2fd1cd4c8233ea2918257210b794663d537d8d9548a09d04c7077374a",
+    "after_sha256": "83c8d0e556fcdecc8c6e0156e410d3a00a95a2bb9ce11b382be23d9aa9dd21a2",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/pine_road/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "0752aee97f5a4a2e3bc8e970ebef2855c02f09402d481ea4b7d185c8f2cc60e3",
+    "after_sha256": "441abbfa3f62c92c678c9baba1ff4cc309bbd0e02423b8fa849d7144f0ecbe24",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/pine_road/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "8c83afc853614c9621a3c343836accc3e3ea2fd94c531771f566cb267e24ca28",
+    "after_sha256": "e55ff23e40319a8b50182a59385d8d8706bdf47dfb27260d725535598ea406d7",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/pine_scrapyard/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "3a2a2c91f1ce33baf71a9605b7007441b17275038a931c3a7cefdb12c3cf1d27",
+    "after_sha256": "fe25b453cb1136cdca595d2bf4ffddf01aab90e26bfc2d776cee272eda709910",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/pine_scrapyard/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "d1a744a5b85df727e0be5f31b36d810c16881143e8f8a1e749101e45f3dce106",
+    "after_sha256": "8b9f35019edc2215653af2ef2200dc345f00849ce0a3b1a21f036967a346bab8",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/pine_scrapyard/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "e2ad936aebac7327cb2e0029a343b409ab3bc5370678a1a27823c77e66bf5143",
+    "after_sha256": "0208c269bc7e5947c29b44d9f3b4484f12711dfb9e7ccce4627071823945ddc5",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/pine_scrapyard/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "e11101e0c97b940d4a0bd39188bf3bf39ad3f7c618c36d7245854c0ffef66921",
+    "after_sha256": "9b71074c3eb111fb7fbea032ab2cf003bbc0506e806feb98ff90345b72dd4d8d",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/rail_supply_station/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "d3942c5d6f8f1a91aaaad3e7a252146a5069af97bca10852aba36f73e3a1357d",
+    "after_sha256": "caa87195c11ada71b9d9c4fe4c52de076e9e964074481da36a53dd69d0f88e7a",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/rail_supply_station/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "aa67f30dc4df1fd75d0a3306836118fb15cedcdfb73d12860c7d74a4502a26e9",
+    "after_sha256": "83a6fffc45880e25e80bbe947c391afa50081b09567421aa29448ca16ba91745",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/rail_supply_station/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "f639aeb0651c48c4b8e0b6fcbb915c009c0b94f2391aa3047b0a5483907c287a",
+    "after_sha256": "25a6400bd5042064b25060148078015d6a72abb8c6d0c239770fa690af6ff209",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/rail_supply_station/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "cd3dd1a7de4244a256bf7d2f76d1ff378d7d163d3dbaa2a1c6c9da51e1e50add",
+    "after_sha256": "77c5bd8d3068da94a68f72e4cbf373a11dd33b6cb0b0ddb2cf6c33e32d8dc399",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/repair_workshop/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "5362c57dcd526faff896e358ae91bd8dcb8f3f7ad06d7695d9744c4102ebd8ac",
+    "after_sha256": "2bda681ac12a3980757942a011c8090089a3baaa49ac28fc666746aa01a5e46c",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/repair_workshop/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "42fce1ee2f95c8c535c7606484f6906f4fe710f4d38a808618ac0fc04e67e298",
+    "after_sha256": "27c94932f7e516ac013f4f4463213b0db1cf1620c53a95d8b5ace13b6831bf89",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/repair_workshop/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "efdc857e0f975c1740f0ad8ca18184122493a091ba093c960869e8ef60dd591e",
+    "after_sha256": "9f2a5f3e83cfa6fbd37e472951584b28e702bc712c9d5dd705699c74bfb41902",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/repair_workshop/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "f1bd0ab89d6c2d4a57de8d2e0bf701803475b866033da04e7b5dea650801bdbd",
+    "after_sha256": "9bc85a14898a4e0647869a40c0ad2260fb045b072c22d6c1f035d41baa19e24d",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/rescue_station_exterior/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "3afe2a97ea27cdbcd2fd105978071566e9b22ad357e2f8381f66b0f27c54446e",
+    "after_sha256": "3d23eac1ab49b7abf6c9f9b0d3e74b65b8947dad95c43cf9c90cb25516712d83",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/rescue_station_exterior/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "676b1dd29f6994d579940e8401465136dac08963d26be386b3ba04d7e58300da",
+    "after_sha256": "3c5e9fb1453501e9b98386ff70b11f430570795b8dd5edd8ae4117b18e844933",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/rescue_station_exterior/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "594e155386a037ccde87e89ce51dcdba204fb10c043d2087ab2190d8424d3545",
+    "after_sha256": "a6073a0b2609b8c01b86cf852f0eb5ee55ffe67a4c50858575e9550352ae0769",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/rescue_station_exterior/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "a140a95e70f1abeabbc186c9ff709781b5ec0c4ea2b7b0ea233da0548c4aafa5",
+    "after_sha256": "c6e9b77199a974761afc496fb7a17b980664163d11bd7c715b5d4a1e21386f37",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/rescue_station_interior/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "57c1676b24e12fa6a87d7053ec9a8ee0af5366ca1eaef597e86c24d9f066366f",
+    "after_sha256": "7e0b84534cf5ac09a908581ab4470b60b495b8293a58476d8a57e0f110ecde17",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/rescue_station_interior/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "982507898acbc65e850087e8bdb2cde6e59907b612f9d0d828aeca76fdd4deb0",
+    "after_sha256": "b74bf3dd501677f356458a66f13675710168107d7a8792f0609e36f79bbd6fc5",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/rescue_station_interior/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "87dbf94d0aa1d0107cd1c36e7b992fb4291bb69afb1599788b24f917904fcf34",
+    "after_sha256": "7ccd75ce9c7e6310408e9aa45bf07bd8d75e303599c721b6f99c488c663f63b7",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/rescue_station_interior/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "4d047ba6af8fe366fb71a4fb1be0ecb3605fc3bc2da6732e50290a7fc3aa0445",
+    "after_sha256": "b025af082f65c94cf7da5f6dfd939f37ecb8a45c31a03815039c85110e334265",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/research_relay/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "016c5c73899a715b0032f4a492d7cf985d92fed49c8dc4ad35cdaa935a785e5f",
+    "after_sha256": "ee27677feb639cf76bc2ce0281cfe1471e4525c9d2bb2c5217ee133aada2e184",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/research_relay/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "26dd920a3fcc199b9f1aafc9ebabe62eaabd566c6c1570c1401839321be515d7",
+    "after_sha256": "157ff320d95c956cdd65e1cee5255f0d783d968012f743e703ee1c0e607adc52",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/research_relay/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "7d212a96b4b2ef7ef7a40198f0bd8fa634ee001cf1f755f847554e0ecd676ce2",
+    "after_sha256": "b050b8b01a09e7d1f0f299ceff0a789e35bb7149e904df6c6926374e29a9eca0",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/research_relay/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "983b8e5e62facb5cea0b92de7145442c9d7c8bb7f1ea27dfcdc2cd862d12543c",
+    "after_sha256": "f96821baf6a93b39061fa2d88e39d6a3e27331f239a0554f193945b16cc6d58b",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/scrapyard/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "aaa6b21d027c54685be0ddd2c5f02a5ac3908ce01dfa3ecab202d1c6797291f0",
+    "after_sha256": "b7715e74df974a8a27faf3248fc796794740cd6680f1de5118f49f466d06ed6a",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/scrapyard/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "fff693f578f8fc9d0c900c7e443564f1bdaf10592d5603ae88ab142ab3a49811",
+    "after_sha256": "c8f760f211c4b54f4fcc75b5207edc0247d6834f2c32362f350c115736d71003",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/scrapyard/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "76a734cc54c1a29e335399401479de5f4d147a4a4919d2c8cbc82e5e8d7ea2fd",
+    "after_sha256": "ecfd925cd30f3640f0cdcffd6d316487d387765a23b5d4780526634ecf23412a",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/scrapyard/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "7128e614057e0bf0009842dd22329921e74c7364a7628af1e9826df6c1d4b1e1",
+    "after_sha256": "0d6b694a95f3939d5636230b99fcb27fd0b57fea1c310c83ab59e5db969998d8",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/settlement_reception/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "d71bd01634812340d24df2d8d74735f4235e9858c483e4b0c46f304447157dae",
+    "after_sha256": "51de943e1d5185c0d344d736c023c94e4891b0c669f9f58860b309383cacbf9d",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/settlement_reception/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "7beb9ea40e8947048dd49f2b5a73fb45528ca9c6b48d1027cce37d8beed014e4",
+    "after_sha256": "a3b86280c289cd050c1034de1c84329b846506f29e1e59d15485b6f36d2d5ba4",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/settlement_reception/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "7fde2be5d2f96a2017f4a034e032e7bdc3abf0eba05987ce4c961886660cc52c",
+    "after_sha256": "693e78f6f1923233e74a7f1b7c7df6fbc86da3d6cb0bb7dd6ad974cb68400673",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/settlement_reception/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "2e6be85491bba6dc2ec758cc17a676f1e16e8e033a6b14c829023463bf1aec79",
+    "after_sha256": "a23b5ff62a373d672baaaab979d8d3100f517a3f3863b29e4b33edeccd6113a6",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/snow_camp/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "5ce0e1a3d6c7d80e54cf7919f63aaf6ef9767c7c03a3433078799c48eec527ff",
+    "after_sha256": "bed74e870e229b39fc4b96d0456c58e616454520bfb936ccc3d0798a972b79c2",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/snow_camp/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "b1f3522c67a0f817d12abb0432cf57cb1bbc3d8699c5f8bc3d6a90475bcf27f0",
+    "after_sha256": "1279071a75c2413d1425f835c3ed68c1efd6be8035bf8c9f1e997a625c370579",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/snow_camp/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "12141d653508a0d13757c6358bd662d34acd561400123df5c04ee6d108ecb5e5",
+    "after_sha256": "bdd7fd6730a159872509941a7db30de74d2865880a64de53ed9d52d0c6d92343",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/snow_camp/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "eabe0bd088f44b111448b49a9d1899a8618ccddcaf277b997e6a8809345f5179",
+    "after_sha256": "aea542393f4d2819edad8714b017bc8930d8138321191009d01a7ce86dbb6719",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/snow_checkpoint/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "24e980e5a5273098013ea6549aacce334250bf43d545c21dbd7f94bb29cb5b8d",
+    "after_sha256": "e44fc14eff1674fa88f88552ae8e10e4fdcfdc839520ca4a243c16aa119947d2",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/snow_checkpoint/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "6ed9ca941747c1cb705e7e7a5c2df68c9bca0662727dbe65ec0be8952d49f367",
+    "after_sha256": "49f6901c0896e2d5ef8a826712e21bf43b6f3ae330ea9d83f2e2f6311a969046",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/snow_checkpoint/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "9cc1c31e139897d59fe673c0f5485ba261eded9a015cf40c7de8c94b5ca44f70",
+    "after_sha256": "0b9ba447c9aa269a017b4d2de0da9c24321055f798a83c73b11fba552d9c9c35",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/snow_checkpoint/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "a289d0941050763231f5f1b0a9d7224ca574c6446a3809d7b87cec04046c61d7",
+    "after_sha256": "b0370822408074579a198072f6f19f03f7c401e30882e604ddb164f202706834",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/snow_clinic/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "cacaff579c908e0f2f0ffab264324bb19634f989a399fb92ed74e8e5ed4b893d",
+    "after_sha256": "d2f731316c1eafca37ba615d52b92ee7834073604b8daac0ffc2338097656f3a",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/snow_clinic/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "3b704d306cbd025ad6901be62d1186b03d3bda76fb0d308fdc3e7d3655d389bf",
+    "after_sha256": "37d6cdbf4f9c4bb4ac322f8468c603b071abe81407fd81dc51c9009463bb25c2",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/snow_clinic/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "c051bd7030b1a8ecddaf74524cd717dc44350196ee1c80caf71fc57efe7f5697",
+    "after_sha256": "92e5eb5fdce514eb98958c596d6ee7c9a5dcc94c964eb8799c7604e56f79b777",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/snow_clinic/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "4afe50a22887e9ea85905551c408704140d747fbe4a91b53ee213d4ec7fbd06b",
+    "after_sha256": "9d5d05a16a2c4c4cd79ddf0040df1ea6997f152bc5786117f9f2cf2177d582bc",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/snow_fuel_depot/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "4cffe228bdfefc4c699d9ce9d0c0ab6bdf92ce4984b5547f920a2c1bd5f140b9",
+    "after_sha256": "d8c1cc8a42e2fde3e1b53d2cf3586cda10aee4658319a87150c6db2eab2e4838",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/snow_fuel_depot/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "0ab9a6409fac272ea0191d635ce0cf6be0af6ffdb6478bf30bb4ec1aa43cd678",
+    "after_sha256": "896ba18257394bc5acdfc529bebfb8c7b32c66eb6c298203d65df1e770d024ac",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/snow_fuel_depot/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "8ed88dbde34f05d412438676a488d6ccd9b049ca02f768595455ed9edebc9e99",
+    "after_sha256": "c10621d9e4260deac48e3dad338d66e060b2f645972ed09d7a5f852855c05206",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/snow_fuel_depot/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "9181ca6ace9c3ff703ccbedd093be5a07db1fe680546b238d02f51d931adc754",
+    "after_sha256": "268ccb5d78bd3e1cf1322d6b19b005a510383090bb20c841d358e520ecf62a49",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/snow_gas_station/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "3424d99b7d05a311760169b2dcdde8fc3215f1acecfc7208276ec3e4b198535a",
+    "after_sha256": "84ee82faf1c572d0337032f942a765a47b27449ba8c5b4faf96cb344a12106c7",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/snow_gas_station/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "a1260d191114526ad813180d580b65d2efd42cc1c5edbdfe098fd7b9510ac82b",
+    "after_sha256": "9fe7929155ee3d741806bd33e780e176b7b42e67a880f299f85d7f0380b3dd71",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/snow_gas_station/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "bcb3c8327e2a510452d840d57d67430065d3d949aff418e8bd55c05cef6a5486",
+    "after_sha256": "eae96dea29627ba325fffbdd8adeed9512c63c353cef1fcd40f9a23da7743dd8",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/snow_gas_station/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "a88ec1081b60f6773f0024b18677d018e51a2d72b9a475a419c3aaaaa259778c",
+    "after_sha256": "465488f4d343d33cddd26a286864f46b860ba86385ded73471dba76f3c55ecfd",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/snow_habitable_ruins/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "e2b302ec165f65dee33e14614f3accd5b651b2f9df177401701af1da6ef1eb17",
+    "after_sha256": "7be40519ec9e4517f2577e866b2e7cf7c31f72ba8d9d7f50f1798f43fb58977c",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/snow_habitable_ruins/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "66e4a961155b12eac834c729266d6e333f15527bb4834ed6d8681948bbef686e",
+    "after_sha256": "9be342d59b69f8290462d16b473e3d068511519969fc6575a473033d12eb9bdd",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/snow_habitable_ruins/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "3c702b7dae1a63ba291850d6f82ef7d3b6e5d27488a5457d9c822e1848c9d860",
+    "after_sha256": "d11aed41ee5ee0534a69fe51c2cdcbe8facc4ec417fd797179895d94153ba51d",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/snow_habitable_ruins/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "67163e7b59c0b82caf36f09306e38a260920254a0495d7a88d02ce71be240ea8",
+    "after_sha256": "de1269ddf58274728d33c8263ab968a77e8d0443e8d5d4d0337ae5a779689305",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/snow_road/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "c7e19307896630da41f4f50e18d469da408058ce4ed71b15487ec132221ef876",
+    "after_sha256": "2f75adf07146dd666b85f11d862ec6b15d4587c44b5757c8265a779fa86d2cf7",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/snow_road/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "31f5619561c8085173215d59ef1fd048f8a8557e700a7a8dd3c78058f68aa16f",
+    "after_sha256": "066c7080bc3d69b13458cffb47771fa01bf2de7f46a3c1ba03bed24933190044",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/snow_road/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "933ee76f4fd0eb5744201834cbca5b746d8d18a691cca33f41aa8f651b891485",
+    "after_sha256": "0320d78cc9097643b66350def2999b2a997b28e22061f43724662a178551c2f8",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/snow_road/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "056f800b9f41a900f846470b10b61be4bc4d3d94c3edc9df64e743685cee2d12",
+    "after_sha256": "5de63f163a09e643ff2f38391901466dded236a48db9488c5a71728761f218af",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/snow_scrapyard/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "785555853d30e00a3dd9495837f317948df67481ce2d21cdf27fddc9ea2eaefa",
+    "after_sha256": "70f85cf563bbae98e7a6c6f7ccddac08c6600cb5bb956c13c83b6e2751164c1a",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/snow_scrapyard/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "9fb337ddf47b0ab253789033d8f322d9626b291422da4bb48b67cb14ff637174",
+    "after_sha256": "7afd00df56a48cf7c0cee2b31a480091ee284468149b8a8fa9e74b25d2fe517b",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/snow_scrapyard/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "ecb00046146d2850de327fe8bd4e6c8ad4693f7cc2609a4aefe2d592d72f38b9",
+    "after_sha256": "d3599c67df3ddba37d3844717a39df185789d9a2444230fb51c2f342f3066468",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/snow_scrapyard/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "9c4d526aaed4e9cd79c668f9f64dffacdeb24beb274c02211f73d7d059366dea",
+    "after_sha256": "fc24d5a5a5b94e6811740a00783e44b0b8bd7926acfa78f162f2e84c103f1a50",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/snow_waterworks/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "31964108c38dae039dbf26ca8c6284ab8e63a367ffd49918309c5218adea9242",
+    "after_sha256": "a48aabad39fecd0e45615fb3790d71064cf65918539a76cfacedcf0692f0c4ed",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/snow_waterworks/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "44436f42977cdee41f2b13cc1cefdf23a1399e610333b11b5c630f13e029a541",
+    "after_sha256": "93e793b29eb35c1a29fe8ce325a62a66d6c3331d1d29bca037b75c1761ce0a82",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/snow_waterworks/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "7c98e149c9035fd6c4ddd221ec6910e22ef5704ab1a456fc9eea73bdef49224b",
+    "after_sha256": "2b1e1c746d8548c9ff4851e683299de86d40b501001af1efa8ca5e9370e75d1b",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/snow_waterworks/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "6cbea5a3fd41b9e34b622b37cad83b8f88865b98417501b2473390358b79568f",
+    "after_sha256": "feb149863d3c5c11c62ba2617cfc6af980a1675a33d9c378b8f46cd785308290",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/supply_warehouse/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "f35bde0eccbb447eabe51cebd230d239c983afcbdb9398c4e8c0c42507ec580a",
+    "after_sha256": "17057785b52d461e5226dfda8b73db65629fd089876ca5893c1861783f31a9ab",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/supply_warehouse/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "b035b822f6af4e2975494f3da8631c27ce1c25830a2f999983115904e98aefb7",
+    "after_sha256": "65e8c2a84a481fb87c30e37bf6ef0cea6cf1f024b5a186fa41a21e6e5671044d",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/supply_warehouse/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "24f3e1ed79e3684f595b792dadc266e7b1c2383c0c19eef2639712fb46fdd8d3",
+    "after_sha256": "5ec9f63321a9c677bb1c7363359e51467fdbebf1b329e8603715f6e2d9549605",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/supply_warehouse/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "043126ed65c93d16d846af95f468cc9675ca046dc2d1b7dadce80e5719975948",
+    "after_sha256": "7a2ded6e0ace9c150e8fdb7d8bf0d39a6c34a6a6bcc0c7f68e6ed83911da8860",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/tunnel_entrance/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "6153809038cab799f68d4d495d4058594d062da755127ce0fbc874441778b9c4",
+    "after_sha256": "f692ce9948341ad9140782a6f64354bb7a55339efcbaf654a4b10f8f0a2cd411",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/tunnel_entrance/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "dbc451ef648d7398ff605ebbce0b9d2b932a222b1b70f01aebc9915888a9fbc6",
+    "after_sha256": "ad2060b24cb7c3452ba7bec4d6d8b85643f383095239d5f84214207c717ff0eb",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/tunnel_entrance/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "871274ae24e91adc2fb8efe7eefcbff627263571a3ac604d8f250fd9cbb21cb6",
+    "after_sha256": "6390198ec2865b9affc0421f299cdc6b76768099bd17413a204b5f2f296bbdff",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/tunnel_entrance/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "563431e8980fa0c0225aa9345609c57d77d80d4fbc816400d62b87c3e4d6c7a5",
+    "after_sha256": "051f2dcc96d0e3499aab93ca191e4a0ec278d75a9ab6473f21127b867e7870de",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/waterworks/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "70b81e1cbd91726641d740df186defc20ccbfaa516f400103342cc938f331e59",
+    "after_sha256": "896ee14d81209a86de13a4560cd4906be5cc95c4373ba29ff3ef56822e06c56a",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/waterworks/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "7e2b5f60be04c910a11f988664fe595d524fd4f8b30aacdf2797d064b41735dc",
+    "after_sha256": "afd9d4d2f4623126319aa95bb9a124cbd0544ebb9f31c37e0cb7fa58c2357f39",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/waterworks/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "8c9ef32c92e4d9214652b9fe5cafed9c705b1bcbaccb1f7049f03101936157ef",
+    "after_sha256": "4e43c2a71851c2421103c48bc570a6f94153bd3306405b4c8f60f88becccebc7",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/atlas_widescreen_20261016/waterworks/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "e3fc5394b569623c599ebbc2d7840c210c435e14a61486d2399b86d961cc53a4",
+    "after_sha256": "4313c8873edac1ed6c9929eec4ef9e926c0fe2100129607907900e63b06e0a31",
+    "dimensions": [
+      2752,
+      1216
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/abandoned_school/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "2ac386df7a03e0855d04ba2ef72b70a21b8ea7b06b90ddf8745a926f3b230cff",
+    "after_sha256": "681d5ee1c60b9b8afdceb79f384e2186acd08d5c2f0a9576f3b2f55dd40b8162",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/abandoned_school/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "d8ab8735c158ed9c99f46d9af57b12cb67254e5f9ad37101718607b39c3f99f8",
+    "after_sha256": "605c06451bf517848ac050885056afef907c05a18383dba1ea510c169d9eddeb",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/abandoned_school/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "d0468667f3b952dff01c2b26acc213379e22a96286b6170a71d67460db6c52d3",
+    "after_sha256": "5872d76d2e24e9374407ee1a4b3f33c3fc7a8193df11f6181198b06abbf409c1",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/abandoned_school/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "8ede2537385f07f0671fddaaf519863b52520c8bf1fd9e60cc9db58c8e7f5531",
+    "after_sha256": "294766675f745839e5efe5b5d4730a53f6ae2dbd2e9dc9b7821a109c834466c6",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/checkpoint/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "acf7f0ad4cf445b017b67d10fcda1a0dfee2dda18b40cb1c724fe67349a37ba3",
+    "after_sha256": "318f4a192be8cde61284551ea86618cbc01bd7a5666d1caf408c15dbff67eb9f",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/checkpoint/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "f5ecd9666175b786f02e9ed2c32b0e549ed8f5656183eccb6b87c1c2ecd11584",
+    "after_sha256": "02801f7a66fcc92c8ea89fcbdf879d083ec0e4de796bd4ccbed7c43f9af5ba38",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/checkpoint/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "195bf5f69fd48cd33c8f36db91e45c1596f1011c5c364ef3b47d28d400f69903",
+    "after_sha256": "9bccc9598adb7c528f773931b5595bbbbc763cd10c0ccec797718772635e3141",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/checkpoint/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "13d5515682700ccb682d021a3a60b5494d834a55d4e6e85e36a66c672edc85e1",
+    "after_sha256": "2faf2bc71f5f1f5a0c44f5ee8a29f6fa947c89b5c95e916c5a893ae397c849ef",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/communications_station/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "e52091e5a91dc65b899963404d9ac3a20a5b41510850b27756122cc12d200528",
+    "after_sha256": "f9c5280b983e12f651d13904c05265510a92f5da5eabb15a74aaec9a34b91156",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/communications_station/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "b6bfa205ea1593757598e4266e60a9e355326a3f5ba8802b0dc89c9e4ccecb91",
+    "after_sha256": "7739a7d253b088be89e50e657cd45d465e169bcab0017537d6352a30d0491584",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/communications_station/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "545b6f24fa6bfd4b9d3db5eea6b3d4e558322fc6660ce64d01688048a500021f",
+    "after_sha256": "bbec2c3366e1df8d13b5960669c09e8878589eba6cceff274774fc41c2873d53",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/communications_station/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "b4a30efeec75ab98f31d540282f826b503abbd4e15106a72c7f339e76819151b",
+    "after_sha256": "7e8993da617c4b918632a159dda70eb34d064c9ceadbf42776e0a15bad5ae78c",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/desert_camp/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "f01b05595d350f38ce5c345c49ef23ae08b31c109837ad0ce589f7e5faf14970",
+    "after_sha256": "08b5b05e2b7839a218e988d050e3faf670dc4079298203c2403978fd76b5d3ee",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/desert_camp/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "0670b888402fc7c5ee89cf20d2fc025ab151f23aa532484f52e9174c2e2c4b8a",
+    "after_sha256": "a74871ff7f7db4a0e515ac26b28eed5bd51f6efbc5a8386542adb36c945144c7",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/desert_camp/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "d405f235819374ecb690d1572868de4ac35642127d53ee687a8a1f40cd50966a",
+    "after_sha256": "2a38a4338629f7c6b3bc62bddb353a192250dd7c2d7d117a2af5ff22533354ae",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/desert_camp/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "2722d420ff9d9e798c0ac08182de5497b4dbd4a96b688c751ffbf514a335b40d",
+    "after_sha256": "a4b0fc08f67586602bee2744af1b1e99ebef2f656b1d504e0a0819a37f130484",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/desert_checkpoint/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "dfe5a8ed55ff60040a3ca2df29650a38f1ff25c772799414088f98c161bb4af5",
+    "after_sha256": "25df29f1103d86db9ca3690e7e6328451ebc89d5b835f5580fd7d2eb064a3cc2",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/desert_checkpoint/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "540972fe5139edafc2d79190f1ce236c90517c4657f94405cfa92f6fd9dcde59",
+    "after_sha256": "705fe6b93eac6102ed086451e7fdfa3d1736a6b482c2c60e7d9c62f98d9114d2",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/desert_checkpoint/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "7258cbf2f94d88a7660fcd55ee4de6c689183939cc6edfe3aaea376c1c030ffa",
+    "after_sha256": "c1fd0a893793c92d8e156b1e947f7e04e25b2ad619fc68818853a74f6af48303",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/desert_checkpoint/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "d5fa879561a452544b84f1582d54c2b925f69ec6f790f190da243b02aa40d957",
+    "after_sha256": "4b4d7f3d79d46d181ff3dabcf5dda2f3837c91b04764b7b1964b4dc85bf0c23b",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/desert_communications_station/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "4d6f3858dab48ed2145a2d33d60f68ea05ac52ae5f8c130f8f889d43193f6147",
+    "after_sha256": "405ebf52857c15e1e57783e9783231b445a3628b134b88cb2719a6c7e342b1ee",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/desert_communications_station/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "443d318e8041b0564a4629a8f8b80559d6aa9993df072eed598fec26671aed54",
+    "after_sha256": "312e6b231df4c38dacfb3993cfb93d4ddeafdb84b11a7d896e139a2405842688",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/desert_communications_station/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "cb607994ec8aefb9f38c9cc1b9a539c03502c8e5b52d85cc53e47df0414d3d2e",
+    "after_sha256": "198fbc16cd5d952f2d8b22be40397bc7f7eebdc52d234f6e81d22f154e23b041",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/desert_communications_station/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "3f7cdd75e064d6089ede229a7ef8b433b6bea0e19a504dcfd268a3cad22ba24c",
+    "after_sha256": "ea4534512071e862ef4a7616962291bf84a15e94a8b8af15c09b233362308597",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/desert_road/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "130a38348cc0d1fbcfa277a13783bc4bb6488648609c76e70a1a25116d08dbe7",
+    "after_sha256": "6fab2b78d03909fd2a7efeb237956b8de15967369b07b913fe7c8c72d439a437",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/desert_road/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "c3ebc0675dc9b01a4d5e67efce002c7241520ca0eabc124cc2d32afc7b5865cc",
+    "after_sha256": "222489285ded6b2c424214d669b23527f9ba856fe7c7577c229b678c9daad796",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/desert_road/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "ad095d1468b6096e041a95237e990e99b97d6b20507213a2a80b1ce4833f2d57",
+    "after_sha256": "1c5cd8fe51a282b15771aa847e9973d9ab4c7b32c23107b4b01bf0bf4c809e80",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/desert_road/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "7e1f6075fcb6883ec32289bc55c45635a13d30be1ecefaa92baef5000de5f76c",
+    "after_sha256": "f31c3d3277905c89a7c0ff6f52d887197f0d0785c98381317b2d5665c2ac0051",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/desert_scrapyard/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "479a8407d7308dc96812c363d419ebda52a5fea3a1cf83524c1f6672a30673fe",
+    "after_sha256": "a9622181273bfdbb8e9184be3695ebb666c9230269609340c24f891618a0fde7",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/desert_scrapyard/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "0ffb8c16266119a834499205b1e5612ece19687d23d8d89fadbeeed58a1ea191",
+    "after_sha256": "712a9bb1223740774168690ce1d57bffa6e4436885208f8a7ffb36c1d3d0fce4",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/desert_scrapyard/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "752edcb70380da61343c7d7e246582672ab4f4addf7ea59c26dd489988073187",
+    "after_sha256": "98da2c949c3b0fcb49560410e6226c3f39dad7add15804a65522c3bcaea8e5be",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/desert_scrapyard/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "c32c566dc415eb5389a72d4b08c84f016fe6f79b3f6a1aad47bdc342fb918117",
+    "after_sha256": "db228dfc70a6c74cbeb624403bf753be76beddeb1a38f15e804df61e27989bc7",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/desert_waterworks/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "85b738309d3bcb1d4662642d2a0e9dd84e607cca0da059b56d0e0bfa6ac9b5dc",
+    "after_sha256": "21e1e92701026cce5c92b043988494b4e60f63c600e39ad8bee45c7239014993",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/desert_waterworks/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "7f2dd8f59a28b514336efa129ec5bc2b74230699b5941177c619eb7d792597ff",
+    "after_sha256": "c086b4bce21ffdc21e1354d1283328f6e21daf442649d663687085cc4cbee4c5",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/desert_waterworks/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "663ef4d00d5df70260bcb0d2a02025e9b553058e04849682367e1f9574778318",
+    "after_sha256": "ac5b530071bfeba1382b0918cc8a66b5587f830eace983b1fb7864b10e01e269",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/desert_waterworks/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "a87d194e114f6972521d9fb4948c5e6cc6d19f6fd7ab1da6646384317a33c777",
+    "after_sha256": "1e2e36253354b0e8438b0a8d48352e28481909b3519d1432d99281796d31213d",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/forest_camp/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "984c5160946ff8b51d38c5d48eb8b4ac7a3ee69ce088bf646c13694f5ee8ffeb",
+    "after_sha256": "680d85a9c7fe693acb534edb5765e112fbc1a4628ad48b79fe6154ff84616028",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/forest_camp/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "9061d55fc0b5efe2fe85e2d8a73302c0d3a3a9d4cf5dcd1e5d3399159bebcacc",
+    "after_sha256": "514dee467544405fb6b61457c19c02ae6a9d1f71d44e0b1080741408209049fb",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/forest_camp/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "9db20300136298397ea3f68dd586d5a16e37106d53ef7b10b31850b788771b75",
+    "after_sha256": "24c8c43d8f7828df4cb4fbd1e603653fa8fae18a04bad499e50cef4319b0b74c",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/forest_camp/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "d2b297dc54bb4a3e948c97c4b6c01a5765b46f984a1face1914ae0c6b4384fe2",
+    "after_sha256": "61c807770ae99ccf7765db461a1fe8844265175058dea374ad651427260c73b4",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/forest_clinic/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "8a50abf409f4a5781ae2e9a8f4f3432177e9920b672b943d200f7ae3013a4f93",
+    "after_sha256": "b72ede3d65039c4f7818524e8d54122176dd130a9b5d16be0f450f61e1c75246",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/forest_clinic/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "ff5f4c416f9e5713efd79579315ee2832f294d31909f46e3751dd88d4a0dcb4c",
+    "after_sha256": "c7e97f64c1ecceae167b0b10d3791ec582402520cc46cc054df4ade36f2544a1",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/forest_clinic/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "ef0d7c083de7f5b603c2e47ae91f3f1dddb332a0e8aff4759771dc1965c3fa10",
+    "after_sha256": "4df7936ed245d5e9d6d2db21776c008f608131f1dd394596a6015c2e51f817f2",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/forest_clinic/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "3fc6cced33ff44d3a9f75289928df8eb8cd2f47a88e798e4d87f767b3b1f3463",
+    "after_sha256": "6c71205f38c3d83323f16c12b85f14dd4d015a09a780cc29d0ea4bc5ed5b6ee2",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/forest_communications_station/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "0d4a283ef2069d9bf0e09ce498499033cb53f71c058d22582c3462f24a6ebb64",
+    "after_sha256": "da8b4931d94e0ebb9d948ff0aad4f1138c0b8f464b9a47cbd0867cfd9b4bc22c",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/forest_communications_station/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "c8abde89c3ac8b4e1090ec1555a7d8001512480695160d3c3f83bbe1216a00a6",
+    "after_sha256": "dea57da58890a4feb1f28457047f6f9afd48c48ae44229e2ca338141b8de6cb0",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/forest_communications_station/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "d5da3db4c6d32dac66fd86538b86a7d114b6fc116da5248759a12ba219ad897f",
+    "after_sha256": "b0b777aba9564302212f4373a75c589878ecb2d88af820912d82bee79658ef0b",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/forest_communications_station/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "201c60de52cd6824e15b992a53341557118ab2150827882fb60102b5d2c5ea53",
+    "after_sha256": "a76963f071fbdf121cb7c3a4d23b2b48f010db18e38058c618745a237b1f6c90",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/forest_fuel_depot/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "aece99957f621e845f5932bb651539cee0fe840316d6edef792d63684e669190",
+    "after_sha256": "1ff82dca606a12414ea3fb26bead1cca1daf6d17354eb1b1757a908ebfaca770",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/forest_fuel_depot/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "79d0064c2eb699f2b138d08c40cd8ce37d3fd369138afeec7962ec6390d3ae14",
+    "after_sha256": "67cfcdb33482426ef7761b01f11df9f7afd10dbc0a1ec6423665b236863e06d6",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/forest_fuel_depot/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "39f7325601339929a5c8f77702aefffc4bb6a4204777023884fcd876176c7945",
+    "after_sha256": "5f7ad817021aa7aec0f03b359968cb5200329bef9cc4b75389bb3acacefc6fb3",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/forest_fuel_depot/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "31639ca8752ce10e47fde596c78460067718c7675b0fb3911e45a1c9e8f60c47",
+    "after_sha256": "b2bd1095a6eeca34262a109d3aabd96a4d4540ec2aab9fc802790260edf09635",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/forest_gas_station/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "5f99ab9c9e3ff54042091fb6129f150aa7f02a32bd3ae217a44ad3070ee14b43",
+    "after_sha256": "07ebaf4a7d6accd9710e53e83deaf83d737964322200be44d6cda6ad8df05e94",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/forest_gas_station/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "c831a6e9672d28f8d1dfc9c113c456caae8ed8dd0502582438c5a8888a8a0295",
+    "after_sha256": "31867666d8444085f50ef4d4bbf93c1359ac158af0642617c90896bc82561506",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/forest_gas_station/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "7eff2a37092c7e7af68371a0e23df4b53e79edc6d2cba395f0bdf2b068fe5bd7",
+    "after_sha256": "9073029e0c71daae65cca435154f545eef745ca9550da4e0b29fbe7fb29d91f6",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/forest_gas_station/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "d0cbe71f192434cccf7949d1c83a876d0472afc037a4b6ba5d5ec91864cbb353",
+    "after_sha256": "7e7f128eb136146a937ab7ad738d4f421ad1ec0b268ea97ec3b3aa53590b31f7",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/forest_road/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "8d39d36208c48a63d97bc48a6b3f0d74b3e9910ed466fc405c53dae59c07c418",
+    "after_sha256": "eb48937c015b6903a969435e3b25243168e4f4411e126b0bab788508a777e091",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/forest_road/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "b72adefe56fcea87f0516328ede2d150c8be2142a3daf524076ce5da775fca8b",
+    "after_sha256": "ae8be8dff058c59ae32bb4be0271cca6fa0f25bc522b0b4492594c4fbd724b78",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/forest_road/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "433bae298eb341dbc6b7efba58e8fc925e0e8bab7d92827040c036daedf55978",
+    "after_sha256": "e0cbf0a57b4efd6e56600f7b259cd3c0831d2407992017e1526a05e588275132",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/forest_road/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "0a77aa46a1270eea921f3804bc116bbd0e3336cbb771c6adc3a7aefa052c385b",
+    "after_sha256": "62e8ff384f3fc4f011db4008a4326d9c32e99a518f348a498fea75e29ff6711d",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/forest_waterworks/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "6e1204922366043787582d10abcf8a72ecd4f92bb1896f7d5b1d5c653ede57a7",
+    "after_sha256": "333333f2e1b9c38c471c211f70042420503995cc7a03350a99a2835a6b8485e2",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/forest_waterworks/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "dcc4eaf4bf3f3940587d6b65fc0ecee427622eb68d5facf024b4035bc5fc9b23",
+    "after_sha256": "09c4e8018d07e15f5382e2144ea2c43c08e67c91ecc0afd291f42c5fca0cd203",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/forest_waterworks/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "88dfe8040d8874f4c8b510c44eb1f29f61e5c1fb49172831e20963242939a12a",
+    "after_sha256": "47f964d2bcb7bb4387d5768ae7cc3028a3f1ba425f42acec5b7551573c2dfaaa",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/forest_waterworks/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "ce7151af62d7c58436d49174f5b2a057d3b646a0bd37ceee498dd8b8c4ba48a4",
+    "after_sha256": "a241178e3299aa2bf84a8c153d2593a6a1ca217c31bdf094c0a386abe36ad2e3",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/fuel_depot/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "facd3c10afe1290b6d70fbb43e32833d34232258950329cc7e23c33b79022831",
+    "after_sha256": "b95820001ecce1fef042500778fe67c3f5db512c337be103d37cc7f61a8abedb",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/fuel_depot/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "b03286770fccb96ef0ae31ef1910d389998c1185740b03e3ac70ad58effd10c3",
+    "after_sha256": "f996db5ce1d9ff7e9084ab9ac27af5ec9af07484c556b8316ae2ca6d505a566a",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/fuel_depot/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "e7ea4c6e20eee0bb2dda9a079db9aa3f7e0728b5c40f9e92aa15610aa8342681",
+    "after_sha256": "d6cdb3ca30a9b7ab9aed68aa4860e24bba44083c16812b5af6b1ca8e0fc57e21",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/fuel_depot/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "fff0f975f6ff35215ac3c1b6ab04f6b76a8e88ad664fb231a8f2ffdd6ea54429",
+    "after_sha256": "1ba7eed9e6be9b331d0bb8c4d3f19d8c1806f0a56d786849ed61ae312bd73f60",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/gas_station_interior/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "943d7c9fb8a15a40209080736e9d5e622025cded23ee990ceacfac42fa10082c",
+    "after_sha256": "1ea7e93d38473570cd9587815244312f1d2b20f8a5a8ff71b2dc9c0823aa7020",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/gas_station_interior/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "210a78764e0b74f7af5b0da37c5f7ca17c2e006d1fedde4cee1b84c0b8d0ef30",
+    "after_sha256": "8c754747156b637eac42c23940ba63b60ee091d2ac2ac2c46c72829d8bc75fa9",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/gas_station_interior/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "257f3f5c5be1891272a579405f15930715ed03eff0b80f821bcae3a616b93e50",
+    "after_sha256": "d4d809332770c34b2c600a4e5bd93079b35dab27f85e567c79254c11011e15c7",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/gas_station_interior/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "c178b44d7a95a31f2445d32bcdadb71c22ffe302b7109d191f77d9b10d8d5cda",
+    "after_sha256": "abcaa24f2d11d81f7875174cc98070945266508ac74e815ba6b5e5e746a81928",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/habitable_ruins/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "38bd5431f40b26a6cfb8e34b0c50396d47bb6a86514fe7e6b55bca75699a5117",
+    "after_sha256": "6fcdaba766cbc19b646fcc6675f6f14c29c88b0ccb407ba8af571bbffac0573e",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/habitable_ruins/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "f2f64d8aab04655d5e76f9a1d92bbbcc8b6e0538c6f708c1cee5754f6662da7d",
+    "after_sha256": "c7776ff7f6f2d17824f0bdc610c0b59742383155343b8164edd86263b3950a19",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/habitable_ruins/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "86acf19ed05be83ba4c4fe59b30a8d2fd1cb51a62333cbce40f15de8c8094cab",
+    "after_sha256": "e49ee0ca836232cba4d8b7002f02e926f2ca85fcbeed486d76da7168204291fc",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/habitable_ruins/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "b58c2aef61ebf417f361032da3bf8e370cfb054d78dad61b931f01d0951a10b5",
+    "after_sha256": "0fbb3b40ea93494ef8e5e011550c723c096a46fb60ec729eaa1fbc9289d8cc66",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/library_archive/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "288c817646673e7dc0e0c36a3f160b0339e50d52460863d1dbdc2753e30e53cc",
+    "after_sha256": "1c18d6d706c9f9d2bf8c9e061a33986322c8843a93fd173d4f82f4ca21523500",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/library_archive/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "3275fe2f909b1a1d72d3609d326ac88c69d34f872d11d99fce9d98fefe8007f7",
+    "after_sha256": "f9d829bcacfc00ddeb01f7429a8360db55a39b7af2b77ca1e9b3cc45d78cd804",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/library_archive/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "0e31ab3e48e3729af21f0f3240af4b19158660fa2fa2825fe08f23a8e985ca14",
+    "after_sha256": "1af439a3690fa9c262ce5b5e971973a3013770218a69c3a72fa24d8c9549a1fb",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/pine_camp/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "1d0dffa87ce59bdbfbb9a9a59eaf84dafd0bc4fba47c2d3a7ec5913af1b28b71",
+    "after_sha256": "f197238233fd702acf2552f000dab0367aa9ae1f6344b5d5cc70f56f27e97c58",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/pine_camp/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "60105c0c8a1ba04172928985adc8ef573b60eceef71dbe91423da0412f0669ab",
+    "after_sha256": "6316f7ad6937cd0281ee54205bda20e1d66904e8f67bc9bc9d39dec6bdff9dad",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/pine_camp/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "d97ad003487c805465d925828414045439d9ce5ff7fb4e396cd20876e426ec5c",
+    "after_sha256": "0118a3e97d430e02a1574e0c6552918ef1259e238269c6a8f7c9904e21794634",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/pine_camp/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "ec3a70cd271b37c24a755abce2061b5900e4a59c73f1a6d91b75f6bbca7bb163",
+    "after_sha256": "e96c2f285bafe72b13eb43674062a1e3776828bac0279758aa8ab197f32d62e8",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/pine_checkpoint/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "b04a1bd2270dd16bb42a8df7f9d94b0506d94cba50c7c1771efbc360150bd482",
+    "after_sha256": "7eb337462e4073d5ec45dc4bb7a47310100d64dd76fd4186ac8f1363ff64c90a",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/pine_checkpoint/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "d81772d051a5049d79feef4b39ad598ee6c08f53bf3cccd8c880cc7191291b13",
+    "after_sha256": "5b90a85842d3b020f0d2859b5bb0fde570fedb4d032c9145f2819bc564a2f3e2",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/pine_checkpoint/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "64c04d90a24575a2650ba417601b50d1b5b37f1859f6a6d654fb6c9fd21b1742",
+    "after_sha256": "a97d92f1b7e77af2c3b96c385fe9af428d44244700a0c91ba5e1be5f7b37b5f8",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/pine_checkpoint/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "c1ed6fb67283c78380023c267ee6658494518e1696450820c63289557ae37c29",
+    "after_sha256": "996228ae2a506933f54a7986eb19d13ac442d0e3c5ce18388515da7bbc93b1ee",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/pine_clinic/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "b7deba84c9cc7f216a54e04db6066624e99ac8083e1e420ebf4ba15542d88b25",
+    "after_sha256": "07f750fd1ac0fbd53e4427097f2a870539120c82fc0c72c6e28dfc3b9bcc908e",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/pine_clinic/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "6ade17ab4e28639eadad5cbae39c1211cad2e64508360a48ebff78a005fa3bcb",
+    "after_sha256": "c8f06d8e70888e136598b60926e1598d9f3c4edcc9aed4202981f3a1ba8ac13b",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/pine_clinic/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "ff1ec93d643a33042191f321fe46b69d64d99dd3ca7f1c9aad693ff9e3c04796",
+    "after_sha256": "e459cdfb62c41525348f7be4a4386dc61a85491f53c494fe0b35b813dd70e9ed",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/pine_clinic/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "db79c3f2ffa92c97deb1ddc7eec846f38b8e82ed51155d1d84b8298153fcae6b",
+    "after_sha256": "96cbc7da6a4de19d0e891d700423b2138fd93807116c87d592034731a8d13f51",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/pine_fuel_depot/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "57a388e0c281d79155f1234748617e11b69d44943e041f018f20026f225f22b5",
+    "after_sha256": "41102666490bb8245b527ef5801456b85e76f95ff5a9171cc3472e293e61820d",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/pine_fuel_depot/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "e89a8fb3b62827f1f82070e5e4fdaaba61692897e459142e3399073a70d1f18f",
+    "after_sha256": "2a74fec8c327e323d55136757ab99733c3f358dd20c7405bc9ea0870c14dfddd",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/pine_fuel_depot/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "3ea2cf603cee4456f91586e06863c6030685cd51a2c1d56aac5b1598297699ee",
+    "after_sha256": "cb9fbfe116986e7525a59bc2d7905b6f72564c4ae2848c7d12e43dcd6b6de14c",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/pine_fuel_depot/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "41b5228fdb7209d00d9a47844b5bd0973ed20690db90a137f7bc1c782e77ae79",
+    "after_sha256": "b4390ef3a4867a6564adbf8ce58686e78936ee40d086fc2bb4575c386c3c79c6",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/pine_gas_station/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "ae96870ceaa7c9b1cfea6ab4d614f8af2e17b03028848e1185ec75074d53c3cc",
+    "after_sha256": "bfd9ed563c692fdc8169c45ef9e585ee39546ad55bb22676dfdbf34ad2046458",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/pine_gas_station/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "b1c1b2bd58f7f4a0574aa8386aa3720eeeea9d84ceb333d5dc8e745766a89380",
+    "after_sha256": "352a208fec6016b6363ba0f4cca1f443cbe78de27c6d3e5eaacefb41c676baf1",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/pine_gas_station/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "3759aa1c6db4f026f9e388d394b9775bada60d29b4dd5397287a2cba147ffcf7",
+    "after_sha256": "914c342c9d7329ae0e33f8864e9de2eae1b2b851ccb6e78870b1dc120fe3301c",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/pine_gas_station/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "07091fc1c9718d18a5c7dcaea083bc3399e3e1a35747fafe7debbe44c0156d4b",
+    "after_sha256": "83832d836c0ca4d8fdcba849b12248f92e097b922596bfb85b8d2939f3357075",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/pine_road/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "8dbe5490a760c7f56acc2ede57454025e6b33ecf90b9b49b1f6b3c47ce004766",
+    "after_sha256": "2dfe3b97f3aea614c58ea80e08758ebc9826dcc8190263527bbb8fa0ec7a9875",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/pine_road/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "2810e4c3fee4a8f013b017c0f4525f62ae8f874b8cc163943b7e7c90cd84f2a8",
+    "after_sha256": "001613d640a7c92073c5c1a4352187191f4219e72e905b66ef92b8c4888da09d",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/pine_road/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "fea0d9864c1114e2fb81fa5eb226472796e84c23af6a6d2245451f394c6fe209",
+    "after_sha256": "6bf4109ea13110d79c5162624a281a90b99875694ffdd99651795941ab3dfad8",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/pine_road/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "6ea62851f3193d98d7c207293be37fa72dc1fb59c4900b3bf5cd8c86d213334d",
+    "after_sha256": "1c5cee717d50698cecae6c6d82f1016bac89ccb9e8f5021d3a08ef5a124f41dd",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/pine_scrapyard/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "6157709849e553058552fec2035c75a01aef6901d4276bae1b8c1ffe1b069672",
+    "after_sha256": "24b6095d49f6a970e4c98a578615341dbac118236c16f566dbfa0bcdf417d497",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/pine_scrapyard/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "78433e47edbc0990249a7f59c9246a261cf6c044686e66b92d357c13511acfc7",
+    "after_sha256": "76ed749682c5bdc8c5bb97e2d1e97385c6fab994aae1b930a3dac1d966dc8d34",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/pine_scrapyard/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "c776a8d1ec9fa4282cb018dad5ac5c475f43bcdd2876d40a2c6dbea43fccd1e1",
+    "after_sha256": "c35c4da871cda6a0e0b3521c22fac589aa51c020c131a2aac492fbec2c97725b",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/pine_scrapyard/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "657ecbcec33840ec7430963e95432e17ad08b192d6b77eef03fdc68ca98277ae",
+    "after_sha256": "309356196e470534f4265e8195896573d1b025dcff0ebbaba02b089860c447a9",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/rail_supply_station/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "30babd0d09f462bab2263b7e8225c4c105bbcedfbb015230d0c530adc536c906",
+    "after_sha256": "6708e57f1909882744ca6e6286c8848ef6ec88e536613fd1e28b78c535f69f95",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/rail_supply_station/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "55a97743798ebf4fce21f6e2397493fbf630f59f18ec26e452d80e328057cfb4",
+    "after_sha256": "9eef30afa8d1b68be07be77d62cd2fcc6ec465ec28cb96d14fb4fa55ae5eb047",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/rail_supply_station/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "2c693142457762c7dbdf3ed8530d4d0b942a824ec9692ffadc470c5085c0e5cc",
+    "after_sha256": "fa8fa0c94133ab6ca9c9d733bdccb63f60a90b462018bd97bd0d0f8e8c919489",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/rail_supply_station/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "4000eea735858ab507a2afa705decd73b9f21e00d2b9405f36111ca3f9527d0e",
+    "after_sha256": "745d2434bb9819debb7bfcd5ae988aed532bf780aadca320bcf548314cc53e54",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/repair_workshop/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "7347b5c20afe41f13ee2d5fa40de08ef133a8f9a91a0c1318a69f5a8e5c62c4f",
+    "after_sha256": "7925e51516d0d8f06ef6874a2119fdbe3e585eaaf770bf48c4ff2c1fe1dbc72b",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/repair_workshop/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "1f9961daf701a26f15dcf842b0e36db90a3209d51e123bad9c194e6ce91b8dbc",
+    "after_sha256": "3181016eb15affe2fcca9df2f4cd035eef977956de2523c895897cdfdc378ab1",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/repair_workshop/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "8978f2a0690ff70bed8c2816d75624f5d7a025226e1479c6c7978e1712b8bd95",
+    "after_sha256": "720a7699de24e8bfceab0e95a2f6413262b288754e53265aae3c1527fae24eab",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/research_relay/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "2e432266ddc7fc75277d1bbfbae12edfcffdc72003400268fb10e69a3c3a849d",
+    "after_sha256": "5940b434636f17393fdac13c82b62a994db36ffc9b11507704b65dbe44609764",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/research_relay/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "c2061474e9c95b5432162bdc12b84fad4178d6a41e0504a1e63538ff58448be9",
+    "after_sha256": "a344f6206c78b848b3834a8243d70034d5d5b471bcf1f4f301c7c94617ea43d1",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/research_relay/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "e26097c2f4e539ed8b46e8def1de96fad2cdf4d26922e1828da24bac808197db",
+    "after_sha256": "519e40044b3f23d97cc1e43870a89cc9512c0189218ba6737eefa0fcfef450e2",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/research_relay/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "7b715c4c2a30a2ac4aa7789c5c527c5ab0dceb772d5fe9e652e4f0803b3c7b8d",
+    "after_sha256": "658a61d2d9e04b0a7395203fb143dd9e541015b691395dafb3784b77a9a3bc2a",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/scrapyard/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "4fde8b30e86146e3b9acf8448edffff4dba15954065dd0b048a4c7aa14f8337e",
+    "after_sha256": "6f060f027a50936b407f4db479fa94c5764f425c7562ad42c42c3ff3df0d804b",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/scrapyard/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "6b11383c73ff7f062e7081a9b37f61870fc92237dafafda2f1c5ac47d6a618ab",
+    "after_sha256": "febf141d5f2cd80bf432eec864b609e9445194f03be8920f81030f0b2565e42f",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/scrapyard/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "d8a9ae2053fa7f64fd75c9767978441b9754406683683c4a03a5ae6234ea67d8",
+    "after_sha256": "091ca0ef4eed444d89710f6937cc0703533d581b479fff7878e58af5ec3dadf4",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/scrapyard/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "fa9fe47a555a1818110746736cd3691f486fee004e53b3d1a0b693d4170e4bc3",
+    "after_sha256": "ec8486338b909ee3e8590d736362b264ad9fd3a4c46e92e260eb6faf30859a71",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/snow_checkpoint/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "81a4f60ec5484fd44af5d37a9edc9b7a6c62bfdc774a8cb9151a18f62b6646b5",
+    "after_sha256": "e14bdf44d30902fd34871aed5844b098596763cef238d0efd0473ca46427399e",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/snow_checkpoint/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "07401053b1b3152bf521a76f5e58d5c5278b9908f4ed8b582aeaabe4f31557b4",
+    "after_sha256": "bd9319b24f5e853950d84b330967a77ddf7bd301afd327c3c1d38ae316a49721",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/snow_checkpoint/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "41967ce9c78d59e3ec58c813591a5dcd7eb9af755295851782f5bf60c512d2cf",
+    "after_sha256": "2ca0524f48e36ae0ed96705021bf38727fdb3d0e2a8c931b4e40369a9574eaa5",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/snow_checkpoint/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "84df02a3cc3080cf7e7e91f1fa6456cdc169be826c7d356ec633d88250c5d16d",
+    "after_sha256": "bf1edd7e37d36f7fa066aff136b481ff77c162560607a34a43c0b947d7e3c8cf",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/snow_clinic/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "aca6160b679838fea5f888f982a8d7d4f977f0f2dc2f43f22312fea8894f5d81",
+    "after_sha256": "cab9320632b5c364d752d433e29fc8b6351c2390840de18454a4b56b20d92dfc",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/snow_clinic/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "7f57facad34776c8267a613fe63be71ccf7cafef23ce4226283d6a741ff24ce5",
+    "after_sha256": "5ebbb34c0be516ad496ba41d705a3546e8913bfd1fc4fea9039d68a60d8ce4f1",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/snow_clinic/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "30f0556409baa9dfb0e9e082108d3e7f283a6a0d6d6d14435968f5bbfb2d26d0",
+    "after_sha256": "93805550a16874698c6630f32f8236436f38c6481a1776b30599a786c5f34a29",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/snow_clinic/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "95e108dd6fec4044c72186dd98cfccc84a459c5d774543dbdb739e4e3dd54b7f",
+    "after_sha256": "bfa834732ed6d306e8f95d730751cafcdc02fcd427a3d1d49afa2aaef2a926dc",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/snow_fuel_depot/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "712f979cc3474c922a6ad7fe52b2453bad142e677a6600d70d6055d46dc646e6",
+    "after_sha256": "1b31ce450e23750148c9039438a3ef91058ad70a9a33d9c277d8cd26e3d8dbf2",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/snow_fuel_depot/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "7d1dc65d21f06453c6157799bb285e60fe7abaca316926860394ff707d8646b0",
+    "after_sha256": "c0037e2beeb6f0a945c7e0bac2cf85cd93bfe72b65114441c5fc6a00284b8891",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/snow_fuel_depot/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "01cb5d27ddb5b2e9d626782d7d7d1bfe6db8970b2f6bc6f31276159d6991473d",
+    "after_sha256": "416e6c2152f5d5ea6a2f639d07b5c75cf750aefe46a8c746efd5695febbeb709",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/snow_fuel_depot/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "561a0691501ead71f5b2e2639f55e927a31a4cc8273404a55d03f84d15b2fa20",
+    "after_sha256": "a5905e7fe6069ec5066a69ea5e74e2e394e51043c5d3c9a98ccb66a074f23b2d",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/snow_gas_station/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "1ddcbf7ea85fa35fb7bf732bf7dd36d1be0ae44a71be1fc7913c79938e7bcfc4",
+    "after_sha256": "4e249ac3887ec2388c05b3da3ae3e33010d3c84fc19a11d7bae9257fff748077",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/snow_gas_station/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "e700e7f8bea268db69a30c6f89a7910b4490697f19c58ec6a98acf048d3ab731",
+    "after_sha256": "508c881c9383b2e1c960f9e332954ba1b843faab90e1bacb38f24fa627fa7e2c",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/snow_gas_station/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "8c633564677d38cf0fbac1f0d92d309eee7df1ad716a0a7df4ad7dd43584d8b8",
+    "after_sha256": "35a6b5576654137e4d46bdabdf23e75a7281f3f2d0d78d0850f1950ef54b3783",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/snow_gas_station/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "5969342b10a47d2b16d098730ddaa95bc4a73dd1868712019b16b922a1084918",
+    "after_sha256": "c6dfe89237462bd61dddf695bfee13e6c6fdb4db120aafa5d4678401c027f30c",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/snow_habitable_ruins/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "0c2f5a66d810113f38c26f16b9d7d38c2111687366c19ee29dc15d96de6b04dd",
+    "after_sha256": "7d84843d90af6c5ff56b5373c48bee3b7b6209bde5edc14a929a2d39af1b5aaa",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/snow_habitable_ruins/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "d827323ea699efd63adc79280ed76abf38866bc3486cbd02b0594bf7741960e6",
+    "after_sha256": "4e4923f06332f4d952b439e0cde5935fb588a96414ad2120b06c427f1a1bba6e",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/snow_habitable_ruins/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "4bbdbb6d4eebfe14e76039ac3d85de53229913a072ce537dff150ac66bcdb813",
+    "after_sha256": "0e7447b5e1ab4795c0da9bf8aec510317f0d100bcf4e250434cc5817f3011cee",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/snow_habitable_ruins/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "b826c78f7900f4348e2021075d8098ce9476a6273a010d045362d17c39bc7542",
+    "after_sha256": "f7f69ac3fe53871c03e3b87a29462addd28469cace0573c68bb553d3968bd6c2",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/snow_road/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "0f454554c8f2fe4b67351887a9e70f0bb612f61b46a674b2d118f33ad96ea1db",
+    "after_sha256": "01720fa61a787f7ede2d4ef5e01a884927479bcaf3aebdb19dd6479d80b69a31",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/snow_road/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "3974c93a482e7611d972dc58772bc1b67fab996a475006269629ef870fdd44d4",
+    "after_sha256": "d950ebdc0118b3c53a0ae102248999bf73fb1026bfca1b869a09163935879c18",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/snow_road/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "6dbe75cee35975094d81fd4fd49a5f1a6d557eed306fd29e38b752ef46411508",
+    "after_sha256": "45c8f84447264d82ecdd9feb597263d6b3d378eabdb10a663e9835c5bdd6c421",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/snow_road/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "63a7f807ac29f0ef9809bd44a812cee07c62eb554ce401a0583525e8d84bc9f2",
+    "after_sha256": "a378bc74f5b49b5b88f2a89f353ea526e083c7134c293d6659132a5376cde43b",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/snow_scrapyard/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "c27fa4f304035ab0502ca47981c891902b6dfcdfc0684ad554360ff7cf3fcc41",
+    "after_sha256": "bc4ba694a3bb56651266bfac5b89e4ff4eeeb619e798978d865aa53f5fb4c118",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/snow_scrapyard/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "14786b78dcd3047e755e156b0dc3a011a4f4fdb758da2602eca2a44f266d4cce",
+    "after_sha256": "e15342c9daac76b4b55ee535284142896f19709fdfc8113a1a4bb64a4caae5f6",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/snow_scrapyard/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "daa93343f4bda7dd9a7b8f8e3653520a29b32e2862e11aea11b2ef8dd439d9ae",
+    "after_sha256": "f55819e201f965701d27c9e97ef11b23016a475a2a258d52a6366d0713aac354",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/snow_scrapyard/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "d589f555aef65ef9ccc84f1d05132b1b844df82909d2f7206848fffb2098b972",
+    "after_sha256": "f21b92e719e051c3c4a8148b4893b2f1458d1a168a9b696f68eb0a5bfdc8f982",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/snow_waterworks/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "58abb30bb95b534b6136ec4bf2349a3c0035409884149478ac3a7850be5a311d",
+    "after_sha256": "5b212baf38fda1f77cba20d12e46074b55fd39f372f9d6681d94acaee8e7767e",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/snow_waterworks/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "1de8bda03706c86a6c3f1d037c368d327fa0597712aa6d331ac64512678f9bdc",
+    "after_sha256": "1ecba3a62fb1df5b8094228e6f9379a5f57016a1c40228f6b46d9de9627db74a",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/snow_waterworks/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "0647e79022ffa86e5c72918b9cc29807738dab06ab1faa080aa9bc58e3409143",
+    "after_sha256": "f25834838d9f40af600028cd75882815e2e6bb5a49b7e3ee49cf92625d1c0709",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/snow_waterworks/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "c820c4e6ca3d0f03d28ec689101d03c45d0728249bd7691923a9f8cee8bf74b8",
+    "after_sha256": "b743565fc9127b9425816ddfe192bb73189efca730497e14405a6d1f4ebd843b",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/supply_warehouse/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "a9aad6957cbd0b4dbf89a0e53583689c6c3035dd60372949cb3a3558ad57fc7f",
+    "after_sha256": "25419326482906ffa3fd0df536cd8b03eb13d79a052555c0a30a4affade5fe88",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/supply_warehouse/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "7e2aef33fa088188aef0631497c5124f44bd61a78d7e7a11090a4a6c0b529027",
+    "after_sha256": "874a66382769abd52ecbca3953602cf94a79c3a763fa7946951d73bb03f172fe",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/supply_warehouse/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "97bcc7a4574e018a7d6f350af0c331230c80977da440f6acdbea4a9f162a5c87",
+    "after_sha256": "4124027dc01fd39fa2d0916b3afe006629d78e30b26757a4555a34b4cfd126c0",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/waterworks/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "5d99692b7301ac2b94cd5057e8062e92fcfd807cda6585a4e49517f2ce4ec9dc",
+    "after_sha256": "533f7feafc891d7e5fe2c8f9db37c086103e8c931d62c35db32acaa8556f8f32",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/waterworks/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "9d0491488bb2d130b7b1f54a8e56be77b6148abefa1c7be923c9bd449d5640e6",
+    "after_sha256": "ab953f05664b21485d94bf9a5e51cf1b63dd803b496107217c7167679f3bc205",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/waterworks/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "365ca9a61a36babf04dfd73f856c8649022dd29acdd9ca5c69647e4a9a2d8a32",
+    "after_sha256": "a56b864d9edbe5527d492da88e3b0b562e33fba627c8bf5af92fca13e0dd10da",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/biomes_20261016/waterworks/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "11f8aefb56923d3f1e363715677aa8c2be2d9edabf1c92ee75d7dded676f951e",
+    "after_sha256": "d695350506e3e0566662dfca35be010056ecfd3ac8a7b93612944e166a9047f4",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/camp_interior/01_far.png.import",
+    "quality": 0.4,
+    "before_sha256": "ffc2e16c06f503a6e800a49a7b7c6ff9323274d9458d8f88fdfc5ca0749b0f61",
+    "after_sha256": "ca836775f1489375acead0153a5aea15cea37b6d1cdec4f780e4c155394b5003",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/camp_interior/02_mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "3588b21e82fa28f6c7883ff42cd54b5923bc388b960a0a314cdb39b527c9e8e1",
+    "after_sha256": "f99379104114995c225d43a25ccd952074cf5f9fab0a5a83b7c010adae43f54a",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/camp_interior/03_near.png.import",
+    "quality": 0.4,
+    "before_sha256": "5009940d741a221c5062fbddf79c4c255f4a43061443319a5d7fc3e3715e621c",
+    "after_sha256": "85cf3a10f2d1b639b2ba0a8ff059fe00731ab99d8ec4efe2a5f48251ec90abd9",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/flow_vehicle_fit/oblique_suv.png.import",
+    "quality": 0.4,
+    "before_sha256": "bc0823c3d46b9d52e8905018165ebdc233b45176e149bc8d2e4e0a8a24b087ae",
+    "after_sha256": "a7e74b9334aadda40631cce782b7e99df089e3931d1397f8a2a5de0eeb372cf0",
+    "dimensions": [
+      720,
+      422
+    ]
+  },
+  {
+    "path": "assets/locations/flow_vehicle_fit/side_pickup.png.import",
+    "quality": 0.4,
+    "before_sha256": "d0e8a0d077bd84d2386d3faa8108798f01a468f9e4407c218ef24df2616e08e5",
+    "after_sha256": "85f6d97be5e5893332c40200cf4e1a73b48afdc361a85e586ad9a461cb287e54",
+    "dimensions": [
+      720,
+      331
+    ]
+  },
+  {
+    "path": "assets/locations/flow_vehicle_fit/side_suv.png.import",
+    "quality": 0.4,
+    "before_sha256": "ca42a9d5038be9fd99389d44a2f919a6697a642d3d0ebbe4dfff60cd80127987",
+    "after_sha256": "d8e10ab70ce1cae95911454c7324c0e04791484390a93785a2225a24433318a3",
+    "dimensions": [
+      720,
+      363
+    ]
+  },
+  {
+    "path": "assets/locations/gas_station/01_far.png.import",
+    "quality": 0.4,
+    "before_sha256": "63532f0eab048ad9a249acd8fd7abe22c27f449c29d52cb0820a967c47575e4d",
+    "after_sha256": "2f1dfd4bfe1d9f1a9c07eaf7c58a464b8b6d8963c30e2221baccf928c738686d",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/gas_station/02_mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "df55053e861603430cb552e4ace86af651efeb82a719e168b0359df496a20c4e",
+    "after_sha256": "034c084e610ac8941b972d352051abb975104a00a368e09a29075162a47e7b33",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/gas_station/03_near.png.import",
+    "quality": 0.4,
+    "before_sha256": "d2a842713dac5e1e847ca99f0bbdd29a3827e1570867ae36ff0ab5409bc181c3",
+    "after_sha256": "bcdd1277e201f9fb14b21bb16e4b5523ad59e280850ca729e735174a4467bcb0",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/journey_road/01_far.png.import",
+    "quality": 0.4,
+    "before_sha256": "9c5b66e3ea6c7b7892be3b3c6e23cd6adc08794f287ddc14679e9a4a072c6530",
+    "after_sha256": "8e6f0186a16d831212e4d5f1f36bb3601b166b8e610ddaaec68d9d85ccbb0a83",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/journey_road/02_mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "3a6afb0998e449e66f41285d73e7afcd087566487e75f0f05120819f25c087c2",
+    "after_sha256": "9b2eb2c3b44ee3f9d5afa6a80b15ffdc910ec3370d88f841402fa8e69a093c6c",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/journey_road/03_near.png.import",
+    "quality": 0.4,
+    "before_sha256": "31cce63a00377eef464d02c577e7401465e3b5ef57a0b076359504e19f689dc3",
+    "after_sha256": "70974c11cf84dabaefa6b53963045080f9bb2e5d2086ec1cefe2f11e6f435f97",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/neutral_market/01_far.png.import",
+    "quality": 0.4,
+    "before_sha256": "9128146fc0a16845a8b8c0aba9a4d69a9a7c4cac813939019d834b0371058ddf",
+    "after_sha256": "0c7a9cf01a38177809fe24944ef442d6f5db2ffd4a1dc9eda89b6a9eef8fb6bd",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/neutral_market/02_mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "3a4db5b6ab734b265ea964b953a52820a5687f348183d49660144c28d44814a2",
+    "after_sha256": "559e9cb8924e3123bfa8325079800ab0f087a8b8bd4e0bf9b296a979e9e3efe5",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/neutral_market/03_near.png.import",
+    "quality": 0.4,
+    "before_sha256": "be4692a856823c015842c39566cdec0a636f3ab05ebf64cd6e29970b197f5fc9",
+    "after_sha256": "89dfdb2a62e996f1e6dd56e64698496f34b52c7de3e963d23a3b2ddf51db8f07",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/old_water_tower/01_far.png.import",
+    "quality": 0.4,
+    "before_sha256": "1d74a0a090d761019db348488bc3dacba8fa7d2f281c8d095186f77929e74a63",
+    "after_sha256": "fe71a57af671cbaffd1acceadb9c8bdb5747118fb784e03ef9f10230b7129946",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/old_water_tower/02_mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "31ba2318c071fd64cfd2f46902c8bddc5819b752a88f66746edb5d03f9fbb915",
+    "after_sha256": "78e9c2b12007c04656d7699e8de9ee38fb36205491daa7bab926fa248837b73e",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/old_water_tower/03_near.png.import",
+    "quality": 0.4,
+    "before_sha256": "194ad01dbcc8f97218bcd6e5ece2fd18da569a957b9baa4695b6852306b9ad2e",
+    "after_sha256": "26f6a59cad36b68196381b5cecd1472d95cde3206ba61ac71011ed541d2dfc3e",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/rescue_station_exterior/01_far.png.import",
+    "quality": 0.4,
+    "before_sha256": "1ed1807bf80cc66a49702911ac7165fc985b024bf85251df70a728e8ccb751b6",
+    "after_sha256": "3bd08e5c97aa8533694a0e6cb6b48413ea4cc3705c7ea3aff8aab76d3d4c1422",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/rescue_station_exterior/02_mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "0b9bf9310df22e4ffb47210f37d0d8174b1ade2794b5eb7dd82af0fb76bf5642",
+    "after_sha256": "8ecc2cc8ed1fbfc0f841473e8cc77138ed19e3e73cb3cf77fce684c0241d49df",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/rescue_station_exterior/03_near.png.import",
+    "quality": 0.4,
+    "before_sha256": "6541c0dde214a949208feaa25a8420c97ed9a7bdec914a8f5b68b949f78b3705",
+    "after_sha256": "0cfb1ab378d933ab508c158c786206bd677b466f3461ff5a456cfd6d36ed4416",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/rescue_station_interior/01_far.png.import",
+    "quality": 0.4,
+    "before_sha256": "e4f464a053fc8abfdc22d0748c5177dfeab24a531e12c46fa4743594f5f9e353",
+    "after_sha256": "78eb2cf73da6a2ab0e21766d94eaf4ba3850e25c29132a9e6743fb22976f02b1",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/rescue_station_interior/02_mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "0e1620e52e4d9c812f4418a131bb84def5aa9e7457219a486b19aaffbdb02297",
+    "after_sha256": "5c9302a13a35b8cdc296d9aad7397b973599d6b998bae35ee97364c80a938fee",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/rescue_station_interior/03_near.png.import",
+    "quality": 0.4,
+    "before_sha256": "ca147d99d317c1a93c0e8b2fa046c78b5bc723d163d08759a41d5294895f393a",
+    "after_sha256": "a57a1cdc870bd702b0afe7c4f66eddda5671a9c96efe4b8a62546eeb919a499c",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/settlement_reception/01_far.png.import",
+    "quality": 0.4,
+    "before_sha256": "e8b44d9b567d9443f46269268b58b120543a6726f67072944816f5e2a38fad30",
+    "after_sha256": "c670db1875b82d53a910366cdab6ca0220c9ca1615112a8bfcde3faf81b2939b",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/settlement_reception/02_mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "3f5dbf53b93e10d8fffb2e25c869ecfe9f31cc06f7a4c699544a9ba730fe9387",
+    "after_sha256": "0d806a5be5edd8a6775a1b0bbf5a8cbdb3beb5ee16542761c4c92f9f810534d8",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/settlement_reception/03_near.png.import",
+    "quality": 0.4,
+    "before_sha256": "dfad009f5e8ab135bf6a4ba1c77e12c5a108a643265a9b2b0e44cd7c3c5ea6cf",
+    "after_sha256": "1f91859601a724ca432173d63806df81a1956496d4d90fd6f8d9dc2f028d3749",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/side_walk_20261016/abandoned_clinic/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "6f4b8e16b5ddff21b09771a6f9049592d3ef24dd51fe1a628f2bd07d49ca2672",
+    "after_sha256": "e28fe7961a8d8807e2b3507ba41d4cf381be974ad2c95d90f27159493c952d55",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/side_walk_20261016/abandoned_clinic/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "bef60ae4cb89a0e3d34581eb333d5b654368d88cad89571b538fe0c0b3045cd5",
+    "after_sha256": "160819ec3d41874079b893f8e19a33c02c524115c81fdee494f21e21c4c452f0",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/side_walk_20261016/abandoned_clinic/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "aef5b1da4d94d0ab0c401d667b48ba9df391692b679253b73a97542902d78efa",
+    "after_sha256": "5113bd570a5571936a468b2732bbcb699e6af7a6727b459cba2d7c4e180fcebb",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/side_walk_20261016/abandoned_clinic/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "0d2cd6082957b56bcbff5a946be1d5995b0f5e480896e14b996954fa6a9426ec",
+    "after_sha256": "fdaf8b8c9c7bfbbd9418058b99eb44975f1f3119fcc1827cd3f4d1fd72e28a5c",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/side_walk_20261016/camp/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "3d268fff06999c26f2f3b74a5be1cbe7f32e8f6a52b0cc38529d8ee0177d24fd",
+    "after_sha256": "d01dc359b8a58f17a28c83f41adb540aa7551a650655984195d8fbf1b65f58fb",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/side_walk_20261016/camp/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "564acd8f5bf2e88ac1d173d600c782bf99d51885b27ec71d5ea29d82b8a0a49a",
+    "after_sha256": "0c0eb663c20072d7fb62eef2d08c2794b9f6906c3ccbdfdbc8326e63115d017e",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/side_walk_20261016/camp/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "0961cf68dc124050aa01c1b1f425308d72d56fb7736b9af3f006834ae5ba6292",
+    "after_sha256": "a1d44ffb2758187bb0d4185a2259d7bd93031b80029747784711fd8a1c309c70",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/side_walk_20261016/camp/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "ed4bec1528c3e82c8eb0d280a50caf6cad5f59c0d6b0eff3a70e05dc1fb2964b",
+    "after_sha256": "7a484c84b7516201de44b527243549deef1e05505d501d96d098ec68ddc2cbe3",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/side_walk_20261016/camp_interior/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "cb54053c4d5c5a32860a7cd9d761d5968e17f7e8bb164d37526e57b954bce0e7",
+    "after_sha256": "7f86496a2fe81ed8cdbdbe2dac09b3eaf96505a8ef6fc7e782c16caee30ec7df",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/side_walk_20261016/camp_interior/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "c2c6ce9d9ae9f6b5f02b1ca67b608db0802f920eb1d1f35e1a5c8dfbd639ae8b",
+    "after_sha256": "da1c444bce0b14c97698736a56274204d928190467236d6d24aa3a162df50215",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/side_walk_20261016/camp_interior/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "cc9ec1fb2bb48d225cb22137da5737af005b68c573b46403f6b64f72b7f48b9f",
+    "after_sha256": "943bf4fbcc63847670f05f9b13d249cf351777598d75c1b5c02a8a2003b1356c",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/side_walk_20261016/camp_interior/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "39e7e9a87776a53a51e577f958d6269b1ff97962283f5df36674653520720c6c",
+    "after_sha256": "0339337823613413f90bd8ea7a1949a33143c04183eb0c948b0dd4e18eb5ca37",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/side_walk_20261016/journey_road/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "d40e6775d7de41639ba849566ddadef17ad50f826ace9448042e08aaeda7e45c",
+    "after_sha256": "ed0c902aa604e04064326e0f502c56689c72388ee97448c6ac97eb7cbab13225",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/side_walk_20261016/journey_road/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "68f2d29f6ae0e5edee72c0ded75ac5bfe50e95bc9c9b35be1b8fa6a505ef54e2",
+    "after_sha256": "5c069884d62ae6893d776c5c042b416756022097d87409ee3f3472475a429e5c",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/side_walk_20261016/journey_road/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "b498567793f8b1ee09ab9aee7694769772a603ce164e42d23b1c99ff03f8914f",
+    "after_sha256": "cc546f6aa0f2cce2dd545ccc5faf60420df9884111b3dc3e0829861d01f55a4c",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/side_walk_20261016/journey_road/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "f353eca806e629beb04693f2a9ace80a90d54ed1fb0b4b9f6501760b9409be28",
+    "after_sha256": "3d30703e29305ca71bc2a1a581648cd32268a9bcca4d0eb1c83dc1eecc943df5",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/side_walk_20261016/neutral_market/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "4cbd84f9e14fb464538c85d480beabada68be397d495a82533b5527f9589c2b4",
+    "after_sha256": "ba2bd03eb838e27f4318000f5b82f37f034950c30f61a5cd6c5c2e0082ca2f14",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/side_walk_20261016/neutral_market/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "8319d682af763eead83b5a6702b73723d4c46cc44a22623aeac2e06d3c4d4e53",
+    "after_sha256": "31b45fb30a6fa3cff8d688c737e3335aa72e5c7a4ab466ba6bfff60a624dd493",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/side_walk_20261016/neutral_market/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "9e67ec6240b77eb9794fdd4840e162813a4d744078230df4144549e267fbe391",
+    "after_sha256": "b32729c1b3b02b21f234932c5a8976498f9e2d9a0e63abfdcc701f2c6152cefb",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/side_walk_20261016/neutral_market/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "974eb0a0004c49afb56a245519c238fe747d41216142214725bb0964ce3451bc",
+    "after_sha256": "8c725a25ea56ecdc8415b3b61fba2f1ad86fc50dfb2788d8adc65fb4d999f27f",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/side_walk_20261016/old_water_tower/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "2ab4390924a47d2b1939b10826932dc9eacaef937960de3e1fda414a49e7b00c",
+    "after_sha256": "b09c934d322112cb01add4050ba7a9af46249179f6f932dc3b6b681813a08ae9",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/side_walk_20261016/old_water_tower/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "0bde2909805bc3afccc395a70156323fec9b0181d3d32234f0799ec656ce962e",
+    "after_sha256": "5200432297fb356c06d85e5bd64a40f9d12793b3caa21c13d351008a7a3e0930",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/side_walk_20261016/old_water_tower/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "9d6575b92d37c5ea91a3a41d98ae65b38b2a65010d4218c7d16b51e475ca63fe",
+    "after_sha256": "59f34dfb34d02e39be9d86ac294e2db331e8435e05808887e501e1852611473b",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/side_walk_20261016/old_water_tower/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "efb3db01add0b53441bc6118261cfe0bb18c97a685b9e66316041fb03d260c6a",
+    "after_sha256": "8c19d414a9b11697f10f81f3ce49ad12f521d3e1e82443a2a80a9c226ed9e1bc",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/side_walk_20261016/rescue_station_exterior/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "9dbc66816ffa752976e1302bddea68f37138db6f0cca6da567bbf9b960dba0d5",
+    "after_sha256": "54876efd2f68a9d0c84700a9d16c2cd9c5c1c513b3af787bb7e6b5873be35df2",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/side_walk_20261016/rescue_station_exterior/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "67bbb5ee86eb64806115dd48c3bed4f4d8658fce12c41507c76ccd2788cd2762",
+    "after_sha256": "0109fd0667b2a50322dad8549a301db8b8541edd5060aea287103b3c12b18c33",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/side_walk_20261016/rescue_station_exterior/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "71d4a6e2e58d43b7f83365e30946ca4d02c181b8e69eac57a9a12092a2aa6db0",
+    "after_sha256": "87a797b4cfe0c237786b8093788af22550ef795a2d36310fb4d03730f48dedc5",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/side_walk_20261016/rescue_station_exterior/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "ce7980481bd3632ba5d6702482d470c929ff54a98b978a04a70f9b5bda0cedb7",
+    "after_sha256": "c584d4f2295e92b9675cd946103086a7aa04aaeee333abf20a29024fd6d2842f",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/side_walk_20261016/rescue_station_interior/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "7122b5ac687ceb1f5c5af6b9e577f68266eb94b9f788e1b8fab7bec140f13b91",
+    "after_sha256": "9c89c526fbd898da4fd7b74e76e96b28d105d12888b2ac065a3998302739cdd4",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/side_walk_20261016/rescue_station_interior/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "84a0cb1433bcf84528a8059874e883fcc4b8d307db15cbe37d76c7f8336ea5a9",
+    "after_sha256": "1d0ae24d6e0251b6a72383a7a93e5f3b10a9acc487c458f4398589714972eca3",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/side_walk_20261016/rescue_station_interior/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "b2ec2e666261c050c08a2a91887509aa8b6e0a43921e1b6fc632e779696f0bce",
+    "after_sha256": "af995d61b962192206b176a5c1c30510017987d9bea0caccc224b135e97ef122",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/side_walk_20261016/rescue_station_interior/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "77e29cd5a544c76e5cbe8b9ac13487f33175a458f2c8a82ce2ef09ad199da300",
+    "after_sha256": "b8e4e26199619284acfdf14b9115b0f53933e69222f04d35878404a2922e112f",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/side_walk_20261016/settlement_reception/far.png.import",
+    "quality": 0.4,
+    "before_sha256": "30cb0b5aef8601a3b580ba3e266fe2d38fa77ca7b3f2ad860876a660f1cf1c72",
+    "after_sha256": "ebf9c4733e7361cbfd73aee320204cc6b405e0d0627fa608dc9015f41d42ba17",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/side_walk_20261016/settlement_reception/full.jpg.import",
+    "quality": 0.4,
+    "before_sha256": "d9909e60d16fcfc82238de93ee832f4ceca1c8839a0b2a840842313d1dbad990",
+    "after_sha256": "fc4ee0e03eca1d7dc92c5b61ad276f33a5a383cb338d414073ca4cca0f9445a3",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/side_walk_20261016/settlement_reception/mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "9ec8909dcbd23acd4df1205d250d85736ae84f22a8d44ada50db834e77957c34",
+    "after_sha256": "02263084aa19a5cfec998944971d1ce357dc9479c0074fd3e2ea398de9cd7115",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/side_walk_20261016/settlement_reception/near.png.import",
+    "quality": 0.4,
+    "before_sha256": "6bebe9159868471d007edc2485b1772037e77398d9c30b7d13b4bf5d583a9b91",
+    "after_sha256": "8849d8d21a30b52adb17e8e1613d559255df60da2ab6ce7d8c54e799d79de90f",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/snow_camp/01_far.png.import",
+    "quality": 0.4,
+    "before_sha256": "556c6258b3617550c0ed2602218f5b2ba33ca5fa5b65e8a6f489c8209c900f05",
+    "after_sha256": "33f09a274a9ff397c7fa9af921d3bb3bb900d679c40d926d4441fd5b832dc810",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/snow_camp/02_mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "e10407c296ee0f12a17889eb1e27a1802c4a0cd43781eef751352d4ab3b047c8",
+    "after_sha256": "8b7e7efb37d2f4713b37f50a52d26910946ed3edb303a23e7de837d2bff11b9b",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/snow_camp/03_near.png.import",
+    "quality": 0.4,
+    "before_sha256": "ca21a33ee7b1486401da938a82745cb23ea43e517577114eacbeb50e0c68f79d",
+    "after_sha256": "f596c990dc7c915ac6198014eb4e8cce3f69289f973ab8ae6f5714a679b07c8b",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/tunnel_entrance/01_far.png.import",
+    "quality": 0.4,
+    "before_sha256": "46e1c86674e322be06d922a7feba2e5845fa637ce62375cfe84499f4fd5f9d88",
+    "after_sha256": "a433cbb0960c0d017e0ad6ab92610003280221666567d95252003d998f5ac1fc",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/tunnel_entrance/02_mid.png.import",
+    "quality": 0.4,
+    "before_sha256": "ce1a88c1b54939794554b27c968eba88cdb1feef1cc67b41bc50d8f5d0819e15",
+    "after_sha256": "2aaf512f610a1f32c22cc0aef962ea921e1b0f62a63fc3ab4bb5714e3d325d43",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/locations/tunnel_entrance/03_near.png.import",
+    "quality": 0.4,
+    "before_sha256": "95b270e2de71b198453f33a2838ceca29282f1a39543e2506190c26cfb8a7d98",
+    "after_sha256": "1a338d0758843129f8b5cf9ce370131b5a49ef857f60434910a28a12860bb897",
+    "dimensions": [
+      2688,
+      1152
+    ]
+  },
+  {
+    "path": "assets/settings/settings_background.png.import",
+    "quality": 0.8,
+    "before_sha256": "7e54aff5fbe1d31f204706a6c40bf85e9d88ecd66ab68070fda29336c0354569",
+    "after_sha256": "3c9f5274244dc3d483fe66e0e4e713ba98464fc3e1950a333cdc23382c8fe089",
+    "dimensions": [
+      1920,
+      1080
+    ]
+  },
+  {
+    "path": "assets/title/convoy_title.png.import",
+    "quality": 0.8,
+    "before_sha256": "2af1e5ac2e72e0bde590a31bd98b5fc7acd9702517ee26737fae5209d9d9dde5",
+    "after_sha256": "18ae0d140cf99bf38d092f63d57a3ef1deef61e42d99a5d8c2f248d22c8ecd12",
+    "dimensions": [
+      1920,
+      1080
+    ]
+  },
+  {
+    "path": "assets/ui/convoy_management/garage_clean_source.png.import",
+    "quality": 0.8,
+    "before_sha256": "8eff061ef9e6278ffc95fda45b428ce7ad703bae31c2be1e7bf813fa67c311c2",
+    "after_sha256": "67db918cb8ca8964a13416da5b458e9b13a0ff28c1a0fb798d16b462e8299f7b",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/ui/convoy_management/garage_reference.png.import",
+    "quality": 0.8,
+    "before_sha256": "9b2d410b505aecdc9e63a9575a363303fbd3f388610b922d50f19eda700ccfac",
+    "after_sha256": "6f9740a9b2a729f20885cc1b4ccbc7574e1cb2da40bcbfb40a1bb3cdfe8bbf16",
+    "dimensions": [
+      968,
+      546
+    ]
+  },
+  {
+    "path": "assets/ui/convoy_management/garage_repair_20261016/source.png.import",
+    "quality": 0.8,
+    "before_sha256": "d92b997a501b16726954d0d135c6b07efd78393f2e6f91031b6495f1ffae0e1e",
+    "after_sha256": "0c4adf5a210706e305df53b9b378e5c04183958491cd13e5977e00f51c51c9e1",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/ui/convoy_management/garage_repair_20261016/variant_bright_ground.png.import",
+    "quality": 0.8,
+    "before_sha256": "c2b44bdafc7fa5c87e941540d629658bd1d114ec7dd8a06b14a468a70d098a75",
+    "after_sha256": "4802c34648ccb6e3b74c5c81ebe2f984d778920de8c9be67dec48c369489cb04",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/ui/convoy_management/garage_source.png.import",
+    "quality": 0.8,
+    "before_sha256": "52dcad30e626434a50d2c6e1f63ec6d4b54b6e6277f891eb210daf9927f3b024",
+    "after_sha256": "1b01bf0d0f08490649795868e48df7a512f6b9a2b44b6fdcc8edb666924d87a5",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/ui/convoy_management/module_engine.png.import",
+    "quality": 0.8,
+    "before_sha256": "c093c7f92f8d892f81d427451f5988bf3f7cf3af3240cb2c6f9ec89647df67d5",
+    "after_sha256": "b9b5b3e371ab6a05c20ae083efc6a7f5c86340f7358ccec114351142e230ce5c",
+    "dimensions": [
+      280,
+      280
+    ]
+  },
+  {
+    "path": "assets/ui/convoy_management/module_front.png.import",
+    "quality": 0.8,
+    "before_sha256": "ab2afd0f9b5cb40a22430e1a3d73c732a45522f8a74f454c791806ba2de1df74",
+    "after_sha256": "fa71effe584deb470960baf75a67b54ee76f6fd4e8d7c1ac463ba6ae210de576",
+    "dimensions": [
+      280,
+      280
+    ]
+  },
+  {
+    "path": "assets/ui/convoy_management/module_rear.png.import",
+    "quality": 0.8,
+    "before_sha256": "1a60f2cbfd15702ecf0b7d580987c6e894c2325724959b685d0b4850d01235b4",
+    "after_sha256": "5be2da81714f4ad76185b2570ef24b9db1d023abdbf6390a0ba76ee1adc51de3",
+    "dimensions": [
+      280,
+      280
+    ]
+  },
+  {
+    "path": "assets/ui/convoy_management/module_roof.png.import",
+    "quality": 0.8,
+    "before_sha256": "0362a104e9185f1d248a23592c2d0f83f5b3e10922ce55d6e3de83c44c5082ae",
+    "after_sha256": "abf1014fb590f6caad1f32af08487e0d7a9e911ce5e739f5393c1f41b087fac5",
+    "dimensions": [
+      280,
+      280
+    ]
+  },
+  {
+    "path": "assets/ui/convoy_management/module_wheels.png.import",
+    "quality": 0.8,
+    "before_sha256": "79977e2d1bdce20610803989d7e5a66a8c1be589bff017394b7af643cf170fb7",
+    "after_sha256": "30406d4db64dc829811b3b0c07677097c4110ea12e6b46aefb5da6342a6e495a",
+    "dimensions": [
+      280,
+      280
+    ]
+  },
+  {
+    "path": "assets/ui/convoy_management/modules_source.png.import",
+    "quality": 0.8,
+    "before_sha256": "158b6a5d662ab06c840b36118022630235733cdc45567a842fa53562f3e7b2a6",
+    "after_sha256": "d9e3bd80ff69f090b071670d5e444f475ca2af68fbf0622b9dac61f6597addfb",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/ui/convoy_management/route_reference.png.import",
+    "quality": 0.8,
+    "before_sha256": "a24a4c5253ffbf2ec6d596aa781f6e19a16ce14fe1b248398987d7d097af4d5d",
+    "after_sha256": "09f36eb1e8b6e97d43540e7403a3aff64447f2c1248f3118651440f6571467f4",
+    "dimensions": [
+      968,
+      546
+    ]
+  },
+  {
+    "path": "assets/ui/convoy_management/terrain_source.png.import",
+    "quality": 0.8,
+    "before_sha256": "a33cc9a5bb2fabf8739e3cf2fc32a6394c50a0bb17bee8489cf284638dc1b9b7",
+    "after_sha256": "a643d9be19180d7394bc230e2464d37ab822366e48f245021dde69c386b6338f",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/ui/status_overview/background.jpg.import",
+    "quality": 0.8,
+    "before_sha256": "657f3bfa4dee964bc122eedcf35d7172605c8058ef92f83d46c19e3ea4a9cf90",
+    "after_sha256": "cd24c8ee4cf4166dd1384b30ab3e10d6a7906a4dc16a19374d690a06b6c753b4",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/ui/status_overview/background_source.png.import",
+    "quality": 0.8,
+    "before_sha256": "dd97a23a11ac179e922e8265562bd8ea4236ab2ea50a49376d150fe1a9c01c8e",
+    "after_sha256": "ca4547103fe497f40f158d41b7415419e5ba1cb3300e8c1bdf3a19c4bf023471",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/ui/status_overview/captain.png.import",
+    "quality": 0.8,
+    "before_sha256": "1edac0a0b6e3790ce3a5d7d4498292142c1e75bde6a90f00a60b5c8bbc7b77b5",
+    "after_sha256": "6ef6e2b439d8a3262c287e98be85919ce75820004e06ac546769ef75009f3ccd",
+    "dimensions": [
+      512,
+      512
+    ]
+  },
+  {
+    "path": "assets/ui/status_overview/mechanic.png.import",
+    "quality": 0.8,
+    "before_sha256": "661787648e1fc0cbf99862a687214cede20c58663e45853695008117629c8c7a",
+    "after_sha256": "396b4791234daae98ffd37b8dbf274bec4a1eca1dfd5d90db93dea33463486ca",
+    "dimensions": [
+      512,
+      512
+    ]
+  },
+  {
+    "path": "assets/ui/status_overview/medic.png.import",
+    "quality": 0.8,
+    "before_sha256": "901fb81eec9a6a17688e46115d38bebdadbb62c2343604997fedcaf000fb447f",
+    "after_sha256": "8e757eefbf6c51ce2122267491380669b5a0d5996f214d547a9975fa1b1ac52f",
+    "dimensions": [
+      512,
+      512
+    ]
+  },
+  {
+    "path": "assets/ui/status_overview/portraits_source.png.import",
+    "quality": 0.8,
+    "before_sha256": "b40e85a155e68ed6c1985d78683ca53ecc3813c53055fbc79cd3dbba27801619",
+    "after_sha256": "a9b881947016ade648c70816854168c917257e13258c20b098a0ea1237266544",
+    "dimensions": [
+      2048,
+      1152
+    ]
+  },
+  {
+    "path": "assets/ui/status_overview/quartermaster.png.import",
+    "quality": 0.8,
+    "before_sha256": "8cf8a158103a40117d49e52e9c5b1ec68d90094e0991180eb4d462c991faad9a",
+    "after_sha256": "c72b158d6a2721f869a347cff5d426af676269e80278ca3ce6b15145b2f8745f",
+    "dimensions": [
+      512,
+      512
+    ]
+  },
+  {
+    "path": "assets/ui/status_overview/scout.png.import",
+    "quality": 0.8,
+    "before_sha256": "1a94b787dd741040dcefdca3fcc5c68c2aa889bc68e823c29d9167f01d82996e",
+    "after_sha256": "966b3f5d6fa1508d5846cfb314611ff5a0b4893531604229e493049ad0bd455a",
+    "dimensions": [
+      512,
+      512
+    ]
+  },
+  {
+    "path": "assets/ui/status_overview/terrain.jpg.import",
+    "quality": 0.8,
+    "before_sha256": "9ab39b560762e51414d7aa8432ee0aba3f463ee316d4b4003c4893f8162e5539",
+    "after_sha256": "dffc653512f0f647adf42892b438be48bca9119025545329ede9cdd5585ec91c",
+    "dimensions": [
+      1254,
+      1254
+    ]
+  },
+  {
+    "path": "assets/ui/status_overview/terrain_source.png.import",
+    "quality": 0.8,
+    "before_sha256": "d3ec7673bb8ef8ec9520b935b3c2a9f98c81caf13f0fa7339d89efde6e1b1cd3",
+    "after_sha256": "4b68c1ba9283892a16e22af376d3d499807091b3264cd26ef800e775ec23577b",
+    "dimensions": [
+      1254,
+      1254
+    ]
+  },
+  {
+    "path": "assets/vehicles/realistic_20261015/V01_left.png.import",
+    "quality": 0.8,
+    "before_sha256": "7889bd5a1338bcc9b283484871ff397db2a6970ef208884829408a487abfcbd7",
+    "after_sha256": "e63c63e329e16e31246387cbeffcac311200d6b39d3a0bc7f52b97f33870c0f6",
+    "dimensions": [
+      1929,
+      891
+    ]
+  },
+  {
+    "path": "assets/vehicles/realistic_20261015/V01_right.png.import",
+    "quality": 0.8,
+    "before_sha256": "1aed7438feee327c03eade3f9b13b5650db8b60387f9059f7a9941960973f6a8",
+    "after_sha256": "5b447554eb913e1c3f277184bf475c535a2f572e47a1201be36deb0e47d7616d",
+    "dimensions": [
+      1911,
+      886
+    ]
+  },
+  {
+    "path": "assets/vehicles/realistic_20261015/V02_left.png.import",
+    "quality": 0.8,
+    "before_sha256": "663a99fd7344644ca7679f14c486064192755910ee17eb97775d52b20a164883",
+    "after_sha256": "af9f484de8915e401abedcd40f26b072033c1ae33430093fbec71a3d1e9f3656",
+    "dimensions": [
+      1907,
+      849
+    ]
+  },
+  {
+    "path": "assets/vehicles/realistic_20261015/V02_right.png.import",
+    "quality": 0.8,
+    "before_sha256": "3b131849c23275bba1e60739b4d1639929029dedb6fafa8609f6051a02ffaf9c",
+    "after_sha256": "d1ec56449dd4b9655dd9647c3bfdcea2ce4dbf62baefadbf7e61f721f5e3cd06",
+    "dimensions": [
+      1894,
+      848
+    ]
+  },
+  {
+    "path": "assets/vehicles/realistic_20261015/V03_left.png.import",
+    "quality": 0.8,
+    "before_sha256": "db38b88489a9af303e4f083d87fc776a28a341c7eb081a6c72373b802b449907",
+    "after_sha256": "a0c41bb537f6e8a38b0a9e89a8cb0e89a424caee0bdc6fe7bfdc981829527918",
+    "dimensions": [
+      1949,
+      893
+    ]
+  },
+  {
+    "path": "assets/vehicles/realistic_20261015/V03_right.png.import",
+    "quality": 0.8,
+    "before_sha256": "b5e78a7f8bb72b2a8328397c915360918fa1021ce8232d98da45c9aa03890fdb",
+    "after_sha256": "70158c3b29e40f40b5664b785efa39ac036d7e75369fce46573cdaca7e866e0d",
+    "dimensions": [
+      1951,
+      886
+    ]
+  },
+  {
+    "path": "assets/vehicles/realistic_20261015/V04_left.png.import",
+    "quality": 0.8,
+    "before_sha256": "1953df2170ccf77bf214626b7003a3d4092966b5238f151d979acf84ae194f0f",
+    "after_sha256": "5b89ee0ee09216ebbd0dde149026e51fe018888771a0c5ba966d154e82467dff",
+    "dimensions": [
+      1869,
+      930
+    ]
+  },
+  {
+    "path": "assets/vehicles/realistic_20261015/V04_right.png.import",
+    "quality": 0.8,
+    "before_sha256": "04aad72a6b543cae99158c0994a0b6305a50fdae380fabe88f3dad8b432ccf55",
+    "after_sha256": "0870d65a6512fa514d5a52f3689a72cbe0b2da2a8163b2ad71227754612e17f8",
+    "dimensions": [
+      1852,
+      930
+    ]
+  },
+  {
+    "path": "assets/vehicles/realistic_20261015/V05_left.png.import",
+    "quality": 0.8,
+    "before_sha256": "1dd66e375520dc53a2ae38997f2d150f03b3182a89af2ab5770b7dc8280550ae",
+    "after_sha256": "5fd093f4fa1670d387b483df040f86d2f2908b03e2fc57253baac95e71b957f4",
+    "dimensions": [
+      1988,
+      958
+    ]
+  },
+  {
+    "path": "assets/vehicles/realistic_20261015/V05_right.png.import",
+    "quality": 0.8,
+    "before_sha256": "51b50fd4cfe3dc056ebf3d8e5fce7ca4184250689a657a1186345d5fcf26904b",
+    "after_sha256": "0e510dce418fdd645c722d8fece4d19d5f597a4b526b08ecb2cc23c4e5926bf8",
+    "dimensions": [
+      1965,
+      943
+    ]
+  },
+  {
+    "path": "assets/vehicles/realistic_20261015/V06_left.png.import",
+    "quality": 0.8,
+    "before_sha256": "b35da352ef0436bf34f866d03bfa07e7e96758aaf6697e952b642370dab8def3",
+    "after_sha256": "25302c2b87961d64d607d96d2f7be9201e18d9c66e56ad61e0b85cc41779bf32",
+    "dimensions": [
+      1878,
+      988
+    ]
+  },
+  {
+    "path": "assets/vehicles/realistic_20261015/V06_right.png.import",
+    "quality": 0.8,
+    "before_sha256": "dce621e556fc167f6cc44bdd42063d9c175f8ac65f1dbfac077dfe8ebc2e6cbd",
+    "after_sha256": "93c5322b9ec51372f68495e579fd3340e7b8af2906b168048eb73c49d2813b16",
+    "dimensions": [
+      1860,
+      995
+    ]
+  },
+  {
+    "path": "assets/vehicles/realistic_20261015/V07_left.png.import",
+    "quality": 0.8,
+    "before_sha256": "6c72a5f74f605a403bcc0dc3b734e0b890e0ca7a852df5c7f4992e335c10b66f",
+    "after_sha256": "1004fb9986fb58b5487ec31d192bec5669c7fa86a08ec2f7543ad2a9eed3d22b",
+    "dimensions": [
+      1908,
+      929
+    ]
+  },
+  {
+    "path": "assets/vehicles/realistic_20261015/V07_right.png.import",
+    "quality": 0.8,
+    "before_sha256": "38a040be58dc075a243b17376bd55d765609a5dde71ae6a8d08001f6cfaf0d55",
+    "after_sha256": "b48f7588a9764c2f61c2b74c63b1831d5a49f94c54c5cf3c53b9197e9268bc7a",
+    "dimensions": [
+      1912,
+      944
+    ]
+  },
+  {
+    "path": "assets/vehicles/realistic_20261015/V08_left.png.import",
+    "quality": 0.8,
+    "before_sha256": "03a7f2c00602654d8881235802ec9be548f72fe3fd11191f9b2ec9fabd64ed19",
+    "after_sha256": "e9ac35bc369ecbecd4a8dc186e50bac07e64575a02a58c1c0620ce3172cab7e9",
+    "dimensions": [
+      1941,
+      947
+    ]
+  },
+  {
+    "path": "assets/vehicles/realistic_20261015/V08_right.png.import",
+    "quality": 0.8,
+    "before_sha256": "1387e4a617ae2cbef6bc8d91d79a58c0389937346c4dc4d3e54418740cab6f84",
+    "after_sha256": "78509aa35648b46e3d6676045b68fa23c7b5ac518f6a646fc8dae189df26211c",
+    "dimensions": [
+      1856,
+      919
+    ]
+  },
+  {
+    "path": "assets/vehicles/scene_sprites/oblique_suv.png.import",
+    "quality": 0.8,
+    "before_sha256": "c17633e9275341793aa07aec5867b8a264b95bd01bf2a74aadb3a5a520fce936",
+    "after_sha256": "4c79829f4315e16939e5129cfb0caa649dd5a38f2c51116285b09b07701124a1",
+    "dimensions": [
+      720,
+      422
+    ]
+  },
+  {
+    "path": "assets/vehicles/scene_sprites/side_pickup.png.import",
+    "quality": 0.8,
+    "before_sha256": "5885d9d5125e952be347488612262d679f0d557644c9d9e9e580018262e61455",
+    "after_sha256": "066b00731a2ebf348d5a6e2986081aeb20d5da271c831edd59adda09237c43d1",
+    "dimensions": [
+      720,
+      331
+    ]
+  },
+  {
+    "path": "assets/vehicles/scene_sprites/side_suv.png.import",
+    "quality": 0.8,
+    "before_sha256": "c44faaef8ee672af029524d43180b9f2809f5b0f154bb4b9bc7aab0fd30c1576",
+    "after_sha256": "9ea9ff2d9da4d23bc769c02ac20ee23ded1be6259d619478b4901ab4c7751d43",
+    "dimensions": [
+      720,
+      363
+    ]
+  }
+]

@@ -1,0 +1,62 @@
+{
+  "full_source": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\02_新项目_末日车队\\output\\flow\\scenes\\snow_camp_parallax\\full.png",
+  "clean_plate_source": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\02_新项目_末日车队\\output\\flow\\scenes\\snow_camp_parallax\\far.png",
+  "source_size": [
+    2048,
+    1152
+  ],
+  "crop": [
+    2,
+    80,
+    2046,
+    956
+  ],
+  "size": [
+    2688,
+    1152
+  ],
+  "original_full_and_far_sizes": [
+    [
+      2048,
+      1152
+    ],
+    [
+      2048,
+      1152
+    ]
+  ],
+  "aspect": "21:9",
+  "method": "Matched clean plate, hand-annotated alpha masks, shared 7:3 crop and uniform scale",
+  "presentation": "parallax",
+  "motion_scales": [
+    0.12,
+    0.5,
+    1.0
+  ],
+  "camera_limit_source_canvas_pixels": 25,
+  "scope": "Independent art scene, not yet wired into gameplay",
+  "parking_areas_canvas_pixels": [
+    [
+      76,
+      565,
+      579,
+      408
+    ],
+    [
+      2062,
+      565,
+      579,
+      408
+    ]
+  ],
+  "vehicle_mounts": {
+    "VehicleMount": [
+      365,
+      973
+    ],
+    "VehicleMountRight": [
+      2351,
+      973
+    ]
+  }
+}

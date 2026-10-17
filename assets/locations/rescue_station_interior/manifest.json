@@ -1,0 +1,110 @@
+{
+  "id": "rescue_station_interior",
+  "title": "救援站受困房间与走廊",
+  "gameplay": "第10天妹妹救援、出口路径与医疗操作空间",
+  "source_full": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\02_新项目_末日车队\\output\\flow\\scenes\\gpt25_style_revision\\rescue_station_interior\\full.png",
+  "source_clean_plate": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\02_新项目_末日车队\\output\\flow\\scenes\\gpt25_style_revision\\rescue_station_interior\\far.png",
+  "prepared_full": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\GPT25画风重制\\aligned\\rescue_station_interior_full.png",
+  "local_repairs": [
+    "Remove duplicated moon inside left doorway with adjacent sky texture; retain the high-window moon. Native full.png is preserved."
+  ],
+  "aligned_clean_plate": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\GPT25画风重制\\aligned\\rescue_station_interior_far.png",
+  "alignment": "Original full 1916x821; original far 1915x821; append one right-edge pixel column in a separate derived plate. No geometric stretching; native originals preserved.",
+  "source_sha256": "56670d0ac828842936b2ea82b9f93eea3b687876ae3166f3e267c10bd0f6c2c1",
+  "source_size": [
+    1916,
+    821
+  ],
+  "crop": [
+    2,
+    1,
+    1913,
+    820
+  ],
+  "size": [
+    2688,
+    1152
+  ],
+  "aspect_method": "Shared 21:9 crop and uniform scale; no stretching or mirroring",
+  "mask_config": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\GPT25画风重制\\masks\\rescue_station_interior.json",
+  "motion_scales": [
+    0.12,
+    0.5,
+    1.0
+  ],
+  "camera_limit_source_canvas_pixels": 25,
+  "parking_areas_canvas_pixels": [],
+  "vehicle_mounts": {},
+  "interaction_anchors": {
+    "PatientArea": [
+      1502,
+      920
+    ],
+    "Exit": [
+      293,
+      903
+    ]
+  },
+  "view": "side",
+  "walk_path": [
+    [
+      257,
+      902
+    ],
+    [
+      560,
+      906
+    ],
+    [
+      982,
+      916
+    ],
+    [
+      1404,
+      920
+    ],
+    [
+      1896,
+      917
+    ],
+    [
+      2093,
+      906
+    ]
+  ],
+  "spawn_x": 468,
+  "npc_x": [
+    982,
+    1172,
+    1362,
+    1551,
+    1741,
+    1931,
+    2037
+  ],
+  "blockers": [
+    [
+      750,
+      610,
+      1266,
+      246
+    ],
+    [
+      2121,
+      603,
+      571,
+      373
+    ],
+    [
+      -3,
+      927,
+      183,
+      226
+    ]
+  ],
+  "walk_method": "Inspected continuous ground lane in front of parked vehicles and props; tap projects to lane",
+  "scope": "Gameplay presentation selected by actual world state through location_catalog.gd",
+  "art_revision": "gpt25_style_revision",
+  "generation_model": "gpt-image-2.5-flare",
+  "travel_limit": ""
+}

@@ -1,0 +1,133 @@
+{
+  "workflow": "DeepSeek Harness image edits; source art preserved; edge-connected black removed from icons only",
+  "sources": {
+    "garage": {
+      "file": "garage_source.png",
+      "native_dimensions": [
+        2048,
+        1152
+      ],
+      "sha256": "cac7f9de41095c672bf65f018b39ed66710aa707cb99061733b41307afc83d3c"
+    },
+    "garage_clean": {
+      "file": "garage_clean_source.png",
+      "native_dimensions": [
+        2048,
+        1152
+      ],
+      "sha256": "69b17994f64707266692ff2909650acb5dcc5e30ae64a50eeb21d5ede73594b9"
+    },
+    "garage_repair_20261016": {
+      "file": "garage_repair_20261016/source.png",
+      "native_dimensions": [2048, 1152],
+      "sha256": "12983aa4ea15034fa0bfd0c6b8bcc5f29a8b763bb7854b4809408d2e5b633fd9",
+      "model": "gpt-image-2.5-sunburst",
+      "workflow": "DeepSeek Harness; three uploaded references; image edits; n=1; hd",
+      "generation_record": ".docs/美术/车辆管理背景重设_20261016/generation.json",
+      "scope": "vehicle management page (equipment)"
+    },
+    "terrain": {
+      "file": "terrain_source.png",
+      "native_dimensions": [
+        2048,
+        1152
+      ],
+      "sha256": "73fd4d862d151409e8af92c8c39a15381b1eb2dae43ae07c9d2b00fadd125d76"
+    },
+    "modules": {
+      "file": "modules_source.png",
+      "native_dimensions": [
+        2048,
+        1152
+      ],
+      "sha256": "166ad43db42c5058d5e80cbaf053447a5987bad23033acc0fbdff9721e433cac"
+    }
+  },
+  "icons": [
+    {
+      "slot": "front",
+      "file": "module_front.png",
+      "source_bounds": [
+        0,
+        0,
+        444,
+        1152
+      ],
+      "trimmed_bounds": [
+        30,
+        426,
+        427,
+        718
+      ]
+    },
+    {
+      "slot": "engine",
+      "file": "module_engine.png",
+      "source_bounds": [
+        444,
+        0,
+        838,
+        1152
+      ],
+      "trimmed_bounds": [
+        12,
+        376,
+        384,
+        720
+      ]
+    },
+    {
+      "slot": "wheels",
+      "file": "module_wheels.png",
+      "source_bounds": [
+        838,
+        0,
+        1248,
+        1152
+      ],
+      "trimmed_bounds": [
+        20,
+        390,
+        390,
+        726
+      ]
+    },
+    {
+      "slot": "roof",
+      "file": "module_roof.png",
+      "source_bounds": [
+        1248,
+        0,
+        1660,
+        1152
+      ],
+      "trimmed_bounds": [
+        5,
+        432,
+        412,
+        701
+      ]
+    },
+    {
+      "slot": "rear",
+      "file": "module_rear.png",
+      "source_bounds": [
+        1660,
+        0,
+        2048,
+        1152
+      ],
+      "trimmed_bounds": [
+        0,
+        400,
+        356,
+        719
+      ]
+    }
+  ],
+  "active_backgrounds": {
+    "garage": "garage_clean_source.png",
+    "equipment": "garage_repair_20261016/source.png",
+    "terrain": "terrain_source.png"
+  }
+}

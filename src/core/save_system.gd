@@ -1,7 +1,7 @@
 class_name SaveSystem
 extends RefCounted
 
-const SAVE_VERSION := 2
+const SAVE_VERSION := 3
 const SAVE_DIRECTORY := "user://saves"
 var save_directory: String
 
@@ -23,18 +23,20 @@ func snapshot(state: GameState, loop: DayLoop) -> Dictionary:
 		"random_state": str(loop.random.state),
 		"camp_position": state.camp_position, "conversation_open": loop.conversation_open,
 		"members": state.members.duplicate(true),
+		"major_route": state.major_route, "route_history": state.route_history.duplicate(true),
+		"morning_resolutions": loop.morning_resolutions.duplicate(true), "travel_event_text": loop.travel_event_text,
 	}
 
 func restore(saved: Dictionary, state: GameState, loop: DayLoop) -> bool:
+	var legacy_morning: bool = saved.get("version") == 2 and saved.get("phase") == GameState.Phase.MORNING
+	saved = _migrate(saved)
 	# Validate the entire payload before mutating the active run.
 	if not _valid(saved, loop.content): return false
 	state.day = int(saved.day)
 	state.phase = int(saved.phase)
 	state.resources = saved.resources.duplicate()
-	for key in DemoContent.RESOURCE_NAMES: state.resources[key] = int(state.resources[key])
 	state.team_trust = int(saved.team_trust)
 	state.world_facts = saved.world_facts.duplicate(true)
-	if state.world_facts.has("lessons"): state.world_facts.lessons = int(state.world_facts.lessons)
 	state.vehicle_health = int(saved.vehicle_health)
 	state.fatigue = int(saved.fatigue)
 	state.knowledge = int(saved.knowledge)
@@ -42,14 +44,18 @@ func restore(saved: Dictionary, state: GameState, loop: DayLoop) -> bool:
 	state.ending = str(saved.ending)
 	state.camp_position = float(saved.get("camp_position", loop.content.camp_data().get("entry_position", 100.0)))
 	if saved.has("members"):
-		state.initialize_members(saved.members, state.team_trust, state.fatigue)
+		state.members = saved.members.duplicate(true)
+		for member in state.members:
+			for key in ["health", "fatigue", "trust"]: member[key] = int(member[key])
 	else:
 		state.initialize_members(loop.content.members())
 		for member in state.members:
 			member.fatigue = state.fatigue
 			member.trust = state.team_trust
-	if not saved.has("members") or not saved.members[0].has("maintenance_knowledge"):
-		_migrate_knowledge(state, loop.content)
+	state.major_route = str(saved.get("major_route", ""))
+	state.route_history = saved.get("route_history", []).duplicate(true)
+	loop.morning_resolutions = saved.get("morning_resolutions", []).duplicate(true)
+	loop.travel_event_text = str(saved.get("travel_event_text", ""))
 	loop.route_choice = str(saved.route_choice)
 	loop.travel_style = str(saved.travel_style)
 	loop.event_log.assign(saved.event_log)
@@ -61,24 +67,65 @@ func restore(saved: Dictionary, state: GameState, loop: DayLoop) -> bool:
 	loop.travel_resolved = bool(saved.travel_resolved)
 	loop.random.state = int(saved.random_state)
 	loop.conversation_open = bool(saved.get("conversation_open", false))
+	if legacy_morning:
+		# Old mornings contain only 2–3 requests; rebuild the current five-member queue.
+		loop._begin_morning()
+		loop.prepared = bool(saved.prepared)
 	state.day_changed.emit(state.day)
 	state.phase_changed.emit(state.phase)
 	return true
 
+func _migrate(source: Dictionary) -> Dictionary:
+	if source.get("version") != 2: return source
+	var saved := source.duplicate(true)
+	var rename := {"队长": "主角", "老赵": "老张", "许宁": "艾琳", "阿遥": "阿杰", "周禾": "索菲亚"}
+	if saved.get("members") is Array:
+		for member in saved.members:
+			if member is Dictionary and member.get("name") is String:
+				member.name = rename.get(member.name, member.name)
+	if saved.get("daily_transactions") is Array:
+		for transaction in saved.daily_transactions:
+			if not transaction is Dictionary: continue
+			for key in ["speaker", "target_member"]:
+				if transaction.get(key) is String: transaction[key] = rename.get(transaction[key], transaction[key])
+	if saved.get("phase") == GameState.Phase.REST_STOP:
+		saved.phase = GameState.Phase.STOP_DIALOGUE
+	if saved.get("phase") == GameState.Phase.TRAVEL and saved.get("travel_progress") is float and saved.get("travel_resolved") is bool:
+		# The old loop could resolve an event immediately after departure.
+		if saved.travel_resolved: saved.travel_progress = maxf(0.5, saved.travel_progress)
+	# An old route/travel save on a big-route day has already departed into the old demo.
+	# Assign a default direction for that segment, allowing later checkpoints to change it.
+	saved["major_route"] = "南部断路"
+	saved["route_history"] = []
+	saved["morning_resolutions"] = []
+	saved["travel_event_text"] = ""
+	if saved.get("world_facts") is Dictionary:
+		saved.world_facts["story_direction"] = "南部断路"
+		saved.world_facts["story_checkpoint"] = "旧版旅程延续"
+	saved.version = SAVE_VERSION
+	return saved
+
 func _valid(saved: Dictionary, content: DemoContent) -> bool:
 	if saved.get("version") != SAVE_VERSION: return false
+	if not _number(saved.get("day"), 1, content.demo_days()): return false
 	for key in ["resources", "world_facts"]:
 		if not saved.get(key) is Dictionary: return false
-	for key in ["manual_read", "shared_maintenance"]:
-		if saved.world_facts.has(key) and not saved.world_facts[key] is bool: return false
-	if saved.world_facts.has("lessons") and not _number(saved.world_facts.lessons, 0, 100000): return false
-	for key in ["event_log", "daily_transactions", "next_day_effects"]:
+	for key in ["event_log", "daily_transactions", "next_day_effects", "morning_resolutions", "route_history"]:
 		if not saved.get(key) is Array: return false
 	for key in ["event_log", "next_day_effects"]:
 		for entry in saved[key]:
 			if not entry is String: return false
 	for key in ["route_choice", "travel_style", "ending", "random_state"]:
 		if not saved.get(key) is String: return false
+	if not saved.get("major_route") is String or not saved.get("travel_event_text") is String: return false
+	if not str(saved.major_route).is_empty() and not content.major_routes().has(saved.major_route): return false
+	var previous_day := 0
+	for entry in saved.route_history:
+		if not entry is Dictionary or not _number(entry.get("day"), 1, int(saved.get("day", 0))): return false
+		if not content.is_major_route_day(int(entry.day)) or int(entry.day) <= previous_day: return false
+		if not entry.get("route") is String or not content.major_routes().has(entry.route): return false
+		if not entry.get("chapter") is String or entry.chapter != content.major_checkpoint(int(entry.day), entry.route): return false
+		previous_day = int(entry.day)
 	if not str(saved.random_state).is_valid_int(): return false
 	if not content.routes().has(saved.route_choice): return false
 	if saved.travel_style not in ["低噪音", "快速", "绕行"]: return false
@@ -88,7 +135,7 @@ func _valid(saved: Dictionary, content: DemoContent) -> bool:
 	for key in ["team_trust", "vehicle_health", "fatigue", "tracking"]:
 		if not _number(saved.get(key), 0, 100): return false
 	if not _number(saved.get("day"), 1, content.demo_days()): return false
-	if not _number(saved.get("phase"), 0, GameState.Phase.ENDING): return false
+	if not _number(saved.get("phase"), 0, GameState.Phase.MAJOR_ROUTE_SELECTION): return false
 	if not _number(saved.get("knowledge"), 0, 100000): return false
 	if not _number(saved.get("travel_progress"), 0, 1, false): return false
 	if not _number(saved.get("camp_position", content.camp_data().get("entry_position", 100.0)), 45.0, float(content.camp_data().get("width", 1440.0)) - 45.0, false): return false
@@ -104,21 +151,15 @@ func _valid(saved: Dictionary, content: DemoContent) -> bool:
 			if not member.get("job") is String or not member.get("last_memory") is String: return false
 			for key in ["health", "fatigue", "trust"]:
 				if not _number(member.get(key), 0, 100): return false
-		if not _valid_member_knowledge(saved.members): return false
-		if saved.members[0].has("maintenance_knowledge") and saved.world_facts.get("shared_maintenance", false):
-			var known_count := 0
-			var taught_count := 0
-			for member in saved.members:
-				if not member.maintenance_knowledge: continue
-				known_count += 1
-				if member.learned_from != "技术手册": taught_count += 1
-			if known_count < 3 or taught_count < 2 or int(saved.world_facts.get("lessons", 0)) < 2: return false
 	if not _number(saved.get("transaction_index"), 0, saved.daily_transactions.size()): return false
-	for transaction in saved.daily_transactions:
+	for transaction in saved.daily_transactions + saved.morning_resolutions:
 		if not transaction is Dictionary: return false
 		for key in ["id", "speaker", "job", "goal", "urgency", "body", "fact"]:
 			if not transaction.get(key) is String: return false
-		if content.member_position(str(transaction.speaker)) < 0.0: return false
+		var valid_speaker := false
+		for member in content.members():
+			if member.name == transaction.speaker: valid_speaker = true
+		if not valid_speaker: return false
 		if transaction.has("target_member"):
 			if not transaction.target_member is String: return false
 			var valid_target := false
@@ -135,60 +176,19 @@ func _valid(saved: Dictionary, content: DemoContent) -> bool:
 				if not DemoContent.RESOURCE_NAMES.has(key) or not _number(option.cost[key], 0, 10000): return false
 			for key in ["trust", "repair", "knowledge", "fatigue", "health"]:
 				if not _number(option.get(key, 0), -100, 100): return false
-	if int(saved.phase) == GameState.Phase.REST_STOP and int(saved.transaction_index) >= saved.daily_transactions.size(): return false
-	if int(saved.phase) == GameState.Phase.TRAVEL and saved.travel_resolved: return false
+	if int(saved.phase) in [GameState.Phase.MEMBER_AFFAIRS, GameState.Phase.STOP_DIALOGUE] and int(saved.transaction_index) >= saved.daily_transactions.size(): return false
+	if int(saved.phase) == GameState.Phase.MAJOR_ROUTE_SELECTION and not content.is_major_route_day(int(saved.day)): return false
+	if int(saved.phase) == GameState.Phase.TRAVEL and saved.travel_resolved and float(saved.travel_progress) < 0.5: return false
+	if int(saved.phase) == GameState.Phase.TRAVEL_EVENT and not is_equal_approx(float(saved.travel_progress), 0.5): return false
+	if int(saved.phase) == GameState.Phase.MEMBER_AFFAIRS and not saved.get("conversation_open", false): return false
+	if content.is_major_route_day(int(saved.day)) and int(saved.phase) != GameState.Phase.MAJOR_ROUTE_SELECTION and str(saved.major_route).is_empty(): return false
 	if int(saved.phase) == GameState.Phase.ENDING and str(saved.ending).is_empty(): return false
 	if saved.get("conversation_open", false):
-		if int(saved.phase) != GameState.Phase.REST_STOP: return false
+		if int(saved.phase) not in [GameState.Phase.MEMBER_AFFAIRS, GameState.Phase.STOP_DIALOGUE]: return false
 		var current: Dictionary = saved.daily_transactions[int(saved.transaction_index)]
 		var target := content.member_position(str(current.speaker))
-		if target < 0.0 or absf(float(saved.get("camp_position", 100.0)) - target) > float(content.camp_data().get("interaction_range", 72.0)): return false
+		if int(saved.phase) == GameState.Phase.STOP_DIALOGUE and current.speaker != "主角" and (target < 0.0 or absf(float(saved.get("camp_position", 100.0)) - target) > float(content.camp_data().get("interaction_range", 72.0))): return false
 	return true
-
-func _valid_member_knowledge(members: Array) -> bool:
-	# A complete absence is a legacy save. Partial fields are corruption, not migration.
-	var has_personal_fields := false
-	for member in members:
-		if member.has("maintenance_knowledge") or member.has("learned_from"): has_personal_fields = true
-	if not has_personal_fields: return true
-	var known: Dictionary = {}
-	for member in members:
-		if not member.get("maintenance_knowledge") is bool or not member.get("learned_from") is String: return false
-		if not member.maintenance_knowledge and not str(member.learned_from).is_empty(): return false
-		if member.maintenance_knowledge and str(member.learned_from).is_empty(): return false
-		known[str(member.name)] = member
-	for member in members:
-		if not member.maintenance_knowledge: continue
-		# Every teacher chain must end at a manual reader; self-teaching and cycles cannot occur in play.
-		var visited: Array[String] = [str(member.name)]
-		var source: String = member.learned_from
-		while source != "技术手册":
-			if visited.has(source) or not known.has(source) or not known[source].maintenance_knowledge: return false
-			visited.append(source)
-			source = str(known[source].learned_from)
-	return true
-
-func _migrate_knowledge(state: GameState, content: DemoContent) -> void:
-	# Old version 2 counted anonymous lessons. Assign a stable, distinct cohort in content order.
-	var lessons := int(state.world_facts.get("lessons", 0))
-	var shared: bool = state.world_facts.get("shared_maintenance", false)
-	if not state.world_facts.get("manual_read", false) and lessons == 0 and not shared: return
-	var reader := state.member_named("老赵")
-	if reader.is_empty(): return
-	reader.maintenance_knowledge = true
-	reader.learned_from = "技术手册"
-	state.world_facts["manual_read"] = true
-	if shared:
-		lessons = maxi(2, lessons)
-		state.world_facts["lessons"] = lessons
-	var remaining := mini(2, lessons)
-	for initial in content.members():
-		if remaining <= 0: break
-		if initial.name == "老赵": continue
-		var learner := state.member_named(str(initial.name))
-		learner.maintenance_knowledge = true
-		learner.learned_from = "老赵"
-		remaining -= 1
 
 func _number(value: Variant, low: float, high: float, integer: bool = true) -> bool:
 	if not (value is int or value is float): return false

@@ -1,0 +1,134 @@
+{
+  "id": "bai_la",
+  "character": "白蜡",
+  "action": "全程自然低头，颈部前屈、下巴收下，双眼始终看右手垫片及腿上交易袋。右手缓慢转动同一枚金属垫片检查正反面，靠近袋口比较，再回到初始手位；左手始终扶袋，袋中两枚垫片不动。头不抬起、不看前方或镜头，神态专注从容。",
+  "source_fact": "偶遇商队中的交易人物，愿意交换水、食物、油和零件。原稿未限定年龄、性别、外观；本次外观为美术补充设计。",
+  "new_art_design": "48岁女性商人，微微丰腴、结实的中等体型，脸颊圆润但眼神精明，短黑发夹灰、自然侧分，低头垂眼专注核验垫片，嘴角放松，神态精明而专注。穿深梅褐色长外套、赭金色旧围巾、黑褐宽松长裤和棕色旧皮靴；胸前有一个小皮质货币袋，不能有珠宝华服。",
+  "video_generation": {
+    "character": "白蜡",
+    "provider": "local ComfyUI",
+    "endpoint": "http://127.0.0.1:8190",
+    "model": "minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+    "turbo_8step_lora": true,
+    "steps": 8,
+    "seed": 26101627,
+    "fps": 24,
+    "frames_requested": 124,
+    "size_requested": [
+      512,
+      768
+    ],
+    "first_and_last_frame": "C:\\Users\\t6275\\AppData\\Local\\Comfy-Desktop\\ComfyUI-Shared\\input\\convoy_head_down_correction_20261016\\bai_la.png",
+    "prompt": "Locked camera, full body, same seated character, same identity, hairstyle, clothing, proportions and props as the reference. Throughout every frame her HEAD STAYS BOWED, chin lowered toward her chest, both eyes continuously focused DOWN on her own hands and the object on her lap. This includes the opening, all intermediate frames and the closing frame. Quiet concentration. The neck remains flexed and the face remains angled down. Only hands, forearms, natural downward blinking and subtle breathing move. One slow compact action, then return to the identical starting hand pose in about five seconds. Hips, seat contact height, knees and planted shoes stay fixed. Stable scale and framing, full head, hands and shoes visible. Completely uniform pure green RGB(0,255,0) background. No chair, table, floor, cast shadow, scenery, other person, writing or watermark. Keep the same two hands and the same props with stable anatomy and materials. Silent video.\nAction: Her bowed head and downward eyes remain trained on the metal washer in her RIGHT hand and the pouch on her lap throughout. She slowly rolls the same washer between thumb and forefinger, brings it a little closer to the pouch to inspect it, and returns to the initial hand position. Left hand holds the pouch steadily; its two other washers stay put. Keep the washer hole and material intact. Quiet, discerning concentration on her merchandise continuously.",
+    "prompt_id": "263298e1-bd8c-4b70-91f5-2beb29b29c05",
+    "output": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\陆芷白蜡低头修正_20261016\\bai_la\\source.mp4",
+    "sha256": "ce6e605ff2e22aeebe7e08fb23dcc8e897e34b6800675178cd6198e499c9d2d7",
+    "elapsed_seconds": 220.4
+  },
+  "frames": 123,
+  "fps": 24,
+  "duration_seconds": 5.125,
+  "canvas": [
+    331,
+    600
+  ],
+  "loop": true,
+  "cycle": {
+    "kind": "pinned",
+    "start": 0,
+    "length": 123,
+    "seam": 0.0013988848077133298,
+    "inner_mean_adjacent": 0.000465323100797832,
+    "ratio": 3.006265550355946,
+    "pin_error": 0.0014017702778801322,
+    "pin_tolerance": 0.005,
+    "period_global": null,
+    "periodicity": null
+  },
+  "green_rgb": [
+    0,
+    255,
+    0
+  ],
+  "source_crop_box": [
+    56,
+    13,
+    470,
+    764
+  ],
+  "scale": 0.7986688851913477,
+  "seat_anchor": {
+    "in_source_still": [
+      365,
+      875
+    ],
+    "in_video": [
+      182.5,
+      437.5
+    ],
+    "in_exported_png": [
+      101.13888888888889,
+      339.1478029294274
+    ],
+    "prefab_origin": [
+      0,
+      0
+    ],
+    "nearest_sole_y_from_prefab_origin": 240,
+    "method": "manual anatomical seat annotation on source, one fixed crop/scale for complete cycle; no individual-frame centering"
+  },
+  "validation": {
+    "same_canvas": true,
+    "transparent_borders": true,
+    "gif_infinite_loop": true,
+    "gif_frames": 123,
+    "gif_ms": 5120,
+    "strong_green_pixels_max": 0,
+    "godot": {
+      "version": "4.7.2",
+      "status": "passed",
+      "checks": [
+        "SpriteFrames load",
+        "123 matching texture sizes",
+        "24 FPS",
+        "infinite loop",
+        "seat-origin prefab instantiate",
+        "AnimatedSprite2D play"
+      ]
+    }
+  },
+  "manual_adapter_stages": [
+    "green GIF compositing/encoding",
+    "shared crop and seat-height scaling",
+    "SpriteFrames and seat-origin prefab"
+  ],
+  "native_frames_archive": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\陆芷白蜡低头修正_20261016\\bai_la\\loop\\cycle",
+  "revision": {
+    "reason": "User correction: both characters must look down at their handwork",
+    "work_dir": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\陆芷白蜡低头修正_20261016\\bai_la",
+    "source_image_sha256": "5b8e34f825c02ab9a6c645d28eb0949d4ce0f78ba0bc9b834df4191189b17d62",
+    "source_video_sha256": "ce6e605ff2e22aeebe7e08fb23dcc8e897e34b6800675178cd6198e499c9d2d7",
+    "gaze": "head bowed and eyes downward throughout",
+    "visual_review": {
+      "status": "passed",
+      "observed": "All 123 frames show bowed head and downward eyes directed toward the washer and pouch. No upward glance. Slow washer rotation and return are visible, hole remains readable except when naturally edge-on, pouch and other washers stay present. Eight whole-body samples retain complete head, both shoes and fixed seat; no chair, no scene. Export has zero strong green foreground pixels.",
+      "all_head_frames": 123,
+      "detail_sample_frames": [
+        0,
+        17,
+        35,
+        52,
+        70,
+        87,
+        105,
+        122
+      ],
+      "evidence": [
+        "bai_la/all_123_head_frames_green.png",
+        "bai_la/head_detail_green.png",
+        "bai_la/hands_detail_green.png",
+        "staged/assets/characters/bai_la/animations/seated_activity/preview_green.png"
+      ]
+    }
+  }
+}

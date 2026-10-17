@@ -1,0 +1,13 @@
+{
+  "model": "gpt-image-2.5-sunburst",
+  "reference": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\assets\\ui\\convoy_management\\garage_reference.png",
+  "prompt": "以附件中改装部件图标的精细写实工业风格为参考，制作末日车辆五个部位的游戏图标素材。严格五列一行排列，每个物件在各自等宽区域居中，五个物件互不重叠，背景统一纯黑色。左到右：1厚重焊接钢铁车前防撞挡架；2裸露柴油发动机，金属管线和气缸；3一组防滑越野轮胎；4金属车顶行李架加小型探照灯；5后挂金属货箱与牵引钩。每个物件完整，细腻磨损银灰金属、克制暖光边缘，真实工业比例、精细手绘写实、统一斜侧视角，独立图标，不是整车。没有任何面板、文字、数字、标签、状态条、边框、水印。所有物件大小统一，约占所在列宽75%，排在画面中间一条水平线上，周围纯黑背景。",
+  "requested_size": "2048x1152",
+  "status": "saved",
+  "at": "2026-10-16T07:34:58.148Z",
+  "reference_sha256": "a0efd7df25640b8762bdfc22e6a6e1bc2be559caec8c92c40bdff897b24c14ac",
+  "output": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\assets\\ui\\convoy_management\\modules_source.png",
+  "bytes": 1309134,
+  "sha256": "166ad43db42c5058d5e80cbaf053447a5987bad23033acc0fbdff9721e433cac",
+  "completed_at": "2026-10-16T07:35:36.494Z"
+}

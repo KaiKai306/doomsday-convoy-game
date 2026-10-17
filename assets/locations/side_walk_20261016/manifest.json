@@ -1,0 +1,352 @@
+{
+  "revision": "side_walk_20261016",
+  "model": "gpt-image-2.5-sunburst",
+  "native_size": [
+    2048,
+    1152
+  ],
+  "locations": {
+    "camp": {
+      "title": "荒原营地",
+      "walk_path": [
+        [
+          155,
+          806
+        ],
+        [
+          1893,
+          806
+        ]
+      ],
+      "spawn_x": 610,
+      "npc_x": [
+        350,
+        1010,
+        1350,
+        1690
+      ],
+      "camera_limit_source_canvas_pixels": 24,
+      "warm_x": 1205,
+      "warm_radius": 650,
+      "warm_strength": 0.4,
+      "interior": false,
+      "original_size": [
+        2048,
+        1152
+      ],
+      "original_ground_y": 852,
+      "layout_ground_y": 806,
+      "source_sha256": "f8f54422f09b6fd98cbf495659f5fdb9201bec4bb2aefaa175d7e2fe97e66baa",
+      "planes": [
+        "far.png",
+        "mid.png",
+        "near.png"
+      ],
+      "far_repair": "Reflected adjacent textures under manually marked mid mask. Validated only at camera +/-24 source pixels; not a fully painted hidden world."
+    },
+    "journey_road": {
+      "title": "旅途公路",
+      "walk_path": [
+        [
+          155,
+          806
+        ],
+        [
+          1893,
+          806
+        ]
+      ],
+      "spawn_x": 610,
+      "npc_x": [
+        350,
+        1010,
+        1350,
+        1690
+      ],
+      "camera_limit_source_canvas_pixels": 24,
+      "warm_x": 1250,
+      "warm_radius": 620,
+      "warm_strength": 0,
+      "interior": false,
+      "original_size": [
+        2048,
+        1152
+      ],
+      "original_ground_y": 752,
+      "layout_ground_y": 806,
+      "source_sha256": "c451b0ecaee45879e621fa9164601cbc94646841d0ca2c2acfc73fbb7a946ad1",
+      "planes": [
+        "far.png",
+        "mid.png",
+        "near.png"
+      ],
+      "far_repair": "Reflected adjacent textures under manually marked mid mask. Validated only at camera +/-24 source pixels; not a fully painted hidden world."
+    },
+    "abandoned_clinic": {
+      "title": "废弃诊所",
+      "walk_path": [
+        [
+          155,
+          806
+        ],
+        [
+          1893,
+          806
+        ]
+      ],
+      "spawn_x": 610,
+      "npc_x": [
+        350,
+        1010,
+        1350,
+        1690
+      ],
+      "camera_limit_source_canvas_pixels": 24,
+      "warm_x": 1070,
+      "warm_radius": 620,
+      "warm_strength": 0.32,
+      "interior": false,
+      "original_size": [
+        2048,
+        1152
+      ],
+      "original_ground_y": 878,
+      "layout_ground_y": 806,
+      "source_sha256": "991d5a5919b7d4a715f2073bdb10b7ff618ef7a8d5bf0cc3b6738baf57e785e3",
+      "planes": [
+        "far.png",
+        "mid.png",
+        "near.png"
+      ],
+      "far_repair": "Reflected adjacent textures under manually marked mid mask. Validated only at camera +/-24 source pixels; not a fully painted hidden world."
+    },
+    "old_water_tower": {
+      "title": "旧水塔",
+      "walk_path": [
+        [
+          155,
+          806
+        ],
+        [
+          1893,
+          806
+        ]
+      ],
+      "spawn_x": 610,
+      "npc_x": [
+        350,
+        1010,
+        1350,
+        1690
+      ],
+      "camera_limit_source_canvas_pixels": 24,
+      "warm_x": 1380,
+      "warm_radius": 620,
+      "warm_strength": 0.28,
+      "interior": false,
+      "original_size": [
+        2048,
+        1152
+      ],
+      "original_ground_y": 856,
+      "layout_ground_y": 806,
+      "source_sha256": "5009fd6238bf1b8946d34bf7da46a0f2df6c839b10cd4f73b1b04af42bd251af",
+      "planes": [
+        "far.png",
+        "mid.png",
+        "near.png"
+      ],
+      "far_repair": "Reflected adjacent textures under manually marked mid mask. Validated only at camera +/-24 source pixels; not a fully painted hidden world."
+    },
+    "rescue_station_exterior": {
+      "title": "救援站外部",
+      "walk_path": [
+        [
+          155,
+          806
+        ],
+        [
+          1893,
+          806
+        ]
+      ],
+      "spawn_x": 610,
+      "npc_x": [
+        350,
+        1010,
+        1350,
+        1690
+      ],
+      "camera_limit_source_canvas_pixels": 24,
+      "warm_x": 1190,
+      "warm_radius": 620,
+      "warm_strength": 0.26,
+      "interior": false,
+      "original_size": [
+        2048,
+        1152
+      ],
+      "original_ground_y": 895,
+      "layout_ground_y": 806,
+      "source_sha256": "8e7c36fff336e971373f67c6f1a70b771d0020dfe96776ba82b25415031994f7",
+      "planes": [
+        "far.png",
+        "mid.png",
+        "near.png"
+      ],
+      "far_repair": "Reflected adjacent textures under manually marked mid mask. Validated only at camera +/-24 source pixels; not a fully painted hidden world."
+    },
+    "settlement_reception": {
+      "title": "定居区接待处",
+      "walk_path": [
+        [
+          155,
+          806
+        ],
+        [
+          1893,
+          806
+        ]
+      ],
+      "spawn_x": 610,
+      "npc_x": [
+        350,
+        1010,
+        1350,
+        1690
+      ],
+      "camera_limit_source_canvas_pixels": 24,
+      "warm_x": 1070,
+      "warm_radius": 950,
+      "warm_strength": 0.26,
+      "interior": false,
+      "original_size": [
+        2048,
+        1152
+      ],
+      "original_ground_y": 895,
+      "layout_ground_y": 806,
+      "source_sha256": "72fb7190a4d605004a305b17b8e5a9fa0f6802071161dbd142b24e123cdc21c9",
+      "planes": [
+        "far.png",
+        "mid.png",
+        "near.png"
+      ],
+      "far_repair": "Reflected adjacent textures under manually marked mid mask. Validated only at camera +/-24 source pixels; not a fully painted hidden world."
+    },
+    "neutral_market": {
+      "title": "中立集市",
+      "walk_path": [
+        [
+          155,
+          806
+        ],
+        [
+          1893,
+          806
+        ]
+      ],
+      "spawn_x": 610,
+      "npc_x": [
+        350,
+        1010,
+        1350,
+        1690
+      ],
+      "camera_limit_source_canvas_pixels": 24,
+      "warm_x": 1000,
+      "warm_radius": 1500,
+      "warm_strength": 0.35,
+      "interior": false,
+      "original_size": [
+        2048,
+        1152
+      ],
+      "original_ground_y": 854,
+      "layout_ground_y": 806,
+      "source_sha256": "125919a4275279820475d77ca367d9434b4dcbd5b3c87cbb95c1d475eeab4a97",
+      "planes": [
+        "far.png",
+        "mid.png",
+        "near.png"
+      ],
+      "far_repair": "Reflected adjacent textures under manually marked mid mask. Validated only at camera +/-24 source pixels; not a fully painted hidden world."
+    },
+    "camp_interior": {
+      "title": "帐篷内部",
+      "walk_path": [
+        [
+          155,
+          806
+        ],
+        [
+          1893,
+          806
+        ]
+      ],
+      "spawn_x": 610,
+      "npc_x": [
+        350,
+        1010,
+        1350,
+        1690
+      ],
+      "camera_limit_source_canvas_pixels": 24,
+      "warm_x": 1090,
+      "warm_radius": 1700,
+      "warm_strength": 0.4,
+      "interior": true,
+      "original_size": [
+        2048,
+        1152
+      ],
+      "original_ground_y": 856,
+      "layout_ground_y": 806,
+      "source_sha256": "6e298147106c4dcce54a3dea45b06e8a53865bd923734eec9bb8228a9bd2a0c7",
+      "planes": [
+        "far.png",
+        "mid.png",
+        "near.png"
+      ],
+      "far_repair": "Reflected adjacent textures under manually marked mid mask. Validated only at camera +/-24 source pixels; not a fully painted hidden world."
+    },
+    "rescue_station_interior": {
+      "title": "救援站内部",
+      "walk_path": [
+        [
+          155,
+          806
+        ],
+        [
+          1893,
+          806
+        ]
+      ],
+      "spawn_x": 610,
+      "npc_x": [
+        350,
+        1010,
+        1350,
+        1690
+      ],
+      "camera_limit_source_canvas_pixels": 24,
+      "warm_x": 1050,
+      "warm_radius": 1250,
+      "warm_strength": 0.3,
+      "interior": true,
+      "original_size": [
+        2048,
+        1152
+      ],
+      "original_ground_y": 890,
+      "layout_ground_y": 806,
+      "source_sha256": "8035f48a1b45fa7dcc3c39f9206a483413347667888dc247c67eb98b1149fa72",
+      "planes": [
+        "far.png",
+        "mid.png",
+        "near.png"
+      ],
+      "far_repair": "Reflected adjacent textures under manually marked mid mask. Validated only at camera +/-24 source pixels; not a fully painted hidden world."
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "full_source": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\02_新项目_末日车队\\output\\flow\\scenes\\camp_interior_parallax\\full.png",
+  "clean_plate_source": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\02_新项目_末日车队\\output\\flow\\scenes\\camp_interior_parallax\\far.png",
+  "source_size": [
+    1671,
+    941
+  ],
+  "crop": [
+    2,
+    50,
+    1668,
+    764
+  ],
+  "size": [
+    2688,
+    1152
+  ],
+  "original_full_and_far_sizes": [
+    [
+      1672,
+      941
+    ],
+    [
+      1671,
+      941
+    ]
+  ],
+  "aspect": "21:9",
+  "method": "Matched clean plate, hand-annotated alpha masks, shared 7:3 crop and uniform scale",
+  "motion_scales": [
+    0,
+    0,
+    0
+  ],
+  "camera_limit_source_canvas_pixels": 0,
+  "scope": "Independent art scene, not yet wired into gameplay",
+  "presentation": "static_layers"
+}

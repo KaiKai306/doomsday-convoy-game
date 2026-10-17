@@ -1,0 +1,7 @@
+{
+  "archive_root": "E:\\AI_Workspace\\临时文件\\2026-10-16\\convoy-cleanup\\隔离归档",
+  "manifest": "清理文件清单.csv",
+  "files": 17444,
+  "bytes": 7095674726,
+  "note": "Files were moved, not compressed or permanently deleted. Archive is required for restore."
+}

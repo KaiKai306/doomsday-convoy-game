@@ -25,7 +25,7 @@ func _draw() -> void:
 	var s := size
 	if s.x <= 0 or s.y <= 0: return
 	draw_set_transform(Vector2.ZERO, 0, s / Vector2(700, 480))
-	var night := phase >= GameState.Phase.CAMP_ACTION or phase == -1
+	var night := phase in [GameState.Phase.CAMP_ACTION, GameState.Phase.NIGHT_SETTLEMENT, GameState.Phase.STOP_DIALOGUE, GameState.Phase.ENDING, -1]
 	draw_rect(Rect2(0, 0, 700, 480), Color("#0a1425") if night else Color("#263b4b"))
 	for i in range(28):
 		var p := Vector2(fmod(i * 137.0 + 39, 700), fmod(i * 57.0, 185))
@@ -48,7 +48,7 @@ func _draw() -> void:
 	for i in range(11):
 		var x := fmod(i * 92.0 - (clock_time * 65.0 if moving else 0.0) + 9000, 850) - 75
 		draw_line(Vector2(x, 417 - x * 0.19), Vector2(x + 37, 410 - x * 0.19), Color("#b5a27d"), 3)
-	if not moving:
+	if not moving and phase != GameState.Phase.TRAVEL_EVENT:
 		_tent(Vector2(125, 296), Color("#61716a"))
 		_tent(Vector2(211, 256), Color("#485d65"))
 		for i in range(8, 0, -1):
@@ -60,8 +60,6 @@ func _draw() -> void:
 		_polygon([Vector2(297, 309), Vector2(301, 295), Vector2(306, 309)], Color("#ffe0a0"))
 		for i in range(5):
 			_person(Vector2(260 + i * 22, 341 + sin(i * 2.0) * 8), Color("#b7a38a") if i == 0 else Color("#738994"))
-	_car(Vector2(400, 350), Color("#887b60"), true)
-	_car(Vector2(553, 320), Color("#536b73"), false)
 	for i in range(20):
 		var x := fmod(i * 83.0 + 47, 700)
 		var y := 390 + fmod(i * 41.0, 90)

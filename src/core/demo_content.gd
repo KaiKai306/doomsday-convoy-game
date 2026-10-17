@@ -55,7 +55,21 @@ func morning_transactions_for_day(day: int, world_facts: Dictionary) -> Array:
 			"accept": repair_key = "follow"
 			"refuse": repair_key = "conflict"
 	var scout_key := "map" if world_facts.get("route_intel", "") == "accept" else "scout"
-	return [transaction(repair_key), transaction(scout_key)]
+	return [transaction(repair_key), transaction("medical"), transaction(scout_key), transaction("water"), transaction("captain")]
+
+func is_major_route_day(day: int) -> bool:
+	return day in [2, 5, 8, 10]
+
+func major_routes() -> Dictionary:
+	return data.get("major_routes", {})
+
+func major_route_data(route_name: String) -> Dictionary:
+	return major_routes().get(route_name, {})
+
+func major_checkpoint(day: int, route_name: String) -> String:
+	var checkpoints: Array = major_route_data(route_name).get("checkpoints", [])
+	var index := [2, 5, 8, 10].find(day)
+	return str(checkpoints[index]) if index >= 0 and index < checkpoints.size() else ""
 
 func routes() -> Dictionary:
 	return data.get("routes", {})
@@ -86,7 +100,7 @@ func available_camp_actions(day: int) -> Dictionary:
 	return result
 
 func demo_days() -> int:
-	return int(data.get("demo_days", 5))
+	return int(data.get("demo_days", 10))
 
 func stop_name(day: int) -> String:
 	var stops: Array = data.get("stops", ["临时营地"])

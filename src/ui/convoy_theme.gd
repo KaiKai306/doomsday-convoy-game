@@ -3,9 +3,9 @@ extends RefCounted
 
 const INK := Color("#0b1421")
 const PANEL := Color("#111f30")
-const GOLD := Color("#e9b77a")
-const TEXT := Color("#e4e9e9")
-const MUTED := Color("#8fa6b8")
+const GOLD := Color("#e5ae73")
+const TEXT := Color("#e8e7e2")
+const MUTED := Color("#899ba9")
 const BLUE := Color("#79b5c6")
 
 static func box(color: Color, border: Color = Color("#304354"), radius: int = 8) -> StyleBoxFlat:

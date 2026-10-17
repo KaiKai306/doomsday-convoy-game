@@ -1,0 +1,50 @@
+{
+  "title": "定居区接待处",
+  "walk_path": [
+    [
+      475,
+      806
+    ],
+    [
+      2213,
+      806
+    ]
+  ],
+  "spawn_x": 930,
+  "npc_x": [
+    670,
+    1330,
+    1670,
+    2010
+  ],
+  "camera_limit_source_canvas_pixels": 24,
+  "warm_x": 1390,
+  "warm_radius": 950,
+  "warm_strength": 0.26,
+  "interior": false,
+  "original_size": [
+    2688,
+    1152
+  ],
+  "original_ground_y": 895,
+  "layout_ground_y": 806,
+  "source_sha256": "72fb7190a4d605004a305b17b8e5a9fa0f6802071161dbd142b24e123cdc21c9",
+  "planes": [
+    "far.png",
+    "mid.png",
+    "near.png"
+  ],
+  "far_repair": "Original bounded texture repair retained; wing occlusion uses local reflected texture. Camera limited to +/-24 source pixels. Not an independently painted hidden world.",
+  "art_root": "res://assets/locations/atlas_widescreen_20261016/settlement_reception/",
+  "plane_padding": 32,
+  "outpainting_method": "DeepSeek GPT 2.5 painted both sides; original three plates restored pixel-for-pixel in center; wing-only edge color correction.",
+  "preserved_center": [
+    320,
+    0,
+    2048,
+    1152
+  ],
+  "center_plate_pixels_unchanged": true,
+  "image_record": ".docs\\美术\\示例图横版复刻_20261016\\widescreen\\records\\settlement_reception.json",
+  "raw_sha256": "46ea9a98839310b9ffc86aef8a61d239752e671a0c40282b0d5a6967bdc30496"
+}

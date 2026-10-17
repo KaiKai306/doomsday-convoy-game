@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-17",
+  "artifact": "E:\\AI_Workspace\\项目协作空间\\末日车队gamejam游戏\\export\\android\\convoy-v0.6.0-arm64-test.apk",
+  "bytes": 87312269,
+  "sha256": "81d912f4c5de78857ca676b997e75328044c048de177fd08d54e01db9a929f37",
+  "resource_pack_bytes": 61138160,
+  "regressions_match_baseline": true,
+  "runtime_checks": 898,
+  "map_checks": {
+    "checks": 1170,
+    "failures": [],
+    "maps": 53
+  },
+  "source_verification": {
+    "protected_files": 2046,
+    "unchanged_files": 2043,
+    "expected_build_config_changes": [
+      "project.godot",
+      "export_presets.cfg",
+      "tools/mobile_export_resources.json"
+    ],
+    "import_settings_checked": 511,
+    "failures": []
+  },
+  "texture_checks": 511,
+  "excluded_resources": 54
+}

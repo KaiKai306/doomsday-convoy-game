@@ -1,0 +1,105 @@
+{
+  "id": "chen_chuan",
+  "character": "陈川",
+  "action": "左手稳住膝上的小风扇电机，右手用短螺丝刀缓慢拧动同一个螺丝两次，停下用拇指确认外壳，再把刀尖放回原位；全程身体重心稳定，表现熟练、少言的维修习惯。",
+  "source_fact": "第4天医疗站维修专家，正文中边拆风扇边听前桥异响；维修65。",
+  "new_art_design": "38岁男性，结实宽肩、方脸，短寸黑发、淡胡茬，眉眼沉稳直接。穿烟灰色厚工装短外套、赭棕色内衫、深灰耐磨工装裤、棕色厚底工作靴；腰侧旧工具布袋，右手食指有很小的陈旧刮痕。和清瘦许宁明显不同，强壮而专注。",
+  "video_generation": {
+    "character": "陈川",
+    "provider": "local ComfyUI",
+    "endpoint": "http://127.0.0.1:8190",
+    "model": "minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+    "steps": 20,
+    "seed": 26101621,
+    "fps": 24,
+    "frames_requested": 124,
+    "size_requested": [
+      512,
+      768
+    ],
+    "first_and_last_frame": "C:\\Users\\t6275\\AppData\\Local\\Comfy-Desktop\\ComfyUI-Shared\\input\\convoy_characters_20261016\\chen_chuan.png",
+    "prompt": "A locked-off full-body shot of the SAME seated character from the input image. Preserve the exact face, hair, clothes, body proportions, viewing angle and all props. One complete slow, careful action over about five seconds, ending in the exact starting pose. The hips, seated contact height, knees and planted shoes stay in their original screen positions. Only the hands, forearms, a little head movement, natural blinking and subtle breathing move. Stable character scale, no panning, zooming or turning. Keep the entire head, both hands and both shoes within the frame. The background remains a perfectly uniform chroma green RGB(0,255,0), including the space beneath the hips and between the legs. No chair, stool, table, scenery, floor, cast shadow, other person, text, UI or watermark. No object duplication, no disappearing props, no extra fingers or limbs. Silent video.\nAction: His left hand holds the small fan motor firmly on his lap. His right hand slowly turns the short screwdriver twice on the same screw, pauses to check the casing with his thumb, then returns the screwdriver to the original position. The motor and screw stay intact; no part is removed. His calm, economical precision suggests a practiced mechanic.",
+    "prompt_id": "e04d3a7e-b703-44b7-8d34-e0467761c84f",
+    "output": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\其余七人坐姿动画_20261016\\chen_chuan\\source.mp4",
+    "sha256": "55394f150fc405a7a4098a8e6bd56c02abefd65fb42317a7e42708a5f651f5b6",
+    "elapsed_seconds": 466.0
+  },
+  "frames": 123,
+  "fps": 24,
+  "duration_seconds": 5.125,
+  "canvas": [
+    356,
+    599
+  ],
+  "loop": true,
+  "cycle": {
+    "kind": "pinned",
+    "start": 0,
+    "length": 123,
+    "seam": 0.0016963491216301918,
+    "inner_mean_adjacent": 0.001528746448457241,
+    "ratio": 1.1096340556291004,
+    "pin_error": 0.0016403165645897388,
+    "pin_tolerance": 0.005,
+    "period_global": null,
+    "periodicity": null
+  },
+  "green_rgb": [
+    0,
+    255,
+    0
+  ],
+  "source_crop_box": [
+    32,
+    0,
+    488,
+    766
+  ],
+  "scale": 0.7817589576547231,
+  "seat_anchor": {
+    "in_source_still": [
+      350,
+      870
+    ],
+    "in_video": [
+      175.0,
+      435.0
+    ],
+    "in_exported_png": [
+      111.64035087719299,
+      340.1631853785901
+    ],
+    "prefab_origin": [
+      0,
+      0
+    ],
+    "nearest_sole_y_from_prefab_origin": 240,
+    "method": "manual anatomical seat annotation on source, one fixed crop/scale for complete cycle; no individual-frame centering"
+  },
+  "validation": {
+    "same_canvas": true,
+    "transparent_borders": true,
+    "gif_infinite_loop": true,
+    "gif_frames": 123,
+    "gif_ms": 5120,
+    "strong_green_pixels_max": 0,
+    "godot": {
+      "version": "4.7.2",
+      "status": "passed",
+      "checks": [
+        "SpriteFrames load",
+        "123 matching texture sizes",
+        "24 FPS",
+        "infinite loop",
+        "seat-origin prefab instantiate",
+        "AnimatedSprite2D play"
+      ]
+    }
+  },
+  "manual_adapter_stages": [
+    "green GIF compositing/encoding",
+    "shared crop and seat-height scaling",
+    "SpriteFrames and seat-origin prefab"
+  ],
+  "native_frames_archive": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\其余七人坐姿动画_20261016\\chen_chuan\\loop\\cycle"
+}

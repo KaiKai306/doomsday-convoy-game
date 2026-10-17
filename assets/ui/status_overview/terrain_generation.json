@@ -1,0 +1,12 @@
+{
+  "model": "gpt-image-2.5-flare",
+  "reference": "C:/Users/t6275/Desktop/taptap游戏制作/02_新项目_末日车队/示界面/02_状态总览.jpg",
+  "prompt": "以参考图中间深蓝旧地图为美术风格参考，生成一张完整独立的垂直俯视地形地图底图。内容是末日废土山区、公路、河谷、山脊、少量村镇建筑手绘地形，冷暗蓝灰色旧纸与铅笔绘制纹理、细腻真实地形轮廓，平面地图、无透视。细微地图网格，四周旧纸磨损但不要厚边框。地形用于覆盖在游戏路线图后面，路径与地点标记将程序绘制，请删除所有地点标记、定位针、发光圆圈、数字、标签、说明、指南针、文字、UI；不画任何醒目连接线。构图完整均衡，地形不要太亮，和参考图保持一致的专业末日生存手绘地图风格。只出一张地图，无其他面板，无人物头像。",
+  "requested_size": "1024x1024",
+  "status": "saved",
+  "at": "2026-10-13T11:10:37.074Z",
+  "file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\assets\\ui\\status_overview\\terrain_source.png",
+  "bytes": 3561629,
+  "url": "https://img.image2free.com/outputs/u_rwhnr3bnizdht2ojcf3y63/j_otjn4ecae4cia5wlljflxm.png",
+  "completed_at": "2026-10-13T11:12:07.316Z"
+}

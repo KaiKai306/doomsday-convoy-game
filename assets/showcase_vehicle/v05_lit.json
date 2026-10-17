@@ -1,0 +1,108 @@
+{
+  "source": "新车辆追加\\车辆与配件资产\\车辆3D\\V05_深灰越野车_模型.glb",
+  "source_sha256": "d49525832df451294ff63ce8bbd907146f74dca60b936f28bdf9845133b2eeb0",
+  "source_vertices": 1415946,
+  "source_triangles": 2919340,
+  "vertices": 33104,
+  "triangles": 74765,
+  "axes": {
+    "up": "+Y",
+    "front": "+Z",
+    "width": "X",
+    "length": "Z"
+  },
+  "bounds_min": [
+    -1.0157524887295897,
+    0.0,
+    -2.3
+  ],
+  "bounds_max": [
+    1.0157524887295897,
+    2.3618592589715144,
+    2.3
+  ],
+  "dimensions_m": [
+    2.0315049774591794,
+    2.3618592589715144,
+    4.6
+  ],
+  "ground_y": 0.0,
+  "source_to_output_scale": 4.607371313302571,
+  "source_origin_subtracted": [
+    -0.002897773315955157,
+    -0.2568222107421509,
+    0.0008344276996391786
+  ],
+  "vertex_color_transfer": "nearest original surface vertex; RGB unchanged",
+  "max_color_sample_distance_m": 0.026987434959462295,
+  "mean_color_sample_distance_m": 0.005116348230228919,
+  "normal_transfer": "8 nearest high-resolution area-weighted normals; inverse-distance weighting; seed hemisphere dot >= 0.35",
+  "degenerate_faces_removed": 0,
+  "duplicate_faces_removed": 5235,
+  "winding_faces_repaired_from_source_normals": 10087,
+  "normal_length_range": [
+    0.9999999999999997,
+    1.0000000000000002
+  ],
+  "unlit": false,
+  "wheel_contacts": [
+    {
+      "wheel": "left_rear",
+      "lowest_point": [
+        -0.9105704614402027,
+        0.008645559924914841,
+        -1.000519243733056
+      ],
+      "contact_patch_center": [
+        -0.7706336342257624,
+        0.03154329831988739,
+        -1.0097950557247226
+      ]
+    },
+    {
+      "wheel": "left_front",
+      "lowest_point": [
+        -0.8471873822834975,
+        0.04341689585229796,
+        1.5815213213033976
+      ],
+      "contact_patch_center": [
+        -0.8705595868489607,
+        0.0642473201485576,
+        1.5219160219468089
+      ]
+    },
+    {
+      "wheel": "right_rear",
+      "lowest_point": [
+        0.8782369690379267,
+        0.0,
+        -0.9736759783448966
+      ],
+      "contact_patch_center": [
+        0.8714895934653979,
+        0.019376907623091525,
+        -1.0321689716044053
+      ]
+    },
+    {
+      "wheel": "right_front",
+      "lowest_point": [
+        0.8934804917802773,
+        0.007214764532748406,
+        1.5436599003824354
+      ],
+      "contact_patch_center": [
+        0.8257613124893891,
+        0.028116317482870863,
+        1.491845829024738
+      ]
+    }
+  ],
+  "limitations": [
+    "Source remains one fused mesh including its existing roof luggage; add new exterior parts as separate nodes.",
+    "Original vertex colors contain painted/baked shading; this copy adds real material light response without removing that source shading."
+  ],
+  "output_bytes": 2092348,
+  "elapsed_seconds": 5.375
+}

@@ -14,6 +14,10 @@ enum Phase {
 	CAMP_ACTION,
 	NIGHT_SETTLEMENT,
 	ENDING,
+	MEMBER_AFFAIRS,
+	TRAVEL_EVENT,
+	STOP_DIALOGUE,
+	MAJOR_ROUTE_SELECTION,
 }
 
 const DEFAULT_RESOURCES: Dictionary = {
@@ -36,6 +40,8 @@ var tracking: int = 0
 var ending: String = ""
 var camp_position: float = 100.0
 var members: Array = []
+var major_route: String = ""
+var route_history: Array = []
 
 func reset(initial_resources: Dictionary = DEFAULT_RESOURCES, initial_trust: int = 50) -> void:
 	day = 1
@@ -50,6 +56,8 @@ func reset(initial_resources: Dictionary = DEFAULT_RESOURCES, initial_trust: int
 	ending = ""
 	camp_position = 100.0
 	members.clear()
+	major_route = ""
+	route_history.clear()
 
 func initialize_members(initial: Array, trust: int = 50, initial_fatigue: int = 10) -> void:
 	members = initial.duplicate(true)
@@ -58,8 +66,6 @@ func initialize_members(initial: Array, trust: int = 50, initial_fatigue: int = 
 		member["fatigue"] = int(member.get("fatigue", initial_fatigue))
 		member["trust"] = int(member.get("trust", trust))
 		member["last_memory"] = str(member.get("last_memory", "尚未留下对话记录。"))
-		member["maintenance_knowledge"] = bool(member.get("maintenance_knowledge", false))
-		member["learned_from"] = str(member.get("learned_from", ""))
 
 func member_named(member_name: String) -> Dictionary:
 	for member in members:

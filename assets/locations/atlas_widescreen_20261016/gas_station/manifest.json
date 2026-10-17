@@ -1,0 +1,78 @@
+{
+  "title": "废弃加油站",
+  "view": "side",
+  "camera_limit_source_canvas_pixels": 25,
+  "walk_path": [
+    [
+      200,
+      1030
+    ],
+    [
+      1000,
+      1030
+    ],
+    [
+      1600,
+      1010
+    ],
+    [
+      2510,
+      1020
+    ]
+  ],
+  "spawn_x": 1150,
+  "npc_x": [
+    680,
+    930,
+    1250,
+    1480,
+    1690,
+    1960,
+    2230
+  ],
+  "blockers": [
+    [
+      0,
+      310,
+      900,
+      650
+    ]
+  ],
+  "parking_areas_canvas_pixels": [
+    [
+      1010,
+      600,
+      640,
+      355
+    ],
+    [
+      1790,
+      600,
+      640,
+      355
+    ]
+  ],
+  "art_root": "res://assets/locations/atlas_widescreen_20261016/gas_station/",
+  "plate_files": [
+    "01_far.png",
+    "02_mid.png",
+    "03_near.png"
+  ],
+  "original_size": [
+    2688,
+    1152
+  ],
+  "plane_padding": 32,
+  "warm_x": 1250,
+  "outpainting_method": "Existing native 21:9 plates preserved; no new image generation required.",
+  "preserved_center": [
+    0,
+    0,
+    2688,
+    1152
+  ],
+  "center_plate_pixels_unchanged": true,
+  "image_record": null,
+  "raw_sha256": null,
+  "far_repair": "Original bounded texture repair retained; wing occlusion uses local reflected texture. Camera limited to +/-24 source pixels. Not an independently painted hidden world."
+}

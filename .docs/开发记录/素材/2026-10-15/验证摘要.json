@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-15",
+  "version": "0.6.0",
+  "engine": "4.7.2",
+  "manuscript_sha256": "60cd9933ede62d114da0ca99e6bf0ff297e67f77764ec520683b589b5e9b2d80",
+  "manuscript_hash_matches": true,
+  "command": "tools/check_final_game.ps1 -GraphicalUI",
+  "rules_checks": 40,
+  "system_checks": 36,
+  "regression_checks": 56,
+  "ui_checks": 33,
+  "graphical_ui_checks": 33,
+  "endings": 17,
+  "replay_commands": 1733,
+  "failures": 0,
+  "fixture": "tests/fixtures/final_endings_paths.json",
+  "content_counts": {
+    "modules": 30,
+    "endings": 17,
+    "epilogues": 6,
+    "cards": 109,
+    "days": 20
+  },
+  "limitations": [
+    "非全部事件选项与随机组合的穷尽测试",
+    "未完成安卓构建与真机验收",
+    "未完成正式美术及平衡试玩"
+  ]
+}

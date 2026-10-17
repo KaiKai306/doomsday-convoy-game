@@ -1,0 +1,39 @@
+{
+  "canvas": [
+    3168,
+    1344
+  ],
+  "layers": [
+    "01_bg_sky.png",
+    "91_L2_mountain.png",
+    "95_L3_camp_flat.png",
+    "vehicle_shadow.png",
+    "vehicle_truck.png",
+    "93_L4_fore.png"
+  ],
+  "sky": "等比铺满、顶部对齐；源图裁切范围 (0, 0, 2112, 896)",
+  "mountain_offset": [
+    0,
+    -200
+  ],
+  "camp_offset": [
+    0,
+    0
+  ],
+  "foreground_offset": [
+    0,
+    0
+  ],
+  "vehicle_position": [
+    22,
+    450
+  ],
+  "vehicle_size": [
+    720,
+    445
+  ],
+  "vehicle_source": "https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/CesiumMilkTruck",
+  "vehicle_author": "Cesium",
+  "vehicle_license": "CC-BY-4.0; trademark excluded, Cesium logos removed in derived render",
+  "background_layout": "原组装成品；未采用 4224 像素加宽、地面镜像延展或前景移动方案"
+}

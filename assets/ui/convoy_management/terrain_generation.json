@@ -1,0 +1,13 @@
+{
+  "model": "gpt-image-2.5-sunburst",
+  "reference": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\assets\\ui\\convoy_management\\route_reference.png",
+  "prompt": "以附件地图为真实图像美术参考，绘制一张完整独立的末日生存区域俯瞰地形底图，16:9。接近垂直俯瞰的手绘写实地图，冷灰蓝群山、荒芜峡谷、绕山公路和两条分叉的废弃道路，左下有小型废弃营地和暖火光，中上偏右约65%宽30%高处有废弃加油站小建筑，左上远处有荒废城镇，右下有少量未知建筑，河谷贯穿画面，稀疏针叶林、破碎岩石、精细地表笔触，冷蓝月夜与克制暖橙灯光，清晰可辨地形层次，质感和附件一致。地图填满整幅，不要把右侧预留为黑色面板，所有地形完整补齐。删除全部UI、文字、数字、标签、边框、指南针、图标、标记、车辆、红蓝路径及虚线，导航连接线与地点标记将由游戏程序绘制。禁止水印，禁止地图上任何文字，禁止面板或黑色矩形。",
+  "requested_size": "2048x1152",
+  "status": "saved",
+  "at": "2026-10-16T07:34:08.774Z",
+  "reference_sha256": "ce94e21da1f80bf269783ffb8edcb6c5c41921ed3ebae0586b09d2d8e86ffac8",
+  "output": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\assets\\ui\\convoy_management\\terrain_source.png",
+  "bytes": 5603169,
+  "sha256": "73fd4d862d151409e8af92c8c39a15381b1eb2dae43ae07c9d2b00fadd125d76",
+  "completed_at": "2026-10-16T07:34:58.147Z"
+}

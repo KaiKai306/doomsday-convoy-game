@@ -1,0 +1,36 @@
+{
+  "camp": {
+    "title":"荒原营地", "view":"side", "camera_limit_source_canvas_pixels":25,
+    "walk_path":[[150,910],[1050,910],[1500,925],[1930,925],[2480,920]],
+    "spawn_x":620, "npc_x":[1000,1250,1480,1910,2140,2320,2430],
+    "blockers":[[1510,610,400,250],[2000,370,640,510]],
+    "parking_areas_canvas_pixels":[[120,510,590,350],[760,510,590,350]]
+  },
+  "camp_interior": {
+    "title":"帐篷内部", "view":"side", "camera_limit_source_canvas_pixels":0,
+    "walk_path":[[450,1010],[1100,1020],[1900,1020],[2300,1010]],
+    "spawn_x":600, "npc_x":[850,1080,1320,1570,1800,2040,2220],
+    "blockers":[[640,660,1510,310]], "parking_areas_canvas_pixels":[]
+  },
+  "gas_station": {
+    "title":"废弃加油站", "view":"side", "camera_limit_source_canvas_pixels":25,
+    "walk_path":[[200,1030],[1000,1030],[1600,1010],[2510,1020]],
+    "spawn_x":1150, "npc_x":[680,930,1250,1480,1690,1960,2230],
+    "blockers":[[0,310,900,650]],
+    "parking_areas_canvas_pixels":[[1010,600,640,355],[1790,600,640,355]]
+  },
+  "tunnel_entrance": {
+    "title":"封堵隧道口", "view":"side", "camera_limit_source_canvas_pixels":25,
+    "walk_path":[[200,1040],[1300,1040],[2260,1040]],
+    "spawn_x":1280, "npc_x":[500,740,1000,1510,1750,1980,2180],
+    "blockers":[[2320,650,368,370]],
+    "parking_areas_canvas_pixels":[[537,565,644,421],[1589,565,644,421]]
+  },
+  "snow_camp": {
+    "title":"北部雪地营地", "view":"side", "camera_limit_source_canvas_pixels":25,
+    "walk_path":[[140,1035],[1050,1048],[1580,1048],[2540,1035]],
+    "spawn_x":740, "npc_x":[800,1010,1210,1480,1700,1890,2100],
+    "blockers":[[1130,760,350,235],[750,620,340,340],[1490,600,480,360]],
+    "parking_areas_canvas_pixels":[[76,565,579,408],[2062,565,579,408]]
+  }
+}

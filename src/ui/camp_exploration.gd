@@ -164,7 +164,6 @@ func _draw() -> void:
 	# The camp is viewed from the side; its horizon stays in the lower third.
 	draw_set_transform(Vector2(-camera_x, 0))
 	_landmark(floor_y)
-	_vehicle(Vector2(250, floor_y - 8))
 	_tent(Vector2(920, floor_y - 12))
 	_supply(Vector2(1230, floor_y - 10))
 	for i in range(25):

@@ -1,0 +1,56 @@
+{
+  "character": "许宁",
+  "pose": "seated",
+  "kind": "static triangle mesh; no skeleton or animation",
+  "source": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\许宁角色姿势样张_20261016\\seated_raw.glb",
+  "source_triangles": 1558072,
+  "triangles": 159998,
+  "vertices": 77871,
+  "green_spill_vertices_corrected": 1896,
+  "vertex_color_grade": "pow(rgb, 0.62) to ease dark baked scan colors for neutral lighting; original retained in raw source",
+  "dimensions_m": [
+    0.77411729016909,
+    1.226449035455894,
+    1.0982199329960067
+  ],
+  "bounds_min": [
+    -0.387058645084545,
+    0.0,
+    -0.2157541569527734
+  ],
+  "bounds_max": [
+    0.387058645084545,
+    1.226449035455894,
+    0.8824657760432333
+  ],
+  "source_yaw_degrees": -90.0,
+  "source_pitch_degrees": 0,
+  "static_upper_body_pitch_degrees": 27.0,
+  "source_to_meters_scale": 1.2181073945563665,
+  "source_origin": [
+    0.007856213591405786,
+    -0.5024776431056773,
+    0.002190677311263961
+  ],
+  "ground_y": 0,
+  "seat_height_m": 0.46,
+  "seat_z_shift_m": 0.33,
+  "anchors": {
+    "GroundAnchor": [
+      0,
+      0,
+      0
+    ],
+    "SeatAnchor": [
+      0,
+      0.46,
+      0
+    ]
+  },
+  "chair_in_mesh": false,
+  "limitations": [
+    "Single-image reconstruction; unseen surfaces inferred",
+    "Static pose variants, no skeletal deformation",
+    "Small face and finger details require visual approval"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "source": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\02_新项目_末日车队\\output\\flow\\scenes\\camp_21x9\\camp_2026-10-13T05-00-34.png",
+  "source_size": [
+    2048,
+    1152
+  ],
+  "size": [
+    2688,
+    1152
+  ],
+  "ratio": "21:9",
+  "extension": "640px mirrored clear landscape at left",
+  "layers": [
+    "01_far_sky_mountains.png",
+    "02_mid_camp.png",
+    "03_near_ground.png"
+  ],
+  "motion_scales": [
+    0.12,
+    0.5,
+    1.0
+  ],
+  "reconstruction": "Neighbouring texture repair; bounded camera movement only"
+}

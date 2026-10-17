@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://src/ui/location_three_parallax.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/locations/biomes_20261016/desert_scrapyard/far.png" id="2"]
+[ext_resource type="Texture2D" path="res://assets/locations/biomes_20261016/desert_scrapyard/mid.png" id="3"]
+[ext_resource type="Texture2D" path="res://assets/locations/biomes_20261016/desert_scrapyard/near.png" id="4"]
+
+[node name="desert_scrapyard" type="Node2D"]
+script = ExtResource("1")
+canvas_size = Vector2(2048, 1152)
+cover_viewport = true
+camera_limit = 24.0
+auto_preview = false
+
+[node name="World" type="Node2D" parent="."]
+
+[node name="Far" type="Parallax2D" parent="World"]
+scroll_scale = Vector2(0.12, 0)
+ignore_camera_scroll = true
+follow_viewport = false
+
+[node name="Art" type="Sprite2D" parent="World/Far"]
+texture = ExtResource("2")
+centered = false
+
+[node name="Mid" type="Parallax2D" parent="World"]
+scroll_scale = Vector2(0.5, 0)
+ignore_camera_scroll = true
+follow_viewport = false
+
+[node name="Art" type="Sprite2D" parent="World/Mid"]
+texture = ExtResource("3")
+centered = false
+
+[node name="Near" type="Parallax2D" parent="World"]
+scroll_scale = Vector2(1.0, 0)
+ignore_camera_scroll = true
+follow_viewport = false
+
+[node name="Art" type="Sprite2D" parent="World/Near"]
+texture = ExtResource("4")
+centered = false

@@ -1,0 +1,120 @@
+{
+  "id": "abandoned_clinic",
+  "title": "废弃医疗站",
+  "gameplay": "第4天许宁/陈川招募与医疗线索",
+  "source_full": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\02_新项目_末日车队\\output\\flow\\scenes\\gpt25_style_revision\\abandoned_clinic\\full.png",
+  "source_clean_plate": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\02_新项目_末日车队\\output\\flow\\scenes\\gpt25_style_revision\\abandoned_clinic\\far.png",
+  "aligned_clean_plate": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\02_新项目_末日车队\\output\\flow\\scenes\\gpt25_style_revision\\abandoned_clinic\\far.png",
+  "alignment": "Same native dimensions. Generated plate only repairs masked occlusion; exposed original pixels retained. Not a claim of globally identical landmarks.",
+  "source_sha256": "8f4a8c824764f6459f1fedeee719a0d350db6d08d8e4a4144a18c02ebb8411d6",
+  "source_size": [
+    1916,
+    821
+  ],
+  "crop": [
+    2,
+    1,
+    1913,
+    820
+  ],
+  "size": [
+    2688,
+    1152
+  ],
+  "aspect_method": "Shared 21:9 crop and uniform scale; no stretching or mirroring",
+  "mask_config": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\GPT25画风重制\\masks\\abandoned_clinic.json",
+  "motion_scales": [
+    0.12,
+    0.5,
+    1.0
+  ],
+  "camera_limit_source_canvas_pixels": 25,
+  "parking_areas_canvas_pixels": [
+    [
+      152,
+      603,
+      633,
+      288
+    ],
+    [
+      1980,
+      608,
+      556,
+      284
+    ]
+  ],
+  "vehicle_mounts": {
+    "VehicleMount": [
+      468,
+      891
+    ],
+    "VehicleMountRight": [
+      2258,
+      892
+    ]
+  },
+  "interaction_anchors": {
+    "ClinicDoor": [
+      1505,
+      944
+    ]
+  },
+  "view": "side",
+  "walk_path": [
+    [
+      419,
+      927
+    ],
+    [
+      911,
+      941
+    ],
+    [
+      1404,
+      948
+    ],
+    [
+      1966,
+      948
+    ],
+    [
+      2501,
+      934
+    ]
+  ],
+  "spawn_x": 630,
+  "npc_x": [
+    1010,
+    1193,
+    1376,
+    1559,
+    1741,
+    1924,
+    2107
+  ],
+  "blockers": [
+    [
+      740,
+      561,
+      1512,
+      228
+    ],
+    [
+      -3,
+      997,
+      338,
+      156
+    ],
+    [
+      2543,
+      1032,
+      149,
+      121
+    ]
+  ],
+  "walk_method": "Inspected continuous ground lane in front of parked vehicles and props; tap projects to lane",
+  "scope": "Gameplay presentation selected by actual world state through location_catalog.gd",
+  "art_revision": "gpt25_style_revision",
+  "generation_model": "gpt-image-2.5-flare",
+  "travel_limit": ""
+}

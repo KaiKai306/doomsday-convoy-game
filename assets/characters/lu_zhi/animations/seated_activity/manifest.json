@@ -1,0 +1,134 @@
+{
+  "id": "lu_zhi",
+  "character": "陆芷",
+  "action": "全程自然低头，颈部前屈、下巴收下，双眼始终专注左手腕和布条。右手将原有短布头轻轻收紧并压平，左手缓慢张合一次测试灵活度，再回到初始手势。只整理已有布条，不拆下、不增加缠绕层；头不抬起、不看前方或镜头，干脆而克制。",
+  "source_fact": "散队车队事件后自愿同行的女性，正文重新缠紧脏布、会修东西；维修55。",
+  "new_art_design": "33岁女性，精干结实的体型，略方的脸，晒成浅麦色的肤色，黑发剪到下颌并别到耳后，低头垂眼、专注手腕缠布，坚韧而克制。穿暗铁锈橙色卷袖工装外套、灰白背心、炭灰工装裤、深褐工作靴；左腕缠着旧米灰布条，腰侧放小扳手。",
+  "video_generation": {
+    "character": "陆芷",
+    "provider": "local ComfyUI",
+    "endpoint": "http://127.0.0.1:8190",
+    "model": "minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+    "turbo_8step_lora": true,
+    "steps": 8,
+    "seed": 26101626,
+    "fps": 24,
+    "frames_requested": 124,
+    "size_requested": [
+      512,
+      768
+    ],
+    "first_and_last_frame": "C:\\Users\\t6275\\AppData\\Local\\Comfy-Desktop\\ComfyUI-Shared\\input\\convoy_head_down_correction_20261016\\lu_zhi.png",
+    "prompt": "Locked camera, full body, same seated character, same identity, hairstyle, clothing, proportions and props as the reference. Throughout every frame her HEAD STAYS BOWED, chin lowered toward her chest, both eyes continuously focused DOWN on her own hands and the object on her lap. This includes the opening, all intermediate frames and the closing frame. Quiet concentration. The neck remains flexed and the face remains angled down. Only hands, forearms, natural downward blinking and subtle breathing move. One slow compact action, then return to the identical starting hand pose in about five seconds. Hips, seat contact height, knees and planted shoes stay fixed. Stable scale and framing, full head, hands and shoes visible. Completely uniform pure green RGB(0,255,0) background. No chair, table, floor, cast shadow, scenery, other person, writing or watermark. Keep the same two hands and the same props with stable anatomy and materials. Silent video.\nAction: Her bowed head and downward eyes remain trained on the wrapped LEFT wrist for the entire clip. Her right fingertips gently tighten and smooth the same short existing cloth end on her left wrist. Her left hand slowly opens and closes once, then both hands return to their initial positions. The same wrap stays in place with the same number of layers. Small, practical, resilient movement while watching her work continuously.",
+    "prompt_id": "5bb71932-4e32-4a95-a758-43a369ae6acd",
+    "output": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\陆芷白蜡低头修正_20261016\\lu_zhi\\source.mp4",
+    "sha256": "952ea36f3ffde25ce6c9502e4d9fe71f2fa899da0994736f1f0c6f9dcb3db925",
+    "elapsed_seconds": 225.5
+  },
+  "frames": 123,
+  "fps": 24,
+  "duration_seconds": 5.125,
+  "canvas": [
+    338,
+    597
+  ],
+  "loop": true,
+  "cycle": {
+    "kind": "pinned",
+    "start": 0,
+    "length": 123,
+    "seam": 0.0018864058656618,
+    "inner_mean_adjacent": 0.001478102640248835,
+    "ratio": 1.2762346905382889,
+    "pin_error": 0.0018683808157220483,
+    "pin_tolerance": 0.005,
+    "period_global": null,
+    "periodicity": null
+  },
+  "green_rgb": [
+    0,
+    255,
+    0
+  ],
+  "source_crop_box": [
+    53,
+    14,
+    478,
+    764
+  ],
+  "scale": 0.7960199004975125,
+  "seat_anchor": {
+    "in_source_still": [
+      350,
+      875
+    ],
+    "in_video": [
+      175.0,
+      437.5
+    ],
+    "in_exported_png": [
+      97.02588235294118,
+      337.106
+    ],
+    "prefab_origin": [
+      0,
+      0
+    ],
+    "nearest_sole_y_from_prefab_origin": 240,
+    "method": "manual anatomical seat annotation on source, one fixed crop/scale for complete cycle; no individual-frame centering"
+  },
+  "validation": {
+    "same_canvas": true,
+    "transparent_borders": true,
+    "gif_infinite_loop": true,
+    "gif_frames": 123,
+    "gif_ms": 5120,
+    "strong_green_pixels_max": 3,
+    "godot": {
+      "version": "4.7.2",
+      "status": "passed",
+      "checks": [
+        "SpriteFrames load",
+        "123 matching texture sizes",
+        "24 FPS",
+        "infinite loop",
+        "seat-origin prefab instantiate",
+        "AnimatedSprite2D play"
+      ]
+    }
+  },
+  "manual_adapter_stages": [
+    "green GIF compositing/encoding",
+    "shared crop and seat-height scaling",
+    "SpriteFrames and seat-origin prefab"
+  ],
+  "native_frames_archive": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\陆芷白蜡低头修正_20261016\\lu_zhi\\loop\\cycle",
+  "revision": {
+    "reason": "User correction: both characters must look down at their handwork",
+    "work_dir": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\陆芷白蜡低头修正_20261016\\lu_zhi",
+    "source_image_sha256": "3849b5d1781700ae23c5bd1ba2d678353cc1fd6eaf86dc55f2ea48374ef6a619",
+    "source_video_sha256": "952ea36f3ffde25ce6c9502e4d9fe71f2fa899da0994736f1f0c6f9dcb3db925",
+    "gaze": "head bowed and eyes downward throughout",
+    "visual_review": {
+      "status": "passed",
+      "observed": "All 123 frames retain bowed head and lowered eyes toward the left wrist and working right hand; no upward or camera glance. Right hand draws and smooths the existing short cloth end, left hand briefly flexes, and hands return. Eight full-body and hand-detail samples retain the same wrap, wrench, complete shoes and stable seated placement. No chair or background scene. Three strong-green foreground edge pixels at most; no visible green fringe at delivered scale.",
+      "all_head_frames": 123,
+      "detail_sample_frames": [
+        0,
+        17,
+        35,
+        52,
+        70,
+        87,
+        105,
+        122
+      ],
+      "evidence": [
+        "lu_zhi/all_123_head_frames_green.png",
+        "lu_zhi/head_detail_green.png",
+        "lu_zhi/hands_detail_green.png",
+        "staged/assets/characters/lu_zhi/animations/seated_activity/preview_green.png"
+      ]
+    }
+  }
+}

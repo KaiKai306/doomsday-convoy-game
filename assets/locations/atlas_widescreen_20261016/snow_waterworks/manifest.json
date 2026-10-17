@@ -1,0 +1,52 @@
+{
+  "title": "雪地乡镇水务维护站",
+  "art_root": "res://assets/locations/atlas_widescreen_20261016/snow_waterworks/",
+  "walk_path": [
+    [
+      475,
+      806
+    ],
+    [
+      2213,
+      806
+    ]
+  ],
+  "spawn_x": 930,
+  "npc_x": [
+    670,
+    1330,
+    1670,
+    2010
+  ],
+  "camera_limit_source_canvas_pixels": 24,
+  "warm_x": 2020,
+  "warm_radius": 700,
+  "warm_strength": 0.35,
+  "interior": false,
+  "biome": "snow",
+  "original_size": [
+    2688,
+    1152
+  ],
+  "layout_ground_y": 806,
+  "original_ground_y": 789,
+  "source_path": ".docs\\美术\\地貌与地点补齐_20261016\\variants\\raw\\snow_waterworks.png",
+  "source_sha256": "02f8ef12c1bb53f912e353f828b756574407d39a609f8c164ba62923a9c7d986",
+  "planes": [
+    "far.png",
+    "mid.png",
+    "near.png"
+  ],
+  "far_repair": "Original bounded texture repair retained; wing occlusion uses local reflected texture. Camera limited to +/-24 source pixels. Not an independently painted hidden world.",
+  "plane_padding": 32,
+  "outpainting_method": "DeepSeek GPT 2.5 painted both sides; original three plates restored pixel-for-pixel in center; wing-only edge color correction.",
+  "preserved_center": [
+    320,
+    0,
+    2048,
+    1152
+  ],
+  "center_plate_pixels_unchanged": true,
+  "image_record": ".docs\\美术\\示例图横版复刻_20261016\\widescreen\\records\\snow_waterworks.json",
+  "raw_sha256": "99879c31e3e95a706a778070ea08912ed92caf91f9c3b3e4a32b67e9bb92bf78"
+}

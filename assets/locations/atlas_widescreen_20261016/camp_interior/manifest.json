@@ -1,0 +1,50 @@
+{
+  "title": "帐篷内部",
+  "walk_path": [
+    [
+      475,
+      806
+    ],
+    [
+      2213,
+      806
+    ]
+  ],
+  "spawn_x": 930,
+  "npc_x": [
+    670,
+    1330,
+    1670,
+    2010
+  ],
+  "camera_limit_source_canvas_pixels": 0,
+  "warm_x": 1410,
+  "warm_radius": 1700,
+  "warm_strength": 0.4,
+  "interior": true,
+  "original_size": [
+    2688,
+    1152
+  ],
+  "original_ground_y": 856,
+  "layout_ground_y": 806,
+  "source_sha256": "6e298147106c4dcce54a3dea45b06e8a53865bd923734eec9bb8228a9bd2a0c7",
+  "planes": [
+    "far.png",
+    "mid.png",
+    "near.png"
+  ],
+  "far_repair": "Original bounded texture repair retained; wing occlusion uses local reflected texture. Camera limited to +/-24 source pixels. Not an independently painted hidden world.",
+  "art_root": "res://assets/locations/atlas_widescreen_20261016/camp_interior/",
+  "plane_padding": 32,
+  "outpainting_method": "DeepSeek GPT 2.5 painted both sides; original three plates restored pixel-for-pixel in center; wing-only edge color correction.",
+  "preserved_center": [
+    320,
+    0,
+    2048,
+    1152
+  ],
+  "center_plate_pixels_unchanged": true,
+  "image_record": ".docs\\美术\\示例图横版复刻_20261016\\widescreen\\records\\camp_interior.json",
+  "raw_sha256": "29fe2abbfa63da8a9db274f185e932e00bbf031889a2d0ae2834f4c8420ffd86"
+}

@@ -1,0 +1,70 @@
+{
+  "character": "许宁",
+  "action": "坐姿整理医疗包",
+  "source_file": "C:\\Users\\t6275\\Desktop\\e124e49b-aa35-4f05-9ac9-1d0b640a13b8.mp4",
+  "source_sha256": "f9ad3e6054c8cbc6c26b00ffb71fabcc7201600ff3cd842473aed5debfc5e9d4",
+  "source_size": [
+    896,
+    1184
+  ],
+  "source_fps": 24,
+  "cycle": {
+    "kind": "pinned",
+    "start": 0,
+    "length": 123,
+    "seam": 0.0013992779422551394,
+    "inner_mean_adjacent": 0.0006313081248663366,
+    "ratio": 2.2164738376389512,
+    "pin_error": 0.0013814179692417383,
+    "pin_tolerance": 0.005,
+    "period_global": null,
+    "periodicity": null
+  },
+  "frames": 123,
+  "fps": 24,
+  "duration_seconds": 5.125,
+  "loop": true,
+  "canvas": [
+    340,
+    640
+  ],
+  "green_rgb": [
+    0,
+    255,
+    0
+  ],
+  "native_cycle_archive": ".docs/美术/许宁整理医疗包动画_20261016/loop/cycle",
+  "packaging": {
+    "method": "one union crop for every frame, uniform downscale via sprite-gen resize_cell",
+    "source_crop_box": [
+      115,
+      53,
+      706,
+      1165
+    ],
+    "scale": 0.5755395683453237,
+    "geometry_stabilization": "none; source movement retained",
+    "seat_anchor": "scene placement deferred; fixed canvas preserves the source seat position",
+    "handmade_stages": [
+      "GIF green compositing/encoding and Godot SpriteFrames adapter; no manual loop repair"
+    ]
+  },
+  "validation": {
+    "gif_frames": 123,
+    "gif_duration_ms": 5120,
+    "gif_infinite_loop": true,
+    "gif_corner_rgb": [
+      0,
+      255,
+      0
+    ],
+    "png_same_size": true,
+    "transparent_canvas_borders": true,
+    "strong_green_pixels_per_frame_max": 1
+  },
+  "files": {
+    "gif_green": "xu_ning_seated_medical_bag_green.gif",
+    "sprite_frames": "seated_medical_bag.tres",
+    "png_frames": "frames/"
+  }
+}

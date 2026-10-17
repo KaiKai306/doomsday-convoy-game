@@ -1,0 +1,58 @@
+{
+  "characters": [
+    {
+      "id": "chen_chuan",
+      "name": "陈川",
+      "asset_dir": "assets/characters/chen_chuan/animations/seated_activity"
+    },
+    {
+      "id": "du_heng",
+      "name": "杜衡",
+      "asset_dir": "assets/characters/du_heng/animations/seated_activity"
+    },
+    {
+      "id": "lin_yue",
+      "name": "林悦",
+      "asset_dir": "assets/characters/lin_yue/animations/seated_activity"
+    },
+    {
+      "id": "cen_bai",
+      "name": "岑柏",
+      "asset_dir": "assets/characters/cen_bai/animations/seated_activity"
+    },
+    {
+      "id": "xu_wei",
+      "name": "许卫",
+      "asset_dir": "assets/characters/xu_wei/animations/seated_activity"
+    },
+    {
+      "id": "lu_zhi",
+      "name": "陆芷",
+      "asset_dir": "assets/characters/lu_zhi/animations/seated_activity"
+    },
+    {
+      "id": "bai_la",
+      "name": "白蜡",
+      "asset_dir": "assets/characters/bai_la/animations/seated_activity"
+    }
+  ],
+  "frames": 123,
+  "fps": 24,
+  "duration_seconds": 5.125,
+  "green_rgb": [
+    0,
+    255,
+    0
+  ],
+  "chair_included": false,
+  "scene_integration": "not performed",
+  "godot_validation": "passed",
+  "head_down_revision": {
+    "characters": [
+      "lu_zhi",
+      "bai_la"
+    ],
+    "source_records": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\陆芷白蜡低头修正_20261016",
+    "reviewed_frames_per_character": 123
+  }
+}

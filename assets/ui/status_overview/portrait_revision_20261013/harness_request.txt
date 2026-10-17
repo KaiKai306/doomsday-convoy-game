@@ -1,0 +1,12 @@
+Codex 联动任务：用户已明确授权通过 DeepSeek Harness 生成并统一替换末日车队五人头像。请你负责参考图驱动的头像生成，Codex 负责后续游戏替换及验证；不要修改游戏源码或当前正式头像。
+先用 read_image 实际查看下列五张四视图（真实图片），以它们为最终角色身份标准：
+C:/Users/t6275/Desktop/taptap游戏制作/02_新项目_末日车队/output/settings/四视图/output/主角_长途运输司机_车队队长_四视图.png
+C:/Users/t6275/Desktop/taptap游戏制作/02_新项目_末日车队/output/settings/四视图/output/老张_机械师_四视图.png
+C:/Users/t6275/Desktop/taptap游戏制作/02_新项目_末日车队/output/settings/四视图/output/艾琳_医生_四视图.png
+C:/Users/t6275/Desktop/taptap游戏制作/02_新项目_末日车队/output/settings/四视图/output/阿杰_侦察员_四视图.png
+C:/Users/t6275/Desktop/taptap游戏制作/02_新项目_末日车队/output/settings/四视图/output/索菲亚_后勤员_四视图.png
+生成五张独立的正面肩胸头像：captain_source.png、mechanic_source.png、medic_source.png、scout_source.png、quartermaster_source.png。输出目录：C:/Users/t6275/Desktop/taptap游戏制作/github游戏档案/assets/ui/status_overview/portrait_revision_20261013/。
+统一构图：头顶完整且有余量，正面肩胸像，面部居中，相同镜头和头部占比，深蓝黑背景，细腻写实游戏美术，柔和冷色主光和克制暖色侧光，不带文字、网格或UI。最好每张1024×1024，服务不支持时保留实际原生尺寸并记录。
+严格保留参考里的脸型、年龄、体型、头发、服装、道具，不能重新设计：主角成熟中年短黑发男性，深灰旧司机夹克内棕红衬衫、项坠；老张年长宽厚男性，灰白头发胡须，旧帽护目镜、油污工装；艾琳成年女性，中分低发髻、无帽、深灰医护夹克和白高领、袖子红十字；阿杰年轻瘦削男性，露出短黑发和整张脸，兜帽放下，旧卡其外套、望远镜；索菲亚丰满成年女性，深色卷发高马尾、头顶眼镜、绿灰拼色工装，不戴帽。
+请使用已验证的 gpt-image-2.5-flare 图片编辑接口（参考脚本 C:/Users/t6275/Desktop/taptap游戏制作/02_新项目_末日车队/视差背景/tools/gen_camp_21x9.mjs）。每次必须通过 multipart image 字段上传该人物真实四视图；不能用纯文字生成，也不能只参考旧状态总览。可以裁出参考图前视上半身和面部特写拼成单人物参考以强化身份，但保留原参考路径。不要打印密钥。五个请求可并行执行。
+检查生成图与参考身份是否一致，保存生成记录 manifest.json（模型、真实参考、提示词、输出、实际尺寸、结果），完成后写入 READY.json（五个输出绝对路径）。若失败写 ERROR.json，避免不确定状态重复提交。你仅生成素材，正式替换由 Codex 执行。无需再询问用户，开始执行。

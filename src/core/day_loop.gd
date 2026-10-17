@@ -16,6 +16,8 @@ var travel_resolved := false
 var random := RandomNumberGenerator.new()
 var last_error := ""
 var conversation_open := false
+var morning_resolutions: Array = []
+var travel_event_text := ""
 
 func _init(game_state: GameState, demo_content: DemoContent) -> void:
 	state = game_state
@@ -29,6 +31,7 @@ func start_new_game() -> void:
 	travel_style = "低噪音"
 	event_log.clear()
 	next_day_effects.clear()
+	morning_resolutions.clear()
 	state.camp_position = float(content.camp_data().get("entry_position", 100.0))
 	_begin_morning()
 
@@ -38,11 +41,12 @@ func _begin_morning() -> void:
 	travel_progress = 0.0
 	travel_resolved = false
 	conversation_open = false
+	travel_event_text = ""
+	morning_resolutions.clear()
 	var facts := state.world_facts.duplicate(true)
-	if int(state.member_named("老赵").trust) <= 30: facts["repair_priority"] = "refuse"
+	if int(state.member_named("老张").trust) <= 30: facts["repair_priority"] = "refuse"
 	daily_transactions = content.morning_transactions_for_day(state.day, facts)
-	if int(state.resources.water) < content.daily_cost("water") * 2:
-		daily_transactions.push_front(content.transaction("water"))
+
 	var patient := medical_target()
 	if not patient.is_empty() and (int(patient.health) <= 75 or int(patient.fatigue) >= 35):
 		var request := content.transaction("medical")
@@ -52,9 +56,9 @@ func _begin_morning() -> void:
 		request.responses.accept["health"] = 20
 		request.responses.accept.effect = "药品 -1，%s健康 +20、疲劳 -15，全队信任 +3" % patient.name
 		request.responses.refuse.effect = "全队信任 -4，保留药品；%s伤势未处理" % patient.name
-		daily_transactions.push_front(request)
+		for i in range(daily_transactions.size()):
+			if daily_transactions[i].speaker == "艾琳": daily_transactions[i] = request
 	_sort_transactions()
-	daily_transactions = daily_transactions.slice(0, 3)
 	state.set_phase(GameState.Phase.MORNING)
 
 func prepare(action: String) -> bool:
@@ -77,11 +81,12 @@ func prepare(action: String) -> bool:
 
 func finish_preparation() -> bool:
 	if state.phase != GameState.Phase.MORNING: return false
-	state.set_phase(GameState.Phase.ROUTE_SELECTION)
+	state.set_phase(GameState.Phase.MEMBER_AFFAIRS)
+	conversation_open = true
 	return true
 
 func choose_route(route_name: String) -> bool:
-	if state.phase != GameState.Phase.ROUTE_SELECTION or not content.routes().has(route_name): return false
+	if state.phase != GameState.Phase.ROUTE_SELECTION or content.is_major_route_day(state.day) or not content.routes().has(route_name): return false
 	route_choice = route_name
 	return true
 
@@ -95,67 +100,123 @@ func start_travel() -> bool:
 	if not _pay({"fuel": route_fuel_cost()}): return false
 	travel_progress = 0.0
 	travel_resolved = false
-	_add_event("%s · %s → 燃料 -%d" % [route_choice, travel_style, route_fuel_cost()])
+	_add_event("%s · %s → 燃料 -%d" % [state.major_route if content.is_major_route_day(state.day) else route_choice, travel_style, route_fuel_cost()])
 	state.set_phase(GameState.Phase.TRAVEL)
 	return true
 
 func tick_travel(delta: float) -> bool:
-	if state.phase != GameState.Phase.TRAVEL: return false
-	travel_progress = minf(1.0, travel_progress + delta / 7.0)
-	return travel_progress >= 1.0
+	if state.phase != GameState.Phase.TRAVEL or not is_finite(delta) or delta <= 0.0: return false
+	var limit := 1.0 if travel_resolved else 0.5
+	travel_progress = minf(limit, travel_progress + delta / 7.0)
+	if not travel_resolved and travel_progress >= 0.5:
+		state.set_phase(GameState.Phase.TRAVEL_EVENT)
+	elif travel_resolved and travel_progress >= 1.0:
+		_arrive_at_stop()
+	return state.phase != GameState.Phase.TRAVEL
 
 func resolve_travel_event(test_roll: float = -1.0) -> bool:
-	if state.phase != GameState.Phase.TRAVEL or travel_resolved: return false
+	if state.phase != GameState.Phase.TRAVEL_EVENT or travel_resolved: return false
 	travel_resolved = true
-	travel_progress = 1.0
 	var accident := (random.randf() if test_roll < 0.0 else test_roll) < route_accident_chance()
-	var wear := 4
-	if accident:
-		wear += 5 if travel_style == "绕行" else 12
-		_add_event("路面塌陷 → %s预设，耐久 -%d" % [travel_style, wear])
-	else:
-		_add_event("避开道路事故 → 正常行驶损耗，耐久 -4")
-	state.vehicle_health = maxi(0, state.vehicle_health - wear)
-	if accident:
-		var injury := 5 if travel_style == "绕行" else 12
-		state.adjust_member("老赵", -injury)
-		_add_event("老赵检查车底时擦伤 → 老赵健康 -%d" % injury)
 	var noise := 12 if travel_style == "快速" else (2 if travel_style == "低噪音" else 5)
 	state.tracking = clampi(state.tracking + noise - 4, 0, 100)
 	state.adjust_all_fatigue(6 if travel_style == "快速" else 10)
-	state.adjust_member("阿遥", 0, 3)
+	state.adjust_member("阿杰", 0, 3)
+	# Exactly one incident per day. Pursuit takes priority over a road accident.
 	if state.tracking >= 25:
-		state.vehicle_health = maxi(0, state.vehicle_health - 8)
+		state.vehicle_health = maxi(0, state.vehicle_health - 12)
 		state.tracking = maxi(0, state.tracking - 10)
-		_add_event("发动机噪音积累 → 异变兽追上车队，耐久 -8，追踪 -10")
-		state.adjust_member("阿遥", -15)
-		_add_event("阿遥掩护撤离时受伤 → 阿遥健康 -15")
-	var gains: Dictionary = content.route_data(route_choice).get("supplies", {})
+		state.adjust_member("阿杰", -15)
+		travel_event_text = "异变兽追踪 → 执行%s预设，耐久 -12，阿杰健康 -15，追踪 -10" % travel_style
+	else:
+		var wear := 4 + ((5 if travel_style == "绕行" else 12) if accident else 0)
+		state.vehicle_health = maxi(0, state.vehicle_health - wear)
+		if accident:
+			var injury := 5 if travel_style == "绕行" else 12
+			state.adjust_member("老张", -injury)
+			travel_event_text = "路面塌陷 → 执行%s预设，耐久 -%d，老张健康 -%d" % [travel_style, wear, injury]
+		else:
+			travel_event_text = "发现破损路面 → 按%s预设通过，正常行驶耐久 -4" % travel_style
+	_add_event(travel_event_text)
+	return true
+
+func continue_after_event() -> bool:
+	if state.phase != GameState.Phase.TRAVEL_EVENT or not travel_resolved: return false
+	state.set_phase(GameState.Phase.TRAVEL)
+	return true
+
+func _arrive_at_stop() -> void:
+	var gains := route_supplies()
 	for key in gains: state.resources[key] = int(state.resources.get(key, 0)) + int(gains[key])
-	var route_knowledge := int(content.route_data(route_choice).get("knowledge", 0))
-	state.knowledge += route_knowledge
-	if route_knowledge > 0: _add_event("发现旧路线档案 → 知识 +%d" % route_knowledge)
 	_add_event("抵达%s → 补给 %s" % [content.stop_name(state.day), content.cost_text(gains, true)])
 	state.camp_position = float(content.camp_data().get("entry_position", 100.0))
 	conversation_open = false
+	_build_stop_transactions()
 	state.set_phase(GameState.Phase.REST_STOP)
-	return accident
+
+func _build_stop_transactions() -> void:
+	daily_transactions = []
+	transaction_index = 0
+	# Deferred requests carry forward without replaying accepted costs and rewards.
+	for item in morning_resolutions:
+		if item.get("resolution", "") == "defer":
+			var pending: Dictionary = item.duplicate(true)
+			pending.erase("resolution")
+			daily_transactions.append(pending)
+	var patient := medical_target()
+	if not patient.is_empty() and int(patient.health) < 100:
+		var request := content.transaction("medical")
+		request["target_member"] = str(patient.name)
+		request.goal = "处理%s的途中伤势" % patient.name
+		request.body = "“%s受伤了。现在用一份药品处理伤势，或者把药留给之后的路。”" % patient.name
+		request.responses.accept.merge({"label": "治疗%s" % patient.name, "cost": {"medicine": 1}, "health": 20, "fatigue": -15, "trust": 3, "effect": "药品 -1，%s健康 +20、疲劳 -15" % patient.name}, true)
+		# Replace a deferred medicine check with the actual injury follow-up.
+		for i in range(daily_transactions.size() - 1, -1, -1):
+			if daily_transactions[i].speaker == "艾琳": daily_transactions.remove_at(i)
+		daily_transactions.push_front(request)
+	if daily_transactions.is_empty(): daily_transactions.append(content.transaction("arrival"))
+
+func begin_stop_dialogues() -> bool:
+	if state.phase != GameState.Phase.REST_STOP: return false
+	state.set_phase(GameState.Phase.STOP_DIALOGUE)
+	return true
+
+func select_major_route(route_name: String) -> bool:
+	if state.phase != GameState.Phase.MAJOR_ROUTE_SELECTION or not content.major_routes().has(route_name): return false
+	state.major_route = route_name
+	var checkpoint := content.major_checkpoint(state.day, route_name)
+	state.route_history.append({"day": state.day, "route": route_name, "chapter": checkpoint})
+	state.world_facts["story_direction"] = route_name
+	state.world_facts["story_checkpoint"] = checkpoint
+	_add_event("第%d天大路线 → %s · %s" % [state.day, route_name, checkpoint])
+	state.set_phase(GameState.Phase.MORNING)
+	return true
+
+func current_route_data() -> Dictionary:
+	return content.major_route_data(state.major_route) if content.is_major_route_day(state.day) else content.route_data(route_choice)
+
+func route_supplies() -> Dictionary:
+	var gains: Dictionary = current_route_data().get("supplies", {}).duplicate()
+	if not content.is_major_route_day(state.day):
+		var bonus: Dictionary = content.major_route_data(state.major_route).get("daily_bonus", {})
+		for key in bonus: gains[key] = int(gains.get(key, 0)) + int(bonus[key])
+	return gains
 
 func move_in_camp(direction: float, delta: float) -> bool:
-	if state.phase != GameState.Phase.REST_STOP or conversation_open: return false
+	if state.phase not in [GameState.Phase.REST_STOP, GameState.Phase.STOP_DIALOGUE] or conversation_open: return false
 	if not is_finite(direction) or not is_finite(delta) or delta <= 0.0: return false
 	var settings := content.camp_data()
 	state.camp_position = clampf(state.camp_position + clampf(direction, -1.0, 1.0) * delta * float(settings.get("walk_speed", 210.0)), 45.0, float(settings.get("width", 1440.0)) - 45.0)
 	return true
 
 func begin_conversation(speaker: String) -> bool:
-	if state.phase != GameState.Phase.REST_STOP or conversation_open: return false
+	if state.phase != GameState.Phase.STOP_DIALOGUE or conversation_open: return false
 	var transaction := current_transaction()
 	if transaction.is_empty() or transaction.speaker != speaker:
 		last_error = "先处理当前的紧急事务，再回应其他请求。"
 		return false
 	var target := content.member_position(speaker)
-	if target < 0.0 or absf(state.camp_position - target) > float(content.camp_data().get("interaction_range", 72.0)):
+	if speaker != "主角" and (target < 0.0 or absf(state.camp_position - target) > float(content.camp_data().get("interaction_range", 72.0))):
 		last_error = "靠近这位队员后才能交谈。"
 		return false
 	conversation_open = true
@@ -168,7 +229,7 @@ func current_transaction() -> Dictionary:
 	return daily_transactions[transaction_index] if transaction_index < daily_transactions.size() else {}
 
 func respond(response: String) -> bool:
-	if state.phase != GameState.Phase.REST_STOP or not conversation_open or response not in ["accept", "refuse", "defer"]: return false
+	if state.phase not in [GameState.Phase.MEMBER_AFFAIRS, GameState.Phase.STOP_DIALOGUE] or not conversation_open or response not in ["accept", "refuse", "defer"]: return false
 	var transaction := current_transaction()
 	if transaction.is_empty(): return false
 	var option: Dictionary = transaction.get("responses", {}).get(response, {})
@@ -190,11 +251,16 @@ func respond(response: String) -> bool:
 	next_day_effects.append(str(option.get("future", "本次回应已记录。")))
 	transaction["resolution"] = response
 	transaction_index += 1
-	conversation_open = false
-	if transaction_index >= daily_transactions.size(): state.set_phase(GameState.Phase.CAMP_ACTION)
+	var morning := state.phase == GameState.Phase.MEMBER_AFFAIRS
+	conversation_open = morning and transaction_index < daily_transactions.size()
+	if transaction_index >= daily_transactions.size():
+		if morning:
+			morning_resolutions = daily_transactions.duplicate(true)
+			state.set_phase(GameState.Phase.ROUTE_SELECTION)
+		else: state.set_phase(GameState.Phase.CAMP_ACTION)
 	return true
 
-func perform_camp_action(action_name: String, target_name: String = "", teacher_name: String = "") -> bool:
+func perform_camp_action(action_name: String, target_name: String = "") -> bool:
 	if state.phase != GameState.Phase.CAMP_ACTION: return false
 	var action: Dictionary = content.available_camp_actions(state.day).get(action_name, {})
 	if action.is_empty(): return false
@@ -202,30 +268,11 @@ func perform_camp_action(action_name: String, target_name: String = "", teacher_
 		if state.member_named(target_name).is_empty():
 			last_error = "先选择需要照料的成员。"
 			return false
-	# Resolve and validate every participant before spending resources or the evening.
-	if action_name in ["阅读技术手册", "维修车辆"]:
-		var candidates := knowledge_candidates(action_name)
-		if target_name.is_empty():
-			target_name = "老赵" if candidates.has("老赵") else (candidates[0] if not candidates.is_empty() else "")
-		if not candidates.has(target_name):
-			last_error = "选择尚未掌握知识、健康大于0且疲劳低于70的读者。" if action_name == "阅读技术手册" else "选择健康大于0且疲劳低于70的维修者。"
-			return false
-	if action_name == "教学与记录":
-		if teacher_name.is_empty():
-			for candidate in knowledge_candidates(action_name):
-				var candidate_learners := knowledge_candidates(action_name, candidate)
-				if (target_name.is_empty() and not candidate_learners.is_empty()) or candidate_learners.has(target_name):
-					teacher_name = candidate
-					break
-		var learners: Array[String] = []
-		if not teacher_name.is_empty(): learners = knowledge_candidates(action_name, teacher_name)
-		if target_name.is_empty() and not learners.is_empty(): target_name = learners[0]
-		if teacher_name.is_empty() or not learners.has(target_name):
-			last_error = "教师须掌握维修知识，学员尚未掌握；两人须不同、健康大于0、疲劳低于70且个人信任大于30。"
-			return false
+	if action.get("requires_manual", false) and not state.world_facts.get("manual_read", false):
+		last_error = "需要先阅读技术手册。"
+		return false
 	if not _pay(action.get("cost", {})): return false
-	var repair := repair_amount(target_name) if action_name == "维修车辆" else int(action.get("repair", 0))
-	state.vehicle_health = mini(100, state.vehicle_health + repair)
+	state.vehicle_health = mini(100, state.vehicle_health + int(action.get("repair", 0)))
 	if int(action.get("fatigue", 0)) != 0: state.adjust_all_fatigue(int(action.fatigue))
 	state.knowledge += int(action.get("knowledge", 0))
 	state.adjust_trust(int(action.get("trust", 0)))
@@ -233,7 +280,7 @@ func perform_camp_action(action_name: String, target_name: String = "", teacher_
 	state.tracking = clampi(state.tracking + int(action.get("tracking", 0)), 0, 100)
 	if action.get("target_required", false):
 		state.adjust_member(target_name, int(action.get("health", 0)), int(action.get("member_fatigue", 0)), int(action.get("member_trust", 0)))
-		state.member_named(target_name).last_memory = "队长在营地安排了照料。"
+		state.member_named(target_name).last_memory = "主角在营地安排了照料。"
 	for member_name in action.get("member_effects", {}):
 		var effects: Dictionary = action.member_effects[member_name]
 		state.adjust_member(member_name, int(effects.get("health", 0)), int(effects.get("fatigue", 0)), int(effects.get("trust", 0)))
@@ -241,30 +288,19 @@ func perform_camp_action(action_name: String, target_name: String = "", teacher_
 	if not str(action.get("fact", "")).is_empty():
 		state.world_facts[str(action.fact)] = true
 		next_day_effects.append(str(action.get("future", "这个地点的选择已留下记录。")))
-	var effect: String = str(action.get("effect", ""))
-	if action_name == "维修车辆":
-		effect = "零件 -2，耐久 +%d（最高 100）" % repair
-		state.member_named(target_name).last_memory = "承担营地维修：耐久 +%d。" % repair
-	if action_name == "阅读技术手册":
-		var reader := state.member_named(target_name)
-		reader.maintenance_knowledge = true
-		reader.learned_from = "技术手册"
-		reader.last_memory = "读懂技术手册，掌握了维修知识。"
-		state.world_facts["manual_read"] = true
-		effect = "知识 +1；%s掌握维修知识" % target_name
+	if action_name == "阅读技术手册": state.world_facts["manual_read"] = true
 	if action_name == "教学与记录":
-		var learner := state.member_named(target_name)
-		learner.maintenance_knowledge = true
-		learner.learned_from = teacher_name
-		learner.last_memory = "向%s学习，掌握了维修知识。" % teacher_name
-		state.member_named(teacher_name).last_memory = "把维修知识教给了%s。" % target_name
 		state.world_facts["lessons"] = int(state.world_facts.get("lessons", 0)) + 1
-		effect = "%s教给%s；知识 +1，信任 +2" % [teacher_name, target_name]
-		next_day_effects.append("%s的维修知识来自%s，今后也能维修或继续教学。" % [target_name, teacher_name])
-		if int(state.world_facts.lessons) >= 2 and _knowledge_count() >= 3 and _taught_count() >= 2 and not state.world_facts.get("shared_maintenance", false):
+		if int(state.world_facts.lessons) >= 2 and not state.world_facts.get("shared_maintenance", false):
 			state.world_facts["shared_maintenance"] = true
-			_add_event("两次传授给不同新学员，三人掌握维修知识 → 共同维护习惯形成，今后每天耐久 +3")
-	_add_event("营地 · %s%s → %s" % [action_name, "（%s）" % target_name if not target_name.is_empty() else "", effect])
+			_add_event("两次共同教学与记录 → 共同维护习惯形成，今后每天耐久 +3")
+	_add_event("营地 · %s%s → %s" % [action_name, "（%s）" % target_name if not target_name.is_empty() else "", action.get("effect", "")])
+	_settle_night()
+	return true
+
+func finish_stop_dialogues() -> bool:
+	if state.phase != GameState.Phase.CAMP_ACTION: return false
+	_add_event("停歇对话结束 → 今晚不安排额外营地行动")
 	_settle_night()
 	return true
 
@@ -301,15 +337,19 @@ func advance_to_next_day() -> bool:
 	event_log.clear()
 	next_day_effects.clear()
 	_begin_morning()
+	if content.is_major_route_day(state.day): state.set_phase(GameState.Phase.MAJOR_ROUTE_SELECTION)
 	return true
 
 func route_fuel_cost() -> int:
-	return content.route_fuel_cost(route_choice) + (2 if travel_style == "绕行" else 0)
+	return int(current_route_data().get("fuel_cost", 0)) + (2 if travel_style == "绕行" else 0)
 
 func abandon_journey() -> bool:
 	if state.phase != GameState.Phase.ROUTE_SELECTION: return false
-	for route in content.routes():
-		if int(state.resources.fuel) >= content.route_fuel_cost(route): return false
+	if content.is_major_route_day(state.day):
+		if int(state.resources.fuel) >= int(current_route_data().get("fuel_cost", 0)): return false
+	else:
+		for route in content.routes():
+			if int(state.resources.fuel) >= content.route_fuel_cost(route): return false
 	state.ending = "燃料耗尽"
 	state.set_phase(GameState.Phase.ENDING)
 	return true
@@ -317,7 +357,7 @@ func abandon_journey() -> bool:
 func route_accident_chance() -> float:
 	var modifier := int(state.world_facts.get("road_accident_modifier", 0))
 	var style_modifier := -0.1 if travel_style == "绕行" else (0.1 if travel_style == "快速" else 0.0)
-	return clampf(content.route_accident_chance(route_choice) + modifier * 0.15 + style_modifier + (0.15 if state.vehicle_health < 40 else 0.0), 0.0, 0.95)
+	return clampf(float(current_route_data().get("accident_chance", 0.0)) + modifier * 0.15 + style_modifier + (0.15 if state.vehicle_health < 40 else 0.0), 0.0, 0.95)
 
 func can_afford(cost: Dictionary) -> bool:
 	for key in cost:
@@ -352,54 +392,7 @@ func medical_target() -> Dictionary:
 func member_summary(member_name: String) -> String:
 	var member := state.member_named(member_name)
 	if member.is_empty(): return ""
-	var knowledge_text := "已掌握（来源：%s）" % member.get("learned_from", "") if member.get("maintenance_knowledge", false) else "尚未掌握"
-	return "%s · %s\n健康 %d / 疲劳 %d / 个人信任 %d\n维修知识：%s\n记忆：%s" % [member.name, member.job, member.health, member.fatigue, member.trust, knowledge_text, member.last_memory]
-
-func knowledge_candidates(action_name: String, teacher_name: String = "") -> Array[String]:
-	var candidates: Array[String] = []
-	if action_name == "教学与记录" and not teacher_name.is_empty():
-		var teacher := state.member_named(teacher_name)
-		if not _can_work(teacher) or not teacher.get("maintenance_knowledge", false) or int(teacher.trust) <= 30: return candidates
-	for member in state.members:
-		if not _can_work(member): continue
-		var knows: bool = member.get("maintenance_knowledge", false)
-		match action_name:
-			"阅读技术手册":
-				if not knows: candidates.append(str(member.name))
-			"维修车辆": candidates.append(str(member.name))
-			"教学与记录":
-				if int(member.trust) <= 30: continue
-				if teacher_name.is_empty() and knows: candidates.append(str(member.name))
-				elif not teacher_name.is_empty() and not knows and member.name != teacher_name: candidates.append(str(member.name))
-	return candidates
-
-func repair_amount(member_name: String) -> int:
-	var member := state.member_named(member_name)
-	if not _can_work(member): return 0
-	return int(content.camp_actions().get("维修车辆", {}).get("repair", 15)) + (6 if member.get("maintenance_knowledge", false) else 0)
-
-func knowledge_summary() -> String:
-	var lines: Array[String] = []
-	for member in state.members:
-		if member.get("maintenance_knowledge", false):
-			lines.append("%s ← %s" % [member.name, member.get("learned_from", "")])
-	var progress := "共同维护已形成：每晚耐久 +3" if state.world_facts.get("shared_maintenance", false) else "共同维护进度：新学员教学 %d/2，掌握 %d/3 人" % [mini(2, int(state.world_facts.get("lessons", 0))), mini(3, _knowledge_count())]
-	return "维修知识：%s\n%s" % [" / ".join(lines) if not lines.is_empty() else "尚无人掌握；先安排阅读技术手册", progress]
-
-func _can_work(member: Dictionary) -> bool:
-	return not member.is_empty() and int(member.health) > 0 and int(member.fatigue) < 70
-
-func _knowledge_count() -> int:
-	var count := 0
-	for member in state.members:
-		if member.get("maintenance_knowledge", false): count += 1
-	return count
-
-func _taught_count() -> int:
-	var count := 0
-	for member in state.members:
-		if member.get("maintenance_knowledge", false) and str(member.get("learned_from", "")) not in ["", "技术手册"]: count += 1
-	return count
+	return "%s · %s\n健康 %d / 疲劳 %d / 个人信任 %d\n记忆：%s" % [member.name, member.job, member.health, member.fatigue, member.trust, member.last_memory]
 
 func _sort_transactions() -> void:
 	# Stable order within each urgency level; conflicts precede low-priority follow-ups.

@@ -1,0 +1,128 @@
+{
+  "id": "journey_road",
+  "title": "旅途公路",
+  "gameplay": "横版2D旅途路段、途中事件及普通路边停歇；前进方向水平，保留小幅三层视差。",
+  "source_full": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\02_新项目_末日车队\\output\\flow\\scenes\\journey_road_side_20261016\\journey_road\\full.png",
+  "source_clean_plate": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\02_新项目_末日车队\\output\\flow\\scenes\\journey_road_side_20261016\\journey_road\\far.png",
+  "prepared_full": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\02_新项目_末日车队\\output\\flow\\scenes\\journey_road_side_20261016\\journey_road\\full.png",
+  "local_repairs": [],
+  "aligned_clean_plate": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\02_新项目_末日车队\\output\\flow\\scenes\\journey_road_side_20261016\\journey_road\\far.png",
+  "alignment": "Same native dimensions. Generated plate only repairs masked occlusion; exposed original pixels retained. Not a claim of globally identical landmarks.",
+  "source_sha256": "91aeed463b3da6ddd53c159877d9ff84e6f5c2889961e01489ba42bae4609ccc",
+  "source_size": [
+    1916,
+    821
+  ],
+  "crop": [
+    2,
+    1,
+    1913,
+    820
+  ],
+  "size": [
+    2688,
+    1152
+  ],
+  "aspect_method": "Shared 21:9 crop and uniform scale; no stretching or mirroring",
+  "mask_config": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\GPT25画风重制\\masks\\journey_road.json",
+  "motion_scales": [
+    0.12,
+    0.5,
+    1.0
+  ],
+  "camera_limit_source_canvas_pixels": 25,
+  "parking_areas_canvas_pixels": [
+    [
+      138,
+      617,
+      633,
+      274
+    ],
+    [
+      2009,
+      617,
+      535,
+      274
+    ]
+  ],
+  "vehicle_mounts": {
+    "VehicleMount": [
+      454,
+      891
+    ],
+    "VehicleMountRight": [
+      2276,
+      891
+    ]
+  },
+  "interaction_anchors": {
+    "RoadsideStop": [
+      1741,
+      947
+    ]
+  },
+  "view": "side",
+  "walk_path": [
+    [
+      391,
+      947
+    ],
+    [
+      911,
+      947
+    ],
+    [
+      1404,
+      947
+    ],
+    [
+      1938,
+      947
+    ],
+    [
+      2501,
+      947
+    ]
+  ],
+  "spawn_x": 602,
+  "npc_x": [
+    1010,
+    1193,
+    1376,
+    1559,
+    1741,
+    1924,
+    2107
+  ],
+  "blockers": [
+    [
+      -3,
+      632,
+      380,
+      96
+    ],
+    [
+      1910,
+      589,
+      225,
+      145
+    ],
+    [
+      2501,
+      630,
+      191,
+      98
+    ],
+    [
+      -3,
+      1011,
+      2695,
+      142
+    ]
+  ],
+  "walk_method": "Inspected continuous ground lane in front of parked vehicles and props; tap projects to lane",
+  "scope": "Gameplay presentation selected by actual world state through location_catalog.gd",
+  "art_revision": "gpt25_horizontal_road",
+  "generation_model": "gpt-image-2.5-flare",
+  "travel_limit": "Finite road segment, not a seamless scrolling road"
+}

@@ -1,0 +1,96 @@
+{
+  "apk": "E:\\AI_Workspace\\临时文件\\2026-10-17\\convoy-compression\\convoy-mobile-test-signed.apk",
+  "bytes": 87312269,
+  "MB": 87.312269,
+  "MiB": 83.26746845245361,
+  "sha256": "81d912f4c5de78857ca676b997e75328044c048de177fd08d54e01db9a929f37",
+  "zip_entries": 1447,
+  "abis": [
+    "arm64-v8a"
+  ],
+  "crc_ok": true,
+  "excluded_sources_checked": 54,
+  "compressed_entry_groups": {
+    "android_container": 2062793,
+    "game": 60461631,
+    "engine": 24478799
+  },
+  "failures": [],
+  "largest_entries": [
+    {
+      "path": "lib/arm64-v8a/libgodot_android.so",
+      "bytes": 71114944,
+      "compressed_bytes": 24023949
+    },
+    {
+      "path": "assets/.godot/imported/v05_detail.glb-13a1bc5e46336f4a674acfd36dad59ba.scn",
+      "bytes": 5294581,
+      "compressed_bytes": 5294581
+    },
+    {
+      "path": "assets/.godot/imported/music_mainmenu_loop.ogg-3bfdbd3942fd223e3aef6c2abc0cc81d.oggvorbisstr",
+      "bytes": 3158247,
+      "compressed_bytes": 3017472
+    },
+    {
+      "path": "assets/assets/settings/settings_background.ogv",
+      "bytes": 2377631,
+      "compressed_bytes": 2357278
+    },
+    {
+      "path": "classes.dex",
+      "bytes": 5135696,
+      "compressed_bytes": 1785557
+    },
+    {
+      "path": "assets/.godot/imported/walk_right.atlas.png-354f7123679a046e06a6fb240b5f2890.ctex",
+      "bytes": 912662,
+      "compressed_bytes": 912662
+    },
+    {
+      "path": "lib/arm64-v8a/libc++_shared.so",
+      "bytes": 1374336,
+      "compressed_bytes": 454850
+    },
+    {
+      "path": "assets/.godot/imported/terrain.jpg-8bab2cf75e6ea73777cd867bc59816bc.ctex",
+      "bytes": 380954,
+      "compressed_bytes": 380954
+    },
+    {
+      "path": "assets/.godot/imported/terrain_source.png-d645576f2fc012bdfdb06d96759a3d49.ctex",
+      "bytes": 375634,
+      "compressed_bytes": 375634
+    },
+    {
+      "path": "assets/.godot/imported/V05_left.png-21193199c95c0338dfe9f8ad528517b3.ctex",
+      "bytes": 306266,
+      "compressed_bytes": 306266
+    },
+    {
+      "path": "assets/.godot/imported/V05_right.png-cf731179ba2093d44a9ee8520a29b086.ctex",
+      "bytes": 297278,
+      "compressed_bytes": 297278
+    },
+    {
+      "path": "assets/.godot/imported/V08_left.png-c616541b692695183c89fe566b62fdc9.ctex",
+      "bytes": 284622,
+      "compressed_bytes": 284622
+    },
+    {
+      "path": "assets/.godot/imported/V07_right.png-faf953c6b14140c12d4246d6dada8b67.ctex",
+      "bytes": 280366,
+      "compressed_bytes": 280366
+    },
+    {
+      "path": "assets/.godot/imported/background.jpg-24077b92a1024e0d7a75b2e5c95e7455.ctex",
+      "bytes": 280094,
+      "compressed_bytes": 280094
+    },
+    {
+      "path": "assets/.godot/imported/V08_right.png-a7429af0980e633aaa50123f659c7248.ctex",
+      "bytes": 273408,
+      "compressed_bytes": 273408
+    }
+  ]
+}

@@ -1,0 +1,342 @@
+{
+  "character": "许宁",
+  "status": "2D pose sample pending user visual review",
+  "method": "direct reference-driven image generation and alpha cutout; no mesh/render inputs",
+  "model": "gpt-image-2.5-flare",
+  "scope": "one character sample",
+  "green_rgb": [
+    0,
+    255,
+    0
+  ],
+  "slot_contract": {
+    "canvas": [
+      1024,
+      1536
+    ],
+    "ground_anchor": [
+      512,
+      1440
+    ],
+    "seat_anchor": [
+      512,
+      1080
+    ],
+    "chair_included": false,
+    "rule": "use the primary anchor from each cutout or the shared aligned canvas; never align by bbox center or stretch seated to standing height"
+  },
+  "items": [
+    {
+      "id": "standing_front",
+      "label": "站姿 · 正面",
+      "source": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\许宁角色姿势样张_20261016\\standing_source.png",
+      "source_sha256": "7cdad52ce1d262e35c77a8c3bcfe75f9e4e68e195d2a23de1a74cae5c4134377",
+      "native_size": [
+        1024,
+        1536
+      ],
+      "native_bbox": [
+        272,
+        41,
+        752,
+        1482
+      ],
+      "crop_box": [
+        248,
+        17,
+        776,
+        1506
+      ],
+      "cutout_size": [
+        528,
+        1489
+      ],
+      "alpha_route": {
+        "route": "sprite-gen cutout --key green --decontam palette"
+      },
+      "primary_anchor_kind": "ground",
+      "primary_anchor_native": [
+        512,
+        1481
+      ],
+      "primary_anchor_in_cutout": [
+        264,
+        1464
+      ],
+      "aligned_anchor": [
+        512,
+        1440
+      ],
+      "aligned_canvas": [
+        1024,
+        1536
+      ],
+      "scale_to_aligned_canvas": 0.9326856349757113,
+      "aligned_top_left": [
+        266,
+        75
+      ],
+      "seat_anchor_source": null,
+      "alpha_zero_percent": 50.56,
+      "soft_edge_pixels": 8004,
+      "strong_green_soft_edge_pixels": 0,
+      "files": {
+        "green": "assets/characters/xu_ning/poses_2d/green/standing_front.png",
+        "cutouts": "assets/characters/xu_ning/poses_2d/cutouts/standing_front.png",
+        "aligned": "assets/characters/xu_ning/poses_2d/aligned/standing_front.png",
+        "aligned_green": "assets/characters/xu_ning/poses_2d/aligned_green/standing_front.png"
+      }
+    },
+    {
+      "id": "standing_right",
+      "label": "站姿 · 朝右",
+      "source": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\许宁角色姿势图片_20261016\\standing_right_source.png",
+      "source_sha256": "f9f238d137b9fc1473c7140252055684fbda7d7da289be2768ff1894cb93eb52",
+      "native_size": [
+        1024,
+        1536
+      ],
+      "native_bbox": [
+        273,
+        45,
+        735,
+        1481
+      ],
+      "crop_box": [
+        249,
+        21,
+        759,
+        1505
+      ],
+      "cutout_size": [
+        510,
+        1484
+      ],
+      "alpha_route": {
+        "route": "sprite-gen cutout --key green --decontam palette"
+      },
+      "primary_anchor_kind": "ground",
+      "primary_anchor_native": [
+        500,
+        1480
+      ],
+      "primary_anchor_in_cutout": [
+        251,
+        1459
+      ],
+      "aligned_anchor": [
+        512,
+        1440
+      ],
+      "aligned_canvas": [
+        1024,
+        1536
+      ],
+      "scale_to_aligned_canvas": 0.935933147632312,
+      "aligned_top_left": [
+        277,
+        74
+      ],
+      "seat_anchor_source": null,
+      "alpha_zero_percent": 52.87,
+      "soft_edge_pixels": 8351,
+      "strong_green_soft_edge_pixels": 0,
+      "files": {
+        "green": "assets/characters/xu_ning/poses_2d/green/standing_right.png",
+        "cutouts": "assets/characters/xu_ning/poses_2d/cutouts/standing_right.png",
+        "aligned": "assets/characters/xu_ning/poses_2d/aligned/standing_right.png",
+        "aligned_green": "assets/characters/xu_ning/poses_2d/aligned_green/standing_right.png"
+      }
+    },
+    {
+      "id": "seated_front",
+      "label": "坐姿 · 正面",
+      "source": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\许宁角色姿势样张_20261016\\seated_source.png",
+      "source_sha256": "bc1bc22e12c32386786a48cb08947b2c36018d855f4d883b709e78cb2bbc2f80",
+      "native_size": [
+        1024,
+        1536
+      ],
+      "native_bbox": [
+        198,
+        66,
+        840,
+        1464
+      ],
+      "crop_box": [
+        174,
+        42,
+        864,
+        1488
+      ],
+      "cutout_size": [
+        690,
+        1446
+      ],
+      "alpha_route": {
+        "route": "sprite-gen cutout --key green --decontam palette"
+      },
+      "primary_anchor_kind": "seat",
+      "primary_anchor_native": [
+        510,
+        875
+      ],
+      "primary_anchor_in_cutout": [
+        336,
+        833
+      ],
+      "aligned_anchor": [
+        512,
+        1080
+      ],
+      "aligned_canvas": [
+        1024,
+        1536
+      ],
+      "scale_to_aligned_canvas": 0.6122448979591837,
+      "aligned_top_left": [
+        306,
+        570
+      ],
+      "seat_anchor_source": "manually located under pelvis",
+      "alpha_zero_percent": 52.54,
+      "soft_edge_pixels": 10342,
+      "strong_green_soft_edge_pixels": 0,
+      "files": {
+        "green": "assets/characters/xu_ning/poses_2d/green/seated_front.png",
+        "cutouts": "assets/characters/xu_ning/poses_2d/cutouts/seated_front.png",
+        "aligned": "assets/characters/xu_ning/poses_2d/aligned/seated_front.png",
+        "aligned_green": "assets/characters/xu_ning/poses_2d/aligned_green/seated_front.png"
+      }
+    },
+    {
+      "id": "seated_right",
+      "label": "坐姿 · 朝右",
+      "source": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\许宁角色姿势图片_20261016\\seated_right_source.png",
+      "source_sha256": "f68203c642addec210254e675c1e3fcfe74ce1af62e5aea164e2de724f31083e",
+      "native_size": [
+        1024,
+        1536
+      ],
+      "native_bbox": [
+        179,
+        58,
+        880,
+        1455
+      ],
+      "crop_box": [
+        155,
+        34,
+        904,
+        1479
+      ],
+      "cutout_size": [
+        749,
+        1445
+      ],
+      "alpha_route": {
+        "route": "native RGBA preserved; alpha <=1/255 noise cleared; no chroma re-key",
+        "background_note": "Service returned native transparency; delivered green plate is an explicit RGB(0,255,0) composite"
+      },
+      "primary_anchor_kind": "seat",
+      "primary_anchor_native": [
+        350,
+        875
+      ],
+      "primary_anchor_in_cutout": [
+        195,
+        841
+      ],
+      "aligned_anchor": [
+        512,
+        1080
+      ],
+      "aligned_canvas": [
+        1024,
+        1536
+      ],
+      "scale_to_aligned_canvas": 0.6217616580310881,
+      "aligned_top_left": [
+        391,
+        557
+      ],
+      "seat_anchor_source": "manually located under pelvis",
+      "alpha_zero_percent": 55.52,
+      "soft_edge_pixels": 10846,
+      "strong_green_soft_edge_pixels": 0,
+      "files": {
+        "green": "assets/characters/xu_ning/poses_2d/green/seated_right.png",
+        "cutouts": "assets/characters/xu_ning/poses_2d/cutouts/seated_right.png",
+        "aligned": "assets/characters/xu_ning/poses_2d/aligned/seated_right.png",
+        "aligned_green": "assets/characters/xu_ning/poses_2d/aligned_green/seated_right.png"
+      }
+    },
+    {
+      "id": "crouching_right",
+      "label": "蹲姿 · 朝右",
+      "source": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\许宁角色姿势图片_20261016\\crouching_right_source.png",
+      "source_sha256": "c835f81b64866252d61c8a4b2d4566305bb6ff7eca8e7c7e91547571e4b8a137",
+      "native_size": [
+        1024,
+        1536
+      ],
+      "native_bbox": [
+        111,
+        68,
+        913,
+        1454
+      ],
+      "crop_box": [
+        87,
+        44,
+        937,
+        1478
+      ],
+      "cutout_size": [
+        850,
+        1434
+      ],
+      "alpha_route": {
+        "route": "sprite-gen cutout --key green --decontam palette"
+      },
+      "primary_anchor_kind": "ground",
+      "primary_anchor_native": [
+        560,
+        1453
+      ],
+      "primary_anchor_in_cutout": [
+        473,
+        1409
+      ],
+      "aligned_anchor": [
+        512,
+        1440
+      ],
+      "aligned_canvas": [
+        1024,
+        1536
+      ],
+      "scale_to_aligned_canvas": 0.65,
+      "aligned_top_left": [
+        205,
+        524
+      ],
+      "seat_anchor_source": null,
+      "alpha_zero_percent": 47.38,
+      "soft_edge_pixels": 9992,
+      "strong_green_soft_edge_pixels": 0,
+      "files": {
+        "green": "assets/characters/xu_ning/poses_2d/green/crouching_right.png",
+        "cutouts": "assets/characters/xu_ning/poses_2d/cutouts/crouching_right.png",
+        "aligned": "assets/characters/xu_ning/poses_2d/aligned/crouching_right.png",
+        "aligned_green": "assets/characters/xu_ning/poses_2d/aligned_green/crouching_right.png"
+      }
+    }
+  ],
+  "validation": {
+    "all_green_exports_rgb": true,
+    "all_transparent_exports_rgba": true,
+    "canvas_clipping": false,
+    "native_detail_preserved_in_cutouts": true
+  }
+}

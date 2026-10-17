@@ -22,12 +22,10 @@ var pause_overlay: ColorRect
 var pause_status: Label
 var travel_bar: ProgressBar
 var paused := false
-var team_overlay: ColorRect
+var team_overlay: StatusOverview
 var team_cards: VBoxContainer
 var team_open := false
 var camp_view := "site"
-var camp_action_choice := ""
-var knowledge_teacher := ""
 
 func _ready() -> void:
 	theme = ConvoyTheme.create()
@@ -58,7 +56,7 @@ func _build() -> void:
 	title = ConvoyTheme.label("", 27, ConvoyTheme.GOLD)
 	title.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	header.add_child(title)
-	var team_button := ConvoyTheme.button("成员状态", _toggle_team, "team")
+	var team_button := ConvoyTheme.button("状态总览", _toggle_team, "team")
 	team_button.size_flags_horizontal = Control.SIZE_SHRINK_END
 	team_button.custom_minimum_size.x = 140
 	header.add_child(team_button)
@@ -124,7 +122,7 @@ func _build() -> void:
 	stage_label = ConvoyTheme.label("", 16, ConvoyTheme.MUTED)
 	stage_label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	footer.add_child(stage_label)
-	var build_label := ConvoyTheme.label("五日体验版 · 场景占位", 13, ConvoyTheme.MUTED)
+	var build_label := ConvoyTheme.label("十日框架版 · 场景占位", 13, ConvoyTheme.MUTED)
 	build_label.autowrap_mode = TextServer.AUTOWRAP_OFF
 	build_label.custom_minimum_size.x = 170
 	stage_label.autowrap_mode = TextServer.AUTOWRAP_OFF
@@ -133,44 +131,20 @@ func _build() -> void:
 	_build_pause()
 
 func _build_team() -> void:
-	team_overlay = ColorRect.new()
-	team_overlay.color = Color(0.015, 0.035, 0.06, 0.96)
-	team_overlay.size = Vector2(1280, 720)
+	team_overlay = StatusOverview.new()
 	team_overlay.hide()
 	canvas.add_child(team_overlay)
-	var panel := PanelContainer.new()
-	panel.position = Vector2(240, 50)
-	panel.size = Vector2(800, 620)
-	team_overlay.add_child(panel)
-	var stack := VBoxContainer.new()
-	panel.add_child(stack)
-	stack.add_child(ConvoyTheme.label("五个人，各自的处境", 26, ConvoyTheme.GOLD))
-	stack.add_child(ConvoyTheme.label("疲劳 ≥70 时，每晚健康 -5；健康归零时检查基础岗位失败。顶部显示平均疲劳，个人信任记录各自的态度。", 16, ConvoyTheme.MUTED))
-	var scroll := ScrollContainer.new()
-	scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
-	scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
-	stack.add_child(scroll)
-	team_cards = VBoxContainer.new()
-	team_cards.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	scroll.add_child(team_cards)
-	stack.add_child(ConvoyTheme.button("回到当前阶段", _toggle_team, "close_team"))
+	team_overlay.close_requested.connect(_toggle_team)
+	team_cards = team_overlay.team_cards
 
 func _toggle_team() -> void:
 	if paused: return
 	team_open = not team_open
 	team_overlay.visible = team_open
 	world.paused = team_open
-	exploration.set_active(game_state.phase == GameState.Phase.REST_STOP, team_open)
+	exploration.set_active(game_state.phase in [GameState.Phase.REST_STOP, GameState.Phase.STOP_DIALOGUE], team_open)
 	if not team_open: return
-	for child in team_cards.get_children():
-		team_cards.remove_child(child)
-		child.queue_free()
-	for member in game_state.members:
-		var card := PanelContainer.new()
-		team_cards.add_child(card)
-		var stack := VBoxContainer.new()
-		card.add_child(stack)
-		stack.add_child(ConvoyTheme.label(day_loop.member_summary(str(member.name)), 17, Color("#ef9c83") if int(member.health) <= 50 else ConvoyTheme.TEXT))
+	team_overlay.refresh(game_state, day_loop, _phase_name(), true)
 
 func _build_pause() -> void:
 	pause_overlay = ColorRect.new()
@@ -204,7 +178,7 @@ func setup(state: GameState, saved: Dictionary = {}) -> bool:
 
 func _process(delta: float) -> void:
 	if day_loop == null or paused or team_open: return
-	if game_state.phase == GameState.Phase.REST_STOP and not day_loop.conversation_open:
+	if game_state.phase in [GameState.Phase.REST_STOP, GameState.Phase.STOP_DIALOGUE] and not day_loop.conversation_open:
 		for child in actions.get_children():
 			if child is Button and child.get_meta("action_id", "") == "inspect_nearby":
 				child.disabled = exploration.nearby_member().is_empty()
@@ -212,11 +186,10 @@ func _process(delta: float) -> void:
 		var finished := day_loop.tick_travel(delta)
 		travel_bar.value = day_loop.travel_progress
 		world.progress = day_loop.travel_progress
-		if finished:
-			day_loop.resolve_travel_event()
-			refresh()
+		if finished: refresh()
 
 func refresh() -> void:
+	if team_open: team_overlay.refresh(game_state, day_loop, _phase_name())
 	for child in actions.get_children():
 		actions.remove_child(child)
 		child.queue_free()
@@ -224,40 +197,52 @@ func refresh() -> void:
 		primary_actions.remove_child(child)
 		child.queue_free()
 	world.phase = game_state.phase
+	world.progress = day_loop.travel_progress
 	world.day = game_state.day
 	world.moving = game_state.phase == GameState.Phase.TRAVEL
-	world.visible = game_state.phase != GameState.Phase.REST_STOP
-	exploration.set_active(game_state.phase == GameState.Phase.REST_STOP, paused or team_open)
+	world.visible = game_state.phase not in [GameState.Phase.REST_STOP, GameState.Phase.STOP_DIALOGUE]
+	exploration.set_active(game_state.phase in [GameState.Phase.REST_STOP, GameState.Phase.STOP_DIALOGUE], paused or team_open)
 	world.queue_redraw()
 	title.text = "末日车队  /  第 %02d 天" % game_state.day
-	location.text = "%02d / 05     %s    ·    %s" % [game_state.day, day_loop.content.stop_name(game_state.day), _phase_name()]
+	location.text = "%02d / %02d  %s · %s" % [game_state.day, day_loop.content.demo_days(), day_loop.content.stop_name(game_state.day), _phase_name()]
 	for key in resource_labels:
 		resource_labels[key].text = "%s   %02d" % [DemoContent.RESOURCE_NAMES[key], game_state.resources[key]]
 		resource_labels[key].add_theme_color_override("font_color", Color("#ef9c83") if int(game_state.resources[key]) < 4 else ConvoyTheme.TEXT)
 	status.text = "耐久 %d/100    全队信任 %d/100    平均疲劳 %d\n知识 %d    追踪 %d/100    队伍 %d 人" % [game_state.vehicle_health, game_state.team_trust, game_state.fatigue, game_state.knowledge, game_state.tracking, game_state.members.size()]
 	feedback.text = day_loop.event_log.back() if not day_loop.event_log.is_empty() else "先让五个人活过今天，再想更远的地方。"
-	stage_label.text = "早晨  ›  选路  ›  行进  ›  对话  ›  营地  ›  夜晚     /     当前：%s" % _phase_name()
+	stage_label.text = "准备 › 五人事务 › 选路 › 移动 › 事件 › 停歇 › 对话 › 夜间  /  %s" % _phase_name()
+	stage_label.add_theme_font_size_override("font_size", 14)
 	travel_bar.value = day_loop.travel_progress
 	travel_bar.visible = game_state.phase == GameState.Phase.TRAVEL
 	match game_state.phase:
 		GameState.Phase.MORNING: _morning()
+		GameState.Phase.MEMBER_AFFAIRS: _dialogue()
+		GameState.Phase.MAJOR_ROUTE_SELECTION: _major_routes()
 		GameState.Phase.ROUTE_SELECTION: _routes()
 		GameState.Phase.TRAVEL:
-			_heading("引擎启动，沿公路前进", "路线和预设已锁定。旅途中不再重新分配物资，约七秒后抵达。")
+			_heading("引擎启动，沿公路前进", "路线和预设已锁定。途中会出现一次即时事件，处理后继续前往停歇点。")
 			_note("预设：%s\n事故概率：%.0f%%\n快速行驶：疲劳 +6、追踪 +8\n低噪音：疲劳 +10、追踪 -2\n绕行：疲劳 +10、追踪 +1" % [day_loop.travel_style, day_loop.route_accident_chance() * 100])
-			_note("疲劳变化作用于全员；阿遥沿途侦察另增疲劳 +3。道路事故可能擦伤老赵，追踪过高会让阿遥受伤。")
+			_note("疲劳变化作用于全员；阿杰沿途侦察另增疲劳 +3。道路事故可能擦伤老张，追踪过高会让阿杰受伤。")
+		GameState.Phase.TRAVEL_EVENT: _travel_event()
 		GameState.Phase.REST_STOP:
+			_heading("抵达临时停歇点", "补给已经入库。现在可以走动、查看成员状态，再开始停歇对话。")
+			_note("本次补给：" + day_loop.content.cost_text(day_loop.route_supplies(), true))
+			_action("开始 NPC 对话 →", func(): _execute(day_loop.begin_stop_dialogues()), "stop_dialogues")
+		GameState.Phase.STOP_DIALOGUE:
 			if day_loop.conversation_open: _dialogue()
 			else: _explore()
 		GameState.Phase.CAMP_ACTION: _camp()
 		GameState.Phase.NIGHT_SETTLEMENT: _night()
 		GameState.Phase.ENDING:
 			_heading(game_state.ending, day_loop.content.ending_text(game_state.ending))
-			_note("旅途持续 %d 天 · 知识 %d · 信任 %d\n\n本次五日体验到此结束。完整旅途还会继续延伸。" % [game_state.day, game_state.knowledge, game_state.team_trust])
+			_note("旅途持续 %d 天 · 知识 %d · 信任 %d\n\n本次十日框架体验结束。剧情与正式美术将在后续补充。" % [game_state.day, game_state.knowledge, game_state.team_trust])
 			_action("回到主菜单", func(): return_to_menu.emit(), "ending_menu")
 
 func _morning() -> void:
-	_heading("天亮了，先看看大家", "今晚基本配给：饮水 5 / 食物 4。出发前可以做一次准备，也可以直接选路。")
+	_heading("天亮了，先看看大家", "今晚基本配给：饮水 5 / 食物 4。出发前可以做一次准备；随后必须回应五名成员的当日事务。")
+	if game_state.day == 1: _note(str(day_loop.content.data.get("opening_scene", "")))
+	_note("当前车辆：" + day_loop.content.vehicle_summary())
+	if not game_state.major_route.is_empty(): _note("剧情方向：%s\n当前阶段：%s" % [game_state.major_route, game_state.world_facts.get("story_checkpoint", "")])
 	_note(day_loop.content.members_summary())
 	var patient := day_loop.medical_target()
 	_note("最需关注：%s / 健康 %d，疲劳 %d\n今日抵达后：%s" % [patient.name, patient.health, patient.fatigue, day_loop.content.stop_event(game_state.day).get("title", "")])
@@ -267,15 +252,41 @@ func _morning() -> void:
 		_action("公开情报  /  信任 +2", func(): _execute(day_loop.prepare("公开情报")), "prepare_info")
 		_action("分配饮水  /  饮水 -2，疲劳 -8", func(): _execute(day_loop.prepare("分配饮水")), "prepare_water", day_loop.can_afford({"water": 2}))
 	else: _note("今日准备已完成。")
-	_action("查看今日路线  →", func(): _execute(day_loop.finish_preparation()), "routes")
+	_action("处理五名成员事务  →", func(): _execute(day_loop.finish_preparation()), "routes")
+
+func _major_routes() -> void:
+	_heading("第%d天 · 大路线选择" % game_state.day, "决定接下来的剧情方向和区域资源。第2、5、8、10天可以重新选择方向。")
+	_note("当前方向：" + (game_state.major_route if not game_state.major_route.is_empty() else "尚未选择"))
+	for route_name in day_loop.content.major_routes():
+		var route: Dictionary = day_loop.content.major_route_data(route_name)
+		_note("%s\n剧情阶段：%s\n今日补给：%s\n之后小路线额外补给：%s" % [route.description, day_loop.content.major_checkpoint(game_state.day, route_name), day_loop.content.cost_text(route.supplies, true), day_loop.content.cost_text(route.daily_bonus, true)])
+		_action("选择 " + route_name, func(): _execute(day_loop.select_major_route(route_name)), "major_" + route_name)
+
+func _travel_event() -> void:
+	_heading("途中即时事件", "按出发前选定的行进预设处理；每一天只触发一次。")
+	if not day_loop.travel_resolved:
+		_note("前方道路与追踪情况发生变化。当前预设：" + day_loop.travel_style)
+		_action("按预设处理事件", func(): _execute(day_loop.resolve_travel_event()), "resolve_event")
+	else:
+		_note(day_loop.travel_event_text)
+		_action("继续车队移动 →", func(): _execute(day_loop.continue_after_event()), "continue_travel")
 
 func _routes() -> void:
-	_heading("下一处停歇点，怎么走？", "补给在抵达后获得。事故概率会受维护、车损与移动预设影响。")
-	for route_name in day_loop.content.routes():
-		var route: Dictionary = day_loop.content.route_data(route_name)
-		var chosen: bool = route_name == day_loop.route_choice
-		_action(("%s  " % ("●" if chosen else "○")) + route_name + "  /  燃料 -%d" % int(route.fuel_cost), func(): _execute(day_loop.choose_route(route_name)), "route_" + route_name)
-		_note("%s\n抵达补给：%s" % [route.description, day_loop.content.cost_text(route.supplies, true)])
+	if day_loop.content.is_major_route_day(game_state.day):
+		_heading("大路线已确定，准备出发", "今天沿已选的大路线行驶，只需确认行进预设。小路线在第1、3、4、6、7、9天选择。")
+		var route := day_loop.current_route_data()
+		_note("%s · %s\n今日补给：%s" % [game_state.major_route, route.description, day_loop.content.cost_text(day_loop.route_supplies(), true)])
+	else:
+		_heading("选择今天的小路线", "只影响资源种类、数量和途中风险，不改变大路线或剧情方向。补给在抵达后获得。")
+		_note("剧情方向：" + (game_state.major_route if not game_state.major_route.is_empty() else "第2天决定"))
+		for route_name in day_loop.content.routes():
+			var route: Dictionary = day_loop.content.route_data(route_name)
+			var chosen: bool = route_name == day_loop.route_choice
+			_action(("%s  " % ("●" if chosen else "○")) + route_name + "  /  燃料 -%d" % int(route.fuel_cost), func(): _execute(day_loop.choose_route(route_name)), "route_" + route_name)
+			var supplies: Dictionary = route.supplies.duplicate()
+			for key in day_loop.content.major_route_data(game_state.major_route).get("daily_bonus", {}):
+				supplies[key] = int(supplies.get(key, 0)) + int(day_loop.content.major_route_data(game_state.major_route).daily_bonus[key])
+			_note("%s\n抵达补给：%s" % [route.description, day_loop.content.cost_text(supplies, true)])
 	_note("移动预设：低噪音减少追踪；快速降低疲劳但更吵；绕行多用 2 燃料，事故率 -10%，事故损伤较小。")
 	var styles := HBoxContainer.new()
 	primary_actions.add_child(styles)
@@ -283,16 +294,20 @@ func _routes() -> void:
 		styles.add_child(ConvoyTheme.button(("● " if day_loop.travel_style == style else "") + style, func(): _execute(day_loop.choose_style(style)), "style_" + style))
 	primary_actions.add_child(ConvoyTheme.label("本次燃料 -%d / 道路事故 %.0f%%" % [day_loop.route_fuel_cost(), day_loop.route_accident_chance() * 100], 16, ConvoyTheme.GOLD))
 	_action("确认出发  →", func(): _execute(day_loop.start_travel()), "depart", day_loop.can_afford({"fuel": day_loop.route_fuel_cost()}))
-	var stranded := true
-	for route in day_loop.content.routes():
-		if int(game_state.resources.fuel) >= day_loop.content.route_fuel_cost(route): stranded = false
+	var stranded := false
+	if day_loop.content.is_major_route_day(game_state.day):
+		stranded = int(game_state.resources.fuel) < int(day_loop.current_route_data().get("fuel_cost", 0))
+	else:
+		stranded = true
+		for route in day_loop.content.routes():
+			if int(game_state.resources.fuel) >= day_loop.content.route_fuel_cost(route): stranded = false
 	if stranded:
 		_note("燃料不足以到达任一停歇点，旅途无法继续。")
 		_action("查看旅途结果", func(): _execute(day_loop.abandon_journey()), "stranded")
 
 func _dialogue() -> void:
 	var transaction := day_loop.current_transaction()
-	_heading("%s · %s" % [transaction.speaker, transaction.job], transaction.body)
+	_heading(("出发前事务 · " if game_state.phase == GameState.Phase.MEMBER_AFFAIRS else "停歇对话 · ") + "%s · %s" % [transaction.speaker, transaction.job], transaction.body)
 	var member := game_state.member_named(str(transaction.speaker))
 	_note("说话者健康 %d / 疲劳 %d / 个人信任 %d" % [member.health, member.fatigue, member.trust])
 	_note("事务 %d / %d   ·   紧急度%s\n%s" % [day_loop.transaction_index + 1, day_loop.daily_transactions.size(), transaction.urgency, transaction.goal])
@@ -300,13 +315,16 @@ func _dialogue() -> void:
 		var option: Dictionary = transaction.responses[choice]
 		_action(option.label + "\n" + option.effect, func(): _execute(day_loop.respond(choice)), "respond_" + choice, day_loop.can_afford(option.cost))
 		_note("之后：" + str(option.future))
-	_action("先结束交谈，回到营地", _close_conversation, "close_conversation")
+	if game_state.phase == GameState.Phase.STOP_DIALOGUE:
+		_action("先结束交谈，回到营地", _close_conversation, "close_conversation")
 
 func _explore() -> void:
 	var transaction := day_loop.current_transaction()
-	_heading("抵达营地，先找大家聊聊", "点按地面让队长走过去，或按住场景中的左右方向。靠近队员后点按交谈。")
+	_heading("抵达营地，先找大家聊聊", "点按地面让主角走过去，或按住场景中的左右方向。靠近队员后点按交谈。")
 	_note("先处理：%s · %s\n紧急度%s / 剩余 %d 条事务" % [transaction.speaker, transaction.goal, transaction.urgency, day_loop.daily_transactions.size() - day_loop.transaction_index])
 	_note("回应会影响物资、信任和下一天的请求。现在只是走动与了解情况，不会自动消耗资源。")
+	if transaction.speaker == "主角":
+		_action("整理并说明主角的计划", func(): _execute(day_loop.begin_conversation("主角")), "captain_reflection")
 	if not inspected_member.is_empty():
 		for member in day_loop.content.camp_members():
 			if member.name == inspected_member:
@@ -318,7 +336,7 @@ func _explore() -> void:
 	_note(day_loop.content.members_summary())
 
 func _interact_with_member(speaker: String) -> void:
-	if game_state.phase != GameState.Phase.REST_STOP or paused or team_open: return
+	if game_state.phase != GameState.Phase.STOP_DIALOGUE or paused or team_open: return
 	inspected_member = speaker
 	if day_loop.current_transaction().speaker == speaker:
 		day_loop.begin_conversation(speaker)
@@ -330,16 +348,13 @@ func _close_conversation() -> void:
 	refresh()
 
 func _camp() -> void:
-	if camp_action_choice.is_empty():
-		_heading("今晚只能做一件事", "探索、维修、阅读、照料或休息共用一次行动，之后结算配给。")
+	_heading("NPC 对话结束，准备夜间结算", "可以直接结算，也可以安排一次补给、维修、阅读或照料。")
+	_action("直接进入夜间结算 →", func(): _execute(day_loop.finish_stop_dialogues()), "settle_night")
 	var tabs := HBoxContainer.new()
 	primary_actions.add_child(tabs)
 	for view in ["site", "daily", "medical"]:
 		var names := {"site": "当地发现", "daily": "常规行动", "medical": "照料成员"}
 		tabs.add_child(ConvoyTheme.button(("● " if camp_view == view else "") + str(names[view]), func(): _switch_camp_view(view), "camp_tab_" + view))
-	if not camp_action_choice.is_empty():
-		_camp_assignment()
-		return
 	if camp_view == "site":
 		var event := day_loop.content.stop_event(game_state.day)
 		_heading(str(event.get("title", "当地发现")), str(event.get("description", "")))
@@ -354,80 +369,22 @@ func _camp() -> void:
 			if int(member.health) < 100 or int(member.fatigue) > 0:
 				_action("照料%s / 健康 %d，疲劳 %d" % [member.name, member.health, member.fatigue], func(): _execute(day_loop.perform_camp_action("照料伤员", str(member.name))), "treat_" + str(member.name), day_loop.can_afford({"medicine": 1}))
 		return
-	_note(day_loop.knowledge_summary())
 	for name_key in day_loop.content.camp_actions():
 		var action: Dictionary = day_loop.content.camp_actions()[name_key]
 		if action.get("target_required", false): continue
-		if name_key in ["阅读技术手册", "教学与记录", "维修车辆"]:
-			var available := not day_loop.knowledge_candidates(name_key).is_empty()
-			if name_key == "教学与记录":
-				available = false
-				for teacher_name in day_loop.knowledge_candidates(name_key):
-					if not day_loop.knowledge_candidates(name_key, teacher_name).is_empty(): available = true
-			_action(name_key + "  /  选择成员", func(): _choose_camp_action(name_key), "camp_" + name_key, available and day_loop.can_afford(action.cost))
-			_note(str(action.effect))
-			if not available: _note("目前没有符合条件的成员。可以先照料或休息，再在下一晚尝试。")
-			continue
 		var unlocked: bool = not action.get("requires_manual", false) or game_state.world_facts.get("manual_read", false)
 		_action(name_key, func(): _execute(day_loop.perform_camp_action(name_key)), "camp_" + name_key, unlocked and day_loop.can_afford(action.cost))
 		_note(str(action.effect) + ("\n需要先阅读技术手册。" if not unlocked else ""))
 
 func _switch_camp_view(view: String) -> void:
 	camp_view = view
-	camp_action_choice = ""
-	knowledge_teacher = ""
 	refresh()
-
-func _choose_camp_action(action_name: String) -> void:
-	camp_action_choice = action_name
-	knowledge_teacher = ""
-	refresh()
-
-func _choose_teacher(member_name: String) -> void:
-	knowledge_teacher = member_name
-	refresh()
-
-func _cancel_camp_assignment() -> void:
-	camp_action_choice = ""
-	knowledge_teacher = ""
-	refresh()
-
-func _camp_assignment() -> void:
-	_heading(camp_action_choice, "选择参与成员后执行，占用今晚唯一行动。返回选择不会消耗物资或行动。")
-	_note("参与者须健康 >0、疲劳 <70；教学双方个人信任须 >30。")
-	if camp_action_choice == "教学与记录":
-		_note("先选教师" if knowledge_teacher.is_empty() else "教师：%s  /  再选一位尚未掌握的学员" % knowledge_teacher)
-	var candidates := day_loop.knowledge_candidates(camp_action_choice, knowledge_teacher)
-	for member in game_state.members:
-		var member_name := str(member.name)
-		var available := member_name in candidates
-		var description := "%s / 健康 %d，疲劳 %d" % [member_name, member.health, member.fatigue]
-		match camp_action_choice:
-			"阅读技术手册":
-				_action("%s阅读 / 知识 +1" % member_name, func(): _execute(day_loop.perform_camp_action(camp_action_choice, member_name)), "read_" + member_name, available)
-			"维修车辆":
-				var repair := mini(100 - game_state.vehicle_health, day_loop.repair_amount(member_name))
-				_action("%s维修 / 零件 -2\n恢复耐久 +%d（最高 100）" % [member_name, repair], func(): _execute(day_loop.perform_camp_action(camp_action_choice, member_name)), "repair_" + member_name, available and day_loop.can_afford({"parts": 2}))
-			"教学与记录":
-				description += "，信任 %d" % int(member.trust)
-				if knowledge_teacher.is_empty():
-					available = available and not day_loop.knowledge_candidates(camp_action_choice, member_name).is_empty()
-					_action("由%s教学" % member_name, func(): _choose_teacher(member_name), "teacher_" + member_name, available)
-				else:
-					_action("教给%s / 知识 +1，信任 +2" % member_name, func(): _execute(day_loop.perform_camp_action(camp_action_choice, member_name, knowledge_teacher)), "teach_" + member_name, available)
-		var learned: bool = member.get("maintenance_knowledge", false)
-		_note(description + (" / 已掌握维修知识" if learned else " / 尚未掌握"))
-	if candidates.is_empty(): _note("没有符合条件的成员；可以返回后选择照料或休息。")
-	if not knowledge_teacher.is_empty():
-		_action("重新选择教师", func(): _choose_teacher(""), "change_teacher")
-	_action("返回常规行动", _cancel_camp_assignment, "cancel_assignment")
 
 func _night() -> void:
 	_heading("今夜，选择留下了什么", "夜间配给已扣除。以下结果已经生效。")
 	_note(day_loop.event_log_text())
 	_note("留给明天\n" + day_loop.next_day_effects_text())
-	_note(day_loop.knowledge_summary())
-	_action("查看旅途结果" if not game_state.ending.is_empty() else "进入第 %d 天  →" % (game_state.day + 1), func(): _execute(day_loop.advance_to_next_day()), "next_day")
+	_action("查看旅途结果" if not game_state.ending.is_empty() else ("第 %d 天 · 选择大路线 →" if day_loop.content.is_major_route_day(game_state.day + 1) else "进入第 %d 天 →") % (game_state.day + 1), func(): _execute(day_loop.advance_to_next_day()), "next_day")
 
 func _heading(text: String, description: String) -> void:
 	actions.add_child(ConvoyTheme.label(text, 25, ConvoyTheme.GOLD))
@@ -440,7 +397,7 @@ func _action(text: String, callback: Callable, id: String, enabled: bool = true)
 	var button := ConvoyTheme.button(text, callback, id)
 	button.disabled = not enabled
 	button.add_theme_font_size_override("font_size", 17)
-	if id in ["routes", "depart", "next_day", "ending_menu", "stranded", "close_conversation", "cancel_assignment", "change_teacher"]:
+	if id in ["routes", "depart", "next_day", "ending_menu", "stranded", "close_conversation", "stop_dialogues", "resolve_event", "continue_travel", "settle_night"]:
 		primary_actions.add_child(button)
 	else:
 		actions.add_child(button)
@@ -448,16 +405,15 @@ func _action(text: String, callback: Callable, id: String, enabled: bool = true)
 func _execute(success: bool) -> void:
 	if success:
 		inspected_member = ""
-		camp_action_choice = ""
-		knowledge_teacher = ""
 		if game_state.phase != GameState.Phase.CAMP_ACTION: camp_view = "site"
 		refresh()
 	else: feedback.text = day_loop.last_error if not day_loop.last_error.is_empty() else "这个行动目前无法执行。"
 
 func _toggle_pause() -> void:
+	if team_open: return
 	paused = not paused
 	world.paused = paused
-	exploration.set_active(game_state.phase == GameState.Phase.REST_STOP, paused)
+	exploration.set_active(game_state.phase in [GameState.Phase.REST_STOP, GameState.Phase.STOP_DIALOGUE], paused)
 	pause_overlay.visible = paused
 	if paused: pause_status.text = "旅途已经暂停。"
 
@@ -471,9 +427,7 @@ func _load() -> void:
 		return
 	_toggle_pause()
 	inspected_member = ""
-	camp_action_choice = ""
-	knowledge_teacher = ""
 	refresh()
 
 func _phase_name() -> String:
-	return ["早晨准备", "路线选择", "自动行进", "停歇对话", "营地行动", "夜间结算", "旅途结果"][game_state.phase]
+	return ["早晨准备", "路线出发", "车队移动", "抵达停歇点", "NPC 对话收尾", "夜间结算", "旅途结果", "五名成员事务", "一次即时事件", "NPC 对话", "大路线选择"][game_state.phase]

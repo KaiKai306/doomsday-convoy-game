@@ -1,0 +1,74 @@
+{
+  "title": "封堵隧道口",
+  "view": "side",
+  "camera_limit_source_canvas_pixels": 25,
+  "walk_path": [
+    [
+      200,
+      1040
+    ],
+    [
+      1300,
+      1040
+    ],
+    [
+      2260,
+      1040
+    ]
+  ],
+  "spawn_x": 1280,
+  "npc_x": [
+    500,
+    740,
+    1000,
+    1510,
+    1750,
+    1980,
+    2180
+  ],
+  "blockers": [
+    [
+      2320,
+      650,
+      368,
+      370
+    ]
+  ],
+  "parking_areas_canvas_pixels": [
+    [
+      537,
+      565,
+      644,
+      421
+    ],
+    [
+      1589,
+      565,
+      644,
+      421
+    ]
+  ],
+  "art_root": "res://assets/locations/atlas_widescreen_20261016/tunnel_entrance/",
+  "plate_files": [
+    "01_far.png",
+    "02_mid.png",
+    "03_near.png"
+  ],
+  "original_size": [
+    2688,
+    1152
+  ],
+  "plane_padding": 32,
+  "warm_x": 1250,
+  "outpainting_method": "Existing native 21:9 plates preserved; no new image generation required.",
+  "preserved_center": [
+    0,
+    0,
+    2688,
+    1152
+  ],
+  "center_plate_pixels_unchanged": true,
+  "image_record": null,
+  "raw_sha256": null,
+  "far_repair": "Original bounded texture repair retained; wing occlusion uses local reflected texture. Camera limited to +/-24 source pixels. Not an independently painted hidden world."
+}

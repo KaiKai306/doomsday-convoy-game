@@ -1,0 +1,124 @@
+{
+  "id": "old_water_tower",
+  "title": "旧水塔补给点",
+  "gameplay": "第7天杜衡/林月招募、水源与路线线索",
+  "source_full": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\02_新项目_末日车队\\output\\flow\\scenes\\gpt25_style_revision\\old_water_tower\\full.png",
+  "source_clean_plate": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\02_新项目_末日车队\\output\\flow\\scenes\\gpt25_style_revision\\old_water_tower\\far.png",
+  "aligned_clean_plate": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\02_新项目_末日车队\\output\\flow\\scenes\\gpt25_style_revision\\old_water_tower\\far.png",
+  "alignment": "Same native dimensions. Generated plate only repairs masked occlusion; exposed original pixels retained. Not a claim of globally identical landmarks.",
+  "source_sha256": "c6e106a029e0858311ebc5be4d6f6a83b6ac182956dcc7ecbd1ca4ac17efe2fe",
+  "source_size": [
+    1916,
+    821
+  ],
+  "crop": [
+    2,
+    1,
+    1913,
+    820
+  ],
+  "size": [
+    2688,
+    1152
+  ],
+  "aspect_method": "Shared 21:9 crop and uniform scale; no stretching or mirroring",
+  "mask_config": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\GPT25画风重制\\masks\\old_water_tower.json",
+  "motion_scales": [
+    0.12,
+    0.5,
+    1.0
+  ],
+  "camera_limit_source_canvas_pixels": 25,
+  "parking_areas_canvas_pixels": [
+    [
+      138,
+      561,
+      654,
+      274
+    ],
+    [
+      1980,
+      561,
+      577,
+      274
+    ]
+  ],
+  "vehicle_mounts": {
+    "VehicleMount": [
+      465,
+      835
+    ],
+    "VehicleMountRight": [
+      2268,
+      835
+    ]
+  },
+  "interaction_anchors": {
+    "WaterPump": [
+      1122,
+      900
+    ],
+    "MapTable": [
+      1706,
+      902
+    ]
+  },
+  "view": "side",
+  "walk_path": [
+    [
+      419,
+      889
+    ],
+    [
+      841,
+      902
+    ],
+    [
+      1376,
+      902
+    ],
+    [
+      1966,
+      899
+    ],
+    [
+      2501,
+      888
+    ]
+  ],
+  "spawn_x": 630,
+  "npc_x": [
+    1010,
+    1193,
+    1376,
+    1559,
+    1741,
+    1924,
+    2107
+  ],
+  "blockers": [
+    [
+      886,
+      617,
+      1090,
+      173
+    ],
+    [
+      -3,
+      982,
+      324,
+      172
+    ],
+    [
+      2543,
+      997,
+      149,
+      156
+    ]
+  ],
+  "walk_method": "Inspected continuous ground lane in front of parked vehicles and props; tap projects to lane",
+  "scope": "Gameplay presentation selected by actual world state through location_catalog.gd",
+  "art_revision": "gpt25_style_revision",
+  "generation_model": "gpt-image-2.5-flare",
+  "travel_limit": ""
+}

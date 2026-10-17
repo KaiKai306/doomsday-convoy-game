@@ -1,0 +1,20 @@
+{
+  "key": "scout",
+  "output": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\assets\\ui\\status_overview\\portrait_revision_20261013\\scout_source.png",
+  "ok": true,
+  "model": "gpt-image-2.5-flare",
+  "endpoint": "POST /v1/images/edits (multipart, field=image)",
+  "requested_size": "1024x1024",
+  "reference_original_sheet": "C:/Users/t6275/Desktop/taptap游戏制作/02_新项目_末日车队/output/settings/四视图/output/阿杰_侦察员_四视图.png",
+  "reference_uploaded": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\assets\\ui\\status_overview\\portrait_revision_20261013\\refs_web\\scout_ref.jpg",
+  "reference_uploaded_bytes": 269450,
+  "reference_sha256": "802ffdb5fe416e30e057f4dc7abf2fa619d5f11acdf8e4c8c06d2fd5fac53e23",
+  "prompt": "以附带的参考图为唯一身份与造型依据，做一张游戏用角色头像（肩胸像 / bust portrait）。\n\n【构图】正面拍摄，头部居中，头顶完整入画并保留上方约 8%~10% 的余量，画面下缘裁到胸口附近；头肩比例与证件式头像一致，面部不被裁切、不被遮挡；五张头像用完全相同的镜头距离与头部占比。\n【背景】深蓝黑色纯净背景，均匀柔和、带极轻的暗角，没有任何道具、没有场景、没有地面线。\n【光线】柔和的冷色主光从正面偏侧照在脸上，轮廓处保留克制的暖色侧光，冷暖对比克制自然。\n【画质】细腻写实的游戏美术质感，皮肤毛孔与细纹、发丝、布料纤维与油污磨损都清晰可信，低饱和、层次干净。\n【禁止】不要出现任何文字、字母、数字、水印、logo、签名、二维码、网格、边框、UI 元素；画面里只有这一个人物，不要出现第二个人；不要改变参考图里的脸型、年龄、性别、体型、发型与服装设计。\n\n【必须严格保持的身份特征】\n年轻瘦削男性，二十出头，瘦长脸、额头略窄、浓黑眉尾上挑、单眼皮细长眼、目光机警，短而杂乱的黑发（露出整张脸，没有帽子），小麦色皮肤、鼻梁有晒斑；穿旧卡其色连帽外套/工装夹克，领口自然敞开、兜帽放在肩后不上头，胸前挂一只黑色单筒望远镜（镜筒掉漆），肩上有背包背带，双手可戴露指手套。",
+  "bytes": 2676600,
+  "actual_width": 1254,
+  "actual_height": 1254,
+  "actual_format": "png",
+  "source_sha256": "d4a61d16606635b919d46d4b91af401d18e6ed60f7e132fc9b953f24d0d1412c",
+  "record_recovered": true,
+  "provenance_note": "Metadata recovered from the Harness generation script and existing output. Original API response, URL, HTTP status and request elapsed time were not persisted and are unknown."
+}

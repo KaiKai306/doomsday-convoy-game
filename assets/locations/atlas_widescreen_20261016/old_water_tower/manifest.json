@@ -1,0 +1,50 @@
+{
+  "title": "旧水塔",
+  "walk_path": [
+    [
+      475,
+      806
+    ],
+    [
+      2213,
+      806
+    ]
+  ],
+  "spawn_x": 930,
+  "npc_x": [
+    670,
+    1330,
+    1670,
+    2010
+  ],
+  "camera_limit_source_canvas_pixels": 24,
+  "warm_x": 1700,
+  "warm_radius": 620,
+  "warm_strength": 0.28,
+  "interior": false,
+  "original_size": [
+    2688,
+    1152
+  ],
+  "original_ground_y": 856,
+  "layout_ground_y": 806,
+  "source_sha256": "5009fd6238bf1b8946d34bf7da46a0f2df6c839b10cd4f73b1b04af42bd251af",
+  "planes": [
+    "far.png",
+    "mid.png",
+    "near.png"
+  ],
+  "far_repair": "Original bounded texture repair retained; wing occlusion uses local reflected texture. Camera limited to +/-24 source pixels. Not an independently painted hidden world.",
+  "art_root": "res://assets/locations/atlas_widescreen_20261016/old_water_tower/",
+  "plane_padding": 32,
+  "outpainting_method": "DeepSeek GPT 2.5 painted both sides; original three plates restored pixel-for-pixel in center; wing-only edge color correction.",
+  "preserved_center": [
+    320,
+    0,
+    2048,
+    1152
+  ],
+  "center_plate_pixels_unchanged": true,
+  "image_record": ".docs\\美术\\示例图横版复刻_20261016\\widescreen\\records\\old_water_tower.json",
+  "raw_sha256": "f3cf0a058b79a6f655e1bb16ea79364a147f645d7cf3d3101a468d94bf43040c"
+}

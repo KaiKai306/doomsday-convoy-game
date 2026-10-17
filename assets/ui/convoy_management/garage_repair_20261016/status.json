@@ -1,0 +1,27 @@
+{
+  "task": "车辆管理背景重设_20261016",
+  "state": "done",
+  "model": "gpt-image-2.5-sunburst",
+  "files": {
+    "source.png": {
+      "path": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\assets\\ui\\convoy_management\\garage_repair_20261016\\source.png",
+      "bytes": 4746280,
+      "native_size": {
+        "width": 2048,
+        "height": 1152
+      },
+      "sha256": "12983aa4ea15034fa0bfd0c6b8bcc5f29a8b763bb7854b4809408d2e5b633fd9"
+    },
+    "variant_bright_ground.png": {
+      "path": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\assets\\ui\\convoy_management\\garage_repair_20261016\\variant_bright_ground.png",
+      "bytes": 4656988,
+      "native_size": {
+        "width": 2048,
+        "height": 1152
+      },
+      "sha256": "26e52ff3a3811087921ac6296700ca3b1c51f00ee6a1c6a9723b6a90875c01b5"
+    }
+  },
+  "decision_pending": true,
+  "note": "生图方产出；接入与替换由 Codex/用户决定，生图方未改动游戏文件。"
+}

@@ -1,0 +1,24 @@
+{
+  "walk_frames": 42,
+  "walk_fps": 24,
+  "frame_size": [
+    298,
+    483
+  ],
+  "left_walk": "Approved right walk mirrored at runtime",
+  "idle": "Approved B static standing poses; no breathing animation",
+  "sources": {
+    "walk_right.atlas.png": {
+      "path": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\02_新项目_末日车队\\output\\animations\\approved\\captain_walk_right_v1\\captain_walk_right\\walk_right.atlas.png",
+      "sha256": "5cd7896bf915dfdabe216a821a5fe750cc84673832f4eb289d4d008076536e16"
+    },
+    "idle_left.png": {
+      "path": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\02_新项目_末日车队\\output\\animations\\approved\\captain_idle_B_v1\\captain_idle_B\\idle_left.png",
+      "sha256": "4cbc8c4bdcb9fba15f8f81bd5bb242af455af81c1acdd75091e92596acb48881"
+    },
+    "idle_right.png": {
+      "path": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\02_新项目_末日车队\\output\\animations\\approved\\captain_idle_B_v1\\captain_idle_B\\idle_right.png",
+      "sha256": "ea7b825e5766e3a5249db7f74488dfe948030b46f79a57d18ca2cfcd96b170f9"
+    }
+  }
+}

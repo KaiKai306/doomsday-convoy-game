@@ -1,0 +1,35 @@
+{
+  "files": 8391,
+  "bytes": 3737233431,
+  "top_level": {
+    ".gitattributes": 217,
+    ".gitignore": 352,
+    "AGENTS.md": 564,
+    "CONTRIBUTING.md": 761,
+    "export_presets.cfg": 42329,
+    "Godot_v4.7.2-stable_win64.exe": 180858888,
+    "project.godot": 2926,
+    "README.md": 6488,
+    "打开许宁模型预览.cmd": 134,
+    "末日车队_游戏设计最终总稿.docx": 9866852,
+    ".docs": 243841070,
+    ".git": 11574789,
+    ".godot": 1470363098,
+    "assets": 1817670611,
+    "data": 306786,
+    "scenes": 78215,
+    "src": 576579,
+    "tests": 1038151,
+    "third_party": 412817,
+    "tools": 578410
+  },
+  "pck_bytes": 1306324156,
+  "runtime_protected": {
+    "checked_files": 2064,
+    "permitted_readme_redirect": [
+      "assets/characters/seated_roster_20261016/README.md"
+    ],
+    "actual_player_saves_unchanged": true,
+    "runtime_code_data_art_unchanged": true
+  }
+}

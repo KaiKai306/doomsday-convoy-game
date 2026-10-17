@@ -1,0 +1,11 @@
+{
+  "protected_files": 2046,
+  "unchanged_files": 2043,
+  "expected_build_config_changes": [
+    "project.godot",
+    "export_presets.cfg",
+    "tools/mobile_export_resources.json"
+  ],
+  "import_settings_checked": 511,
+  "failures": []
+}

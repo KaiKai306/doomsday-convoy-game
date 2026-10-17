@@ -1,0 +1,20 @@
+{
+  "key": "captain",
+  "output": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\assets\\ui\\status_overview\\portrait_revision_20261013\\captain_source.png",
+  "ok": true,
+  "model": "gpt-image-2.5-flare",
+  "endpoint": "POST /v1/images/edits (multipart, field=image)",
+  "requested_size": "1024x1024",
+  "reference_original_sheet": "C:/Users/t6275/Desktop/taptap游戏制作/02_新项目_末日车队/output/settings/四视图/output/主角_长途运输司机_车队队长_四视图.png",
+  "reference_uploaded": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\assets\\ui\\status_overview\\portrait_revision_20261013\\refs_web\\captain_ref.jpg",
+  "reference_uploaded_bytes": 263162,
+  "reference_sha256": "5e09fdc86306349caf4c7779fb38ac2cb3501e353e8934d57dc13f856582c35f",
+  "prompt": "以附带的参考图为唯一身份与造型依据，做一张游戏用角色头像（肩胸像 / bust portrait）。\n\n【构图】正面拍摄，头部居中，头顶完整入画并保留上方约 8%~10% 的余量，画面下缘裁到胸口附近；头肩比例与证件式头像一致，面部不被裁切、不被遮挡；五张头像用完全相同的镜头距离与头部占比。\n【背景】深蓝黑色纯净背景，均匀柔和、带极轻的暗角，没有任何道具、没有场景、没有地面线。\n【光线】柔和的冷色主光从正面偏侧照在脸上，轮廓处保留克制的暖色侧光，冷暖对比克制自然。\n【画质】细腻写实的游戏美术质感，皮肤毛孔与细纹、发丝、布料纤维与油污磨损都清晰可信，低饱和、层次干净。\n【禁止】不要出现任何文字、字母、数字、水印、logo、签名、二维码、网格、边框、UI 元素；画面里只有这一个人物，不要出现第二个人；不要改变参考图里的脸型、年龄、性别、体型、发型与服装设计。\n\n【必须严格保持的身份特征】\n成熟中年男性，四十岁上下，方脸、宽额、浓黑平直眉、目光沉稳，短黑发（两侧推短、头顶略长）夹少量灰白鬓角，下巴有短须茬；穿深灰蓝色旧帆布司机夹克（双肩有磨痕、右肩一块深褐色方形补丁），内搭褪色棕红色衬衫、领口微敞，胸口挂一条细铜链方形项坠；肩宽体壮、脖颈粗。",
+  "bytes": 2025694,
+  "actual_width": 1024,
+  "actual_height": 1024,
+  "actual_format": "png",
+  "source_sha256": "392d5f7c0ac6e9c495b372dd52013d0225c82b4ce76fd8120edd06f1027a5a91",
+  "record_recovered": true,
+  "provenance_note": "Metadata recovered from the Harness generation script and existing output. Original API response, URL, HTTP status and request elapsed time were not persisted and are unknown."
+}

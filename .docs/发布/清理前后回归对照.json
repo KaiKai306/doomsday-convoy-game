@@ -1,0 +1,61 @@
+{
+  "baseline": {
+    "run_biome_locations": [
+      "BIOME_LOCATIONS checks=2413 scenes=41 failures=0"
+    ],
+    "run_final_regressions": [
+      "FINAL_REGRESSIONS checks=56 failures=0"
+    ],
+    "run_final_replay_test": [
+      "FINAL_REPLAY endings=17 commands=1733 failures=0"
+    ],
+    "run_final_rules_test": [
+      "FINAL_RULES_TEST checks=40 failures=0"
+    ],
+    "run_final_systems_test": [
+      "FINAL_SYSTEMS checks=36 failures=0"
+    ],
+    "run_final_ui_test": [
+      "FINAL_UI checks=71 failures=0"
+    ],
+    "run_side_walk_input": [
+      "FAIL scene and circular HUD fit (960.0, 600.0)",
+      "FAIL scene and circular HUD fit (1560.0, 720.0)",
+      "FAIL scene and circular HUD fit (2340.0, 1080.0)",
+      "SIDE_WALK_INPUT checks=26 failures=3"
+    ],
+    "run_story_locations": [
+      "STORY_LOCATIONS checks=4251 scenes=25 failures=0"
+    ]
+  },
+  "post": {
+    "run_biome_locations": [
+      "BIOME_LOCATIONS checks=2413 scenes=41 failures=0"
+    ],
+    "run_final_regressions": [
+      "FINAL_REGRESSIONS checks=56 failures=0"
+    ],
+    "run_final_replay_test": [
+      "FINAL_REPLAY endings=17 commands=1733 failures=0"
+    ],
+    "run_final_rules_test": [
+      "FINAL_RULES_TEST checks=40 failures=0"
+    ],
+    "run_final_systems_test": [
+      "FINAL_SYSTEMS checks=36 failures=0"
+    ],
+    "run_final_ui_test": [
+      "FINAL_UI checks=71 failures=0"
+    ],
+    "run_side_walk_input": [
+      "FAIL scene and circular HUD fit (960.0, 600.0)",
+      "FAIL scene and circular HUD fit (1560.0, 720.0)",
+      "FAIL scene and circular HUD fit (2340.0, 1080.0)",
+      "SIDE_WALK_INPUT checks=26 failures=3"
+    ],
+    "run_story_locations": [
+      "STORY_LOCATIONS checks=4251 scenes=25 failures=0"
+    ]
+  },
+  "results_match": true
+}

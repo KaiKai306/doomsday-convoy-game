@@ -1,0 +1,106 @@
+{
+  "id": "du_heng",
+  "character": "杜衡",
+  "action": "左手固定地图，右手食指沿同一段弯曲路线慢慢划过，再短暂抬眼观察画面右方，低头把手指收回原起点；动作谨慎、幅度小，地图始终不翻页不变形。",
+  "source_fact": "第7天水塔侦察专家，正文中画出亲自走过的河弯，侦察65。",
+  "new_art_design": "34岁男性，精瘦修长、颧骨清晰、风吹日晒的窄脸，略长黑发向后束成很短的小尾，警觉但不夸张。穿褪色深海军蓝薄兜帽外套、沙色衬衣、深咖啡长裤和旧灰棕徒步靴；磨旧的小皮质地图袋在腰侧。",
+  "video_generation": {
+    "character": "杜衡",
+    "provider": "local ComfyUI",
+    "endpoint": "http://127.0.0.1:8190",
+    "model": "minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+    "turbo_8step_lora": true,
+    "steps": 8,
+    "seed": 26101622,
+    "fps": 24,
+    "frames_requested": 124,
+    "size_requested": [
+      512,
+      768
+    ],
+    "first_and_last_frame": "C:\\Users\\t6275\\AppData\\Local\\Comfy-Desktop\\ComfyUI-Shared\\input\\convoy_characters_20261016\\du_heng.png",
+    "prompt": "A locked-off full-body shot of the SAME seated character from the input image. Preserve the exact face, hair, clothes, body proportions, viewing angle and all props. One complete slow, careful action over about five seconds, ending in the exact starting pose. The hips, seated contact height, knees and planted shoes stay in their original screen positions. Only the hands, forearms, a little head movement, natural blinking and subtle breathing move. Stable character scale, no panning, zooming or turning. Keep the entire head, both hands and both shoes within the frame. The background remains a perfectly uniform chroma green RGB(0,255,0), including the space beneath the hips and between the legs. No chair, stool, table, scenery, floor, cast shadow, other person, text, UI or watermark. No object duplication, no disappearing props, no extra fingers or limbs. Silent video.\nAction: His left hand pins the small folded map on his thighs. His right index finger slowly traces one curved route, he briefly raises his eyes toward the right without turning his body, then looks down and returns the finger to its starting point. The same map stays open, with no page turn or changing markings. Alert, restrained scouting habits.",
+    "prompt_id": "46901717-7b93-4758-995f-4d7b34e77599",
+    "output": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\其余七人坐姿动画_20261016\\du_heng\\source.mp4",
+    "sha256": "8e2bb65af1bc0fa54196ec95794ceb4c1c8c787de312e5c5e2ec281b00758903",
+    "elapsed_seconds": 235.3
+  },
+  "frames": 123,
+  "fps": 24,
+  "duration_seconds": 5.125,
+  "canvas": [
+    346,
+    620
+  ],
+  "loop": true,
+  "cycle": {
+    "kind": "pinned",
+    "start": 0,
+    "length": 123,
+    "seam": 0.0015426998725160956,
+    "inner_mean_adjacent": 0.0007087977137416601,
+    "ratio": 2.1765023258502962,
+    "pin_error": 0.001540429424494505,
+    "pin_tolerance": 0.005,
+    "period_global": null,
+    "periodicity": null
+  },
+  "green_rgb": [
+    0,
+    255,
+    0
+  ],
+  "source_crop_box": [
+    56,
+    3,
+    478,
+    759
+  ],
+  "scale": 0.8205128205128205,
+  "seat_anchor": {
+    "in_source_still": [
+      350,
+      885
+    ],
+    "in_video": [
+      175.0,
+      442.5
+    ],
+    "in_exported_png": [
+      97.56872037914692,
+      360.43650793650795
+    ],
+    "prefab_origin": [
+      0,
+      0
+    ],
+    "nearest_sole_y_from_prefab_origin": 240,
+    "method": "manual anatomical seat annotation on source, one fixed crop/scale for complete cycle; no individual-frame centering"
+  },
+  "validation": {
+    "same_canvas": true,
+    "transparent_borders": true,
+    "gif_infinite_loop": true,
+    "gif_frames": 123,
+    "gif_ms": 5120,
+    "strong_green_pixels_max": 0,
+    "godot": {
+      "version": "4.7.2",
+      "status": "passed",
+      "checks": [
+        "SpriteFrames load",
+        "123 matching texture sizes",
+        "24 FPS",
+        "infinite loop",
+        "seat-origin prefab instantiate",
+        "AnimatedSprite2D play"
+      ]
+    }
+  },
+  "manual_adapter_stages": [
+    "green GIF compositing/encoding",
+    "shared crop and seat-height scaling",
+    "SpriteFrames and seat-origin prefab"
+  ],
+  "native_frames_archive": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\其余七人坐姿动画_20261016\\du_heng\\loop\\cycle"
+}

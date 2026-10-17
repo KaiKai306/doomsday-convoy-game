@@ -1,0 +1,106 @@
+{
+  "id": "xu_wei",
+  "character": "许卫",
+  "action": "低头把腿上同一块折好的小毯子边角抚平，双手轻轻压一下，再慢慢松开回到原位，短暂向旁边看一眼后垂眼；动作疲惫而温和，表现照料家人的习惯，不展开毯子。",
+  "source_fact": "流浪父子事件后可招募的父亲；孩子先安全安置，后勤55，不能把孩子画成随身道具。",
+  "new_art_design": "44岁男性，稍清瘦的结实身架，长方脸，黑发夹少许灰、短发略乱，胡茬、眼下疲惫，神情温和谨慎。穿褪色赭褐色旧棉夹克、暗米色针织衫、煤灰长裤和磨旧深棕皮鞋；右袖有一块朴素补丁。",
+  "video_generation": {
+    "character": "许卫",
+    "provider": "local ComfyUI",
+    "endpoint": "http://127.0.0.1:8190",
+    "model": "minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+    "turbo_8step_lora": true,
+    "steps": 8,
+    "seed": 26101625,
+    "fps": 24,
+    "frames_requested": 124,
+    "size_requested": [
+      512,
+      768
+    ],
+    "first_and_last_frame": "C:\\Users\\t6275\\AppData\\Local\\Comfy-Desktop\\ComfyUI-Shared\\input\\convoy_characters_20261016\\xu_wei.png",
+    "prompt": "A locked-off full-body shot of the SAME seated character from the input image. Preserve the exact face, hair, clothes, body proportions, viewing angle and all props. One complete slow, careful action over about five seconds, ending in the exact starting pose. The hips, seated contact height, knees and planted shoes stay in their original screen positions. Only the hands, forearms, a little head movement, natural blinking and subtle breathing move. Stable character scale, no panning, zooming or turning. Keep the entire head, both hands and both shoes within the frame. The background remains a perfectly uniform chroma green RGB(0,255,0), including the space beneath the hips and between the legs. No chair, stool, table, scenery, floor, cast shadow, other person, text, UI or watermark. No object duplication, no disappearing props, no extra fingers or limbs. Silent video.\nAction: He smooths one corner of the same neatly folded small blanket on his lap, gently presses it with both hands, then releases and returns to his original hand position. He gives a very brief sideways glance and looks down again. The blanket remains folded with the same size and shape. Tired but gentle, protective habits of a father; no child appears.",
+    "prompt_id": "b510c27d-236e-4aca-aaac-b110ba70c254",
+    "output": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\其余七人坐姿动画_20261016\\xu_wei\\source.mp4",
+    "sha256": "84c6fb83e13b94c40dfef73ac4d2b5a59c2562eb1ac506c3827a76be0aa0e767",
+    "elapsed_seconds": 235.5
+  },
+  "frames": 123,
+  "fps": 24,
+  "duration_seconds": 5.125,
+  "canvas": [
+    345,
+    607
+  ],
+  "loop": true,
+  "cycle": {
+    "kind": "pinned",
+    "start": 0,
+    "length": 123,
+    "seam": 0.0015137953450903296,
+    "inner_mean_adjacent": 0.0009054498514160514,
+    "ratio": 1.6718709961936318,
+    "pin_error": 0.0015049913199618459,
+    "pin_tolerance": 0.005,
+    "period_global": null,
+    "periodicity": null
+  },
+  "green_rgb": [
+    0,
+    255,
+    0
+  ],
+  "source_crop_box": [
+    46,
+    6,
+    474,
+    759
+  ],
+  "scale": 0.8067226890756303,
+  "seat_anchor": {
+    "in_source_still": [
+      360,
+      875
+    ],
+    "in_video": [
+      180.0,
+      437.5
+    ],
+    "in_exported_png": [
+      108.01401869158879,
+      347.83598937583
+    ],
+    "prefab_origin": [
+      0,
+      0
+    ],
+    "nearest_sole_y_from_prefab_origin": 240,
+    "method": "manual anatomical seat annotation on source, one fixed crop/scale for complete cycle; no individual-frame centering"
+  },
+  "validation": {
+    "same_canvas": true,
+    "transparent_borders": true,
+    "gif_infinite_loop": true,
+    "gif_frames": 123,
+    "gif_ms": 5120,
+    "strong_green_pixels_max": 0,
+    "godot": {
+      "version": "4.7.2",
+      "status": "passed",
+      "checks": [
+        "SpriteFrames load",
+        "123 matching texture sizes",
+        "24 FPS",
+        "infinite loop",
+        "seat-origin prefab instantiate",
+        "AnimatedSprite2D play"
+      ]
+    }
+  },
+  "manual_adapter_stages": [
+    "green GIF compositing/encoding",
+    "shared crop and seat-height scaling",
+    "SpriteFrames and seat-origin prefab"
+  ],
+  "native_frames_archive": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\其余七人坐姿动画_20261016\\xu_wei\\loop\\cycle"
+}

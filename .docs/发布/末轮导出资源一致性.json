@@ -1,0 +1,17 @@
+{
+  "shared_entries": 1447,
+  "expected_metadata_changes": [
+    "META-INF/ANDROIDD.RSA",
+    "META-INF/ANDROIDD.SF",
+    "META-INF/MANIFEST.MF",
+    "assets/.godot/uid_cache.bin",
+    "assets/assets.sparsepck"
+  ],
+  "unexpected_asset_changes": [],
+  "removed": [
+    "assets/.godot/imported/convoy_title.png-f84292819652bd51e90a5a717daed949.ctex",
+    "assets/assets/title/convoy_title.ogv",
+    "assets/assets/title/convoy_title.png.import"
+  ],
+  "added": []
+}

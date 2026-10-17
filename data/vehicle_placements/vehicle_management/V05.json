@@ -1,0 +1,17 @@
+{
+	"coordinate_space": "management_screen.content; Y adds half of extra safe-area height; scale 100% = stage's 1400x1000 render",
+	"model": "res://assets/showcase_vehicle/v05_detail.glb",
+	"position": [
+		777.0,
+		584.0
+	],
+	"rotation_degrees": -9.0,
+	"scale_percent": 85.0,
+	"scene_id": "vehicle_management",
+	"schema": 1,
+	"user_confirmed": true,
+	"confirmation": "用户确认使用当前调整的方向、大小、角度，并用于本页车辆切换展示；车身角度为自旋转起始角",
+	"applies_to": "all vehicle previews on vehicle_management only",
+	"vehicle_id": "V05",
+	"view_elevation_degrees": 13.7
+}

@@ -1,0 +1,20 @@
+{
+  "key": "mechanic",
+  "output": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\assets\\ui\\status_overview\\portrait_revision_20261013\\mechanic_source.png",
+  "ok": true,
+  "model": "gpt-image-2.5-flare",
+  "endpoint": "POST /v1/images/edits (multipart, field=image)",
+  "requested_size": "1024x1024",
+  "reference_original_sheet": "C:/Users/t6275/Desktop/taptap游戏制作/02_新项目_末日车队/output/settings/四视图/output/老张_机械师_四视图.png",
+  "reference_uploaded": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\assets\\ui\\status_overview\\portrait_revision_20261013\\refs_web\\mechanic_ref.jpg",
+  "reference_uploaded_bytes": 294248,
+  "reference_sha256": "3c21884418eec44a74ae364a1d9f6ebe0aefaf0d9fb86dd882062b39305f3aca",
+  "prompt": "以附带的参考图为唯一身份与造型依据，做一张游戏用角色头像（肩胸像 / bust portrait）。\n\n【构图】正面拍摄，头部居中，头顶完整入画并保留上方约 8%~10% 的余量，画面下缘裁到胸口附近；头肩比例与证件式头像一致，面部不被裁切、不被遮挡；五张头像用完全相同的镜头距离与头部占比。\n【背景】深蓝黑色纯净背景，均匀柔和、带极轻的暗角，没有任何道具、没有场景、没有地面线。\n【光线】柔和的冷色主光从正面偏侧照在脸上，轮廓处保留克制的暖色侧光，冷暖对比克制自然。\n【画质】细腻写实的游戏美术质感，皮肤毛孔与细纹、发丝、布料纤维与油污磨损都清晰可信，低饱和、层次干净。\n【禁止】不要出现任何文字、字母、数字、水印、logo、签名、二维码、网格、边框、UI 元素；画面里只有这一个人物，不要出现第二个人；不要改变参考图里的脸型、年龄、性别、体型、发型与服装设计。\n\n【必须严格保持的身份特征】\n年长宽厚男性，五十岁上下，圆方脸、额头横向深纹、灰白杂乱眉毛、笑起来眼角眯起，灰白短发与灰白络腮胡、胡须修剪不齐，皮肤粗糙有油污与晒斑，肩宽背厚、脖子短；头戴深色旧工作帽，帽檐上方推着一副焊接护目镜，穿深军绿色多口袋工装马甲（插袋里露出扳手与铜丝）与油污褐色工装衬衫，胸前挂一副推到颈部的护目镜，围裙式皮具与工具腰带。",
+  "bytes": 2722421,
+  "actual_width": 1254,
+  "actual_height": 1254,
+  "actual_format": "png",
+  "source_sha256": "3ba68e0311cb4353acffa5618b30413ac7dbffd465fd8b1b87b8216707688a98",
+  "record_recovered": true,
+  "provenance_note": "Metadata recovered from the Harness generation script and existing output. Original API response, URL, HTTP status and request elapsed time were not persisted and are unknown."
+}

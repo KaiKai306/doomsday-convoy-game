@@ -1,0 +1,23 @@
+{
+  "status": "ready",
+  "at": "2026-10-13T16:20:27.301Z",
+  "task": "末日车队五人正面肩胸头像（参考图驱动）",
+  "model": "gpt-image-2.5-flare",
+  "count": 5,
+  "note": "仅生成头像素材，游戏内替换由 Codex 执行；本目录未修改任何游戏源码或正式头像。",
+  "outputs": [
+    "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\assets\\ui\\status_overview\\portrait_revision_20261013\\captain_source.png",
+    "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\assets\\ui\\status_overview\\portrait_revision_20261013\\mechanic_source.png",
+    "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\assets\\ui\\status_overview\\portrait_revision_20261013\\medic_source.png",
+    "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\assets\\ui\\status_overview\\portrait_revision_20261013\\scout_source.png",
+    "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\assets\\ui\\status_overview\\portrait_revision_20261013\\quartermaster_source.png"
+  ],
+  "actual_sizes": [
+    "captain: 1024x1024",
+    "mechanic: 1254x1254",
+    "medic: 1254x1254",
+    "scout: 1254x1254",
+    "quartermaster: 1254x1254"
+  ],
+  "manifest": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\assets\\ui\\status_overview\\portrait_revision_20261013\\manifest.json"
+}

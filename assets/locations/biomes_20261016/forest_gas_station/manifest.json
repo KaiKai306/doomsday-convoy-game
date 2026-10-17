@@ -1,0 +1,41 @@
+{
+  "title": "林缘废弃加油站",
+  "art_root": "res://assets/locations/biomes_20261016/forest_gas_station/",
+  "walk_path": [
+    [
+      155,
+      806
+    ],
+    [
+      1893,
+      806
+    ]
+  ],
+  "spawn_x": 610,
+  "npc_x": [
+    350,
+    1010,
+    1350,
+    1690
+  ],
+  "camera_limit_source_canvas_pixels": 24,
+  "warm_x": 1450,
+  "warm_radius": 700,
+  "warm_strength": 0.35,
+  "interior": false,
+  "biome": "forest",
+  "original_size": [
+    2048,
+    1152
+  ],
+  "layout_ground_y": 806,
+  "original_ground_y": 775,
+  "source_path": ".docs\\美术\\地貌与地点补齐_20261016\\source\\raw\\forest_gas_station.png",
+  "source_sha256": "1480c9a810008cd3ba26fd56ff696a156a7aa808ad01b18076d81d77f6c7df84",
+  "planes": [
+    "far.png",
+    "mid.png",
+    "near.png"
+  ],
+  "far_repair": "Local reflected textures below manually marked boundary; bounded +/-24 source-pixel parallax only, not an independently painted hidden world."
+}

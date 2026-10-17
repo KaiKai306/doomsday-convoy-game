@@ -1,0 +1,124 @@
+{
+  "id": "settlement_reception",
+  "title": "聚落安全接纳点",
+  "gameplay": "第12天后避难、离队、加入与接纳",
+  "source_full": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\02_新项目_末日车队\\output\\flow\\scenes\\gpt25_style_revision\\settlement_reception\\full.png",
+  "source_clean_plate": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\02_新项目_末日车队\\output\\flow\\scenes\\gpt25_style_revision\\settlement_reception\\far.png",
+  "aligned_clean_plate": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\02_新项目_末日车队\\output\\flow\\scenes\\gpt25_style_revision\\settlement_reception\\far.png",
+  "alignment": "Same native dimensions. Generated plate only repairs masked occlusion; exposed original pixels retained. Not a claim of globally identical landmarks.",
+  "source_sha256": "1aeda49160dae47a95475714ca64e46636108f2411ec3a1d5bc787de63210c09",
+  "source_size": [
+    1916,
+    821
+  ],
+  "crop": [
+    2,
+    1,
+    1913,
+    820
+  ],
+  "size": [
+    2688,
+    1152
+  ],
+  "aspect_method": "Shared 21:9 crop and uniform scale; no stretching or mirroring",
+  "mask_config": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\GPT25画风重制\\masks\\settlement_reception.json",
+  "motion_scales": [
+    0.12,
+    0.5,
+    1.0
+  ],
+  "camera_limit_source_canvas_pixels": 25,
+  "parking_areas_canvas_pixels": [
+    [
+      180,
+      564,
+      605,
+      291
+    ],
+    [
+      1938,
+      568,
+      605,
+      287
+    ]
+  ],
+  "vehicle_mounts": {
+    "VehicleMount": [
+      482,
+      855
+    ],
+    "VehicleMountRight": [
+      2240,
+      855
+    ]
+  },
+  "interaction_anchors": {
+    "ReceptionDesk": [
+      2121,
+      927
+    ],
+    "SettlementGate": [
+      1348,
+      944
+    ]
+  },
+  "view": "side",
+  "walk_path": [
+    [
+      426,
+      910
+    ],
+    [
+      911,
+      934
+    ],
+    [
+      1376,
+      944
+    ],
+    [
+      1952,
+      934
+    ],
+    [
+      2487,
+      910
+    ]
+  ],
+  "spawn_x": 637,
+  "npc_x": [
+    1010,
+    1193,
+    1376,
+    1559,
+    1741,
+    1924,
+    2107
+  ],
+  "blockers": [
+    [
+      1995,
+      672,
+      698,
+      127
+    ],
+    [
+      -3,
+      983,
+      338,
+      170
+    ],
+    [
+      2557,
+      1025,
+      135,
+      128
+    ]
+  ],
+  "walk_method": "Inspected continuous ground lane in front of parked vehicles and props; tap projects to lane",
+  "scope": "Gameplay presentation selected by actual world state through location_catalog.gd",
+  "art_revision": "gpt25_style_revision",
+  "generation_model": "gpt-image-2.5-flare",
+  "travel_limit": ""
+}

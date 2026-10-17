@@ -1,0 +1,50 @@
+{
+  "title": "中立集市",
+  "walk_path": [
+    [
+      475,
+      806
+    ],
+    [
+      2213,
+      806
+    ]
+  ],
+  "spawn_x": 930,
+  "npc_x": [
+    670,
+    1330,
+    1670,
+    2010
+  ],
+  "camera_limit_source_canvas_pixels": 24,
+  "warm_x": 1320,
+  "warm_radius": 1500,
+  "warm_strength": 0.35,
+  "interior": false,
+  "original_size": [
+    2688,
+    1152
+  ],
+  "original_ground_y": 854,
+  "layout_ground_y": 806,
+  "source_sha256": "125919a4275279820475d77ca367d9434b4dcbd5b3c87cbb95c1d475eeab4a97",
+  "planes": [
+    "far.png",
+    "mid.png",
+    "near.png"
+  ],
+  "far_repair": "Original bounded texture repair retained; wing occlusion uses local reflected texture. Camera limited to +/-24 source pixels. Not an independently painted hidden world.",
+  "art_root": "res://assets/locations/atlas_widescreen_20261016/neutral_market/",
+  "plane_padding": 32,
+  "outpainting_method": "DeepSeek GPT 2.5 painted both sides; original three plates restored pixel-for-pixel in center; wing-only edge color correction.",
+  "preserved_center": [
+    320,
+    0,
+    2048,
+    1152
+  ],
+  "center_plate_pixels_unchanged": true,
+  "image_record": ".docs\\美术\\示例图横版复刻_20261016\\widescreen\\records\\neutral_market.json",
+  "raw_sha256": "057c0c049332bcbc554d697261d9e9397201b222ffd0c1658c8e73b4d98a119a"
+}

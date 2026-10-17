@@ -1,0 +1,13 @@
+{
+  "model": "gpt-image-2.5-sunburst",
+  "reference": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\assets\\ui\\convoy_management\\garage_reference.png",
+  "prompt": "以附件为美术和构图参考，生成末日车队车库管理界面的纯环境背景，16:9精细手绘写实插画。月夜蓝黑天空、唯一明月、远处连绵山脊、简陋木栅栏和废铁围墙，横向分布帐篷、小型暖橙篝火与挂灯，破旧工具棚、油桶、旧轮胎、金属零件与沙砾。营地景物集中在顶部15%-35%和四周，画面下部35%-95%是非常暗、低对比的破旧修理场水泥地与细腻金属磨损纹理，用于承载车辆卡片和改装UI。保留高级游戏概念美术的细腻真实材质、月光和暖灯对照，清晰精细笔触，不要纯黑平涂。彻底删除参考中的所有车辆、人物、文字、图标、卡片、边框、状态条、按钮、UI，补成完整环境。不得出现车辆或车影、任何文字数字、水印、面板、界面边框。",
+  "requested_size": "2048x1152",
+  "status": "saved",
+  "at": "2026-10-16T07:34:08.763Z",
+  "reference_sha256": "a0efd7df25640b8762bdfc22e6a6e1bc2be559caec8c92c40bdff897b24c14ac",
+  "output": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\assets\\ui\\convoy_management\\garage_source.png",
+  "bytes": 3970570,
+  "sha256": "cac7f9de41095c672bf65f018b39ed66710aa707cb99061733b41307afc83d3c",
+  "completed_at": "2026-10-16T07:34:45.765Z"
+}

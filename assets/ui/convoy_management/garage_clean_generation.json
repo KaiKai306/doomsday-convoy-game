@@ -1,0 +1,13 @@
+{
+  "model": "gpt-image-2.5-sunburst",
+  "reference": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\assets\\ui\\convoy_management\\garage_source.png",
+  "prompt": "附件是已生成并采用的末日营地背景，本次只清理物件，保持原画风、构图、冷蓝月夜与橙暖营火照明以及下部大片暗地面。请仔细删除全部汽车、卡车、皮卡、车体、车轮、车辆轮廓、人物和人形剪影，特别是中左侧篝火左边、约画面宽27%-40%高18%-32%的皮卡，以及篝火右边约宽60%-72%高18%-32%的卡车。将这些物件替换为帐篷、油桶、木箱、工作台、矮栅栏与完整自然地面，必须完全没有整车和人物。保留左侧工具棚、中央篝火、远处山峦、明月、帐篷和地面细节，下部不要新增物件，不要UI，不要文字。精细手绘写实游戏环境插画。",
+  "requested_size": "2048x1152",
+  "status": "saved",
+  "at": "2026-10-16T08:04:48.036Z",
+  "reference_sha256": "cac7f9de41095c672bf65f018b39ed66710aa707cb99061733b41307afc83d3c",
+  "output": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\assets\\ui\\convoy_management\\garage_clean_source.png",
+  "bytes": 4124680,
+  "sha256": "69b17994f64707266692ff2909650acb5dcc5e30ae64a50eeb21d5ede73594b9",
+  "completed_at": "2026-10-16T08:05:30.244Z"
+}

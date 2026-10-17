@@ -1,0 +1,124 @@
+{
+  "id": "rescue_station_exterior",
+  "title": "南边外围救援站外部",
+  "gameplay": "第8天入口侦察、第10天救援行动；区别于封堵公路隧道",
+  "source_full": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\02_新项目_末日车队\\output\\flow\\scenes\\gpt25_style_revision\\rescue_station_exterior\\full.png",
+  "source_clean_plate": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\02_新项目_末日车队\\output\\flow\\scenes\\gpt25_style_revision\\rescue_station_exterior\\far.png",
+  "aligned_clean_plate": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\02_新项目_末日车队\\output\\flow\\scenes\\gpt25_style_revision\\rescue_station_exterior\\far.png",
+  "alignment": "Same native dimensions. Generated plate only repairs masked occlusion; exposed original pixels retained. Not a claim of globally identical landmarks.",
+  "source_sha256": "a926c58e1c64e292dde7abd68efd573dc8007125e0394d6650379716471c15a5",
+  "source_size": [
+    1916,
+    821
+  ],
+  "crop": [
+    2,
+    1,
+    1913,
+    820
+  ],
+  "size": [
+    2688,
+    1152
+  ],
+  "aspect_method": "Shared 21:9 crop and uniform scale; no stretching or mirroring",
+  "mask_config": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\GPT25画风重制\\masks\\rescue_station_exterior.json",
+  "motion_scales": [
+    0.12,
+    0.5,
+    1.0
+  ],
+  "camera_limit_source_canvas_pixels": 25,
+  "parking_areas_canvas_pixels": [
+    [
+      166,
+      582,
+      626,
+      274
+    ],
+    [
+      2023,
+      594,
+      506,
+      263
+    ]
+  ],
+  "vehicle_mounts": {
+    "VehicleMount": [
+      479,
+      856
+    ],
+    "VehicleMountRight": [
+      2276,
+      857
+    ]
+  },
+  "interaction_anchors": {
+    "RescueEntry": [
+      1544,
+      919
+    ],
+    "ScoutingPoint": [
+      1122,
+      919
+    ]
+  },
+  "view": "side",
+  "walk_path": [
+    [
+      405,
+      900
+    ],
+    [
+      911,
+      917
+    ],
+    [
+      1559,
+      920
+    ],
+    [
+      2023,
+      913
+    ],
+    [
+      2501,
+      904
+    ]
+  ],
+  "spawn_x": 616,
+  "npc_x": [
+    1010,
+    1193,
+    1376,
+    1559,
+    1741,
+    1924,
+    2107
+  ],
+  "blockers": [
+    [
+      982,
+      660,
+      1414,
+      113
+    ],
+    [
+      -3,
+      961,
+      324,
+      193
+    ],
+    [
+      2557,
+      1011,
+      135,
+      142
+    ]
+  ],
+  "walk_method": "Inspected continuous ground lane in front of parked vehicles and props; tap projects to lane",
+  "scope": "Gameplay presentation selected by actual world state through location_catalog.gd",
+  "art_revision": "gpt25_style_revision",
+  "generation_model": "gpt-image-2.5-flare",
+  "travel_limit": ""
+}

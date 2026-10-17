@@ -1,0 +1,82 @@
+{
+  "revision": "20261013",
+  "portraits": [
+    {
+      "name": "主角",
+      "key": "captain",
+      "source": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\assets\\ui\\status_overview\\portrait_revision_20261013\\captain_source.png",
+      "source_size": [
+        1024,
+        1024
+      ],
+      "installed": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\assets\\ui\\status_overview\\captain.png",
+      "installed_size": [
+        512,
+        512
+      ],
+      "sha256": "e0ddc3bb4226ce1e458837e04de2ac9be777fe510373d644802d987c1a1f7a4d"
+    },
+    {
+      "name": "老张",
+      "key": "mechanic",
+      "source": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\assets\\ui\\status_overview\\portrait_revision_20261013\\mechanic_source.png",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "installed": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\assets\\ui\\status_overview\\mechanic.png",
+      "installed_size": [
+        512,
+        512
+      ],
+      "sha256": "71840c9c70ef6d8ac943a986ff9fd7f0272b21a9622a9bb5a91825c2f3c02fa3"
+    },
+    {
+      "name": "艾琳",
+      "key": "medic",
+      "source": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\assets\\ui\\status_overview\\portrait_revision_20261013\\medic_source.png",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "installed": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\assets\\ui\\status_overview\\medic.png",
+      "installed_size": [
+        512,
+        512
+      ],
+      "sha256": "30f4e700bf9a2186fb785e2b1c47fe9727b2b3157319c9800e0d2b432cd7e7c5"
+    },
+    {
+      "name": "阿杰",
+      "key": "scout",
+      "source": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\assets\\ui\\status_overview\\portrait_revision_20261013\\scout_source.png",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "installed": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\assets\\ui\\status_overview\\scout.png",
+      "installed_size": [
+        512,
+        512
+      ],
+      "sha256": "2d11281e29e5efbf572953bb2688374b31eb5031683ee8dba71f34230ec85b6a"
+    },
+    {
+      "name": "索菲亚",
+      "key": "quartermaster",
+      "source": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\assets\\ui\\status_overview\\portrait_revision_20261013\\quartermaster_source.png",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "installed": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\assets\\ui\\status_overview\\quartermaster.png",
+      "installed_size": [
+        512,
+        512
+      ],
+      "sha256": "3f72b809678924061a73e05f79db0813bd480fc0970158274f95f2bbd4a52926"
+    }
+  ],
+  "backup": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\assets\\ui\\status_overview\\portrait_revision_20261013\\previous_portraits",
+  "processing": "full-frame resize, no crop"
+}

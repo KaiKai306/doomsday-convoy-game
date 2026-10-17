@@ -1,0 +1,41 @@
+{
+  "title": "废弃学校教室",
+  "art_root": "res://assets/locations/biomes_20261016/abandoned_school/",
+  "walk_path": [
+    [
+      155,
+      806
+    ],
+    [
+      1893,
+      806
+    ]
+  ],
+  "spawn_x": 610,
+  "npc_x": [
+    350,
+    1010,
+    1350,
+    1690
+  ],
+  "camera_limit_source_canvas_pixels": 24,
+  "warm_x": 1600,
+  "warm_radius": 700,
+  "warm_strength": 0.35,
+  "interior": true,
+  "biome": "interior",
+  "original_size": [
+    2048,
+    1152
+  ],
+  "layout_ground_y": 806,
+  "original_ground_y": 757,
+  "source_path": ".docs\\美术\\地貌与地点补齐_20261016\\source\\raw\\abandoned_school.png",
+  "source_sha256": "ffaa2735b9c118210c4cff7185c8c4386b93ad47cde1574eb5f33dc88d4f33cd",
+  "planes": [
+    "far.png",
+    "mid.png",
+    "near.png"
+  ],
+  "far_repair": "Local reflected textures below manually marked boundary; bounded +/-24 source-pixel parallax only, not an independently painted hidden world."
+}
