@@ -31,6 +31,7 @@ var transitioning := false
 var menu_loading
 var menu_music: AudioStreamPlayer
 var music_fade: Tween
+var startup_ready := false
 
 func _ready() -> void:
 	theme = ConvoyTheme.create()
@@ -80,6 +81,10 @@ func _ready() -> void:
 	_build_menu_music()
 	_fit()
 	feedback.enter(menu)
+	startup_ready = true
+
+func is_startup_ready() -> bool:
+	return startup_ready
 
 func _build_menu_music() -> void:
 	menu_music = AudioStreamPlayer.new()

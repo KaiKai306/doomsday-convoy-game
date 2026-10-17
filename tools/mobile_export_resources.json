@@ -496,11 +496,15 @@
     "res://assets/vehicles/realistic_20261015/V08_left.png",
     "res://assets/vehicles/realistic_20261015/V08_right.png",
     "res://assets/vehicles/realistic_20261015/ground_shadow.png",
+    "res://assets/vehicles/realistic_20261015/manifest.json",
     "res://assets/vehicles/scene_sprites/oblique_suv.png",
     "res://assets/vehicles/scene_sprites/side_pickup.png",
     "res://assets/vehicles/scene_sprites/side_suv.png",
+    "res://data/final/location_walks.json",
+    "res://data/final/vehicle_scene_lighting.json",
     "res://scenes/abandoned_clinic_parallax.tscn",
     "res://scenes/abandoned_school_parallax.tscn",
+    "res://scenes/boot.tscn",
     "res://scenes/camp_interior_parallax.tscn",
     "res://scenes/camp_three_parallax.tscn",
     "res://scenes/checkpoint_parallax.tscn",
@@ -535,6 +539,7 @@
     "res://scenes/pine_road_parallax.tscn",
     "res://scenes/pine_scrapyard_parallax.tscn",
     "res://scenes/rail_supply_station_parallax.tscn",
+    "res://scenes/release_game.tscn",
     "res://scenes/repair_workshop_parallax.tscn",
     "res://scenes/rescue_station_exterior_parallax.tscn",
     "res://scenes/rescue_station_interior_parallax.tscn",
@@ -583,6 +588,7 @@
     "res://src/showcase/xuning_character_showcase.gd",
     "res://src/showcase/xuning_character_stage.gd",
     "res://src/ui/arwes_frame.gd",
+    "res://src/ui/boot_screen.gd",
     "res://src/ui/camp_exploration.gd",
     "res://src/ui/camp_interior_layers.gd",
     "res://src/ui/camp_keyed_art.gd",
@@ -633,7 +639,7 @@
     "*.log",
     "*.err"
   ],
-  "manual_updates": "When adding dynamic runtime resources, update the export allowlist before packaging.",
+  "manual_updates": "Update dynamic resources when adding content; check_android_apk.py verifies the actual APK, including preload dependencies.",
   "excluded_development_models": {
     "res://assets/characters/xu_ning/xu_ning_seated.glb": "Developer-only pose preview; not called by the shipped main scene or runtime UI.",
     "res://assets/characters/xu_ning/xu_ning_standing.glb": "Developer-only pose preview; not called by the shipped main scene or runtime UI.",
@@ -691,5 +697,10 @@
     "res://assets/ui/status_overview/portraits_source.png": "Source/reference sheet or unused variant; shipped UI loads separate final assets. Original retained in project.",
     "res://assets/title/convoy_title.ogv": "Obsolete title art/video. main_menu.gd and settings_screen.gd load assets/settings/settings_background instead.",
     "res://assets/title/convoy_title.png": "Obsolete title art/video. main_menu.gd and settings_screen.gd load assets/settings/settings_background instead."
-  }
+  },
+  "required_startup_scenes": [
+    "res://scenes/boot.tscn",
+    "res://scenes/main.tscn",
+    "res://scenes/release_game.tscn"
+  ]
 }

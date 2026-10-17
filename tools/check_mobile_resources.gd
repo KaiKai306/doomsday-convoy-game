@@ -26,6 +26,8 @@ func _run() -> void:
 		quit(2)
 		return
 	var manifest: Dictionary = json_file(args[0])
+	check(ResourceLoader.exists("res://scenes/boot.tscn"), "startup scene included")
+	check(ResourceLoader.exists("res://scenes/release_game.tscn"), "main game scene included")
 	for path in manifest.get("export_resources", []):
 		check(ResourceLoader.exists(str(path)), "selected resource: " + str(path))
 	var wide: Dictionary = json_file("res://assets/locations/atlas_widescreen_20261016/manifest.json")
@@ -66,6 +68,8 @@ func _run() -> void:
 		check(is_instance_valid(ui.management_screen), "management interface assembled")
 		if is_instance_valid(ui.management_screen):
 			check(is_instance_valid(ui.management_screen.vehicle_preview), "garage vehicle preview retained")
+			if is_instance_valid(ui.management_screen.vehicle_preview):
+				check(ui.management_screen.vehicle_preview.stage.ready_ok, "exported vehicle model loads successfully")
 		await capture(args[1].path_join("packed-vehicle-page.png"))
 	main.queue_free()
 	await process_frame

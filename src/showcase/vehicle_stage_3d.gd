@@ -66,11 +66,12 @@ func _viewport(label: String, transparent: bool) -> SubViewport:
 
 func _load_model() -> Node3D:
 	if model_id != "V05": return PREVIEW_MODELS.new().create(model_id)
-	var state := GLTFState.new(); var doc := GLTFDocument.new()
-	var result := doc.append_from_file(ProjectSettings.globalize_path(MODEL_PATH), state)
-	if result != OK:
+	# Exported builds contain Godot's imported scene, rather than the source GLB.
+	var packed := ResourceLoader.load(MODEL_PATH, "PackedScene") as PackedScene
+	if packed == null:
 		push_error("Showcase model unavailable: " + MODEL_PATH); return null
-	var model := doc.generate_scene(state)
+	var model := packed.instantiate() as Node3D
+	if model == null: return null
 	model.name = "V05Body"
 	_prepare_materials(model)
 	return model

@@ -1,0 +1,22 @@
+{
+  "version": "0.6.1",
+  "version_code": 601,
+  "apk": "E:\\AI_Workspace\\项目协作空间\\末日车队gamejam游戏\\export\\android\\convoy-v0.6.1-arm64-test.apk",
+  "bytes": 87325132,
+  "sha256": "635e8fbf28e7efd2ae8eb86e218aea75be3269fd01c0b3982e38a58c7663d52a",
+  "apk_resources": {
+    "apk": "E:\\AI_Workspace\\项目协作空间\\末日车队gamejam游戏\\export\\android\\convoy-v0.6.1-arm64-test.apk",
+    "bytes": 87325132,
+    "resources_checked": 612,
+    "failures": []
+  },
+  "isolated_pack_checks": 907,
+  "startup_source_passed": true,
+  "startup_pack_passed": true,
+  "android_environment": "API 36.1 Android 16 emulator; original ARM64 APK; native bridge; host GPU",
+  "real_android15_device_tested": false,
+  "signing_certificate_unchanged": true,
+  "known_hud_failures": 3,
+  "model_meshes_compared": 1,
+  "model_geometry_unchanged": true
+}

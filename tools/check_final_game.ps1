@@ -4,7 +4,7 @@ $projectRoot = (Resolve-Path (Join-Path $PSScriptRoot '..')).Path
 $enginePath = Join-Path $projectRoot 'Godot_v4.7.2-stable_win64.exe'
 $logDirectory = Join-Path $projectRoot '.godot\final-checks'
 New-Item -ItemType Directory -Force -Path $logDirectory | Out-Null
-$checks = @('run_final_rules_test','run_final_systems_test','run_final_regressions','run_final_ui_test','run_final_replay_test','run_story_locations','run_biome_locations','run_side_walk_input')
+$checks = @('run_startup_test','run_final_rules_test','run_final_systems_test','run_final_regressions','run_final_ui_test','run_final_replay_test','run_story_locations','run_biome_locations','run_side_walk_input')
 if ($FindEndingPaths) { $checks += 'run_final_endings' }
 foreach ($checkName in $checks) {
     $logPath = Join-Path $logDirectory ($checkName + '.log')
