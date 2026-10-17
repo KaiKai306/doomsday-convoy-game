@@ -6,6 +6,12 @@ signal startup_failed(message: String)
 
 @export var menu_scene_path := "res://scenes/main.tscn"
 @export var startup_log_path := "user://startup.log"
+@export var stall_timeout_msec := 30000
+const MENU_MEDIA: Array[String] = [
+	"res://assets/settings/settings_background.png",
+	"res://assets/settings/settings_background.ogv",
+	"res://assets/audio/music_mainmenu_loop.ogg",
+]
 var progress := 0.0
 var busy := false
 var failed := false
@@ -17,6 +23,12 @@ var percentage: Label
 var bar: ProgressBar
 var retry: Button
 var started_at := 0
+var resource_started_at := 0
+var last_advance_at := 0
+var resource_progress := 0.0
+var resource_index := 0
+var loading_path := ""
+var held_resources: Array[Resource] = []
 
 func _ready() -> void:
 	layer = 200
@@ -90,7 +102,12 @@ func _fit() -> void:
 
 func _begin() -> void:
 	if busy: return
+	busy = true
 	failed = false
+	started_at = Time.get_ticks_msec()
+	resource_index = 0
+	loading_path = ""
+	held_resources.clear()
 	retry.hide()
 	screen.modulate.a = 1.0
 	_set_progress(0.0)
@@ -101,33 +118,59 @@ func _begin() -> void:
 	if not ResourceLoader.exists(menu_scene_path):
 		_fail("Main menu resource is missing: " + menu_scene_path)
 		return
-	var error := ResourceLoader.load_threaded_request(menu_scene_path, "PackedScene")
-	if error != OK:
-		_fail("Menu load request failed: " + str(error))
+	_next_resource()
+
+func _next_resource() -> void:
+	if resource_index >= MENU_MEDIA.size():
+		loading_path = ""
+		_open_menu.call_deferred()
 		return
-	started_at = Time.get_ticks_msec()
-	busy = true
-	status.text = "正在加载游戏资源…"
+	loading_path = MENU_MEDIA[resource_index]
+	status.text = ["正在读取菜单背景…", "正在读取动态背景…", "正在读取菜单音乐…"][resource_index]
+	resource_started_at = Time.get_ticks_msec()
+	last_advance_at = resource_started_at
+	resource_progress = 0.0
+	# Only media goes through worker threads. Loading GDScript dependency graphs
+	# in a worker can contend with main-thread script/class initialization.
+	# A timeout leaves the request alive; retry resumes it rather than spawning
+	# another worker for the same path (Godot has no cancellation API).
+	var state := ResourceLoader.load_threaded_get_status(loading_path)
+	if state in [ResourceLoader.THREAD_LOAD_INVALID_RESOURCE, ResourceLoader.THREAD_LOAD_FAILED]:
+		var error := ResourceLoader.load_threaded_request(loading_path)
+		if error != OK:
+			_fail("Media request failed: " + loading_path + " error=" + str(error))
 
 func _process(_delta: float) -> void:
-	if not busy: return
+	if not busy or loading_path.is_empty(): return
 	var amount: Array = []
-	var state := ResourceLoader.load_threaded_get_status(menu_scene_path, amount)
+	var state := ResourceLoader.load_threaded_get_status(loading_path, amount)
 	if state == ResourceLoader.THREAD_LOAD_LOADED:
-		busy = false
-		_open_menu.call_deferred()
+		var resource := ResourceLoader.load_threaded_get(loading_path)
+		if resource == null:
+			_fail("Invalid media resource: " + loading_path)
+			return
+		held_resources.append(resource)
+		_trace("BOOT_MEDIA_READY " + loading_path + " resource_ms=" + str(Time.get_ticks_msec() - resource_started_at))
+		resource_index += 1
+		_set_progress(0.75 * resource_index / MENU_MEDIA.size())
+		_next_resource()
 	elif state in [ResourceLoader.THREAD_LOAD_FAILED, ResourceLoader.THREAD_LOAD_INVALID_RESOURCE]:
-		_fail("Main menu resource failed to load")
+		_fail("Media failed to load: " + loading_path)
 	elif not amount.is_empty():
-		_set_progress(maxf(progress, float(amount[0]) * 0.85))
-	if busy and Time.get_ticks_msec() - started_at > 15000:
-		status.text = "首次加载可能稍久，请稍候…"
+		var value := float(amount[0])
+		if value > resource_progress:
+			resource_progress = value
+			last_advance_at = Time.get_ticks_msec()
+		_set_progress(maxf(progress, 0.75 * (resource_index + value) / MENU_MEDIA.size()))
+	if busy and not loading_path.is_empty() and (Time.get_ticks_msec() - last_advance_at > stall_timeout_msec or Time.get_ticks_msec() - resource_started_at > 120000):
+		_fail("Media load timed out: " + loading_path, "资源读取时间过长，请重新尝试。")
 
 func _open_menu() -> void:
-	_set_progress(0.85)
+	_set_progress(0.8)
 	status.text = "正在准备主菜单…"
 	await _draw_frame()
-	var packed := ResourceLoader.load_threaded_get(menu_scene_path) as PackedScene
+	_trace("BOOT_MENU_ASSEMBLY")
+	var packed := load(menu_scene_path) as PackedScene
 	if packed == null:
 		_fail("Main menu is not a valid PackedScene")
 		return
@@ -141,6 +184,7 @@ func _open_menu() -> void:
 		menu.queue_free()
 		_fail("Main menu initialization did not complete")
 		return
+	_trace("BOOT_MENU_BUILT")
 	_set_progress(0.95)
 	await _draw_frame()
 	_set_progress(1.0)
@@ -151,6 +195,7 @@ func _open_menu() -> void:
 	fade.tween_property(screen, "modulate:a", 0.0, 0.15)
 	await fade.finished
 	_trace("BOOT_MENU_READY")
+	busy = false
 	startup_finished.emit(menu)
 	queue_free()
 
@@ -160,16 +205,17 @@ func _set_progress(value: float) -> void:
 	percentage.text = "%d%%" % roundi(progress * 100.0)
 	progress_changed.emit(progress)
 
-func _fail(detail: String) -> void:
+func _fail(detail: String, hint := "游戏资源未能载入，请重试或更新安装包。") -> void:
 	busy = false
 	failed = true
-	status.text = "游戏资源未能载入，请重试或更新安装包。"
+	status.text = hint
 	percentage.text = "加载未完成"
 	retry.show()
 	_trace("BOOT_FAILED " + detail)
 	startup_failed.emit(detail)
 
 func _trace(message: String) -> void:
+	message += " elapsed_ms=" + str(Time.get_ticks_msec() - started_at)
 	print(message)
 	var file := FileAccess.open(startup_log_path, FileAccess.READ_WRITE if FileAccess.file_exists(startup_log_path) else FileAccess.WRITE)
 	if file != null:

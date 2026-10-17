@@ -1,6 +1,6 @@
 extends Control
 
-const DAY_SCENE := preload("res://scenes/release_game.tscn")
+const DAY_SCENE_PATH := "res://scenes/release_game.tscn"
 const FINAL_SAVES := preload("res://src/game/save.gd")
 const TITLE_IMAGE := preload("res://assets/settings/settings_background.png")
 const TITLE_VIDEO := preload("res://assets/settings/settings_background.ogv")
@@ -282,7 +282,8 @@ func _play_cover() -> void:
 func _build_settings() -> void:
 	settings = SETTINGS_SCREEN.new()
 	settings.feedback = feedback
-	frame.add_child(settings)
+	# Preferences exist immediately; the hidden settings UI and its second video
+	# decoder are constructed only when the player actually opens Settings.
 	settings.animation_changed.connect(func(enabled: bool):
 		animated_cover = enabled
 		cover_video.visible = enabled
@@ -299,14 +300,19 @@ func _open_settings() -> void:
 	await feedback.leave(menu)
 	cover_video.stop()
 	menu.hide()
+	if not settings.is_inside_tree(): frame.add_child(settings)
 	settings.open_screen()
 	transitioning = false
+
+func _exit_tree() -> void:
+	if is_instance_valid(settings) and settings.get_parent() == null:
+		settings.free()
 
 func _start_game_transition() -> void:
 	if transitioning: return
 	transitioning = true
 	await feedback.leave(menu)
-	_start_game()
+	await _prepare_game()
 	if is_instance_valid(day_demo): feedback.enter(day_demo, Vector2.ZERO)
 	transitioning = false
 	if frame.visible: feedback.enter(menu)
@@ -315,7 +321,11 @@ func _continue_transition() -> void:
 	if transitioning: return
 	transitioning = true
 	await feedback.leave(menu)
-	_continue()
+	var saved := save_system.load_from_file()
+	if saved.is_empty():
+		message.text = "还没有保存过旅途。请先开始新游戏。"
+	else:
+		await _prepare_game(saved)
 	if is_instance_valid(day_demo): feedback.enter(day_demo, Vector2.ZERO)
 	transitioning = false
 	if frame.visible: feedback.enter(menu)
@@ -329,7 +339,12 @@ func _fit() -> void:
 
 func _start_game(saved: Dictionary = {}) -> void:
 	if is_instance_valid(day_demo): return
-	day_demo = DAY_SCENE.instantiate()
+	# Script/scene assembly stays on the main thread, under a rendered cover.
+	var packed := load(DAY_SCENE_PATH) as PackedScene
+	if packed == null:
+		message.text = "游戏资源未能载入，请更新安装包后重试。"
+		return
+	day_demo = packed.instantiate()
 	add_child(day_demo)
 	day_demo.save_system = save_system
 	if not day_demo.setup(game_state, saved):
@@ -342,6 +357,12 @@ func _start_game(saved: Dictionary = {}) -> void:
 	_stop_menu_music()
 	menu_loading.loaded_location = ""
 	day_demo.return_to_menu.connect(_return_to_menu)
+
+func _prepare_game(saved: Dictionary = {}) -> void:
+	# Load gameplay only after the player chooses New/Continue, never at boot.
+	menu_loading.loaded_location = ""
+	menu_loading.request("game_start", func(): _start_game(saved))
+	await menu_loading.finished
 
 func _continue() -> void:
 	var saved := save_system.load_from_file()

@@ -94,8 +94,12 @@ func _load(location: String, render: Callable, additional: String) -> void:
 		for path in _resources_for(additional):
 			if not paths.has(path): paths.append(path)
 	var requested: Array[String] = []
+	var scenes: Array[String] = []
 	for path in paths:
-		if ResourceLoader.load_threaded_request(path) == OK: requested.append(path)
+		if path.get_extension() in ["tscn", "scn", "gd"]:
+			scenes.append(path)
+		elif ResourceLoader.load_threaded_request(path) == OK:
+			requested.append(path)
 	var remaining = requested.duplicate()
 	held_resources.clear()
 	while not remaining.is_empty():
@@ -110,6 +114,14 @@ func _load(location: String, render: Callable, additional: String) -> void:
 			elif not amount.is_empty(): total += float(amount[0])
 		set_progress(maxf(progress,0.05+0.77*total/maxi(1,requested.size())))
 		await get_tree().process_frame
+	# Keep script initialization on the main thread. Textures are already warm,
+	# and the opaque cover is visible before scene parsing/assembly begins.
+	for index in scenes.size():
+		set_progress(0.82 + 0.03 * index / maxi(1,scenes.size()))
+		status.text = "正在准备场景…"
+		await _draw_frame()
+		var resource = load(scenes[index])
+		if resource != null: held_resources.append(resource)
 	set_progress(0.86); status.text = "正在进入场景…"
 	await _draw_frame()
 	applying = true

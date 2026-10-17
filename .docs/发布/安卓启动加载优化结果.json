@@ -1,0 +1,47 @@
+{
+  "version": "0.6.2",
+  "version_code": 602,
+  "apk": "export/android/convoy-v0.6.2-arm64-test.apk",
+  "bytes": 87325132,
+  "sha256": "ff9e0420d87f0e2cf1fa799539b3f2c416609ee420d8a9f62e7843172abf0390",
+  "environment": "Android 16 / API 36.1 isolated emulator; ARM64 native bridge; host GPU",
+  "measurement": "BOOT_START to BOOT_MENU_READY; excludes Activity and engine initialization",
+  "baseline_061_ms": 7846,
+  "optimized_062_ms": 5221,
+  "optimized_062_repeat_ms": 5859,
+  "android_operations": ["main menu", "open settings", "new game day one", "cold restart and continue save"],
+  "apk_resources": {
+    "checks": 612,
+    "failures": 0
+  },
+  "isolated_pack_resources": {
+    "checks": 907,
+    "failures": 0
+  },
+  "startup_scenarios": "menu ready without gameplay rules/scene; on-demand new game; missing scene; timeout and retry",
+  "mobile_layout": {
+    "checks": 268,
+    "failures": 0
+  },
+  "regressions": {
+    "rules": 40,
+    "systems": 36,
+    "regressions": 56,
+    "ui": 71,
+    "endings": 17,
+    "replay_commands": 1733,
+    "story_locations": 4251,
+    "biome_locations": 2413,
+    "failures": 0
+  },
+  "known_remaining": {
+    "side_walk_hud_failures": 3,
+    "resolutions": [
+      "960x600",
+      "1560x720",
+      "2340x1080"
+    ]
+  },
+  "physical_android15_retest": "pending",
+  "logs": "E:\\AI_Workspace\\临时文件\\2026-10-17\\convoy-loading-performance"
+}

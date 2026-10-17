@@ -41,8 +41,20 @@ func run() -> void:
 		check(values[index] >= values[index - 1], "progress never moves backwards")
 	if is_instance_valid(menu):
 		check(menu.is_startup_ready(), "menu initialization completed")
+		check(not ResourceLoader.has_cached("res://scenes/release_game.tscn"), "boot does not load the full gameplay scene")
+		check(not ResourceLoader.has_cached("res://src/game/world_rules.gd"), "boot does not initialize gameplay rules")
+		check(not menu.settings.is_inside_tree(), "hidden settings UI is deferred until opened")
 		menu.save_system = load("res://src/game/save.gd").new(output.path_join("saves"))
-		menu._start_game()
+		menu._start_game_transition()
+		await process_frame
+		check(menu.transitioning, "new game guards repeated taps while preparing")
+		var start_deadline := Time.get_ticks_msec() + 30000
+		while menu.transitioning and Time.get_ticks_msec() < start_deadline:
+			await process_frame
+		check(is_instance_valid(menu.day_demo), "menu action loads gameplay on demand")
+		if not is_instance_valid(menu.day_demo):
+			quit(1)
+			return
 		var deadline := Time.get_ticks_msec() + 20000
 		while menu.day_demo.loading_screen.busy and Time.get_ticks_msec() < deadline:
 			await process_frame
@@ -68,6 +80,26 @@ func run() -> void:
 	await wait_for_menu()
 	if is_instance_valid(menu):
 		check(menu.is_startup_ready(), "retry recovers to a usable menu")
+		menu.queue_free()
+		await process_frame
+	menu = null
+	current_scene = null
+	# Force the stall deadline to expire between media stages, then resume the
+	# same loader requests. This also verifies retry never launches duplicate work.
+	var stalled = load("res://scenes/boot.tscn").instantiate()
+	stalled.startup_log_path = output.path_join("timeout.log")
+	stalled.stall_timeout_msec = -1
+	stalled.startup_finished.connect(func(node: Node): menu = node)
+	root.add_child(stalled)
+	var stall_deadline := Time.get_ticks_msec() + 5000
+	while not stalled.failed and Time.get_ticks_msec() < stall_deadline:
+		await process_frame
+	check(stalled.failed and stalled.retry.visible and not stalled.busy, "stalled media offers a visible retry instead of waiting forever")
+	stalled.stall_timeout_msec = 30000
+	stalled.retry.pressed.emit()
+	await wait_for_menu()
+	if is_instance_valid(menu):
+		check(menu.is_startup_ready(), "timeout retry resumes to a usable menu")
 		menu.queue_free()
 		await process_frame
 	print("STARTUP_TEST checks=", checks, " failures=", failures)

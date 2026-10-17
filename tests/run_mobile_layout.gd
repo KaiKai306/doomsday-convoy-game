@@ -75,7 +75,7 @@ func run() -> void:
 		await device(profile)
 		covers(main.cover,"title "+profile.id); covers(main.cover_video,"title video "+profile.id); safe(main.menu,"menu "+profile.id)
 		if profile.id in ["16x9","20x9","phone_2340x1080"]: await shot("主页_"+profile.id)
-		main.menu.hide(); main.settings.open_screen(); await create_timer(0.3).timeout
+		main._open_settings(); await create_timer(0.3).timeout
 		covers(main.settings.background,"settings "+profile.id); safe(main.settings.body,"settings controls "+profile.id)
 		if profile.id == "20x9": await shot("设置_"+profile.id)
 		main.settings.close_screen(); main.menu.show()
