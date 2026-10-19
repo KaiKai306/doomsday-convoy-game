@@ -7,9 +7,9 @@
     "parking_areas_canvas_pixels":[[120,510,590,350],[760,510,590,350]]
   },
   "camp_interior": {
-    "title":"帐篷内部", "view":"side", "camera_limit_source_canvas_pixels":0,
+    "title":"帐篷内部", "view":"side", "camera_limit_source_canvas_pixels":0, "actor_scale":1.5, "actor_ground_lift":30,
     "walk_path":[[450,1010],[1100,1020],[1900,1020],[2300,1010]],
-    "spawn_x":600, "npc_x":[850,1080,1320,1570,1800,2040,2220],
+    "spawn_x":600, "npc_x":[670,1330,1670,2010,2200,550,1450],
     "blockers":[[640,660,1510,310]], "parking_areas_canvas_pixels":[]
   },
   "gas_station": {
@@ -29,7 +29,7 @@
   "snow_camp": {
     "title":"北部雪地营地", "view":"side", "camera_limit_source_canvas_pixels":25,
     "walk_path":[[140,1035],[1050,1048],[1580,1048],[2540,1035]],
-    "spawn_x":740, "npc_x":[800,1010,1210,1480,1700,1890,2100],
+    "spawn_x":740, "npc_x":[500,1050,1720,2100,330,620,880,1530,1910,2290],
     "blockers":[[1130,760,350,235],[750,620,340,340],[1490,600,480,360]],
     "parking_areas_canvas_pixels":[[76,565,579,408],[2062,565,579,408]]
   }

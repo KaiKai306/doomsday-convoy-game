@@ -6,12 +6,31 @@ def inspect(apk, project):
     manifest=json.loads((project/'tools/mobile_export_resources.json').read_text(encoding='utf-8'))
     required=set(manifest['export_resources'])
     required.update(manifest.get('required_startup_scenes',[]))
-    for uri in tuple(required):
+    catalogs=manifest.get('runtime_catalogs',[])
+    required.update(catalogs)
+    def catalog_paths(value):
+        if isinstance(value,dict):
+            for item in value.values():yield from catalog_paths(item)
+        elif isinstance(value,list):
+            for item in value:yield from catalog_paths(item)
+        elif isinstance(value,str) and value.startswith('res://'):
+            yield value
+    for uri in catalogs:
+        source=project/uri.removeprefix('res://')
+        required.update(catalog_paths(json.loads(source.read_text(encoding='utf-8'))))
+    pending=list(required)
+    seen=set()
+    while pending:
+        uri=pending.pop()
+        if uri in seen:continue
+        seen.add(uri)
         source=project/uri.removeprefix('res://')
         if source.suffix in {'.gd','.tscn','.tres'}:
             text=source.read_text(encoding='utf-8')
-            required.update(re.findall(r'preload\(\s*[\"\'](res://[^\"\']+)[\"\']\s*\)',text))
-            required.update(re.findall(r'\[ext_resource[^\]\n]*\bpath="(res://[^"]+)"',text))
+            refs=re.findall(r'preload\(\s*[\"\'](res://[^\"\']+)[\"\']\s*\)',text)
+            refs+=re.findall(r'\[ext_resource[^\]\n]*\bpath="(res://[^"]+)"',text)
+            for ref in refs:
+                if ref not in required:required.add(ref);pending.append(ref)
     failures=[]
     with zipfile.ZipFile(apk) as archive:
         names=set(archive.namelist())
@@ -32,7 +51,7 @@ def inspect(apk, project):
             if not resolve(uri):failures.append('Missing APK resource: '+uri)
         damaged=archive.testzip()
         if damaged:failures.append('ZIP CRC failed: '+damaged)
-        forbidden=[name for name in names if name.startswith(('assets/.docs/','assets/tools/','assets/tests/'))]
+        forbidden=[name for name in names if name.startswith(('assets/.docs/','assets/tools/','assets/tests/','assets/src/developer/','assets/data/developer/'))]
         failures.extend('Development entry exported: '+name for name in forbidden)
     return {'apk':str(apk),'bytes':apk.stat().st_size,'resources_checked':len(required),'failures':failures}
 

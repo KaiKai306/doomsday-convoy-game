@@ -84,6 +84,78 @@
       ],
       "file": "elin.png",
       "key": "painted checkerboard removal with connected silhouette (not native alpha), alpha reconstruction with edge decontamination"
+    },
+    "xuning": {
+      "id": "xuning",
+      "name": "许宁",
+      "source": "assets/characters/xu_ning/poses_2d/cutouts/standing_right.png",
+      "file": "xuning.png",
+      "size": [
+        354,
+        1100
+      ],
+      "facing": "left",
+      "sha256": "e95cc1198056bfe9e53feeee6a75aa54b318683150fb2676469215db10734937"
+    },
+    "linyue": {
+      "id": "linyue",
+      "name": "林悦",
+      "source": ".docs\\美术\\站立补全_20261017\\lin_yue\\standing_source.png",
+      "file": "linyue.png",
+      "size": [
+        243,
+        1100
+      ],
+      "facing": "left",
+      "sha256": "b47c2c9780e6bfdc12ac4989403d1f5425505eba2ba2e6dc41265f36e46011c6"
+    },
+    "chenchuan": {
+      "id": "chenchuan",
+      "name": "陈川",
+      "source": ".docs\\美术\\站立补全_20261017\\chen_chuan\\standing_source.png",
+      "file": "chenchuan.png",
+      "size": [
+        281,
+        1100
+      ],
+      "facing": "left",
+      "sha256": "ea390ae143377e5ef617698d5d72c268d9efd733f62d5123710b3a0f118c2539"
+    },
+    "duheng": {
+      "id": "duheng",
+      "name": "杜衡",
+      "source": ".docs\\美术\\站立补全_20261017\\du_heng\\standing_source.png",
+      "file": "duheng.png",
+      "size": [
+        302,
+        1100
+      ],
+      "facing": "left",
+      "sha256": "c0f654a046352db47ff5f0ecd0be0c2ff6bbd01daeb363da48e195ff0ff9933c"
+    },
+    "cenbai": {
+      "id": "cenbai",
+      "name": "岑柏",
+      "source": ".docs\\美术\\站立补全_20261017\\cen_bai\\standing_source.png",
+      "file": "cenbai.png",
+      "size": [
+        268,
+        1100
+      ],
+      "facing": "left",
+      "sha256": "e525ecb12707c145f45500a389eb3338f1a2b157f06c15491eda099c69a8ba6e"
+    },
+    "sister": {
+      "id": "sister",
+      "name": "妹妹",
+      "source": ".docs\\美术\\站立补全_20261017\\sister\\standing_source.png",
+      "file": "sister.png",
+      "size": [
+        274,
+        1100
+      ],
+      "facing": "left",
+      "sha256": "f92da59c8c2ca7c55dd76124bf92c2bbe0d2fcd0383cae6144abd35a6c88eb2b"
     }
   }
 }

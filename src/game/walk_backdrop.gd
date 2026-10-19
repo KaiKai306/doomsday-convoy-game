@@ -28,6 +28,7 @@ func display(id: String, _vehicles: Array = []) -> void:
 	for child in viewport.get_children():
 		viewport.remove_child(child); child.queue_free()
 	planes.clear(); existing_scene = null; mid = null
+	source_size = SOURCE_SIZE
 	location_id = id
 	config = {"title":CATALOG.config(id).get("title",id),"walk_path":[[155,806],[1893,806]],"spawn_x":610,"npc_x":[350,1010,1350,1690],"camera_limit_source_canvas_pixels":24,"warm_x":1250,"warm_radius":620,"warm_strength":0.3,"interior":id in ["camp_interior","rescue_station_interior"]}
 	var art_root = str(CATALOG.config(id).get("art_root",ASSET_ROOT+id+"/"))
@@ -80,6 +81,14 @@ func _display_existing_scene(id: String) -> void:
 		mid = existing_scene.planes[1]; existing_scene.planes[2].z_index = 20
 	else:
 		mid = existing_scene.get_node("World/Mid"); existing_scene.get_node("World/Near").z_index = 20
+	# Native story plates may be 2688 wide. Their existing Mid transform
+	# already maps those source pixels; report that same canvas to activities
+	# rather than rejecting correct scene anchors as incompatible with 2048.
+	padding = 0.0
+	for child in mid.get_children():
+		if child is Sprite2D and child.texture != null:
+			source_size = child.texture.get_size()
+			break
 	vehicle_root = Node2D.new(); vehicle_root.name = "ActualConvoy"; mid.add_child(vehicle_root)
 	actor_layer = Node2D.new(); actor_layer.name = "WalkingActors"; actor_layer.z_index = 10; viewport.add_child(actor_layer)
 	set_camera(0)

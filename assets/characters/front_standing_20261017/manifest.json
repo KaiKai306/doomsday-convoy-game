@@ -1,0 +1,408 @@
+{
+  "provider": "local ComfyUI",
+  "image_model": "qwen_image_2.1_int8_convrot.safetensors",
+  "pose": "front-facing neutral standing, relaxed empty hands, straight knees, both feet grounded",
+  "alpha_method": "sprite-gen cutout --key green --decontam auto; alpha crop and proportional resize",
+  "characters": {
+    "zhang": {
+      "name": "老张",
+      "texture": "res://assets/characters/front_standing_20261017/zhang.png",
+      "source_facing": "front",
+      "anchor": [
+        102,
+        511
+      ],
+      "top_anchor": [
+        102,
+        12
+      ],
+      "sole_anchor": [
+        102,
+        511
+      ],
+      "height_native": 499,
+      "size": [
+        211,
+        524
+      ],
+      "source": ".docs/美术/人物正面站姿_20261017/zhang/take_01/standing_green.png",
+      "source_sha256": "999bcc7ceee063ded46abee31686bd9cf24f820f15d6768a0c9e2d1e19dc9ac5",
+      "texture_sha256": "4926079219e88afd06fd0b09ea495f1d120da4ad66dcacbe957cb64a124cf41d",
+      "source_crop_box": [
+        196,
+        36,
+        444,
+        700
+      ],
+      "take": 1,
+      "mirror_applied": false,
+      "visual_review": {
+        "pose": "front_standing",
+        "full_body": true,
+        "hands_empty": true,
+        "knees_straight": true,
+        "source_reviewed": true
+      }
+    },
+    "elin": {
+      "name": "艾琳",
+      "texture": "res://assets/characters/front_standing_20261017/elin.png",
+      "source_facing": "front",
+      "anchor": [
+        87,
+        510
+      ],
+      "top_anchor": [
+        87,
+        13
+      ],
+      "sole_anchor": [
+        87,
+        510
+      ],
+      "height_native": 497,
+      "size": [
+        177,
+        524
+      ],
+      "source": ".docs/美术/人物正面站姿_20261017/elin/take_01/standing_green.png",
+      "source_sha256": "723ed4ed2f02ead36c0ce7600452e9fc6c342baadaf2fb3043ab8847bb827457",
+      "texture_sha256": "e2bc3604eff5815be4d669568b07d84530c2979b3220e6567a8c61b01c633ce2",
+      "source_crop_box": [
+        214,
+        42,
+        422,
+        722
+      ],
+      "take": 1,
+      "mirror_applied": false,
+      "visual_review": {
+        "pose": "front_standing",
+        "full_body": true,
+        "hands_empty": true,
+        "knees_straight": true,
+        "source_reviewed": true
+      }
+    },
+    "ajie": {
+      "name": "阿杰",
+      "texture": "res://assets/characters/front_standing_20261017/ajie.png",
+      "source_facing": "front",
+      "anchor": [
+        93,
+        509
+      ],
+      "top_anchor": [
+        93,
+        12
+      ],
+      "sole_anchor": [
+        93,
+        509
+      ],
+      "height_native": 497,
+      "size": [
+        193,
+        524
+      ],
+      "source": ".docs/美术/人物正面站姿_20261017/ajie/take_01/standing_green.png",
+      "source_sha256": "0bede9ab875518b1b27f66b5aac64597ca44cfc1b9e8e66b8aebb690c5dd3b51",
+      "texture_sha256": "aa58114c3e533d7888fb3d3f583539ffc144aefbdae274cc056ab144686d1cb2",
+      "source_crop_box": [
+        203,
+        43,
+        430,
+        716
+      ],
+      "take": 1,
+      "mirror_applied": false,
+      "visual_review": {
+        "pose": "front_standing",
+        "full_body": true,
+        "hands_empty": true,
+        "knees_straight": true,
+        "source_reviewed": true
+      }
+    },
+    "sofia": {
+      "name": "索菲亚",
+      "texture": "res://assets/characters/front_standing_20261017/sofia.png",
+      "source_facing": "front",
+      "anchor": [
+        92,
+        510
+      ],
+      "top_anchor": [
+        92,
+        12
+      ],
+      "sole_anchor": [
+        92,
+        510
+      ],
+      "height_native": 498,
+      "size": [
+        196,
+        524
+      ],
+      "source": ".docs/美术/人物正面站姿_20261017/sofia/take_01/standing_green.png",
+      "source_sha256": "424fb13580448e0acc449c7509835eec55cda704867b27d85075e25ba067f603",
+      "texture_sha256": "eb46750230f11908a10449691237ec718c85f7360db32f0c60902ba523215f5a",
+      "source_crop_box": [
+        202,
+        44,
+        433,
+        714
+      ],
+      "take": 1,
+      "mirror_applied": false,
+      "visual_review": {
+        "pose": "front_standing",
+        "full_body": true,
+        "hands_empty": true,
+        "knees_straight": true,
+        "source_reviewed": true
+      }
+    },
+    "xuning": {
+      "name": "许宁",
+      "texture": "res://assets/characters/front_standing_20261017/xuning.png",
+      "source_facing": "front",
+      "anchor": [
+        96,
+        511
+      ],
+      "top_anchor": [
+        96,
+        13
+      ],
+      "sole_anchor": [
+        96,
+        511
+      ],
+      "height_native": 498,
+      "size": [
+        192,
+        524
+      ],
+      "source": ".docs/美术/人物正面站姿_20261017/xuning/take_01/standing_green.png",
+      "source_sha256": "a7e81e918e755e93eb3cc53a62316968131beaffce087885c1dcb3dc0479323c",
+      "texture_sha256": "2840d2d564e950331564cb57e4e5f7398b55f22d89bb7f7a575506051a50b1c4",
+      "source_crop_box": [
+        203,
+        40,
+        430,
+        714
+      ],
+      "take": 1,
+      "mirror_applied": false,
+      "visual_review": {
+        "pose": "front_standing",
+        "full_body": true,
+        "hands_empty": true,
+        "knees_straight": true,
+        "source_reviewed": true
+      }
+    },
+    "chenchuan": {
+      "name": "陈川",
+      "texture": "res://assets/characters/front_standing_20261017/chenchuan.png",
+      "source_facing": "front",
+      "anchor": [
+        93,
+        509
+      ],
+      "top_anchor": [
+        93,
+        13
+      ],
+      "sole_anchor": [
+        93,
+        509
+      ],
+      "height_native": 496,
+      "size": [
+        191,
+        524
+      ],
+      "source": ".docs/美术/人物正面站姿_20261017/chenchuan/take_01/standing_green.png",
+      "source_sha256": "03f0106009443727e58689999127f09172023b6ff3ef59271180e5b353c51c55",
+      "texture_sha256": "f0c9a80047d2d8e9f39831804978975b9a8efa92a9d8af867a481101a041eb27",
+      "source_crop_box": [
+        208,
+        42,
+        432,
+        712
+      ],
+      "take": 1,
+      "mirror_applied": false,
+      "visual_review": {
+        "pose": "front_standing",
+        "full_body": true,
+        "hands_empty": true,
+        "knees_straight": true,
+        "source_reviewed": true
+      }
+    },
+    "duheng": {
+      "name": "杜衡",
+      "texture": "res://assets/characters/front_standing_20261017/duheng.png",
+      "source_facing": "front",
+      "anchor": [
+        86,
+        511
+      ],
+      "top_anchor": [
+        86,
+        13
+      ],
+      "sole_anchor": [
+        86,
+        511
+      ],
+      "height_native": 498,
+      "size": [
+        185,
+        524
+      ],
+      "source": ".docs/美术/人物正面站姿_20261017/duheng/take_01/standing_green.png",
+      "source_sha256": "7e5750765001f07b6d00e6e4e63a6371587e05d8d09ecd6d465fa963b8140fb2",
+      "texture_sha256": "5ca3bb9df3d2a2dc0413cb98bb5b783ba38cc5b65d26a84ff3a85d12f49b7fc1",
+      "source_crop_box": [
+        213,
+        38,
+        431,
+        714
+      ],
+      "take": 1,
+      "mirror_applied": false,
+      "visual_review": {
+        "pose": "front_standing",
+        "full_body": true,
+        "hands_empty": true,
+        "knees_straight": true,
+        "source_reviewed": true
+      }
+    },
+    "linyue": {
+      "name": "林悦",
+      "texture": "res://assets/characters/front_standing_20261017/linyue.png",
+      "source_facing": "front",
+      "anchor": [
+        74,
+        510
+      ],
+      "top_anchor": [
+        74,
+        13
+      ],
+      "sole_anchor": [
+        74,
+        510
+      ],
+      "height_native": 497,
+      "size": [
+        163,
+        524
+      ],
+      "source": ".docs/美术/人物正面站姿_20261017/linyue/take_01/standing_green.png",
+      "source_sha256": "c756f958ca983b8666d974c6df5f0a6a365725bab669a8b62ff6013162952506",
+      "texture_sha256": "4bd6d4304ee149adf3deeed8dc072d2de4e4e850de564a4936e0cd7c11c7c7c5",
+      "source_crop_box": [
+        226,
+        45,
+        413,
+        719
+      ],
+      "take": 1,
+      "mirror_applied": false,
+      "visual_review": {
+        "pose": "front_standing",
+        "full_body": true,
+        "hands_empty": true,
+        "knees_straight": true,
+        "source_reviewed": true
+      }
+    },
+    "cenbai": {
+      "name": "岑白",
+      "texture": "res://assets/characters/front_standing_20261017/cenbai.png",
+      "source_facing": "front",
+      "anchor": [
+        86,
+        511
+      ],
+      "top_anchor": [
+        86,
+        12
+      ],
+      "sole_anchor": [
+        86,
+        511
+      ],
+      "height_native": 499,
+      "size": [
+        178,
+        524
+      ],
+      "source": ".docs/美术/人物正面站姿_20261017/cenbai/take_01/standing_green.png",
+      "source_sha256": "ca3916a841c0ba8e22a3d10a6c1847ad960d46a284b6588f36bb64aca3f76570",
+      "texture_sha256": "a0523af647bf4067211cbd172d2f65501b42d7bc9e504b62c622a63b2792cec4",
+      "source_crop_box": [
+        217,
+        45,
+        421,
+        708
+      ],
+      "take": 1,
+      "mirror_applied": false,
+      "visual_review": {
+        "pose": "front_standing",
+        "full_body": true,
+        "hands_empty": true,
+        "knees_straight": true,
+        "source_reviewed": true
+      }
+    },
+    "sister": {
+      "name": "妹妹",
+      "texture": "res://assets/characters/front_standing_20261017/sister.png",
+      "source_facing": "front",
+      "anchor": [
+        84,
+        510
+      ],
+      "top_anchor": [
+        84,
+        12
+      ],
+      "sole_anchor": [
+        84,
+        510
+      ],
+      "height_native": 498,
+      "size": [
+        177,
+        524
+      ],
+      "source": ".docs/美术/人物正面站姿_20261017/sister/take_02/standing_green.png",
+      "source_sha256": "baf3301e80b10bf4134eff89d945ced00bf093d1422d1df261d40f48e7a3b5dc",
+      "texture_sha256": "41d6f57f5585ebadf1978898ad813cdd6dbecf8fc38372afddac6a31a8e5b1d9",
+      "source_crop_box": [
+        219,
+        45,
+        422,
+        707
+      ],
+      "take": 2,
+      "mirror_applied": false,
+      "visual_review": {
+        "pose": "front_standing",
+        "full_body": true,
+        "hands_empty": true,
+        "knees_straight": true,
+        "source_reviewed": true
+      }
+    }
+  }
+}

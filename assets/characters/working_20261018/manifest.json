@@ -1,0 +1,167 @@
+{
+  "provider": "local ComfyUI",
+  "image_model": "qwen_image_2.1_int8_convrot.safetensors",
+  "anchor_note": "Manually annotated original reviewed green stills; standing here means a ground-anchored action and may be crouched or kneeling.",
+  "characters": {
+    "zhang": {
+      "name": "老张",
+      "kind": "standing",
+      "label": "检修工具零件",
+      "source_facing": "right",
+      "height_ratio": 0.68,
+      "anchor": [
+        329,
+        679
+      ],
+      "sole_anchor": [
+        329,
+        679
+      ],
+      "top_anchor": [
+        362,
+        232
+      ],
+      "height_native": 447
+    },
+    "ajie": {
+      "name": "阿杰",
+      "kind": "standing",
+      "label": "持手电警戒",
+      "source_facing": "right",
+      "height_ratio": 1.0,
+      "anchor": [
+        292,
+        660
+      ],
+      "sole_anchor": [
+        292,
+        660
+      ],
+      "top_anchor": [
+        328,
+        362
+      ],
+      "height_native": 298
+    },
+    "xuning": {
+      "name": "许宁",
+      "kind": "standing",
+      "label": "整理医疗包",
+      "source_facing": "right",
+      "height_ratio": 0.65,
+      "anchor": [
+        350,
+        650
+      ],
+      "sole_anchor": [
+        350,
+        650
+      ],
+      "top_anchor": [
+        327,
+        166
+      ],
+      "height_native": 484
+    },
+    "chenchuan": {
+      "name": "陈川",
+      "kind": "standing",
+      "label": "检修电机零件",
+      "source_facing": "right",
+      "height_ratio": 0.68,
+      "anchor": [
+        320,
+        627
+      ],
+      "sole_anchor": [
+        320,
+        627
+      ],
+      "top_anchor": [
+        351,
+        111
+      ],
+      "height_native": 516
+    },
+    "duheng": {
+      "name": "杜衡",
+      "kind": "standing",
+      "label": "查看路线地图",
+      "source_facing": "right",
+      "height_ratio": 1.0,
+      "anchor": [
+        330,
+        710
+      ],
+      "sole_anchor": [
+        330,
+        710
+      ],
+      "top_anchor": [
+        310,
+        54
+      ],
+      "height_native": 656
+    },
+    "linyue": {
+      "name": "林悦",
+      "kind": "standing",
+      "label": "清点物资绑带",
+      "source_facing": "left",
+      "height_ratio": 1.0,
+      "anchor": [
+        322,
+        706
+      ],
+      "sole_anchor": [
+        322,
+        706
+      ],
+      "top_anchor": [
+        321,
+        58
+      ],
+      "height_native": 648
+    },
+    "cenbai": {
+      "name": "岑柏",
+      "kind": "standing",
+      "label": "整理绳结",
+      "source_facing": "left",
+      "height_ratio": 0.63,
+      "anchor": [
+        326,
+        679
+      ],
+      "sole_anchor": [
+        326,
+        679
+      ],
+      "top_anchor": [
+        312,
+        113
+      ],
+      "height_native": 566
+    },
+    "sister": {
+      "name": "妹妹",
+      "kind": "standing",
+      "label": "捧杯休息",
+      "source_facing": "left",
+      "height_ratio": 0.66,
+      "anchor": [
+        252,
+        679
+      ],
+      "sole_anchor": [
+        252,
+        679
+      ],
+      "top_anchor": [
+        319,
+        54
+      ],
+      "height_native": 625
+    }
+  }
+}

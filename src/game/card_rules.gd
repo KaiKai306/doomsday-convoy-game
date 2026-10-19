@@ -239,6 +239,8 @@ func resolve_card(id: String, option: int, args: Dictionary = {}) -> bool:
 	var personal = s.phase in ["morning","route","stop"] and id in s.daily.card_candidates
 	if not travel and not camp_event and not opportunity and not personal and not expiry_mode: return fail("该卡未生成，不能从图鉴执行")
 	if personal or opportunity:
+		if not expiry_mode and fixed_recruitment_pending() and s.daily.tasks >= 1:
+			return fail("请先回应固定招募：今天只剩另一项主要事务")
 		if s.daily.tasks >= 2 and not expiry_mode: return fail("今天两项主要事务已用完")
 		if not expiry_mode: s.daily.tasks += 1
 		if opportunity:

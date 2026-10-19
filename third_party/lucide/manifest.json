@@ -1,0 +1,38 @@
+{
+  "repository": "https://github.com/lucide-icons/lucide",
+  "commit": "7b0196e249ca09ca27c584c497aca9a8cab8a7f5",
+  "license": "ISC",
+  "modification": "Set stroke to #ffffff for Godot SVG import; runtime tint follows the convoy UI palette.",
+  "icons": [
+    {
+      "resource": "water",
+      "icon": "droplet",
+      "source": "https://github.com/lucide-icons/lucide/blob/7b0196e249ca09ca27c584c497aca9a8cab8a7f5/icons/droplet.svg",
+      "upstream_sha256": "abca4df60f91c605d945c6fe5ee0e6c919b53116d81e268f4581f8841bf24751"
+    },
+    {
+      "resource": "food",
+      "icon": "wheat",
+      "source": "https://github.com/lucide-icons/lucide/blob/7b0196e249ca09ca27c584c497aca9a8cab8a7f5/icons/wheat.svg",
+      "upstream_sha256": "d18be93cdd1ea09f28e66c69c04927c5f919c09a3bc6d7553ebb1fc85a5b828d"
+    },
+    {
+      "resource": "fuel",
+      "icon": "fuel",
+      "source": "https://github.com/lucide-icons/lucide/blob/7b0196e249ca09ca27c584c497aca9a8cab8a7f5/icons/fuel.svg",
+      "upstream_sha256": "1e2f065370733e919bda97f92a946c1fec79cae809da4b53d364ead08eea136e"
+    },
+    {
+      "resource": "medicine",
+      "icon": "pill",
+      "source": "https://github.com/lucide-icons/lucide/blob/7b0196e249ca09ca27c584c497aca9a8cab8a7f5/icons/pill.svg",
+      "upstream_sha256": "cf28e85117f308eb1d33b8ccd07f5dca5d6796bd1d76ab531d010b2dfc514949"
+    },
+    {
+      "resource": "parts",
+      "icon": "settings",
+      "source": "https://github.com/lucide-icons/lucide/blob/7b0196e249ca09ca27c584c497aca9a8cab8a7f5/icons/settings.svg",
+      "upstream_sha256": "0ae27fd0f81999229e3127ac96c5b32edfea448e291d509e76212b917551d66b"
+    }
+  ]
+}

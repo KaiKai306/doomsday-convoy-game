@@ -34,5 +34,16 @@
   ],
   "camera_limit_source_canvas_pixels": 0,
   "scope": "Independent art scene, not yet wired into gameplay",
-  "presentation": "static_layers"
+  "presentation": "static_layers",
+  "actor_scale": 1.5,
+  "actor_ground_lift": 30,
+  "npc_x": [
+    670,
+    1330,
+    1670,
+    2010,
+    2200,
+    550,
+    1450
+  ]
 }

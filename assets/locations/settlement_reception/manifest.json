@@ -120,5 +120,6 @@
   "scope": "Gameplay presentation selected by actual world state through location_catalog.gd",
   "art_revision": "gpt25_style_revision",
   "generation_model": "gpt-image-2.5-flare",
-  "travel_limit": ""
+  "travel_limit": "",
+  "actor_ground_lift": 30
 }

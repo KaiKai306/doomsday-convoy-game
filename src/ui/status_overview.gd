@@ -10,7 +10,7 @@ const GOLD := Color("#e1b254")
 const GREEN := Color("#79b98a")
 const RED := Color("#d05f55")
 const BLUE := Color("#689aac")
-const PORTRAITS := {"主角": "captain", "老张": "mechanic", "艾琳": "medic", "阿杰": "scout", "索菲亚": "quartermaster"}
+const PORTRAITS := {"主角": "captain", "老张": "mechanic", "艾琳": "medic", "阿杰": "scout", "索菲亚": "quartermaster", "许宁": "xuning", "陈川": "chenchuan", "杜衡": "duheng", "林悦": "linyue", "岑柏": "cenbai", "妹妹": "sister"}
 var game_state: GameState
 var day_loop: DayLoop
 var phase_name := ""
@@ -177,7 +177,7 @@ func _rebuild_members() -> void:
 		button.custom_minimum_size = Vector2(0, 70)
 		button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		button.add_theme_stylebox_override("normal", _metal(true))
-		_picture(button, PORTRAITS.get(member_name, "captain") + ".png", Vector2(4, 4), Vector2(61, 62))
+		_picture(button, PORTRAITS.get(member_name, "unknown") + ".png", Vector2(4, 4), Vector2(61, 62))
 		_text(button, member_name, Vector2(79, 6), Vector2(136, 27), 21, CREAM)
 		_text(button, str(member.job), Vector2(79, 35), Vector2(136, 22), 15, MUTED)
 		var condition := member_condition(member)
@@ -276,7 +276,7 @@ func _show_member(member_name: String) -> void:
 	if member.is_empty(): return
 	if inspected_member != member_name or not member_detail.visible: detail_scroll.scroll_vertical = 0
 	inspected_member = member_name
-	detail_portrait.texture = load(ART + PORTRAITS.get(member_name, "captain") + ".png")
+	detail_portrait.texture = load(ART + PORTRAITS.get(member_name, "unknown") + ".png")
 	detail_name.text = "%s · %s" % [member_name, member.job]
 	detail_summary.text = "健康     %d / 100\n疲劳     %d / 100\n个人信任     %d / 100\n\n最近记忆\n%s" % [member.health, member.fatigue, member.trust, member.last_memory]
 	member_detail.show()

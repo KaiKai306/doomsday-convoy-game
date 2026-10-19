@@ -2,11 +2,11 @@ extends Control
 
 const DAY_SCENE_PATH := "res://scenes/release_game.tscn"
 const FINAL_SAVES := preload("res://src/game/save.gd")
-const TITLE_IMAGE := preload("res://assets/settings/settings_background.png")
-const TITLE_VIDEO := preload("res://assets/settings/settings_background.ogv")
-const TITLE_MUSIC := preload("res://assets/audio/music_mainmenu_loop.ogg")
+const TITLE_IMAGE := preload("res://assets/title/cover_user_20261018.png")
+const TITLE_BACKGROUND := Color("#0a101b")
 const TITLE_SIZE := Vector2(1280, 720)
 const SETTINGS_SCREEN := preload("res://src/ui/settings_screen.gd")
+const ARCHIVE_SCREEN_PATH := "res://src/ui/archive_screen.gd"
 const ARWES_FRAME := preload("res://src/ui/arwes_frame.gd")
 const UI_FEEDBACK := preload("res://src/ui/ui_feedback.gd")
 const SCENE_LOADING := preload("res://src/ui/scene_loading.gd")
@@ -17,6 +17,7 @@ var frame: Control
 var menu: Control
 var cover_video: VideoStreamPlayer
 var cover: TextureRect
+var cover_art: TextureRect
 var game_state: GameState
 var day_demo: Control
 var save_system := FINAL_SAVES.new()
@@ -29,8 +30,15 @@ var animated_cover := true
 var feedback: ConvoyUIFeedback
 var transitioning := false
 var menu_loading
-var menu_music: AudioStreamPlayer
-var music_fade: Tween
+var music_director: Node
+var menu_music: AudioStreamPlayer:
+	get:
+		return music_director.active_player if is_instance_valid(music_director) else null
+var archive_screen: Control
+var developer_session
+var developer_previous_mode = Node.PROCESS_MODE_INHERIT
+var developer_frame_visible = true
+var developer_save_directory = "user://developer_saves"
 var startup_ready := false
 
 func _ready() -> void:
@@ -48,14 +56,22 @@ func _ready() -> void:
 	get_viewport().size_changed.connect(_fit)
 	_fit()
 	cover = TextureRect.new()
-	cover.texture = TITLE_IMAGE
+	var fill_image := Image.create(1, 1, false, Image.FORMAT_RGB8)
+	fill_image.fill(TITLE_BACKGROUND)
+	cover.texture = ImageTexture.create_from_image(fill_image)
 	cover.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-	cover.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
+	cover.stretch_mode = TextureRect.STRETCH_SCALE
 	cover.size = TITLE_SIZE
 	cover.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	frame.add_child(cover)
+	cover_art = TextureRect.new()
+	cover_art.name = "UserCoverArt"
+	cover_art.texture = TITLE_IMAGE
+	cover_art.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	cover_art.stretch_mode = TextureRect.STRETCH_SCALE
+	cover_art.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	cover.add_child(cover_art)
 	cover_video = VideoStreamPlayer.new()
-	cover_video.stream = TITLE_VIDEO
 	cover_video.expand = true
 	cover_video.size = TITLE_SIZE
 	cover_video.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -67,7 +83,7 @@ func _ready() -> void:
 	frame.add_child(menu)
 	_build_title()
 	_title_button("新游戏", "从这里，驶向未知", 277, _start_game_transition, "new_game", 0)
-	continue_button = _title_button("存档", "继续上次保存的旅程", 353, _continue_transition, "continue_game", 1)
+	continue_button = _title_button("存档", "选择、读取与管理旅程", 353, _continue_transition, "continue_game", 1)
 	save_hint = continue_button.get_node("Hint")
 	_refresh_continue()
 	_title_button("设置", "声音 / 画面 / 操作", 429, _open_settings, "settings", 2)
@@ -82,43 +98,49 @@ func _ready() -> void:
 	_fit()
 	feedback.enter(menu)
 	startup_ready = true
+	if "--developer" in OS.get_cmdline_user_args() and OS.is_debug_build(): call_deferred("_enter_developer_mode")
 
 func is_startup_ready() -> bool:
 	return startup_ready
 
+func _input(event: InputEvent) -> void:
+	if event is InputEventKey and event.pressed and not event.echo and event.keycode == KEY_F8 and OS.is_debug_build():
+		if is_instance_valid(developer_session): developer_session.toggle_panel()
+		elif not transitioning: _enter_developer_mode()
+		get_viewport().set_input_as_handled()
+
+func _enter_developer_mode() -> void:
+	if not OS.is_debug_build() or is_instance_valid(developer_session) or transitioning: return
+	if is_instance_valid(day_demo) and day_demo.loading_screen.busy: return
+	var payload: Dictionary = day_demo.progress_payload() if is_instance_valid(day_demo) else {}
+	developer_frame_visible = frame.visible
+	if is_instance_valid(day_demo):
+		developer_previous_mode = day_demo.process_mode
+		day_demo.hide(); day_demo.process_mode = Node.PROCESS_MODE_DISABLED
+	frame.hide(); cover_video.stop()
+	developer_session = load("res://src/developer/developer_session.gd").new()
+	developer_session.save_directory = developer_save_directory
+	add_child(developer_session)
+	developer_session.exit_requested.connect(_exit_developer_mode)
+	developer_session.start(payload)
+
+func _exit_developer_mode() -> void:
+	if not is_instance_valid(developer_session): return
+	remove_child(developer_session); developer_session.queue_free(); developer_session = null
+	frame.visible = developer_frame_visible
+	if is_instance_valid(day_demo):
+		day_demo.process_mode = developer_previous_mode; day_demo.show()
+	if frame.visible: _play_cover(); _play_menu_music()
+	elif is_instance_valid(day_demo): day_demo.activate_music()
+
 func _build_menu_music() -> void:
-	menu_music = AudioStreamPlayer.new()
-	menu_music.name = "MainMenuMusic"
-	menu_music.stream = TITLE_MUSIC.duplicate()
-	menu_music.stream.loop = true
-	menu_music.volume_linear = 0.0
-	add_child(menu_music)
-	settings.audio_changed.connect(_apply_music_preferences)
+	music_director = get_node("/root/MusicDirector")
+	music_director.bind_preferences(settings)
 	_play_menu_music()
 
-func _menu_music_gain() -> float:
-	if settings.values.get("mute", false): return 0.0
-	return float(settings.values.master) * float(settings.values.music) / 10000.0
-
-func _fade_menu_music(gain: float, seconds: float) -> Tween:
-	if music_fade: music_fade.kill()
-	music_fade = create_tween()
-	music_fade.tween_property(menu_music, "volume_linear", gain, seconds)
-	return music_fade
-
 func _play_menu_music() -> void:
-	if not menu_music.playing:
-		menu_music.volume_linear = 0.0
-		menu_music.play()
-	_fade_menu_music(_menu_music_gain(), 0.5)
-
-func _stop_menu_music() -> void:
-	if menu_music.playing:
-		_fade_menu_music(0.0, 0.2).tween_callback(menu_music.stop)
-
-func _apply_music_preferences() -> void:
-	if menu_music.playing and frame.visible:
-		_fade_menu_music(_menu_music_gain(), 0.12)
+	music_director.activate(self)
+	music_director.request(self,"main_menu")
 
 func _build_exit() -> void:
 	confirmation = Control.new()
@@ -218,7 +240,7 @@ func _build_title() -> void:
 	line.color = Color(0.75, 0.58, 0.37, 0.28)
 	line.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	menu.add_child(line)
-	_menu_label(menu, "二十日框架测试版  /  0.6", Vector2(67, 668), Vector2(360, 24), 11, Color("#899ba9"))
+	_menu_label(menu, "版本 %s" % str(ProjectSettings.get_setting("application/config/version", "0.6.0")), Vector2(67, 668), Vector2(360, 24), 11, Color("#899ba9"))
 	_menu_label(menu, "篝火未熄，旅途继续。", Vector2(974, 659), Vector2(250, 26), 13, Color("#a29686"))
 
 func _menu_label(parent: Control, text: String, position_value: Vector2, dimensions: Vector2, font_size: int, color: Color) -> Label:
@@ -269,24 +291,24 @@ func _style_menu_button(button: Button) -> void:
 	border.queue_redraw()
 
 func _refresh_continue() -> void:
-	continue_button.disabled = save_system.load_from_file().is_empty()
-	continue_button.tooltip_text = "暂无存档，请先开始新游戏" if continue_button.disabled else "继续上次保存的旅程"
-	save_hint.text = "暂无存档 · 开始一段新旅程" if continue_button.disabled else "继续上次保存的旅程"
+	continue_button.disabled = false
+	continue_button.tooltip_text = "选择、读取与管理旅程"
+	save_hint.text = "六个存档位 · 保存每一段旅程"
 	_style_menu_button(continue_button)
 
 func _play_cover() -> void:
-	if animated_cover and frame.visible:
-		cover_video.show()
-		cover_video.play()
+	# The user-selected static cover stays visible when motion preferences change.
+	# Keep this idle node for existing menu lifecycle and layout callers.
+	cover_video.stop()
+	cover_video.hide()
 
 func _build_settings() -> void:
 	settings = SETTINGS_SCREEN.new()
 	settings.feedback = feedback
-	# Preferences exist immediately; the hidden settings UI and its second video
-	# decoder are constructed only when the player actually opens Settings.
+	# Keep preference values ready without building hidden controls/video at boot.
 	settings.animation_changed.connect(func(enabled: bool):
 		animated_cover = enabled
-		cover_video.visible = enabled
+		_play_cover()
 	)
 	settings.closed.connect(func():
 		menu.show()
@@ -305,41 +327,52 @@ func _open_settings() -> void:
 	transitioning = false
 
 func _exit_tree() -> void:
-	if is_instance_valid(settings) and settings.get_parent() == null:
-		settings.free()
+	if is_instance_valid(settings) and settings.get_parent() == null: settings.free()
+
+func _build_archive() -> void:
+	archive_screen = load(ARCHIVE_SCREEN_PATH).new(); archive_screen.feedback = feedback; frame.add_child(archive_screen)
+	archive_screen.closed.connect(func(): menu.show(); _refresh_continue(); _play_cover())
+	archive_screen.load_requested.connect(_load_archive_game)
+	archive_screen.new_game_requested.connect(func(slot: String): _load_archive_game({},slot))
+
+func _load_archive_game(payload: Dictionary, slot: String = "") -> void:
+	if transitioning: return
+	transitioning = true
+	menu.show()
+	await _prepare_game(payload)
+	if is_instance_valid(day_demo):
+		if slot != "" and not day_demo.save_progress(slot):
+			day_demo.error_label.text = "新旅程已开始，但手动存档失败。请重新保存。"
+	elif frame.visible:
+		archive_screen.show(); menu.hide()
+	transitioning = false
+
+func _open_archive(intent: String = "load") -> void:
+	if transitioning: return
+	if not is_instance_valid(archive_screen): _build_archive()
+	menu.hide(); cover_video.stop(); archive_screen.open_screen(save_system,null,intent)
 
 func _start_game_transition() -> void:
-	if transitioning: return
-	transitioning = true
-	await feedback.leave(menu)
-	await _prepare_game()
-	if is_instance_valid(day_demo): feedback.enter(day_demo, Vector2.ZERO)
-	transitioning = false
-	if frame.visible: feedback.enter(menu)
+	_open_archive("new")
 
 func _continue_transition() -> void:
-	if transitioning: return
-	transitioning = true
-	await feedback.leave(menu)
-	var saved := save_system.load_from_file()
-	if saved.is_empty():
-		message.text = "还没有保存过旅途。请先开始新游戏。"
-	else:
-		await _prepare_game(saved)
-	if is_instance_valid(day_demo): feedback.enter(day_demo, Vector2.ZERO)
-	transitioning = false
-	if frame.visible: feedback.enter(menu)
+	_open_archive()
 
 func _fit() -> void:
 	var viewport_size := get_viewport_rect().size
 	frame.scale = Vector2.ONE; frame.position = Vector2.ZERO; frame.size = viewport_size
 	if is_instance_valid(cover): cover.size = viewport_size
+	if is_instance_valid(cover_art):
+		# Fit the entire artwork to display height and anchor it at the right.
+		# Wider phones extend the matching dark left edge without cropping heads
+		# or boots. Interactive controls keep their independent safe-area layout.
+		cover_art.size = Vector2(viewport_size.y * TITLE_SIZE.x / TITLE_SIZE.y, viewport_size.y)
+		cover_art.position = Vector2(viewport_size.x - cover_art.size.x, 0)
 	if is_instance_valid(cover_video): MOBILE.cover(cover_video,TITLE_SIZE,viewport_size)
 	if is_instance_valid(menu): MOBILE.fit(menu,TITLE_SIZE,MOBILE.safe_rect(self),Vector2(0,0.5))
 
 func _start_game(saved: Dictionary = {}) -> void:
 	if is_instance_valid(day_demo): return
-	# Script/scene assembly stays on the main thread, under a rendered cover.
 	var packed := load(DAY_SCENE_PATH) as PackedScene
 	if packed == null:
 		message.text = "游戏资源未能载入，请更新安装包后重试。"
@@ -347,25 +380,27 @@ func _start_game(saved: Dictionary = {}) -> void:
 	day_demo = packed.instantiate()
 	add_child(day_demo)
 	day_demo.save_system = save_system
+	day_demo.auto_save_enabled = bool(settings.values.get("auto_save",true))
+	day_demo.activate_music()
 	if not day_demo.setup(game_state, saved):
 		day_demo.queue_free()
 		day_demo = null
 		message.text = "存档不兼容或已损坏。可以开始新的旅程。"
+		_play_menu_music()
 		return
 	frame.hide()
 	cover_video.stop()
-	_stop_menu_music()
 	menu_loading.loaded_location = ""
 	day_demo.return_to_menu.connect(_return_to_menu)
 
 func _prepare_game(saved: Dictionary = {}) -> void:
-	# Load gameplay only after the player chooses New/Continue, never at boot.
 	menu_loading.loaded_location = ""
-	menu_loading.request("game_start", func(): _start_game(saved))
+	menu_loading.request("game_start",func(): _start_game(saved))
 	await menu_loading.finished
 
 func _continue() -> void:
-	var saved := save_system.load_from_file()
+	var latest := save_system.latest_slot()
+	var saved := save_system.load_from_file(latest) if latest != "" else {}
 	if saved.is_empty():
 		message.text = "还没有保存过旅途。请先开始新游戏。"
 		return
@@ -383,6 +418,8 @@ func _show_main_menu() -> void:
 		day_demo.queue_free()
 		day_demo = null
 	frame.show()
+	if is_instance_valid(archive_screen): archive_screen.hide()
+	settings.hide(); menu.show()
 	feedback.enter(menu, Vector2(-14, 0))
 	_play_cover()
 	_play_menu_music()

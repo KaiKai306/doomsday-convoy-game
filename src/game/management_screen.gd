@@ -9,6 +9,7 @@ const BIOMES = preload("res://src/game/biome_catalog.gd")
 const ART = preload("res://src/game/vehicle_art.gd")
 const PROSE = preload("res://src/game/presentation.gd")
 const MOBILE = preload("res://src/ui/mobile_layout.gd")
+const TOUCH_TEXT = preload("res://src/ui/touch_rich_text.gd")
 const GARAGE_3D = preload("res://src/ui/garage_vehicle_preview.gd")
 const DESIGN = Vector2(1680,720)
 const GOLD = SKIN.GOLD
@@ -106,7 +107,7 @@ func _text(parent: Node,value: String,point: Vector2,dimensions: Vector2,font_si
 	label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART; parent.add_child(label); return label
 
 func _rich(parent: Node,value: String,point: Vector2,dimensions: Vector2,font_size: int = 18) -> RichTextLabel:
-	var label = RichTextLabel.new(); label.text = value; label.bbcode_enabled = true; label.position = point; label.size = dimensions; label.add_theme_font_size_override("normal_font_size",font_size); label.add_theme_color_override("default_color",WHITE); parent.add_child(label); return label
+	var label = TOUCH_TEXT.new(); label.text = value; label.bbcode_enabled = true; label.position = point; label.size = dimensions; label.add_theme_font_size_override("normal_font_size",font_size); label.add_theme_color_override("default_color",WHITE); parent.add_child(label); return label
 
 func _box(fill: Color,border: Color) -> StyleBoxFlat:
 	var box = StyleBoxFlat.new(); box.bg_color = fill; box.border_color = border; box.set_border_width_all(1); box.corner_detail = 1; box.set_corner_radius_all(7)
@@ -331,7 +332,7 @@ func _map() -> void:
 	_text(page,"无法出发："+depart.tooltip_text if depart != null and depart.disabled else "选择地点与行驶方式后确认出发",Vector2(50,630+extra),Vector2(1120,25),16,MUTED)
 
 func _portrait(parent: Node,id: String,point: Vector2,dimensions: Vector2) -> void:
-	var key = {"captain":"captain","zhang":"mechanic","elin":"medic","ajie":"scout","sofia":"quartermaster"}.get(id,"")
+	var key = {"captain":"captain","zhang":"mechanic","elin":"medic","ajie":"scout","sofia":"quartermaster","xuning":"xuning","chenchuan":"chenchuan","duheng":"duheng","linyue":"linyue","cenbai":"cenbai","sister":"sister"}.get(id,"")
 	if key != "": _picture(parent,"res://assets/ui/status_overview/"+key+".png",point,dimensions)
 	else: _glyph(parent,"vehicle",point,dimensions,MUTED)
 
@@ -426,11 +427,11 @@ func _story() -> void:
 	_actions(panel,Vector2(753,22),Vector2(815,270))
 
 func _pause_page() -> void:
-	_header("末日车队  |  已暂停","进度已自动保存")
-	var panel = _panel(page,Vector2(460,160+_extra_height()*0.5),Vector2(760,440),true)
+	_header("末日车队  |  已暂停","可手动保存或读取旅程" if host.auto_save_enabled else "自动存档已关闭 · 请手动保存进度")
+	var panel = _panel(page,Vector2(460,144+_extra_height()*0.5),Vector2(760,484),true)
 	_text(panel,"继续旅程",Vector2(40,28),Vector2(670,46),34)
 	_rich(panel,host.information.text,Vector2(40,96),Vector2(680,100),19)
-	_actions(panel,Vector2(40,212),Vector2(680,196))
+	_actions(panel,Vector2(40,212),Vector2(680,248))
 
 func _open_modal(kind: String) -> void:
 	if kind in ["vehicle","modules"] and host.engine.s.vehicles.is_empty(): return
@@ -466,13 +467,22 @@ func _module_choices(panel: Control) -> void:
 		if mod.slot != slot: continue
 		var item = _panel(grid,Vector2.ZERO,Vector2(553,244)); item.custom_minimum_size = Vector2(553,244)
 		_text(item,id+"  "+str(mod.name),Vector2(18,13),Vector2(510,30),22,GOLD)
-		_rich(item,str(mod.effect),Vector2(18,51),Vector2(514,102),17)
-		_text(item,"核心 %d    ·    零件 %d    ·    重量 %d kg" % [host.engine.s.cores.get(id,0),mod.cost,mod.weight],Vector2(18,163),Vector2(510,27),16,MUTED)
-		_command(item,"安装", "camp",{"id":"install","vehicle":host.selected_vehicle,"module":id},Vector2(18,200),Vector2(248,34),true)
+		# Expand the description inside its card; only the outer list scrolls.
+		var effect = _rich(item,str(mod.effect),Vector2(18,51),Vector2(514,102),17)
+		effect.fit_content = true; effect.scroll_active = false; effect.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		var cost = _text(item,"核心 %d    ·    零件 %d    ·    重量 %d kg" % [host.engine.s.cores.get(id,0),mod.cost,mod.weight],Vector2(18,163),Vector2(510,27),16,MUTED)
+		var install = _command(item,"安装", "camp",{"id":"install","vehicle":host.selected_vehicle,"module":id},Vector2(18,200),Vector2(248,34),true)
+		var extra_action: Control
 		if host.engine.s.day >= 15:
-			_command(item,"补购核心","buy_core",{"id":id},Vector2(282,200),Vector2(248,34))
+			extra_action = _command(item,"补购核心","buy_core",{"id":id},Vector2(282,200),Vector2(248,34))
 		else:
-			_text(item,"核心在旅途中获取",Vector2(284,204),Vector2(245,28),15,MUTED)
+			extra_action = _text(item,"核心在旅途中获取",Vector2(284,204),Vector2(245,28),15,MUTED)
+		var arrange = func():
+			var height = maxf(102,effect.get_content_height())
+			effect.size.y = height; cost.position.y = 61+height; install.position.y = 98+height
+			extra_action.position.y = install.position.y+(0 if extra_action is Button else 4)
+			item.custom_minimum_size.y = install.position.y+44
+		effect.minimum_size_changed.connect(arrange); arrange.call_deferred()
 	var remove = _source("camp","remove")
 	if remove != null: _proxy(panel,remove,Vector2(795,20),Vector2(225,35),"拆除当前配件")
 

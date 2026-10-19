@@ -52,7 +52,7 @@ func _run() -> void:
 	main.save_system = saves
 	root.add_child(main)
 	for frame in range(3): await process_frame
-	check(main.cover.texture != null and main.cover_video.stream != null, "menu still/video")
+	check(main.cover.texture != null and main.cover_art.texture != null, "new static cover and responsive background")
 	check(main.menu_music.stream != null, "menu audio")
 	await capture(args[1].path_join("packed-main-menu.png"))
 	main._start_game()

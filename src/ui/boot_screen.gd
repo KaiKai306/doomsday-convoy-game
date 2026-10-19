@@ -8,9 +8,9 @@ signal startup_failed(message: String)
 @export var startup_log_path := "user://startup.log"
 @export var stall_timeout_msec := 30000
 const MENU_MEDIA: Array[String] = [
+	"res://assets/title/cover_user_20261018.png",
 	"res://assets/settings/settings_background.png",
-	"res://assets/settings/settings_background.ogv",
-	"res://assets/audio/music_mainmenu_loop.ogg",
+	"res://assets/audio/music_20261018/main_menu.ogg",
 ]
 var progress := 0.0
 var busy := false
@@ -126,7 +126,7 @@ func _next_resource() -> void:
 		_open_menu.call_deferred()
 		return
 	loading_path = MENU_MEDIA[resource_index]
-	status.text = ["正在读取菜单背景…", "正在读取动态背景…", "正在读取菜单音乐…"][resource_index]
+	status.text = ["正在读取封面…", "正在读取界面背景…", "正在读取菜单音乐…"][resource_index]
 	resource_started_at = Time.get_ticks_msec()
 	last_advance_at = resource_started_at
 	resource_progress = 0.0

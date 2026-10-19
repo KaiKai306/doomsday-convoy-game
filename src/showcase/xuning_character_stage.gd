@@ -33,11 +33,12 @@ func set_pose(value: String) -> void:
 	if value not in ["standing","seated"]: return
 	for child in rig.get_children():
 		rig.remove_child(child); child.queue_free()
-	var state := GLTFState.new(); var document := GLTFDocument.new()
 	var path := "res://assets/characters/xu_ning/xu_ning_%s.glb" % value
-	if document.append_from_file(ProjectSettings.globalize_path(path),state) != OK:
+	# Use the imported scene, whose remap remains readable inside an APK/PCK.
+	var packed := ResourceLoader.load(path) as PackedScene
+	if packed == null:
 		push_error("Character mesh unavailable: "+path); return
-	var model := document.generate_scene(state)
+	var model := packed.instantiate()
 	model.name = "XuNing_"+value; rig.add_child(model)
 	_prepare_materials(model)
 	pose = value

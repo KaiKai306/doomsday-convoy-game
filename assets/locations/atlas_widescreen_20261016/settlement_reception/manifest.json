@@ -46,5 +46,6 @@
   ],
   "center_plate_pixels_unchanged": true,
   "image_record": ".docs\\美术\\示例图横版复刻_20261016\\widescreen\\records\\settlement_reception.json",
-  "raw_sha256": "46ea9a98839310b9ffc86aef8a61d239752e671a0c40282b0d5a6967bdc30496"
+  "raw_sha256": "46ea9a98839310b9ffc86aef8a61d239752e671a0c40282b0d5a6967bdc30496",
+  "actor_ground_lift": 30
 }

@@ -445,12 +445,26 @@ func depart(id: String, safe: bool) -> void:
 	if id == "sister": s.sister = "safe_departed" if safe else "rescued_unknown"
 	log_event(m.name+"离队："+m.memory)
 
+func fixed_recruitment_pending() -> bool:
+	return s.phase == "stop" and s.day in [4,7,9] and not s.daily.get("opportunity_used",false)
+
+func task_limit() -> int:
+	# The fixed recruitment reply itself needs one of the two daily task slots.
+	# Keeping it reserved prevents spending both on other stop actions first.
+	return 1 if fixed_recruitment_pending() else 2
+
 func recruit(choice: String) -> bool:
 	if s.phase != "stop" or s.day not in [4,7,9] or s.daily.opportunity_used: return fail("当前没有固定招募机会")
-	if s.daily.tasks >= 2: return fail("主要事务已满")
 	var candidates = {4:["xuning","chenchuan"],7:["duheng","linyue"],9:["cenbai"]}[int(s.day)]
 	if choice != "none" and choice not in candidates: return false
-	if choice != "none":
+	if choice == "none":
+		# Explicitly refusing is a mandatory reply, not a benefit. Older saves
+		# may already have used both slots before this reservation existed; keep
+		# that state recoverable instead of locking the stop phase forever.
+		if s.daily.tasks < 2: s.daily.tasks += 1
+		s.daily.hours += 0.5
+	else:
+		if s.daily.tasks >= 2: return fail("主要事务已满，只能点「都不招募」")
 		if people().size() >= 8: return fail("满8人，无法加入")
 		if not pay({"water":2,"food":2}): return false
 		var spec = {"xuning":["许宁",[80,20,45,40,25,65,35,35],"A"],"chenchuan":["陈川",[80,20,45,40,65,25,35,35],"A"],"duheng":["杜衡",[80,20,45,40,35,35,65,30],"B"],"linyue":["林悦",[80,20,45,40,35,35,30,65],"B"],"cenbai":["岑柏",[80,20,45,40,45,45,45,45],"B"]}[choice]
@@ -459,14 +473,17 @@ func recruit(choice: String) -> bool:
 			if m[role] >= 60: m.understanding[role] = 50
 		s.members.append(m)
 		s.daily.hours += 1
-	else: s.daily.hours += 0.5
+		s.daily.tasks += 1
 	s.facts["recruit_day_"+str(s.day)] = choice
-	s.daily.tasks += 1; s.daily.opportunity_used = true
+	s.daily.opportunity_used = true
 	log_event("固定招募选择："+choice+"。互斥永久保留。")
 	return true
 
 func use_task(hours: float = 1.0) -> bool:
-	if s.phase != "stop" or s.daily.tasks >= 2: return fail("停歇主要事务每天最多两项")
+	if s.phase != "stop": return fail("停歇主要事务每天最多两项")
+	if fixed_recruitment_pending() and s.daily.tasks >= 1:
+		return fail("请先回应固定招募：今天只剩另一项主要事务")
+	if s.daily.tasks >= 2: return fail("停歇主要事务每天最多两项")
 	s.daily.tasks += 1; s.daily.hours += hours
 	return true
 
@@ -782,7 +799,7 @@ func complete_goal(id: String) -> bool:
 
 func settle() -> bool:
 	if s.phase not in ["camp","stop"] or s.daily.night_done: return false
-	if s.day in [4,7,9] and not s.daily.opportunity_used: return fail("先回应固定招募，可明确都不收")
+	if s.day in [4,7,9] and not s.daily.opportunity_used: return fail("先回应固定招募：可选一人，或点「都不招募」")
 	if not s.daily.camp_used: return fail("先完成一次营地行动")
 	s.daily.night_done = true
 	var population = people().duplicate()
@@ -933,7 +950,9 @@ func command(action: String, args: Dictionary = {}) -> bool:
 		"social": result = social(str(args.id),str(args.get("target","")),str(args.get("faction","east")),int(args.get("offer",0)))
 		"camp": result = camp(str(args.id),args)
 		"begin_camp":
-			if s.phase == "stop" and (s.day not in [4,7,9] or s.daily.opportunity_used): s.phase = "camp"; result = true
+			if s.phase == "stop":
+				if fixed_recruitment_pending(): result = fail("请先回应固定招募：可选一人，或点「都不招募」")
+				else: s.phase = "camp"; result = true
 		"settle": result = settle()
 		"next": result = next_day()
 		"retry": result = retry_day()

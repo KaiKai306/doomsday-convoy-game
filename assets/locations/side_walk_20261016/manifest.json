@@ -232,7 +232,8 @@
         "mid.png",
         "near.png"
       ],
-      "far_repair": "Reflected adjacent textures under manually marked mid mask. Validated only at camera +/-24 source pixels; not a fully painted hidden world."
+      "far_repair": "Reflected adjacent textures under manually marked mid mask. Validated only at camera +/-24 source pixels; not a fully painted hidden world.",
+      "actor_ground_lift": 30
     },
     "neutral_market": {
       "title": "中立集市",
@@ -284,12 +285,18 @@
           806
         ]
       ],
-      "spawn_x": 610,
+      "spawn_x": 1010,
       "npc_x": [
-        350,
-        1010,
-        1350,
-        1690
+        390,
+        710,
+        1330,
+        1650,
+        230,
+        550,
+        870,
+        1170,
+        1490,
+        1810
       ],
       "camera_limit_source_canvas_pixels": 24,
       "warm_x": 1090,
@@ -308,7 +315,9 @@
         "mid.png",
         "near.png"
       ],
-      "far_repair": "Reflected adjacent textures under manually marked mid mask. Validated only at camera +/-24 source pixels; not a fully painted hidden world."
+      "far_repair": "Reflected adjacent textures under manually marked mid mask. Validated only at camera +/-24 source pixels; not a fully painted hidden world.",
+      "actor_scale": 1.5,
+      "actor_ground_lift": 30
     },
     "rescue_station_interior": {
       "title": "救援站内部",
@@ -346,7 +355,8 @@
         "mid.png",
         "near.png"
       ],
-      "far_repair": "Reflected adjacent textures under manually marked mid mask. Validated only at camera +/-24 source pixels; not a fully painted hidden world."
+      "far_repair": "Reflected adjacent textures under manually marked mid mask. Validated only at camera +/-24 source pixels; not a fully painted hidden world.",
+      "actor_ground_lift": 30
     }
   }
 }

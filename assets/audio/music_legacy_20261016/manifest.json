@@ -1,0 +1,1379 @@
+{
+  "schema_version": 1,
+  "prepared_on": "2026-10-18",
+  "source_collection_date": "2026-10-16",
+  "source_directory": ".docs/音频/场景配乐_20261016",
+  "source_readme": {
+    "path": ".docs/音频/场景配乐_20261016/README.md",
+    "sha256": "d97facdfc96cdc6e9794aa21805493b4a2283a78d62fc5cd1a0a7065b4c8d061",
+    "preserved_copy_path": ".docs/音频/配乐接入_20261018/legacy_source_README_20261016.md",
+    "preserved_unchanged": true
+  },
+  "selection": {
+    "archived_mp3_count": 17,
+    "selected_mp3_count": 16,
+    "original_entries": "14-29; entry 15 uses the 02m00 main version only",
+    "excluded": [
+      {
+        "filename": "music_15_supply_stop_00m38_take.mp3",
+        "path": ".docs/音频/场景配乐_20261016/music_15_supply_stop_00m38_take.mp3",
+        "sha256": "d37864047319081e1c5f56226a05d0869c6bdb5171642f3b7b4ffe518aebe663",
+        "reason": "Alternate 38-second take retained in archive; excluded from gameplay."
+      }
+    ]
+  },
+  "processing": {
+    "ffmpeg_version": "ffmpeg version 8.1.2-full_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers",
+    "codec": "libvorbis",
+    "quality": 5,
+    "sample_rate_hz": 48000,
+    "channels": 2,
+    "target_integrated_lufs": -20.0,
+    "max_encoded_true_peak_dbtp": -2.0,
+    "normalization": "Constant gain only; no compression, limiting, trimming, time changes, or baked crossfades.",
+    "subjective_audition": false,
+    "instrumental_only_verified": false,
+    "subjective_audition_note": "No audio-understanding/listening tool available. No subjective or vocal-content acceptance claimed.",
+    "original_metadata_text_preserved": true,
+    "new_music_generated": false
+  },
+  "tracks": [
+    {
+      "id": "water_tower",
+      "intended_use_from_original_readme": "沙漠旧水塔与水泵停歇区",
+      "source_filename": "music_14_water_tower_loop.mp3",
+      "source_path": ".docs/音频/场景配乐_20261016/music_14_water_tower_loop.mp3",
+      "source_sha256": "979991a138d777a3c1e9d41a9f76c62b454b3cd485041d2fb0dfcc13e2560ee1",
+      "source_format": {
+        "codec": "mp3",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "bits_per_sample": 0,
+        "duration_seconds": 201.038344,
+        "bytes": 6433522
+      },
+      "source_loudness": {
+        "integrated_lufs": -18.65,
+        "true_peak_dbtp": -1.58,
+        "loudness_range_lu": 11.0,
+        "relative_threshold_lufs": -29.11
+      },
+      "original_metadata": {
+        "ffprobe_json_path": ".docs/音频/配乐接入_20261018/legacy_original_metadata/water_tower.ffprobe.json",
+        "ffprobe_json_sha256": "63a448bedd4589ca02f58528337d4ef51e354829dca150bc7297ae349e935575",
+        "ffmetadata_text_path": ".docs/音频/配乐接入_20261018/legacy_original_metadata/water_tower.ffmetadata.txt",
+        "ffmetadata_text_sha256": "65a15bd4f8b0122b9ab65c5c93cc1606a9c2576d73c0986f7b139d17dd8cd9db",
+        "tags": {
+          "encoder": "Lavf58.76.100",
+          "AIGC": "{\"Label\":\"1\",\"ContentProducer\":\"001191110108MA01DFAQ6210000\",\"ProduceID\":\"v02c0bg10001db942ra7dldco8ui2g2g\",\"ReservedCode1\":\"\",\"ContentPropagator\":\"001191110108MA01DFAQ6220000\",\"PropagateID\":\"v02c0bg10001db942ra7dldco8ui2g2g\",\"ReservedCode2\":\"\"}"
+        }
+      },
+      "output_path": "assets/audio/music_legacy_20261016/water_tower.ogg",
+      "godot_resource_path": "res://assets/audio/music_legacy_20261016/water_tower.ogg",
+      "output_sha256": "cef7e4744f16aa7d17b1b529b2f138d850942aea7d340261a7be405b24c4305e",
+      "output_format": {
+        "codec": "vorbis",
+        "sample_rate_hz": 48000,
+        "channels": 2,
+        "bits_per_sample": 0,
+        "duration_seconds": 201.038375,
+        "bytes": 4036391
+      },
+      "output_loudness": {
+        "integrated_lufs": -20.04,
+        "true_peak_dbtp": -3.11,
+        "loudness_range_lu": 10.9,
+        "relative_threshold_lufs": -30.48
+      },
+      "output_metadata_tags": {
+        "encoder": "Lavc62.28.102 libvorbis",
+        "comment": "Original MP3 and AIGC metadata preserved; constant gain; no trimming",
+        "AIGC": "{\"Label\":\"1\",\"ContentProducer\":\"001191110108MA01DFAQ6210000\",\"ProduceID\":\"v02c0bg10001db942ra7dldco8ui2g2g\",\"ReservedCode1\":\"\",\"ContentPropagator\":\"001191110108MA01DFAQ6220000\",\"PropagateID\":\"v02c0bg10001db942ra7dldco8ui2g2g\",\"ReservedCode2\":\"\"}",
+        "title": "沙漠旧水塔与水泵停歇区",
+        "source_filename": "music_14_water_tower_loop.mp3"
+      },
+      "constant_gain_db": -1.35,
+      "encode_attempts": 1,
+      "loop": {
+        "enabled_at_runtime": true,
+        "managed_by": "two-player controller crossfade",
+        "stream_loop": false,
+        "start_seconds": 0.0,
+        "end_seconds": 201.038375,
+        "edit": "Whole original track; no trimming, time change, or baked crossfade."
+      },
+      "verification": {
+        "full_decode_passed": true,
+        "source_unchanged": true,
+        "duration_delta_seconds": 3.1e-05,
+        "duration_padding_tolerance_seconds": 0.1,
+        "original_aigc_text_preserved": true,
+        "true_peak_at_or_below_minus_2_dbtp": true
+      },
+      "current_mobile_file": {
+        "path": "assets/audio/music_legacy_20261016/water_tower.ogg",
+        "sha256": "6588bbad5caaff43cb60fdbd0b2b30930dcf288839d0001695a35cd27081a3b8",
+        "bytes": 1818010,
+        "codec": "vorbis",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "duration_seconds": 201.04,
+        "reencoded_for_mobile": true
+      }
+    },
+    {
+      "id": "supply_stop",
+      "intended_use_from_original_readme": "沙漠补给停歇点／岑柏相遇",
+      "source_filename": "music_15_supply_stop_02m00_loop.mp3",
+      "source_path": ".docs/音频/场景配乐_20261016/music_15_supply_stop_02m00_loop.mp3",
+      "source_sha256": "a6403d42ded97927eddc908b7124e629f7584aa5acdd4b047570b5e012d608d4",
+      "source_format": {
+        "codec": "mp3",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "bits_per_sample": 0,
+        "duration_seconds": 120.032625,
+        "bytes": 3841339
+      },
+      "source_loudness": {
+        "integrated_lufs": -16.31,
+        "true_peak_dbtp": -1.26,
+        "loudness_range_lu": 13.8,
+        "relative_threshold_lufs": -27.12
+      },
+      "original_metadata": {
+        "ffprobe_json_path": ".docs/音频/配乐接入_20261018/legacy_original_metadata/supply_stop.ffprobe.json",
+        "ffprobe_json_sha256": "1e381b70ce6a4f8ff7aa4fd00e0936876a67defd3128d634e2032399ffc7641b",
+        "ffmetadata_text_path": ".docs/音频/配乐接入_20261018/legacy_original_metadata/supply_stop.ffmetadata.txt",
+        "ffmetadata_text_sha256": "fcfc05558c64e341436aa752169c2ae4ce0e3e062bee068c71e7d3d47aebff95",
+        "tags": {
+          "encoder": "Lavf58.76.100",
+          "AIGC": "{\"Label\":\"1\",\"ContentProducer\":\"001191110108MA01DFAQ6210000\",\"ProduceID\":\"v02c0bg10001db9455a7dld95e705h10\",\"ReservedCode1\":\"\",\"ContentPropagator\":\"001191110108MA01DFAQ6220000\",\"PropagateID\":\"v02c0bg10001db9455a7dld95e705h10\",\"ReservedCode2\":\"\"}"
+        }
+      },
+      "output_path": "assets/audio/music_legacy_20261016/supply_stop.ogg",
+      "godot_resource_path": "res://assets/audio/music_legacy_20261016/supply_stop.ogg",
+      "output_sha256": "ef78b50014986709246588c61531fd90739ec70f9b935d73832fda3a02354c47",
+      "output_format": {
+        "codec": "vorbis",
+        "sample_rate_hz": 48000,
+        "channels": 2,
+        "bits_per_sample": 0,
+        "duration_seconds": 120.032667,
+        "bytes": 2289764
+      },
+      "output_loudness": {
+        "integrated_lufs": -20.06,
+        "true_peak_dbtp": -5.26,
+        "loudness_range_lu": 13.7,
+        "relative_threshold_lufs": -30.86
+      },
+      "output_metadata_tags": {
+        "encoder": "Lavc62.28.102 libvorbis",
+        "comment": "Original MP3 and AIGC metadata preserved; constant gain; no trimming",
+        "AIGC": "{\"Label\":\"1\",\"ContentProducer\":\"001191110108MA01DFAQ6210000\",\"ProduceID\":\"v02c0bg10001db9455a7dld95e705h10\",\"ReservedCode1\":\"\",\"ContentPropagator\":\"001191110108MA01DFAQ6220000\",\"PropagateID\":\"v02c0bg10001db9455a7dld95e705h10\",\"ReservedCode2\":\"\"}",
+        "title": "沙漠补给停歇点／岑柏相遇",
+        "source_filename": "music_15_supply_stop_02m00_loop.mp3"
+      },
+      "constant_gain_db": -3.69,
+      "encode_attempts": 1,
+      "loop": {
+        "enabled_at_runtime": true,
+        "managed_by": "two-player controller crossfade",
+        "stream_loop": false,
+        "start_seconds": 0.0,
+        "end_seconds": 120.032667,
+        "edit": "Whole original track; no trimming, time change, or baked crossfade."
+      },
+      "verification": {
+        "full_decode_passed": true,
+        "source_unchanged": true,
+        "duration_delta_seconds": 4.2e-05,
+        "duration_padding_tolerance_seconds": 0.1,
+        "original_aigc_text_preserved": true,
+        "true_peak_at_or_below_minus_2_dbtp": true
+      },
+      "current_mobile_file": {
+        "path": "assets/audio/music_legacy_20261016/supply_stop.ogg",
+        "sha256": "8c44f39f5d09079474cdacdb8fda26b1aeb609df1abda5ecff0c6f656752071e",
+        "bytes": 1082479,
+        "codec": "vorbis",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "duration_seconds": 120.03,
+        "reencoded_for_mobile": true
+      }
+    },
+    {
+      "id": "rescue_station_exterior",
+      "intended_use_from_original_readme": "救援站外部／侦察入口",
+      "source_filename": "music_16_rescue_station_ext_02m00_loop.mp3",
+      "source_path": ".docs/音频/场景配乐_20261016/music_16_rescue_station_ext_02m00_loop.mp3",
+      "source_sha256": "0183f626cd86e97fcea4c9c8a0163a56555896e480d90bab0dcbf5dffc58f560",
+      "source_format": {
+        "codec": "mp3",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "bits_per_sample": 0,
+        "duration_seconds": 120.032625,
+        "bytes": 3841339
+      },
+      "source_loudness": {
+        "integrated_lufs": -8.86,
+        "true_peak_dbtp": -0.39,
+        "loudness_range_lu": 4.5,
+        "relative_threshold_lufs": -19.36
+      },
+      "original_metadata": {
+        "ffprobe_json_path": ".docs/音频/配乐接入_20261018/legacy_original_metadata/rescue_station_exterior.ffprobe.json",
+        "ffprobe_json_sha256": "790126a7c2e43d9ce6761999bf010bb0af61b647936fc9e122da0b46ffee0a4a",
+        "ffmetadata_text_path": ".docs/音频/配乐接入_20261018/legacy_original_metadata/rescue_station_exterior.ffmetadata.txt",
+        "ffmetadata_text_sha256": "1108861b735827916f5dee14062ff1593d383ddb40da347eadc89c551aece5a9",
+        "tags": {
+          "encoder": "Lavf58.76.100",
+          "AIGC": "{\"Label\":\"1\",\"ContentProducer\":\"001191110108MA01DFAQ6210000\",\"ProduceID\":\"v03c0bg10001db9472q7dld98o9e8tog\",\"ReservedCode1\":\"\",\"ContentPropagator\":\"001191110108MA01DFAQ6220000\",\"PropagateID\":\"v03c0bg10001db9472q7dld98o9e8tog\",\"ReservedCode2\":\"\"}"
+        }
+      },
+      "output_path": "assets/audio/music_legacy_20261016/rescue_station_exterior.ogg",
+      "godot_resource_path": "res://assets/audio/music_legacy_20261016/rescue_station_exterior.ogg",
+      "output_sha256": "ab09cebb28fa6677fc382767f3f160c74c7ef745d42938ade9c5c47180efe1a0",
+      "output_format": {
+        "codec": "vorbis",
+        "sample_rate_hz": 48000,
+        "channels": 2,
+        "bits_per_sample": 0,
+        "duration_seconds": 120.032667,
+        "bytes": 2058718
+      },
+      "output_loudness": {
+        "integrated_lufs": -20.07,
+        "true_peak_dbtp": -11.36,
+        "loudness_range_lu": 4.3,
+        "relative_threshold_lufs": -30.57
+      },
+      "output_metadata_tags": {
+        "encoder": "Lavc62.28.102 libvorbis",
+        "comment": "Original MP3 and AIGC metadata preserved; constant gain; no trimming",
+        "AIGC": "{\"Label\":\"1\",\"ContentProducer\":\"001191110108MA01DFAQ6210000\",\"ProduceID\":\"v03c0bg10001db9472q7dld98o9e8tog\",\"ReservedCode1\":\"\",\"ContentPropagator\":\"001191110108MA01DFAQ6220000\",\"PropagateID\":\"v03c0bg10001db9472q7dld98o9e8tog\",\"ReservedCode2\":\"\"}",
+        "title": "救援站外部／侦察入口",
+        "source_filename": "music_16_rescue_station_ext_02m00_loop.mp3"
+      },
+      "constant_gain_db": -11.14,
+      "encode_attempts": 1,
+      "loop": {
+        "enabled_at_runtime": true,
+        "managed_by": "two-player controller crossfade",
+        "stream_loop": false,
+        "start_seconds": 0.0,
+        "end_seconds": 120.032667,
+        "edit": "Whole original track; no trimming, time change, or baked crossfade."
+      },
+      "verification": {
+        "full_decode_passed": true,
+        "source_unchanged": true,
+        "duration_delta_seconds": 4.2e-05,
+        "duration_padding_tolerance_seconds": 0.1,
+        "original_aigc_text_preserved": true,
+        "true_peak_at_or_below_minus_2_dbtp": true
+      },
+      "current_mobile_file": {
+        "path": "assets/audio/music_legacy_20261016/rescue_station_exterior.ogg",
+        "sha256": "4316cfbf627f434883719e8cf4b8f8d64b81bfb91088feb02e7347ddb2c47803",
+        "bytes": 1058633,
+        "codec": "vorbis",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "duration_seconds": 120.03,
+        "reencoded_for_mobile": true
+      }
+    },
+    {
+      "id": "rescue_medical",
+      "intended_use_from_original_readme": "救援站医疗室与隔离走廊",
+      "source_filename": "music_17_rescue_medical_02m28_loop.mp3",
+      "source_path": ".docs/音频/场景配乐_20261016/music_17_rescue_medical_02m28_loop.mp3",
+      "source_sha256": "03b6fed15420d2467065ca5044615aff16f7fa6b11f864990db5b513d9fddc1f",
+      "source_format": {
+        "codec": "mp3",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "bits_per_sample": 0,
+        "duration_seconds": 148.035906,
+        "bytes": 4737444
+      },
+      "source_loudness": {
+        "integrated_lufs": -11.69,
+        "true_peak_dbtp": -0.4,
+        "loudness_range_lu": 6.5,
+        "relative_threshold_lufs": -22.23
+      },
+      "original_metadata": {
+        "ffprobe_json_path": ".docs/音频/配乐接入_20261018/legacy_original_metadata/rescue_medical.ffprobe.json",
+        "ffprobe_json_sha256": "f5127ebedcca088f77d4bf1635db28b1e1993f29e82e925c2ea187d01733d21d",
+        "ffmetadata_text_path": ".docs/音频/配乐接入_20261018/legacy_original_metadata/rescue_medical.ffmetadata.txt",
+        "ffmetadata_text_sha256": "e9a8e130062811ee7e245b02cfc29f3cc585b56991d474e5cbe3a351424d8093",
+        "tags": {
+          "encoder": "Lavf58.76.100",
+          "AIGC": "{\"Label\":\"1\",\"ContentProducer\":\"001191110108MA01DFAQ6210000\",\"ProduceID\":\"v03c0bg10001db948da7dldbdnkcbg70\",\"ReservedCode1\":\"\",\"ContentPropagator\":\"001191110108MA01DFAQ6220000\",\"PropagateID\":\"v03c0bg10001db948da7dldbdnkcbg70\",\"ReservedCode2\":\"\"}"
+        }
+      },
+      "output_path": "assets/audio/music_legacy_20261016/rescue_medical.ogg",
+      "godot_resource_path": "res://assets/audio/music_legacy_20261016/rescue_medical.ogg",
+      "output_sha256": "3ce45308d6b44e28d3c9da755d6ccfcd81249630ff54b31ada124ef52eae5640",
+      "output_format": {
+        "codec": "vorbis",
+        "sample_rate_hz": 48000,
+        "channels": 2,
+        "bits_per_sample": 0,
+        "duration_seconds": 148.035938,
+        "bytes": 2469090
+      },
+      "output_loudness": {
+        "integrated_lufs": -20.01,
+        "true_peak_dbtp": -8.48,
+        "loudness_range_lu": 6.4,
+        "relative_threshold_lufs": -30.56
+      },
+      "output_metadata_tags": {
+        "encoder": "Lavc62.28.102 libvorbis",
+        "comment": "Original MP3 and AIGC metadata preserved; constant gain; no trimming",
+        "AIGC": "{\"Label\":\"1\",\"ContentProducer\":\"001191110108MA01DFAQ6210000\",\"ProduceID\":\"v03c0bg10001db948da7dldbdnkcbg70\",\"ReservedCode1\":\"\",\"ContentPropagator\":\"001191110108MA01DFAQ6220000\",\"PropagateID\":\"v03c0bg10001db948da7dldbdnkcbg70\",\"ReservedCode2\":\"\"}",
+        "title": "救援站医疗室与隔离走廊",
+        "source_filename": "music_17_rescue_medical_02m28_loop.mp3"
+      },
+      "constant_gain_db": -8.31,
+      "encode_attempts": 1,
+      "loop": {
+        "enabled_at_runtime": true,
+        "managed_by": "two-player controller crossfade",
+        "stream_loop": false,
+        "start_seconds": 0.0,
+        "end_seconds": 148.035938,
+        "edit": "Whole original track; no trimming, time change, or baked crossfade."
+      },
+      "verification": {
+        "full_decode_passed": true,
+        "source_unchanged": true,
+        "duration_delta_seconds": 3.2e-05,
+        "duration_padding_tolerance_seconds": 0.1,
+        "original_aigc_text_preserved": true,
+        "true_peak_at_or_below_minus_2_dbtp": true
+      },
+      "current_mobile_file": {
+        "path": "assets/audio/music_legacy_20261016/rescue_medical.ogg",
+        "sha256": "6ae9b4905381d5d2e1991d2863ad9316161e602588b9d585c78894fb55c9750d",
+        "bytes": 1273168,
+        "codec": "vorbis",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "duration_seconds": 148.04,
+        "reencoded_for_mobile": true
+      }
+    },
+    {
+      "id": "settlement_reception",
+      "intended_use_from_original_readme": "聚落接纳点／安全避难点",
+      "source_filename": "music_18_settlement_reception_02m00_loop.mp3",
+      "source_path": ".docs/音频/场景配乐_20261016/music_18_settlement_reception_02m00_loop.mp3",
+      "source_sha256": "ba70c4dd68d0890e09044b5bade459f27a943191e25a03e38f5b097d479cb066",
+      "source_format": {
+        "codec": "mp3",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "bits_per_sample": 0,
+        "duration_seconds": 120.032625,
+        "bytes": 3841339
+      },
+      "source_loudness": {
+        "integrated_lufs": -10.15,
+        "true_peak_dbtp": -0.42,
+        "loudness_range_lu": 3.3,
+        "relative_threshold_lufs": -20.51
+      },
+      "original_metadata": {
+        "ffprobe_json_path": ".docs/音频/配乐接入_20261018/legacy_original_metadata/settlement_reception.ffprobe.json",
+        "ffprobe_json_sha256": "6b13bc96cfe232e58821a72e3b78f73be00a9cbe5ea63685bdc0dca63413532c",
+        "ffmetadata_text_path": ".docs/音频/配乐接入_20261018/legacy_original_metadata/settlement_reception.ffmetadata.txt",
+        "ffmetadata_text_sha256": "f6e28b598b73c70731f2c454d7242ccfa4a3a3c0651ce396ea6f4604a73b377e",
+        "tags": {
+          "encoder": "Lavf58.76.100",
+          "AIGC": "{\"Label\":\"1\",\"ContentProducer\":\"001191110108MA01DFAQ6210000\",\"ProduceID\":\"v02c0bg10001db949ki7dld1tdcgshpg\",\"ReservedCode1\":\"\",\"ContentPropagator\":\"001191110108MA01DFAQ6220000\",\"PropagateID\":\"v02c0bg10001db949ki7dld1tdcgshpg\",\"ReservedCode2\":\"\"}"
+        }
+      },
+      "output_path": "assets/audio/music_legacy_20261016/settlement_reception.ogg",
+      "godot_resource_path": "res://assets/audio/music_legacy_20261016/settlement_reception.ogg",
+      "output_sha256": "f0f0eec665f48fd2dd8b04d186dee7d0fbc26b39005dc48aa024d77fab3f91ea",
+      "output_format": {
+        "codec": "vorbis",
+        "sample_rate_hz": 48000,
+        "channels": 2,
+        "bits_per_sample": 0,
+        "duration_seconds": 120.032667,
+        "bytes": 2134258
+      },
+      "output_loudness": {
+        "integrated_lufs": -20.01,
+        "true_peak_dbtp": -9.96,
+        "loudness_range_lu": 3.2,
+        "relative_threshold_lufs": -30.38
+      },
+      "output_metadata_tags": {
+        "encoder": "Lavc62.28.102 libvorbis",
+        "comment": "Original MP3 and AIGC metadata preserved; constant gain; no trimming",
+        "AIGC": "{\"Label\":\"1\",\"ContentProducer\":\"001191110108MA01DFAQ6210000\",\"ProduceID\":\"v02c0bg10001db949ki7dld1tdcgshpg\",\"ReservedCode1\":\"\",\"ContentPropagator\":\"001191110108MA01DFAQ6220000\",\"PropagateID\":\"v02c0bg10001db949ki7dld1tdcgshpg\",\"ReservedCode2\":\"\"}",
+        "title": "聚落接纳点／安全避难点",
+        "source_filename": "music_18_settlement_reception_02m00_loop.mp3"
+      },
+      "constant_gain_db": -9.85,
+      "encode_attempts": 1,
+      "loop": {
+        "enabled_at_runtime": true,
+        "managed_by": "two-player controller crossfade",
+        "stream_loop": false,
+        "start_seconds": 0.0,
+        "end_seconds": 120.032667,
+        "edit": "Whole original track; no trimming, time change, or baked crossfade."
+      },
+      "verification": {
+        "full_decode_passed": true,
+        "source_unchanged": true,
+        "duration_delta_seconds": 4.2e-05,
+        "duration_padding_tolerance_seconds": 0.1,
+        "original_aigc_text_preserved": true,
+        "true_peak_at_or_below_minus_2_dbtp": true
+      },
+      "current_mobile_file": {
+        "path": "assets/audio/music_legacy_20261016/settlement_reception.ogg",
+        "sha256": "a406c0cf6c3e91bbd475acfb3296615a27d1c6a504b45dc7a42ebe91d3e4009b",
+        "bytes": 1073158,
+        "codec": "vorbis",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "duration_seconds": 120.03,
+        "reencoded_for_mobile": true
+      }
+    },
+    {
+      "id": "neutral_market",
+      "intended_use_from_original_readme": "中立集市／商会登记与交易",
+      "source_filename": "music_19_neutral_market_02m28_loop.mp3",
+      "source_path": ".docs/音频/场景配乐_20261016/music_19_neutral_market_02m28_loop.mp3",
+      "source_sha256": "a667e0d99423c28730fcb8620cb6da84c3f4f5aa159b50bf7d3eb4f88c5f2a76",
+      "source_format": {
+        "codec": "mp3",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "bits_per_sample": 0,
+        "duration_seconds": 148.035906,
+        "bytes": 4737444
+      },
+      "source_loudness": {
+        "integrated_lufs": -11.63,
+        "true_peak_dbtp": -0.38,
+        "loudness_range_lu": 3.9,
+        "relative_threshold_lufs": -21.98
+      },
+      "original_metadata": {
+        "ffprobe_json_path": ".docs/音频/配乐接入_20261018/legacy_original_metadata/neutral_market.ffprobe.json",
+        "ffprobe_json_sha256": "423cb6b75ed012eeca591aaff878b5cc7d06aeb6c8759fcbfac4a2d57e4dbd7a",
+        "ffmetadata_text_path": ".docs/音频/配乐接入_20261018/legacy_original_metadata/neutral_market.ffmetadata.txt",
+        "ffmetadata_text_sha256": "a715eef6640f98ad19e3e05027a5c40afd230c36e42db41a1c5766751a87e6a0",
+        "tags": {
+          "encoder": "Lavf58.76.100",
+          "AIGC": "{\"Label\":\"1\",\"ContentProducer\":\"001191110108MA01DFAQ6210000\",\"ProduceID\":\"v0dc0bg10001db94aua7dld0ms8tspog\",\"ReservedCode1\":\"\",\"ContentPropagator\":\"001191110108MA01DFAQ6220000\",\"PropagateID\":\"v0dc0bg10001db94aua7dld0ms8tspog\",\"ReservedCode2\":\"\"}"
+        }
+      },
+      "output_path": "assets/audio/music_legacy_20261016/neutral_market.ogg",
+      "godot_resource_path": "res://assets/audio/music_legacy_20261016/neutral_market.ogg",
+      "output_sha256": "b290b17b2119eddc06f0d1ec63e2662b0ddc5a3a5eeebd4e49dd51cc8d96243a",
+      "output_format": {
+        "codec": "vorbis",
+        "sample_rate_hz": 48000,
+        "channels": 2,
+        "bits_per_sample": 0,
+        "duration_seconds": 148.035938,
+        "bytes": 2621206
+      },
+      "output_loudness": {
+        "integrated_lufs": -20.03,
+        "true_peak_dbtp": -8.35,
+        "loudness_range_lu": 3.9,
+        "relative_threshold_lufs": -30.38
+      },
+      "output_metadata_tags": {
+        "encoder": "Lavc62.28.102 libvorbis",
+        "comment": "Original MP3 and AIGC metadata preserved; constant gain; no trimming",
+        "AIGC": "{\"Label\":\"1\",\"ContentProducer\":\"001191110108MA01DFAQ6210000\",\"ProduceID\":\"v0dc0bg10001db94aua7dld0ms8tspog\",\"ReservedCode1\":\"\",\"ContentPropagator\":\"001191110108MA01DFAQ6220000\",\"PropagateID\":\"v0dc0bg10001db94aua7dld0ms8tspog\",\"ReservedCode2\":\"\"}",
+        "title": "中立集市／商会登记与交易",
+        "source_filename": "music_19_neutral_market_02m28_loop.mp3"
+      },
+      "constant_gain_db": -8.37,
+      "encode_attempts": 1,
+      "loop": {
+        "enabled_at_runtime": true,
+        "managed_by": "two-player controller crossfade",
+        "stream_loop": false,
+        "start_seconds": 0.0,
+        "end_seconds": 148.035938,
+        "edit": "Whole original track; no trimming, time change, or baked crossfade."
+      },
+      "verification": {
+        "full_decode_passed": true,
+        "source_unchanged": true,
+        "duration_delta_seconds": 3.2e-05,
+        "duration_padding_tolerance_seconds": 0.1,
+        "original_aigc_text_preserved": true,
+        "true_peak_at_or_below_minus_2_dbtp": true
+      },
+      "current_mobile_file": {
+        "path": "assets/audio/music_legacy_20261016/neutral_market.ogg",
+        "sha256": "ef0e214688a06f9189a43648b34cbafdbf66e914f5df7ef514ad3be23c3fbb9a",
+        "bytes": 1346621,
+        "codec": "vorbis",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "duration_seconds": 148.04,
+        "reencoded_for_mobile": true
+      }
+    },
+    {
+      "id": "radio_relay",
+      "intended_use_from_original_readme": "通讯中继／无线电联络",
+      "source_filename": "music_20_radio_relay_01m40_loop.mp3",
+      "source_path": ".docs/音频/场景配乐_20261016/music_20_radio_relay_01m40_loop.mp3",
+      "source_sha256": "5984a8ee41838c37fe22794f92dc74ba23d6f27c58a475e9257939061dad4a64",
+      "source_format": {
+        "codec": "mp3",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "bits_per_sample": 0,
+        "duration_seconds": 100.048969,
+        "bytes": 3201862
+      },
+      "source_loudness": {
+        "integrated_lufs": -9.84,
+        "true_peak_dbtp": -0.35,
+        "loudness_range_lu": 5.1,
+        "relative_threshold_lufs": -20.39
+      },
+      "original_metadata": {
+        "ffprobe_json_path": ".docs/音频/配乐接入_20261018/legacy_original_metadata/radio_relay.ffprobe.json",
+        "ffprobe_json_sha256": "1112ef828a055ecf090eb03092afc63cbe0e3104287a247fb36ef51f087da97c",
+        "ffmetadata_text_path": ".docs/音频/配乐接入_20261018/legacy_original_metadata/radio_relay.ffmetadata.txt",
+        "ffmetadata_text_sha256": "bf46152794d899a7da5b19a01b01236645d453d27f3b252895f75d0337eca104",
+        "tags": {
+          "encoder": "Lavf58.76.100",
+          "AIGC": "{\"Label\":\"1\",\"ContentProducer\":\"001191110108MA01DFAQ6210000\",\"ProduceID\":\"v02c0bg10001db94c327dldcse261g9g\",\"ReservedCode1\":\"\",\"ContentPropagator\":\"001191110108MA01DFAQ6220000\",\"PropagateID\":\"v02c0bg10001db94c327dldcse261g9g\",\"ReservedCode2\":\"\"}"
+        }
+      },
+      "output_path": "assets/audio/music_legacy_20261016/radio_relay.ogg",
+      "godot_resource_path": "res://assets/audio/music_legacy_20261016/radio_relay.ogg",
+      "output_sha256": "6624b730f57e8aa336b30a82d4f2a7bd0cfacf42c429094ddd4280920f870b9c",
+      "output_format": {
+        "codec": "vorbis",
+        "sample_rate_hz": 48000,
+        "channels": 2,
+        "bits_per_sample": 0,
+        "duration_seconds": 100.049,
+        "bytes": 1847333
+      },
+      "output_loudness": {
+        "integrated_lufs": -20.03,
+        "true_peak_dbtp": -10.33,
+        "loudness_range_lu": 5.0,
+        "relative_threshold_lufs": -30.59
+      },
+      "output_metadata_tags": {
+        "encoder": "Lavc62.28.102 libvorbis",
+        "comment": "Original MP3 and AIGC metadata preserved; constant gain; no trimming",
+        "AIGC": "{\"Label\":\"1\",\"ContentProducer\":\"001191110108MA01DFAQ6210000\",\"ProduceID\":\"v02c0bg10001db94c327dldcse261g9g\",\"ReservedCode1\":\"\",\"ContentPropagator\":\"001191110108MA01DFAQ6220000\",\"PropagateID\":\"v02c0bg10001db94c327dldcse261g9g\",\"ReservedCode2\":\"\"}",
+        "title": "通讯中继／无线电联络",
+        "source_filename": "music_20_radio_relay_01m40_loop.mp3"
+      },
+      "constant_gain_db": -10.16,
+      "encode_attempts": 1,
+      "loop": {
+        "enabled_at_runtime": true,
+        "managed_by": "two-player controller crossfade",
+        "stream_loop": false,
+        "start_seconds": 0.0,
+        "end_seconds": 100.049,
+        "edit": "Whole original track; no trimming, time change, or baked crossfade."
+      },
+      "verification": {
+        "full_decode_passed": true,
+        "source_unchanged": true,
+        "duration_delta_seconds": 3.1e-05,
+        "duration_padding_tolerance_seconds": 0.1,
+        "original_aigc_text_preserved": true,
+        "true_peak_at_or_below_minus_2_dbtp": true
+      },
+      "current_mobile_file": {
+        "path": "assets/audio/music_legacy_20261016/radio_relay.ogg",
+        "sha256": "83c8d4373deea63c63df9b2e7da716378ec43b0141e10aae87d5566bf3082e0a",
+        "bytes": 887646,
+        "codec": "vorbis",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "duration_seconds": 100.05,
+        "reencoded_for_mobile": true
+      }
+    },
+    {
+      "id": "tunnel_entrance",
+      "intended_use_from_original_readme": "隧道入口／封闭隧道支路",
+      "source_filename": "music_21_tunnel_entrance_02m28_loop.mp3",
+      "source_path": ".docs/音频/场景配乐_20261016/music_21_tunnel_entrance_02m28_loop.mp3",
+      "source_sha256": "1d97d6ff52ea75ff0b266685f80498bb47a0077fcf565323b2d3060e5cf0ab93",
+      "source_format": {
+        "codec": "mp3",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "bits_per_sample": 0,
+        "duration_seconds": 148.035906,
+        "bytes": 4737444
+      },
+      "source_loudness": {
+        "integrated_lufs": -9.89,
+        "true_peak_dbtp": -0.44,
+        "loudness_range_lu": 7.1,
+        "relative_threshold_lufs": -20.25
+      },
+      "original_metadata": {
+        "ffprobe_json_path": ".docs/音频/配乐接入_20261018/legacy_original_metadata/tunnel_entrance.ffprobe.json",
+        "ffprobe_json_sha256": "93d0286b827adce7d6c4a4b2a140c375fb02cda07bab80d28149b8259e92f8ea",
+        "ffmetadata_text_path": ".docs/音频/配乐接入_20261018/legacy_original_metadata/tunnel_entrance.ffmetadata.txt",
+        "ffmetadata_text_sha256": "d731a925db348875d3c8dfcfd75bc63f9f61f433ee79463128523fddd058ebfc",
+        "tags": {
+          "encoder": "Lavf58.76.100",
+          "AIGC": "{\"Label\":\"1\",\"ContentProducer\":\"001191110108MA01DFAQ6210000\",\"ProduceID\":\"v0dc0bg10001db94dai7dld586s3akn0\",\"ReservedCode1\":\"\",\"ContentPropagator\":\"001191110108MA01DFAQ6220000\",\"PropagateID\":\"v0dc0bg10001db94dai7dld586s3akn0\",\"ReservedCode2\":\"\"}"
+        }
+      },
+      "output_path": "assets/audio/music_legacy_20261016/tunnel_entrance.ogg",
+      "godot_resource_path": "res://assets/audio/music_legacy_20261016/tunnel_entrance.ogg",
+      "output_sha256": "e6ecd6217d8aeec7f7f9f2fb9b87f236a790b0a134b90e0f6223be27e55d95f3",
+      "output_format": {
+        "codec": "vorbis",
+        "sample_rate_hz": 48000,
+        "channels": 2,
+        "bits_per_sample": 0,
+        "duration_seconds": 148.035938,
+        "bytes": 2500436
+      },
+      "output_loudness": {
+        "integrated_lufs": -20.03,
+        "true_peak_dbtp": -10.14,
+        "loudness_range_lu": 7.0,
+        "relative_threshold_lufs": -30.4
+      },
+      "output_metadata_tags": {
+        "encoder": "Lavc62.28.102 libvorbis",
+        "comment": "Original MP3 and AIGC metadata preserved; constant gain; no trimming",
+        "AIGC": "{\"Label\":\"1\",\"ContentProducer\":\"001191110108MA01DFAQ6210000\",\"ProduceID\":\"v0dc0bg10001db94dai7dld586s3akn0\",\"ReservedCode1\":\"\",\"ContentPropagator\":\"001191110108MA01DFAQ6220000\",\"PropagateID\":\"v0dc0bg10001db94dai7dld586s3akn0\",\"ReservedCode2\":\"\"}",
+        "title": "隧道入口／封闭隧道支路",
+        "source_filename": "music_21_tunnel_entrance_02m28_loop.mp3"
+      },
+      "constant_gain_db": -10.11,
+      "encode_attempts": 1,
+      "loop": {
+        "enabled_at_runtime": true,
+        "managed_by": "two-player controller crossfade",
+        "stream_loop": false,
+        "start_seconds": 0.0,
+        "end_seconds": 148.035938,
+        "edit": "Whole original track; no trimming, time change, or baked crossfade."
+      },
+      "verification": {
+        "full_decode_passed": true,
+        "source_unchanged": true,
+        "duration_delta_seconds": 3.2e-05,
+        "duration_padding_tolerance_seconds": 0.1,
+        "original_aigc_text_preserved": true,
+        "true_peak_at_or_below_minus_2_dbtp": true
+      },
+      "current_mobile_file": {
+        "path": "assets/audio/music_legacy_20261016/tunnel_entrance.ogg",
+        "sha256": "d01a82699106c7839565e37bed2e0811ac40075d86e78c71fdd2bd5e85e5f7e9",
+        "bytes": 1292216,
+        "codec": "vorbis",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "duration_seconds": 148.04,
+        "reencoded_for_mobile": true
+      }
+    },
+    {
+      "id": "tunnel_shelter",
+      "intended_use_from_original_readme": "普通隧道避风点",
+      "source_filename": "music_22_tunnel_shelter_02m28_loop.mp3",
+      "source_path": ".docs/音频/场景配乐_20261016/music_22_tunnel_shelter_02m28_loop.mp3",
+      "source_sha256": "aea151910b71250792d08edd283a99660425df26f85b08fd93c900b0e56fb0cc",
+      "source_format": {
+        "codec": "mp3",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "bits_per_sample": 0,
+        "duration_seconds": 148.035906,
+        "bytes": 4737444
+      },
+      "source_loudness": {
+        "integrated_lufs": -9.85,
+        "true_peak_dbtp": -0.4,
+        "loudness_range_lu": 4.9,
+        "relative_threshold_lufs": -20.52
+      },
+      "original_metadata": {
+        "ffprobe_json_path": ".docs/音频/配乐接入_20261018/legacy_original_metadata/tunnel_shelter.ffprobe.json",
+        "ffprobe_json_sha256": "0127de2508170ccf75ac7bffb22e22016518ea158f2f20c3b2851f53e7e533cf",
+        "ffmetadata_text_path": ".docs/音频/配乐接入_20261018/legacy_original_metadata/tunnel_shelter.ffmetadata.txt",
+        "ffmetadata_text_sha256": "1b884e79698214ca616a5855cfb3fdb949f9a7d16f6176be5ff478c67d096727",
+        "tags": {
+          "encoder": "Lavf58.76.100",
+          "AIGC": "{\"Label\":\"1\",\"ContentProducer\":\"001191110108MA01DFAQ6210000\",\"ProduceID\":\"v0dc0bg10001db94eia7dld38fecdk4g\",\"ReservedCode1\":\"\",\"ContentPropagator\":\"001191110108MA01DFAQ6220000\",\"PropagateID\":\"v0dc0bg10001db94eia7dld38fecdk4g\",\"ReservedCode2\":\"\"}"
+        }
+      },
+      "output_path": "assets/audio/music_legacy_20261016/tunnel_shelter.ogg",
+      "godot_resource_path": "res://assets/audio/music_legacy_20261016/tunnel_shelter.ogg",
+      "output_sha256": "96361d4d8f62c887647b408905db6c23c692fb2857c013fec9c80a4ee9ca40d7",
+      "output_format": {
+        "codec": "vorbis",
+        "sample_rate_hz": 48000,
+        "channels": 2,
+        "bits_per_sample": 0,
+        "duration_seconds": 148.035938,
+        "bytes": 2527415
+      },
+      "output_loudness": {
+        "integrated_lufs": -20.02,
+        "true_peak_dbtp": -10.18,
+        "loudness_range_lu": 4.9,
+        "relative_threshold_lufs": -30.7
+      },
+      "output_metadata_tags": {
+        "encoder": "Lavc62.28.102 libvorbis",
+        "comment": "Original MP3 and AIGC metadata preserved; constant gain; no trimming",
+        "AIGC": "{\"Label\":\"1\",\"ContentProducer\":\"001191110108MA01DFAQ6210000\",\"ProduceID\":\"v0dc0bg10001db94eia7dld38fecdk4g\",\"ReservedCode1\":\"\",\"ContentPropagator\":\"001191110108MA01DFAQ6220000\",\"PropagateID\":\"v0dc0bg10001db94eia7dld38fecdk4g\",\"ReservedCode2\":\"\"}",
+        "title": "普通隧道避风点",
+        "source_filename": "music_22_tunnel_shelter_02m28_loop.mp3"
+      },
+      "constant_gain_db": -10.15,
+      "encode_attempts": 1,
+      "loop": {
+        "enabled_at_runtime": true,
+        "managed_by": "two-player controller crossfade",
+        "stream_loop": false,
+        "start_seconds": 0.0,
+        "end_seconds": 148.035938,
+        "edit": "Whole original track; no trimming, time change, or baked crossfade."
+      },
+      "verification": {
+        "full_decode_passed": true,
+        "source_unchanged": true,
+        "duration_delta_seconds": 3.2e-05,
+        "duration_padding_tolerance_seconds": 0.1,
+        "original_aigc_text_preserved": true,
+        "true_peak_at_or_below_minus_2_dbtp": true
+      },
+      "current_mobile_file": {
+        "path": "assets/audio/music_legacy_20261016/tunnel_shelter.ogg",
+        "sha256": "6df00b3f0af3377df873d738790143983e95109facef770d02888ef2da820dab",
+        "bytes": 1331422,
+        "codec": "vorbis",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "duration_seconds": 148.04,
+        "reencoded_for_mobile": true
+      }
+    },
+    {
+      "id": "hazard_tension",
+      "intended_use_from_original_readme": "普通危险事件",
+      "source_filename": "music_23_hazard_tension_02m02_loop.mp3",
+      "source_path": ".docs/音频/场景配乐_20261016/music_23_hazard_tension_02m02_loop.mp3",
+      "source_sha256": "2da9d2bc5a3b1db48bca041623c5bb7ef39f0291e4e842e3a969bc12e48fbb4e",
+      "source_format": {
+        "codec": "mp3",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "bits_per_sample": 0,
+        "duration_seconds": 122.044063,
+        "bytes": 3905705
+      },
+      "source_loudness": {
+        "integrated_lufs": -11.11,
+        "true_peak_dbtp": -0.24,
+        "loudness_range_lu": 8.8,
+        "relative_threshold_lufs": -21.46
+      },
+      "original_metadata": {
+        "ffprobe_json_path": ".docs/音频/配乐接入_20261018/legacy_original_metadata/hazard_tension.ffprobe.json",
+        "ffprobe_json_sha256": "2800a8b14e48e692bcd0b85aedd7c32e98277765929804a43fca76d9ccaf8ae0",
+        "ffmetadata_text_path": ".docs/音频/配乐接入_20261018/legacy_original_metadata/hazard_tension.ffmetadata.txt",
+        "ffmetadata_text_sha256": "d7608014b06062f14ce0f806b4fb8d301fecd934b2eb2fe90ddd202cfe806f1d",
+        "tags": {
+          "encoder": "Lavf58.76.100",
+          "AIGC": "{\"Label\":\"1\",\"ContentProducer\":\"001191110108MA01DFAQ6210000\",\"ProduceID\":\"v03c0bg10001db94fo27dld8jungcpb0\",\"ReservedCode1\":\"\",\"ContentPropagator\":\"001191110108MA01DFAQ6220000\",\"PropagateID\":\"v03c0bg10001db94fo27dld8jungcpb0\",\"ReservedCode2\":\"\"}"
+        }
+      },
+      "output_path": "assets/audio/music_legacy_20261016/hazard_tension.ogg",
+      "godot_resource_path": "res://assets/audio/music_legacy_20261016/hazard_tension.ogg",
+      "output_sha256": "63f99b9c182cb34dbf2467e22c24746d81cefd15803c4f22d8f8fc856efb96a4",
+      "output_format": {
+        "codec": "vorbis",
+        "sample_rate_hz": 48000,
+        "channels": 2,
+        "bits_per_sample": 0,
+        "duration_seconds": 122.044083,
+        "bytes": 2198414
+      },
+      "output_loudness": {
+        "integrated_lufs": -20.07,
+        "true_peak_dbtp": -8.87,
+        "loudness_range_lu": 8.8,
+        "relative_threshold_lufs": -30.42
+      },
+      "output_metadata_tags": {
+        "encoder": "Lavc62.28.102 libvorbis",
+        "comment": "Original MP3 and AIGC metadata preserved; constant gain; no trimming",
+        "AIGC": "{\"Label\":\"1\",\"ContentProducer\":\"001191110108MA01DFAQ6210000\",\"ProduceID\":\"v03c0bg10001db94fo27dld8jungcpb0\",\"ReservedCode1\":\"\",\"ContentPropagator\":\"001191110108MA01DFAQ6220000\",\"PropagateID\":\"v03c0bg10001db94fo27dld8jungcpb0\",\"ReservedCode2\":\"\"}",
+        "title": "普通危险事件",
+        "source_filename": "music_23_hazard_tension_02m02_loop.mp3"
+      },
+      "constant_gain_db": -8.89,
+      "encode_attempts": 1,
+      "loop": {
+        "enabled_at_runtime": true,
+        "managed_by": "two-player controller crossfade",
+        "stream_loop": false,
+        "start_seconds": 0.0,
+        "end_seconds": 122.044083,
+        "edit": "Whole original track; no trimming, time change, or baked crossfade."
+      },
+      "verification": {
+        "full_decode_passed": true,
+        "source_unchanged": true,
+        "duration_delta_seconds": 2e-05,
+        "duration_padding_tolerance_seconds": 0.1,
+        "original_aigc_text_preserved": true,
+        "true_peak_at_or_below_minus_2_dbtp": true
+      },
+      "current_mobile_file": {
+        "path": "assets/audio/music_legacy_20261016/hazard_tension.ogg",
+        "sha256": "3b65127aa4e4abd72b90ba2515cdd3f9ffcb72b9859a9669c18c37194c96583c",
+        "bytes": 1113626,
+        "codec": "vorbis",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "duration_seconds": 122.04,
+        "reencoded_for_mobile": true
+      }
+    },
+    {
+      "id": "colossal_silhouette",
+      "intended_use_from_original_readme": "巨大轮廓巡游／远距离观测",
+      "source_filename": "music_24_colossal_silhouette_02m28_loop.mp3",
+      "source_path": ".docs/音频/场景配乐_20261016/music_24_colossal_silhouette_02m28_loop.mp3",
+      "source_sha256": "0d84a546e56a8de3b59c4b527e10b183fcc05c184a98566e863c48e1fdf5e896",
+      "source_format": {
+        "codec": "mp3",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "bits_per_sample": 0,
+        "duration_seconds": 148.035906,
+        "bytes": 4737444
+      },
+      "source_loudness": {
+        "integrated_lufs": -10.39,
+        "true_peak_dbtp": -0.41,
+        "loudness_range_lu": 8.5,
+        "relative_threshold_lufs": -20.77
+      },
+      "original_metadata": {
+        "ffprobe_json_path": ".docs/音频/配乐接入_20261018/legacy_original_metadata/colossal_silhouette.ffprobe.json",
+        "ffprobe_json_sha256": "bef8db97b402025ff2d92103ba2e4b4df88fc747b7b1b50e05fa085671398a3f",
+        "ffmetadata_text_path": ".docs/音频/配乐接入_20261018/legacy_original_metadata/colossal_silhouette.ffmetadata.txt",
+        "ffmetadata_text_sha256": "1909d8ebb37925704c164d5c164bcb283eb9e3eafdca755596f3c4954e92bda6",
+        "tags": {
+          "encoder": "Lavf58.76.100",
+          "AIGC": "{\"Label\":\"1\",\"ContentProducer\":\"001191110108MA01DFAQ6210000\",\"ProduceID\":\"v0dc0bg10001db94gvi7dld28sb6jctg\",\"ReservedCode1\":\"\",\"ContentPropagator\":\"001191110108MA01DFAQ6220000\",\"PropagateID\":\"v0dc0bg10001db94gvi7dld28sb6jctg\",\"ReservedCode2\":\"\"}"
+        }
+      },
+      "output_path": "assets/audio/music_legacy_20261016/colossal_silhouette.ogg",
+      "godot_resource_path": "res://assets/audio/music_legacy_20261016/colossal_silhouette.ogg",
+      "output_sha256": "4af4350788c7550e8ee46ea0662ba704adb5f9fa3140b4795e34d139cd7f0888",
+      "output_format": {
+        "codec": "vorbis",
+        "sample_rate_hz": 48000,
+        "channels": 2,
+        "bits_per_sample": 0,
+        "duration_seconds": 148.035938,
+        "bytes": 2384723
+      },
+      "output_loudness": {
+        "integrated_lufs": -20.02,
+        "true_peak_dbtp": -9.75,
+        "loudness_range_lu": 8.4,
+        "relative_threshold_lufs": -30.4
+      },
+      "output_metadata_tags": {
+        "encoder": "Lavc62.28.102 libvorbis",
+        "comment": "Original MP3 and AIGC metadata preserved; constant gain; no trimming",
+        "AIGC": "{\"Label\":\"1\",\"ContentProducer\":\"001191110108MA01DFAQ6210000\",\"ProduceID\":\"v0dc0bg10001db94gvi7dld28sb6jctg\",\"ReservedCode1\":\"\",\"ContentPropagator\":\"001191110108MA01DFAQ6220000\",\"PropagateID\":\"v0dc0bg10001db94gvi7dld28sb6jctg\",\"ReservedCode2\":\"\"}",
+        "title": "巨大轮廓巡游／远距离观测",
+        "source_filename": "music_24_colossal_silhouette_02m28_loop.mp3"
+      },
+      "constant_gain_db": -9.61,
+      "encode_attempts": 1,
+      "loop": {
+        "enabled_at_runtime": true,
+        "managed_by": "two-player controller crossfade",
+        "stream_loop": false,
+        "start_seconds": 0.0,
+        "end_seconds": 148.035938,
+        "edit": "Whole original track; no trimming, time change, or baked crossfade."
+      },
+      "verification": {
+        "full_decode_passed": true,
+        "source_unchanged": true,
+        "duration_delta_seconds": 3.2e-05,
+        "duration_padding_tolerance_seconds": 0.1,
+        "original_aigc_text_preserved": true,
+        "true_peak_at_or_below_minus_2_dbtp": true
+      },
+      "current_mobile_file": {
+        "path": "assets/audio/music_legacy_20261016/colossal_silhouette.ogg",
+        "sha256": "ebb971fc258a1dc1901bd849f4c5f7f56698cd278c872a58f5b76358bdbbfbd8",
+        "bytes": 1142000,
+        "codec": "vorbis",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "duration_seconds": 148.04,
+        "reencoded_for_mobile": true
+      }
+    },
+    {
+      "id": "on_foot_survival",
+      "intended_use_from_original_readme": "失车与徒步求生",
+      "source_filename": "music_25_on_foot_survival_02m28_loop.mp3",
+      "source_path": ".docs/音频/场景配乐_20261016/music_25_on_foot_survival_02m28_loop.mp3",
+      "source_sha256": "ddee1f2176c88bf3ef148914b2b5c2eb5e32a0b439b53487f0f9494d3171b840",
+      "source_format": {
+        "codec": "mp3",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "bits_per_sample": 0,
+        "duration_seconds": 148.035906,
+        "bytes": 4737444
+      },
+      "source_loudness": {
+        "integrated_lufs": -9.01,
+        "true_peak_dbtp": -0.39,
+        "loudness_range_lu": 4.7,
+        "relative_threshold_lufs": -19.37
+      },
+      "original_metadata": {
+        "ffprobe_json_path": ".docs/音频/配乐接入_20261018/legacy_original_metadata/on_foot_survival.ffprobe.json",
+        "ffprobe_json_sha256": "e66bbba68445efa2fc5ec3bc7d0a494c7de7598a78074cef4bfcfceec2e9af6a",
+        "ffmetadata_text_path": ".docs/音频/配乐接入_20261018/legacy_original_metadata/on_foot_survival.ffmetadata.txt",
+        "ffmetadata_text_sha256": "d4a0ed0992c0610bd73df2af93b2bdb075d9909bd0e6b898b55f4f8f0459a8c8",
+        "tags": {
+          "encoder": "Lavf58.76.100",
+          "AIGC": "{\"Label\":\"1\",\"ContentProducer\":\"001191110108MA01DFAQ6210000\",\"ProduceID\":\"v02c0bg10001db94i5a7dld3ru5qjt4g\",\"ReservedCode1\":\"\",\"ContentPropagator\":\"001191110108MA01DFAQ6220000\",\"PropagateID\":\"v02c0bg10001db94i5a7dld3ru5qjt4g\",\"ReservedCode2\":\"\"}"
+        }
+      },
+      "output_path": "assets/audio/music_legacy_20261016/on_foot_survival.ogg",
+      "godot_resource_path": "res://assets/audio/music_legacy_20261016/on_foot_survival.ogg",
+      "output_sha256": "4fdbb5d38b0b9744bd26e72b86c649422839fab3c026f9e8e1436b51bdf5d747",
+      "output_format": {
+        "codec": "vorbis",
+        "sample_rate_hz": 48000,
+        "channels": 2,
+        "bits_per_sample": 0,
+        "duration_seconds": 148.035938,
+        "bytes": 2470147
+      },
+      "output_loudness": {
+        "integrated_lufs": -20.02,
+        "true_peak_dbtp": -11.2,
+        "loudness_range_lu": 4.6,
+        "relative_threshold_lufs": -30.38
+      },
+      "output_metadata_tags": {
+        "encoder": "Lavc62.28.102 libvorbis",
+        "comment": "Original MP3 and AIGC metadata preserved; constant gain; no trimming",
+        "AIGC": "{\"Label\":\"1\",\"ContentProducer\":\"001191110108MA01DFAQ6210000\",\"ProduceID\":\"v02c0bg10001db94i5a7dld3ru5qjt4g\",\"ReservedCode1\":\"\",\"ContentPropagator\":\"001191110108MA01DFAQ6220000\",\"PropagateID\":\"v02c0bg10001db94i5a7dld3ru5qjt4g\",\"ReservedCode2\":\"\"}",
+        "title": "失车与徒步求生",
+        "source_filename": "music_25_on_foot_survival_02m28_loop.mp3"
+      },
+      "constant_gain_db": -10.99,
+      "encode_attempts": 1,
+      "loop": {
+        "enabled_at_runtime": true,
+        "managed_by": "two-player controller crossfade",
+        "stream_loop": false,
+        "start_seconds": 0.0,
+        "end_seconds": 148.035938,
+        "edit": "Whole original track; no trimming, time change, or baked crossfade."
+      },
+      "verification": {
+        "full_decode_passed": true,
+        "source_unchanged": true,
+        "duration_delta_seconds": 3.2e-05,
+        "duration_padding_tolerance_seconds": 0.1,
+        "original_aigc_text_preserved": true,
+        "true_peak_at_or_below_minus_2_dbtp": true
+      },
+      "current_mobile_file": {
+        "path": "assets/audio/music_legacy_20261016/on_foot_survival.ogg",
+        "sha256": "28b2f316ab85e170be005d0dafb835ba0bd809856d48ab1bfeaa0c089e2e31ad",
+        "bytes": 1332180,
+        "codec": "vorbis",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "duration_seconds": 148.04,
+        "reencoded_for_mobile": true
+      }
+    },
+    {
+      "id": "endofday_check",
+      "intended_use_from_original_readme": "结局核验／普通路段夜晚",
+      "source_filename": "music_26_endofday_check_02m28_loop.mp3",
+      "source_path": ".docs/音频/场景配乐_20261016/music_26_endofday_check_02m28_loop.mp3",
+      "source_sha256": "661b31d43eaa5fdae0b17374387a7c96ad2692ac4bbaeeed4cc82b417713864f",
+      "source_format": {
+        "codec": "mp3",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "bits_per_sample": 0,
+        "duration_seconds": 148.035906,
+        "bytes": 4737444
+      },
+      "source_loudness": {
+        "integrated_lufs": -10.39,
+        "true_peak_dbtp": -0.42,
+        "loudness_range_lu": 4.1,
+        "relative_threshold_lufs": -20.72
+      },
+      "original_metadata": {
+        "ffprobe_json_path": ".docs/音频/配乐接入_20261018/legacy_original_metadata/endofday_check.ffprobe.json",
+        "ffprobe_json_sha256": "88e9834ba06ac639b759be25b88ddeec4973eb70871c504338b7dfb7f3ef5672",
+        "ffmetadata_text_path": ".docs/音频/配乐接入_20261018/legacy_original_metadata/endofday_check.ffmetadata.txt",
+        "ffmetadata_text_sha256": "ec9863fd8ef0df0005a236963a7a7dfd167eb57f8b0e74560f7dd58079772206",
+        "tags": {
+          "encoder": "Lavf58.76.100",
+          "AIGC": "{\"Label\":\"1\",\"ContentProducer\":\"001191110108MA01DFAQ6210000\",\"ProduceID\":\"v0dc0bg10001db94jcq7dldb5ei42i7g\",\"ReservedCode1\":\"\",\"ContentPropagator\":\"001191110108MA01DFAQ6220000\",\"PropagateID\":\"v0dc0bg10001db94jcq7dldb5ei42i7g\",\"ReservedCode2\":\"\"}"
+        }
+      },
+      "output_path": "assets/audio/music_legacy_20261016/endofday_check.ogg",
+      "godot_resource_path": "res://assets/audio/music_legacy_20261016/endofday_check.ogg",
+      "output_sha256": "65d57a4988bc03354590a606d2465363bdbec0b4e3d947bd7cb6d8cb4fc847bc",
+      "output_format": {
+        "codec": "vorbis",
+        "sample_rate_hz": 48000,
+        "channels": 2,
+        "bits_per_sample": 0,
+        "duration_seconds": 148.035938,
+        "bytes": 2599341
+      },
+      "output_loudness": {
+        "integrated_lufs": -20.01,
+        "true_peak_dbtp": -9.91,
+        "loudness_range_lu": 4.0,
+        "relative_threshold_lufs": -30.33
+      },
+      "output_metadata_tags": {
+        "encoder": "Lavc62.28.102 libvorbis",
+        "comment": "Original MP3 and AIGC metadata preserved; constant gain; no trimming",
+        "AIGC": "{\"Label\":\"1\",\"ContentProducer\":\"001191110108MA01DFAQ6210000\",\"ProduceID\":\"v0dc0bg10001db94jcq7dldb5ei42i7g\",\"ReservedCode1\":\"\",\"ContentPropagator\":\"001191110108MA01DFAQ6220000\",\"PropagateID\":\"v0dc0bg10001db94jcq7dldb5ei42i7g\",\"ReservedCode2\":\"\"}",
+        "title": "结局核验／普通路段夜晚",
+        "source_filename": "music_26_endofday_check_02m28_loop.mp3"
+      },
+      "constant_gain_db": -9.61,
+      "encode_attempts": 1,
+      "loop": {
+        "enabled_at_runtime": true,
+        "managed_by": "two-player controller crossfade",
+        "stream_loop": false,
+        "start_seconds": 0.0,
+        "end_seconds": 148.035938,
+        "edit": "Whole original track; no trimming, time change, or baked crossfade."
+      },
+      "verification": {
+        "full_decode_passed": true,
+        "source_unchanged": true,
+        "duration_delta_seconds": 3.2e-05,
+        "duration_padding_tolerance_seconds": 0.1,
+        "original_aigc_text_preserved": true,
+        "true_peak_at_or_below_minus_2_dbtp": true
+      },
+      "current_mobile_file": {
+        "path": "assets/audio/music_legacy_20261016/endofday_check.ogg",
+        "sha256": "356b513a032634e63df1329a3152bcad02b436710edc00ad61690c45421bff82",
+        "bytes": 1339667,
+        "codec": "vorbis",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "duration_seconds": 148.04,
+        "reencoded_for_mobile": true
+      }
+    },
+    {
+      "id": "ending_success",
+      "intended_use_from_original_readme": "成功抵达／建立新生活",
+      "source_filename": "music_27_success_newlife_ending_01m59.mp3",
+      "source_path": ".docs/音频/场景配乐_20261016/music_27_success_newlife_ending_01m59.mp3",
+      "source_sha256": "ff1e1c0929c2cf0ed22d7f8e7e3b8ce30758806a2912881458e885e44fa4c065",
+      "source_format": {
+        "codec": "mp3",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "bits_per_sample": 0,
+        "duration_seconds": 119.04,
+        "bytes": 3809575
+      },
+      "source_loudness": {
+        "integrated_lufs": -10.3,
+        "true_peak_dbtp": -0.32,
+        "loudness_range_lu": 6.1,
+        "relative_threshold_lufs": -20.6
+      },
+      "original_metadata": {
+        "ffprobe_json_path": ".docs/音频/配乐接入_20261018/legacy_original_metadata/ending_success.ffprobe.json",
+        "ffprobe_json_sha256": "7dd3051e50df77969c2e91db7cb01b8c15c24963e78f9935feda6e3831ce591f",
+        "ffmetadata_text_path": ".docs/音频/配乐接入_20261018/legacy_original_metadata/ending_success.ffmetadata.txt",
+        "ffmetadata_text_sha256": "eee23b1cce8c6bf4e9a6d56e926332656bc5ae366a55a84f7b597f1873b45929",
+        "tags": {
+          "encoder": "Lavf58.76.100",
+          "AIGC": "{\"Label\":\"1\",\"ContentProducer\":\"001191110108MA01DFAQ6210000\",\"ProduceID\":\"v02c0bg10001db94kmq7dlda9ggmdpt0\",\"ReservedCode1\":\"\",\"ContentPropagator\":\"001191110108MA01DFAQ6220000\",\"PropagateID\":\"v02c0bg10001db94kmq7dlda9ggmdpt0\",\"ReservedCode2\":\"\"}"
+        }
+      },
+      "output_path": "assets/audio/music_legacy_20261016/ending_success.ogg",
+      "godot_resource_path": "res://assets/audio/music_legacy_20261016/ending_success.ogg",
+      "output_sha256": "ae0f68662bec0c1e64b61305bc3ae61b4217eb327a22f5b2185d9daeb913c1c6",
+      "output_format": {
+        "codec": "vorbis",
+        "sample_rate_hz": 48000,
+        "channels": 2,
+        "bits_per_sample": 0,
+        "duration_seconds": 119.04,
+        "bytes": 2150403
+      },
+      "output_loudness": {
+        "integrated_lufs": -20.04,
+        "true_peak_dbtp": -9.49,
+        "loudness_range_lu": 6.1,
+        "relative_threshold_lufs": -30.33
+      },
+      "output_metadata_tags": {
+        "encoder": "Lavc62.28.102 libvorbis",
+        "comment": "Original MP3 and AIGC metadata preserved; constant gain; no trimming",
+        "AIGC": "{\"Label\":\"1\",\"ContentProducer\":\"001191110108MA01DFAQ6210000\",\"ProduceID\":\"v02c0bg10001db94kmq7dlda9ggmdpt0\",\"ReservedCode1\":\"\",\"ContentPropagator\":\"001191110108MA01DFAQ6220000\",\"PropagateID\":\"v02c0bg10001db94kmq7dlda9ggmdpt0\",\"ReservedCode2\":\"\"}",
+        "title": "成功抵达／建立新生活",
+        "source_filename": "music_27_success_newlife_ending_01m59.mp3"
+      },
+      "constant_gain_db": -9.7,
+      "encode_attempts": 1,
+      "loop": {
+        "enabled_at_runtime": false,
+        "managed_by": "one-shot ending",
+        "stream_loop": false,
+        "start_seconds": 0.0,
+        "end_seconds": 119.04,
+        "edit": "Whole original track; no trimming, time change, or baked crossfade."
+      },
+      "verification": {
+        "full_decode_passed": true,
+        "source_unchanged": true,
+        "duration_delta_seconds": 0.0,
+        "duration_padding_tolerance_seconds": 0.1,
+        "original_aigc_text_preserved": true,
+        "true_peak_at_or_below_minus_2_dbtp": true
+      },
+      "current_mobile_file": {
+        "path": "assets/audio/music_legacy_20261016/ending_success.ogg",
+        "sha256": "c532734b2477a107116ecf44331d4a9016826fbd180457291b748f52bff4c78a",
+        "bytes": 1071335,
+        "codec": "vorbis",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "duration_seconds": 119.03999999999999,
+        "reencoded_for_mobile": true
+      }
+    },
+    {
+      "id": "ending_tragic",
+      "intended_use_from_original_readme": "分离、牺牲或失败结局",
+      "source_filename": "music_28_tragic_ending_02m28.mp3",
+      "source_path": ".docs/音频/场景配乐_20261016/music_28_tragic_ending_02m28.mp3",
+      "source_sha256": "4fdb0dae69bb8933855d4b78691fa8809472a49403ddc34ed924a6cf1b0739e8",
+      "source_format": {
+        "codec": "mp3",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "bits_per_sample": 0,
+        "duration_seconds": 148.035906,
+        "bytes": 4737444
+      },
+      "source_loudness": {
+        "integrated_lufs": -11.02,
+        "true_peak_dbtp": -0.39,
+        "loudness_range_lu": 11.8,
+        "relative_threshold_lufs": -21.83
+      },
+      "original_metadata": {
+        "ffprobe_json_path": ".docs/音频/配乐接入_20261018/legacy_original_metadata/ending_tragic.ffprobe.json",
+        "ffprobe_json_sha256": "6869a82b29aa8d3d087bbad8a490beab377cc287d49fb50324554d9062ddbfea",
+        "ffmetadata_text_path": ".docs/音频/配乐接入_20261018/legacy_original_metadata/ending_tragic.ffmetadata.txt",
+        "ffmetadata_text_sha256": "c0a566f5a08db91198d1e013f0987d22532344195bb70e1b76181b7b89f7a317",
+        "tags": {
+          "encoder": "Lavf58.76.100",
+          "AIGC": "{\"Label\":\"1\",\"ContentProducer\":\"001191110108MA01DFAQ6210000\",\"ProduceID\":\"v0dc0bg10001db94m0i7dld16htlgrfg\",\"ReservedCode1\":\"\",\"ContentPropagator\":\"001191110108MA01DFAQ6220000\",\"PropagateID\":\"v0dc0bg10001db94m0i7dld16htlgrfg\",\"ReservedCode2\":\"\"}"
+        }
+      },
+      "output_path": "assets/audio/music_legacy_20261016/ending_tragic.ogg",
+      "godot_resource_path": "res://assets/audio/music_legacy_20261016/ending_tragic.ogg",
+      "output_sha256": "939189e3c5a3328785b1a7e1f1b3bf5e87d5c05795580a3b21d4522fad0761a7",
+      "output_format": {
+        "codec": "vorbis",
+        "sample_rate_hz": 48000,
+        "channels": 2,
+        "bits_per_sample": 0,
+        "duration_seconds": 148.035938,
+        "bytes": 2489820
+      },
+      "output_loudness": {
+        "integrated_lufs": -20.07,
+        "true_peak_dbtp": -9.32,
+        "loudness_range_lu": 11.7,
+        "relative_threshold_lufs": -30.87
+      },
+      "output_metadata_tags": {
+        "encoder": "Lavc62.28.102 libvorbis",
+        "comment": "Original MP3 and AIGC metadata preserved; constant gain; no trimming",
+        "AIGC": "{\"Label\":\"1\",\"ContentProducer\":\"001191110108MA01DFAQ6210000\",\"ProduceID\":\"v0dc0bg10001db94m0i7dld16htlgrfg\",\"ReservedCode1\":\"\",\"ContentPropagator\":\"001191110108MA01DFAQ6220000\",\"PropagateID\":\"v0dc0bg10001db94m0i7dld16htlgrfg\",\"ReservedCode2\":\"\"}",
+        "title": "分离、牺牲或失败结局",
+        "source_filename": "music_28_tragic_ending_02m28.mp3"
+      },
+      "constant_gain_db": -8.98,
+      "encode_attempts": 1,
+      "loop": {
+        "enabled_at_runtime": false,
+        "managed_by": "one-shot ending",
+        "stream_loop": false,
+        "start_seconds": 0.0,
+        "end_seconds": 148.035938,
+        "edit": "Whole original track; no trimming, time change, or baked crossfade."
+      },
+      "verification": {
+        "full_decode_passed": true,
+        "source_unchanged": true,
+        "duration_delta_seconds": 3.2e-05,
+        "duration_padding_tolerance_seconds": 0.1,
+        "original_aigc_text_preserved": true,
+        "true_peak_at_or_below_minus_2_dbtp": true
+      },
+      "current_mobile_file": {
+        "path": "assets/audio/music_legacy_20261016/ending_tragic.ogg",
+        "sha256": "c089199b128ec24a38f0107d3c68530480bd7a39726290abcb6ffb08f8bc7714",
+        "bytes": 1268183,
+        "codec": "vorbis",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "duration_seconds": 148.04,
+        "reencoded_for_mobile": true
+      }
+    },
+    {
+      "id": "shared_dream",
+      "intended_use_from_original_readme": "共存幻梦／梦境段落",
+      "source_filename": "music_29_shared_dream_02m28_loop.mp3",
+      "source_path": ".docs/音频/场景配乐_20261016/music_29_shared_dream_02m28_loop.mp3",
+      "source_sha256": "4eeedba188e6e2178adc1c4a87671c027df7cf3c158d298c44d6a0cc7dd0ef72",
+      "source_format": {
+        "codec": "mp3",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "bits_per_sample": 0,
+        "duration_seconds": 148.035906,
+        "bytes": 4737444
+      },
+      "source_loudness": {
+        "integrated_lufs": -9.69,
+        "true_peak_dbtp": -0.41,
+        "loudness_range_lu": 13.0,
+        "relative_threshold_lufs": -20.42
+      },
+      "original_metadata": {
+        "ffprobe_json_path": ".docs/音频/配乐接入_20261018/legacy_original_metadata/shared_dream.ffprobe.json",
+        "ffprobe_json_sha256": "28fbd034aade16d132d78cf33c775a9739597287df460f0830606d9f1818aee2",
+        "ffmetadata_text_path": ".docs/音频/配乐接入_20261018/legacy_original_metadata/shared_dream.ffmetadata.txt",
+        "ffmetadata_text_sha256": "a50a7950c8d6fef153c7844023e6d239d8b0016d5a8d4ab999a4ffd2924ba4df",
+        "tags": {
+          "encoder": "Lavf58.76.100",
+          "AIGC": "{\"Label\":\"1\",\"ContentProducer\":\"001191110108MA01DFAQ6210000\",\"ProduceID\":\"v02c0bg10001db94n627dld201tge320\",\"ReservedCode1\":\"\",\"ContentPropagator\":\"001191110108MA01DFAQ6220000\",\"PropagateID\":\"v02c0bg10001db94n627dld201tge320\",\"ReservedCode2\":\"\"}"
+        }
+      },
+      "output_path": "assets/audio/music_legacy_20261016/shared_dream.ogg",
+      "godot_resource_path": "res://assets/audio/music_legacy_20261016/shared_dream.ogg",
+      "output_sha256": "db5b5e1d71dad762a748a68282a1cd0aff2615755e767725d985a623c0b204e8",
+      "output_format": {
+        "codec": "vorbis",
+        "sample_rate_hz": 48000,
+        "channels": 2,
+        "bits_per_sample": 0,
+        "duration_seconds": 148.035938,
+        "bytes": 2767466
+      },
+      "output_loudness": {
+        "integrated_lufs": -20.03,
+        "true_peak_dbtp": -10.41,
+        "loudness_range_lu": 13.0,
+        "relative_threshold_lufs": -30.77
+      },
+      "output_metadata_tags": {
+        "encoder": "Lavc62.28.102 libvorbis",
+        "comment": "Original MP3 and AIGC metadata preserved; constant gain; no trimming",
+        "AIGC": "{\"Label\":\"1\",\"ContentProducer\":\"001191110108MA01DFAQ6210000\",\"ProduceID\":\"v02c0bg10001db94n627dld201tge320\",\"ReservedCode1\":\"\",\"ContentPropagator\":\"001191110108MA01DFAQ6220000\",\"PropagateID\":\"v02c0bg10001db94n627dld201tge320\",\"ReservedCode2\":\"\"}",
+        "title": "共存幻梦／梦境段落",
+        "source_filename": "music_29_shared_dream_02m28_loop.mp3"
+      },
+      "constant_gain_db": -10.31,
+      "encode_attempts": 1,
+      "loop": {
+        "enabled_at_runtime": true,
+        "managed_by": "two-player controller crossfade",
+        "stream_loop": false,
+        "start_seconds": 0.0,
+        "end_seconds": 148.035938,
+        "edit": "Whole original track; no trimming, time change, or baked crossfade."
+      },
+      "verification": {
+        "full_decode_passed": true,
+        "source_unchanged": true,
+        "duration_delta_seconds": 3.2e-05,
+        "duration_padding_tolerance_seconds": 0.1,
+        "original_aigc_text_preserved": true,
+        "true_peak_at_or_below_minus_2_dbtp": true
+      },
+      "current_mobile_file": {
+        "path": "assets/audio/music_legacy_20261016/shared_dream.ogg",
+        "sha256": "0ac38e73b4be24d48a9fc7fcedac499da24e59679271c243441c9eebfd2ecc6e",
+        "bytes": 1337953,
+        "codec": "vorbis",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "duration_seconds": 148.04,
+        "reencoded_for_mobile": true
+      }
+    }
+  ],
+  "metadata_scope": "Original processing and output_* fields describe the teammate pre-mobile production files. current_mobile_file on each track is authoritative for files shipped in this repository. Historical source paths refer to the original production workstation and are not required for running or building the game.",
+  "mobile_optimization_20261019": {
+    "codec": "Vorbis",
+    "policy": "Re-encode tracks above 110 kbps at quality 1 and 44100 Hz; leave other tracks unchanged.",
+    "channels_preserved": true,
+    "subjective_audition": false,
+    "duration_measurement_resolution_seconds": 0.01,
+    "originals_location": "E:\\Apps\\Godot\\项目\\游戏档案2"
+  }
+}

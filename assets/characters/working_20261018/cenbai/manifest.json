@@ -1,0 +1,2745 @@
+{
+  "schema": 1,
+  "id": "cenbai",
+  "character": "岑柏",
+  "frames": 123,
+  "fps": 24,
+  "duration_seconds": 5.125,
+  "canvas": [
+    318,
+    485
+  ],
+  "loop": true,
+  "animation": "activity",
+  "pose": {
+    "kind": "standing",
+    "source_facing": "left",
+    "height_ratio": 0.63,
+    "activity_label": "整理绳结",
+    "frames": "res://assets/characters/working_20261018/cenbai/activity.tres",
+    "animation": "activity",
+    "texture": "res://assets/characters/working_20261018/cenbai/frames/frame_0000.png",
+    "anchor": [
+      169.8,
+      468.84635416666663
+    ],
+    "top_anchor": [
+      158.60000000000002,
+      16.34114583333333
+    ],
+    "sole_anchor": [
+      169.8,
+      468.84635416666663
+    ],
+    "height_native": 452.5052083333333
+  },
+  "anchor": [
+    169.8,
+    468.84635416666663
+  ],
+  "top_anchor": [
+    158.60000000000002,
+    16.34114583333333
+  ],
+  "sole_anchor": [
+    169.8,
+    468.84635416666663
+  ],
+  "height_native": 452.5052083333333,
+  "seat_to_sole_native": null,
+  "recipe_sha256": "1dec96919719dab630b6c8123299cea2f75422d0daefa79f43a571d4bc3c06da",
+  "source_files": {
+    "video": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\source_green.mp4",
+    "video_sha256": "19c37d7d269eb9c5ba5f3e98d818487252b9dc85595c7f822c6e7f42589154a9",
+    "reference": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\video_first_last_green.png",
+    "reference_sha256": "dcfa4730dccb1b00a6f375fc5530f9bd98913c88a62f62ed729ea2ad2a7114a7",
+    "source": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\pose_green.png",
+    "source_sha256": "386922a05a514443d544f616d64962e71d0e5a4fbebe7ee9fb64d6153ef570e4",
+    "input_lock_sha256": "4a361e1917791ae6b5899621473592513141740972316c4ed9093f2a9882a326"
+  },
+  "source_annotations": {
+    "name": "岑柏",
+    "kind": "standing",
+    "label": "整理绳结",
+    "source_facing": "left",
+    "height_ratio": 0.63,
+    "anchor": [
+      326,
+      679
+    ],
+    "sole_anchor": [
+      326,
+      679
+    ],
+    "top_anchor": [
+      312,
+      113
+    ],
+    "height_native": 566
+  },
+  "anchors": {
+    "anchor": {
+      "in_source": [
+        326,
+        679
+      ],
+      "in_video": [
+        260.8,
+        619.8463541666666
+      ],
+      "in_export": [
+        169.8,
+        468.84635416666663
+      ]
+    },
+    "top_anchor": {
+      "in_source": [
+        312,
+        113
+      ],
+      "in_video": [
+        249.60000000000002,
+        167.34114583333331
+      ],
+      "in_export": [
+        158.60000000000002,
+        16.34114583333333
+      ]
+    },
+    "sole_anchor": {
+      "in_source": [
+        326,
+        679
+      ],
+      "in_video": [
+        260.8,
+        619.8463541666666
+      ],
+      "in_export": [
+        169.8,
+        468.84635416666663
+      ]
+    }
+  },
+  "transforms": {
+    "source_to_video": [
+      [
+        0.8,
+        0.0,
+        0
+      ],
+      [
+        0.0,
+        0.7994791666666666,
+        77
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "video_to_export": [
+      [
+        1.0,
+        0.0,
+        -91.0
+      ],
+      [
+        0.0,
+        1.0,
+        -151.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "source_to_export": [
+      [
+        0.8,
+        0.0,
+        -91.0
+      ],
+      [
+        0.0,
+        0.7994791666666666,
+        -74.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "source_size": [
+      640,
+      768
+    ],
+    "video_canvas": [
+      512,
+      768
+    ],
+    "video_resize": [
+      512,
+      614
+    ],
+    "video_position": [
+      0,
+      77
+    ],
+    "source_crop_box": [
+      91,
+      151,
+      409,
+      636
+    ],
+    "uniform_scale_requested": 1.0,
+    "actual_pixel_scale": [
+      1.0,
+      1.0
+    ],
+    "rounding_note": "One uniform scale, output dimensions rounded to whole pixels; matrices include exact rounded dimensions",
+    "cycle_geometry": "native video coordinates; pinned, anchor none, repair off; no per-frame centering"
+  },
+  "body_bounds": {
+    "alpha_threshold": 8,
+    "video_union": [
+      103,
+      163,
+      397,
+      624
+    ],
+    "video_all_alpha_union": [
+      103,
+      163,
+      397,
+      624
+    ],
+    "export_union": [
+      12,
+      12,
+      306,
+      473
+    ],
+    "rows": [
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-000.png",
+        "native_sha256": "86a47670a4febf60471db6a66b347ab2de848b8db9ca08ef6afa328084cc6eb1",
+        "body_bounds_video_alpha8": [
+          112,
+          164,
+          396,
+          624
+        ],
+        "frame": 0,
+        "time_seconds": 0.0,
+        "file": "frames/frame_0000.png",
+        "sha256": "328b0f214ab2050e55f6e0ba421da2112261b8b2ec793e899e92a573056f94f6",
+        "body_bounds_export_alpha8": [
+          21,
+          13,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-001.png",
+        "native_sha256": "8d2b1df003bc6eb146840719af172946d515d3c849845a828967f28ce7c803b2",
+        "body_bounds_video_alpha8": [
+          112,
+          163,
+          396,
+          624
+        ],
+        "frame": 1,
+        "time_seconds": 0.041666666666666664,
+        "file": "frames/frame_0001.png",
+        "sha256": "d203c635f1ad20b276ed0a9dd2363b07bde4d06da246d197fa0d3f2290cd53b5",
+        "body_bounds_export_alpha8": [
+          21,
+          12,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-002.png",
+        "native_sha256": "0b1c15fef88e35927d68c5cc55703ac4d76fbc69e8123400f49cfda244a44ba5",
+        "body_bounds_video_alpha8": [
+          112,
+          164,
+          396,
+          624
+        ],
+        "frame": 2,
+        "time_seconds": 0.08333333333333333,
+        "file": "frames/frame_0002.png",
+        "sha256": "da7a9c2d9467e7b7e4f37f8bb3b05b9516c1c273254147e950a46511300bc693",
+        "body_bounds_export_alpha8": [
+          21,
+          13,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-003.png",
+        "native_sha256": "69d5a90607fe3e5c4768c53cf57a23791b1a2326cde8e6f4f0eb20c793abf532",
+        "body_bounds_video_alpha8": [
+          112,
+          163,
+          396,
+          624
+        ],
+        "frame": 3,
+        "time_seconds": 0.125,
+        "file": "frames/frame_0003.png",
+        "sha256": "8bafa46ad31292fb55b99c416264a9b4e42c320bae487d563f65a53d2f0ac2d0",
+        "body_bounds_export_alpha8": [
+          21,
+          12,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-004.png",
+        "native_sha256": "9482e81cfa995affc744674f7c5e5cb7f524c84fac2c07e6651605c975047e75",
+        "body_bounds_video_alpha8": [
+          112,
+          163,
+          396,
+          624
+        ],
+        "frame": 4,
+        "time_seconds": 0.16666666666666666,
+        "file": "frames/frame_0004.png",
+        "sha256": "3884e9bbd9c457ec40d6a470ef52e76670933d1355629a148a153e9f63018c20",
+        "body_bounds_export_alpha8": [
+          21,
+          12,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-005.png",
+        "native_sha256": "770c09b006da036461887b43aa67dc5afc9c0133538ea54f451cbaf0a2e0082f",
+        "body_bounds_video_alpha8": [
+          112,
+          164,
+          396,
+          623
+        ],
+        "frame": 5,
+        "time_seconds": 0.20833333333333334,
+        "file": "frames/frame_0005.png",
+        "sha256": "ba0241d1a4720f9e6862a83149443515a3dd65ca766556d6827e1fa0dcce7b82",
+        "body_bounds_export_alpha8": [
+          21,
+          13,
+          305,
+          472
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-006.png",
+        "native_sha256": "229d225714c71af831c623410af6352c63c9bbd8ba5b58402031b4a38bbb9128",
+        "body_bounds_video_alpha8": [
+          112,
+          164,
+          396,
+          623
+        ],
+        "frame": 6,
+        "time_seconds": 0.25,
+        "file": "frames/frame_0006.png",
+        "sha256": "c1500a0fc3f5b15f5f7d98ab82cd52165672bccc761c10b6e6c1473fc972012b",
+        "body_bounds_export_alpha8": [
+          21,
+          13,
+          305,
+          472
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-007.png",
+        "native_sha256": "fe85f333d0ca2925d99cefd1289669e25c5a62f4e1f6e2b8a11cb4bff12a9645",
+        "body_bounds_video_alpha8": [
+          112,
+          164,
+          396,
+          623
+        ],
+        "frame": 7,
+        "time_seconds": 0.2916666666666667,
+        "file": "frames/frame_0007.png",
+        "sha256": "f36a36aea4d1913a370e8473e378f2551acb5c566cc0ca7bc0a041479e6fe674",
+        "body_bounds_export_alpha8": [
+          21,
+          13,
+          305,
+          472
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-008.png",
+        "native_sha256": "a02a2902efa89bb56e5a5bcab6303554ee54e04e26711b837b8fd36cba1cf8ad",
+        "body_bounds_video_alpha8": [
+          112,
+          164,
+          396,
+          623
+        ],
+        "frame": 8,
+        "time_seconds": 0.3333333333333333,
+        "file": "frames/frame_0008.png",
+        "sha256": "2db3cf00a8e98e09e425a5c245291cc2dfac263979c560e103c3ed89348c2c31",
+        "body_bounds_export_alpha8": [
+          21,
+          13,
+          305,
+          472
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-009.png",
+        "native_sha256": "d2c048cb1b49c2edde3c8d2350a34d0e1d0ce52569f42fe56de586880db4dab6",
+        "body_bounds_video_alpha8": [
+          112,
+          163,
+          396,
+          624
+        ],
+        "frame": 9,
+        "time_seconds": 0.375,
+        "file": "frames/frame_0009.png",
+        "sha256": "2f2718ca6586461d52b9bb3666961672776cd80d1f4f6c3cb3fb15073e50bcc4",
+        "body_bounds_export_alpha8": [
+          21,
+          12,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-010.png",
+        "native_sha256": "69e5104af18d4be64c2c4ccd04bbf93aecc1f9886d6f5b7c6d72fd4349cce3a3",
+        "body_bounds_video_alpha8": [
+          112,
+          164,
+          396,
+          624
+        ],
+        "frame": 10,
+        "time_seconds": 0.4166666666666667,
+        "file": "frames/frame_0010.png",
+        "sha256": "31325cb75d0b022fe5e6f6e387f18470e8d4b269a613b18121a5b0a2d5b6727e",
+        "body_bounds_export_alpha8": [
+          21,
+          13,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-011.png",
+        "native_sha256": "f00615b3e16bdec9711b69ea1837293db485ba2078795dced1b9d53f12e5cd21",
+        "body_bounds_video_alpha8": [
+          112,
+          164,
+          396,
+          624
+        ],
+        "frame": 11,
+        "time_seconds": 0.4583333333333333,
+        "file": "frames/frame_0011.png",
+        "sha256": "a08c436f758c24b18b211bc7f0431efab18f79275bf3e33d6cbde03edd5adf6f",
+        "body_bounds_export_alpha8": [
+          21,
+          13,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-012.png",
+        "native_sha256": "7bb5573a64338a1424c7ec3ab544ec52752c878308824df7984b9924a328003c",
+        "body_bounds_video_alpha8": [
+          111,
+          164,
+          396,
+          624
+        ],
+        "frame": 12,
+        "time_seconds": 0.5,
+        "file": "frames/frame_0012.png",
+        "sha256": "7d02922efd3a3777c620056c5435d5d9275f5f5a60100ed83b1d492e96eb79a2",
+        "body_bounds_export_alpha8": [
+          20,
+          13,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-013.png",
+        "native_sha256": "c849bbf39e208a0b3382ff77432a53a3da2189c7d14a92d02a9db292f2d2a5ff",
+        "body_bounds_video_alpha8": [
+          111,
+          164,
+          396,
+          624
+        ],
+        "frame": 13,
+        "time_seconds": 0.5416666666666666,
+        "file": "frames/frame_0013.png",
+        "sha256": "4c5ee5ec3c9a148e20c06699826869d887c65c5f88f1cdb6f77f1b3dc0f557af",
+        "body_bounds_export_alpha8": [
+          20,
+          13,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-014.png",
+        "native_sha256": "0acd70beff69d6a9d92b9717730254341f837ddfef6b4d7631f77f6b4f2d7bd0",
+        "body_bounds_video_alpha8": [
+          112,
+          164,
+          396,
+          624
+        ],
+        "frame": 14,
+        "time_seconds": 0.5833333333333334,
+        "file": "frames/frame_0014.png",
+        "sha256": "f51be3210f06b3316f065eaada6d7957ba1eba1016679e2d7f1169ebe13c59bd",
+        "body_bounds_export_alpha8": [
+          21,
+          13,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-015.png",
+        "native_sha256": "fed58987d03809a21e46d28967e024cac7d39385b3c74a4e8aff83e3250ea261",
+        "body_bounds_video_alpha8": [
+          112,
+          164,
+          396,
+          624
+        ],
+        "frame": 15,
+        "time_seconds": 0.625,
+        "file": "frames/frame_0015.png",
+        "sha256": "e118286bd13c8a64f05c5a8fa00129164acd4751247980a2e303d81c0a84426d",
+        "body_bounds_export_alpha8": [
+          21,
+          13,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-016.png",
+        "native_sha256": "60d8ddc870c0d7d57c1f45e7658f211668590e77ca96653dac5a7d9ed4d954d7",
+        "body_bounds_video_alpha8": [
+          112,
+          164,
+          396,
+          624
+        ],
+        "frame": 16,
+        "time_seconds": 0.6666666666666666,
+        "file": "frames/frame_0016.png",
+        "sha256": "a8ef4a540698056bb0183de97eeb69e7fb5efb71ef03ce7066290189a8d2fc17",
+        "body_bounds_export_alpha8": [
+          21,
+          13,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-017.png",
+        "native_sha256": "f1f4adf0a8ffa385f204da34c903d7198bd33825f964af74439dd2856225507b",
+        "body_bounds_video_alpha8": [
+          112,
+          164,
+          396,
+          624
+        ],
+        "frame": 17,
+        "time_seconds": 0.7083333333333334,
+        "file": "frames/frame_0017.png",
+        "sha256": "a227946e84e2ba341574e85b07718ceb813137bc6156932a5b04b230b42e28bd",
+        "body_bounds_export_alpha8": [
+          21,
+          13,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-018.png",
+        "native_sha256": "45f1c4b9f7ad63e45542fe8b6c973b4cdea8c143ab935069c626fc24b6740d4a",
+        "body_bounds_video_alpha8": [
+          113,
+          164,
+          396,
+          624
+        ],
+        "frame": 18,
+        "time_seconds": 0.75,
+        "file": "frames/frame_0018.png",
+        "sha256": "94842dc8e3c1aad24728e1c13c2150b0ebad982f67513218a0943386cd31574b",
+        "body_bounds_export_alpha8": [
+          22,
+          13,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-019.png",
+        "native_sha256": "5b58023027ff4a8f4b47c0adc7c7ab7231da11b851c6fcd7951cea75d0e7a435",
+        "body_bounds_video_alpha8": [
+          114,
+          164,
+          396,
+          624
+        ],
+        "frame": 19,
+        "time_seconds": 0.7916666666666666,
+        "file": "frames/frame_0019.png",
+        "sha256": "7a6c137dd7b8b7a7af1d8e68ec321bdbbe2cc6a2f5d5ba49e17a227a61b3542c",
+        "body_bounds_export_alpha8": [
+          23,
+          13,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-020.png",
+        "native_sha256": "010eb074f1874345a3c078d833a1fe40bf6745a29a609499ea6862aeaf68ace7",
+        "body_bounds_video_alpha8": [
+          114,
+          163,
+          396,
+          624
+        ],
+        "frame": 20,
+        "time_seconds": 0.8333333333333334,
+        "file": "frames/frame_0020.png",
+        "sha256": "2726b69312d152bfb9413813d8c372d8118883cd28eb89fef0cbcf4db26f08af",
+        "body_bounds_export_alpha8": [
+          23,
+          12,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-021.png",
+        "native_sha256": "e21ab45302ece51dc4275c794c27c05eacc7a09ca3839305509750f10936d6c9",
+        "body_bounds_video_alpha8": [
+          114,
+          163,
+          397,
+          624
+        ],
+        "frame": 21,
+        "time_seconds": 0.875,
+        "file": "frames/frame_0021.png",
+        "sha256": "60c9a7996229437f052e127037d2662ef089d8b02c375aaff0f59d0ca3d990f3",
+        "body_bounds_export_alpha8": [
+          23,
+          12,
+          306,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-022.png",
+        "native_sha256": "f7d0d55a814664d4b7fc656da6819e3b56f58139b9d8facfb33006d43d7bbc8b",
+        "body_bounds_video_alpha8": [
+          116,
+          163,
+          396,
+          623
+        ],
+        "frame": 22,
+        "time_seconds": 0.9166666666666666,
+        "file": "frames/frame_0022.png",
+        "sha256": "6215db3ab1b3bef35514c600ca621e42f8017834b6e19ccaacb60523fa9d3201",
+        "body_bounds_export_alpha8": [
+          25,
+          12,
+          305,
+          472
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-023.png",
+        "native_sha256": "82c5d06f189bf3cbef11fc4335e7753f645bf8f6249e52bdddcaccb893fb89e7",
+        "body_bounds_video_alpha8": [
+          116,
+          164,
+          396,
+          623
+        ],
+        "frame": 23,
+        "time_seconds": 0.9583333333333334,
+        "file": "frames/frame_0023.png",
+        "sha256": "446c582bd865b5a27b2c8921b1f737fd2595be6b00202635ceeee867ef7aca36",
+        "body_bounds_export_alpha8": [
+          25,
+          13,
+          305,
+          472
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-024.png",
+        "native_sha256": "936f3f8a42ae46843e8faa1684ef4ea8935122cf6c138a3acd09d6d352a61b74",
+        "body_bounds_video_alpha8": [
+          116,
+          164,
+          396,
+          624
+        ],
+        "frame": 24,
+        "time_seconds": 1.0,
+        "file": "frames/frame_0024.png",
+        "sha256": "753c8dca7cea7ed4510bcb0fe5ae8d8f3dcd20df6ba30852873662feaf30dbdd",
+        "body_bounds_export_alpha8": [
+          25,
+          13,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-025.png",
+        "native_sha256": "f876475b0872213975e6da9cd31726484f5cd5116f0efb62b22427597eb56354",
+        "body_bounds_video_alpha8": [
+          118,
+          164,
+          396,
+          624
+        ],
+        "frame": 25,
+        "time_seconds": 1.0416666666666667,
+        "file": "frames/frame_0025.png",
+        "sha256": "b66d70ac4b43eea1063772a7c6f9b55c6c4d458bf22cf71d417c9771e9cb53ad",
+        "body_bounds_export_alpha8": [
+          27,
+          13,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-026.png",
+        "native_sha256": "84105ae9b3386e0837fcb8bb683fec1edf3bbae13aac62aa865383c8be26ff52",
+        "body_bounds_video_alpha8": [
+          118,
+          164,
+          396,
+          623
+        ],
+        "frame": 26,
+        "time_seconds": 1.0833333333333333,
+        "file": "frames/frame_0026.png",
+        "sha256": "cba0794f2d6968a53f04a9f5293fb757e49bdfeaffbac6b3adf95dec269954b9",
+        "body_bounds_export_alpha8": [
+          27,
+          13,
+          305,
+          472
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-027.png",
+        "native_sha256": "7129b1948feecb4f6428c1057eafa86bb2ed75c631a6286d3c48406ee70baf5f",
+        "body_bounds_video_alpha8": [
+          118,
+          164,
+          396,
+          624
+        ],
+        "frame": 27,
+        "time_seconds": 1.125,
+        "file": "frames/frame_0027.png",
+        "sha256": "a116e0513d8415d25b2d2780c504c6193faa07af964b0d256745f77084f831e2",
+        "body_bounds_export_alpha8": [
+          27,
+          13,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-028.png",
+        "native_sha256": "85bf596c7ec0859f0e7309a35cbb3c3cbeddc0acc88f7a5ce4b0473109097a77",
+        "body_bounds_video_alpha8": [
+          118,
+          164,
+          396,
+          624
+        ],
+        "frame": 28,
+        "time_seconds": 1.1666666666666667,
+        "file": "frames/frame_0028.png",
+        "sha256": "f09de8cec06f6c3849f6ae043931ea24915cb56ec539e1e304ca47e6000d9e8a",
+        "body_bounds_export_alpha8": [
+          27,
+          13,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-029.png",
+        "native_sha256": "9025563b9bc89879984d4a1cc24b8bbbba56936d6dbb7c63326e22bd7c12c87b",
+        "body_bounds_video_alpha8": [
+          118,
+          163,
+          396,
+          624
+        ],
+        "frame": 29,
+        "time_seconds": 1.2083333333333333,
+        "file": "frames/frame_0029.png",
+        "sha256": "685cd4061397f4193b47ae45b914f9651fd61b6b6c0f41019121f37cc6c7608e",
+        "body_bounds_export_alpha8": [
+          27,
+          12,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-030.png",
+        "native_sha256": "efd114aebe869db495aecda2ddfc5a22c7a23de1f6782db3308b15c32cf3d9ab",
+        "body_bounds_video_alpha8": [
+          119,
+          163,
+          396,
+          624
+        ],
+        "frame": 30,
+        "time_seconds": 1.25,
+        "file": "frames/frame_0030.png",
+        "sha256": "a539993557eceb685847e55f3246913d2e6725f16b48909ca7d4761a7e7ebe9f",
+        "body_bounds_export_alpha8": [
+          28,
+          12,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-031.png",
+        "native_sha256": "d937795f4033b98595605c4d5b71878ec3323f39c18883cd2a9364c988291712",
+        "body_bounds_video_alpha8": [
+          119,
+          164,
+          396,
+          624
+        ],
+        "frame": 31,
+        "time_seconds": 1.2916666666666667,
+        "file": "frames/frame_0031.png",
+        "sha256": "c8b170edd8e72802fa6ca62c1ab73f1d57c8ff1db0492c988d46fa746df0ee0e",
+        "body_bounds_export_alpha8": [
+          28,
+          13,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-032.png",
+        "native_sha256": "bca09de9dcc1018b5f917deafd816a6cbbb562a3035f64e0d1b676a05cbd601c",
+        "body_bounds_video_alpha8": [
+          119,
+          164,
+          396,
+          624
+        ],
+        "frame": 32,
+        "time_seconds": 1.3333333333333333,
+        "file": "frames/frame_0032.png",
+        "sha256": "e7480f7c2df07a31af6485b12f09877f7573a259432e23d1a9f3a94fea6ef4a7",
+        "body_bounds_export_alpha8": [
+          28,
+          13,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-033.png",
+        "native_sha256": "fe57f6cf36b341f2a58199302225edf7e04579cafd4e62a5daf012153c1f25b7",
+        "body_bounds_video_alpha8": [
+          118,
+          164,
+          396,
+          624
+        ],
+        "frame": 33,
+        "time_seconds": 1.375,
+        "file": "frames/frame_0033.png",
+        "sha256": "2d2517a0d06a722b3f0fc31c66efaaef6b82155ed02dedcccec86dfd303134b6",
+        "body_bounds_export_alpha8": [
+          27,
+          13,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-034.png",
+        "native_sha256": "4b10f8a98eab8e8c726767d04e056a5a7dd5bbfe5a7b3fbb248741ffc2ba1ee0",
+        "body_bounds_video_alpha8": [
+          118,
+          164,
+          396,
+          624
+        ],
+        "frame": 34,
+        "time_seconds": 1.4166666666666667,
+        "file": "frames/frame_0034.png",
+        "sha256": "bb926d593640410965d912f014daa95751cbf017f355c188e3a7d42f91a08928",
+        "body_bounds_export_alpha8": [
+          27,
+          13,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-035.png",
+        "native_sha256": "1dac614ea991dd9af0136620c54c67dc47f25db581c1d7d72be53480fd4fd6a7",
+        "body_bounds_video_alpha8": [
+          119,
+          164,
+          396,
+          624
+        ],
+        "frame": 35,
+        "time_seconds": 1.4583333333333333,
+        "file": "frames/frame_0035.png",
+        "sha256": "6fb414dd73d292de91a891e156123e95d9a827af77b4b453a48aae5ff77cb3fe",
+        "body_bounds_export_alpha8": [
+          28,
+          13,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-036.png",
+        "native_sha256": "b22fe548626e55c9a8c9fce192c55ab493d733dd577b5792ab00863182a22d98",
+        "body_bounds_video_alpha8": [
+          119,
+          164,
+          396,
+          624
+        ],
+        "frame": 36,
+        "time_seconds": 1.5,
+        "file": "frames/frame_0036.png",
+        "sha256": "eccb02ecdfe2812cb352ef7aae5f46d01b4c8764038c933f533cb8dfac191094",
+        "body_bounds_export_alpha8": [
+          28,
+          13,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-037.png",
+        "native_sha256": "fbc9435c8716a10023ee27e8c7ce0bcf014e1e92b0a77371c3cfb6d536c36a7e",
+        "body_bounds_video_alpha8": [
+          120,
+          164,
+          396,
+          624
+        ],
+        "frame": 37,
+        "time_seconds": 1.5416666666666667,
+        "file": "frames/frame_0037.png",
+        "sha256": "e362383cf3bcd5a37131adfba30bdb5fd753f87b86380d2c39ee7984fe390810",
+        "body_bounds_export_alpha8": [
+          29,
+          13,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-038.png",
+        "native_sha256": "3c5fa0e6b278b864a75d4454df4e3af4ab180606cb349e6a3464b0ef7632ca09",
+        "body_bounds_video_alpha8": [
+          120,
+          164,
+          396,
+          624
+        ],
+        "frame": 38,
+        "time_seconds": 1.5833333333333333,
+        "file": "frames/frame_0038.png",
+        "sha256": "5d772d62d72d5fd7e7d60232a69047b23dba94344d82a5d96b37d31c774b5a3f",
+        "body_bounds_export_alpha8": [
+          29,
+          13,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-039.png",
+        "native_sha256": "3c4ec044c734a81cb91109a40f2926f3c10fd55ce3878d2476d7490bb4a6fb2b",
+        "body_bounds_video_alpha8": [
+          120,
+          164,
+          396,
+          623
+        ],
+        "frame": 39,
+        "time_seconds": 1.625,
+        "file": "frames/frame_0039.png",
+        "sha256": "8667ece54a6754960dcaff4c9f341c2e29ec0e3870a46e0901686223c69eb818",
+        "body_bounds_export_alpha8": [
+          29,
+          13,
+          305,
+          472
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-040.png",
+        "native_sha256": "fcb2fd70b664cfa1834aa8e772be7c712c82fab91e3e631da7451b8209bd9a35",
+        "body_bounds_video_alpha8": [
+          120,
+          164,
+          396,
+          624
+        ],
+        "frame": 40,
+        "time_seconds": 1.6666666666666667,
+        "file": "frames/frame_0040.png",
+        "sha256": "d7e081b23a0ec8c7a1e6d50958a2f100c02fa700b1c8f74123db398bf19f26de",
+        "body_bounds_export_alpha8": [
+          29,
+          13,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-041.png",
+        "native_sha256": "95f325eeef57e79606f2f4d6512985448b4fe1a08adf8dfddb31eaa9246a0770",
+        "body_bounds_video_alpha8": [
+          120,
+          164,
+          396,
+          624
+        ],
+        "frame": 41,
+        "time_seconds": 1.7083333333333333,
+        "file": "frames/frame_0041.png",
+        "sha256": "de7f3873627fb9bbf1a913f521c4b3022a2591cd6f8a261b2b62b5ac75178049",
+        "body_bounds_export_alpha8": [
+          29,
+          13,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-042.png",
+        "native_sha256": "6aff85d0e80c4e2986caf5cb44f30978560023b8e1833e4e7f22c242cc96832a",
+        "body_bounds_video_alpha8": [
+          120,
+          164,
+          396,
+          624
+        ],
+        "frame": 42,
+        "time_seconds": 1.75,
+        "file": "frames/frame_0042.png",
+        "sha256": "8744ac50d9bb3657d5b2c117e8c8c7dfacde3427a646c01488df289368cf002d",
+        "body_bounds_export_alpha8": [
+          29,
+          13,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-043.png",
+        "native_sha256": "eab032af6ec677391cec76025dabba3cf8ab843d1a6c280a5f9746ff51df4264",
+        "body_bounds_video_alpha8": [
+          120,
+          164,
+          396,
+          624
+        ],
+        "frame": 43,
+        "time_seconds": 1.7916666666666667,
+        "file": "frames/frame_0043.png",
+        "sha256": "38307d2db455e9433e091cdb41202fe7cd9156de239feb7d29815cf79bbd24d1",
+        "body_bounds_export_alpha8": [
+          29,
+          13,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-044.png",
+        "native_sha256": "d30468041588349c6b7704840433df5e42cfc16a6d32a404be136eee96c2143f",
+        "body_bounds_video_alpha8": [
+          120,
+          164,
+          396,
+          623
+        ],
+        "frame": 44,
+        "time_seconds": 1.8333333333333333,
+        "file": "frames/frame_0044.png",
+        "sha256": "cf04bb3c21a171bbc60d467a869448f33af27f965c3aa432d37ca96e2e456068",
+        "body_bounds_export_alpha8": [
+          29,
+          13,
+          305,
+          472
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-045.png",
+        "native_sha256": "35cf9263385369e2861c3b9832d2836d24cc6165d902fd18655e13af89777db8",
+        "body_bounds_video_alpha8": [
+          120,
+          165,
+          396,
+          623
+        ],
+        "frame": 45,
+        "time_seconds": 1.875,
+        "file": "frames/frame_0045.png",
+        "sha256": "0ac978ba552850e3d3f07f14df2315f4803c32727056842693100f981a959a5e",
+        "body_bounds_export_alpha8": [
+          29,
+          14,
+          305,
+          472
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-046.png",
+        "native_sha256": "0b4570fd56c53e8fff3a05e8c490b91e7a86e4750fc3fef11d40dfd41b5f0f92",
+        "body_bounds_video_alpha8": [
+          120,
+          164,
+          396,
+          623
+        ],
+        "frame": 46,
+        "time_seconds": 1.9166666666666667,
+        "file": "frames/frame_0046.png",
+        "sha256": "3eb2ee301b3f8defb7c92f3360ba524f0aae637fdc9fea4454b8858f2ff83e78",
+        "body_bounds_export_alpha8": [
+          29,
+          13,
+          305,
+          472
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-047.png",
+        "native_sha256": "c6a99647a1707a5c7b04e56562cc6a9ca3244c4d2149dabed5dc14c7b550e1ca",
+        "body_bounds_video_alpha8": [
+          122,
+          164,
+          396,
+          624
+        ],
+        "frame": 47,
+        "time_seconds": 1.9583333333333333,
+        "file": "frames/frame_0047.png",
+        "sha256": "b024d7d36273590e21a0e230b45b8ce62102d84765e28f15e5e5270489d88130",
+        "body_bounds_export_alpha8": [
+          31,
+          13,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-048.png",
+        "native_sha256": "14ceb021d4c5340eb17e2c85ebd2bd1ecafc3e955e36b5338a642083cbdc2228",
+        "body_bounds_video_alpha8": [
+          122,
+          164,
+          396,
+          624
+        ],
+        "frame": 48,
+        "time_seconds": 2.0,
+        "file": "frames/frame_0048.png",
+        "sha256": "79346fdfb10fea7a6672b9e07a485c6e55dcc210c7140978a9c6b039fe6192dd",
+        "body_bounds_export_alpha8": [
+          31,
+          13,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-049.png",
+        "native_sha256": "88d7682dba21b961fc699e88aba12a5fe90546e221ab9328122eb0ef25025efc",
+        "body_bounds_video_alpha8": [
+          122,
+          164,
+          396,
+          623
+        ],
+        "frame": 49,
+        "time_seconds": 2.0416666666666665,
+        "file": "frames/frame_0049.png",
+        "sha256": "970e81a84c8447c188631960c0483842ea51f6ce6e1182f31ee5ace07a647b13",
+        "body_bounds_export_alpha8": [
+          31,
+          13,
+          305,
+          472
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-050.png",
+        "native_sha256": "d27a11a4c4260ddebd3ac343e74766132c53a52625cf33ffffc1ce9378026eb5",
+        "body_bounds_video_alpha8": [
+          122,
+          164,
+          396,
+          623
+        ],
+        "frame": 50,
+        "time_seconds": 2.0833333333333335,
+        "file": "frames/frame_0050.png",
+        "sha256": "9d81cde71c17252b05150b6e20fbc16b1f152a0ab63c4536851d8157d80b06c1",
+        "body_bounds_export_alpha8": [
+          31,
+          13,
+          305,
+          472
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-051.png",
+        "native_sha256": "6065ed41a1e9e0403dfb9dc7931f8e4be6724a466802f9dd260ffee19c51e520",
+        "body_bounds_video_alpha8": [
+          124,
+          164,
+          397,
+          623
+        ],
+        "frame": 51,
+        "time_seconds": 2.125,
+        "file": "frames/frame_0051.png",
+        "sha256": "743aa4bb06a8d7d9b26429bec44e70c37a1f697c9bf784c846e3da75d4c409b5",
+        "body_bounds_export_alpha8": [
+          33,
+          13,
+          306,
+          472
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-052.png",
+        "native_sha256": "4b50f706807ce6b01ea61df5a96ad6bb78711152259bc3360d39c1655ba06103",
+        "body_bounds_video_alpha8": [
+          126,
+          165,
+          396,
+          623
+        ],
+        "frame": 52,
+        "time_seconds": 2.1666666666666665,
+        "file": "frames/frame_0052.png",
+        "sha256": "5e41fa4c2b1f3794d158eedadc9728920f3eee8953d3605a37f41d96a6d7d11d",
+        "body_bounds_export_alpha8": [
+          35,
+          14,
+          305,
+          472
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-053.png",
+        "native_sha256": "3d2fe7f6d5ccddd461e4d46357a3568741c8597106a020e62b1bd253d7a55ebd",
+        "body_bounds_video_alpha8": [
+          126,
+          165,
+          396,
+          623
+        ],
+        "frame": 53,
+        "time_seconds": 2.2083333333333335,
+        "file": "frames/frame_0053.png",
+        "sha256": "43c7e626971920d1fd3506118a2f17ca059313d11d8227a01ca0aa6629124adf",
+        "body_bounds_export_alpha8": [
+          35,
+          14,
+          305,
+          472
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-054.png",
+        "native_sha256": "1f9997a840fc703ae56649268a0ca480ea82f205cb20b522ab3f27e1721b3d98",
+        "body_bounds_video_alpha8": [
+          126,
+          164,
+          396,
+          623
+        ],
+        "frame": 54,
+        "time_seconds": 2.25,
+        "file": "frames/frame_0054.png",
+        "sha256": "ff08323b7e463bf3d42311e30266a4acb41f242d056c5cbd54184be31b840480",
+        "body_bounds_export_alpha8": [
+          35,
+          13,
+          305,
+          472
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-055.png",
+        "native_sha256": "929292e2d43af58cde4ff36fca928ea8a4df00344b1446440e2b4a2477dcb739",
+        "body_bounds_video_alpha8": [
+          126,
+          164,
+          397,
+          623
+        ],
+        "frame": 55,
+        "time_seconds": 2.2916666666666665,
+        "file": "frames/frame_0055.png",
+        "sha256": "b5054e7561beadb76b25e8ff0817101e3e270b9dde717e2f9b65c5dfb6b546c3",
+        "body_bounds_export_alpha8": [
+          35,
+          13,
+          306,
+          472
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-056.png",
+        "native_sha256": "244daee74d2e7cb13e7c52b115f89f850aac9825a66cc0642701b4521f3b6a08",
+        "body_bounds_video_alpha8": [
+          122,
+          164,
+          396,
+          624
+        ],
+        "frame": 56,
+        "time_seconds": 2.3333333333333335,
+        "file": "frames/frame_0056.png",
+        "sha256": "e4492a7831873aa6acce77a22914bc8d60d55290ca3439de503349804638f66c",
+        "body_bounds_export_alpha8": [
+          31,
+          13,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-057.png",
+        "native_sha256": "00a19ed86f9a8acf745fd8736fd10e8b2621bebdb207a6f791e51646790aee68",
+        "body_bounds_video_alpha8": [
+          120,
+          164,
+          396,
+          624
+        ],
+        "frame": 57,
+        "time_seconds": 2.375,
+        "file": "frames/frame_0057.png",
+        "sha256": "0dc74ac69c3a3429d60cee5a79595523442bd3ab5ff61b6eba015b11129b3903",
+        "body_bounds_export_alpha8": [
+          29,
+          13,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-058.png",
+        "native_sha256": "b7b9110af99499c33b0f343b34234f57dba4164759e7ccb27bab67bd1fdfd57d",
+        "body_bounds_video_alpha8": [
+          118,
+          164,
+          396,
+          624
+        ],
+        "frame": 58,
+        "time_seconds": 2.4166666666666665,
+        "file": "frames/frame_0058.png",
+        "sha256": "14a2a1e347d0eb207a1e3412cf9935c87fa31f0800a31a60d22443a485772142",
+        "body_bounds_export_alpha8": [
+          27,
+          13,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-059.png",
+        "native_sha256": "dc80d1529d6667398bb3e1bfdf2d91d790b0bc9f78f88ae057905b009ab67ee1",
+        "body_bounds_video_alpha8": [
+          116,
+          164,
+          396,
+          624
+        ],
+        "frame": 59,
+        "time_seconds": 2.4583333333333335,
+        "file": "frames/frame_0059.png",
+        "sha256": "891cb80d7cb6d2abc776abdb1493cd4bd36477a4053053e2472ce44e59910118",
+        "body_bounds_export_alpha8": [
+          25,
+          13,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-060.png",
+        "native_sha256": "8202c79ba22db0979dc294655a03e46d0fabc63e85848fbb5fb1c7f9e5239168",
+        "body_bounds_video_alpha8": [
+          115,
+          164,
+          396,
+          623
+        ],
+        "frame": 60,
+        "time_seconds": 2.5,
+        "file": "frames/frame_0060.png",
+        "sha256": "1eb3a7bd2844ed6f7b3b1bdca8c55427bdf76530121b801b9cf061b824e4b8cf",
+        "body_bounds_export_alpha8": [
+          24,
+          13,
+          305,
+          472
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-061.png",
+        "native_sha256": "6009158865ec73c57b8cef2ad340f5a58ebcb4559d75309f008a7181510a5db4",
+        "body_bounds_video_alpha8": [
+          115,
+          164,
+          396,
+          623
+        ],
+        "frame": 61,
+        "time_seconds": 2.5416666666666665,
+        "file": "frames/frame_0061.png",
+        "sha256": "f2c06eefc7d92996c648b2eef59635a39e73bef99b705d458c16eca0033a2cf1",
+        "body_bounds_export_alpha8": [
+          24,
+          13,
+          305,
+          472
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-062.png",
+        "native_sha256": "bf755cf86eb776fcc64ac281b8298bdbfac3d66d81253dac1a007737d9765b8f",
+        "body_bounds_video_alpha8": [
+          116,
+          164,
+          396,
+          623
+        ],
+        "frame": 62,
+        "time_seconds": 2.5833333333333335,
+        "file": "frames/frame_0062.png",
+        "sha256": "e55c19f24e9702daf44da8515831a13a8f48c31e0976875dd4cd81471c05f0de",
+        "body_bounds_export_alpha8": [
+          25,
+          13,
+          305,
+          472
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-063.png",
+        "native_sha256": "4b447c1e9ea7520c6ce704e17353a230fa51718f1b999a62d8d25070c57b8612",
+        "body_bounds_video_alpha8": [
+          116,
+          164,
+          396,
+          624
+        ],
+        "frame": 63,
+        "time_seconds": 2.625,
+        "file": "frames/frame_0063.png",
+        "sha256": "0ee2f600249e19dcacaf89f955ac4caa94d6fd44574ae1e3901bffabbf1257f7",
+        "body_bounds_export_alpha8": [
+          25,
+          13,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-064.png",
+        "native_sha256": "b848151f58423067d23e2caf7d565d81bcb1323a0f026ad10a759cb1e358e109",
+        "body_bounds_video_alpha8": [
+          116,
+          163,
+          396,
+          624
+        ],
+        "frame": 64,
+        "time_seconds": 2.6666666666666665,
+        "file": "frames/frame_0064.png",
+        "sha256": "3744b637a9a2c0f50aaac9a4d655e256507c4f0766da22e326ba5ffdc5af659f",
+        "body_bounds_export_alpha8": [
+          25,
+          12,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-065.png",
+        "native_sha256": "3eed20fe60c5c09451cc856d3775dfae5445dd2db4278b9aaefb4162b7939a66",
+        "body_bounds_video_alpha8": [
+          118,
+          164,
+          396,
+          624
+        ],
+        "frame": 65,
+        "time_seconds": 2.7083333333333335,
+        "file": "frames/frame_0065.png",
+        "sha256": "2a5970607e1fe7f2c591692d5a7d5c9ce3863d568b46ec07c1075e0299e3803f",
+        "body_bounds_export_alpha8": [
+          27,
+          13,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-066.png",
+        "native_sha256": "d8573e52456f788d78c80f2f1004cde4c53bc140a03221145e2cd0dccbce98e6",
+        "body_bounds_video_alpha8": [
+          118,
+          164,
+          396,
+          624
+        ],
+        "frame": 66,
+        "time_seconds": 2.75,
+        "file": "frames/frame_0066.png",
+        "sha256": "595974c95a0586ebb8021928c1de39a7779b109a75dcc36c1925fb57010f4073",
+        "body_bounds_export_alpha8": [
+          27,
+          13,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-067.png",
+        "native_sha256": "dc0ab2d73b72ddc472c9ffb2067bc1922bbc1defbc5df7b52375ba07fbf3bd9a",
+        "body_bounds_video_alpha8": [
+          118,
+          164,
+          396,
+          624
+        ],
+        "frame": 67,
+        "time_seconds": 2.7916666666666665,
+        "file": "frames/frame_0067.png",
+        "sha256": "324a1910b4a6f9868761743aeec74989a46b709fff3f16d8a3d0e5e8dbff59b2",
+        "body_bounds_export_alpha8": [
+          27,
+          13,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-068.png",
+        "native_sha256": "1d1da92e1efabc1241e8f81897e0dc6ae6755229eb0d1fbb73f8bc3083df2182",
+        "body_bounds_video_alpha8": [
+          117,
+          164,
+          396,
+          624
+        ],
+        "frame": 68,
+        "time_seconds": 2.8333333333333335,
+        "file": "frames/frame_0068.png",
+        "sha256": "aa07c7dabc452aeb05f17f00c90f7ade83de3bbbdaf248ad7dfb19700b1a715c",
+        "body_bounds_export_alpha8": [
+          26,
+          13,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-069.png",
+        "native_sha256": "1e96b7b977704ccd2a1670dbf7a7e5bf884e6b72e73ca32afe837bd96efea806",
+        "body_bounds_video_alpha8": [
+          116,
+          164,
+          396,
+          623
+        ],
+        "frame": 69,
+        "time_seconds": 2.875,
+        "file": "frames/frame_0069.png",
+        "sha256": "ee2426688c7042c3ae583f7340cf68f9e839cc54a25664397d37cd410adf3c0f",
+        "body_bounds_export_alpha8": [
+          25,
+          13,
+          305,
+          472
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-070.png",
+        "native_sha256": "4e97dcd1a5fe4a01995691afcc4973970036f479c105c4f12d56aade6dd50d9c",
+        "body_bounds_video_alpha8": [
+          116,
+          164,
+          396,
+          624
+        ],
+        "frame": 70,
+        "time_seconds": 2.9166666666666665,
+        "file": "frames/frame_0070.png",
+        "sha256": "606aa1e9b8d57763c067d9f5f453a124f340137e5771cd7504b83d6b28cc4579",
+        "body_bounds_export_alpha8": [
+          25,
+          13,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-071.png",
+        "native_sha256": "dbc10b28b449a3744a2c08dd369deeaafadd125277a631ac68e9cd0131ed3291",
+        "body_bounds_video_alpha8": [
+          115,
+          164,
+          396,
+          624
+        ],
+        "frame": 71,
+        "time_seconds": 2.9583333333333335,
+        "file": "frames/frame_0071.png",
+        "sha256": "966a04e6b6c8837e70ac32f4f6b65ca4e8afde2becd64e486bcf3fc921a7e0c2",
+        "body_bounds_export_alpha8": [
+          24,
+          13,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-072.png",
+        "native_sha256": "575a0ad374ac08444755725ba58b8f2f95c09bdcd263d40fc597cbd5b00774fd",
+        "body_bounds_video_alpha8": [
+          116,
+          164,
+          397,
+          624
+        ],
+        "frame": 72,
+        "time_seconds": 3.0,
+        "file": "frames/frame_0072.png",
+        "sha256": "c72b62b82b836b15609ad83af0ca64d6ec30641cc575940a52a51d60721240d7",
+        "body_bounds_export_alpha8": [
+          25,
+          13,
+          306,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-073.png",
+        "native_sha256": "c58cdcc03d4ba9a0dff8b7e934f661bcfe1fd7d9a5666dac93a7d9cb75b18739",
+        "body_bounds_video_alpha8": [
+          117,
+          163,
+          396,
+          624
+        ],
+        "frame": 73,
+        "time_seconds": 3.0416666666666665,
+        "file": "frames/frame_0073.png",
+        "sha256": "450282e55f4e4b49e7e71a2ce3ee9a70b4494450f78278b83fb5aa94655ea0f5",
+        "body_bounds_export_alpha8": [
+          26,
+          12,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-074.png",
+        "native_sha256": "94f8cc58c8f19afefb0397aa907f9ff7071640cf3b791a8506cfb16e62341f50",
+        "body_bounds_video_alpha8": [
+          117,
+          163,
+          396,
+          624
+        ],
+        "frame": 74,
+        "time_seconds": 3.0833333333333335,
+        "file": "frames/frame_0074.png",
+        "sha256": "9c008447a661e7a56ad240cebe733787b2bd8120a37c1f1a1ce63fa2f1467553",
+        "body_bounds_export_alpha8": [
+          26,
+          12,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-075.png",
+        "native_sha256": "73e92e2dbb5e51e57b0323ed19cfd773c6135c52afd0d3103bb066ed7fd19205",
+        "body_bounds_video_alpha8": [
+          117,
+          164,
+          396,
+          624
+        ],
+        "frame": 75,
+        "time_seconds": 3.125,
+        "file": "frames/frame_0075.png",
+        "sha256": "1b1abd17c350e5145a73ad64e73d093fe9cff9ffbe605e1d1b292803aecac1a9",
+        "body_bounds_export_alpha8": [
+          26,
+          13,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-076.png",
+        "native_sha256": "f36862d4afc9f849cf74ac09046ef3865cde0d1e429960ea463c7b247fbf681e",
+        "body_bounds_video_alpha8": [
+          117,
+          164,
+          396,
+          624
+        ],
+        "frame": 76,
+        "time_seconds": 3.1666666666666665,
+        "file": "frames/frame_0076.png",
+        "sha256": "3ac47eb3c05afc3d98f4df995b0ee582e96101d655238626e0dc92567f8ef5a8",
+        "body_bounds_export_alpha8": [
+          26,
+          13,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-077.png",
+        "native_sha256": "21f6a4964ed7326f7dd32266b27f092aef2b38539678ac3e9e10d35a317cd57e",
+        "body_bounds_video_alpha8": [
+          119,
+          164,
+          396,
+          623
+        ],
+        "frame": 77,
+        "time_seconds": 3.2083333333333335,
+        "file": "frames/frame_0077.png",
+        "sha256": "29291ff1df9e6ac342b64f83675f6fac1d3ac61cf3f1df11fb16afc51cf4ce9b",
+        "body_bounds_export_alpha8": [
+          28,
+          13,
+          305,
+          472
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-078.png",
+        "native_sha256": "4d783cbcb35d92faf7d7e9bf0e53839cf37a0b52696a91078d86e7cdf3fd752d",
+        "body_bounds_video_alpha8": [
+          119,
+          163,
+          396,
+          623
+        ],
+        "frame": 78,
+        "time_seconds": 3.25,
+        "file": "frames/frame_0078.png",
+        "sha256": "667c4fbc99502a1c74048e7b267c7f2f2f2180f41f7f7788420bd887f2bc02dd",
+        "body_bounds_export_alpha8": [
+          28,
+          12,
+          305,
+          472
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-079.png",
+        "native_sha256": "f51cb25bc1adf20e6e21ccd98c260b0b59fe915fe9f16d4e16a91969f01f5289",
+        "body_bounds_video_alpha8": [
+          118,
+          163,
+          396,
+          623
+        ],
+        "frame": 79,
+        "time_seconds": 3.2916666666666665,
+        "file": "frames/frame_0079.png",
+        "sha256": "026bf42601e2b90c5e5cfde427ea09e8edad2b6704dd8975085c925770020cba",
+        "body_bounds_export_alpha8": [
+          27,
+          12,
+          305,
+          472
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-080.png",
+        "native_sha256": "34b830781e35fe13d438bb647c4ef95709737f7cd7c1e9703174544efd92d2ef",
+        "body_bounds_video_alpha8": [
+          117,
+          163,
+          396,
+          623
+        ],
+        "frame": 80,
+        "time_seconds": 3.3333333333333335,
+        "file": "frames/frame_0080.png",
+        "sha256": "aacd5e9edb2808334adc431f713bd8d7af29c8ddde2ce39ad2284b82831458d7",
+        "body_bounds_export_alpha8": [
+          26,
+          12,
+          305,
+          472
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-081.png",
+        "native_sha256": "fc485948d4a511b466abb86a5854056c49c218f5e94d2d4f8b440c73226fec15",
+        "body_bounds_video_alpha8": [
+          116,
+          164,
+          396,
+          624
+        ],
+        "frame": 81,
+        "time_seconds": 3.375,
+        "file": "frames/frame_0081.png",
+        "sha256": "227771a7912651662691ea1695b3f6d7de3ceb21b8fbd2309fcbd6ea226a7f97",
+        "body_bounds_export_alpha8": [
+          25,
+          13,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-082.png",
+        "native_sha256": "5b0a4a97ce7f85d140597183589514bcd32a6146b4d773b5d5b08dfab41aefcf",
+        "body_bounds_video_alpha8": [
+          116,
+          164,
+          396,
+          624
+        ],
+        "frame": 82,
+        "time_seconds": 3.4166666666666665,
+        "file": "frames/frame_0082.png",
+        "sha256": "623dd06cd3423e040c46138b97563c7f5d84b2ee84c76c25423152edbd044104",
+        "body_bounds_export_alpha8": [
+          25,
+          13,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-083.png",
+        "native_sha256": "e1fec86ce9ff55ad61b40dd52c5ffdfe583ae55b1aa99d0ec52a5682522603f6",
+        "body_bounds_video_alpha8": [
+          114,
+          164,
+          396,
+          624
+        ],
+        "frame": 83,
+        "time_seconds": 3.4583333333333335,
+        "file": "frames/frame_0083.png",
+        "sha256": "75860316c2201916cd0017d099823697a5a6f2b55c9e50eaec0bcb061a46c8f7",
+        "body_bounds_export_alpha8": [
+          23,
+          13,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-084.png",
+        "native_sha256": "b8635e3e33e9db451f55631867b2950fa136ae4f6331a165fb776cc7d5cda887",
+        "body_bounds_video_alpha8": [
+          112,
+          164,
+          396,
+          624
+        ],
+        "frame": 84,
+        "time_seconds": 3.5,
+        "file": "frames/frame_0084.png",
+        "sha256": "5b38974acd4123faaf6444720d6f53296d263b2e0bff5916c3d91be666b6f1b8",
+        "body_bounds_export_alpha8": [
+          21,
+          13,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-085.png",
+        "native_sha256": "4b450a32d3b095d7ac7c33b1a48bbcd2a8ff31a28c58570c00e92d9f2183424c",
+        "body_bounds_video_alpha8": [
+          112,
+          163,
+          396,
+          624
+        ],
+        "frame": 85,
+        "time_seconds": 3.5416666666666665,
+        "file": "frames/frame_0085.png",
+        "sha256": "6ebf9249ed7cba158480bb95adfa59346657b7629765157825b96b7a6aeebd61",
+        "body_bounds_export_alpha8": [
+          21,
+          12,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-086.png",
+        "native_sha256": "34152d2ef628e8ea232baa526398cb8357bb49b16fb5215aab46391a0d281dce",
+        "body_bounds_video_alpha8": [
+          108,
+          163,
+          396,
+          623
+        ],
+        "frame": 86,
+        "time_seconds": 3.5833333333333335,
+        "file": "frames/frame_0086.png",
+        "sha256": "0b858d453aa6e68dbc68e0065080cd46ffb8e3e8437ad35dc44a0350d1666993",
+        "body_bounds_export_alpha8": [
+          17,
+          12,
+          305,
+          472
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-087.png",
+        "native_sha256": "177dd140eec050c4fd16da66ae5c06d194bea6d4493a3382438a05b366c99c1d",
+        "body_bounds_video_alpha8": [
+          108,
+          163,
+          396,
+          624
+        ],
+        "frame": 87,
+        "time_seconds": 3.625,
+        "file": "frames/frame_0087.png",
+        "sha256": "b94539ff4cd11e8321013ad2644aa742b804fe4d2065f7ce02b3580145e337df",
+        "body_bounds_export_alpha8": [
+          17,
+          12,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-088.png",
+        "native_sha256": "0460ea6d87b54e72c6ba1e87c681288c57d418994b1b3d420658edfa8677d3d6",
+        "body_bounds_video_alpha8": [
+          105,
+          163,
+          396,
+          624
+        ],
+        "frame": 88,
+        "time_seconds": 3.6666666666666665,
+        "file": "frames/frame_0088.png",
+        "sha256": "a2d98f2adc7bacf346582cd2f99496e958a3937169aa166ad00a3f4eac4885f5",
+        "body_bounds_export_alpha8": [
+          14,
+          12,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-089.png",
+        "native_sha256": "d06f047bbd31c8a4ab88f612ace0d609d717956915aedd9fa221ed75fff99f32",
+        "body_bounds_video_alpha8": [
+          104,
+          163,
+          396,
+          624
+        ],
+        "frame": 89,
+        "time_seconds": 3.7083333333333335,
+        "file": "frames/frame_0089.png",
+        "sha256": "1671d75525862ea340deff04eebcb1a8bc779f92d9c27cce166446a85f7ee92b",
+        "body_bounds_export_alpha8": [
+          13,
+          12,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-090.png",
+        "native_sha256": "7ceb00bba7bbf6f55b16701eb256adedc3c1abda29cba3d2acc7fddb626d95e4",
+        "body_bounds_video_alpha8": [
+          103,
+          164,
+          396,
+          624
+        ],
+        "frame": 90,
+        "time_seconds": 3.75,
+        "file": "frames/frame_0090.png",
+        "sha256": "7fe6484e3125fdcdb31a0b5cb8844cce0050675868866fac0818dac1426439c5",
+        "body_bounds_export_alpha8": [
+          12,
+          13,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-091.png",
+        "native_sha256": "d81bf341dbdd245e709dfbc15fb62dea7c6fe23928e37333a6832d0fec5b5b44",
+        "body_bounds_video_alpha8": [
+          103,
+          164,
+          396,
+          624
+        ],
+        "frame": 91,
+        "time_seconds": 3.7916666666666665,
+        "file": "frames/frame_0091.png",
+        "sha256": "ea0f7b58f30ec675072f95313af5fb4893356a9e1ee1f6a002d1f2cba964a8b2",
+        "body_bounds_export_alpha8": [
+          12,
+          13,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-092.png",
+        "native_sha256": "a4140d69b169bdec281073380e4e18d29a211440795f22e0ed332622c6197716",
+        "body_bounds_video_alpha8": [
+          103,
+          164,
+          396,
+          624
+        ],
+        "frame": 92,
+        "time_seconds": 3.8333333333333335,
+        "file": "frames/frame_0092.png",
+        "sha256": "9c08b42e54dfb868320ed6af469d297761fa482b8d61e731e56225381b31ba18",
+        "body_bounds_export_alpha8": [
+          12,
+          13,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-093.png",
+        "native_sha256": "50147dde84219b22b33431361034016fa5a3aa117c64e7b2e95fc69049d9d2ef",
+        "body_bounds_video_alpha8": [
+          103,
+          164,
+          396,
+          624
+        ],
+        "frame": 93,
+        "time_seconds": 3.875,
+        "file": "frames/frame_0093.png",
+        "sha256": "dbe1d7925bdda664eb3e8814d076a439dbfea1efa502354c7729d88ad0abf738",
+        "body_bounds_export_alpha8": [
+          12,
+          13,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-094.png",
+        "native_sha256": "8f75660b06a50cbd14947f7d382fc39c395fd75838d10d522e5fdee43a1f6bf2",
+        "body_bounds_video_alpha8": [
+          103,
+          164,
+          396,
+          623
+        ],
+        "frame": 94,
+        "time_seconds": 3.9166666666666665,
+        "file": "frames/frame_0094.png",
+        "sha256": "0c9098716b2050cdfb37e00d9de16f0483205d18e83cc8d8d789050f246e6611",
+        "body_bounds_export_alpha8": [
+          12,
+          13,
+          305,
+          472
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-095.png",
+        "native_sha256": "c556804ad83bd4581480a5fe3a6028a6a067fad97fddb4251b9c33fda013cb7b",
+        "body_bounds_video_alpha8": [
+          105,
+          164,
+          396,
+          623
+        ],
+        "frame": 95,
+        "time_seconds": 3.9583333333333335,
+        "file": "frames/frame_0095.png",
+        "sha256": "44fe743db9d94bd59370032dd26208dbd15b2414b241884b942531d03d304a78",
+        "body_bounds_export_alpha8": [
+          14,
+          13,
+          305,
+          472
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-096.png",
+        "native_sha256": "79eca9283b19d99e9366907032309ece1f2bd6dd91c67cfabe6dcbe2cf41cdfc",
+        "body_bounds_video_alpha8": [
+          105,
+          164,
+          396,
+          623
+        ],
+        "frame": 96,
+        "time_seconds": 4.0,
+        "file": "frames/frame_0096.png",
+        "sha256": "a99c01cace2b32700c4de1ccea15432459b43fe77c6a67146af864c97edd8dd0",
+        "body_bounds_export_alpha8": [
+          14,
+          13,
+          305,
+          472
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-097.png",
+        "native_sha256": "32665af33f2324faac5304c43549fd1b968bb246ac0fd1be33545740b3c5841f",
+        "body_bounds_video_alpha8": [
+          106,
+          164,
+          396,
+          623
+        ],
+        "frame": 97,
+        "time_seconds": 4.041666666666667,
+        "file": "frames/frame_0097.png",
+        "sha256": "75c4b446dc266505fb95e4fdad4400a0dd19a7597f0620f7366953c1bd3ca6eb",
+        "body_bounds_export_alpha8": [
+          15,
+          13,
+          305,
+          472
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-098.png",
+        "native_sha256": "9281fa143bc7eee574df170ba313800016c919ad980c2cb96c43babd0a544e2f",
+        "body_bounds_video_alpha8": [
+          108,
+          164,
+          396,
+          624
+        ],
+        "frame": 98,
+        "time_seconds": 4.083333333333333,
+        "file": "frames/frame_0098.png",
+        "sha256": "b6686d7052a79d84281d49b0d97e3687c7ea8c3a8ae197a6196a552792dae843",
+        "body_bounds_export_alpha8": [
+          17,
+          13,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-099.png",
+        "native_sha256": "ab885643a731d73ea9a52e9df96b0ca075674771f2adbbd629439d24666f0b9e",
+        "body_bounds_video_alpha8": [
+          107,
+          164,
+          396,
+          624
+        ],
+        "frame": 99,
+        "time_seconds": 4.125,
+        "file": "frames/frame_0099.png",
+        "sha256": "5673e9bfc8b79c6fc6bdcb1e96cffdde552f8596da0369070121ae7680a575dc",
+        "body_bounds_export_alpha8": [
+          16,
+          13,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-100.png",
+        "native_sha256": "8c2e620900e2e8709dc3e84ea49c120d18a940a6c181c2e2cf3a8a37fdc6631a",
+        "body_bounds_video_alpha8": [
+          107,
+          164,
+          396,
+          624
+        ],
+        "frame": 100,
+        "time_seconds": 4.166666666666667,
+        "file": "frames/frame_0100.png",
+        "sha256": "57700603ca16469c48da0ae3c4fa78ccacc67b72aff07d95edb39711b09cc826",
+        "body_bounds_export_alpha8": [
+          16,
+          13,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-101.png",
+        "native_sha256": "6e55f59bd92abfe5a851a495053b892fe85d200d2bb266970764d9a325cd1fb0",
+        "body_bounds_video_alpha8": [
+          106,
+          164,
+          396,
+          624
+        ],
+        "frame": 101,
+        "time_seconds": 4.208333333333333,
+        "file": "frames/frame_0101.png",
+        "sha256": "327d319939916f6b88e113ecb94ad9e1eafcb4dfe0b33193b7ffed0bbfddf2f5",
+        "body_bounds_export_alpha8": [
+          15,
+          13,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-102.png",
+        "native_sha256": "35b31ee61652df7d18878cb6b23e7e0fd14eda009a85cd7e44cebb65ca832b31",
+        "body_bounds_video_alpha8": [
+          107,
+          164,
+          396,
+          624
+        ],
+        "frame": 102,
+        "time_seconds": 4.25,
+        "file": "frames/frame_0102.png",
+        "sha256": "8686ce9aa55c38a72f591b5521b69827836b6d7f27e31af585f3197ff7305373",
+        "body_bounds_export_alpha8": [
+          16,
+          13,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-103.png",
+        "native_sha256": "a0f3c3f4eaa876ba661f22a6c3228f49d04ccba547fdf4a3c6eab81cbbe655aa",
+        "body_bounds_video_alpha8": [
+          108,
+          164,
+          396,
+          623
+        ],
+        "frame": 103,
+        "time_seconds": 4.291666666666667,
+        "file": "frames/frame_0103.png",
+        "sha256": "47090e8f8db80ddb0f47c4647f3f0c2546a72f5ad4f697a5d6b9a065f1795b7e",
+        "body_bounds_export_alpha8": [
+          17,
+          13,
+          305,
+          472
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-104.png",
+        "native_sha256": "84d21ea9c3237d2af39eb900c8f392f67770071a2fde67925bf34b13d632b246",
+        "body_bounds_video_alpha8": [
+          107,
+          164,
+          396,
+          624
+        ],
+        "frame": 104,
+        "time_seconds": 4.333333333333333,
+        "file": "frames/frame_0104.png",
+        "sha256": "952bd50287a0a8194f04ba75859ff855726d725e516e35d02d20c6f44db4dd07",
+        "body_bounds_export_alpha8": [
+          16,
+          13,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-105.png",
+        "native_sha256": "4d298930803d309e466abea8b12f3a347bd03416c30fa70d260654b947a5e018",
+        "body_bounds_video_alpha8": [
+          110,
+          164,
+          396,
+          624
+        ],
+        "frame": 105,
+        "time_seconds": 4.375,
+        "file": "frames/frame_0105.png",
+        "sha256": "fbfebb6e942cb9eaff942ea5086b945f478c45e9cbdf10ce9dfa9c390d39afea",
+        "body_bounds_export_alpha8": [
+          19,
+          13,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-106.png",
+        "native_sha256": "b043c388f6edc9d6c626bad6220aef808839a6d86504d85e364521c7cb61722f",
+        "body_bounds_video_alpha8": [
+          110,
+          164,
+          396,
+          624
+        ],
+        "frame": 106,
+        "time_seconds": 4.416666666666667,
+        "file": "frames/frame_0106.png",
+        "sha256": "f719d4630c5aec64cefff849a4ffa45a2fa8b6dfc6c5d6a88ae690f6723cb9ef",
+        "body_bounds_export_alpha8": [
+          19,
+          13,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-107.png",
+        "native_sha256": "31ac09efd4dfd4f3f03164d7708f1cc254a8765505aeb6878d3d5b35faed7f5a",
+        "body_bounds_video_alpha8": [
+          112,
+          164,
+          396,
+          624
+        ],
+        "frame": 107,
+        "time_seconds": 4.458333333333333,
+        "file": "frames/frame_0107.png",
+        "sha256": "6e0dba5f1bb7a253edffb9263f8ed2e62f38f0a0f9341eb8902f0b9e76add29f",
+        "body_bounds_export_alpha8": [
+          21,
+          13,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-108.png",
+        "native_sha256": "059b6e36aca7799874f072799007176c0bb6809eb5b358191cec23b335f1cb07",
+        "body_bounds_video_alpha8": [
+          112,
+          164,
+          396,
+          624
+        ],
+        "frame": 108,
+        "time_seconds": 4.5,
+        "file": "frames/frame_0108.png",
+        "sha256": "92fc30a0016fbd2b1f06ff04cf82e060350b3a846e0f06558155967e4649daed",
+        "body_bounds_export_alpha8": [
+          21,
+          13,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-109.png",
+        "native_sha256": "3a6a9842ef0e49b48f35b5232226be23cb926a981cf3c16e8ec736f08735eda6",
+        "body_bounds_video_alpha8": [
+          112,
+          164,
+          396,
+          624
+        ],
+        "frame": 109,
+        "time_seconds": 4.541666666666667,
+        "file": "frames/frame_0109.png",
+        "sha256": "d587b39e9bf59ecefcb917b6019ea083fd469613cde5780bce3cedb0acba27cd",
+        "body_bounds_export_alpha8": [
+          21,
+          13,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-110.png",
+        "native_sha256": "410e6b5a03ffc0bf9f3c2a243cacf5fc705ce94ab1b1b82f14e74d7326cc230e",
+        "body_bounds_video_alpha8": [
+          112,
+          164,
+          396,
+          623
+        ],
+        "frame": 110,
+        "time_seconds": 4.583333333333333,
+        "file": "frames/frame_0110.png",
+        "sha256": "a187a6bc76380305fa1077ca834a6dbcbf19f7684661e2056785165f6198e70a",
+        "body_bounds_export_alpha8": [
+          21,
+          13,
+          305,
+          472
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-111.png",
+        "native_sha256": "ed72191a1d30edfd279ca7175f1de1425b7c6e00833338c42d8b95b073e204fb",
+        "body_bounds_video_alpha8": [
+          111,
+          164,
+          396,
+          624
+        ],
+        "frame": 111,
+        "time_seconds": 4.625,
+        "file": "frames/frame_0111.png",
+        "sha256": "fbda139440777de3ce16efb406a9e5a91882af7159d625062fa8da6ea4923d45",
+        "body_bounds_export_alpha8": [
+          20,
+          13,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-112.png",
+        "native_sha256": "ee72b79306a46c60ba155cb0c93965781baf6162e0853f958cf0eeb640f57c2f",
+        "body_bounds_video_alpha8": [
+          112,
+          164,
+          396,
+          623
+        ],
+        "frame": 112,
+        "time_seconds": 4.666666666666667,
+        "file": "frames/frame_0112.png",
+        "sha256": "6164a52690dbad7f501e7f9df19fd00374bb55d225239c12905930cb621ece39",
+        "body_bounds_export_alpha8": [
+          21,
+          13,
+          305,
+          472
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-113.png",
+        "native_sha256": "596ce16a1f109780cfe2f855f0aea7d45db5d2cb09640477fd8067c1e8887ab2",
+        "body_bounds_video_alpha8": [
+          112,
+          164,
+          396,
+          622
+        ],
+        "frame": 113,
+        "time_seconds": 4.708333333333333,
+        "file": "frames/frame_0113.png",
+        "sha256": "f42c5830ae9517ee7bb7dab330111940f6e7f5bf497d6dd110f6d5c4da83aa24",
+        "body_bounds_export_alpha8": [
+          21,
+          13,
+          305,
+          471
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-114.png",
+        "native_sha256": "e3f700213f19bb0e10c58d106b70fb4194c89e7bcb176bbdcc0977ba6eb155f2",
+        "body_bounds_video_alpha8": [
+          112,
+          164,
+          396,
+          623
+        ],
+        "frame": 114,
+        "time_seconds": 4.75,
+        "file": "frames/frame_0114.png",
+        "sha256": "09ec831d6377033cc9002d89cee3ceac54be7973a2019547b054eec768691a78",
+        "body_bounds_export_alpha8": [
+          21,
+          13,
+          305,
+          472
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-115.png",
+        "native_sha256": "43566143b798c35585c8959e4e10e750730d24f385ed7d3d6d6f0ddd76ccfea0",
+        "body_bounds_video_alpha8": [
+          112,
+          164,
+          396,
+          622
+        ],
+        "frame": 115,
+        "time_seconds": 4.791666666666667,
+        "file": "frames/frame_0115.png",
+        "sha256": "90f4989fe2c1e6706ec7504826fd869939e609f4d9e77477c04f3e3755de9cce",
+        "body_bounds_export_alpha8": [
+          21,
+          13,
+          305,
+          471
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-116.png",
+        "native_sha256": "473989e7aaf78062cf3f14a31a87275299d48e080c0b3736dc99be797540190c",
+        "body_bounds_video_alpha8": [
+          112,
+          164,
+          396,
+          623
+        ],
+        "frame": 116,
+        "time_seconds": 4.833333333333333,
+        "file": "frames/frame_0116.png",
+        "sha256": "2834ced64d87c95d8cf746394ee046b9cc2b69cdf98b7e7d4fa10a3487fdfc5e",
+        "body_bounds_export_alpha8": [
+          21,
+          13,
+          305,
+          472
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-117.png",
+        "native_sha256": "adbf5713e88874b542a464d8c8cb5b1829febe1659d8aeb4046c41de54d10efa",
+        "body_bounds_video_alpha8": [
+          112,
+          164,
+          396,
+          623
+        ],
+        "frame": 117,
+        "time_seconds": 4.875,
+        "file": "frames/frame_0117.png",
+        "sha256": "0e36eb8a6e3a0bca80a731838ff18e4b5c06ab7a5c1bebf2bd23133d58b06d74",
+        "body_bounds_export_alpha8": [
+          21,
+          13,
+          305,
+          472
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-118.png",
+        "native_sha256": "eb7580835e4c74510048291abde0336a2c2039a761ba2d9bcc73feaa5f81909f",
+        "body_bounds_video_alpha8": [
+          112,
+          164,
+          397,
+          624
+        ],
+        "frame": 118,
+        "time_seconds": 4.916666666666667,
+        "file": "frames/frame_0118.png",
+        "sha256": "381e5729f7c3a614e60dfe1f7bd5b0aa89763413c7df3b112da39b32dd48eef7",
+        "body_bounds_export_alpha8": [
+          21,
+          13,
+          306,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-119.png",
+        "native_sha256": "3384fb5f712f18ecdee6c4d5812590b369c4e80da8d2c4f31caaa925d23b01be",
+        "body_bounds_video_alpha8": [
+          112,
+          164,
+          397,
+          624
+        ],
+        "frame": 119,
+        "time_seconds": 4.958333333333333,
+        "file": "frames/frame_0119.png",
+        "sha256": "3eabfd0e1e63b9a1930ebf5c5bfef26bb89b7e0abc44b183b3cb0e0e1172a614",
+        "body_bounds_export_alpha8": [
+          21,
+          13,
+          306,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-120.png",
+        "native_sha256": "b48c13126e68a1ec52052b77cde80c2eb16629780c175a2e82584caa359ed6ac",
+        "body_bounds_video_alpha8": [
+          112,
+          164,
+          396,
+          624
+        ],
+        "frame": 120,
+        "time_seconds": 5.0,
+        "file": "frames/frame_0120.png",
+        "sha256": "ae43efd78d8e01033df80a273699e832671de495b0b844219c9ff007a0abe005",
+        "body_bounds_export_alpha8": [
+          21,
+          13,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-121.png",
+        "native_sha256": "313a9d2405b84192bee2c01495a2ea136d331779e87411c39d0ffa3c06a4e241",
+        "body_bounds_video_alpha8": [
+          112,
+          164,
+          396,
+          624
+        ],
+        "frame": 121,
+        "time_seconds": 5.041666666666667,
+        "file": "frames/frame_0121.png",
+        "sha256": "c0174939200334284912ac2e382c94970b8130f61f49c1c750c297838f54ab67",
+        "body_bounds_export_alpha8": [
+          21,
+          13,
+          305,
+          473
+        ]
+      },
+      {
+        "native_file": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle\\frame-122.png",
+        "native_sha256": "e976facefb4f35c383ffc77914b04bb1c87d399ffa1d55426aad50a20df4d5d6",
+        "body_bounds_video_alpha8": [
+          114,
+          164,
+          396,
+          624
+        ],
+        "frame": 122,
+        "time_seconds": 5.083333333333333,
+        "file": "frames/frame_0122.png",
+        "sha256": "1e24337ed9ee1fda0e004ee1aa5112adb48a9406d49afe95e728acfc1be4b305",
+        "body_bounds_export_alpha8": [
+          23,
+          13,
+          305,
+          473
+        ]
+      }
+    ]
+  },
+  "engine_reports": {
+    "frames": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\frames\\frames.report.json",
+    "loop": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\activity.loop.report.json",
+    "cycle": {
+      "kind": "pinned",
+      "start": 0,
+      "length": 123,
+      "seam": 0.0009544237400405109,
+      "inner_mean_adjacent": 0.0004486356920097023,
+      "ratio": 2.12739146046336,
+      "pin_error": 0.0009455185499973595,
+      "pin_tolerance": 0.005,
+      "period_global": null,
+      "periodicity": null
+    }
+  },
+  "preserved_sources": {
+    "raw": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\frames\\raw",
+    "keyed": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\frames\\keyed",
+    "native_cycle": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\.docs\\美术\\人物场景编排_20261018\\comfy\\cenbai\\loop\\cycle"
+  },
+  "manual_adapter_stages": [
+    "Common alpha-union crop for the whole native cycle",
+    "Single fixed downscale to at most 500 px using sprite_gen.util.resample.resize_cell",
+    "Transform manually annotated anatomical anchors",
+    "Godot SpriteFrames export at original 24 FPS without temporal resampling",
+    "Eight-frame green contact sheet"
+  ],
+  "validation": {
+    "engine_loop_status": "passed",
+    "export_frames": 123,
+    "same_canvas": true,
+    "upscaled": false,
+    "godot_runtime": "not run by this packager",
+    "visual_review": "pending",
+    "visual_review_details": null
+  },
+  "review": {
+    "contact_sheet": "C:\\Users\\t6275\\Desktop\\taptap游戏制作\\github游戏档案\\assets\\characters\\working_20261018\\cenbai\\contact_sheet_green.png",
+    "sample_indices": [
+      0,
+      17,
+      35,
+      52,
+      70,
+      87,
+      105,
+      122
+    ],
+    "background_rgb": [
+      0,
+      255,
+      0
+    ],
+    "original_video_background": "green; original encoded video preserved byte for byte"
+  }
+}

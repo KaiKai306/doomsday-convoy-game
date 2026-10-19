@@ -1,0 +1,267 @@
+{
+  "schema_version": 1,
+  "prepared_on": "2026-10-18",
+  "tracks": {
+    "main_menu": {
+      "path": "res://assets/audio/music_20261018/main_menu.ogg",
+      "label": "主菜单",
+      "gain_db": 0.0
+    },
+    "forest_gas_station": {
+      "path": "res://assets/audio/music_20261018/forest_gas_station.ogg",
+      "label": "森林边缘废弃加油站",
+      "gain_db": 0.0
+    },
+    "road_lowland_forest": {
+      "path": "res://assets/audio/music_20261018/road_lowland_forest.ogg",
+      "label": "前段森林 A：低地阔叶林公路",
+      "gain_db": 0.0
+    },
+    "road_desert": {
+      "path": "res://assets/audio/music_20261018/road_desert.ogg",
+      "label": "沙漠公路",
+      "gain_db": 0.0
+    },
+    "road_mountain_forest": {
+      "path": "res://assets/audio/music_20261018/road_mountain_forest.ogg",
+      "label": "后段森林 B：山地针叶林公路",
+      "gain_db": 0.0
+    },
+    "road_snow": {
+      "path": "res://assets/audio/music_20261018/road_snow.ogg",
+      "label": "雪地公路",
+      "gain_db": 0.0
+    },
+    "camp_desert": {
+      "path": "res://assets/audio/music_20261018/camp_desert.ogg",
+      "label": "荒漠篝火营地",
+      "gain_db": 0.0
+    },
+    "camp_forest": {
+      "path": "res://assets/audio/music_20261018/camp_forest.ogg",
+      "label": "林间篝火营地",
+      "gain_db": 0.0
+    },
+    "forest_medical_station": {
+      "path": "res://assets/audio/music_20261018/forest_medical_station.ogg",
+      "label": "林区废弃医疗站",
+      "gain_db": 0.0
+    },
+    "camp_mountain": {
+      "path": "res://assets/audio/music_20261018/camp_mountain.ogg",
+      "label": "山地林间营地",
+      "gain_db": 0.0
+    },
+    "camp_snow": {
+      "path": "res://assets/audio/music_20261018/camp_snow.ogg",
+      "label": "雪地篝火营地",
+      "gain_db": 0.0
+    },
+    "morning_planning": {
+      "path": "res://assets/audio/music_20261018/morning_planning.ogg",
+      "label": "晨间规划与队伍管理",
+      "gain_db": 0.0
+    },
+    "existing_main_menu": {
+      "path": "res://assets/audio/music_mainmenu_loop.ogg",
+      "label": "原主菜单配乐",
+      "gain_db": 2.45
+    },
+    "water_tower": {
+      "path": "res://assets/audio/music_legacy_20261016/water_tower.ogg",
+      "label": "沙漠旧水塔与水泵停歇区",
+      "gain_db": 0.0
+    },
+    "supply_stop": {
+      "path": "res://assets/audio/music_legacy_20261016/supply_stop.ogg",
+      "label": "补给停歇点与岑柏相遇",
+      "gain_db": 0.0
+    },
+    "rescue_station_exterior": {
+      "path": "res://assets/audio/music_legacy_20261016/rescue_station_exterior.ogg",
+      "label": "救援站外部与侦察入口",
+      "gain_db": 0.0
+    },
+    "rescue_medical": {
+      "path": "res://assets/audio/music_legacy_20261016/rescue_medical.ogg",
+      "label": "救援站医疗室与隔离走廊",
+      "gain_db": 0.0
+    },
+    "settlement_reception": {
+      "path": "res://assets/audio/music_legacy_20261016/settlement_reception.ogg",
+      "label": "聚落接纳点与安全避难点",
+      "gain_db": 0.0
+    },
+    "neutral_market": {
+      "path": "res://assets/audio/music_legacy_20261016/neutral_market.ogg",
+      "label": "中立集市与商会登记交易",
+      "gain_db": 0.0
+    },
+    "radio_relay": {
+      "path": "res://assets/audio/music_legacy_20261016/radio_relay.ogg",
+      "label": "通讯中继与无线电联络",
+      "gain_db": 0.0
+    },
+    "tunnel_entrance": {
+      "path": "res://assets/audio/music_legacy_20261016/tunnel_entrance.ogg",
+      "label": "隧道入口与封闭隧道支路",
+      "gain_db": 0.0
+    },
+    "tunnel_shelter": {
+      "path": "res://assets/audio/music_legacy_20261016/tunnel_shelter.ogg",
+      "label": "普通隧道避风点",
+      "gain_db": 0.0
+    },
+    "hazard_tension": {
+      "path": "res://assets/audio/music_legacy_20261016/hazard_tension.ogg",
+      "label": "普通危险事件",
+      "gain_db": 0.0
+    },
+    "colossal_silhouette": {
+      "path": "res://assets/audio/music_legacy_20261016/colossal_silhouette.ogg",
+      "label": "巨大轮廓巡游与远距离观测",
+      "gain_db": 0.0
+    },
+    "on_foot_survival": {
+      "path": "res://assets/audio/music_legacy_20261016/on_foot_survival.ogg",
+      "label": "失车与徒步求生",
+      "gain_db": 0.0
+    },
+    "endofday_check": {
+      "path": "res://assets/audio/music_legacy_20261016/endofday_check.ogg",
+      "label": "结局核验与普通路段夜晚",
+      "gain_db": 0.0
+    },
+    "ending_success": {
+      "path": "res://assets/audio/music_legacy_20261016/ending_success.ogg",
+      "label": "成功抵达与建立新生活",
+      "gain_db": 0.0,
+      "loop": false
+    },
+    "ending_tragic": {
+      "path": "res://assets/audio/music_legacy_20261016/ending_tragic.ogg",
+      "label": "分离、牺牲或失败结局",
+      "gain_db": 0.0,
+      "loop": false
+    },
+    "shared_dream": {
+      "path": "res://assets/audio/music_legacy_20261016/shared_dream.ogg",
+      "label": "共存幻梦与梦境段落",
+      "gain_db": 0.0
+    }
+  },
+  "cues": {
+    "main_menu": ["main_menu", "existing_main_menu"],
+    "tunnel_entrance": ["tunnel_entrance", "tunnel_shelter"],
+    "ending": ["ending_tragic"]
+  },
+  "endings": {
+    "E01": "ending_tragic",
+    "E02": "ending_success",
+    "E03": "ending_success",
+    "E04": "ending_tragic",
+    "E05": "ending_tragic",
+    "E06": "ending_success",
+    "E07": "ending_success",
+    "E08": "ending_success",
+    "E09": "ending_tragic",
+    "E10": "ending_tragic",
+    "E11": "ending_success",
+    "E12": "ending_success",
+    "E13": "ending_success",
+    "E14": "ending_tragic",
+    "E15": "ending_tragic",
+    "E16": "ending_tragic",
+    "E17": "shared_dream"
+  },
+  "event_cards": {
+    "V01": "hazard_tension",
+    "V02": "hazard_tension",
+    "V03": "hazard_tension",
+    "V04": "radio_relay",
+    "V06": "hazard_tension",
+    "V07": "radio_relay",
+    "V08": "colossal_silhouette",
+    "V09": "hazard_tension",
+    "V10": "hazard_tension",
+    "V11": "hazard_tension",
+    "N-F10": "hazard_tension",
+    "N-C02": "hazard_tension",
+    "N-C03": "hazard_tension",
+    "N-C04": "hazard_tension",
+    "N-C05": "hazard_tension",
+    "N-X01": "colossal_silhouette",
+    "N-X02": "colossal_silhouette",
+    "M10": "radio_relay",
+    "C14": "radio_relay",
+    "C28": "shared_dream"
+  },
+  "planning_views": ["team", "equipment", "inventory", "knowledge", "factions", "goals", "log", "route_map"],
+  "region_roads": {
+    "forest": "road_lowland_forest",
+    "desert": "road_desert",
+    "pine": "road_mountain_forest",
+    "snow": "road_snow"
+  },
+  "region_camps": {
+    "forest": "camp_forest",
+    "desert": "camp_desert",
+    "pine": "camp_mountain",
+    "snow": "camp_snow"
+  },
+  "locations": {
+    "camp": "camp_desert",
+    "abandoned_clinic": "forest_medical_station",
+    "neutral_market": "neutral_market",
+    "camp_interior": "@camp",
+    "gas_station_interior": "forest_gas_station",
+    "forest_camp": "camp_forest",
+    "desert_road": "road_desert",
+    "desert_camp": "camp_desert",
+    "pine_camp": "camp_mountain",
+    "abandoned_school": "@road",
+    "checkpoint": "road_lowland_forest",
+    "communications_station": "radio_relay",
+    "forest_gas_station": "forest_gas_station",
+    "desert_checkpoint": "road_desert",
+    "desert_communications_station": "radio_relay",
+    "gas_station": "@road",
+    "tunnel_entrance": "tunnel_entrance",
+    "snow_camp": "camp_snow",
+    "forest_road": "road_lowland_forest",
+    "fuel_depot": "road_desert",
+    "forest_clinic": "forest_medical_station",
+    "forest_fuel_depot": "road_lowland_forest",
+    "desert_scrapyard": "road_desert",
+    "forest_communications_station": "radio_relay",
+    "forest_waterworks": "road_lowland_forest",
+    "desert_waterworks": "road_desert",
+    "journey_road": "@road",
+    "old_water_tower": "water_tower",
+    "rescue_station_exterior": "rescue_station_exterior",
+    "pine_road": "road_mountain_forest",
+    "repair_workshop": "@road",
+    "rail_supply_station": "supply_stop",
+    "library_archive": "@road",
+    "habitable_ruins": "road_mountain_forest",
+    "pine_fuel_depot": "road_mountain_forest",
+    "pine_checkpoint": "road_mountain_forest",
+    "pine_scrapyard": "road_mountain_forest",
+    "pine_gas_station": "road_mountain_forest",
+    "pine_clinic": "forest_medical_station",
+    "settlement_reception": "settlement_reception",
+    "rescue_station_interior": "rescue_medical",
+    "snow_road": "road_snow",
+    "supply_warehouse": "supply_stop",
+    "scrapyard": "road_lowland_forest",
+    "research_relay": "radio_relay",
+    "waterworks": "road_mountain_forest",
+    "snow_habitable_ruins": "road_snow",
+    "snow_fuel_depot": "road_snow",
+    "snow_checkpoint": "road_snow",
+    "snow_scrapyard": "road_snow",
+    "snow_waterworks": "road_snow",
+    "snow_gas_station": "road_snow",
+    "snow_clinic": "forest_medical_station"
+  }
+}

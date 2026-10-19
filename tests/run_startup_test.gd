@@ -46,6 +46,9 @@ func run() -> void:
 		check(not menu.settings.is_inside_tree(), "hidden settings UI is deferred until opened")
 		menu.save_system = load("res://src/game/save.gd").new(output.path_join("saves"))
 		menu._start_game_transition()
+		check(is_instance_valid(menu.archive_screen) and menu.archive_screen.visible, "new game opens the six-slot archive selector")
+		check(not ResourceLoader.has_cached("res://scenes/release_game.tscn"), "archive selection keeps gameplay loading deferred")
+		menu.archive_screen._primary()
 		await process_frame
 		check(menu.transitioning, "new game guards repeated taps while preparing")
 		var start_deadline := Time.get_ticks_msec() + 30000

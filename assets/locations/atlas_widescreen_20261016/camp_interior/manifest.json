@@ -2,11 +2,11 @@
   "title": "帐篷内部",
   "walk_path": [
     [
-      475,
+      300,
       806
     ],
     [
-      2213,
+      2440,
       806
     ]
   ],
@@ -15,7 +15,10 @@
     670,
     1330,
     1670,
-    2010
+    2010,
+    2200,
+    550,
+    1450
   ],
   "camera_limit_source_canvas_pixels": 0,
   "warm_x": 1410,
@@ -46,5 +49,7 @@
   ],
   "center_plate_pixels_unchanged": true,
   "image_record": ".docs\\美术\\示例图横版复刻_20261016\\widescreen\\records\\camp_interior.json",
-  "raw_sha256": "29fe2abbfa63da8a9db274f185e932e00bbf031889a2d0ae2834f4c8420ffd86"
+  "raw_sha256": "29fe2abbfa63da8a9db274f185e932e00bbf031889a2d0ae2834f4c8420ffd86",
+  "actor_scale": 1.5,
+  "actor_ground_lift": 30
 }

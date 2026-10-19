@@ -1,0 +1,12 @@
+{
+  "provider":"local ComfyUI",
+  "image_model":"qwen_image_2.1_int8_convrot.safetensors",
+  "anchor_note":"Manual anatomical annotations on the 640x768 generated still, before video letterboxing. Seated anchors are the underside of the pelvis; other poses use the lowest supporting knee/boot.",
+  "characters":{
+    "zhang":{"name":"老张","kind":"seated","label":"擦拭扳手","source_facing":"right","anchor":[266,453],"top_anchor":[315,42],"sole_anchor":[360,706],"seat_to_sole_native":253,"height_native":664},
+    "elin":{"name":"艾琳","kind":"standing","label":"整理绷带","source_facing":"right","anchor":[324,651],"top_anchor":[305,135],"sole_anchor":[324,651],"height_native":516,"height_ratio":0.68},
+    "ajie":{"name":"阿杰","kind":"standing","label":"眺望警戒","source_facing":"right","anchor":[295,687],"top_anchor":[303,216],"sole_anchor":[295,687],"height_native":471},
+    "sofia":{"name":"索菲亚","kind":"standing","label":"核对账本","source_facing":"left","anchor":[283,733],"top_anchor":[309,47],"sole_anchor":[283,733],"height_native":686},
+    "sister":{"name":"妹妹","kind":"seated","label":"捧杯休息","source_facing":"left","anchor":[370,462],"top_anchor":[336,75],"sole_anchor":[217,674],"seat_to_sole_native":212,"height_native":599}
+  }
+}

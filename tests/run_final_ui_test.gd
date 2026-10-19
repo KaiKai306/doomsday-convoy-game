@@ -26,6 +26,9 @@ func setting_control(node: Node, key: String) -> Control:
 		var nested = setting_control(child, key)
 		if nested != null: return nested
 	return null
+func music_gain() -> float:
+	var index = AudioServer.get_bus_index("ConvoyMusic")
+	return 0.0 if AudioServer.is_bus_mute(index) else db_to_linear(AudioServer.get_bus_volume_db(index))
 func run():
 	DirAccess.make_dir_recursive_absolute("res://.godot/final-qa")
 	root.size = Vector2i(1280,720)
@@ -33,9 +36,9 @@ func run():
 	await process_frame
 	await capture("01_menu")
 	await create_timer(0.55).timeout
-	check(main.menu_music.playing and main.menu_music.stream.loop,"main page plays looping BGM")
-	check(absf(main.menu_music.stream.get_length()-223.85) < 0.02,"BGM has exactly five seconds trimmed")
-	check(is_equal_approx(main.menu_music.volume_linear,0.52),"BGM obeys default master and music volumes")
+	check(main.menu_music.playing and main.music_director.current_cue == "main_menu","main page plays its music cue")
+	check(main.menu_music.stream.get_length() > 5.0,"menu music contains a usable loop recording")
+	check(is_equal_approx(music_gain(),0.52),"BGM obeys default master and music volumes")
 	main.menu_music.seek(main.menu_music.stream.get_length()-0.12)
 	await create_timer(0.4).timeout
 	check(main.menu_music.playing and main.menu_music.get_playback_position() < 1.0,"BGM wraps at the end and keeps playing")
@@ -43,19 +46,19 @@ func run():
 	check(main.settings.visible and main.menu_music.playing,"settings keeps main page music playing")
 	var music = setting_control(main.settings.content,"music")
 	music.value = 0; await create_timer(0.2).timeout
-	check(is_zero_approx(main.menu_music.volume_linear),"music slider zero silences BGM")
+	check(is_zero_approx(music_gain()),"music slider zero silences BGM")
 	music.value = 40; setting_control(main.settings.content,"master").value = 50
 	await create_timer(0.2).timeout
-	check(is_equal_approx(main.menu_music.volume_linear,0.2),"BGM updates from live music and master sliders")
+	check(is_equal_approx(music_gain(),0.2),"BGM updates from live music and master sliders")
 	setting_control(main.settings.content,"mute").pressed.emit(); await create_timer(0.2).timeout
-	check(is_zero_approx(main.menu_music.volume_linear),"mute silences BGM")
+	check(is_zero_approx(music_gain()),"mute silences BGM")
 	main.settings._restore_defaults(); await create_timer(0.2).timeout
-	check(is_equal_approx(main.menu_music.volume_linear,0.52),"restore defaults reapplies music volume")
+	check(is_equal_approx(music_gain(),0.52),"restore defaults reapplies music volume")
 	main.settings.close_screen()
 	main._start_game()
 	ui = main.day_demo; await settled()
 	await create_timer(0.25).timeout
-	check(not main.menu_music.playing,"main page BGM stops after entering gameplay")
+	check(main.menu_music.playing and main.music_director.current_cue != "main_menu","gameplay replaces menu music with the scene cue")
 	check(ui != null and ui.engine.s.day == 1 and ui.engine.s.members.size() == 5,"main menu opens new twenty-day engine")
 	ui.engine.new_game(81); ui.refresh(); await settled()
 	for size_value in [Vector2i(960,600),Vector2i(1560,720),Vector2i(2340,1080),Vector2i(1280,720)]:

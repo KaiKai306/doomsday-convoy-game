@@ -1,0 +1,817 @@
+{
+  "schema_version": 1,
+  "prepared_on": "2026-10-18",
+  "source_archive": {
+    "path": "C:\\Users\\t6275\\Desktop\\音乐bgm.zip",
+    "bytes": 61525980,
+    "sha256": "22e1a4c9f2082201811efb87f4a0b98c1f10b2617deafce33e738b92e153b3c2",
+    "uncompressed_bytes": 80149152,
+    "preserved_unchanged": true,
+    "safe_archive_paths_validated": true
+  },
+  "processing": {
+    "ffmpeg_version": "ffmpeg version 8.1.2-full_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers",
+    "codec": "libvorbis",
+    "quality": 5,
+    "sample_rate_hz": 48000,
+    "channels": 2,
+    "target_integrated_lufs": -20.0,
+    "max_encoded_true_peak_dbtp": -2.0,
+    "normalization": "Constant per-track gain only; source dynamics preserved; peak protection takes priority.",
+    "measurement": "FFmpeg loudnorm EBU R128 input statistics, measured again after Vorbis encode.",
+    "subjective_audition": false,
+    "subjective_audition_note": "No audio-understanding/listening tool available; technical validation only.",
+    "new_music_generated": false
+  },
+  "tracks": [
+    {
+      "id": "main_menu",
+      "intended_use_from_filename": "主菜单",
+      "source_filename": "1主菜单.wav",
+      "archive_path": "音乐bgm/1主菜单.wav",
+      "source_path": ".docs/音频/配乐接入_20261018/source/1主菜单.wav",
+      "source_sha256": "771d6f5aa7cd71a4546d3e4107fe50b989476201acec57146abb3c2d2458c9b7",
+      "source_format": {
+        "codec": "pcm_s16le",
+        "sample_rate_hz": 48000,
+        "channels": 2,
+        "bits_per_sample": 16,
+        "duration_seconds": 36.712313,
+        "bytes": 7048808
+      },
+      "source_loudness": {
+        "integrated_lufs": -38.45,
+        "true_peak_dbtp": -27.75,
+        "loudness_range_lu": 15.4,
+        "relative_threshold_lufs": -49.52
+      },
+      "output_path": "assets/audio/music_20261018/main_menu.ogg",
+      "godot_resource_path": "res://assets/audio/music_20261018/main_menu.ogg",
+      "output_sha256": "5cdc68c89005885ca651c7dd73e721384cd615f3737c57338f4ca13cfd951c62",
+      "output_format": {
+        "codec": "vorbis",
+        "sample_rate_hz": 48000,
+        "channels": 2,
+        "bits_per_sample": 0,
+        "duration_seconds": 36.712313,
+        "bytes": 523234
+      },
+      "output_loudness": {
+        "integrated_lufs": -20.07,
+        "true_peak_dbtp": -9.06,
+        "loudness_range_lu": 15.4,
+        "relative_threshold_lufs": -31.2
+      },
+      "constant_gain_db": 18.45,
+      "encode_attempts": 1,
+      "loop": {
+        "enabled_at_runtime": true,
+        "start_seconds": 0.0,
+        "end_seconds": 36.712313,
+        "edit": "No trimming, time change, or crossfade baked in; whole-track loop.",
+        "godot_requirement": "Controller uses two AudioStreamPlayers with a short crossfade for whole-track repeat; leave AudioStreamOggVorbis.loop disabled. LOOPSTART tag is not relied upon.",
+        "managed_by": "two-player controller crossfade",
+        "stream_loop": false
+      },
+      "verification": {
+        "full_decode_passed": true,
+        "duration_preserved": true,
+        "true_peak_at_or_below_minus_2_dbtp": true
+      },
+      "current_mobile_file": {
+        "path": "assets/audio/music_20261018/main_menu.ogg",
+        "sha256": "f175c46085fd03ef957f566b50ef70c4791802f67af96fa84befd60efccc41ce",
+        "bytes": 297680,
+        "codec": "vorbis",
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "duration_seconds": 36.71,
+        "reencoded_for_mobile": true
+      }
+    },
+    {
+      "id": "forest_gas_station",
+      "intended_use_from_filename": "森林边缘废弃加油站",
+      "source_filename": "2森林边缘废弃加油站.wav",
+      "archive_path": "音乐bgm/2森林边缘废弃加油站.wav",
+      "source_path": ".docs/音频/配乐接入_20261018/source/2森林边缘废弃加油站.wav",
+      "source_sha256": "7aeac375e2058c557b0ba856cd1f109c3040cb21cb9359eebc25734f963f9066",
+      "source_format": {
+        "codec": "pcm_s16le",
+        "sample_rate_hz": 48000,
+        "channels": 2,
+        "bits_per_sample": 16,
+        "duration_seconds": 28.517458,
+        "bytes": 5475396
+      },
+      "source_loudness": {
+        "integrated_lufs": -25.21,
+        "true_peak_dbtp": -16.44,
+        "loudness_range_lu": 7.5,
+        "relative_threshold_lufs": -35.42
+      },
+      "output_path": "assets/audio/music_20261018/forest_gas_station.ogg",
+      "godot_resource_path": "res://assets/audio/music_20261018/forest_gas_station.ogg",
+      "output_sha256": "522826f7a07df6531aed93e37bdfb0c209e54587b715ed7a82c0e4f1a47181cb",
+      "output_format": {
+        "codec": "vorbis",
+        "sample_rate_hz": 48000,
+        "channels": 2,
+        "bits_per_sample": 0,
+        "duration_seconds": 28.517458,
+        "bytes": 387459
+      },
+      "output_loudness": {
+        "integrated_lufs": -20.0,
+        "true_peak_dbtp": -11.1,
+        "loudness_range_lu": 7.6,
+        "relative_threshold_lufs": -30.21
+      },
+      "constant_gain_db": 5.21,
+      "encode_attempts": 1,
+      "loop": {
+        "enabled_at_runtime": true,
+        "start_seconds": 0.0,
+        "end_seconds": 28.517458,
+        "edit": "No trimming, time change, or crossfade baked in; whole-track loop.",
+        "godot_requirement": "Controller uses two AudioStreamPlayers with a short crossfade for whole-track repeat; leave AudioStreamOggVorbis.loop disabled. LOOPSTART tag is not relied upon.",
+        "managed_by": "two-player controller crossfade",
+        "stream_loop": false
+      },
+      "verification": {
+        "full_decode_passed": true,
+        "duration_preserved": true,
+        "true_peak_at_or_below_minus_2_dbtp": true
+      },
+      "current_mobile_file": {
+        "path": "assets/audio/music_20261018/forest_gas_station.ogg",
+        "sha256": "522826f7a07df6531aed93e37bdfb0c209e54587b715ed7a82c0e4f1a47181cb",
+        "bytes": 387459,
+        "codec": "vorbis",
+        "sample_rate_hz": 48000,
+        "channels": 2,
+        "duration_seconds": 28.52,
+        "reencoded_for_mobile": false
+      }
+    },
+    {
+      "id": "road_lowland_forest",
+      "intended_use_from_filename": "前段森林 A／低地阔叶林公路",
+      "source_filename": "3. 前段森林A：低地阔叶林公路.wav",
+      "archive_path": "音乐bgm/3. 前段森林A：低地阔叶林公路.wav",
+      "source_path": ".docs/音频/配乐接入_20261018/source/3. 前段森林A：低地阔叶林公路.wav",
+      "source_sha256": "a2467dcba4a5b4d1e0b8b237a766d7f084a7d0371a5c8fa23006924c860b3a19",
+      "source_format": {
+        "codec": "pcm_s16le",
+        "sample_rate_hz": 48000,
+        "channels": 2,
+        "bits_per_sample": 16,
+        "duration_seconds": 37.177958,
+        "bytes": 7138212
+      },
+      "source_loudness": {
+        "integrated_lufs": -22.8,
+        "true_peak_dbtp": -10.31,
+        "loudness_range_lu": 11.9,
+        "relative_threshold_lufs": -33.39
+      },
+      "output_path": "assets/audio/music_20261018/road_lowland_forest.ogg",
+      "godot_resource_path": "res://assets/audio/music_20261018/road_lowland_forest.ogg",
+      "output_sha256": "23b2c5cde79f3c320a10d0ee8773603c3bdbc72d890284f9f622029c8eab4663",
+      "output_format": {
+        "codec": "vorbis",
+        "sample_rate_hz": 48000,
+        "channels": 2,
+        "bits_per_sample": 0,
+        "duration_seconds": 37.177958,
+        "bytes": 489156
+      },
+      "output_loudness": {
+        "integrated_lufs": -20.01,
+        "true_peak_dbtp": -7.56,
+        "loudness_range_lu": 11.9,
+        "relative_threshold_lufs": -30.6
+      },
+      "constant_gain_db": 2.8,
+      "encode_attempts": 1,
+      "loop": {
+        "enabled_at_runtime": true,
+        "start_seconds": 0.0,
+        "end_seconds": 37.177958,
+        "edit": "No trimming, time change, or crossfade baked in; whole-track loop.",
+        "godot_requirement": "Controller uses two AudioStreamPlayers with a short crossfade for whole-track repeat; leave AudioStreamOggVorbis.loop disabled. LOOPSTART tag is not relied upon.",
+        "managed_by": "two-player controller crossfade",
+        "stream_loop": false
+      },
+      "verification": {
+        "full_decode_passed": true,
+        "duration_preserved": true,
+        "true_peak_at_or_below_minus_2_dbtp": true
+      },
+      "current_mobile_file": {
+        "path": "assets/audio/music_20261018/road_lowland_forest.ogg",
+        "sha256": "23b2c5cde79f3c320a10d0ee8773603c3bdbc72d890284f9f622029c8eab4663",
+        "bytes": 489156,
+        "codec": "vorbis",
+        "sample_rate_hz": 48000,
+        "channels": 2,
+        "duration_seconds": 37.18,
+        "reencoded_for_mobile": false
+      }
+    },
+    {
+      "id": "road_desert",
+      "intended_use_from_filename": "沙漠公路",
+      "source_filename": "4沙漠公路.wav",
+      "archive_path": "音乐bgm/4沙漠公路.wav",
+      "source_path": ".docs/音频/配乐接入_20261018/source/4沙漠公路.wav",
+      "source_sha256": "bf5eadcaff78e00ad503f4b870b0235294a38bb59a7c4c6c8a1e184cb6025a40",
+      "source_format": {
+        "codec": "pcm_s16le",
+        "sample_rate_hz": 48000,
+        "channels": 2,
+        "bits_per_sample": 16,
+        "duration_seconds": 43.228729,
+        "bytes": 8299960
+      },
+      "source_loudness": {
+        "integrated_lufs": -18.16,
+        "true_peak_dbtp": -2.78,
+        "loudness_range_lu": 17.7,
+        "relative_threshold_lufs": -29.48
+      },
+      "output_path": "assets/audio/music_20261018/road_desert.ogg",
+      "godot_resource_path": "res://assets/audio/music_20261018/road_desert.ogg",
+      "output_sha256": "68ed5a3c42d37852c3864c9db884b7b7e7d786a0beb1e7c1dbbd23150431cb14",
+      "output_format": {
+        "codec": "vorbis",
+        "sample_rate_hz": 48000,
+        "channels": 2,
+        "bits_per_sample": 0,
+        "duration_seconds": 43.228729,
+        "bytes": 553086
+      },
+      "output_loudness": {
+        "integrated_lufs": -20.03,
+        "true_peak_dbtp": -4.06,
+        "loudness_range_lu": 17.7,
+        "relative_threshold_lufs": -31.36
+      },
+      "constant_gain_db": -1.84,
+      "encode_attempts": 1,
+      "loop": {
+        "enabled_at_runtime": true,
+        "start_seconds": 0.0,
+        "end_seconds": 43.228729,
+        "edit": "No trimming, time change, or crossfade baked in; whole-track loop.",
+        "godot_requirement": "Controller uses two AudioStreamPlayers with a short crossfade for whole-track repeat; leave AudioStreamOggVorbis.loop disabled. LOOPSTART tag is not relied upon.",
+        "managed_by": "two-player controller crossfade",
+        "stream_loop": false
+      },
+      "verification": {
+        "full_decode_passed": true,
+        "duration_preserved": true,
+        "true_peak_at_or_below_minus_2_dbtp": true
+      },
+      "current_mobile_file": {
+        "path": "assets/audio/music_20261018/road_desert.ogg",
+        "sha256": "68ed5a3c42d37852c3864c9db884b7b7e7d786a0beb1e7c1dbbd23150431cb14",
+        "bytes": 553086,
+        "codec": "vorbis",
+        "sample_rate_hz": 48000,
+        "channels": 2,
+        "duration_seconds": 43.23,
+        "reencoded_for_mobile": false
+      }
+    },
+    {
+      "id": "road_mountain_forest",
+      "intended_use_from_filename": "后段森林 B／山地针叶林公路",
+      "source_filename": "5. 后段森林B：山地针叶林公路.wav",
+      "archive_path": "音乐bgm/5. 后段森林B：山地针叶林公路.wav",
+      "source_path": ".docs/音频/配乐接入_20261018/source/5. 后段森林B：山地针叶林公路.wav",
+      "source_sha256": "abc97477422cff1eddd7ff77fc157ee0c63f1cce05ada6f67246c399c7012698",
+      "source_format": {
+        "codec": "pcm_s16le",
+        "sample_rate_hz": 48000,
+        "channels": 2,
+        "bits_per_sample": 16,
+        "duration_seconds": 36.731104,
+        "bytes": 7052416
+      },
+      "source_loudness": {
+        "integrated_lufs": -27.53,
+        "true_peak_dbtp": -17.49,
+        "loudness_range_lu": 12.1,
+        "relative_threshold_lufs": -38.13
+      },
+      "output_path": "assets/audio/music_20261018/road_mountain_forest.ogg",
+      "godot_resource_path": "res://assets/audio/music_20261018/road_mountain_forest.ogg",
+      "output_sha256": "d324fb83c706f1d8dd452a8104e1cfef07d793a6594046e735c3ab45a3438b0a",
+      "output_format": {
+        "codec": "vorbis",
+        "sample_rate_hz": 48000,
+        "channels": 2,
+        "bits_per_sample": 0,
+        "duration_seconds": 36.731104,
+        "bytes": 495737
+      },
+      "output_loudness": {
+        "integrated_lufs": -20.04,
+        "true_peak_dbtp": -9.7,
+        "loudness_range_lu": 12.1,
+        "relative_threshold_lufs": -30.64
+      },
+      "constant_gain_db": 7.53,
+      "encode_attempts": 1,
+      "loop": {
+        "enabled_at_runtime": true,
+        "start_seconds": 0.0,
+        "end_seconds": 36.731104,
+        "edit": "No trimming, time change, or crossfade baked in; whole-track loop.",
+        "godot_requirement": "Controller uses two AudioStreamPlayers with a short crossfade for whole-track repeat; leave AudioStreamOggVorbis.loop disabled. LOOPSTART tag is not relied upon.",
+        "managed_by": "two-player controller crossfade",
+        "stream_loop": false
+      },
+      "verification": {
+        "full_decode_passed": true,
+        "duration_preserved": true,
+        "true_peak_at_or_below_minus_2_dbtp": true
+      },
+      "current_mobile_file": {
+        "path": "assets/audio/music_20261018/road_mountain_forest.ogg",
+        "sha256": "d324fb83c706f1d8dd452a8104e1cfef07d793a6594046e735c3ab45a3438b0a",
+        "bytes": 495737,
+        "codec": "vorbis",
+        "sample_rate_hz": 48000,
+        "channels": 2,
+        "duration_seconds": 36.73,
+        "reencoded_for_mobile": false
+      }
+    },
+    {
+      "id": "road_snow",
+      "intended_use_from_filename": "雪地公路",
+      "source_filename": "6. 雪地公路.wav",
+      "archive_path": "音乐bgm/6. 雪地公路.wav",
+      "source_path": ".docs/音频/配乐接入_20261018/source/6. 雪地公路.wav",
+      "source_sha256": "58710bf6f4a832508500f4e56877a3b6043dabb587d945646f3a864e25cf95ad",
+      "source_format": {
+        "codec": "pcm_s16le",
+        "sample_rate_hz": 48000,
+        "channels": 2,
+        "bits_per_sample": 16,
+        "duration_seconds": 34.866104,
+        "bytes": 6694336
+      },
+      "source_loudness": {
+        "integrated_lufs": -22.24,
+        "true_peak_dbtp": -11.88,
+        "loudness_range_lu": 15.3,
+        "relative_threshold_lufs": -33.09
+      },
+      "output_path": "assets/audio/music_20261018/road_snow.ogg",
+      "godot_resource_path": "res://assets/audio/music_20261018/road_snow.ogg",
+      "output_sha256": "70bfea03e49b42646088b894be32ca8ebef6ab8b9068be03cb64c9f5e2ad59a6",
+      "output_format": {
+        "codec": "vorbis",
+        "sample_rate_hz": 48000,
+        "channels": 2,
+        "bits_per_sample": 0,
+        "duration_seconds": 34.866104,
+        "bytes": 456442
+      },
+      "output_loudness": {
+        "integrated_lufs": -20.05,
+        "true_peak_dbtp": -9.14,
+        "loudness_range_lu": 15.3,
+        "relative_threshold_lufs": -30.9
+      },
+      "constant_gain_db": 2.24,
+      "encode_attempts": 1,
+      "loop": {
+        "enabled_at_runtime": true,
+        "start_seconds": 0.0,
+        "end_seconds": 34.866104,
+        "edit": "No trimming, time change, or crossfade baked in; whole-track loop.",
+        "godot_requirement": "Controller uses two AudioStreamPlayers with a short crossfade for whole-track repeat; leave AudioStreamOggVorbis.loop disabled. LOOPSTART tag is not relied upon.",
+        "managed_by": "two-player controller crossfade",
+        "stream_loop": false
+      },
+      "verification": {
+        "full_decode_passed": true,
+        "duration_preserved": true,
+        "true_peak_at_or_below_minus_2_dbtp": true
+      },
+      "current_mobile_file": {
+        "path": "assets/audio/music_20261018/road_snow.ogg",
+        "sha256": "70bfea03e49b42646088b894be32ca8ebef6ab8b9068be03cb64c9f5e2ad59a6",
+        "bytes": 456442,
+        "codec": "vorbis",
+        "sample_rate_hz": 48000,
+        "channels": 2,
+        "duration_seconds": 34.87,
+        "reencoded_for_mobile": false
+      }
+    },
+    {
+      "id": "camp_desert",
+      "intended_use_from_filename": "荒漠篝火营地",
+      "source_filename": "7.荒漠篝火营地.wav",
+      "archive_path": "音乐bgm/7.荒漠篝火营地.wav",
+      "source_path": ".docs/音频/配乐接入_20261018/source/7.荒漠篝火营地.wav",
+      "source_sha256": "7fefd718ad9cd342a4c3e7b687176d886c92d7a1f6a04d33c5e353a8733bce55",
+      "source_format": {
+        "codec": "pcm_s16le",
+        "sample_rate_hz": 48000,
+        "channels": 2,
+        "bits_per_sample": 16,
+        "duration_seconds": 32.0,
+        "bytes": 6144044
+      },
+      "source_loudness": {
+        "integrated_lufs": -16.78,
+        "true_peak_dbtp": -2.97,
+        "loudness_range_lu": 14.9,
+        "relative_threshold_lufs": -28.05
+      },
+      "output_path": "assets/audio/music_20261018/camp_desert.ogg",
+      "godot_resource_path": "res://assets/audio/music_20261018/camp_desert.ogg",
+      "output_sha256": "36cc4ca2e0d25d3031a48ae693df3e548ac0114a518167988023e698599c0435",
+      "output_format": {
+        "codec": "vorbis",
+        "sample_rate_hz": 48000,
+        "channels": 2,
+        "bits_per_sample": 0,
+        "duration_seconds": 32.0,
+        "bytes": 428895
+      },
+      "output_loudness": {
+        "integrated_lufs": -20.02,
+        "true_peak_dbtp": -6.26,
+        "loudness_range_lu": 15.0,
+        "relative_threshold_lufs": -31.29
+      },
+      "constant_gain_db": -3.22,
+      "encode_attempts": 1,
+      "loop": {
+        "enabled_at_runtime": true,
+        "start_seconds": 0.0,
+        "end_seconds": 32.0,
+        "edit": "No trimming, time change, or crossfade baked in; whole-track loop.",
+        "godot_requirement": "Controller uses two AudioStreamPlayers with a short crossfade for whole-track repeat; leave AudioStreamOggVorbis.loop disabled. LOOPSTART tag is not relied upon.",
+        "managed_by": "two-player controller crossfade",
+        "stream_loop": false
+      },
+      "verification": {
+        "full_decode_passed": true,
+        "duration_preserved": true,
+        "true_peak_at_or_below_minus_2_dbtp": true
+      },
+      "current_mobile_file": {
+        "path": "assets/audio/music_20261018/camp_desert.ogg",
+        "sha256": "36cc4ca2e0d25d3031a48ae693df3e548ac0114a518167988023e698599c0435",
+        "bytes": 428895,
+        "codec": "vorbis",
+        "sample_rate_hz": 48000,
+        "channels": 2,
+        "duration_seconds": 32.0,
+        "reencoded_for_mobile": false
+      }
+    },
+    {
+      "id": "camp_forest",
+      "intended_use_from_filename": "林间篝火营地",
+      "source_filename": "8林间篝火营地.wav",
+      "archive_path": "音乐bgm/8林间篝火营地.wav",
+      "source_path": ".docs/音频/配乐接入_20261018/source/8林间篝火营地.wav",
+      "source_sha256": "809d0b61a4c5d9f1cdc124bbfe6f8b855c441e97f2a063f7531ef41488d547f6",
+      "source_format": {
+        "codec": "pcm_s16le",
+        "sample_rate_hz": 48000,
+        "channels": 2,
+        "bits_per_sample": 16,
+        "duration_seconds": 34.787146,
+        "bytes": 6679176
+      },
+      "source_loudness": {
+        "integrated_lufs": -19.16,
+        "true_peak_dbtp": -9.5,
+        "loudness_range_lu": 14.8,
+        "relative_threshold_lufs": -29.87
+      },
+      "output_path": "assets/audio/music_20261018/camp_forest.ogg",
+      "godot_resource_path": "res://assets/audio/music_20261018/camp_forest.ogg",
+      "output_sha256": "6228f73dd37a095a255f1a7cb6007e61c00c614b39e0028bd00042a1e20d0421",
+      "output_format": {
+        "codec": "vorbis",
+        "sample_rate_hz": 48000,
+        "channels": 2,
+        "bits_per_sample": 0,
+        "duration_seconds": 34.787146,
+        "bytes": 432591
+      },
+      "output_loudness": {
+        "integrated_lufs": -19.98,
+        "true_peak_dbtp": -10.08,
+        "loudness_range_lu": 14.8,
+        "relative_threshold_lufs": -30.69
+      },
+      "constant_gain_db": -0.84,
+      "encode_attempts": 1,
+      "loop": {
+        "enabled_at_runtime": true,
+        "start_seconds": 0.0,
+        "end_seconds": 34.787146,
+        "edit": "No trimming, time change, or crossfade baked in; whole-track loop.",
+        "godot_requirement": "Controller uses two AudioStreamPlayers with a short crossfade for whole-track repeat; leave AudioStreamOggVorbis.loop disabled. LOOPSTART tag is not relied upon.",
+        "managed_by": "two-player controller crossfade",
+        "stream_loop": false
+      },
+      "verification": {
+        "full_decode_passed": true,
+        "duration_preserved": true,
+        "true_peak_at_or_below_minus_2_dbtp": true
+      },
+      "current_mobile_file": {
+        "path": "assets/audio/music_20261018/camp_forest.ogg",
+        "sha256": "6228f73dd37a095a255f1a7cb6007e61c00c614b39e0028bd00042a1e20d0421",
+        "bytes": 432591,
+        "codec": "vorbis",
+        "sample_rate_hz": 48000,
+        "channels": 2,
+        "duration_seconds": 34.79,
+        "reencoded_for_mobile": false
+      }
+    },
+    {
+      "id": "forest_medical_station",
+      "intended_use_from_filename": "林区废弃医疗站",
+      "source_filename": "林区废弃医疗站.wav",
+      "archive_path": "音乐bgm/林区废弃医疗站.wav",
+      "source_path": ".docs/音频/配乐接入_20261018/source/林区废弃医疗站.wav",
+      "source_sha256": "db77291a36bfd341c8f08132243462e89dcecc9acc78d3744a07643d7e763632",
+      "source_format": {
+        "codec": "pcm_s16le",
+        "sample_rate_hz": 48000,
+        "channels": 2,
+        "bits_per_sample": 16,
+        "duration_seconds": 27.853521,
+        "bytes": 5347920
+      },
+      "source_loudness": {
+        "integrated_lufs": -23.13,
+        "true_peak_dbtp": -14.57,
+        "loudness_range_lu": 14.8,
+        "relative_threshold_lufs": -33.96
+      },
+      "output_path": "assets/audio/music_20261018/forest_medical_station.ogg",
+      "godot_resource_path": "res://assets/audio/music_20261018/forest_medical_station.ogg",
+      "output_sha256": "5d0e3424a372eaf7c080e9d8e4b087f9044d0a04c77e8e389ddbcb24bcc4bf12",
+      "output_format": {
+        "codec": "vorbis",
+        "sample_rate_hz": 48000,
+        "channels": 2,
+        "bits_per_sample": 0,
+        "duration_seconds": 27.853521,
+        "bytes": 356844
+      },
+      "output_loudness": {
+        "integrated_lufs": -19.96,
+        "true_peak_dbtp": -11.18,
+        "loudness_range_lu": 14.9,
+        "relative_threshold_lufs": -30.8
+      },
+      "constant_gain_db": 3.13,
+      "encode_attempts": 1,
+      "loop": {
+        "enabled_at_runtime": true,
+        "start_seconds": 0.0,
+        "end_seconds": 27.853521,
+        "edit": "No trimming, time change, or crossfade baked in; whole-track loop.",
+        "godot_requirement": "Controller uses two AudioStreamPlayers with a short crossfade for whole-track repeat; leave AudioStreamOggVorbis.loop disabled. LOOPSTART tag is not relied upon.",
+        "managed_by": "two-player controller crossfade",
+        "stream_loop": false
+      },
+      "verification": {
+        "full_decode_passed": true,
+        "duration_preserved": true,
+        "true_peak_at_or_below_minus_2_dbtp": true
+      },
+      "current_mobile_file": {
+        "path": "assets/audio/music_20261018/forest_medical_station.ogg",
+        "sha256": "5d0e3424a372eaf7c080e9d8e4b087f9044d0a04c77e8e389ddbcb24bcc4bf12",
+        "bytes": 356844,
+        "codec": "vorbis",
+        "sample_rate_hz": 48000,
+        "channels": 2,
+        "duration_seconds": 27.85,
+        "reencoded_for_mobile": false
+      }
+    },
+    {
+      "id": "camp_mountain",
+      "intended_use_from_filename": "山地林间营地",
+      "source_filename": "10. 山地林间营地.wav",
+      "archive_path": "音乐bgm/10. 山地林间营地.wav",
+      "source_path": ".docs/音频/配乐接入_20261018/source/10. 山地林间营地.wav",
+      "source_sha256": "1fdf0bfb9fbe7ac4957571ba0cb825cd0e54bdfa355b1bb7d37d4ad1fda6f85b",
+      "source_format": {
+        "codec": "pcm_s16le",
+        "sample_rate_hz": 48000,
+        "channels": 2,
+        "bits_per_sample": 16,
+        "duration_seconds": 34.018979,
+        "bytes": 6531688
+      },
+      "source_loudness": {
+        "integrated_lufs": -27.7,
+        "true_peak_dbtp": -17.4,
+        "loudness_range_lu": 14.7,
+        "relative_threshold_lufs": -38.58
+      },
+      "output_path": "assets/audio/music_20261018/camp_mountain.ogg",
+      "godot_resource_path": "res://assets/audio/music_20261018/camp_mountain.ogg",
+      "output_sha256": "7deb9a6ea065c5049e4ac1a4f8b99363d46acb64466ccfb96f8f3013446fad78",
+      "output_format": {
+        "codec": "vorbis",
+        "sample_rate_hz": 48000,
+        "channels": 2,
+        "bits_per_sample": 0,
+        "duration_seconds": 34.018979,
+        "bytes": 469682
+      },
+      "output_loudness": {
+        "integrated_lufs": -20.0,
+        "true_peak_dbtp": -9.51,
+        "loudness_range_lu": 14.7,
+        "relative_threshold_lufs": -30.88
+      },
+      "constant_gain_db": 7.7,
+      "encode_attempts": 1,
+      "loop": {
+        "enabled_at_runtime": true,
+        "start_seconds": 0.0,
+        "end_seconds": 34.018979,
+        "edit": "No trimming, time change, or crossfade baked in; whole-track loop.",
+        "godot_requirement": "Controller uses two AudioStreamPlayers with a short crossfade for whole-track repeat; leave AudioStreamOggVorbis.loop disabled. LOOPSTART tag is not relied upon.",
+        "managed_by": "two-player controller crossfade",
+        "stream_loop": false
+      },
+      "verification": {
+        "full_decode_passed": true,
+        "duration_preserved": true,
+        "true_peak_at_or_below_minus_2_dbtp": true
+      },
+      "current_mobile_file": {
+        "path": "assets/audio/music_20261018/camp_mountain.ogg",
+        "sha256": "7deb9a6ea065c5049e4ac1a4f8b99363d46acb64466ccfb96f8f3013446fad78",
+        "bytes": 469682,
+        "codec": "vorbis",
+        "sample_rate_hz": 48000,
+        "channels": 2,
+        "duration_seconds": 34.02,
+        "reencoded_for_mobile": false
+      }
+    },
+    {
+      "id": "camp_snow",
+      "intended_use_from_filename": "雪地篝火营地",
+      "source_filename": "11. 雪地篝火营地.wav",
+      "archive_path": "音乐bgm/11. 雪地篝火营地.wav",
+      "source_path": ".docs/音频/配乐接入_20261018/source/11. 雪地篝火营地.wav",
+      "source_sha256": "fb5f1b5223dc80811d9d6b34770162b398a652758f059f6aaad0fbf1bef1c433",
+      "source_format": {
+        "codec": "pcm_s16le",
+        "sample_rate_hz": 48000,
+        "channels": 2,
+        "bits_per_sample": 16,
+        "duration_seconds": 33.363667,
+        "bytes": 6405868
+      },
+      "source_loudness": {
+        "integrated_lufs": -25.91,
+        "true_peak_dbtp": -17.57,
+        "loudness_range_lu": 11.9,
+        "relative_threshold_lufs": -36.28
+      },
+      "output_path": "assets/audio/music_20261018/camp_snow.ogg",
+      "godot_resource_path": "res://assets/audio/music_20261018/camp_snow.ogg",
+      "output_sha256": "6ffde1ff5d8c4805881ac196c3b9b15f5c29d2baa0f115f76dbce35318714f08",
+      "output_format": {
+        "codec": "vorbis",
+        "sample_rate_hz": 48000,
+        "channels": 2,
+        "bits_per_sample": 0,
+        "duration_seconds": 33.363667,
+        "bytes": 436796
+      },
+      "output_loudness": {
+        "integrated_lufs": -20.0,
+        "true_peak_dbtp": -11.26,
+        "loudness_range_lu": 11.8,
+        "relative_threshold_lufs": -30.37
+      },
+      "constant_gain_db": 5.91,
+      "encode_attempts": 1,
+      "loop": {
+        "enabled_at_runtime": true,
+        "start_seconds": 0.0,
+        "end_seconds": 33.363667,
+        "edit": "No trimming, time change, or crossfade baked in; whole-track loop.",
+        "godot_requirement": "Controller uses two AudioStreamPlayers with a short crossfade for whole-track repeat; leave AudioStreamOggVorbis.loop disabled. LOOPSTART tag is not relied upon.",
+        "managed_by": "two-player controller crossfade",
+        "stream_loop": false
+      },
+      "verification": {
+        "full_decode_passed": true,
+        "duration_preserved": true,
+        "true_peak_at_or_below_minus_2_dbtp": true
+      },
+      "current_mobile_file": {
+        "path": "assets/audio/music_20261018/camp_snow.ogg",
+        "sha256": "6ffde1ff5d8c4805881ac196c3b9b15f5c29d2baa0f115f76dbce35318714f08",
+        "bytes": 436796,
+        "codec": "vorbis",
+        "sample_rate_hz": 48000,
+        "channels": 2,
+        "duration_seconds": 33.36,
+        "reencoded_for_mobile": false
+      }
+    },
+    {
+      "id": "morning_planning",
+      "intended_use_from_filename": "晨间规划与队伍管理",
+      "source_filename": "12.晨间规划与队伍管理.wav",
+      "archive_path": "音乐bgm/12.晨间规划与队伍管理.wav",
+      "source_path": ".docs/音频/配乐接入_20261018/source/12.晨间规划与队伍管理.wav",
+      "source_sha256": "2414d6a7d6274d7870007fa7ed2d924f37aa5c59c413e567b3fbf4841de264e7",
+      "source_format": {
+        "codec": "pcm_s16le",
+        "sample_rate_hz": 48000,
+        "channels": 2,
+        "bits_per_sample": 16,
+        "duration_seconds": 38.183771,
+        "bytes": 7331328
+      },
+      "source_loudness": {
+        "integrated_lufs": -23.29,
+        "true_peak_dbtp": -14.44,
+        "loudness_range_lu": 11.2,
+        "relative_threshold_lufs": -33.95
+      },
+      "output_path": "assets/audio/music_20261018/morning_planning.ogg",
+      "godot_resource_path": "res://assets/audio/music_20261018/morning_planning.ogg",
+      "output_sha256": "e536d783e2ccc0643a2ae09e2808a87b012556b842ef53c2713a1a6dd7321a04",
+      "output_format": {
+        "codec": "vorbis",
+        "sample_rate_hz": 48000,
+        "channels": 2,
+        "bits_per_sample": 0,
+        "duration_seconds": 38.183771,
+        "bytes": 509806
+      },
+      "output_loudness": {
+        "integrated_lufs": -19.99,
+        "true_peak_dbtp": -10.87,
+        "loudness_range_lu": 11.2,
+        "relative_threshold_lufs": -30.64
+      },
+      "constant_gain_db": 3.29,
+      "encode_attempts": 1,
+      "loop": {
+        "enabled_at_runtime": true,
+        "start_seconds": 0.0,
+        "end_seconds": 38.183771,
+        "edit": "No trimming, time change, or crossfade baked in; whole-track loop.",
+        "godot_requirement": "Controller uses two AudioStreamPlayers with a short crossfade for whole-track repeat; leave AudioStreamOggVorbis.loop disabled. LOOPSTART tag is not relied upon.",
+        "managed_by": "two-player controller crossfade",
+        "stream_loop": false
+      },
+      "verification": {
+        "full_decode_passed": true,
+        "duration_preserved": true,
+        "true_peak_at_or_below_minus_2_dbtp": true
+      },
+      "current_mobile_file": {
+        "path": "assets/audio/music_20261018/morning_planning.ogg",
+        "sha256": "e536d783e2ccc0643a2ae09e2808a87b012556b842ef53c2713a1a6dd7321a04",
+        "bytes": 509806,
+        "codec": "vorbis",
+        "sample_rate_hz": 48000,
+        "channels": 2,
+        "duration_seconds": 38.18,
+        "reencoded_for_mobile": false
+      }
+    }
+  ],
+  "metadata_scope": "Original processing and output_* fields describe the teammate pre-mobile production files. current_mobile_file on each track is authoritative for files shipped in this repository. Historical source paths refer to the original production workstation and are not required for running or building the game.",
+  "mobile_optimization_20261019": {
+    "codec": "Vorbis",
+    "policy": "Re-encode tracks above 110 kbps at quality 1 and 44100 Hz; leave other tracks unchanged.",
+    "channels_preserved": true,
+    "subjective_audition": false,
+    "duration_measurement_resolution_seconds": 0.01,
+    "originals_location": "E:\\Apps\\Godot\\项目\\游戏档案2"
+  }
+}

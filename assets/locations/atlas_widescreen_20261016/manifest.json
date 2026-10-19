@@ -5,12 +5,20 @@
       "title": "荒原营地",
       "walk_path": [
         [
+          280,
+          750
+        ],
+        [
           475,
           806
         ],
         [
           2213,
           806
+        ],
+        [
+          2440,
+          750
         ]
       ],
       "spawn_x": 930,
@@ -155,11 +163,11 @@
       "title": "帐篷内部",
       "walk_path": [
         [
-          475,
+          300,
           806
         ],
         [
-          2213,
+          2440,
           806
         ]
       ],
@@ -168,7 +176,10 @@
         670,
         1330,
         1670,
-        2010
+        2010,
+        2200,
+        550,
+        1450
       ],
       "camera_limit_source_canvas_pixels": 0,
       "warm_x": 1410,
@@ -199,7 +210,9 @@
       ],
       "center_plate_pixels_unchanged": true,
       "image_record": ".docs\\美术\\示例图横版复刻_20261016\\widescreen\\records\\camp_interior.json",
-      "raw_sha256": "29fe2abbfa63da8a9db274f185e932e00bbf031889a2d0ae2834f4c8420ffd86"
+      "raw_sha256": "29fe2abbfa63da8a9db274f185e932e00bbf031889a2d0ae2834f4c8420ffd86",
+      "actor_scale": 1.5,
+      "actor_ground_lift": 30
     },
     "gas_station_interior": {
       "title": "废弃加油站内屋",
@@ -268,10 +281,16 @@
       ],
       "spawn_x": 930,
       "npc_x": [
-        670,
-        1330,
-        1670,
-        2010
+        590,
+        1280,
+        1820,
+        2080,
+        720,
+        1040,
+        1160,
+        1400,
+        1520,
+        1950
       ],
       "camera_limit_source_canvas_pixels": 24,
       "warm_x": 1820,
@@ -372,10 +391,16 @@
       ],
       "spawn_x": 930,
       "npc_x": [
-        670,
-        1330,
-        1670,
-        2010
+        590,
+        1260,
+        1700,
+        2090,
+        720,
+        1040,
+        1150,
+        1370,
+        1830,
+        1960
       ],
       "camera_limit_source_canvas_pixels": 24,
       "warm_x": 1720,
@@ -424,10 +449,16 @@
       ],
       "spawn_x": 930,
       "npc_x": [
-        670,
-        1330,
-        1670,
-        2010
+        590,
+        1280,
+        1820,
+        2080,
+        720,
+        1040,
+        1160,
+        1400,
+        1520,
+        1950
       ],
       "camera_limit_source_canvas_pixels": 24,
       "warm_x": 1820,
@@ -949,13 +980,16 @@
       ],
       "spawn_x": 740,
       "npc_x": [
-        800,
-        1010,
-        1210,
-        1480,
-        1700,
-        1890,
-        2100
+        500,
+        1050,
+        1720,
+        2100,
+        330,
+        620,
+        880,
+        1530,
+        1910,
+        2290
       ],
       "blockers": [
         [
@@ -2149,7 +2183,8 @@
       ],
       "center_plate_pixels_unchanged": true,
       "image_record": ".docs\\美术\\示例图横版复刻_20261016\\widescreen\\records\\settlement_reception.json",
-      "raw_sha256": "46ea9a98839310b9ffc86aef8a61d239752e671a0c40282b0d5a6967bdc30496"
+      "raw_sha256": "46ea9a98839310b9ffc86aef8a61d239752e671a0c40282b0d5a6967bdc30496",
+      "actor_ground_lift": 30
     },
     "rescue_station_interior": {
       "title": "救援站内部",
@@ -2199,7 +2234,8 @@
       ],
       "center_plate_pixels_unchanged": true,
       "image_record": ".docs\\美术\\示例图横版复刻_20261016\\widescreen\\records\\rescue_station_interior.json",
-      "raw_sha256": "915ff62582582897d4c7c9fbc2a1bfbdfedde3193957d76547d1d51e889d9407"
+      "raw_sha256": "915ff62582582897d4c7c9fbc2a1bfbdfedde3193957d76547d1d51e889d9407",
+      "actor_ground_lift": 30
     },
     "snow_road": {
       "title": "雪地公路",

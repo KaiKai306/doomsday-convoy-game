@@ -13,7 +13,10 @@ const MOUSE = -1
 
 func _ready() -> void:
 	mouse_filter = Control.MOUSE_FILTER_STOP
-	tooltip_text = "左右移动 · A / D" if kind == "joystick" else "靠近队友交谈 · E / 空格"
+	if OS.has_feature("mobile"):
+		tooltip_text = "左右拖动摇杆移动" if kind == "joystick" else "靠近队友后点击手掌交谈"
+	else:
+		tooltip_text = "左右移动 · A / D" if kind == "joystick" else "靠近队友交谈 · E / 空格"
 
 func radius() -> float:
 	return minf(size.x,size.y)*0.5-3

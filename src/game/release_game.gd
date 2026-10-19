@@ -7,6 +7,8 @@ const LOCATIONS = preload("res://src/game/location_catalog.gd")
 const BIOMES = preload("res://src/game/biome_catalog.gd")
 const BACKDROP = preload("res://src/game/location_backdrop.gd")
 const LOADING = preload("res://src/ui/scene_loading.gd")
+const ARCHIVE_SCREEN = preload("res://src/ui/archive_screen.gd")
+const MUSIC = preload("res://src/audio/music_catalog.gd")
 var scene_backdrop
 var scene_caption: Label
 var engine = RULES.new()
@@ -34,9 +36,14 @@ var selected_slot = "front"
 var selected_offer = 0
 var scene_context: Dictionary = {}
 var preview_site = ""
+var developer_location = ""
 var side_stage
 var management_screen
 var loading_screen
+var archive_screen
+var auto_save_enabled = true
+var play_seconds = 0.0
+var last_music_cue = ""
 
 func _ready() -> void:
 	theme = ConvoyTheme.create()
@@ -73,17 +80,86 @@ func _fit() -> void:
 
 func setup(state = null, saved: Dictionary = {}) -> bool:
 	game_state = state
+	var director = get_node_or_null("/root/MusicDirector")
+	if director != null and director.current_cue == "": activate_music()
 	if saved.is_empty(): engine.new_game()
 	elif not engine.restore(saved): return false
 	scene_context = saved.get("presentation",{}).duplicate(true) if saved.get("presentation",{}) is Dictionary else {}
+	_restore_interface(saved)
 	preview_site = ""
-	selected_supply = engine.supply_types()[0]
 	refresh(); _autosave(); return true
 
 func _autosave() -> void:
+	if not auto_save_enabled: return
+	if not save_progress(SAVES.AUTO_SLOT): error_label.text = "自动存档写入失败，请勿退出。"
+
+func _process(delta: float) -> void:
+	if not engine.s.is_empty() and not paused and engine.s.phase != "ending" and not loading_screen.busy:
+		play_seconds += delta
+
+func archive_metadata() -> Dictionary:
+	var location = BIOMES.scene_for(engine.s,"journey",active_card,scene_context)
+	var config = LOCATIONS.config(location)
+	var thumbnail = "res://assets/settings/settings_background.png"
+	# Prefer the production atlas already shipped for this location. Legacy
+	# biome full images are source previews deliberately excluded from APKs.
+	for path in ["res://assets/locations/atlas_widescreen_20261016/"+location+"/full.jpg",str(config.get("art_root",""))+"full.jpg","res://assets/locations/side_walk_20261016/"+location+"/full.jpg","res://assets/locations/"+location+"/source.png"]:
+		if path.begins_with("res://assets/") and ResourceLoader.exists(path): thumbnail = path; break
+	return {"play_seconds":play_seconds,"location":location,"location_title":str(config.get("title","荒野旅途")),"thumbnail":thumbnail,"note":"车队 %d 人，已行进 %.0f 千米。%s。" % [engine.people().size(),engine.s.distance,SAVES.PHASE_NAMES.get(engine.s.phase,"旅程继续")]}
+
+func progress_payload() -> Dictionary:
 	var payload = engine.checkpoint()
 	payload.presentation = scene_context.duplicate(true)
-	if not save_system.save_payload(payload): error_label.text = "自动存档写入失败，请勿退出。"
+	payload.interface = {"view":view,"active_card":active_card,"selected_target":selected_target,"selected_role":selected_role,"selected_faction":selected_faction,"selected_vehicle":selected_vehicle,"selected_slot":selected_slot,"route":route,"style":style,"selected_supply":selected_supply}
+	return payload
+
+func save_progress(slot: String,note: String = "") -> bool:
+	var payload = progress_payload()
+	var metadata = archive_metadata()
+	if note != "": metadata.note = note.left(240)
+	return save_system.save_payload(payload,slot,metadata)
+
+func _restore_interface(saved: Dictionary) -> void:
+	var info: Dictionary = saved.get("save_info",{}) if saved.get("save_info") is Dictionary else {}
+	play_seconds = maxf(0,float(info.get("play_seconds",0)))
+	var ui: Dictionary = saved.get("interface",{}) if saved.get("interface") is Dictionary else {}
+	view = str(ui.get("view","journey"))
+	if view not in ["journey","route_map","card","team","inventory","equipment","knowledge","factions","goals","log"]: view = "journey"
+	active_card = str(ui.get("active_card",""))
+	if view == "card" and not engine.content.cards.has(active_card): view = "journey"
+	selected_target = str(ui.get("selected_target","captain"))
+	if engine.person(selected_target).is_empty(): selected_target = str(engine.s.members[0].id)
+	selected_role = str(ui.get("selected_role","repair")); selected_faction = str(ui.get("selected_faction","east"))
+	if not engine.BOOKS.has(selected_role): selected_role = "repair"
+	if selected_faction not in ["east","south","guild"]: selected_faction = "east"
+	selected_vehicle = clampi(int(ui.get("selected_vehicle",0)),0,maxi(0,engine.s.vehicles.size()-1))
+	selected_slot = str(ui.get("selected_slot","front"))
+	if not engine.SLOTS.has(selected_slot): selected_slot = "front"
+	route = str(ui.get("route",engine.s.daily.get("route","resource"))); style = str(ui.get("style","quiet"))
+	if route not in ["safe","resource","unknown","stay"]: route = "resource"
+	if style not in ["quiet","fast","detour"]: style = "quiet"
+	selected_supply = str(ui.get("selected_supply",engine.supply_types()[0]))
+	if selected_supply not in engine.supply_types(): selected_supply = engine.supply_types()[0]
+
+func _open_archive() -> void:
+	if loading_screen.busy or confirmation.visible: return
+	if not paused: paused = true; refresh()
+	if not is_instance_valid(archive_screen):
+		archive_screen = ARCHIVE_SCREEN.new(); archive_screen.feedback = preload("res://src/ui/convoy_skin.gd").feedback_for(self)
+		add_child(archive_screen)
+		archive_screen.closed.connect(func(): refresh())
+		archive_screen.load_requested.connect(_load_archive)
+	archive_screen.move_to_front()
+	archive_screen.open_screen(save_system,self)
+
+func _load_archive(payload: Dictionary) -> void:
+	if not engine.restore(payload):
+		archive_screen.show(); archive_screen.notice = "存档无法恢复："+engine.error; archive_screen._render(); return
+	scene_context = payload.get("presentation",{}).duplicate(true) if payload.get("presentation") is Dictionary else {}
+	_restore_interface(payload); preview_site = ""; paused = false; pending_command.clear()
+	if is_instance_valid(side_stage): side_stage.last_phase = ""; side_stage.forced = false
+	if is_instance_valid(management_screen): management_screen.modal_kind = ""
+	_autosave(); refresh()
 
 func _button(label: String, action: String, args: Dictionary = {}, irreversible: bool = false) -> void:
 	var b = Button.new(); b.text = label; b.custom_minimum_size = Vector2(590,48); b.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART; b.alignment = HORIZONTAL_ALIGNMENT_LEFT
@@ -110,20 +186,22 @@ func _confirm() -> void:
 
 func _run(action: String, args: Dictionary) -> void:
 	if engine.command(action,args):
+		developer_location = ""
 		preview_site = ""
 		if action in ["next","retry","depart","begin_camp","visit","walk"]: scene_context.clear()
 		if action == "acquire": _remember_site(BIOMES.fixed_site(str(args.get("location",""))))
 		if action == "card" and str(args.get("id","")) == "V05" and int(args.get("option",-1)) == 0: _remember_site(BIOMES.site_in_region("fuel_depot",engine.s))
 		if action == "next": route = str(engine.s.daily.route)
 		if action == "retry": paused = false; view = "journey"
-		error_label.text = "已自动保存"; _autosave()
 		if action in ["card","next","retry","rescue","rescue_seat","goal","depart","begin_camp","settle"]: view = "journey"
+		error_label.text = "已自动保存" if auto_save_enabled else ""; _autosave()
 	else: error_label.text = engine.error
 	refresh()
 
 func refresh() -> void:
 	if engine.s.is_empty() or not is_instance_valid(choices): return
 	var location = preview_site if view == "site_preview" else BIOMES.scene_for(engine.s,view,active_card,scene_context)
+	if developer_location != "": location = developer_location
 	var target = side_stage.presentation_location() if is_instance_valid(side_stage) and side_stage.should_show() else location
 	if paused and loading_screen.loaded_location != "": target = loading_screen.loaded_location
 	if _load_location(target,refresh,location): return
@@ -158,6 +236,11 @@ func _refresh_now(location: String) -> void:
 func _journey_view() -> void:
 	var s = engine.s
 	information.text = "[b]今天的计划[/b]\n"+_day_description()+"\n\n目前位置："+str(scene_backdrop.config.get("title",s.position))+"\n信任%d / 好感%.1f / 知识%d / 制度%d\n妹妹状态：%s\n%s" % [engine.trust(),engine.affection(),s.knowledge,s.institution,_sister_status(),PROSE.journal(s.daily.log.slice(maxi(0,s.daily.log.size()-8)))]+_story_text()
+	if engine.fixed_recruitment_pending():
+		var recruitment_hint = "[b]固定招募尚未回应[/b]\n今天两项主要事务中的一项已留给本次招募。请先选择一名候选或点「都不招募」，再安排其他停歇事务。"
+		if s.daily.tasks >= 2: recruitment_hint += "\n你已用完两项主要事务，现在直接点「都不招募」即可完成回应。"
+		else: recruitment_hint += "\n回应前只能先完成一项其他事务。"
+		information.text = recruitment_hint+"\n\n"+information.text
 	if s.phase in ["morning","rescue","rescue_seats"]: _local("查看现场，靠近队友交谈",_open_side_stage)
 	match s.phase:
 		"morning":
@@ -406,10 +489,12 @@ func _pause() -> void:
 func _pause_choices() -> void:
 	information.text = "[b]已暂停[/b]\n继续旅程读取当前进度；重试还原当天晨间快照，并撤销今天全部收益、伤亡、招募和随机结果。以前日期的历史保留。"
 	_local("继续",func(): paused = false; refresh())
+	_local("保存 / 读取",_open_archive)
 	_button("重试当天：撤销今天全部进度并更换随机种子","retry",{},true)
 	_local("返回主菜单",func(): _autosave(); return_to_menu.emit())
 
 func _unhandled_key_input(event: InputEvent) -> void:
+	if is_instance_valid(archive_screen) and archive_screen.visible: return
 	if loading_screen.busy: return
 	if event.is_action_pressed("ui_cancel"):
 		if confirmation.visible: confirmation.hide()
@@ -453,6 +538,37 @@ func _sync_side_stage() -> void:
 		management_screen = load("res://src/game/management_screen.gd").new(); management_screen.name = "ConvoyManagement"; management_screen.host = self; add_child(management_screen)
 		side_stage.visibility_changed.connect(func(): if is_instance_valid(management_screen): management_screen.sync())
 	management_screen.sync()
+	_sync_music()
+
+func activate_music() -> void:
+	var director = get_node_or_null("/root/MusicDirector")
+	if director == null: return
+	director.activate(self)
+	if last_music_cue != "": director.request(self,last_music_cue)
+	_sync_music()
+
+func _sync_music(location: String = "") -> void:
+	var director = get_node_or_null("/root/MusicDirector")
+	if director == null or not director.is_owner(self) or engine.s.is_empty(): return
+	# Overlays and loading covers keep the last audible scene until the real
+	# presentation has been assembled. Inactive developer hosts cannot claim it.
+	if paused or loading_screen.busy and not loading_screen.applying: return
+	if location == "":
+		if is_instance_valid(side_stage) and side_stage.visible:
+			location = side_stage.current_location
+		else:
+			location = preview_site if view == "site_preview" else BIOMES.scene_for(engine.s,view,active_card,scene_context)
+			if developer_location != "": location = developer_location
+	if developer_location != "":
+		# The explicit art browser previews the selected place independently
+		# of the suspended story's ending, event, route plan or lost vehicles.
+		var preview_state = engine.s.duplicate()
+		preview_state.phase = "preview"
+		preview_state.erase("vehicles")
+		last_music_cue = MUSIC.cue_for(location,preview_state,"journey")
+	else:
+		last_music_cue = MUSIC.cue_for(location,engine.s,view,active_card)
+	director.request(self,last_music_cue)
 
 func _open_side_stage() -> void:
 	_sync_side_stage(); side_stage.forced = true; side_stage.last_phase = str(engine.s.phase); view = "journey"; side_stage.mode = "explore"; side_stage.sync()

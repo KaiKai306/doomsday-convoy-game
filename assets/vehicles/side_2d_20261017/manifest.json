@@ -1,0 +1,383 @@
+{
+  "source": "local ComfyUI Qwen Image 2.1; approved V01_left sample reused",
+  "green_screen": "original RGB green-screen sources retained under .docs/美术/车辆侧面制作_20261017/原生绿幕",
+  "alpha_method": "sprite-gen cutout --key green --decontam auto; ground-stroke cleanup outside wheel contact zones",
+  "vehicles": [
+    {
+      "id": "V01",
+      "name": "旧皮卡",
+      "facing": "left",
+      "file": "V01_left.png",
+      "source": ".docs/美术/车辆侧面制作_20261017/原生绿幕/V01_left.png",
+      "source_sha256": "c0ee2309bd29412eb3212536189f8b291ff22d840228403ecdc4b504b8d2821c",
+      "size": [
+        1152,
+        640
+      ],
+      "ground_y": 533,
+      "wheel_x": [
+        0.225,
+        0.74
+      ],
+      "cleaned_ground_line_rows": [
+        529,
+        530,
+        531,
+        532,
+        533
+      ],
+      "file_sha256": "93a2b3429983e2a0306626785176b52d9efced0e2e38daa87be1e139641fed72"
+    },
+    {
+      "id": "V01",
+      "name": "旧皮卡",
+      "facing": "right",
+      "file": "V01_right.png",
+      "source": ".docs/美术/车辆侧面制作_20261017/原生绿幕/V01_right.png",
+      "source_sha256": "8819d747f2029c8c05fea2e7a3dc92d7a1eacff9c82fda43fd585a2492a2b13d",
+      "size": [
+        1152,
+        640
+      ],
+      "ground_y": 538,
+      "wheel_x": [
+        0.22,
+        0.785
+      ],
+      "cleaned_ground_line_rows": [],
+      "file_sha256": "75b82fe090717b2ddb82745033a18095569fbe6104c065b28a1ef3bf72a9cb20"
+    },
+    {
+      "id": "V02",
+      "name": "银色轿车",
+      "facing": "left",
+      "file": "V02_left.png",
+      "source": ".docs/美术/车辆侧面制作_20261017/原生绿幕/V02_left.png",
+      "source_sha256": "b92a1e184153cdb8fd0cd2a937d330dd763f159ee1c10e5d1a2ab5e6951d0ef4",
+      "size": [
+        1152,
+        640
+      ],
+      "ground_y": 536,
+      "wheel_x": [
+        0.22,
+        0.745
+      ],
+      "cleaned_ground_line_rows": [],
+      "file_sha256": "d8ee2eb4379756de82bcfb9da094a068039540f9f36336d732bf57f6fa2392d3"
+    },
+    {
+      "id": "V02",
+      "name": "银色轿车",
+      "facing": "right",
+      "file": "V02_right.png",
+      "source": ".docs/美术/车辆侧面制作_20261017/原生绿幕/V02_right.png",
+      "source_sha256": "ba764a324f515c93463ef01e2593fd2da6e4556f6482060eade800f4d6a56c98",
+      "size": [
+        1152,
+        640
+      ],
+      "ground_y": 528,
+      "wheel_x": [
+        0.245,
+        0.77
+      ],
+      "cleaned_ground_line_rows": [
+        525,
+        526,
+        527,
+        528
+      ],
+      "file_sha256": "0168c0f7db0e965be339878645ab944691d05d0838cb2bd5c996b8fe15b9cf91"
+    },
+    {
+      "id": "V03",
+      "name": "旧式轿车",
+      "facing": "left",
+      "file": "V03_left.png",
+      "source": ".docs/美术/车辆侧面制作_20261017/原生绿幕/V03_left.png",
+      "source_sha256": "44ed458082a39682dc57254e7e8926293ed9cacdb71b18fb98de42c049e67194",
+      "size": [
+        1152,
+        640
+      ],
+      "ground_y": 555,
+      "wheel_x": [
+        0.245,
+        0.75
+      ],
+      "cleaned_ground_line_rows": [
+        548,
+        549,
+        550,
+        551,
+        552,
+        553,
+        554,
+        555,
+        556
+      ],
+      "file_sha256": "93ef5f25bb50c57ce06c969ab08208fe9710990345a2bf4cfb2dbf63577457f7"
+    },
+    {
+      "id": "V03",
+      "name": "旧式轿车",
+      "facing": "right",
+      "file": "V03_right.png",
+      "source": ".docs/美术/车辆侧面制作_20261017/原生绿幕/V03_right.png",
+      "source_sha256": "9f0942e49ff40bbb538082b57aab591e20ee2de1723eda08b8fb6f1527d0d188",
+      "size": [
+        1152,
+        640
+      ],
+      "ground_y": 548,
+      "wheel_x": [
+        0.245,
+        0.745
+      ],
+      "cleaned_ground_line_rows": [],
+      "file_sha256": "45d644fe992473e8f7b76b76524bea468f4f2a9021c7d47ec4a5bc2e99b82d73"
+    },
+    {
+      "id": "V04",
+      "name": "旅行面包车",
+      "facing": "left",
+      "file": "V04_left.png",
+      "source": ".docs/美术/车辆侧面制作_20261017/原生绿幕/V04_left.png",
+      "source_sha256": "23876e8d6652efa7aea74d640e86f3daef1743961609533485cc24edd755f90d",
+      "size": [
+        1152,
+        640
+      ],
+      "ground_y": 536,
+      "wheel_x": [
+        0.235,
+        0.755
+      ],
+      "cleaned_ground_line_rows": [],
+      "file_sha256": "ef4730610eb5ff088b2e302927887fc136e82955f11636a9fd1335130a13c1ba"
+    },
+    {
+      "id": "V04",
+      "name": "旅行面包车",
+      "facing": "right",
+      "file": "V04_right.png",
+      "source": ".docs/美术/车辆侧面制作_20261017/原生绿幕/V04_right.png",
+      "source_sha256": "7f1ff00401a56a07232d102095abc546489fedfa9aec4fd440af73fa7d050782",
+      "size": [
+        1152,
+        640
+      ],
+      "ground_y": 526,
+      "wheel_x": [
+        0.235,
+        0.755
+      ],
+      "cleaned_ground_line_rows": [
+        524,
+        525,
+        526,
+        527
+      ],
+      "file_sha256": "e3206470757630cedfd0f29364f077f2c40438ac6979c6c9280a062c84ec81d9"
+    },
+    {
+      "id": "V05",
+      "name": "深灰越野车",
+      "facing": "left",
+      "file": "V05_left.png",
+      "source": ".docs/美术/车辆侧面制作_20261017/原生绿幕/V05_left.png",
+      "source_sha256": "700086a690d6ad471b5af92e8b9894d2a3ef7417fdc2920cae87eee4607cd999",
+      "size": [
+        1152,
+        640
+      ],
+      "ground_y": 554,
+      "wheel_x": [
+        0.245,
+        0.745
+      ],
+      "cleaned_ground_line_rows": [
+        545,
+        546,
+        547,
+        548,
+        549,
+        550,
+        551,
+        552,
+        553,
+        554,
+        555
+      ],
+      "file_sha256": "b84bd24065ea8e75d0a85e35da6119a4652f4f0a9f3fdeb49d28685647e6ad5b"
+    },
+    {
+      "id": "V05",
+      "name": "深灰越野车",
+      "facing": "right",
+      "file": "V05_right.png",
+      "source": ".docs/美术/车辆侧面制作_20261017/原生绿幕/V05_right.png",
+      "source_sha256": "f6c4bc2b8f9d6211273a7dfd6412031a40d92ff4e148dba9cd0b5ea690051f8d",
+      "size": [
+        1152,
+        640
+      ],
+      "ground_y": 535,
+      "wheel_x": [
+        0.245,
+        0.755
+      ],
+      "cleaned_ground_line_rows": [
+        531,
+        532,
+        533,
+        534,
+        535,
+        536
+      ],
+      "file_sha256": "11687a549d38af0f0fc1a22b6b002ea22b191fef163275e3b8d4c03e0bb8a723"
+    },
+    {
+      "id": "V06",
+      "name": "深色面包车",
+      "facing": "left",
+      "file": "V06_left.png",
+      "source": ".docs/美术/车辆侧面制作_20261017/原生绿幕/V06_left.png",
+      "source_sha256": "3aba655d2d23bc7a2cf08176fb85eec52218388ef23a6e4f13602a6722b58049",
+      "size": [
+        1152,
+        640
+      ],
+      "ground_y": 543,
+      "wheel_x": [
+        0.245,
+        0.745
+      ],
+      "cleaned_ground_line_rows": [
+        541,
+        542,
+        543,
+        544
+      ],
+      "file_sha256": "c4d1db5181948c769515fbddd94e34396bebf3cfdd06c4310f5a6c8b7bbf03e4"
+    },
+    {
+      "id": "V06",
+      "name": "深色面包车",
+      "facing": "right",
+      "file": "V06_right.png",
+      "source": ".docs/美术/车辆侧面制作_20261017/原生绿幕/V06_right.png",
+      "source_sha256": "5ba7c57ec5883e6faee6e0c507160b3e2df21debc3cedd5d3a39ac9173cd3f82",
+      "size": [
+        1152,
+        640
+      ],
+      "ground_y": 559,
+      "wheel_x": [
+        0.255,
+        0.75
+      ],
+      "cleaned_ground_line_rows": [
+        556,
+        557,
+        558,
+        559
+      ],
+      "file_sha256": "32cb900a567da95bacdfefe9e0cd4d3ba8dcc7dd78af1f77a362076185ed43a8"
+    },
+    {
+      "id": "V07",
+      "name": "厢式货车",
+      "facing": "left",
+      "file": "V07_left.png",
+      "source": ".docs/美术/车辆侧面制作_20261017/原生绿幕/V07_left.png",
+      "source_sha256": "f135930b3930deb03c5afac224e29a05e452ebae05b4abd3ef2469d104a799e2",
+      "size": [
+        1152,
+        640
+      ],
+      "ground_y": 539,
+      "wheel_x": [
+        0.27,
+        0.745
+      ],
+      "cleaned_ground_line_rows": [
+        534,
+        535,
+        536,
+        537,
+        538,
+        539
+      ],
+      "file_sha256": "408c808c7d5eb3258202a6b009341c73c19cfc5f9acc7d2b87f4207ef25942b0"
+    },
+    {
+      "id": "V07",
+      "name": "厢式货车",
+      "facing": "right",
+      "file": "V07_right.png",
+      "source": ".docs/美术/车辆侧面制作_20261017/原生绿幕/V07_right.png",
+      "source_sha256": "7ffb43c2def8d438e5fa8e2d69ece3364745a5f97923fa98edc114f141a4b4e8",
+      "size": [
+        1152,
+        640
+      ],
+      "ground_y": 550,
+      "wheel_x": [
+        0.27,
+        0.745
+      ],
+      "cleaned_ground_line_rows": [
+        546,
+        547,
+        548,
+        549
+      ],
+      "file_sha256": "ad3eb4ef96e53e904a2636926f531dfe929da9457627f1dcfb08e6faae970c52"
+    },
+    {
+      "id": "V08",
+      "name": "沙色越野车",
+      "facing": "left",
+      "file": "V08_left.png",
+      "source": ".docs/美术/车辆侧面制作_20261017/原生绿幕/V08_left.png",
+      "source_sha256": "22b6d38eee4e01e4c3fbef166c4cb80e01481a52ca2475c13a9132c3f838040c",
+      "size": [
+        1152,
+        640
+      ],
+      "ground_y": 565,
+      "wheel_x": [
+        0.225,
+        0.75
+      ],
+      "cleaned_ground_line_rows": [],
+      "file_sha256": "b35961820dfeddce7ff7dc073f239bc7bf13f9b41334610c083d1cfb846bdc78"
+    },
+    {
+      "id": "V08",
+      "name": "沙色越野车",
+      "facing": "right",
+      "file": "V08_right.png",
+      "source": ".docs/美术/车辆侧面制作_20261017/原生绿幕/V08_right.png",
+      "source_sha256": "5c7fd1e2244badf19b91973b3fefe87f6cca7aac6dd236f1dd3c88144147ee96",
+      "size": [
+        1152,
+        640
+      ],
+      "ground_y": 561,
+      "wheel_x": [
+        0.26,
+        0.775
+      ],
+      "cleaned_ground_line_rows": [
+        559,
+        560,
+        561,
+        562
+      ],
+      "file_sha256": "5ed244f07e481934562c75450c6619e26411b5b9233457a5c7692578206e6c51"
+    }
+  ]
+}

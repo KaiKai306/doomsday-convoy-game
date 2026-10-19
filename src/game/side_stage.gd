@@ -8,6 +8,8 @@ const ICON = preload("res://src/ui/reference_icon.gd")
 const BIOMES = preload("res://src/game/biome_catalog.gd")
 const PROSE = preload("res://src/game/presentation.gd")
 const MOBILE = preload("res://src/ui/mobile_layout.gd")
+const RESOURCE_HUD = preload("res://src/ui/resource_hud.gd")
+const TOUCH_TEXT = preload("res://src/ui/touch_rich_text.gd")
 const DESIGN = Vector2(1680,720)
 const TRADE_CARDS = ["R01","N-F09","N-C01","C16","C17","C18","C19","C20"]
 var host
@@ -41,6 +43,7 @@ func should_show() -> bool:
 	return not host.paused and host.view in ["journey","card"] and (host.engine.s.phase in ["morning","stop","camp","camp_event"] or forced)
 
 func presentation_location() -> String:
+	if host.developer_location != "": return host.developer_location
 	var s = host.engine.s
 	if last_phase == str(s.phase):
 		if meeting == "tent" and s.phase in ["stop","camp"]: return "camp_interior"
@@ -69,6 +72,7 @@ func sync() -> void:
 	walk.set_process_unhandled_key_input(true)
 	if mode == "action": host._stage_action_controls(action_kind)
 	_render()
+	host._sync_music(location)
 
 func _ensure_walk(location: String) -> void:
 	var live_ids: Array = host.engine.people().map(func(m): return m.id)
@@ -135,7 +139,7 @@ func _label(parent: Node, text: String, point: Vector2, dimensions: Vector2, fon
 	return label
 
 func _rich(parent: Node, text: String, point: Vector2, dimensions: Vector2, font_size: int = 18) -> RichTextLabel:
-	var label = RichTextLabel.new(); label.bbcode_enabled = true; label.text = text; label.position = point; label.size = dimensions; label.add_theme_font_size_override("normal_font_size",font_size); parent.add_child(label); return label
+	var label = TOUCH_TEXT.new(); label.bbcode_enabled = true; label.text = text; label.position = point; label.size = dimensions; label.add_theme_font_size_override("normal_font_size",font_size); label.add_theme_color_override("default_color",SKIN.TEXT); parent.add_child(label); return label
 
 func _style(color: Color, border: Color) -> StyleBoxFlat:
 	var box = StyleBoxFlat.new(); box.bg_color = color; box.border_color = border; box.set_border_width_all(1); box.corner_detail = 1; box.set_corner_radius_all(8); box.content_margin_left = 16; box.content_margin_right = 16; box.content_margin_top = 6; box.content_margin_bottom = 6; return box
@@ -152,7 +156,7 @@ func _header() -> void:
 	var s = host.engine.s
 	var title = str(walk.backdrop.config.get("title",current_location))
 	_label(overlay,"第 %d 天  ·  %s" % [s.day,title],Vector2(32,19),Vector2(700,32),22)
-	_label(overlay,host.engine.cost_text(s.resources),Vector2(33,53),Vector2(1000,28),16,Color("bbcbd6"))
+	var supplies = RESOURCE_HUD.new(); supplies.position = Vector2(32,53); overlay.add_child(supplies); supplies.display(s.resources)
 	_button(overlay,"今日安排",Vector2(1075,20),Vector2(130,40),func(): host.view = "journey"; mode = "drawer"; host.refresh())
 	_button(overlay,"车队",Vector2(1218,20),Vector2(110,40),func(): host.view = "team"; host.refresh())
 	_button(overlay,"暂停",Vector2(1341,20),Vector2(110,40),host._pause)
@@ -178,7 +182,7 @@ func open_card(id: String, owner: String = "") -> void:
 	host.active_card = id; host.view = "card"; host.refresh()
 
 func _portrait(parent: Node, id: String, point: Vector2, dimensions: Vector2) -> void:
-	var key = {"captain":"captain","zhang":"mechanic","elin":"medic","ajie":"scout","sofia":"quartermaster"}.get(id,"")
+	var key = {"captain":"captain","zhang":"mechanic","elin":"medic","ajie":"scout","sofia":"quartermaster","xuning":"xuning","chenchuan":"chenchuan","duheng":"duheng","linyue":"linyue","cenbai":"cenbai","sister":"sister"}.get(id,"")
 	if key == "": return
 	var picture = TextureRect.new(); picture.expand_mode = TextureRect.EXPAND_IGNORE_SIZE; picture.texture = load("res://assets/ui/status_overview/%s.png" % key); picture.position = point; picture.size = dimensions; picture.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED; picture.clip_contents = true; picture.mouse_filter = Control.MOUSE_FILTER_IGNORE; parent.add_child(picture)
 	picture.set_meta("atlas_portrait",true)
@@ -327,10 +331,19 @@ func _matches(button: Button, kind: String) -> bool:
 
 func _drawer() -> void:
 	var panel = _panel(overlay,Vector2(440,96),Vector2(800,570),true)
+	panel.name = "TodayActions"
 	_label(panel,"今日安排",Vector2(24,14),Vector2(750,35),26)
-	_rich(panel,host.information.text,Vector2(24,56),Vector2(750,110),17)
-	var scroll = ScrollContainer.new(); scroll.position = Vector2(22,179); scroll.size = Vector2(756,369); panel.add_child(scroll)
+	var scroll = ScrollContainer.new(); scroll.position = Vector2(22,65); scroll.size = Vector2(756,483); scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED; panel.add_child(scroll)
 	var list = VBoxContainer.new(); list.size_flags_horizontal = Control.SIZE_EXPAND_FILL; list.add_theme_constant_override("separation",8); scroll.add_child(list); _forward_choices(list)
+	var reading = _panel(overlay,Vector2(1260,96),Vector2(384,570),true)
+	reading.name = "TodayReading"; reading.fill.a = 0.92; reading.shape = SKIN.FRAME.Shape.KRANOX
+	_label(reading,"行程说明",Vector2(24,14),Vector2(336,35),26)
+	var prose = _rich(reading,host.information.text,Vector2(24,65),Vector2(336,449),21)
+	prose.name = "TodayProse"
+	var hint = _label(reading,"在文字区域上下滑动",Vector2(24,526),Vector2(336,24),16,SKIN.GOLD)
+	# A hint is useful only when there is more text beyond the reading area.
+	prose.get_v_scroll_bar().changed.connect(func(): hint.visible = prose.get_v_scroll_bar().max_value > prose.get_v_scroll_bar().page)
+	hint.visible = false
 
 func back() -> void:
 	if mode != "explore":

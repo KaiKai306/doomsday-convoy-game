@@ -46,5 +46,6 @@
   ],
   "center_plate_pixels_unchanged": true,
   "image_record": ".docs\\美术\\示例图横版复刻_20261016\\widescreen\\records\\rescue_station_interior.json",
-  "raw_sha256": "915ff62582582897d4c7c9fbc2a1bfbdfedde3193957d76547d1d51e889d9407"
+  "raw_sha256": "915ff62582582897d4c7c9fbc2a1bfbdfedde3193957d76547d1d51e889d9407",
+  "actor_ground_lift": 30
 }

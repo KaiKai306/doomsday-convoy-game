@@ -24,7 +24,7 @@ const TAB_NAMES := ["声音", "画面", "操作", "通用"]
 const TAB_DESCRIPTIONS := ["调整旅途中的声音层次", "让荒野清晰，也让旅途流畅", "找到适合你的触控方式", "按自己的习惯继续旅程"]
 
 # Selections stay in memory. Audio preferences, background animation and panel
-# opacity work at runtime; other controls await integration with game systems.
+# opacity and automatic saving work at runtime; other controls await integration.
 var values: Dictionary = DEFAULTS.duplicate()
 var selected_tab := 0
 var video: VideoStreamPlayer
@@ -102,7 +102,7 @@ func _ready() -> void:
 	_rect(Vector2(65, 639), Vector2(846, 1), Color(0.75, 0.58, 0.37, 0.22))
 	_button("恢复默认", Vector2(284, 657), Vector2(150, 46), _restore_defaults)
 	_button("返回旅途  →", Vector2(738, 653), Vector2(180, 50), _close_animated, true)
-	_label(self, "二十日框架版  /  0.6", Vector2(67, 668), Vector2(175, 22), 11, MUTED)
+	_label(self, "版本 %s" % str(ProjectSettings.get_setting("application/config/version", "0.6.0")), Vector2(67, 668), Vector2(175, 22), 11, MUTED)
 	_label(self, "篝火未熄，旅途继续。", Vector2(980, 658), Vector2(235, 25), 13, Color("#c7b299"))
 	_select_tab(0)
 	resized.connect(_fit); _fit()
@@ -240,7 +240,7 @@ func _select_tab(index: int) -> void:
 			_segments("language", "语言", "界面与剧情文字", ["简体中文"], 0)
 			_segments("text_size", "文字大小", "调整剧情与对话的阅读字号", ["标准", "较大", "最大"], 78)
 			_toggle("subtitles", "剧情字幕", "显示对话与重要声音提示", 156)
-			_toggle("auto_save", "自动存档", "在每日结算后记录旅途", 234)
+			_toggle("auto_save", "自动存档", "行动后自动记录最近的旅途", 234)
 	if visible: feedback.enter(content, Vector2(0, 7))
 
 func _row_labels(title: String, detail: String, y: float) -> void:

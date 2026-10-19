@@ -1,6 +1,7 @@
 extends Control
 const CATALOG = preload("res://src/game/location_catalog.gd")
 const BACKDROP = preload("res://src/game/walk_backdrop.gd")
+const SIDE_VEHICLE_2D = preload("res://src/game/vehicle_side_2d.gd")
 const CONTROLS = preload("res://src/game/walk_controls.gd")
 const SKIN = preload("res://src/ui/convoy_skin.gd")
 const MOBILE = preload("res://src/ui/mobile_layout.gd")
@@ -8,8 +9,17 @@ const ACTOR_LIGHT = preload("res://src/game/walk_actor.gdshader")
 const CAPTAIN_WALK = preload("res://assets/characters/captain/walk.tres")
 const CAPTAIN_IDLE = preload("res://assets/characters/captain/idle.tres")
 const NPC_ROOT = "res://assets/characters/side_walk_20261016/"
+const ACTIVITY_LAYOUT = preload("res://src/game/member_activity_layout.gd")
+const ACTIVITY_SPRITE = preload("res://src/game/member_activity_sprite.gd")
 const CAPTAIN_HEIGHT = 190.0
 const NPC_HEIGHT = 166.0
+## The art's walk line sits on the foreground seam in a few scenes. Only the
+## scenes whose walk config sets "actor_ground_lift" lift the visible actors
+## (and their ground rings) onto the painted floor above that seam.
+const DEFAULT_ACTOR_GROUND_LIFT = 0.0
+## Large interior stages need taller actors; a scene can override this with
+## "actor_scale" in its walk config. 1.0 keeps the original outdoor proportion.
+const DEFAULT_ACTOR_SCALE = 1.0
 signal interacted(member_id: String)
 signal entrance_used
 signal closed
@@ -34,6 +44,10 @@ var talk
 var window_focused = true
 var atlas_mode = false
 var input_locked = false
+var developer_show_guides = false
+var developer_freeze_parallax = false
+var actor_ground_lift = DEFAULT_ACTOR_GROUND_LIFT
+var actor_scale = DEFAULT_ACTOR_SCALE
 var design_size = Vector2(1280,720)
 var focused_member = ""
 var exploration_x = 0.0
@@ -50,27 +64,51 @@ func _ready() -> void:
 	content = Control.new(); content.size = design_size; content.mouse_filter = Control.MOUSE_FILTER_IGNORE; add_child(content)
 	hud = Control.new(); hud.name = "SafeTouchControls"; hud.size = design_size; hud.mouse_filter = Control.MOUSE_FILTER_IGNORE; add_child(hud)
 	backdrop = BACKDROP.new(); backdrop.size = design_size; backdrop.canvas_size = design_size; backdrop.full_map = atlas_mode; content.add_child(backdrop); backdrop.display(location_id,vehicles)
+	# Production mounting is gated by a user-confirmed, scene-specific placement
+	# and an unchanged asset fingerprint. Unreviewed vehicles remain absent.
+	SIDE_VEHICLE_2D.apply_convoy(backdrop,vehicles)
+	actor_ground_lift = float(backdrop.config.get("actor_ground_lift",DEFAULT_ACTOR_GROUND_LIFT))
+	actor_scale = maxf(0.25,float(backdrop.config.get("actor_scale",DEFAULT_ACTOR_SCALE)))
 	walk_path = backdrop.config.get("walk_path",[])
-	player_x = backdrop.source_to_view(CATALOG.foot_at(walk_path,float(backdrop.config.get("spawn_x",610)))).x; destination = player_x
+	var activity_variant = "atlas" if atlas_mode else "legacy"
+	var spawn = ACTIVITY_LAYOUT.spawn_x(location_id,backdrop.source_size.x,float(backdrop.config.get("spawn_x",610)),activity_variant)
+	player_x = backdrop.source_to_view(CATALOG.foot_at(walk_path,spawn)).x; destination = player_x
 	backdrop.actor_layer.draw.connect(_draw_actors)
 	captain_sprite = AnimatedSprite2D.new(); captain_sprite.name = "CaptainAnimation"
-	captain_sprite.offset = Vector2(0,-241.5); captain_sprite.scale = Vector2.ONE*(CAPTAIN_HEIGHT/483.0)
+	captain_sprite.offset = Vector2(0,-241.5); captain_sprite.scale = Vector2.ONE*(CAPTAIN_HEIGHT*actor_scale/483.0)
 	captain_sprite.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
 	captain_sprite.material = _material(); backdrop.actor_layer.add_child(captain_sprite)
 	var present = members.filter(func(m): return m.id != "captain")
+	var activities = ACTIVITY_LAYOUT.arrange(present,location_id,backdrop.source_size.x,activity_variant)
+	var positions: Array = backdrop.config.get("npc_x",[350,1010,1350,1690])
+	var member_positions = allocate_member_positions(present,positions,activities,walk_path,spawn)
 	for index in present.size():
-		var m = present[index]; var positions: Array = backdrop.config.get("npc_x",[350,1010,1350,1690])
-		var x = float(positions[index]) if present.size() <= positions.size() else lerpf(float(walk_path[0][0])+105,float(walk_path[-1][0])-103,float(index)/maxi(1,present.size()-1))
-		var sprite = Sprite2D.new(); sprite.name = "Member_"+str(m.id)
+		var m = present[index]
+		var x = float(member_positions[str(m.id)])
+		var activity: Dictionary = activities.get(str(m.id),{})
+		var pose: Dictionary = activity.get("pose",{})
+		var depth_scale = clampf(float(activity.get("scale_ratio",1.0)),0.65,1.1)
+		var source_anchor = Vector2.ZERO
+		if activity.has("point"):
+			source_anchor = Vector2(float(activity.point[0]),float(activity.point[1]))
+			x = clampf(source_anchor.x,float(walk_path[0][0]),float(walk_path[-1][0]))
+			if pose.get("kind","") == "seated":
+				var floor_point = Vector2(source_anchor.x,float(activity.floor_y))
+				pose.seat_to_sole = backdrop.source_to_view(floor_point).y-backdrop.source_to_view(source_anchor).y
+				# High beds/crates must not enlarge an adult just to reach the floor.
+				# The pelvis stays on the furniture while the shoes may hang freely.
+				pose.max_body_height = NPC_HEIGHT*actor_scale*0.84*depth_scale
+		var sprite = ACTIVITY_SPRITE.new(); sprite.name = "Member_"+str(m.id)
 		var art_id = _art_id(m)
-		var path = NPC_ROOT+art_id+".png"
-		if ResourceLoader.exists(path):
-			sprite.texture = load(path); sprite.centered = false
-			sprite.scale = Vector2.ONE*(NPC_HEIGHT/sprite.texture.get_height())
-			sprite.offset = Vector2(-sprite.texture.get_width()*0.5,-sprite.texture.get_height())
-			sprite.material = _material(); sprite.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
+		sprite.configure(str(m.id),art_id,pose,NPC_HEIGHT*actor_scale*depth_scale)
+		if pose.get("kind","") == "seated" and sprite.kind != "seated" and activity.has("floor_y"):
+			# A missing sitting asset uses the member's standing body on the floor.
+			source_anchor.y = float(activity.floor_y)
+		sprite.material = _material(); sprite.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
 		backdrop.actor_layer.add_child(sprite)
-		npcs.append({"id":m.id,"name":m.name,"source_x":x,"x":backdrop.source_to_view(CATALOG.foot_at(walk_path,x)).x,"sprite":sprite,"art_id":art_id})
+		npcs.append({"id":m.id,"name":m.name,"source_x":x,"x":backdrop.source_to_view(CATALOG.foot_at(walk_path,x)).x,"sprite":sprite,"art_id":art_id,"activity":activity,"source_anchor":source_anchor})
+	_space_interaction_points()
+	# Ground depth determines overlap for the authored work groups.
 	_update_captain(0)
 	var title = Label.new(); title.text = str(backdrop.config.get("title","营地")); title.position = Vector2(34,23); title.add_theme_font_size_override("font_size",23); title.add_theme_constant_override("outline_size",5); title.add_theme_color_override("font_outline_color",Color(0.02,0.03,0.05,0.8)); title.mouse_filter = Control.MOUSE_FILTER_IGNORE; hud.add_child(title)
 	joystick = CONTROLS.new(); joystick.name = "MoveJoystick"; joystick.position = Vector2(40,530); joystick.size = Vector2(148,148)
@@ -78,7 +116,7 @@ func _ready() -> void:
 	talk = CONTROLS.new(); talk.name = "InteractHand"; talk.kind = "hand"; talk.position = Vector2(1110,558); talk.size = Vector2(110,110); talk.pressed.connect(interact); hud.add_child(talk)
 	_label("移动",Vector2(40,683),148,18)
 	talk_caption = _label("交谈",Vector2(1110,683),110,18)
-	hint = _label("A / D 移动 · E / 空格交谈",Vector2(420,678),440,15)
+	hint = _label(_movement_hint(),Vector2(420,678),440,15)
 	hint.modulate = Color(0.78,0.86,0.92,0.65)
 	var back = Button.new(); back.name = "CloseWalk"; back.text = "‹  返回"; back.position = Vector2(1132,23); back.size = Vector2(114,44); back.add_theme_font_size_override("font_size",19)
 	var style = StyleBoxFlat.new(); style.bg_color = Color(0.025,0.045,0.065,0.6); style.set_corner_radius_all(22); style.set_border_width_all(1); style.border_color = Color(0.75,0.84,0.91,0.35)
@@ -90,8 +128,61 @@ func _ready() -> void:
 		title.hide(); back.hide(); hint.position.x = (design_size.x-hint.size.x)*0.5
 	resized.connect(_fit); _fit(); _refresh_actors()
 
+static func allocate_member_positions(present: Array, positions: Array, activities: Dictionary, path: Array, spawn: float) -> Dictionary:
+	var result: Dictionary = {}
+	if path.is_empty(): return result
+	var path_left = float(path[0][0])
+	var path_right = float(path[-1][0])
+	var margin = minf(100.0,(path_right-path_left)*0.1)
+	var left = path_left+margin
+	var right = path_right-margin
+	# Source-space edges reserve room for the body. The captain's initial
+	# position is occupied even though the captain can move after spawning.
+	var occupied: Array[float] = [left,right,clampf(spawn,left,right)]
+	# Reserve every authored anchor first, including members appearing later
+	# in the roster, so an earlier overflow member cannot claim their place.
+	for member in present:
+		var id = str(member.id)
+		var activity: Dictionary = activities.get(id,{})
+		if activity.has("point"):
+			var x = clampf(float(activity.point[0]),path_left,path_right)
+			result[id] = x
+			occupied.append(clampf(x,left,right))
+	# A larger roster retains the configured original positions.
+	for index in mini(present.size(),positions.size()):
+		var id = str(present[index].id)
+		if result.has(id): continue
+		var x = float(positions[index])
+		# Legacy configs can contain points from a wider source image. Treat
+		# those as unassigned instead of stacking them at the same path edge.
+		if x < path_left or x > path_right: continue
+		result[id] = x
+		occupied.append(clampf(x,left,right))
+	# Insert only the additional members, bisecting the largest clear interval
+	# each time. Equal intervals resolve left-to-right for reproducible layouts.
+	for member in present:
+		var id = str(member.id)
+		if result.has(id): continue
+		occupied.sort()
+		var best_left = left
+		var best_right = left
+		for index in range(1,occupied.size()):
+			if occupied[index]-occupied[index-1] > best_right-best_left:
+				best_left = occupied[index-1]
+				best_right = occupied[index]
+		var x = (best_left+best_right)*0.5
+		result[id] = x
+		occupied.append(x)
+	return result
+
 func _label(text: String, point: Vector2, width: float, font_size: int) -> Label:
 	var label = Label.new(); label.text = text; label.position = point; label.size = Vector2(width,25); label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER; label.add_theme_font_size_override("font_size",font_size); label.mouse_filter = Control.MOUSE_FILTER_IGNORE; hud.add_child(label); return label
+
+func _movement_hint() -> String:
+	return "拖动左侧摇杆移动 · 靠近后点手掌交谈" if OS.has_feature("mobile") else "A / D 移动 · E / 空格交谈"
+
+func _interaction_hint(action: String) -> String:
+	return action+(" · 点击右侧手掌" if OS.has_feature("mobile") else " · E / 空格")
 
 func _fit() -> void:
 	if not is_instance_valid(content): return
@@ -106,9 +197,11 @@ func _fit() -> void:
 			elif child == talk_caption or child.text == "移动": child.position.y = 683+extra
 
 func _art_id(member: Dictionary) -> String:
-	if str(member.id) in ["zhang","elin","ajie","sofia"]: return str(member.id)
-	# Extra recruits retain their real interaction ID and use a role body until
-	# individual full-body art exists; they never become duplicate rule members.
+	var id = str(member.id)
+	if id in ["zhang","elin","ajie","sofia"]: return id
+	# Recruits with their own full-body art keep a distinct identity. Only
+	# characters still missing art fall back to a role body.
+	if ResourceLoader.exists(NPC_ROOT+id+".png"): return id
 	var best = "ajie"; var score = -1.0
 	for role in {"repair":"zhang","medical":"elin","scout":"ajie","logistics":"sofia"}:
 		if float(member.get(role,0))>score:
@@ -140,15 +233,21 @@ func _process(delta: float) -> void:
 	var target_x = backdrop.view_to_source(Vector2(destination,0)).x
 	var displacement = player_x-old_x
 	if absf(displacement)>0.001:
-		backdrop.set_camera((source_x/backdrop.source_size.x-0.5)*48)
+		if not developer_freeze_parallax: backdrop.set_camera((source_x/backdrop.source_size.x-0.5)*48)
 		player_x = backdrop.source_to_view(CATALOG.foot_at(walk_path,source_x)).x
 		destination = backdrop.source_to_view(CATALOG.foot_at(walk_path,target_x)).x
 	_update_captain(displacement); _refresh_actors()
 
 func _refresh_actors() -> void:
 	for npc in npcs:
-		var foot = backdrop.source_to_view(CATALOG.foot_at(walk_path,npc.source_x)); npc.x = foot.x; npc.sprite.position = foot
+		var foot = backdrop.source_to_view(CATALOG.foot_at(walk_path,npc.source_x)); npc.x = foot.x
+		npc.sprite.position = backdrop.source_to_view(npc.source_anchor) if npc.activity.has("point") else foot-Vector2(0,actor_ground_lift)
+		var ground_y = npc.sprite.position.y+npc.sprite.sole_offset.y
+		if npc.activity.has("floor_y"):
+			ground_y = backdrop.source_to_view(Vector2(npc.source_anchor.x,float(npc.activity.floor_y))).y
+		npc.sprite.z_index = clampi(roundi(ground_y),-4096,4095)
 		_light(npc.sprite,npc.source_x)
+	captain_sprite.z_index = clampi(roundi(captain_sprite.position.y),-4096,4095)
 	var nearby = nearest()
 	var at_entrance = can_use_entrance()
 	if is_instance_valid(entrance_button):
@@ -157,10 +256,10 @@ func _refresh_actors() -> void:
 		entrance_button.position = backdrop.source_to_view(foot-Vector2(0,360))-entrance_button.size*0.5
 	if is_instance_valid(talk):
 		talk.enabled = at_entrance or not nearby.is_empty(); talk.queue_redraw()
-		talk.tooltip_text = str(entrance.get("label",""))+" · E / 空格" if at_entrance else "靠近队友交谈 · E / 空格"
+		talk.tooltip_text = _interaction_hint(str(entrance.get("label","")) if at_entrance else "靠近队友交谈")
 	if is_instance_valid(talk_caption): talk_caption.text = str(entrance.get("short_label","进入")) if at_entrance else "交谈"
 	if is_instance_valid(hint):
-		hint.text = str(entrance.get("label",""))+" · E / 空格" if at_entrance else ("与"+str(nearby.name)+"交谈 · E / 空格" if not nearby.is_empty() else "A / D 移动 · E / 空格交谈")
+		hint.text = _interaction_hint(str(entrance.get("label",""))) if at_entrance else (_interaction_hint("与"+str(nearby.name)+"交谈") if not nearby.is_empty() else _movement_hint())
 	backdrop.actor_layer.queue_redraw()
 
 func configure_entrance(options: Dictionary, feedback: Node = null) -> void:
@@ -228,7 +327,7 @@ func _notification(what: int) -> void:
 
 func _position_captain() -> void:
 	var source_x = backdrop.view_to_source(Vector2(player_x,0)).x
-	captain_sprite.position = backdrop.source_to_view(CATALOG.foot_at(walk_path,source_x)); _light(captain_sprite,source_x)
+	captain_sprite.position = backdrop.source_to_view(CATALOG.foot_at(walk_path,source_x))-Vector2(0,actor_ground_lift); _light(captain_sprite,source_x)
 
 func _update_captain(displacement: float) -> void:
 	is_walking = absf(displacement)>0.001
@@ -239,6 +338,26 @@ func _update_captain(displacement: float) -> void:
 	captain_sprite.flip_h = is_walking and facing_left
 	if captain_sprite.animation != animation or not captain_sprite.is_playing(): captain_sprite.play(animation)
 	_position_captain()
+
+func _space_interaction_points() -> void:
+	if npcs.size() < 2 or walk_path.is_empty(): return
+	var left = float(walk_path[0][0])
+	var right = float(walk_path[-1][0])
+	var gap = minf(80.0,(right-left)/float(npcs.size()-1))
+	var ordered = npcs.duplicate()
+	ordered.sort_custom(func(a,b):
+		return str(a.id)<str(b.id) if is_equal_approx(float(a.source_x),float(b.source_x)) else float(a.source_x)<float(b.source_x))
+	var previous = left-gap
+	for npc in ordered:
+		npc.source_x = maxf(float(npc.source_x),previous+gap)
+		previous = float(npc.source_x)
+	var following = right+gap
+	for index in range(ordered.size()-1,-1,-1):
+		var npc: Dictionary = ordered[index]
+		npc.source_x = minf(float(npc.source_x),following-gap)
+		following = float(npc.source_x)
+		# The reachable talking point may move; furniture anchors stay fixed.
+		npc.x = backdrop.source_to_view(CATALOG.foot_at(walk_path,float(npc.source_x))).x
 
 func nearest() -> Dictionary:
 	var result = {}; var distance = 70.0
@@ -261,9 +380,18 @@ func _draw_actors() -> void:
 	var layer: Node2D = backdrop.actor_layer; var nearby = nearest(); var font = get_theme_default_font()
 	for npc in npcs:
 		if not npc.sprite.visible: continue
-		var foot = backdrop.source_to_view(CATALOG.foot_at(walk_path,npc.source_x))
-		layer.draw_set_transform(foot+Vector2(0,-1),0,Vector2(1,0.22)); layer.draw_circle(Vector2.ZERO,25,Color(0,0,0,0.4))
-		var icon = foot+Vector2(0,-NPC_HEIGHT-23); var active = nearby.get("id","") == npc.id
+		var foot = npc.sprite.position+npc.sprite.sole_offset
+		var shadow_alpha = 0.32
+		if npc.sprite.kind == "seated" and npc.activity.has("floor_y"):
+			var ground_y = backdrop.source_to_view(Vector2(npc.source_anchor.x,float(npc.activity.floor_y))).y
+			if ground_y > foot.y+2:
+				foot.y = ground_y; shadow_alpha = 0.17
+		var shadow_size = 18.0 if npc.sprite.kind == "seated" else 25.0
+		layer.draw_set_transform(foot+Vector2(0,-1),0,Vector2(1,0.22)); layer.draw_circle(Vector2.ZERO,shadow_size*actor_scale,Color(0,0,0,shadow_alpha))
+		# Nearby companions expose their interaction affordance; distant work
+		# groups remain part of the scene instead of a row of speech bubbles.
+		if absf(player_x-npc.x) > 170.0: continue
+		var icon = npc.sprite.position+npc.sprite.top_offset+Vector2(0,-23); var active = nearby.get("id","") == npc.id
 		var color = Color("d2efff") if active else Color(0.88,0.94,1,0.57)
 		layer.draw_set_transform(icon)
 		layer.draw_circle(Vector2.ZERO,18,Color(0.02,0.04,0.065,0.65)); layer.draw_arc(Vector2.ZERO,18,0,TAU,40,color,1.5,true)
@@ -275,13 +403,23 @@ func _draw_actors() -> void:
 			layer.draw_line(Vector2(-6,6),Vector2(6,-6),color,4,true)
 			layer.draw_arc(Vector2(6,-6),5,-0.1,PI*1.5,18,color,2,true)
 		if active:
-			var text_width = font.get_string_size(str(npc.name),HORIZONTAL_ALIGNMENT_LEFT,-1,18).x
-			layer.draw_string_outline(font,Vector2(-text_width/2,-29),str(npc.name),HORIZONTAL_ALIGNMENT_LEFT,-1,18,5,Color("0a1320"))
-			layer.draw_string(font,Vector2(-text_width/2,-29),str(npc.name),HORIZONTAL_ALIGNMENT_LEFT,-1,18,color)
+			var caption = str(npc.name)
+			if npc.sprite.activity_label != "": caption += " · "+npc.sprite.activity_label
+			var text_width = font.get_string_size(caption,HORIZONTAL_ALIGNMENT_LEFT,-1,18).x
+			layer.draw_string_outline(font,Vector2(-text_width/2,-29),caption,HORIZONTAL_ALIGNMENT_LEFT,-1,18,5,Color("0a1320"))
+			layer.draw_string(font,Vector2(-text_width/2,-29),caption,HORIZONTAL_ALIGNMENT_LEFT,-1,18,color)
 	var foot = captain_sprite.position
 	layer.draw_set_transform(foot+Vector2(0,1),0,Vector2(1,0.22))
-	layer.draw_circle(Vector2.ZERO,38,Color(0.47,0.74,0.94,0.16)); layer.draw_arc(Vector2.ZERO,38,0,TAU,64,Color(0.72,0.88,1,0.82),3,true)
+	layer.draw_circle(Vector2.ZERO,38*actor_scale,Color(0.47,0.74,0.94,0.16)); layer.draw_arc(Vector2.ZERO,38*actor_scale,0,TAU,64,Color(0.72,0.88,1,0.82),3,true)
 	layer.draw_set_transform(Vector2.ZERO)
+	if developer_show_guides:
+		var points = PackedVector2Array()
+		for point in walk_path: points.append(backdrop.source_to_view(Vector2(float(point[0]),float(point[1]))))
+		if points.size() > 1: layer.draw_polyline(points,Color("73dfba"),3,true)
+		for npc in npcs:
+			var position_value = backdrop.source_to_view(CATALOG.foot_at(walk_path,npc.source_x))-Vector2(0,actor_ground_lift)
+			layer.draw_rect(Rect2(position_value-Vector2(70,25),Vector2(140,50)),Color(0.9,0.7,0.3,0.22),true)
+			layer.draw_rect(Rect2(position_value-Vector2(70,25),Vector2(140,50)),Color("e6b34d"),false,2)
 
 func _bubble_style(color: Color) -> StyleBoxFlat:
 	var style = StyleBoxFlat.new(); style.bg_color = color; style.set_corner_radius_all(5); return style

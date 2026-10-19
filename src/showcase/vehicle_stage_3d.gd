@@ -66,12 +66,14 @@ func _viewport(label: String, transparent: bool) -> SubViewport:
 
 func _load_model() -> Node3D:
 	if model_id != "V05": return PREVIEW_MODELS.new().create(model_id)
-	# Exported builds contain Godot's imported scene, rather than the source GLB.
-	var packed := ResourceLoader.load(MODEL_PATH, "PackedScene") as PackedScene
+	# Exported builds contain the imported scene and its resource remap, not
+	# necessarily the source GLB. ResourceLoader follows that remap in the PCK.
+	var packed := load(MODEL_PATH) as PackedScene
 	if packed == null:
 		push_error("Showcase model unavailable: " + MODEL_PATH); return null
 	var model := packed.instantiate() as Node3D
-	if model == null: return null
+	if model == null:
+		push_error("Showcase model has no 3D root: " + MODEL_PATH); return null
 	model.name = "V05Body"
 	_prepare_materials(model)
 	return model
