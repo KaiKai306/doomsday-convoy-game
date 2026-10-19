@@ -2,8 +2,8 @@
   "version": "0.7.0",
   "version_code": 700,
   "apk": "export/android/convoy-v0.7.0-arm64-test.apk",
-  "bytes": 150118661,
-  "sha256": "80b89228949fb54bb7da5c3f90d22a4bbb5f4c56d12c9819ba6dc3e9a42f7fb2",
+  "bytes": 150704389,
+  "sha256": "3f3bdf83c2dc057070832d301390e0c9f9d8364ca3ea4dcff4845208793ddd9f",
   "engine": "Godot 4.7.2",
   "apk_resources": 2324,
   "isolated_pack_resources": 2619,
@@ -20,7 +20,7 @@
   "new_music_after_bytes": 25082471,
   "audio_duration_tolerance_ms": 30,
   "android_environment": "API 36.1 isolated emulator; host GPU; ARM64 native bridge",
-  "startup_ms": 3973,
+  "startup_ms": 5376,
   "startup_measurement": "BOOT_START to BOOT_MENU_READY; excludes Activity/engine initialization",
   "android_operations": [
     "menu",
@@ -47,11 +47,30 @@
   "source_project_unchanged": true,
   "logs": "E:\\AI_Workspace\\临时文件\\2026-10-19\\convoy-latest-merge",
   "final_apk_emulator_smoke": {
-    "startup_ms": 3706,
+    "startup_ms": 5376,
     "menu_visible": true,
     "script_errors": 0,
     "update_install": true,
-    "log": "android-final/exact-final-apk-logcat.txt",
-    "capture": "android-final/exact-final-menu.png"
+    "log": "E:\\AI_Workspace\\临时文件\\2026-10-19\\convoy-app-icon\\game-logcat.txt",
+    "capture": "E:\\AI_Workspace\\临时文件\\2026-10-19\\convoy-app-icon\\menu-final.png",
+    "note": "Cold emulator rebuilt cached shaders before BOOT_START; startup_ms excludes engine initialization."
+  },
+  "previous_merge_apk": {
+    "bytes": 150118661,
+    "sha256": "80b89228949fb54bb7da5c3f90d22a4bbb5f4c56d12c9819ba6dc3e9a42f7fb2",
+    "note": "Full merged-feature and gameplay validation preceded the icon-only supplement."
+  },
+  "icon_update": {
+    "date": "2026-10-19",
+    "source": "User-provided square image",
+    "resource": "res://assets/title/app_icon.png",
+    "size": [
+      512,
+      512
+    ],
+    "sha256": "8e2f9aeace1ba7429b78e7a34b0062cdced2973b9fa52fcf7816ea1ee31bfa12",
+    "launcher_and_adaptive_icons_verified": true,
+    "android_app_info_visually_verified": true,
+    "evidence": "E:\\AI_Workspace\\临时文件\\2026-10-19\\convoy-app-icon\\app-info.png"
   }
 }
