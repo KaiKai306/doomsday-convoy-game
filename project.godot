@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="末日车队"
+config/name="末日车队：20天求生"
 config/version="0.7.0"
 config/icon="res://assets/title/app_icon.png"
 run/main_scene="res://scenes/boot.tscn"

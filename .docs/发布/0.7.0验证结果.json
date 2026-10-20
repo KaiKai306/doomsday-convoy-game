@@ -3,7 +3,7 @@
   "version_code": 700,
   "apk": "export/android/convoy-v0.7.0-arm64-test.apk",
   "bytes": 150704389,
-  "sha256": "3f3bdf83c2dc057070832d301390e0c9f9d8364ca3ea4dcff4845208793ddd9f",
+  "sha256": "7aaa2130832c427acb722a325c5bf7a2b5bcbd7274d782a6449646a78b8a2b6a",
   "engine": "Godot 4.7.2",
   "apk_resources": 2324,
   "isolated_pack_resources": 2619,
@@ -46,15 +46,6 @@
   "source_2d_confirmed_records": 0,
   "source_project_unchanged": true,
   "logs": "E:\\AI_Workspace\\临时文件\\2026-10-19\\convoy-latest-merge",
-  "final_apk_emulator_smoke": {
-    "startup_ms": 5376,
-    "menu_visible": true,
-    "script_errors": 0,
-    "update_install": true,
-    "log": "E:\\AI_Workspace\\临时文件\\2026-10-19\\convoy-app-icon\\game-logcat.txt",
-    "capture": "E:\\AI_Workspace\\临时文件\\2026-10-19\\convoy-app-icon\\menu-final.png",
-    "note": "Cold emulator rebuilt cached shaders before BOOT_START; startup_ms excludes engine initialization."
-  },
   "previous_merge_apk": {
     "bytes": 150118661,
     "sha256": "80b89228949fb54bb7da5c3f90d22a4bbb5f4c56d12c9819ba6dc3e9a42f7fb2",
@@ -72,5 +63,33 @@
     "launcher_and_adaptive_icons_verified": true,
     "android_app_info_visually_verified": true,
     "evidence": "E:\\AI_Workspace\\临时文件\\2026-10-19\\convoy-app-icon\\app-info.png"
+  },
+  "previous_icon_apk": {
+    "bytes": 150704389,
+    "sha256": "3f3bdf83c2dc057070832d301390e0c9f9d8364ca3ea4dcff4845208793ddd9f"
+  },
+  "previous_apk_emulator_smoke": {
+    "startup_ms": 5376,
+    "menu_visible": true,
+    "script_errors": 0,
+    "update_install": true,
+    "log": "E:\\AI_Workspace\\临时文件\\2026-10-19\\convoy-app-icon\\game-logcat.txt",
+    "capture": "E:\\AI_Workspace\\临时文件\\2026-10-19\\convoy-app-icon\\menu-final.png",
+    "note": "Cold emulator rebuilt cached shaders before BOOT_START; startup_ms excludes engine initialization.",
+    "apk_sha256": "3f3bdf83c2dc057070832d301390e0c9f9d8364ca3ea4dcff4845208793ddd9f"
+  },
+  "startup_measurement_apk_sha256": "3f3bdf83c2dc057070832d301390e0c9f9d8364ca3ea4dcff4845208793ddd9f",
+  "app_name": "末日车队：20天求生",
+  "final_apk_validation": {
+    "date": "2026-10-20",
+    "change": "Application display name only; package ID and signing retained.",
+    "application_label_verified": "末日车队：20天求生",
+    "apk_resources": 2324,
+    "signature_v2": true,
+    "signature_v3": true,
+    "emulator_tested": false,
+    "physical_device_tested": false,
+    "scope": "Targeted metadata, package resources and signature checks; simple changes do not repeat emulator testing per user instruction.",
+    "badging_evidence": "E:\\AI_Workspace\\临时文件\\2026-10-20\\convoy-app-name\\apk-badging.txt"
   }
 }
